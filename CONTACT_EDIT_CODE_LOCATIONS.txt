@@ -1,0 +1,113 @@
+CODE LOCATIONS AND SNIPPETS
+============================
+
+FRONTEND FORM SUBMISSION
+File: frontend/src/components/contacts/contact-form.tsx
+Lines: 408-417
+
+handleFormSubmit() function merges two data objects:
+- formData from react-hook-form (first_name, last_name, email, phone, etc)
+- fieldValues from local state (dynamic fields, assigned_to_id, etc)
+
+Result passed to onSubmit() handler.
+
+FRONTEND UPDATE HANDLER
+File: frontend/src/app/(dashboard)/dashboard/contacts/page.tsx
+Lines: 251-255
+
+handleUpdateContact(data) function:
+- Receives data from ContactForm
+- Calls updateMutation.mutate({ id: editingContactId, data })
+
+UPDATE MUTATION
+Lines: 178-203
+
+updateMutation:
+- Calls contactsApi.updateContact(id, data)
+- On success: invalidates query cache, shows success toast
+- NOTE: Shows success toast regardless of whether backend actually updated!
+
+API CLIENT
+File: frontend/src/lib/queries/contacts.ts
+Lines: 51-54
+
+updateContact() function:
+- Makes HTTP PUT request to /api/v1/contacts/{id}
+- Sends data object as request body
+
+BACKEND UPDATE ENDPOINT
+File: backend/app/api/v1/contacts.py
+Lines: 715-859
+
+update_contact() endpoint:
+
+1. Fetches contact from database (line 731)
+2. Checks permissions (line 737)
+3. Gets visible fields for user role (line 744)
+4. Defines core_editable_fields set (lines 747-752) - THIS IS THE KEY!
+5. Combines visible_fields with core_editable_fields (line 753)
+6. Extracts and sanitizes update data (lines 756-781)
+7. Builds snapshot of original values (lines 790-794)
+8. LOOP: Iterates through fields to update (lines 798-822)
+9. For each field, checks if it's in allowed_fields:
+   - If NOT in allowed_fields: continue (SKIP THE FIELD!)
+   - If in allowed_fields: update the field
+10. Commits transaction (line 824)
+11. Refreshes contact (line 825)
+12. Logs activity (lines 827-855)
+13. Returns filtered contact (lines 858-859)
+
+BACKEND SCHEMA
+File: backend/app/schemas/contact.py
+Lines: 60-86
+
+ContactUpdate schema defines these fields as optional:
+- phones: Optional[List[PhoneNumber]]
+- addresses: Optional[List[Address]]
+- websites: Optional[List[str]]
+
+THE CRITICAL ISSUE
+==================
+
+Line 747-752 in backend/app/api/v1/contacts.py defines:
+
+  core_editable_fields = {
+    "first_name", "last_name", "email", "phone", "company",
+    "notes", "street_address", "city", "state", "zip_code", "country",
+    "source", "status", "assigned_to_id", "pipeline_id", "pipeline_stage",
+    "custom_fields", "tags"
+  }
+
+MISSING FROM THIS SET:
+- phones
+- addresses
+- websites
+
+Line 800 silently skips any field not in allowed_fields:
+
+  if field not in allowed_fields:
+    continue  # SKIPS THE FIELD WITHOUT ERROR!
+
+RESULT:
+- Frontend sends phones, addresses, websites to backend
+- Backend receives them but filters them out silently
+- Database is NOT updated
+- Backend returns 200 OK (success) anyway
+- Frontend shows "Contact updated successfully"
+- User sees no changes in database
+
+ROOT CAUSE:
+The core_editable_fields set is missing the "phones", "addresses", 
+and "websites" fields that the frontend is trying to update.
+
+SOLUTION:
+Add these three fields to core_editable_fields set:
+
+core_editable_fields = {
+  "first_name", "last_name", "email", "phone", "company",
+  "notes", "street_address", "city", "state", "zip_code", "country",
+  "source", "status", "assigned_to_id", "pipeline_id", "pipeline_stage",
+  "custom_fields", "tags",
+  "phones", "addresses", "websites"  <-- ADD THESE!
+}
+

@@ -1,0 +1,10 @@
+EITHER_OR mode selected, taking full screenshot...
+Scrolling to Step 1 section...
+Checking visible elements...
+
+EITHER_OR Mode Elements:
+  Delay (Days): VISIBLE
+  Delay (Hours): VISIBLE
+  Trigger Event: VISIBLE
+
+✅ SUCCESS: EITHER_OR mode shows BOTH delay AND trigger inputs!

@@ -1,0 +1,4 @@
+BUG-4 Campaign Deletion Test
+Step 1: Navigate to campaigns
+Step 2: Find menu button
+INCONCLUSIVE: No menu button found

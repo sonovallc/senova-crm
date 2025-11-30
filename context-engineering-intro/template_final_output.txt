@@ -1,0 +1,17 @@
+STEP 1: Navigate and Login
+[verbose] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o
+[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Filling login form...
+Submitting login...
+[log] [Fast Refresh] rebuilding
+[log] [Fast Refresh] done in 1284ms
+Navigating to templates...
+[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+OK: Templates page loaded
+STEP 2: Open Create Template Modal
+OK: Modal opened
+STEP 3: Fill Form Fields
+TEST FAILED: page.waitForSelector: Timeout 5000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[name="name"]') to be visible[22m
+

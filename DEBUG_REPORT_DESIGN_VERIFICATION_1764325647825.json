@@ -1,0 +1,326 @@
+[
+  {
+    "url": "/",
+    "name": "home",
+    "description": "Home page",
+    "status": 200,
+    "issues": [
+      "Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object."
+    ],
+    "checks": {
+      "pageLoads": true,
+      "noConsoleErrors": true,
+      "colorSchemeCorrect": false,
+      "fontsCorrect": false,
+      "noMedicalLanguage": false,
+      "imagesLoad": false,
+      "navigationWorks": false,
+      "mobileResponsive": false
+    }
+  },
+  {
+    "url": "/about",
+    "name": "about",
+    "description": "About page",
+    "status": 200,
+    "issues": [
+      "Console errors: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant",
+      "Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object."
+    ],
+    "checks": {
+      "pageLoads": true,
+      "noConsoleErrors": false,
+      "colorSchemeCorrect": false,
+      "fontsCorrect": false,
+      "noMedicalLanguage": false,
+      "imagesLoad": false,
+      "navigationWorks": false,
+      "mobileResponsive": false
+    }
+  },
+  {
+    "url": "/platform",
+    "name": "platform",
+    "description": "Platform page",
+    "status": 200,
+    "issues": [
+      "Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object."
+    ],
+    "checks": {
+      "pageLoads": true,
+      "noConsoleErrors": true,
+      "colorSchemeCorrect": false,
+      "fontsCorrect": false,
+      "noMedicalLanguage": false,
+      "imagesLoad": false,
+      "navigationWorks": false,
+      "mobileResponsive": false
+    }
+  },
+  {
+    "url": "/pricing",
+    "name": "pricing",
+    "description": "Pricing page",
+    "status": 200,
+    "issues": [
+      "Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object."
+    ],
+    "checks": {
+      "pageLoads": true,
+      "noConsoleErrors": true,
+      "colorSchemeCorrect": false,
+      "fontsCorrect": false,
+      "noMedicalLanguage": false,
+      "imagesLoad": false,
+      "navigationWorks": false,
+      "mobileResponsive": false
+    }
+  },
+  {
+    "url": "/contact",
+    "name": "contact",
+    "description": "Contact page",
+    "status": 200,
+    "issues": [
+      "Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object."
+    ],
+    "checks": {
+      "pageLoads": true,
+      "noConsoleErrors": true,
+      "colorSchemeCorrect": false,
+      "fontsCorrect": false,
+      "noMedicalLanguage": false,
+      "imagesLoad": false,
+      "navigationWorks": false,
+      "mobileResponsive": false
+    }
+  },
+  {
+    "url": "/demo",
+    "name": "demo",
+    "description": "Demo request page",
+    "status": 200,
+    "issues": [
+      "Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object."
+    ],
+    "checks": {
+      "pageLoads": true,
+      "noConsoleErrors": true,
+      "colorSchemeCorrect": false,
+      "fontsCorrect": false,
+      "noMedicalLanguage": false,
+      "imagesLoad": false,
+      "navigationWorks": false,
+      "mobileResponsive": false
+    }
+  },
+  {
+    "url": "/solutions/crm",
+    "name": "crm",
+    "description": "CRM solution",
+    "status": 200,
+    "issues": [
+      "Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object."
+    ],
+    "checks": {
+      "pageLoads": true,
+      "noConsoleErrors": true,
+      "colorSchemeCorrect": false,
+      "fontsCorrect": false,
+      "noMedicalLanguage": false,
+      "imagesLoad": false,
+      "navigationWorks": false,
+      "mobileResponsive": false
+    }
+  },
+  {
+    "url": "/solutions/audience-intelligence",
+    "name": "audience-intelligence",
+    "description": "Audience intelligence",
+    "status": 200,
+    "issues": [
+      "Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object."
+    ],
+    "checks": {
+      "pageLoads": true,
+      "noConsoleErrors": true,
+      "colorSchemeCorrect": false,
+      "fontsCorrect": false,
+      "noMedicalLanguage": false,
+      "imagesLoad": false,
+      "navigationWorks": false,
+      "mobileResponsive": false
+    }
+  },
+  {
+    "url": "/solutions/visitor-identification",
+    "name": "visitor-identification",
+    "description": "Visitor identification",
+    "status": 200,
+    "issues": [
+      "Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object."
+    ],
+    "checks": {
+      "pageLoads": true,
+      "noConsoleErrors": true,
+      "colorSchemeCorrect": false,
+      "fontsCorrect": false,
+      "noMedicalLanguage": false,
+      "imagesLoad": false,
+      "navigationWorks": false,
+      "mobileResponsive": false
+    }
+  },
+  {
+    "url": "/solutions/campaign-activation",
+    "name": "campaign-activation",
+    "description": "Campaign activation",
+    "status": 200,
+    "issues": [
+      "Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object."
+    ],
+    "checks": {
+      "pageLoads": true,
+      "noConsoleErrors": true,
+      "colorSchemeCorrect": false,
+      "fontsCorrect": false,
+      "noMedicalLanguage": false,
+      "imagesLoad": false,
+      "navigationWorks": false,
+      "mobileResponsive": false
+    }
+  },
+  {
+    "url": "/solutions/analytics",
+    "name": "analytics",
+    "description": "Analytics solution",
+    "status": 200,
+    "issues": [
+      "Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object."
+    ],
+    "checks": {
+      "pageLoads": true,
+      "noConsoleErrors": true,
+      "colorSchemeCorrect": false,
+      "fontsCorrect": false,
+      "noMedicalLanguage": false,
+      "imagesLoad": false,
+      "navigationWorks": false,
+      "mobileResponsive": false
+    }
+  },
+  {
+    "url": "/industries/restaurants",
+    "name": "restaurants",
+    "description": "Restaurants industry",
+    "status": 200,
+    "issues": [
+      "Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object."
+    ],
+    "checks": {
+      "pageLoads": true,
+      "noConsoleErrors": true,
+      "colorSchemeCorrect": false,
+      "fontsCorrect": false,
+      "noMedicalLanguage": false,
+      "imagesLoad": false,
+      "navigationWorks": false,
+      "mobileResponsive": false
+    }
+  },
+  {
+    "url": "/industries/home-services",
+    "name": "home-services",
+    "description": "Home services industry",
+    "status": 200,
+    "issues": [
+      "Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object."
+    ],
+    "checks": {
+      "pageLoads": true,
+      "noConsoleErrors": true,
+      "colorSchemeCorrect": false,
+      "fontsCorrect": false,
+      "noMedicalLanguage": false,
+      "imagesLoad": false,
+      "navigationWorks": false,
+      "mobileResponsive": false
+    }
+  },
+  {
+    "url": "/industries/retail",
+    "name": "retail",
+    "description": "Retail industry",
+    "status": 200,
+    "issues": [
+      "Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object."
+    ],
+    "checks": {
+      "pageLoads": true,
+      "noConsoleErrors": true,
+      "colorSchemeCorrect": false,
+      "fontsCorrect": false,
+      "noMedicalLanguage": false,
+      "imagesLoad": false,
+      "navigationWorks": false,
+      "mobileResponsive": false
+    }
+  },
+  {
+    "url": "/industries/professional-services",
+    "name": "professional-services",
+    "description": "Professional services",
+    "status": 200,
+    "issues": [
+      "Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object."
+    ],
+    "checks": {
+      "pageLoads": true,
+      "noConsoleErrors": true,
+      "colorSchemeCorrect": false,
+      "fontsCorrect": false,
+      "noMedicalLanguage": false,
+      "imagesLoad": false,
+      "navigationWorks": false,
+      "mobileResponsive": false
+    }
+  },
+  {
+    "url": "/privacy-policy",
+    "name": "privacy-policy",
+    "description": "Privacy policy",
+    "status": 200,
+    "issues": [
+      "Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object."
+    ],
+    "checks": {
+      "pageLoads": true,
+      "noConsoleErrors": true,
+      "colorSchemeCorrect": false,
+      "fontsCorrect": false,
+      "noMedicalLanguage": false,
+      "imagesLoad": false,
+      "navigationWorks": false,
+      "mobileResponsive": false
+    }
+  },
+  {
+    "url": "/terms-of-service",
+    "name": "terms-of-service",
+    "description": "Terms of service",
+    "status": 200,
+    "issues": [
+      "Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object."
+    ],
+    "checks": {
+      "pageLoads": true,
+      "noConsoleErrors": true,
+      "colorSchemeCorrect": false,
+      "fontsCorrect": false,
+      "noMedicalLanguage": false,
+      "imagesLoad": false,
+      "navigationWorks": false,
+      "mobileResponsive": false
+    }
+  }
+]

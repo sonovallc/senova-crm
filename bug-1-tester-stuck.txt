@@ -1,0 +1,30 @@
+TESTER STUCK REPORT - BUG-1 INBOX UNREAD STATUS
+
+PROBLEM:
+Unable to execute Playwright test to reproduce BUG-1. Multiple issues encountered:
+
+1. Test script creation failing with bash syntax errors when trying to create inline node scripts
+2. When running existing test templates, getting timeout on password field fill
+3. Frontend appears to be running (HTTP 307/200) but Playwright can't interact with login form
+4. Root URL redirects to /home (public website), need to test /login -> /dashboard/inbox flow
+
+ATTEMPTED SOLUTIONS:
+- Created test script using various methods (heredoc, node -e, copying templates)
+- Tried increasing timeouts to 90000ms
+- Verified frontend is running with curl
+- Found that root redirects to /home instead of login
+
+WHAT I NEED:
+1. Confirmation that CRM login is at http://localhost:3004/login (not /home)
+2. Working Playwright test script or alternative method to:
+   - Login to CRM
+   - Navigate to inbox
+   - Click a thread
+   - Verify read/unread status changes
+   - Take screenshots as evidence
+
+3. Or: Should I skip automated testing and request manual verification of BUG-1?
+
+BLOCKER:
+Cannot reproduce bug without working test automation. Need human guidance on how to proceed with BUG-1 verification.
+

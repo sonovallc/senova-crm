@@ -1,0 +1,29 @@
+{
+  "tests": [
+    {
+      "task": "Create Campaign",
+      "result": "PASS"
+    },
+    {
+      "task": "BUG-G Del",
+      "result": "PASS"
+    },
+    {
+      "task": "BUG-L Field Create",
+      "result": "PASS"
+    },
+    {
+      "task": "BUG-B Unread",
+      "result": "SKIP"
+    },
+    {
+      "task": "BUG-C Template",
+      "result": "PASS"
+    },
+    {
+      "task": "BUG-M FF",
+      "result": "INFO",
+      "visible": true
+    }
+  ]
+}

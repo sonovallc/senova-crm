@@ -1,0 +1,367 @@
+{
+  "path": "/solutions/analytics",
+  "seo": {
+    "title": "Prove Every Dollar of Marketing ROI | Medical Spa Analytics",
+    "description": "Track patient acquisition costs, lifetime value, and revenue by campaign. See which marketing actually books appointments. Real-time dashboards.",
+    "keywords": ["medical spa analytics", "ROI tracking", "patient acquisition cost", "marketing analytics", "aesthetic practice metrics"],
+    "og_image": "Analytics dashboard showing ROI metrics and revenue attribution"
+  },
+  "hero": {
+    "headline": "Finally Know Which Marketing Actually Works",
+    "subheadline": "Track every patient from first click to lifetime value. Prove ROI, optimize spending, and grow with confidence.",
+    "cta_primary": {
+      "text": "See Your ROI Dashboard",
+      "link": "/demo"
+    },
+    "cta_secondary": {
+      "text": "Calculate Your Metrics",
+      "link": "/roi-calculator"
+    },
+    "key_metrics": [
+      { "label": "Avg CAC Reduction", "value": "47%" },
+      { "label": "ROI Visibility", "value": "100%" },
+      { "label": "Time to Insights", "value": "Real-time" }
+    ]
+  },
+  "sections": [
+    {
+      "type": "problem",
+      "headline": "Flying Blind Costs You Thousands Monthly",
+      "pain_points": [
+        {
+          "issue": "No idea which ads actually book appointments",
+          "cost": "Wasting $5,000+/month on ineffective campaigns"
+        },
+        {
+          "issue": "Can't calculate true patient acquisition cost",
+          "cost": "Overspending by 40-60% on patient acquisition"
+        },
+        {
+          "issue": "Don't know patient lifetime value",
+          "cost": "Underinvesting in high-value patient segments"
+        },
+        {
+          "issue": "Attributing revenue is just guesswork",
+          "cost": "Missing opportunities to scale winning campaigns"
+        }
+      ]
+    },
+    {
+      "type": "metrics_tracked",
+      "headline": "Every Metric That Matters, Automated",
+      "categories": [
+        {
+          "name": "Acquisition Metrics",
+          "metrics": [
+            {
+              "metric": "Cost Per Lead (CPL)",
+              "description": "Track costs across all channels",
+              "benchmark": "Industry avg: $45"
+            },
+            {
+              "metric": "Cost Per Acquisition (CPA)",
+              "description": "True cost to acquire each patient",
+              "benchmark": "Industry avg: $185"
+            },
+            {
+              "metric": "Lead to Patient Rate",
+              "description": "Conversion from inquiry to booking",
+              "benchmark": "Industry avg: 25%"
+            },
+            {
+              "metric": "Channel Performance",
+              "description": "ROI by marketing channel",
+              "benchmark": "Best: Email 4.2X"
+            }
+          ]
+        },
+        {
+          "name": "Patient Value Metrics",
+          "metrics": [
+            {
+              "metric": "Average Treatment Value",
+              "description": "Revenue per appointment",
+              "benchmark": "Industry avg: $385"
+            },
+            {
+              "metric": "Lifetime Value (LTV)",
+              "description": "Total revenue per patient",
+              "benchmark": "Industry avg: $2,400"
+            },
+            {
+              "metric": "Visit Frequency",
+              "description": "Appointments per year",
+              "benchmark": "Industry avg: 3.2"
+            },
+            {
+              "metric": "Retention Rate",
+              "description": "Patients returning within 12 months",
+              "benchmark": "Industry avg: 45%"
+            }
+          ]
+        },
+        {
+          "name": "Revenue Attribution",
+          "metrics": [
+            {
+              "metric": "First Touch Attribution",
+              "description": "Initial marketing touchpoint",
+              "use": "Budget allocation"
+            },
+            {
+              "metric": "Last Touch Attribution",
+              "description": "Final conversion trigger",
+              "use": "Campaign optimization"
+            },
+            {
+              "metric": "Multi-Touch Attribution",
+              "description": "Full patient journey credit",
+              "use": "Holistic strategy"
+            },
+            {
+              "metric": "Revenue by Campaign",
+              "description": "Direct revenue tracking",
+              "use": "ROI calculation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "dashboards",
+      "headline": "Custom Dashboards for Every Role",
+      "roles": [
+        {
+          "role": "Practice Owner",
+          "focus": "High-level business metrics",
+          "widgets": [
+            "Monthly revenue trends",
+            "Patient acquisition costs",
+            "Marketing ROI summary",
+            "Provider productivity",
+            "YoY growth metrics"
+          ]
+        },
+        {
+          "role": "Marketing Manager",
+          "focus": "Campaign performance details",
+          "widgets": [
+            "Campaign ROI breakdown",
+            "Channel performance",
+            "Audience engagement",
+            "A/B test results",
+            "Content performance"
+          ]
+        },
+        {
+          "role": "Front Desk",
+          "focus": "Daily operations metrics",
+          "widgets": [
+            "Today's appointments",
+            "No-show predictions",
+            "Follow-up tasks",
+            "Booking conversion",
+            "Phone call tracking"
+          ]
+        },
+        {
+          "role": "Provider",
+          "focus": "Treatment and patient metrics",
+          "widgets": [
+            "Treatment mix",
+            "Patient satisfaction",
+            "Revenue per treatment",
+            "Retention rates",
+            "Referral tracking"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "attribution_model",
+      "headline": "Finally Understand Your Patient Journey",
+      "journey_example": {
+        "title": "Sarah's Journey to Becoming a $5,000 Patient",
+        "touchpoints": [
+          {
+            "day": 0,
+            "action": "Googles 'Botox near me'",
+            "attribution": "First touch: Google Ads"
+          },
+          {
+            "day": 1,
+            "action": "Visits website, identified by pixel",
+            "attribution": "Engagement: Website"
+          },
+          {
+            "day": 3,
+            "action": "Opens retargeting email",
+            "attribution": "Nurture: Email"
+          },
+          {
+            "day": 7,
+            "action": "Clicks Facebook retargeting ad",
+            "attribution": "Re-engagement: Social"
+          },
+          {
+            "day": 8,
+            "action": "Books consultation",
+            "attribution": "Conversion: Direct"
+          },
+          {
+            "day": 30,
+            "action": "Returns for fillers",
+            "attribution": "Retention: SMS reminder"
+          }
+        ],
+        "total_value": "$5,000 over 12 months",
+        "attribution_split": {
+          "Google Ads": "30%",
+          "Email": "25%",
+          "Facebook": "20%",
+          "Direct": "15%",
+          "SMS": "10%"
+        }
+      }
+    },
+    {
+      "type": "reporting",
+      "headline": "Reports That Drive Decisions",
+      "report_types": [
+        {
+          "name": "Executive Summary",
+          "frequency": "Monthly",
+          "includes": [
+            "Revenue vs goals",
+            "Top performing campaigns",
+            "Patient acquisition trends",
+            "Action items for optimization"
+          ]
+        },
+        {
+          "name": "Campaign Performance",
+          "frequency": "Weekly",
+          "includes": [
+            "Campaign metrics",
+            "A/B test results",
+            "Budget utilization",
+            "Optimization recommendations"
+          ]
+        },
+        {
+          "name": "Patient Insights",
+          "frequency": "Quarterly",
+          "includes": [
+            "Patient demographics",
+            "Treatment preferences",
+            "Lifetime value analysis",
+            "Churn risk assessment"
+          ]
+        },
+        {
+          "name": "Custom Reports",
+          "frequency": "On-demand",
+          "includes": [
+            "Any metric combination",
+            "Custom date ranges",
+            "Automated delivery",
+            "Export to Excel/PDF"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "predictive_analytics",
+      "headline": "AI-Powered Predictions",
+      "capabilities": [
+        {
+          "prediction": "No-Show Risk",
+          "description": "Identify patients likely to miss appointments",
+          "action": "Trigger prevention campaigns",
+          "accuracy": "87%"
+        },
+        {
+          "prediction": "Churn Probability",
+          "description": "Spot patients at risk of leaving",
+          "action": "Launch retention offers",
+          "accuracy": "82%"
+        },
+        {
+          "prediction": "Revenue Forecasting",
+          "description": "Predict next month's revenue",
+          "action": "Adjust marketing spend",
+          "accuracy": "91%"
+        },
+        {
+          "prediction": "Best Next Treatment",
+          "description": "Recommend ideal follow-up treatments",
+          "action": "Personalized upsells",
+          "accuracy": "76%"
+        }
+      ]
+    },
+    {
+      "type": "integrations",
+      "headline": "Pulls Data from Everywhere",
+      "sources": [
+        {
+          "category": "Marketing Platforms",
+          "integrations": ["Google Ads", "Facebook Ads", "Instagram", "TikTok", "Email platforms"]
+        },
+        {
+          "category": "Practice Systems",
+          "integrations": ["Practice management", "Booking systems", "Payment processors", "Phone systems"]
+        },
+        {
+          "category": "Website & Analytics",
+          "integrations": ["Google Analytics", "Website forms", "Chat tools", "Review platforms"]
+        }
+      ]
+    },
+    {
+      "type": "roi_proof",
+      "headline": "Real ROI from Real Practices",
+      "case_studies": [
+        {
+          "practice": "Miami Beach Aesthetics",
+          "before": "Guessing which ads worked",
+          "after": "Clear attribution for every dollar",
+          "result": "Cut marketing waste by 52%, increased ROI to 4.8X"
+        },
+        {
+          "practice": "Dallas Dermatology Group",
+          "before": "No visibility into patient value",
+          "after": "Complete LTV tracking",
+          "result": "Focused on high-value segments, revenue up 67%"
+        },
+        {
+          "practice": "Phoenix Plastic Surgery",
+          "before": "Manual reporting took days",
+          "after": "Real-time automated dashboards",
+          "result": "Saved 20 hours/month, decisions 10X faster"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "headline": "Stop Guessing. Start Growing.",
+      "subheadline": "See exactly where every patient and dollar comes from",
+      "primary_cta": {
+        "text": "See Live Dashboard Demo",
+        "link": "/demo"
+      },
+      "secondary_cta": {
+        "text": "Calculate Your ROI",
+        "link": "/roi-calculator"
+      },
+      "guarantee": "See positive ROI within 30 days or your money back"
+    }
+  ],
+  "schema_markup": {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Senova Analytics Platform",
+    "description": "ROI tracking and analytics for medical aesthetics practices",
+    "applicationCategory": "Business Intelligence"
+  }
+}

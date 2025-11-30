@@ -1,0 +1,299 @@
+{
+  "path": "/solutions/audience-intelligence",
+  "seo": {
+    "title": "Find Botox Patients Before Competitors Do | Audience Intelligence",
+    "description": "Target people actively researching aesthetic treatments. 280M profiles, 95% accuracy. Pre-built audiences for 50+ procedures. Demo available.",
+    "keywords": ["patient targeting", "medical spa marketing", "aesthetic audience targeting", "botox marketing", "patient acquisition"],
+    "og_image": "Audience builder interface showing procedure-based targeting"
+  },
+  "hero": {
+    "headline": "Know Who Wants Botox Before They Book Elsewhere",
+    "subheadline": "Access 280M+ verified profiles to find and target patients actively researching aesthetic treatments in your area.",
+    "cta_primary": {
+      "text": "Build Your First Audience",
+      "link": "/demo"
+    },
+    "cta_secondary": {
+      "text": "See Sample Audiences",
+      "link": "#audiences"
+    },
+    "stats": [
+      { "value": "280M+", "label": "Verified Profiles" },
+      { "value": "95%", "label": "Data Accuracy" },
+      { "value": "50+", "label": "Pre-Built Audiences" }
+    ]
+  },
+  "sections": [
+    {
+      "type": "problem",
+      "headline": "Your Competitors Are Stealing Your Perfect Patients",
+      "problems": [
+        {
+          "title": "Facebook's targeting is too broad",
+          "description": "\"Interested in beauty\" doesn't mean ready for Botox"
+        },
+        {
+          "title": "Google Ads are too expensive",
+          "description": "$50+ per click for \"Botox near me\" keywords"
+        },
+        {
+          "title": "You can't see competitor's patients",
+          "description": "They're targeting people who visited your website"
+        },
+        {
+          "title": "No way to predict treatment timing",
+          "description": "Missing the moment when patients are ready to book"
+        }
+      ]
+    },
+    {
+      "type": "solution",
+      "headline": "Precision Targeting for Medical Aesthetics",
+      "subheadline": "Build custom audiences of high-intent patients ready for your treatments",
+      "capabilities": [
+        {
+          "title": "Treatment-Specific Audiences",
+          "description": "Target people actively researching specific procedures",
+          "examples": [
+            "Women 35-55 researching Botox in last 30 days",
+            "Men interested in hair restoration treatments",
+            "Brides-to-be looking at laser treatments",
+            "New moms researching body contouring"
+          ]
+        },
+        {
+          "title": "Competitor Patient Identification",
+          "description": "Ethically identify and target competitor's prospects",
+          "examples": [
+            "People who visited competitor websites",
+            "Patients researching prices at other clinics",
+            "Users comparing multiple providers",
+            "Lapsed patients considering alternatives"
+          ]
+        },
+        {
+          "title": "Demographic & Psychographic Filtering",
+          "description": "Layer in income, lifestyle, and behavioral data",
+          "filters": [
+            "Household income $75K+",
+            "Homeowners with disposable income",
+            "Fitness enthusiasts and health conscious",
+            "Luxury brand purchasers"
+          ]
+        },
+        {
+          "title": "Geographic Precision",
+          "description": "Target by exact radius from your locations",
+          "options": [
+            "1-50 mile radius targeting",
+            "Exclude competitor locations",
+            "Target affluent neighborhoods",
+            "Multi-location optimization"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "pre_built_audiences",
+      "headline": "50+ Pre-Built Audiences Ready to Use",
+      "subheadline": "Launch campaigns in minutes with our proven audience templates",
+      "categories": [
+        {
+          "name": "Injectables",
+          "audiences": [
+            "First-Time Botox Researchers",
+            "Dysport vs Botox Comparers",
+            "Lip Filler Interested Women 25-40",
+            "Preventative Botox Millennials",
+            "Male Botox Prospects"
+          ]
+        },
+        {
+          "name": "Body Contouring",
+          "audiences": [
+            "CoolSculpting Researchers",
+            "Post-Pregnancy Body Contouring",
+            "Summer Body Prep Seekers",
+            "Non-Surgical Fat Reduction",
+            "Muscle Toning Interested"
+          ]
+        },
+        {
+          "name": "Skin Treatments",
+          "audiences": [
+            "Acne Scar Treatment Seekers",
+            "Anti-Aging Laser Interested",
+            "Melasma & Pigmentation Patients",
+            "Rosacea Treatment Researchers",
+            "Chemical Peel Candidates"
+          ]
+        },
+        {
+          "name": "Hair Restoration",
+          "audiences": [
+            "Male Pattern Baldness Sufferers",
+            "Women with Thinning Hair",
+            "PRP Hair Treatment Interested",
+            "Hair Transplant Researchers",
+            "Non-Surgical Hair Solutions"
+          ]
+        },
+        {
+          "name": "Special Events",
+          "audiences": [
+            "Bridal Beauty Seekers",
+            "Holiday Party Prep",
+            "Summer Wedding Guests",
+            "Class Reunion Attendees",
+            "New Year Transformation"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "data_sources",
+      "headline": "Powered by Real Behavioral Data",
+      "subheadline": "Not assumptions - actual online behavior and intent signals",
+      "sources": [
+        {
+          "type": "Web Behavior",
+          "description": "60B+ URLs analyzed weekly for treatment research patterns"
+        },
+        {
+          "type": "Search Intent",
+          "description": "Real-time monitoring of aesthetic treatment searches"
+        },
+        {
+          "type": "Social Signals",
+          "description": "Interest indicators from social media activity"
+        },
+        {
+          "type": "Purchase History",
+          "description": "Luxury and beauty purchase patterns"
+        },
+        {
+          "type": "Demographic Data",
+          "description": "Verified age, income, and lifestyle information"
+        }
+      ],
+      "accuracy_guarantee": "95% accuracy on all data - independently verified"
+    },
+    {
+      "type": "activation",
+      "headline": "Activate Audiences Anywhere",
+      "subheadline": "One-click sync to all your marketing channels",
+      "channels": [
+        {
+          "name": "Facebook & Instagram",
+          "description": "Direct API integration for instant audience sync",
+          "benefits": ["Custom audiences", "Lookalike creation", "Exclusion lists"]
+        },
+        {
+          "name": "Google Ads",
+          "description": "Customer match and similar audiences",
+          "benefits": ["Search campaigns", "Display targeting", "YouTube ads"]
+        },
+        {
+          "name": "Email Marketing",
+          "description": "Enriched email lists for campaigns",
+          "benefits": ["Verified emails", "Segmentation data", "Personalization fields"]
+        },
+        {
+          "name": "Direct Mail",
+          "description": "Physical addresses for targeted mailers",
+          "benefits": ["Luxury neighborhoods", "New movers", "High-value prospects"]
+        }
+      ]
+    },
+    {
+      "type": "case_study",
+      "headline": "Real Results from Real Practices",
+      "study": {
+        "client": "Elite Dermatology - Los Angeles",
+        "challenge": "Facebook CPAs over $200, low-quality leads",
+        "solution": "Built custom audience of women 35-55 researching Botox and fillers within 10 miles",
+        "results": [
+          { "metric": "67%", "description": "Reduction in cost per acquisition" },
+          { "metric": "3.2X", "description": "Increase in booking rate" },
+          { "metric": "45%", "description": "Higher average treatment value" },
+          { "metric": "$180K", "description": "Additional revenue in 90 days" }
+        ],
+        "quote": "The audience quality is incredible. These aren't just clicks - they're real patients ready to book.",
+        "author": "Jennifer Martinez, Marketing Director"
+      }
+    },
+    {
+      "type": "pricing_teaser",
+      "headline": "Audience Intelligence Pricing",
+      "subheadline": "Included in Professional and Enterprise plans",
+      "tiers": [
+        {
+          "plan": "Starter",
+          "access": "Basic targeting only",
+          "audiences": "5 pre-built audiences"
+        },
+        {
+          "plan": "Professional",
+          "access": "Full audience builder",
+          "audiences": "All 50+ pre-built audiences",
+          "custom": "Unlimited custom audiences"
+        },
+        {
+          "plan": "Enterprise",
+          "access": "Everything in Professional",
+          "plus": "Custom AI models, dedicated data scientist"
+        }
+      ],
+      "cta": {
+        "text": "See Full Pricing",
+        "link": "/pricing"
+      }
+    },
+    {
+      "type": "faq",
+      "headline": "Audience Intelligence FAQs",
+      "questions": [
+        {
+          "question": "Is this HIPAA compliant?",
+          "answer": "Yes, all data is de-identified and aggregated. We never use actual patient data, only consumer behavior patterns."
+        },
+        {
+          "question": "How accurate is the data?",
+          "answer": "Our data is 95% accurate and updated weekly. We verify through multiple sources and remove any questionable records."
+        },
+        {
+          "question": "Can I exclude my existing patients?",
+          "answer": "Absolutely! Upload your patient list and we'll exclude them from all targeting to focus on new acquisition."
+        },
+        {
+          "question": "How quickly can I launch campaigns?",
+          "answer": "Pre-built audiences are ready instantly. Custom audiences take about 24 hours to process and verify."
+        },
+        {
+          "question": "Do you provide lookalike audiences?",
+          "answer": "Yes! We can build lookalikes from your best patients and sync them to Facebook and Google."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "headline": "Start Targeting Your Ideal Patients Today",
+      "subheadline": "See a live demo with real audiences for your area",
+      "primary_cta": {
+        "text": "Build Your First Audience",
+        "link": "/demo"
+      },
+      "secondary_cta": {
+        "text": "Download Audience Guide",
+        "link": "/resources/audience-guide"
+      }
+    }
+  ],
+  "schema_markup": {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Senova Audience Intelligence",
+    "description": "Patient targeting platform for medical aesthetics practices",
+    "applicationCategory": "Marketing Software"
+  }
+}

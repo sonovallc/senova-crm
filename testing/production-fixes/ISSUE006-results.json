@@ -1,0 +1,25 @@
+{
+  "overall": "PASS",
+  "tests": [
+    {
+      "name": "Message list exists",
+      "passed": true
+    },
+    {
+      "name": "Messages exist",
+      "passed": true
+    },
+    {
+      "name": "Detail pane appears",
+      "passed": true
+    },
+    {
+      "name": "Reply button exists",
+      "passed": true
+    },
+    {
+      "name": "Forward button exists",
+      "passed": true
+    }
+  ]
+}

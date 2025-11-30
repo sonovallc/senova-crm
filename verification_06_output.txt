@@ -1,0 +1,23 @@
+VERIFICATION #6: Contacts - Bulk Selection & Actions
+
+Step 1: Login...
+Logged in
+
+Step 2: Navigate to contacts...
+Screenshot: v6-bulk-01-contacts.png
+
+Step 3: Check for checkboxes...
+Found 0 checkboxes
+==========================================================
+VERIFICATION #6 RESULTS
+==========================================================
+Checkbox column exists: FAIL
+Individual selection works: FAIL
+Selection count displays: FAIL
+Bulk action bar appears: FAIL
+Add Tags action works: FAIL
+Tags visible on contacts: FAIL
+
+==========================================================
+OVERALL: FAIL
+==========================================================

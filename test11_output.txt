@@ -1,0 +1,34 @@
+=== TEST 11: BULK CONTACT SELECTION & TAG ACTIONS ===
+
+Step 1: Login...
+Step 1: PASS - Logged in
+
+Step 2: Navigate to Contacts...
+Step 2: PASS
+
+Step 3: Select multiple contacts...
+Found 21 checkboxes
+Selected checkbox 1
+Selected checkbox 2
+Selected checkbox 3
+Step 3: PASS - Selected 3 contacts
+
+Step 4: Find bulk action menu...
+Found bulk action button: button:has-text("Add Tags")
+Total visible buttons: 79
+  Button 0: "Admin"
+  Button 1: "Email"
+  Button 2: "Settings"
+  Button 3: "Logout"
+  Button 4: "Add Tags (3)"
+  Button 5: "Remove Tags (3)"
+  Button 6: "Export (3)"
+  Button 7: "Delete (3)"
+  Button 8: "Export All"
+  Button 9: "Import Contacts"
+Step 4: PASS - Bulk action menu found
+
+Step 5: Open bulk actions menu...
+TEST 11 ERROR: page.$: Unexpected token "=" while parsing css selector "[role="menuitem"]:has-text("Tag"), button:has-text("Add Tag"), text=Add Tags". Did you mean to CSS.escape it?
+
+=== TEST 11 RESULT: ERROR ===

@@ -1,0 +1,43 @@
+
+📋 PHASE 0: LOGIN
+----------------------------------------
+Screenshot: screenshots\objects-test\01-login-page-1764461232148.png
+Screenshot: screenshots\objects-test\02-login-filled-1764461232977.png
+🔴 Console Error: Failed to load resource: the server responded with a status of 401 (Unauthorized)
+❌ Test execution failed: page.waitForURL: Timeout 15000ms exceeded.
+=========================== logs ===========================
+waiting for navigation to "**/dashboard**" until "load"
+  navigated to "http://localhost:3004/login"
+  navigated to "http://localhost:3004/login"
+============================================================
+Screenshot: screenshots\objects-test\error-state-1764461248307.png
+❌ FAIL: Test execution - page.waitForURL: Timeout 15000ms exceeded.
+=========================== logs ===========================
+waiting for navigation to "**/dashboard**" until "load"
+  navigated to "http://localhost:3004/login"
+  navigated to "http://localhost:3004/login"
+============================================================
+
+============================================================
+OBJECTS EXHAUSTIVE TEST RESULTS
+============================================================
+✅ Passed: 0
+❌ Failed: 1
+📊 Total: 1
+📈 Pass Rate: 0.0%
+🔴 Console Errors: 1
+🐛 Bugs Found: 0
+
+📋 Test Details:
+  ❌ Test execution - page.waitForURL: Timeout 15000ms exceeded.
+=========================== logs ===========================
+waiting for navigation to "**/dashboard**" until "load"
+  navigated to "http://localhost:3004/login"
+  navigated to "http://localhost:3004/login"
+============================================================
+
+📸 Screenshots captured: 3
+
+✅ Results saved to:
+  - OBJECTS_TEST_RESULTS.json
+  - OBJECTS_EXHAUSTIVE_TEST_REPORT.md

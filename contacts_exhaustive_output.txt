@@ -1,0 +1,179 @@
+=== STARTING EXHAUSTIVE CONTACTS MODULE DEBUG ===
+
+SECTION 1: Login
+[verbose] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o
+[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Current URL: http://localhost:3004/login
+✓ Login successful
+
+SECTION 2: Contacts List Page - Testing ALL Elements
+[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Found: 44 buttons, 8 links, 1 inputs, 0 selects, 0 checkboxes
+Testing: View toggles...
+  Found 0 potential view toggle buttons
+Testing: Search bar...
+  ✓ Search bar works
+Testing: Filter dropdowns...
+  Found 0 select elements, 1 dropdown buttons
+Testing: Sort options...
+  Found 0 potential sort buttons
+Testing: Pagination controls...
+  Found 1 pagination buttons
+Testing: Select all checkbox...
+  ✗ Select all checkbox not found
+Testing: Bulk action buttons...
+  Found 0 bulk action buttons
+Testing: Add Contact button...
+  ✓ Add Contact button found
+Testing: Export button...
+  ✗ Export button not found
+Testing: Import button...
+  ✓ Import button found
+✓ Contacts List Page testing complete
+
+SECTION 3: Create Contact Flow - Testing ALL Form Elements
+Current URL after clicking create: http://localhost:3004/dashboard/contacts
+Testing: First Name field...
+  ✓ First Name field works
+Testing: Last Name field...
+  ✓ Last Name field works
+Testing: Email field...
+  ✓ Email field works with validation
+Testing: Phone field...
+  ✓ Phone field works
+Testing: Company field...
+  ✓ Company field works
+Testing: Status dropdown...
+  ✗ Status dropdown not found
+Testing: Tags selector...
+  ✗ Tags selector not found
+Testing: Assignment dropdown...
+  ✗ Assignment dropdown not found
+Testing: Notes field...
+  ✗ Notes field not found
+Testing: Save button...
+  Found save button: "Create"
+  ✓ Save button clicked
+  URL after save: http://localhost:3004/dashboard/contacts
+✓ Create Contact Flow testing complete
+
+SECTION 4: Contact Detail Page - Testing ALL Elements
+[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Looking for first contact to view details...
+  Found 0 potential contact rows
+✗ No contact rows found, skipping contact detail testing
+
+SECTION 5: Edit Contact Flow - Testing Form Pre-population and Save
+✗ Edit button not found, skipping edit flow
+
+SECTION 6: Import Contacts - Testing Import Flow
+[log] [Fast Refresh] rebuilding
+[log] [Fast Refresh] done in 11045ms
+[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Import page URL: http://localhost:3004/dashboard/contacts/import
+Testing: File upload area...
+  ✓ File upload input found
+Testing: CSV template download...
+  ✗ Template download not found
+Testing: Field mapping interface...
+  Found 0 mapping selects
+✓ Import Contacts testing complete
+
+
+=== EXHAUSTIVE CONTACTS DEBUG COMPLETE ===
+
+RESULTS SUMMARY:
+{
+  "contactsList": {
+    "elementCount": {
+      "buttons": 44,
+      "links": 8,
+      "inputs": 1,
+      "selects": 0,
+      "checkboxes": 0
+    },
+    "viewToggles": 0,
+    "searchBar": "FOUND and TESTED",
+    "filterDropdowns": {
+      "selects": 0,
+      "buttons": 1
+    },
+    "sortOptions": 0,
+    "paginationButtons": 1,
+    "selectAllCheckbox": "NOT FOUND",
+    "bulkActionButtons": 0,
+    "addContactButton": "FOUND",
+    "exportButton": "NOT FOUND",
+    "importButton": "FOUND"
+  },
+  "createContact": {
+    "urlAfterClick": "http://localhost:3004/dashboard/contacts",
+    "firstNameField": "FOUND and FILLED",
+    "lastNameField": "FOUND and FILLED",
+    "emailField": "FOUND and TESTED (invalid + valid)",
+    "phoneField": "FOUND and FILLED",
+    "companyField": "FOUND and FILLED",
+    "statusDropdown": {
+      "found": false
+    },
+    "tagsSelector": "NOT FOUND",
+    "assignmentDropdown": {
+      "found": false
+    },
+    "notesField": "NOT FOUND",
+    "saveButton": "FOUND and CLICKED",
+    "urlAfterSave": "http://localhost:3004/dashboard/contacts"
+  },
+  "contactDetail": {
+    "skipped": "NO CONTACTS FOUND"
+  },
+  "editContact": {
+    "skipped": "EDIT BUTTON NOT FOUND"
+  },
+  "importContacts": {
+    "url": "http://localhost:3004/dashboard/contacts/import",
+    "fileUpload": "FOUND",
+    "templateDownload": "NOT FOUND",
+    "fieldMapping": {
+      "selectCount": 0
+    }
+  },
+  "consoleLogs": [
+    {
+      "type": "verbose",
+      "text": "[DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "log",
+      "text": "[Fast Refresh] rebuilding"
+    },
+    {
+      "type": "log",
+      "text": "[Fast Refresh] done in 11045ms"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    }
+  ],
+  "errors": []
+}
+
+Total Console Logs: 7
+Total Errors: 0
+
+All screenshots saved to: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\exhaustive-debug-contacts\
+
+Results written to: EXHAUSTIVE_DEBUG_CONTACTS_RESULTS.json

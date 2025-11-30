@@ -1,0 +1,45 @@
+CRITICAL BUGS VERIFICATION REPORT
+Test Date: November 25, 2025
+Tester: Visual QA Agent (Playwright)
+Status: FAIL - NOT PRODUCTION READY
+
+=== SUMMARY ===
+
+BUG 6 (Template Body): CANNOT TEST - test script uses wrong selectors
+BUG 13 (Preview): PARTIAL PASS - buttons exist but function not tested
+BUG 15-16 (Campaign Wizard): FAIL - wizard does not open when button clicked  
+BUG 17-20 (Autoresponder): FAIL - create form does not open when button clicked
+BUG 23 (Sidebar): TEST ERROR - script checks for wrong nav items
+
+=== CRITICAL BLOCKERS ===
+
+1. Campaign Wizard NOT OPENING
+   - Create Campaign button exists
+   - Clicking has no effect
+   - Screenshots 08 and 09 identical (no modal appeared)
+   - BLOCKER: Cannot test template selection in wizard
+
+2. Autoresponder Form NOT OPENING
+   - Create Autoresponder button exists
+   - Clicking has no effect
+   - Screenshots 10 and 11 identical (no modal appeared)
+   - BLOCKER: Cannot test trigger dropdown
+
+3. Template Test Script BROKEN
+   - Script uses 'table tbody tr' selector
+   - Templates use card layout
+   - Found 0 templates despite 6 visible in UI
+   - BLOCKER: Cannot verify template body population
+
+=== RECOMMENDATIONS ===
+
+1. Fix test selectors for templates
+2. Debug campaign wizard opening (check console errors)
+3. Debug autoresponder form opening (check console errors)
+4. Human manual testing required
+5. DO NOT CLAIM FIXED without visual proof
+
+Screenshots: screenshots/critical-bugs-test/
+Test Script: test_critical_simple.js
+
+NEXT ACTION: INVOKING STUCK AGENT FOR HUMAN HELP

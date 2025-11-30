@@ -1,0 +1,52 @@
+
+=== CSV IMPORT WORKFLOW TEST (Steps 1-12) ===
+
+STEP 1: Login
+PASS: Logged in
+
+STEP 2: Navigate to Contacts
+PASS: On contacts page
+
+STEP 3: Click Import Contacts
+PASS: Import modal opened
+
+STEP 4: Upload CSV
+PASS: File uploaded
+
+STEP 5: Wait for processing
+PASS: File processed, at Step 2
+
+STEP 6: Auto-Map Columns
+PASS: Columns auto-mapped
+
+STEP 7: Next to Tags
+PASS: Tags page displayed
+
+STEP 8: Next to Duplicates
+Waiting for duplicate validation to complete...
+PASS: Duplicates page ready
+
+STEP 9: Next to Preview
+
+TEST FAILED: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('button:has-text("Next"):not([disabled])') to be visible[22m
+
+Stack: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('button:has-text("Next"):not([disabled])') to be visible[22m
+
+    at C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\test_import_workflow_final.js:69:16
+node:internal/process/promises:288
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('button:has-text("Next"):not([disabled])') to be visible[22m
+
+    at C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\test_import_workflow_final.js:69:16 {
+  name: 'TimeoutError'
+}
+
+Node.js v18.20.2

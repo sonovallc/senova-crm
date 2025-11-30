@@ -1,0 +1,76 @@
+Step 1: Navigate and Login...
+Step 1: PASS
+Step 2: Navigate to Contacts...
+Step 2: PASS
+Step 3: Open Add Contact Form...
+Step 3: PASS
+Step 4: Fill Contact Form...
+Step 4: PASS
+Step 5: Submit Form...
+TEST FAILED: elementHandle.click: Timeout 90000ms exceeded.
+Call log:
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <html lang="en">…</html> intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <html lang="en">…</html> intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    167 × waiting for element to be visible, enabled and stable[22m
+[2m        - element is visible, enabled and stable[22m
+[2m        - scrolling into view if needed[22m
+[2m        - done scrolling[22m
+[2m        - <html lang="en">…</html> intercepts pointer events[22m
+[2m      - retrying click action[22m
+[2m        - waiting 500ms[22m
+
+
+=== TEST RESULTS JSON ===
+{
+  "testName": "TEST 1: CONTACT CREATION",
+  "timestamp": "2025-11-26T00:59:30.002Z",
+  "startTime": 1764118770002,
+  "steps": [
+    {
+      "step": 1,
+      "description": "Login",
+      "status": "PASS",
+      "time": "4.7s",
+      "screenshot": "test1_01_dashboard.png"
+    },
+    {
+      "step": 2,
+      "description": "Navigate to Contacts",
+      "status": "PASS",
+      "time": "1.1s",
+      "screenshot": "test1_02_contacts_page.png"
+    },
+    {
+      "step": 3,
+      "description": "Open Add Form",
+      "status": "PASS",
+      "time": "3.1s",
+      "screenshot": "test1_03_add_form.png"
+    },
+    {
+      "step": 4,
+      "description": "Fill Form",
+      "status": "PASS",
+      "time": "0.4s",
+      "screenshot": "test1_04_form_filled.png"
+    }
+  ],
+  "contactEmail": "test_automated_1764118770002@test.com",
+  "contactId": null,
+  "overallStatus": "FAIL",
+  "error": "elementHandle.click: Timeout 90000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    167 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m        - element is visible, enabled and stable\u001b[22m\n\u001b[2m        - scrolling into view if needed\u001b[22m\n\u001b[2m        - done scrolling\u001b[22m\n\u001b[2m        - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m      - retrying click action\u001b[22m\n\u001b[2m        - waiting 500ms\u001b[22m\n",
+  "duration": "99.3s"
+}

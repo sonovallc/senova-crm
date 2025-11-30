@@ -1,0 +1,10 @@
+=== COMPREHENSIVE NAVIGATION TEST ===
+
+Test 1: Login
+Fatal error: page.fill: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[type="password"]')[22m
+
+    at C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\context-engineering-intro\test_nav_comprehensive.js:32:16 {
+  name: 'TimeoutError'
+}

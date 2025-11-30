@@ -1,0 +1,135 @@
+[
+  {
+    "page": "01-homepage",
+    "url": "http://localhost:3004/",
+    "status": "PASS",
+    "issues": [],
+    "screenshot": "01-homepage.png"
+  },
+  {
+    "page": "02-platform",
+    "url": "http://localhost:3004/platform",
+    "status": "PASS",
+    "issues": [],
+    "screenshot": "02-platform.png"
+  },
+  {
+    "page": "03-pricing",
+    "url": "http://localhost:3004/pricing",
+    "status": "PASS",
+    "issues": [],
+    "screenshot": "03-pricing.png"
+  },
+  {
+    "page": "04-demo",
+    "url": "http://localhost:3004/demo",
+    "status": "PASS",
+    "issues": [],
+    "screenshot": "04-demo.png"
+  },
+  {
+    "page": "05-contact",
+    "url": "http://localhost:3004/contact",
+    "status": "PASS",
+    "issues": [],
+    "screenshot": "05-contact.png"
+  },
+  {
+    "page": "06-about",
+    "url": "http://localhost:3004/about",
+    "status": "PASS",
+    "issues": [],
+    "screenshot": "06-about.png"
+  },
+  {
+    "page": "07-hipaa",
+    "url": "http://localhost:3004/hipaa",
+    "status": "PASS",
+    "issues": [],
+    "screenshot": "07-hipaa.png"
+  },
+  {
+    "page": "08-security",
+    "url": "http://localhost:3004/security",
+    "status": "PASS",
+    "issues": [],
+    "screenshot": "08-security.png"
+  },
+  {
+    "page": "09-privacy",
+    "url": "http://localhost:3004/privacy-policy",
+    "status": "PASS",
+    "issues": [],
+    "screenshot": "09-privacy.png"
+  },
+  {
+    "page": "10-terms",
+    "url": "http://localhost:3004/terms-of-service",
+    "status": "PASS",
+    "issues": [],
+    "screenshot": "10-terms.png"
+  },
+  {
+    "page": "11-crm",
+    "url": "http://localhost:3004/solutions/crm",
+    "status": "PASS",
+    "issues": [],
+    "screenshot": "11-crm.png"
+  },
+  {
+    "page": "12-audience",
+    "url": "http://localhost:3004/solutions/audience-intelligence",
+    "status": "PASS",
+    "issues": [],
+    "screenshot": "12-audience.png"
+  },
+  {
+    "page": "13-patient",
+    "url": "http://localhost:3004/solutions/patient-identification",
+    "status": "PASS",
+    "issues": [],
+    "screenshot": "13-patient.png"
+  },
+  {
+    "page": "14-campaign",
+    "url": "http://localhost:3004/solutions/campaign-activation",
+    "status": "PASS",
+    "issues": [],
+    "screenshot": "14-campaign.png"
+  },
+  {
+    "page": "15-analytics",
+    "url": "http://localhost:3004/solutions/analytics",
+    "status": "PASS",
+    "issues": [],
+    "screenshot": "15-analytics.png"
+  },
+  {
+    "page": "16-medical-spas",
+    "url": "http://localhost:3004/industries/medical-spas",
+    "status": "PASS",
+    "issues": [],
+    "screenshot": "16-medical-spas.png"
+  },
+  {
+    "page": "17-dermatology",
+    "url": "http://localhost:3004/industries/dermatology",
+    "status": "PASS",
+    "issues": [],
+    "screenshot": "17-dermatology.png"
+  },
+  {
+    "page": "18-plastic-surgery",
+    "url": "http://localhost:3004/industries/plastic-surgery",
+    "status": "PASS",
+    "issues": [],
+    "screenshot": "18-plastic-surgery.png"
+  },
+  {
+    "page": "19-aesthetic",
+    "url": "http://localhost:3004/industries/aesthetic-clinics",
+    "status": "PASS",
+    "issues": [],
+    "screenshot": "19-aesthetic.png"
+  }
+]

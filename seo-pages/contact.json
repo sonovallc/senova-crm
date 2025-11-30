@@ -1,0 +1,345 @@
+{
+  "path": "/contact",
+  "seo": {
+    "title": "Get 80% Visitor ID Demo in 5 Minutes | Contact Senova",
+    "description": "See your actual website visitors live. Schedule a personalized demo or get instant support. Response time under 2 hours. No sales pressure.",
+    "keywords": ["contact Senova", "medical spa CRM demo", "patient intelligence demo", "CRM support", "schedule demo"],
+    "og_image": "Contact form with support team availability indicator"
+  },
+  "hero": {
+    "headline": "See Your Website Visitors in Real-Time",
+    "subheadline": "Get a personalized demo showing your actual website traffic, or reach out for support. Average response time: 2 hours.",
+    "badges": [
+      "No Pressure Sales",
+      "2-Hour Response",
+      "See Real Visitors",
+      "ROI Calculator Included"
+    ]
+  },
+  "sections": [
+    {
+      "type": "contact_options",
+      "headline": "Choose How to Connect",
+      "options": [
+        {
+          "title": "Schedule Live Demo",
+          "description": "See your actual website visitors and get personalized ROI calculations",
+          "icon": "calendar",
+          "benefits": [
+            "15-minute setup to see your visitors",
+            "Custom ROI calculation for your practice",
+            "Platform walkthrough with your use cases",
+            "No sales pressure - education focused"
+          ],
+          "cta": {
+            "text": "Book Demo",
+            "link": "/demo"
+          },
+          "availability": "Next slot: Today at 2:00 PM EST"
+        },
+        {
+          "title": "Quick Question?",
+          "description": "Get answers from our team via email or phone",
+          "icon": "message",
+          "contact_methods": [
+            {
+              "type": "email",
+              "label": "Email Us",
+              "value": "info@senovallc.com",
+              "response_time": "< 2 hours"
+            },
+            {
+              "type": "phone",
+              "label": "Call Us",
+              "value": "1-844-SENOVA1",
+              "hours": "Mon-Fri 9AM-6PM EST"
+            }
+          ]
+        },
+        {
+          "title": "Existing Customer?",
+          "description": "Get priority support for your account",
+          "icon": "support",
+          "contact_methods": [
+            {
+              "type": "email",
+              "label": "Support Email",
+              "value": "support@senovallc.com",
+              "response_time": "< 1 hour"
+            },
+            {
+              "type": "portal",
+              "label": "Support Portal",
+              "link": "https://support.senovallc.com",
+              "available": "24/7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "contact_form",
+      "headline": "Send Us a Message",
+      "subheadline": "Tell us about your practice and we'll show you how Senova can help",
+      "form_fields": [
+        {
+          "name": "first_name",
+          "label": "First Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "last_name",
+          "label": "Last Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "email",
+          "label": "Work Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "phone",
+          "label": "Phone",
+          "type": "tel",
+          "required": false
+        },
+        {
+          "name": "practice_name",
+          "label": "Practice Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "practice_type",
+          "label": "Practice Type",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Medical Spa",
+            "Dermatology",
+            "Plastic Surgery",
+            "Aesthetic Clinic",
+            "Wellness Center",
+            "Other"
+          ]
+        },
+        {
+          "name": "locations",
+          "label": "Number of Locations",
+          "type": "select",
+          "required": true,
+          "options": [
+            "1",
+            "2-3",
+            "4-10",
+            "10+"
+          ]
+        },
+        {
+          "name": "monthly_visitors",
+          "label": "Monthly Website Visitors",
+          "type": "select",
+          "required": false,
+          "options": [
+            "< 500",
+            "500-1,000",
+            "1,000-5,000",
+            "5,000-10,000",
+            "10,000+"
+          ]
+        },
+        {
+          "name": "current_crm",
+          "label": "Current CRM (if any)",
+          "type": "text",
+          "required": false
+        },
+        {
+          "name": "interest",
+          "label": "What interests you most?",
+          "type": "checkbox_group",
+          "options": [
+            "Visitor Identification",
+            "Audience Targeting",
+            "Marketing Automation",
+            "ROI Tracking",
+            "Multi-location Management"
+          ]
+        },
+        {
+          "name": "timeline",
+          "label": "Implementation Timeline",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Immediately",
+            "Within 30 days",
+            "1-3 months",
+            "3-6 months",
+            "Just researching"
+          ]
+        },
+        {
+          "name": "message",
+          "label": "How can we help?",
+          "type": "textarea",
+          "required": false,
+          "placeholder": "Tell us about your patient acquisition challenges..."
+        }
+      ],
+      "submit_button": {
+        "text": "Get Personalized Demo",
+        "submitting_text": "Sending..."
+      },
+      "privacy_notice": "We respect your privacy. Your information will never be shared or sold."
+    },
+    {
+      "type": "demo_preview",
+      "headline": "What You'll See in Your Demo",
+      "items": [
+        {
+          "title": "Your Real Website Visitors",
+          "description": "We'll install our pixel and show you actual visitors to your site - names, emails, and procedure interests"
+        },
+        {
+          "title": "Custom Audience Building",
+          "description": "Build an audience of high-value patients in your area interested in your top procedures"
+        },
+        {
+          "title": "ROI Calculation",
+          "description": "Based on your current metrics, see exactly how much you'll save and earn with Senova"
+        },
+        {
+          "title": "Integration Options",
+          "description": "See how Senova connects with your existing practice management and marketing tools"
+        }
+      ]
+    },
+    {
+      "type": "office_locations",
+      "headline": "Our Offices",
+      "locations": [
+        {
+          "type": "Headquarters",
+          "address": {
+            "street": "8 The Green #21994",
+            "city": "Dover",
+            "state": "DE",
+            "zip": "19901",
+            "country": "USA"
+          },
+          "map_embed": true
+        },
+        {
+          "type": "Customer Success",
+          "note": "Remote team across US timezones for better support coverage"
+        }
+      ]
+    },
+    {
+      "type": "departments",
+      "headline": "Direct Department Contacts",
+      "departments": [
+        {
+          "name": "Sales",
+          "email": "sales@senovallc.com",
+          "description": "New customer inquiries and demos"
+        },
+        {
+          "name": "Support",
+          "email": "support@senovallc.com",
+          "description": "Technical support and account help"
+        },
+        {
+          "name": "Partnerships",
+          "email": "partners@senovallc.com",
+          "description": "Agency and integration partnerships"
+        },
+        {
+          "name": "Media",
+          "email": "press@senovallc.com",
+          "description": "Press inquiries and media requests"
+        }
+      ]
+    },
+    {
+      "type": "response_commitment",
+      "headline": "Our Response Commitment",
+      "commitments": [
+        {
+          "channel": "Demo Requests",
+          "response_time": "Within 1 hour during business hours",
+          "icon": "clock"
+        },
+        {
+          "channel": "Support Tickets",
+          "response_time": "< 1 hour for customers",
+          "icon": "support"
+        },
+        {
+          "channel": "General Inquiries",
+          "response_time": "< 2 hours during business hours",
+          "icon": "message"
+        },
+        {
+          "channel": "Partnership Requests",
+          "response_time": "Within 24 hours",
+          "icon": "handshake"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "headline": "Common Questions Before Contacting",
+      "questions": [
+        {
+          "question": "Do you require a long-term contract?",
+          "answer": "No! All plans are month-to-month with no long-term commitment required."
+        },
+        {
+          "question": "How quickly can we get started?",
+          "answer": "Our pixel can be installed in 5 minutes and you'll start seeing visitors immediately. Full platform setup takes 24-48 hours."
+        },
+        {
+          "question": "Is there a free trial?",
+          "answer": "Yes! We offer a 14-day free trial with full access to the Professional plan features."
+        },
+        {
+          "question": "Will someone help us set up?",
+          "answer": "Absolutely! Every plan includes white-glove onboarding with our success team."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "headline": "Ready to Grow Your Practice?",
+      "subheadline": "See why 500+ medical aesthetics practices choose Senova",
+      "primary_cta": {
+        "text": "Schedule Your Demo",
+        "link": "/demo"
+      },
+      "support_text": "or call us at 1-844-SENOVA1"
+    }
+  ],
+  "schema_markup": {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Senova",
+      "email": "info@senovallc.com",
+      "telephone": "+1-844-736-6821",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "8 The Green #21994",
+        "addressLocality": "Dover",
+        "addressRegion": "DE",
+        "postalCode": "19901",
+        "addressCountry": "US"
+      }
+    }
+  }
+}

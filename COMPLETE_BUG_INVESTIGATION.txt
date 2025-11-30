@@ -1,0 +1,410 @@
+# BUG INVESTIGATION: Template Body Not Populating (Bugs #6, #10, #14)
+
+## ROOT CAUSE: TipTap Editor Timing Issue
+
+### Summary
+All three bugs have the SAME root cause:
+- API IS returning body_html correctly (CONFIRMED)
+- React state IS being updated correctly (CONFIRMED)  
+- RichTextEditor has TIMING ISSUE with TipTap initialization (PROBLEM)
+
+### Bug Locations
+
+Bug #6: frontend/src/components/inbox/email-composer.tsx
+- Lines 75-80: Template fetch
+- Lines 117-128: handleTemplateChange sets state correctly
+- Lines 355-360: RichTextEditor receives value but doesn't display
+
+Bug #10: frontend/src/app/(dashboard)/dashboard/email/templates/page.tsx
+- Lines 258-267: handleEdit sets body_html correctly
+- Lines 621-622: RichTextEditor receives value but doesn't display
+
+Bug #14: frontend/src/app/(dashboard)/dashboard/email/campaigns/create/page.tsx
+- Lines 109-116: handleTemplateChange sets body_html correctly
+
+### Root Cause
+
+TipTap editor initialization is asynchronous. When user selects template:
+1. setMessage() or setBodyHtml() updates state
+2. Component re-renders with new value
+3. useEffect in RichTextEditor triggers
+4. editor.commands.setContent() called
+5. PROBLEM: TipTap editor not fully ready yet
+6. Content update fails silently
+
+### Why Subject Works But Body Doesn't
+- Subject uses HTML <Input> - accepts updates immediately
+- Body uses RichTextEditor with TipTap - needs time to initialize
+
+### Fix Implementation
+
+File: frontend/src/components/inbox/rich-text-editor.tsx
+Lines: 45-57
+
+Change from:
+  useEffect(() => {
+    if (editor) {
+      // ... validation ...
+      editor.commands.setContent(value)
+    }
+  }, [value, editor])
+
+Change to:
+  useEffect(() => {
+    if (editor) {
+      // ... validation ...
+      const timeout = setTimeout(() => {
+        if (editor && editor.isEditable) {
+          editor.commands.setContent(value)
+        }
+      }, 0)
+      return () => clearTimeout(timeout)
+    }
+  }, [value, editor])
+
+The setTimeout defers execution to next event loop, ensuring TipTap is ready.
+
+### Impact
+- Files to modify: 1 (rich-text-editor.tsx)
+- Bugs fixed: 3 (#6, #10, #14)
+- Risk: MINIMAL (only internal timing fix)
+- Backward compatible: YES
+
+### Verification
+Test all three components after fix:
+1. Email Compose - select template, verify body displays
+2. Templates Edit - open edit modal, verify body displays
+3. Campaign Compose - select template, verify body displays
+
+COMPREHENSIVE BUG INVESTIGATION REPORT
+Template Body Not Populating - Bugs #6, #10, #14
+
+ROOT CAUSE IDENTIFIED: TipTap Editor Initialization Timing Issue
+
+ABSOLUTE FILE PATHS
+====================
+
+BUG #6 - Email Composer:
+Path: frontend/src/components/inbox/email-composer.tsx
+Lines 75-80: useQuery for templates
+Lines 117-128: handleTemplateChange function
+Lines 355-360: RichTextEditor component usage
+
+BUG #10 - Email Templates Edit:
+Path: frontend/src/app/(dashboard)/dashboard/email/templates/page.tsx
+Lines 258-267: handleEdit function
+Lines 621-622: RichTextEditor component usage
+
+BUG #14 - Campaign Composer:
+Path: frontend/src/app/(dashboard)/dashboard/email/campaigns/create/page.tsx
+Lines 109-116: handleTemplateChange function
+
+THE FIX LOCATION
+================
+
+File: frontend/src/components/inbox/rich-text-editor.tsx
+Lines: 45-57
+Change: Add setTimeout wrapper around setContent()
+
+INVESTIGATION RESULTS
+====================
+
+1. API Response: body_html IS included in response
+   File: email-templates.ts
+   Field present: YES
+   Data returned: COMPLETE
+
+2. React State Updates: body IS being set correctly
+   All three bugs call setState with body_html
+   Status: CORRECT
+
+3. RichTextEditor Props: value IS being passed
+   All components pass body to RichTextEditor
+   Status: CORRECT
+
+4. RichTextEditor Internal: useEffect NOT working properly
+   Problem: TipTap editor not ready when setContent() called
+   Status: IDENTIFIED - THIS IS THE BUG
+
+DATA FLOW SUMMARY
+=================
+
+Bug #6 Flow:
+1. User selects template
+2. setMessage(template.body_html) called
+3. State updates, component re-renders
+4. RichTextEditor receives value={message}
+5. useEffect calls editor.commands.setContent(message)
+6. RESULT: Body doesn't appear (editor not ready)
+
+Bug #10 Flow:
+1. User clicks edit button
+2. setFormData sets body_html correctly
+3. Edit modal opens
+4. RichTextEditor receives value={formData.body_html}
+5. useEffect calls editor.commands.setContent()
+6. RESULT: Body field stays empty (editor not ready)
+
+Bug #14 Flow:
+1. User selects template
+2. setBodyHtml(template.body_html) called
+3. Component re-renders
+4. RichTextEditor receives value={bodyHtml}
+5. useEffect calls editor.commands.setContent()
+6. RESULT: Body doesn't populate (editor not ready)
+
+THE PROBLEM
+===========
+
+TipTap editor initialization is asynchronous.
+When editor.commands.setContent() is called immediately after
+value prop changes, the editor may not be fully initialized yet.
+
+Solution: Defer the setContent() call using setTimeout to next event loop.
+This gives TipTap time to initialize before we try to set content.
+
+CURRENT CODE (LINES 45-57)
+==========================
+
+useEffect(() => {
+  if (editor) {
+    const currentContent = editor.getHTML()
+    const normalizedValue = value || '<p></p>'
+    const normalizedCurrent = currentContent || '<p></p>'
+
+    if (normalizedValue !== normalizedCurrent) {
+      editor.commands.setContent(value)
+    }
+  }
+}, [value, editor])
+
+FIXED CODE
+==========
+
+useEffect(() => {
+  if (editor) {
+    const currentContent = editor.getHTML()
+    const normalizedValue = value || '<p></p>'
+    const normalizedCurrent = currentContent || '<p></p>'
+
+    if (normalizedValue !== normalizedCurrent) {
+      const timeout = setTimeout(() => {
+        if (editor && editor.isEditable) {
+          editor.commands.setContent(value)
+        }
+      }, 0)
+      
+      return () => clearTimeout(timeout)
+    }
+  }
+}, [value, editor])
+
+KEY CHANGES
+===========
+1. Wrap setContent in setTimeout(..., 0)
+2. Add editor.isEditable check
+3. Add cleanup function for timeout
+
+WHY THIS WORKS
+==============
+- setTimeout defers to next macrotask queue
+- Gives TipTap time to fully initialize
+- Ensures editor is ready before update
+- Cleans up timeout on unmount
+
+IMPACT
+======
+Files to modify: 1 (rich-text-editor.tsx)
+Bugs fixed: 3 (#6, #10, #14)
+Risk: MINIMAL (internal timing fix only)
+Backward compatible: YES
+
+TESTING PLAN
+============
+1. Test Bug #6: Open compose, select template, verify body shows
+2. Test Bug #10: Open templates, edit, verify body shows
+3. Test Bug #14: Open campaigns, select template, verify body shows
+4. Test manual: Type in body, verify it saves
+5. Test multiple: Switch templates, verify content updates
+
+CONCLUSION
+==========
+Single point of failure = Single point of fix
+Modify rich-text-editor.tsx lines 45-57 to fix all three bugs.
+
+DETAILED BUG INVESTIGATION FINDINGS
+
+=== FILE PATHS ===
+
+BUG #6 Email Composer:
+- Main file: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\context-engineering-intro\frontend\src\components\inbox\email-composer.tsx
+- Critical section: handleTemplateChange (lines 117-128)
+- Template fetch: useQuery at lines 75-80
+- RichTextEditor usage: lines 355-360
+
+BUG #10 Email Templates:
+- Main file: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\context-engineering-intro\frontend\src\app\(dashboard)\dashboard\email\templates\page.tsx
+- Critical section: handleEdit (lines 258-267)
+- RichTextEditor usage: lines 621-622
+
+BUG #14 Campaign Composer:
+- Main file: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\context-engineering-intro\frontend\src\app\(dashboard)\dashboard\email\campaigns\create\page.tsx
+- Critical section: handleTemplateChange (lines 109-116)
+
+FIX REQUIRED:
+- File: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\context-engineering-intro\frontend\src\components\inbox\rich-text-editor.tsx
+- Lines: 45-57 (useEffect for external value changes)
+
+=== API VERIFICATION ===
+
+API Endpoint: GET /api/v1/email-templates
+Returns: Paginated<EmailTemplate>
+Body field in response: YES - 'body_html' field is present
+
+Query function: frontend/src/lib/queries/email-templates.ts (lines 5-14)
+- Correctly fetches from /api/v1/email-templates
+- Returns response.data with all fields including body_html
+- No filtering or stripping of body
+
+Type definition: frontend/src/types/index.ts (lines 256-268)
+- EmailTemplate interface includes body_html: string
+- Field is NOT optional
+- Present in all three bug scenarios
+
+=== DATA FLOW ANALYSIS ===
+
+BUG #6 Flow:
+1. useQuery fetches templates from API
+2. templatesData contains full template objects with body_html
+3. User selects template
+4. handleTemplateChange executes:
+   - Finds template in templatesData.items
+   - Calls setSubject(template.subject) - WORKS
+   - Calls setMessage(template.body_html) - CORRECT but not displayed
+5. Component re-renders with message prop
+6. RichTextEditor receives value={message}
+7. useEffect triggers and calls editor.commands.setContent(message)
+8. RESULT: Body doesn't appear on screen
+
+BUG #10 Flow:
+1. User clicks edit button
+2. handleEdit executes:
+   - Sets selectedTemplate
+   - Sets formData with all fields including body_html
+   - Opens edit modal
+3. Modal renders RichTextEditor with value={formData.body_html}
+4. useEffect triggers
+5. editor.commands.setContent() called
+6. RESULT: Body field empty in modal
+
+BUG #14 Flow:
+1. useQuery fetches templates
+2. User selects template in dropdown
+3. handleTemplateChange executes:
+   - setSubject(template.subject) - WORKS
+   - setBodyHtml(template.body_html) - CORRECT but not displayed
+4. Component passes bodyHtml to RichTextEditor
+5. useEffect triggers
+6. editor.commands.setContent() called
+7. RESULT: Body doesn't populate
+
+=== TIPTAP INITIALIZATION ISSUE ===
+
+RichTextEditor component (rich-text-editor.tsx):
+
+Current useEffect (lines 45-57):
+  useEffect(() => {
+    if (editor) {
+      const currentContent = editor.getHTML()
+      const normalizedValue = value || '<p></p>'
+      const normalizedCurrent = currentContent || '<p></p>'
+      if (normalizedValue \!== normalizedCurrent) {
+        editor.commands.setContent(value)
+      }
+    }
+  }, [value, editor])
+
+The problem:
+- editor might not be fully initialized when setContent() is called
+- TipTap's 'immediatelyRender: false' (line 33) delays editor rendering for SSR
+- External value changes happen before editor is ready
+- editor.commands.setContent(value) fails silently
+
+Evidence:
+- Subject field (HTML Input) works immediately
+- Body field (TipTap editor) doesn't work
+- Input elements accept value updates anytime
+- TipTap needs initialization complete before updates
+
+=== SOLUTION ===
+
+Defer the setContent() call to next event loop:
+
+useEffect(() => {
+  if (editor) {
+    const currentContent = editor.getHTML()
+    const normalizedValue = value || '<p></p>'
+    const normalizedCurrent = currentContent || '<p></p>'
+    
+    if (normalizedValue \!== normalizedCurrent) {
+      // Defer to next event loop - ensures TipTap is ready
+      const timeout = setTimeout(() => {
+        if (editor && editor.isEditable) {
+          editor.commands.setContent(value)
+        }
+      }, 0)
+      
+      return () => clearTimeout(timeout)
+    }
+  }
+}, [value, editor])
+
+Why setTimeout(fn, 0) works:
+- Moves execution to next macrotask queue
+- TipTap has time to fully initialize
+- Ensures editor.isEditable is true
+- Clean, simple, browser-compatible solution
+
+=== SINGLE POINT OF FIX ===
+
+ONE file modification fixes ALL THREE bugs:
+- File: rich-text-editor.tsx
+- Location: Lines 45-57
+- Change: Add setTimeout wrapper around setContent()
+
+This is because all three bugs use the SAME RichTextEditor component.
+The underlying issue is the same: TipTap editor timing.
+Fixing RichTextEditor fixes all three bugs simultaneously.
+
+BUGS #6, #10, #14 - INVESTIGATION COMPLETE
+
+ROOT CAUSE: TipTap Editor Initialization Timing Issue
+
+All three bugs have THE SAME root cause:
+  - API returns body_html correctly (CONFIRMED)
+  - React state sets body correctly (CONFIRMED)
+  - RichTextEditor doesn't display it (PROBLEM)
+
+FILE TO FIX:
+  frontend/src/components/inbox/rich-text-editor.tsx
+  Lines: 45-57
+
+BUG LOCATIONS:
+  Bug #6: email-composer.tsx (lines 117-128, 355-360)
+  Bug #10: templates/page.tsx (lines 258-267, 621-622)
+  Bug #14: campaigns/create/page.tsx (lines 109-116)
+
+THE PROBLEM:
+  TipTap editor not ready when useEffect calls setContent()
+  Solution: Wrap setContent in setTimeout to next event loop
+
+FIX SUMMARY:
+  Add: const timeout = setTimeout(() => { ... }, 0)
+  Add: Check editor.isEditable before setContent
+  Add: Cleanup return for timeout
+
+IMPACT:
+  Files changed: 1
+  Bugs fixed: 3
+  Risk: MINIMAL
+  Backward compatible: YES

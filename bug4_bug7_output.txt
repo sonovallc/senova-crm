@@ -1,0 +1,15 @@
+
+=== BUG-4 and BUG-7 VERIFICATION ===
+
+Logging in...
+
+=== BUG-4: CAMPAIGN DELETE ===
+
+Campaigns before: 24
+
+=== BUG-7: AUTORESPONDER EDIT ===
+
+
+=== RESULTS ===
+BUG-4: FAIL
+BUG-7: FAIL

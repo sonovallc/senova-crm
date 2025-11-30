@@ -1,0 +1,5 @@
+=== FEATURE 4: Mass Email Campaigns Testing ===
+
+Step 1: Navigate to campaigns and attempt deletion
+Screenshot: Campaigns page
+FAIL: No menu button

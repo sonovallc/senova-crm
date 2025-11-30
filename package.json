@@ -1,0 +1,20 @@
+{
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "playwright": "^1.57.0"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "glob": "^13.0.0"
+  },
+  "name": "claude-code-agents-wizard-v2",
+  "description": "A simple yet powerful orchestration system for Claude Code that uses specialized agents to manage complex projects from start to finish, with mandatory human oversight and visual testing.",
+  "version": "1.0.0",
+  "main": "CUsersjwoodDocumentsProjectsclaude-code-agents-wizard-v2test_bug001_variables.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

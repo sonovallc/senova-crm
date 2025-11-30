@@ -1,0 +1,1 @@
+const fs=require("fs");const script=String.raw;fs.writeFileSync("test_bug4_bug7_verification.js",script);console.log("✓ Test created");

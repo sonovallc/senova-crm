@@ -1,0 +1,319 @@
+{
+  "path": "/industries/aesthetic-clinics",
+  "seo": {
+    "title": "Aesthetic Clinic Software That Books 40% More Treatments | Senova",
+    "description": "Multi-service aesthetic clinic CRM: Manage all treatments, providers, and locations. Track packages, memberships. See 40% growth.",
+    "keywords": ["aesthetic clinic software", "aesthetic clinic CRM", "beauty clinic management", "aesthetic practice software", "cosmetic clinic CRM"],
+    "og_image": "Aesthetic clinic dashboard with multi-treatment and provider management"
+  },
+  "hero": {
+    "headline": "The Complete Platform for Multi-Service Aesthetic Clinics",
+    "subheadline": "Manage diverse treatments, multiple providers, and complex packages with the CRM built for modern aesthetic clinics.",
+    "cta_primary": {
+      "text": "See Clinic Demo",
+      "link": "/demo?industry=aesthetic-clinic"
+    },
+    "cta_secondary": {
+      "text": "Calculate Clinic Growth",
+      "link": "/roi-calculator?industry=aesthetic-clinic"
+    },
+    "badges": [
+      "300+ Clinics",
+      "50+ Treatment Types",
+      "Multi-Provider",
+      "Package Management"
+    ]
+  },
+  "sections": [
+    {
+      "type": "clinic_challenges",
+      "headline": "We Understand Aesthetic Clinic Complexity",
+      "challenges": [
+        {
+          "challenge": "Managing 20+ different treatment types",
+          "solution": "Unified tracking across all services with smart categorization"
+        },
+        {
+          "challenge": "Coordinating multiple providers and rooms",
+          "solution": "Intelligent scheduling that maximizes utilization"
+        },
+        {
+          "challenge": "Complex package and membership tracking",
+          "solution": "Automated usage monitoring and expiration management"
+        },
+        {
+          "challenge": "Inconsistent patient experience across services",
+          "solution": "Standardized workflows with service customization"
+        },
+        {
+          "challenge": "Difficulty cross-selling between departments",
+          "solution": "AI-powered recommendations based on patient history"
+        }
+      ]
+    },
+    {
+      "type": "service_management",
+      "headline": "Every Service, One Platform",
+      "services": [
+        {
+          "category": "Injectable Services",
+          "treatments": ["Botox/Dysport", "Dermal Fillers", "Sculptra", "Kybella", "PRF/PRP"],
+          "tracking": "Units, areas, product lots"
+        },
+        {
+          "category": "Advanced Skincare",
+          "treatments": ["HydraFacial", "Chemical Peels", "Microneedling", "Dermaplaning", "LED Therapy"],
+          "tracking": "Sessions, products used, protocols"
+        },
+        {
+          "category": "Laser & Energy",
+          "treatments": ["IPL", "Laser Hair Removal", "Skin Resurfacing", "RF Treatments", "Ultrasound"],
+          "tracking": "Parameters, areas, session count"
+        },
+        {
+          "category": "Body Treatments",
+          "treatments": ["CoolSculpting", "Emsculpt", "Cellulite Reduction", "Skin Tightening", "IV Therapy"],
+          "tracking": "Cycles, measurements, progress"
+        },
+        {
+          "category": "Wellness Services",
+          "treatments": ["Hormone Therapy", "Weight Loss", "Vitamin Injections", "Peptides", "NAD+"],
+          "tracking": "Labs, dosing, compliance"
+        }
+      ]
+    },
+    {
+      "type": "provider_management",
+      "headline": "Coordinate Your Entire Team",
+      "features": [
+        {
+          "title": "Multi-Provider Scheduling",
+          "capabilities": [
+            "Service-specific provider assignment",
+            "Room and equipment allocation",
+            "Double-booking prevention",
+            "Provider preference tracking",
+            "Commission calculations"
+          ]
+        },
+        {
+          "title": "Skill-Based Routing",
+          "capabilities": [
+            "Match patients to best provider",
+            "Track certifications and training",
+            "Performance analytics by provider",
+            "Availability optimization",
+            "Coverage management"
+          ]
+        },
+        {
+          "title": "Team Collaboration",
+          "capabilities": [
+            "Patient handoff notes",
+            "Treatment planning coordination",
+            "Internal messaging",
+            "Task assignment",
+            "Quality assurance tracking"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "package_membership",
+      "headline": "Master Package and Membership Sales",
+      "features": [
+        {
+          "name": "Treatment Packages",
+          "description": "Sell and track multi-treatment bundles",
+          "capabilities": [
+            "Custom package creation",
+            "Usage tracking",
+            "Expiration management",
+            "Transfer options",
+            "Upgrade prompts"
+          ],
+          "stat": "68% of patients buy packages"
+        },
+        {
+          "name": "VIP Memberships",
+          "description": "Recurring revenue through membership tiers",
+          "capabilities": [
+            "Tiered benefits",
+            "Automatic billing",
+            "Benefit usage tracking",
+            "Member-only pricing",
+            "Exclusive perks"
+          ],
+          "stat": "Average member value 3.2X higher"
+        },
+        {
+          "name": "Loyalty Programs",
+          "description": "Reward frequent patients automatically",
+          "capabilities": [
+            "Point accumulation",
+            "Reward redemption",
+            "Tier progression",
+            "Birthday rewards",
+            "Referral bonuses"
+          ],
+          "stat": "45% increase in retention"
+        }
+      ]
+    },
+    {
+      "type": "patient_journey_clinic",
+      "headline": "Personalized Journeys Across All Services",
+      "journey": {
+        "new_patient": {
+          "title": "New Patient Experience",
+          "steps": [
+            "Multi-service consultation",
+            "Personalized treatment plan",
+            "Package recommendations",
+            "Financing options",
+            "Booking coordination"
+          ]
+        },
+        "cross_sell": {
+          "title": "Service Expansion",
+          "triggers": [
+            "Botox patient → Skincare services",
+            "Laser hair → Body contouring",
+            "Facial treatments → Wellness services",
+            "Single service → Package upgrade"
+          ]
+        },
+        "retention": {
+          "title": "Long-term Engagement",
+          "tactics": [
+            "Maintenance reminders",
+            "Seasonal campaigns",
+            "VIP events",
+            "New service launches",
+            "Loyalty rewards"
+          ]
+        }
+      }
+    },
+    {
+      "type": "analytics_clinic",
+      "headline": "Multi-Service Analytics Dashboard",
+      "metrics": [
+        {
+          "category": "Service Performance",
+          "kpis": [
+            "Revenue by service line",
+            "Service mix trends",
+            "Cross-sell success rate",
+            "Package completion rates"
+          ]
+        },
+        {
+          "category": "Provider Analytics",
+          "kpis": [
+            "Utilization rates",
+            "Revenue per provider",
+            "Patient satisfaction scores",
+            "Rebooking rates"
+          ]
+        },
+        {
+          "category": "Financial Metrics",
+          "kpis": [
+            "Average ticket size",
+            "Package vs single service revenue",
+            "Membership recurring revenue",
+            "Product sales margins"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "case_study_clinic",
+      "headline": "How Renew Aesthetic Clinic Grew 40% in 6 Months",
+      "clinic": "Renew Aesthetic Clinic - Phoenix",
+      "situation": "15 providers, 25+ services, losing track of packages",
+      "implementation": [
+        "Consolidated 5 systems into Senova",
+        "Set up service categorization",
+        "Automated package tracking",
+        "Launched cross-sell campaigns"
+      ],
+      "results": {
+        "revenue_growth": "40% in 6 months",
+        "package_sales": "Up 85%",
+        "cross_sell_rate": "From 12% to 38%",
+        "provider_utilization": "From 65% to 84%"
+      },
+      "quote": "Senova finally gave us control over our complex service menu. Revenue is up 40% with the same team.",
+      "author": "Lisa Chen, Clinic Director"
+    },
+    {
+      "type": "integrations_clinic",
+      "headline": "Works with Your Clinic Systems",
+      "categories": [
+        {
+          "type": "Booking & Scheduling",
+          "systems": ["Boulevard", "Zenoti", "Vagaro", "MindBody"]
+        },
+        {
+          "type": "Payment Processing",
+          "systems": ["Square", "Stripe", "Clover", "PayPal"]
+        },
+        {
+          "type": "Inventory Management",
+          "systems": ["MarketMan", "SimpleINV", "inFlow", "Sortly"]
+        },
+        {
+          "type": "Accounting",
+          "systems": ["QuickBooks", "Xero", "FreshBooks", "Wave"]
+        }
+      ]
+    },
+    {
+      "type": "pricing_clinic",
+      "headline": "Pricing That Scales with Your Clinic",
+      "plans": [
+        {
+          "name": "Boutique Clinic",
+          "price": "$299/month",
+          "for": "1-3 providers, single location",
+          "features": ["5,000 patients", "Basic packages", "Email marketing"]
+        },
+        {
+          "name": "Growth Clinic",
+          "price": "$599/month",
+          "for": "4-10 providers, 1-2 locations",
+          "features": ["25,000 patients", "Advanced packages", "Multi-channel marketing"],
+          "popular": true
+        },
+        {
+          "name": "Enterprise Clinic",
+          "price": "Custom",
+          "for": "10+ providers or 3+ locations",
+          "features": ["Unlimited patients", "Custom workflows", "Dedicated support"]
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "headline": "Ready to Streamline Your Aesthetic Clinic?",
+      "subheadline": "Join 300+ clinics growing with Senova",
+      "primary_cta": {
+        "text": "Get Your Clinic Demo",
+        "link": "/demo?industry=aesthetic-clinic"
+      },
+      "secondary_cta": {
+        "text": "Talk to Clinic Specialist",
+        "link": "/contact?industry=aesthetic-clinic"
+      }
+    }
+  ],
+  "schema_markup": {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Senova for Aesthetic Clinics",
+    "description": "Multi-service CRM platform for aesthetic clinics",
+    "applicationCategory": "Medical Practice Management"
+  }
+}

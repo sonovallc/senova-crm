@@ -1,0 +1,83 @@
+{
+  "corsErrors": [
+    {
+      "text": "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "timestamp": "2025-11-24T22:41:29.471Z"
+    },
+    {
+      "text": "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "timestamp": "2025-11-24T22:41:30.540Z"
+    }
+  ],
+  "consoleErrors": [
+    {
+      "text": "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "timestamp": "2025-11-24T22:41:29.471Z"
+    },
+    {
+      "text": "Request failed: http://localhost:8000/api/v1/campaigns? - net::ERR_FAILED",
+      "timestamp": "2025-11-24T22:41:29.473Z"
+    },
+    {
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "timestamp": "2025-11-24T22:41:29.474Z"
+    },
+    {
+      "text": "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "timestamp": "2025-11-24T22:41:30.540Z"
+    },
+    {
+      "text": "Request failed: http://localhost:8000/api/v1/campaigns? - net::ERR_FAILED",
+      "timestamp": "2025-11-24T22:41:30.542Z"
+    },
+    {
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "timestamp": "2025-11-24T22:41:30.542Z"
+    },
+    {
+      "text": "Test script error: locator.count: Unexpected token \"=\" while parsing css selector \"table, .campaign-item, text=Create New Campaign, button:has-text(\"Create\")\". Did you mean to CSS.escape it?",
+      "timestamp": "2025-11-24T22:41:35.244Z"
+    }
+  ],
+  "bugVerification": {
+    "BUG-CAMPAIGNS-LOADING": {
+      "status": "UNKNOWN",
+      "details": ""
+    },
+    "BUG-INBOX-FILTERS": {
+      "status": "UNKNOWN",
+      "details": ""
+    },
+    "BUG-MAILGUN-404": {
+      "status": "UNKNOWN",
+      "details": ""
+    }
+  },
+  "pageLoads": {
+    "/dashboard/email/compose": {
+      "status": "UNKNOWN",
+      "details": ""
+    },
+    "/dashboard/email/templates": {
+      "status": "UNKNOWN",
+      "details": ""
+    },
+    "/dashboard/email/campaigns": {
+      "status": "UNKNOWN",
+      "details": ""
+    },
+    "/dashboard/email/autoresponders": {
+      "status": "UNKNOWN",
+      "details": ""
+    },
+    "/dashboard/settings/integrations/mailgun": {
+      "status": "UNKNOWN",
+      "details": ""
+    },
+    "/dashboard/email/campaigns/create": {
+      "status": "UNKNOWN",
+      "details": ""
+    }
+  },
+  "timestamp": "2025-11-24T22:41:02.672Z"
+}

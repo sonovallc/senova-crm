@@ -1,0 +1,14 @@
+=== BUG-2 ARCHIVE BUTTON VERIFICATION (ROBUST) ===
+
+[1] Login...
+✓ Logged in
+
+[2] Go to inbox...
+✓ On inbox page
+
+[3] Find threads...
+
+❌ ERROR: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('.bg-white.border.rounded') to be visible[22m
+

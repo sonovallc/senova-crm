@@ -1,0 +1,223 @@
+{
+  "timestamp": "2025-11-29T03:11:15.869Z",
+  "totalPages": 19,
+  "passed": 3,
+  "failed": 16,
+  "pageResults": [
+    {
+      "name": "Home",
+      "path": "/",
+      "status": "FAIL",
+      "issues": [
+        "Found curly apostrophes: 4",
+        "Missing DSP content: \"280M+\"",
+        "Missing DSP content: \"DSP\""
+      ],
+      "consoleErrors": [],
+      "checks": {},
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\debug-senova-final\\--1764385889353.png"
+    },
+    {
+      "name": "About",
+      "path": "/about",
+      "status": "FAIL",
+      "issues": [
+        "Found curly apostrophes: 4",
+        "1 console error(s)"
+      ],
+      "consoleErrors": [
+        "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant"
+      ],
+      "checks": {},
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\debug-senova-final\\-about-1764385899633.png"
+    },
+    {
+      "name": "Platform",
+      "path": "/platform",
+      "status": "FAIL",
+      "issues": [
+        "Found curly apostrophes: 3",
+        "Missing DSP content: \"DSP Capabilities\"",
+        "Missing DSP content: \"wholesale pricing\""
+      ],
+      "consoleErrors": [],
+      "checks": {},
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\debug-senova-final\\-platform-1764385905895.png"
+    },
+    {
+      "name": "Pricing",
+      "path": "/pricing",
+      "status": "FAIL",
+      "issues": [
+        "Found curly apostrophes: 6"
+      ],
+      "consoleErrors": [],
+      "checks": {},
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\debug-senova-final\\-pricing-1764385917146.png"
+    },
+    {
+      "name": "Contact",
+      "path": "/contact",
+      "status": "FAIL",
+      "issues": [
+        "Found curly apostrophes: 1",
+        "Incorrect address on contact page"
+      ],
+      "consoleErrors": [],
+      "checks": {},
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\debug-senova-final\\-contact-1764385928739.png"
+    },
+    {
+      "name": "Demo",
+      "path": "/demo",
+      "status": "FAIL",
+      "issues": [
+        "Found curly apostrophes: 2"
+      ],
+      "consoleErrors": [],
+      "checks": {},
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\debug-senova-final\\-demo-1764385934921.png"
+    },
+    {
+      "name": "HIPAA",
+      "path": "/hipaa",
+      "status": "PASS",
+      "issues": [],
+      "consoleErrors": [],
+      "checks": {},
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\debug-senova-final\\-hipaa-1764385942253.png"
+    },
+    {
+      "name": "CRM Solution",
+      "path": "/solutions/crm",
+      "status": "FAIL",
+      "issues": [
+        "Found forbidden ROI numbers",
+        "Found curly apostrophes: 3"
+      ],
+      "consoleErrors": [],
+      "checks": {},
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\debug-senova-final\\-solutions-crm-1764385949978.png"
+    },
+    {
+      "name": "Audience Intelligence",
+      "path": "/solutions/audience-intelligence",
+      "status": "FAIL",
+      "issues": [
+        "Found curly apostrophes: 6",
+        "Missing DSP content: \"280M+ profiles\""
+      ],
+      "consoleErrors": [],
+      "checks": {},
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\debug-senova-final\\-solutions-audience-intelligence-1764385958899.png"
+    },
+    {
+      "name": "Patient Identification",
+      "path": "/solutions/patient-identification",
+      "status": "PASS",
+      "issues": [],
+      "consoleErrors": [],
+      "checks": {},
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\debug-senova-final\\-solutions-patient-identification-1764385966352.png"
+    },
+    {
+      "name": "Campaign Activation",
+      "path": "/solutions/campaign-activation",
+      "status": "FAIL",
+      "issues": [
+        "Found curly apostrophes: 4",
+        "Missing DSP content: \"precision targeting\""
+      ],
+      "consoleErrors": [],
+      "checks": {},
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\debug-senova-final\\-solutions-campaign-activation-1764385973593.png"
+    },
+    {
+      "name": "Analytics",
+      "path": "/solutions/analytics",
+      "status": "FAIL",
+      "issues": [
+        "Found forbidden ROI numbers",
+        "Found curly apostrophes: 3"
+      ],
+      "consoleErrors": [],
+      "checks": {},
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\debug-senova-final\\-solutions-analytics-1764385980947.png"
+    },
+    {
+      "name": "Medical Spas",
+      "path": "/industries/medical-spas",
+      "status": "FAIL",
+      "issues": [
+        "Found curly apostrophes: 2"
+      ],
+      "consoleErrors": [],
+      "checks": {},
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\debug-senova-final\\-industries-medical-spas-1764385988276.png"
+    },
+    {
+      "name": "Dermatology",
+      "path": "/industries/dermatology",
+      "status": "FAIL",
+      "issues": [
+        "Found curly apostrophes: 3"
+      ],
+      "consoleErrors": [],
+      "checks": {},
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\debug-senova-final\\-industries-dermatology-1764385996420.png"
+    },
+    {
+      "name": "Plastic Surgery",
+      "path": "/industries/plastic-surgery",
+      "status": "FAIL",
+      "issues": [
+        "Found curly apostrophes: 2"
+      ],
+      "consoleErrors": [],
+      "checks": {},
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\debug-senova-final\\-industries-plastic-surgery-1764386009293.png"
+    },
+    {
+      "name": "Aesthetic Clinics",
+      "path": "/industries/aesthetic-clinics",
+      "status": "FAIL",
+      "issues": [
+        "Found curly apostrophes: 2"
+      ],
+      "consoleErrors": [],
+      "checks": {},
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\debug-senova-final\\-industries-aesthetic-clinics-1764386026135.png"
+    },
+    {
+      "name": "Privacy Policy",
+      "path": "/privacy-policy",
+      "status": "FAIL",
+      "issues": [
+        "Found curly apostrophes: 1"
+      ],
+      "consoleErrors": [],
+      "checks": {},
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\debug-senova-final\\-privacy-policy-1764386033865.png"
+    },
+    {
+      "name": "Terms of Service",
+      "path": "/terms-of-service",
+      "status": "FAIL",
+      "issues": [
+        "Found curly apostrophes: 1"
+      ],
+      "consoleErrors": [],
+      "checks": {},
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\debug-senova-final\\-terms-of-service-1764386041582.png"
+    },
+    {
+      "name": "Security",
+      "path": "/security",
+      "status": "PASS",
+      "issues": [],
+      "consoleErrors": [],
+      "checks": {},
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\debug-senova-final\\-security-1764386049848.png"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "bug1": {
+    "status": "FAIL",
+    "details": [
+      "ERROR: Contact count unchanged (2 → 2)"
+    ],
+    "screenshots": [
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug1-01-inbox-initial.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug1-02-archived-tab.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug1-03-contact-opened.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug1-04-after-unarchive.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug1-05-verify-removed.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug1-06-all-tab.png"
+    ]
+  },
+  "bug4": {
+    "status": "SKIP",
+    "details": [
+      "No campaigns available and creation failed"
+    ],
+    "screenshots": [
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug4-01-campaigns-list-initial.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug4-01-campaigns-list.png"
+    ]
+  },
+  "bug7": {
+    "status": "FAIL",
+    "details": [
+      "Timing Mode section not found after extensive scrolling"
+    ],
+    "screenshots": [
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug7-01-autoresponders.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug7-02-create-page-top.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug7-03-scroll-1.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug7-03-scroll-2.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug7-03-scroll-3.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug7-03-scroll-4.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug7-03-scroll-5.png"
+    ]
+  }
+}

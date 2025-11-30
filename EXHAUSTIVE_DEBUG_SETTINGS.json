@@ -1,0 +1,312 @@
+{
+  "timestamp": "2025-11-24T23:51:31.884Z",
+  "totalElements": 9,
+  "totalTests": 24,
+  "passed": 5,
+  "failed": 19,
+  "pages": {
+    "Route Discovery": {
+      "elements": [
+        {
+          "element": "/dashboard/settings",
+          "test": "Route exists",
+          "status": "FAIL",
+          "details": "404 Not Found",
+          "timestamp": "2025-11-24T23:51:42.075Z"
+        },
+        {
+          "element": "/dashboard/settings/profile",
+          "test": "Route exists",
+          "status": "FAIL",
+          "details": "page.goto: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/dashboard/settings/profile\", waiting until \"networkidle\"\u001b[22m\n",
+          "timestamp": "2025-11-24T23:51:52.081Z"
+        },
+        {
+          "element": "/dashboard/settings/email",
+          "test": "Route exists",
+          "status": "FAIL",
+          "details": "page.goto: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/dashboard/settings/email\", waiting until \"networkidle\"\u001b[22m\n",
+          "timestamp": "2025-11-24T23:52:02.088Z"
+        },
+        {
+          "element": "/dashboard/settings/integrations",
+          "test": "Route exists",
+          "status": "FAIL",
+          "details": "404 Not Found",
+          "timestamp": "2025-11-24T23:52:06.065Z"
+        },
+        {
+          "element": "/dashboard/settings/integrations/mailgun",
+          "test": "Route exists",
+          "status": "FAIL",
+          "details": "404 Not Found",
+          "timestamp": "2025-11-24T23:52:16.690Z"
+        },
+        {
+          "element": "/dashboard/settings/integrations/closebot",
+          "test": "Route exists",
+          "status": "FAIL",
+          "details": "page.goto: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/dashboard/settings/integrations/closebot\", waiting until \"networkidle\"\u001b[22m\n",
+          "timestamp": "2025-11-24T23:52:26.716Z"
+        },
+        {
+          "element": "/dashboard/settings/users",
+          "test": "Route exists",
+          "status": "FAIL",
+          "details": "page.goto: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/dashboard/settings/users\", waiting until \"networkidle\"\u001b[22m\n",
+          "timestamp": "2025-11-24T23:52:36.724Z"
+        },
+        {
+          "element": "/dashboard/settings/fields",
+          "test": "Route exists",
+          "status": "FAIL",
+          "details": "page.goto: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/dashboard/settings/fields\", waiting until \"networkidle\"\u001b[22m\n",
+          "timestamp": "2025-11-24T23:52:46.731Z"
+        },
+        {
+          "element": "/dashboard/settings/notifications",
+          "test": "Route exists",
+          "status": "FAIL",
+          "details": "404 Not Found",
+          "timestamp": "2025-11-24T23:52:55.831Z"
+        },
+        {
+          "element": "/dashboard/settings/billing",
+          "test": "Route exists",
+          "status": "FAIL",
+          "details": "404 Not Found",
+          "timestamp": "2025-11-24T23:52:59.626Z"
+        },
+        {
+          "element": "/dashboard/settings/security",
+          "test": "Route exists",
+          "status": "FAIL",
+          "details": "404 Not Found",
+          "timestamp": "2025-11-24T23:53:03.037Z"
+        }
+      ],
+      "tests": 11,
+      "passed": 0,
+      "failed": 11
+    },
+    "Settings Navigation": {
+      "elements": [
+        {
+          "element": "Link: Settings",
+          "test": "Click and navigate",
+          "status": "PASS",
+          "details": "Navigated to http://localhost:3004/dashboard/settings",
+          "timestamp": "2025-11-24T23:53:08.593Z"
+        },
+        {
+          "element": "Nav link 1",
+          "test": "Click and navigate",
+          "status": "FAIL",
+          "details": "elementHandle.textContent: Execution context was destroyed, most likely because of a navigation\nCall log:\n\u001b[2m  - waiting for locator(':scope')\u001b[22m\n",
+          "timestamp": "2025-11-24T23:53:11.304Z"
+        },
+        {
+          "element": "Nav link 2",
+          "test": "Click and navigate",
+          "status": "FAIL",
+          "details": "elementHandle.textContent: Execution context was destroyed, most likely because of a navigation\nCall log:\n\u001b[2m  - waiting for locator(':scope')\u001b[22m\n",
+          "timestamp": "2025-11-24T23:53:11.307Z"
+        },
+        {
+          "element": "Nav link 3",
+          "test": "Click and navigate",
+          "status": "FAIL",
+          "details": "elementHandle.textContent: Execution context was destroyed, most likely because of a navigation\nCall log:\n\u001b[2m  - waiting for locator(':scope')\u001b[22m\n",
+          "timestamp": "2025-11-24T23:53:11.309Z"
+        }
+      ],
+      "tests": 4,
+      "passed": 1,
+      "failed": 3
+    },
+    "Mailgun Settings": {
+      "elements": [
+        {
+          "element": "API Key field",
+          "test": "Fill with text",
+          "status": "PASS",
+          "details": "Field accepts input",
+          "timestamp": "2025-11-24T23:53:16.426Z"
+        },
+        {
+          "element": "Show/Hide toggle",
+          "test": "Element exists",
+          "status": "FAIL",
+          "details": "Toggle not found",
+          "timestamp": "2025-11-24T23:53:16.435Z"
+        },
+        {
+          "element": "Domain field",
+          "test": "Element exists",
+          "status": "FAIL",
+          "details": "Field not found",
+          "timestamp": "2025-11-24T23:53:16.444Z"
+        },
+        {
+          "element": "Region dropdown",
+          "test": "Element exists",
+          "status": "FAIL",
+          "details": "Dropdown not found",
+          "timestamp": "2025-11-24T23:53:16.451Z"
+        },
+        {
+          "element": "Test Connection button",
+          "test": "Element exists",
+          "status": "FAIL",
+          "details": "Button not found",
+          "timestamp": "2025-11-24T23:53:16.464Z"
+        },
+        {
+          "element": "Save button",
+          "test": "Click button",
+          "status": "PASS",
+          "details": "Button clicked, form submitted",
+          "timestamp": "2025-11-24T23:53:18.919Z"
+        },
+        {
+          "element": "Verified emails section",
+          "test": "Section exists",
+          "status": "FAIL",
+          "details": "Section not found",
+          "timestamp": "2025-11-24T23:53:18.924Z"
+        }
+      ],
+      "tests": 7,
+      "passed": 2,
+      "failed": 5
+    },
+    "Closebot Settings": {
+      "elements": [
+        {
+          "element": "Coming Soon placeholder",
+          "test": "Text visible",
+          "status": "PASS",
+          "details": "Placeholder displayed",
+          "timestamp": "2025-11-24T23:53:22.365Z"
+        },
+        {
+          "element": "Disabled input fields",
+          "test": "Fields disabled",
+          "status": "PASS",
+          "details": "2 fields disabled",
+          "timestamp": "2025-11-24T23:53:22.382Z"
+        }
+      ],
+      "tests": 2,
+      "passed": 2,
+      "failed": 0
+    }
+  },
+  "bugs": [
+    {
+      "id": "ROUTE-404-1",
+      "severity": "Medium",
+      "element": "/dashboard/settings",
+      "issue": "404 - Route does not exist",
+      "screenshot": "route-check--dashboard-settings.png"
+    },
+    {
+      "id": "ROUTE-ERROR-1",
+      "severity": "High",
+      "element": "/dashboard/settings/profile",
+      "issue": "Error: page.goto: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/dashboard/settings/profile\", waiting until \"networkidle\"\u001b[22m\n",
+      "screenshot": ""
+    },
+    {
+      "id": "ROUTE-ERROR-1",
+      "severity": "High",
+      "element": "/dashboard/settings/email",
+      "issue": "Error: page.goto: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/dashboard/settings/email\", waiting until \"networkidle\"\u001b[22m\n",
+      "screenshot": ""
+    },
+    {
+      "id": "ROUTE-404-1",
+      "severity": "Medium",
+      "element": "/dashboard/settings/integrations",
+      "issue": "404 - Route does not exist",
+      "screenshot": "route-check--dashboard-settings-integrations.png"
+    },
+    {
+      "id": "ROUTE-404-1",
+      "severity": "Medium",
+      "element": "/dashboard/settings/integrations/mailgun",
+      "issue": "404 - Route does not exist",
+      "screenshot": "route-check--dashboard-settings-integrations-mailgun.png"
+    },
+    {
+      "id": "ROUTE-ERROR-1",
+      "severity": "High",
+      "element": "/dashboard/settings/integrations/closebot",
+      "issue": "Error: page.goto: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/dashboard/settings/integrations/closebot\", waiting until \"networkidle\"\u001b[22m\n",
+      "screenshot": ""
+    },
+    {
+      "id": "ROUTE-ERROR-1",
+      "severity": "High",
+      "element": "/dashboard/settings/users",
+      "issue": "Error: page.goto: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/dashboard/settings/users\", waiting until \"networkidle\"\u001b[22m\n",
+      "screenshot": ""
+    },
+    {
+      "id": "ROUTE-ERROR-1",
+      "severity": "High",
+      "element": "/dashboard/settings/fields",
+      "issue": "Error: page.goto: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/dashboard/settings/fields\", waiting until \"networkidle\"\u001b[22m\n",
+      "screenshot": ""
+    },
+    {
+      "id": "ROUTE-404-1",
+      "severity": "Medium",
+      "element": "/dashboard/settings/notifications",
+      "issue": "404 - Route does not exist",
+      "screenshot": "route-check--dashboard-settings-notifications.png"
+    },
+    {
+      "id": "ROUTE-404-1",
+      "severity": "Medium",
+      "element": "/dashboard/settings/billing",
+      "issue": "404 - Route does not exist",
+      "screenshot": "route-check--dashboard-settings-billing.png"
+    },
+    {
+      "id": "ROUTE-404-1",
+      "severity": "Medium",
+      "element": "/dashboard/settings/security",
+      "issue": "404 - Route does not exist",
+      "screenshot": "route-check--dashboard-settings-security.png"
+    },
+    {
+      "id": "NAV-1",
+      "severity": "Medium",
+      "element": "Nav link 1",
+      "issue": "elementHandle.textContent: Execution context was destroyed, most likely because of a navigation\nCall log:\n\u001b[2m  - waiting for locator(':scope')\u001b[22m\n",
+      "screenshot": "nav-link-1-error.png"
+    },
+    {
+      "id": "NAV-2",
+      "severity": "Medium",
+      "element": "Nav link 2",
+      "issue": "elementHandle.textContent: Execution context was destroyed, most likely because of a navigation\nCall log:\n\u001b[2m  - waiting for locator(':scope')\u001b[22m\n",
+      "screenshot": "nav-link-2-error.png"
+    },
+    {
+      "id": "NAV-3",
+      "severity": "Medium",
+      "element": "Nav link 3",
+      "issue": "elementHandle.textContent: Execution context was destroyed, most likely because of a navigation\nCall log:\n\u001b[2m  - waiting for locator(':scope')\u001b[22m\n",
+      "screenshot": "nav-link-3-error.png"
+    },
+    {
+      "id": "MAILGUN-003",
+      "severity": "High",
+      "element": "Region dropdown",
+      "issue": "Element not found",
+      "screenshot": "mailgun-initial.png"
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "hero_images": [
+    {
+      "url": "https://images.unsplash.com/photo-1576267423048-15c0040fec78?w=1920&h=1080&fit=crop&auto=format",
+      "alt": "Business team collaborating in modern office with laptops",
+      "category": "business",
+      "photographer": "Windows",
+      "use": "hero"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1601509876296-aba16d4c10a4?w=1920&h=1080&fit=crop&auto=format",
+      "alt": "Professional working on laptop with analytics dashboard",
+      "category": "business",
+      "photographer": "Windows",
+      "use": "hero"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1739298061740-5ed03045b280?w=1920&h=1080&fit=crop&auto=format",
+      "alt": "Team meeting around conference table discussing strategy",
+      "category": "business",
+      "photographer": "Ninthgrid",
+      "use": "hero"
+    }
+  ],
+  "industry_images": {
+    "restaurants": [
+      {
+        "url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&h=800&fit=crop&auto=format",
+        "alt": "Modern restaurant interior with warm lighting",
+        "category": "restaurant"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1200&h=800&fit=crop&auto=format",
+        "alt": "Restaurant dining room with customers",
+        "category": "restaurant"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&h=800&fit=crop&auto=format",
+        "alt": "Fine dining restaurant service",
+        "category": "restaurant"
+      }
+    ],
+    "home_services": [
+      {
+        "url": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&h=800&fit=crop&auto=format",
+        "alt": "Professional contractor working on home renovation",
+        "category": "contractor"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop&auto=format",
+        "alt": "Plumber fixing pipes under sink",
+        "category": "plumber"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=800&fit=crop&auto=format",
+        "alt": "Electrician working on electrical panel",
+        "category": "electrician"
+      }
+    ],
+    "retail": [
+      {
+        "url": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=800&fit=crop&auto=format",
+        "alt": "Modern retail store interior with products",
+        "category": "retail"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1200&h=800&fit=crop&auto=format",
+        "alt": "Shopping mall retail environment",
+        "category": "retail"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=800&fit=crop&auto=format",
+        "alt": "E-commerce and retail concept with shopping cart",
+        "category": "retail"
+      }
+    ],
+    "professional_services": [
+      {
+        "url": "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1200&h=800&fit=crop&auto=format",
+        "alt": "Professional services team in meeting",
+        "category": "professional"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=800&fit=crop&auto=format",
+        "alt": "Modern professional office space",
+        "category": "professional"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&h=800&fit=crop&auto=format",
+        "alt": "Business consultants working with client",
+        "category": "professional"
+      }
+    ]
+  },
+  "feature_images": [
+    {
+      "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&auto=format",
+      "alt": "Data analytics dashboard on laptop screen",
+      "category": "analytics",
+      "use": "features"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&auto=format",
+      "alt": "Business metrics and KPI dashboard",
+      "category": "analytics",
+      "use": "features"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=600&fit=crop&auto=format",
+      "alt": "Marketing data visualization",
+      "category": "marketing",
+      "use": "features"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&h=600&fit=crop&auto=format",
+      "alt": "Email marketing campaign dashboard",
+      "category": "marketing",
+      "use": "features"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1556742521-9713bf272865?w=800&h=600&fit=crop&auto=format",
+      "alt": "Customer relationship management concept",
+      "category": "crm",
+      "use": "features"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=800&h=600&fit=crop&auto=format",
+      "alt": "Business automation workflow",
+      "category": "automation",
+      "use": "features"
+    }
+  ],
+  "testimonial_images": [
+    {
+      "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&auto=format",
+      "alt": "Professional businessman headshot",
+      "category": "testimonial"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&auto=format",
+      "alt": "Professional businesswoman headshot",
+      "category": "testimonial"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&auto=format",
+      "alt": "Business executive portrait",
+      "category": "testimonial"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&auto=format",
+      "alt": "Professional male entrepreneur",
+      "category": "testimonial"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=400&fit=crop&auto=format",
+      "alt": "Confident businesswoman portrait",
+      "category": "testimonial"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&auto=format",
+      "alt": "Smiling business professional",
+      "category": "testimonial"
+    }
+  ],
+  "platform_images": [
+    {
+      "url": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1600&h=900&fit=crop&auto=format",
+      "alt": "Modern office workspace with multiple screens",
+      "category": "platform"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&h=900&fit=crop&auto=format",
+      "alt": "Developer working on laptop with code",
+      "category": "platform"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&h=900&fit=crop&auto=format",
+      "alt": "Business analysis and planning workspace",
+      "category": "platform"
+    }
+  ],
+  "about_images": [
+    {
+      "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&h=900&fit=crop&auto=format",
+      "alt": "Diverse team collaborating in office",
+      "category": "about"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&h=900&fit=crop&auto=format",
+      "alt": "Team brainstorming session",
+      "category": "about"
+    }
+  ],
+  "background_patterns": [
+    {
+      "url": "https://images.unsplash.com/photo-1557683316-973673baf926?w=1920&h=1080&fit=crop&auto=format",
+      "alt": "Abstract gradient background",
+      "category": "background"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=1920&h=1080&fit=crop&auto=format",
+      "alt": "Purple blue gradient background",
+      "category": "background"
+    }
+  ]
+}

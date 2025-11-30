@@ -1,0 +1,44 @@
+{
+  "timestamp": "2025-11-25T08:18:04.201Z",
+  "totalTests": 8,
+  "passed": 5,
+  "failed": 2,
+  "tests": [
+    {
+      "name": "Export All button",
+      "status": "FAIL",
+      "details": "Not found"
+    },
+    {
+      "name": "Contact selection",
+      "status": "PASS",
+      "details": "Selected 3"
+    },
+    {
+      "name": "Bulk action bar",
+      "status": "PASS",
+      "details": "Visible"
+    },
+    {
+      "name": "Bulk Export button",
+      "status": "PASS",
+      "details": "Found and visible"
+    },
+    {
+      "name": "Selected count",
+      "status": "PASS",
+      "details": "Visible"
+    },
+    {
+      "name": "Select All checkbox",
+      "status": "PASS",
+      "details": "Found"
+    },
+    {
+      "name": "Distinct exports",
+      "status": "FAIL",
+      "details": "Missing one or both"
+    }
+  ],
+  "passRate": "62.5"
+}

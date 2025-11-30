@@ -1,0 +1,361 @@
+Starting Senova CRM Design Verification...
+================================================
+
+
+Testing: Home page (/)
+--------------------------------------------------
+  Status: 200
+  ✓ No console errors
+  Error testing page: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+
+Testing: About page (/about)
+--------------------------------------------------
+  Status: 200
+  ❌ Console errors found: 1
+  Error testing page: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+
+Testing: Platform page (/platform)
+--------------------------------------------------
+  Status: 200
+  ✓ No console errors
+  Error testing page: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+
+Testing: Pricing page (/pricing)
+--------------------------------------------------
+  Status: 200
+  ✓ No console errors
+  Error testing page: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+
+Testing: Contact page (/contact)
+--------------------------------------------------
+  Status: 200
+  ✓ No console errors
+  Error testing page: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+
+Testing: Demo request page (/demo)
+--------------------------------------------------
+  Status: 200
+  ✓ No console errors
+  Error testing page: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+
+Testing: CRM solution (/solutions/crm)
+--------------------------------------------------
+  Status: 200
+  ✓ No console errors
+  Error testing page: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+
+Testing: Audience intelligence (/solutions/audience-intelligence)
+--------------------------------------------------
+  Status: 200
+  ✓ No console errors
+  Error testing page: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+
+Testing: Visitor identification (/solutions/visitor-identification)
+--------------------------------------------------
+  Status: 200
+  ✓ No console errors
+  Error testing page: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+
+Testing: Campaign activation (/solutions/campaign-activation)
+--------------------------------------------------
+  Status: 200
+  ✓ No console errors
+  Error testing page: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+
+Testing: Analytics solution (/solutions/analytics)
+--------------------------------------------------
+  Status: 200
+  ✓ No console errors
+  Error testing page: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+
+Testing: Restaurants industry (/industries/restaurants)
+--------------------------------------------------
+  Status: 200
+  ✓ No console errors
+  Error testing page: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+
+Testing: Home services industry (/industries/home-services)
+--------------------------------------------------
+  Status: 200
+  ✓ No console errors
+  Error testing page: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+
+Testing: Retail industry (/industries/retail)
+--------------------------------------------------
+  Status: 200
+  ✓ No console errors
+  Error testing page: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+
+Testing: Professional services (/industries/professional-services)
+--------------------------------------------------
+  Status: 200
+  ✓ No console errors
+  Error testing page: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+
+Testing: Privacy policy (/privacy-policy)
+--------------------------------------------------
+  Status: 200
+  ✓ No console errors
+  Error testing page: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+
+Testing: Terms of service (/terms-of-service)
+--------------------------------------------------
+  Status: 200
+  ✓ No console errors
+  Error testing page: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+
+
+============================================================
+VERIFICATION SUMMARY
+============================================================
+
+Pages Tested: 17
+Pages Loaded (200 status): 17/17
+Pages Passing All Checks: 0/17
+Overall Pass Rate: 0.0%
+
+------------------------------------------------------------
+DETAILED RESULTS BY PAGE:
+------------------------------------------------------------
+
+Home page (/)
+  Status: 200 | Overall: ❌ FAIL (2/8 checks)
+  Issues:
+    - Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+  Checks:
+    ✓ pageLoads
+    ✓ noConsoleErrors
+    ✗ colorSchemeCorrect
+    ✗ fontsCorrect
+    ✗ noMedicalLanguage
+    ✗ imagesLoad
+    ✗ navigationWorks
+    ✗ mobileResponsive
+
+About page (/about)
+  Status: 200 | Overall: ❌ FAIL (1/8 checks)
+  Issues:
+    - Console errors: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant
+    - Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+  Checks:
+    ✓ pageLoads
+    ✗ noConsoleErrors
+    ✗ colorSchemeCorrect
+    ✗ fontsCorrect
+    ✗ noMedicalLanguage
+    ✗ imagesLoad
+    ✗ navigationWorks
+    ✗ mobileResponsive
+
+Platform page (/platform)
+  Status: 200 | Overall: ❌ FAIL (2/8 checks)
+  Issues:
+    - Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+  Checks:
+    ✓ pageLoads
+    ✓ noConsoleErrors
+    ✗ colorSchemeCorrect
+    ✗ fontsCorrect
+    ✗ noMedicalLanguage
+    ✗ imagesLoad
+    ✗ navigationWorks
+    ✗ mobileResponsive
+
+Pricing page (/pricing)
+  Status: 200 | Overall: ❌ FAIL (2/8 checks)
+  Issues:
+    - Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+  Checks:
+    ✓ pageLoads
+    ✓ noConsoleErrors
+    ✗ colorSchemeCorrect
+    ✗ fontsCorrect
+    ✗ noMedicalLanguage
+    ✗ imagesLoad
+    ✗ navigationWorks
+    ✗ mobileResponsive
+
+Contact page (/contact)
+  Status: 200 | Overall: ❌ FAIL (2/8 checks)
+  Issues:
+    - Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+  Checks:
+    ✓ pageLoads
+    ✓ noConsoleErrors
+    ✗ colorSchemeCorrect
+    ✗ fontsCorrect
+    ✗ noMedicalLanguage
+    ✗ imagesLoad
+    ✗ navigationWorks
+    ✗ mobileResponsive
+
+Demo request page (/demo)
+  Status: 200 | Overall: ❌ FAIL (2/8 checks)
+  Issues:
+    - Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+  Checks:
+    ✓ pageLoads
+    ✓ noConsoleErrors
+    ✗ colorSchemeCorrect
+    ✗ fontsCorrect
+    ✗ noMedicalLanguage
+    ✗ imagesLoad
+    ✗ navigationWorks
+    ✗ mobileResponsive
+
+CRM solution (/solutions/crm)
+  Status: 200 | Overall: ❌ FAIL (2/8 checks)
+  Issues:
+    - Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+  Checks:
+    ✓ pageLoads
+    ✓ noConsoleErrors
+    ✗ colorSchemeCorrect
+    ✗ fontsCorrect
+    ✗ noMedicalLanguage
+    ✗ imagesLoad
+    ✗ navigationWorks
+    ✗ mobileResponsive
+
+Audience intelligence (/solutions/audience-intelligence)
+  Status: 200 | Overall: ❌ FAIL (2/8 checks)
+  Issues:
+    - Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+  Checks:
+    ✓ pageLoads
+    ✓ noConsoleErrors
+    ✗ colorSchemeCorrect
+    ✗ fontsCorrect
+    ✗ noMedicalLanguage
+    ✗ imagesLoad
+    ✗ navigationWorks
+    ✗ mobileResponsive
+
+Visitor identification (/solutions/visitor-identification)
+  Status: 200 | Overall: ❌ FAIL (2/8 checks)
+  Issues:
+    - Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+  Checks:
+    ✓ pageLoads
+    ✓ noConsoleErrors
+    ✗ colorSchemeCorrect
+    ✗ fontsCorrect
+    ✗ noMedicalLanguage
+    ✗ imagesLoad
+    ✗ navigationWorks
+    ✗ mobileResponsive
+
+Campaign activation (/solutions/campaign-activation)
+  Status: 200 | Overall: ❌ FAIL (2/8 checks)
+  Issues:
+    - Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+  Checks:
+    ✓ pageLoads
+    ✓ noConsoleErrors
+    ✗ colorSchemeCorrect
+    ✗ fontsCorrect
+    ✗ noMedicalLanguage
+    ✗ imagesLoad
+    ✗ navigationWorks
+    ✗ mobileResponsive
+
+Analytics solution (/solutions/analytics)
+  Status: 200 | Overall: ❌ FAIL (2/8 checks)
+  Issues:
+    - Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+  Checks:
+    ✓ pageLoads
+    ✓ noConsoleErrors
+    ✗ colorSchemeCorrect
+    ✗ fontsCorrect
+    ✗ noMedicalLanguage
+    ✗ imagesLoad
+    ✗ navigationWorks
+    ✗ mobileResponsive
+
+Restaurants industry (/industries/restaurants)
+  Status: 200 | Overall: ❌ FAIL (2/8 checks)
+  Issues:
+    - Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+  Checks:
+    ✓ pageLoads
+    ✓ noConsoleErrors
+    ✗ colorSchemeCorrect
+    ✗ fontsCorrect
+    ✗ noMedicalLanguage
+    ✗ imagesLoad
+    ✗ navigationWorks
+    ✗ mobileResponsive
+
+Home services industry (/industries/home-services)
+  Status: 200 | Overall: ❌ FAIL (2/8 checks)
+  Issues:
+    - Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+  Checks:
+    ✓ pageLoads
+    ✓ noConsoleErrors
+    ✗ colorSchemeCorrect
+    ✗ fontsCorrect
+    ✗ noMedicalLanguage
+    ✗ imagesLoad
+    ✗ navigationWorks
+    ✗ mobileResponsive
+
+Retail industry (/industries/retail)
+  Status: 200 | Overall: ❌ FAIL (2/8 checks)
+  Issues:
+    - Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+  Checks:
+    ✓ pageLoads
+    ✓ noConsoleErrors
+    ✗ colorSchemeCorrect
+    ✗ fontsCorrect
+    ✗ noMedicalLanguage
+    ✗ imagesLoad
+    ✗ navigationWorks
+    ✗ mobileResponsive
+
+Professional services (/industries/professional-services)
+  Status: 200 | Overall: ❌ FAIL (2/8 checks)
+  Issues:
+    - Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+  Checks:
+    ✓ pageLoads
+    ✓ noConsoleErrors
+    ✗ colorSchemeCorrect
+    ✗ fontsCorrect
+    ✗ noMedicalLanguage
+    ✗ imagesLoad
+    ✗ navigationWorks
+    ✗ mobileResponsive
+
+Privacy policy (/privacy-policy)
+  Status: 200 | Overall: ❌ FAIL (2/8 checks)
+  Issues:
+    - Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+  Checks:
+    ✓ pageLoads
+    ✓ noConsoleErrors
+    ✗ colorSchemeCorrect
+    ✗ fontsCorrect
+    ✗ noMedicalLanguage
+    ✗ imagesLoad
+    ✗ navigationWorks
+    ✗ mobileResponsive
+
+Terms of service (/terms-of-service)
+  Status: 200 | Overall: ❌ FAIL (2/8 checks)
+  Issues:
+    - Error: Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.
+  Checks:
+    ✓ pageLoads
+    ✓ noConsoleErrors
+    ✗ colorSchemeCorrect
+    ✗ fontsCorrect
+    ✗ noMedicalLanguage
+    ✗ imagesLoad
+    ✗ navigationWorks
+    ✗ mobileResponsive
+
+
+Detailed report saved to: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\DEBUG_REPORT_DESIGN_VERIFICATION_1764325647825.json

@@ -1,0 +1,50 @@
+# FastAPI and Server
+fastapi[standard]==0.115.0
+uvicorn[standard]==0.32.0
+gunicorn==23.0.0
+python-multipart==0.0.12
+
+# Database
+sqlalchemy[asyncio]==2.0.35
+asyncpg==0.29.0
+alembic==1.13.3
+
+# Authentication & Security
+pyjwt==2.9.0
+pwdlib[argon2]==0.2.1
+python-jose[cryptography]==3.3.0
+cryptography==43.0.1
+
+# Settings Management
+pydantic==2.9.2
+pydantic-settings==2.6.0
+
+# HTTP Client
+httpx==0.27.2
+
+# Task Queue
+celery==5.4.0
+redis==5.2.0
+
+# Payment SDKs
+stripe==11.1.0
+squareup==43.2.0.20251016
+
+# Utilities
+python-dotenv==1.0.1
+openpyxl==3.1.2
+chardet==5.2.0
+bleach==6.2.0
+
+# File Storage
+cloudinary==1.41.0
+
+# Monitoring
+sentry-sdk[fastapi,sqlalchemy,redis,celery]==2.19.2
+
+# Development
+ruff==0.7.3
+mypy==1.13.0
+pytest==8.3.3
+pytest-asyncio==0.24.0
+pytest-cov==6.0.0

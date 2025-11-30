@@ -1,0 +1,9 @@
+Testing BUG 6: Template Body Population
+Templates found: 0
+Testing BUG 23: Sidebar
+BUG 23: FAIL - only 5/7
+Testing BUG 15-16: Campaign Wizard
+BUG 15-16: PASS - wizard opened
+Testing BUG 17-20: Autoresponders
+BUG 17-20: FAIL - only 0
+Screenshots saved to: ./screenshots/critical-bugs-test

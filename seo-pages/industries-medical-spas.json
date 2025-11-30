@@ -1,0 +1,308 @@
+{
+  "path": "/industries/medical-spas",
+  "seo": {
+    "title": "Medical Spa Software That Books 3X More Treatments | Senova",
+    "description": "CRM built for med spas: Track Botox units, manage memberships, automate recalls. 500+ med spas save $100K yearly. See your ROI now.",
+    "keywords": ["medical spa software", "med spa CRM", "medspa marketing", "medical spa management", "aesthetic practice software"],
+    "og_image": "Medical spa dashboard with treatment tracking and patient management"
+  },
+  "hero": {
+    "headline": "The #1 CRM Platform for Medical Spas",
+    "subheadline": "Purpose-built for med spas to track treatments, automate marketing, and prove ROI. Join 500+ thriving medical spas using Senova.",
+    "cta_primary": {
+      "text": "See Med Spa Demo",
+      "link": "/demo?industry=medspa"
+    },
+    "cta_secondary": {
+      "text": "Calculate Your Savings",
+      "link": "/roi-calculator?industry=medspa"
+    },
+    "badges": [
+      "500+ Med Spas",
+      "HIPAA Compliant",
+      "50+ Treatment Types",
+      "3X ROI Average"
+    ]
+  },
+  "sections": [
+    {
+      "type": "challenges",
+      "headline": "We Know Med Spa Challenges",
+      "subheadline": "Because we built Senova specifically to solve them",
+      "challenges": [
+        {
+          "problem": "Can't track Botox units or filler syringes properly",
+          "solution": "Detailed tracking by area, provider, and product lot"
+        },
+        {
+          "problem": "Losing patients to cheaper competitors",
+          "solution": "Identify and win back price shoppers with targeted offers"
+        },
+        {
+          "problem": "Membership management is a nightmare",
+          "solution": "Automated tracking, billing, and benefit usage"
+        },
+        {
+          "problem": "No idea which Instagram ads actually work",
+          "solution": "Track from ad click to treatment revenue"
+        },
+        {
+          "problem": "Missing recall opportunities for touch-ups",
+          "solution": "Automated reminders based on treatment intervals"
+        }
+      ]
+    },
+    {
+      "type": "features_medspa",
+      "headline": "Everything Your Med Spa Needs",
+      "features": [
+        {
+          "title": "Injectable Management",
+          "description": "Track every unit and syringe with precision",
+          "capabilities": [
+            "Units by facial area mapping",
+            "Dilution and reconstitution tracking",
+            "Product lot numbers and expiration",
+            "Provider technique notes",
+            "Before/after photo galleries",
+            "Automatic touch-up reminders"
+          ],
+          "stat": "Average 34% increase in injectable revenue"
+        },
+        {
+          "title": "Membership Programs",
+          "description": "Automate your VIP and membership tiers",
+          "capabilities": [
+            "Tiered membership levels",
+            "Automatic benefit tracking",
+            "Usage monitoring",
+            "Renewal reminders",
+            "Member-only pricing",
+            "Exclusive offer campaigns"
+          ],
+          "stat": "68% of members spend 3X more annually"
+        },
+        {
+          "title": "Package Management",
+          "description": "Sell and track treatment packages effortlessly",
+          "capabilities": [
+            "Multi-treatment packages",
+            "Session tracking",
+            "Expiration management",
+            "Family sharing options",
+            "Upgrade prompts",
+            "Package completion campaigns"
+          ],
+          "stat": "42% higher completion rates"
+        },
+        {
+          "title": "Provider Schedules",
+          "description": "Optimize injector and provider bookings",
+          "capabilities": [
+            "Multi-provider calendars",
+            "Treatment time optimization",
+            "Patient-provider matching",
+            "Commission tracking",
+            "Performance analytics",
+            "Schedule efficiency reports"
+          ],
+          "stat": "23% increase in provider utilization"
+        }
+      ]
+    },
+    {
+      "type": "treatments_supported",
+      "headline": "Built for Every Med Spa Treatment",
+      "categories": [
+        {
+          "category": "Injectables",
+          "treatments": ["Botox/Dysport/Xeomin", "Dermal Fillers", "Sculptra", "Kybella", "PRF/PRP", "Sclerotherapy"]
+        },
+        {
+          "category": "Laser & Energy",
+          "treatments": ["IPL Photofacial", "Laser Hair Removal", "Tattoo Removal", "Skin Resurfacing", "RF Microneedling", "Ultherapy"]
+        },
+        {
+          "category": "Body Contouring",
+          "treatments": ["CoolSculpting", "Emsculpt", "Morpheus8", "truSculpt", "Vanquish", "Velashape"]
+        },
+        {
+          "category": "Skin Treatments",
+          "treatments": ["Chemical Peels", "Microdermabrasion", "HydraFacial", "Dermaplaning", "Microneedling", "PDO Threads"]
+        }
+      ]
+    },
+    {
+      "type": "marketing_tools",
+      "headline": "Marketing That Fills Your Books",
+      "tools": [
+        {
+          "name": "Instagram-Ready Campaigns",
+          "description": "Beautiful templates optimized for social media",
+          "features": ["Before/after galleries", "Story templates", "Influencer tracking", "Hashtag analytics"]
+        },
+        {
+          "name": "Seasonal Promotions",
+          "description": "Pre-built campaigns for every season",
+          "features": ["Summer body prep", "Holiday party ready", "New Year specials", "Spring renewal"]
+        },
+        {
+          "name": "VIP Events",
+          "description": "Manage exclusive patient events",
+          "features": ["RSVP tracking", "Waitlist management", "Event ROI tracking", "Follow-up automation"]
+        },
+        {
+          "name": "Referral Programs",
+          "description": "Automate patient referral rewards",
+          "features": ["Tracking and attribution", "Reward fulfillment", "Leaderboards", "Social sharing"]
+        }
+      ]
+    },
+    {
+      "type": "success_story",
+      "headline": "How Radiance Medical Spa 3X'd Revenue",
+      "story": {
+        "background": "Radiance Medical Spa was using 5 different tools and losing track of patients",
+        "challenge": "Couldn't track treatment history, missing recalls, no ROI visibility",
+        "solution": "Implemented Senova's complete med spa platform",
+        "implementation_timeline": [
+          { "week": 1, "milestone": "Pixel installed, seeing 80% of visitors" },
+          { "week": 2, "milestone": "Imported 5,000 patients, enriched data" },
+          { "week": 3, "milestone": "Launched first automated campaigns" },
+          { "week": 4, "milestone": "Full team trained and operational" }
+        ],
+        "results": {
+          "revenue_increase": "187%",
+          "patient_retention": "Up 45%",
+          "marketing_roi": "4.2X",
+          "time_saved": "15 hours/week",
+          "cost_reduction": "$3,200/month"
+        },
+        "quote": "Senova transformed our med spa. We went from chaos to clarity in 30 days.",
+        "author": "Dr. Jennifer Park, Medical Director"
+      }
+    },
+    {
+      "type": "integrations_medspa",
+      "headline": "Works with Your Med Spa Tech Stack",
+      "categories": [
+        {
+          "type": "EMR/Practice Management",
+          "systems": ["Aesthetics Pro", "Nextech", "Symplast", "PatientNow"]
+        },
+        {
+          "type": "Booking Platforms",
+          "systems": ["Boulevard", "Vagaro", "MindBody", "Zenoti"]
+        },
+        {
+          "type": "Payment/Financing",
+          "systems": ["CareCredit", "Cherry", "PatientFi", "Alphaeon"]
+        },
+        {
+          "type": "Inventory Management",
+          "systems": ["Allergan Direct", "Galderma", "Merz", "RevanceConnect"]
+        }
+      ]
+    },
+    {
+      "type": "roi_calculator_preview",
+      "headline": "Your Med Spa's Potential with Senova",
+      "inputs": [
+        { "label": "Monthly website visitors", "example": "1,000" },
+        { "label": "Current conversion rate", "example": "3%" },
+        { "label": "Average treatment value", "example": "$450" },
+        { "label": "Monthly marketing spend", "example": "$3,000" }
+      ],
+      "projected_results": {
+        "identified_visitors": "800/month",
+        "additional_bookings": "48/month",
+        "revenue_increase": "$21,600/month",
+        "roi": "4.8X"
+      },
+      "cta": {
+        "text": "Get Your Custom Calculation",
+        "link": "/roi-calculator?industry=medspa"
+      }
+    },
+    {
+      "type": "testimonials",
+      "headline": "Join 500+ Successful Med Spas",
+      "testimonials": [
+        {
+          "quote": "The visitor identification alone paid for everything. We're booking patients we never knew visited our site.",
+          "author": "Michelle Rodriguez",
+          "role": "Owner, Glow Medical Spa",
+          "location": "Miami, FL",
+          "metric": "62 new patients in first month"
+        },
+        {
+          "quote": "Finally, software that understands injectables. Unit tracking and auto-recalls doubled our Botox revenue.",
+          "author": "Dr. James Chen",
+          "role": "Medical Director, Elite Aesthetics",
+          "location": "Los Angeles, CA",
+          "metric": "2X injectable revenue"
+        },
+        {
+          "quote": "Membership management went from our biggest headache to completely automated. Game changer.",
+          "author": "Sarah Thompson",
+          "role": "Practice Manager, Renew Med Spa",
+          "location": "Dallas, TX",
+          "metric": "340% membership growth"
+        }
+      ]
+    },
+    {
+      "type": "pricing_medspa",
+      "headline": "Med Spa Pricing That Makes Sense",
+      "plans": [
+        {
+          "name": "Solo Med Spa",
+          "price": "$299/month",
+          "ideal_for": "Single location, 1-3 providers",
+          "includes": ["5,000 patients", "Basic visitor ID", "Email campaigns", "Treatment tracking"]
+        },
+        {
+          "name": "Growing Med Spa",
+          "price": "$599/month",
+          "ideal_for": "1-2 locations, 3-8 providers",
+          "includes": ["25,000 patients", "80% visitor ID", "All marketing channels", "Full analytics"],
+          "popular": true
+        },
+        {
+          "name": "Med Spa Group",
+          "price": "Custom",
+          "ideal_for": "3+ locations or franchises",
+          "includes": ["Unlimited patients", "Multi-location dashboard", "Custom training", "Dedicated support"]
+        }
+      ],
+      "guarantee": "30-day ROI guarantee or your money back"
+    },
+    {
+      "type": "cta",
+      "headline": "Ready to Transform Your Med Spa?",
+      "subheadline": "See why 500+ medical spas choose Senova",
+      "primary_cta": {
+        "text": "Get Your Med Spa Demo",
+        "link": "/demo?industry=medspa"
+      },
+      "secondary_cta": {
+        "text": "Talk to a Med Spa Expert",
+        "link": "/contact?industry=medspa"
+      },
+      "trust_elements": [
+        "No contracts required",
+        "HIPAA compliant",
+        "Setup in 24 hours",
+        "Cancel anytime"
+      ]
+    }
+  ],
+  "schema_markup": {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Senova for Medical Spas",
+    "description": "CRM and marketing platform specifically designed for medical spas",
+    "applicationCategory": "Medical Practice Management",
+    "industry": "Medical Spa"
+  }
+}

@@ -1,0 +1,330 @@
+{
+  "competitor_analysis": {
+    "company_name": "AudienceLab",
+    "website": "https://audiencelab.io",
+    "tagline": "Data Control and Audience Targeting for Advertisers",
+    "mission": "Empowers advertisers and agencies to take control of their data and target any audience on any platform",
+
+    "services": [
+      {
+        "name": "Audience Builder",
+        "description": "Build custom audiences from 280M+ US consumer profiles and 60B+ weekly behavioral data points",
+        "features": [
+          "B2B and B2C audience creation",
+          "Custom behavioral targeting",
+          "Real-time intent data",
+          "Industry-specific segmentation",
+          "95% accuracy on verified data"
+        ],
+        "benefits": [
+          "Target precise audiences beyond platform limitations",
+          "Combine online and offline data",
+          "Create hyper-targeted segments",
+          "Access verified contact records"
+        ]
+      },
+      {
+        "name": "SuperPixel",
+        "description": "Advanced website visitor identification technology that matches traffic to real profiles",
+        "features": [
+          "Match up to 80% of website visitors",
+          "Bypass cookie limitations",
+          "B2B2C profile linking",
+          "Real-time visitor identification",
+          "Integration with CRMs and ad platforms"
+        ],
+        "benefits": [
+          "10x lead generation",
+          "Identify anonymous visitors",
+          "Build remarketing audiences",
+          "Capture 75% more data than standard pixels",
+          "Turn traffic into actionable leads"
+        ]
+      },
+      {
+        "name": "Data Enrichment",
+        "description": "Enhance existing data with verified contact information and behavioral attributes",
+        "features": [
+          "Email verification against 1B+ addresses",
+          "Phone number validation",
+          "Demographic data appending",
+          "Offline data validation",
+          "Profile attribute linking"
+        ],
+        "benefits": [
+          "Fill gaps in existing data",
+          "Correct errors in contact records",
+          "Add missing contact information",
+          "Improve campaign performance"
+        ]
+      },
+      {
+        "name": "Data as a Service (DAAS)",
+        "description": "Subscription model for agencies to access and resell verified audience data",
+        "features": [
+          "White-label data offerings",
+          "Agency-friendly pricing",
+          "Automated fulfillment",
+          "Custom audience creation",
+          "Performance tracking"
+        ],
+        "benefits": [
+          "80% profit margins for agencies",
+          "Scale without hiring",
+          "Create new revenue streams",
+          "Reduce fulfillment workload"
+        ]
+      },
+      {
+        "name": "Cross-Platform Activation",
+        "description": "Sync audiences to any advertising platform or marketing tool",
+        "features": [
+          "Direct Facebook/Meta integration",
+          "GoHighLevel integration",
+          "Webhook support via Zapier/Make",
+          "CRM synchronization",
+          "Real-time data syncing"
+        ],
+        "benefits": [
+          "Break free from walled gardens",
+          "Use data on any platform",
+          "Automate marketing workflows",
+          "Maintain data consistency"
+        ]
+      },
+      {
+        "name": "Behavioral Analysis",
+        "description": "AI-powered analysis of 60 billion URLs and behaviors weekly",
+        "features": [
+          "Custom AI models for audience analysis",
+          "Intent signal detection",
+          "Competitor audience identification",
+          "Purchase behavior tracking",
+          "Industry trend analysis"
+        ],
+        "benefits": [
+          "Find buyers with active intent",
+          "Discover new audience segments",
+          "Track competitor activities",
+          "Predict purchase timing"
+        ]
+      },
+      {
+        "name": "B2B2C Linkage",
+        "description": "Connect business data with individual consumer profiles",
+        "features": [
+          "Company to employee mapping",
+          "Business behavior tracking",
+          "Decision-maker identification",
+          "Account-based targeting",
+          "Firmographic enrichment"
+        ],
+        "benefits": [
+          "Target specific businesses",
+          "Reach decision makers directly",
+          "Improve B2B campaign accuracy",
+          "Connect personal and professional profiles"
+        ]
+      }
+    ],
+
+    "platform_capabilities": [
+      "280M+ US consumer profiles database",
+      "60B+ behaviors and URLs scanned weekly",
+      "95% accuracy on contact data",
+      "Online to offline data matching",
+      "Real-time audience syncing",
+      "Custom AI models for audience creation",
+      "IP scoring technology",
+      "Cookie-less tracking",
+      "Multi-channel attribution",
+      "Audience prompt builder"
+    ],
+
+    "target_industries": [
+      "Digital Marketing Agencies",
+      "Media Buying Agencies",
+      "E-commerce Brands",
+      "B2B SaaS Companies",
+      "Medical Technology",
+      "Home Services",
+      "Luxury Brands",
+      "Newsletter Publishers",
+      "Lead Generation Companies",
+      "Performance Marketing Agencies"
+    ],
+
+    "value_propositions": [
+      "Take control of your data away from walled gardens",
+      "95% accuracy on verified contact data",
+      "Target any audience on any platform",
+      "Reduce CPCs by 50-80%",
+      "Increase conversion rates by 2-3x",
+      "Scale without hiring more staff",
+      "Own your data completely",
+      "Break free from platform limitations"
+    ],
+
+    "case_study_results": [
+      "Reduced cost per booked call from $400 to $190",
+      "Generated $22M pipeline for medical SaaS",
+      "$24M B2B pipeline for medical technology",
+      "50% reduction in opt-in costs within 24 hours",
+      "CPC reduced from $6-9 to $1.03",
+      "Conversion rate increased from 20% to 50%",
+      "24 extra appointments from SuperPixel alone",
+      "$200k additional revenue for e-commerce brand"
+    ],
+
+    "pricing_insights": "No public pricing available - operates on demo/consultation model. Likely enterprise/custom pricing based on data usage and features. DAAS model suggests subscription-based pricing for agencies.",
+
+    "competitors_they_compare_to": [
+      "Premier",
+      "Influ2",
+      "ContactLevel"
+    ]
+  },
+
+  "senova_opportunity": {
+    "company_name": "Senova",
+    "positioning": "Affordable audience intelligence platform for medical aesthetics",
+    "differentiation": "Lower pricing with specialized focus on medical aesthetics and healthcare marketing",
+
+    "services_to_offer": [
+      {
+        "name": "MedSpa Audience Builder",
+        "description": "Build targeted audiences for medical spas and aesthetic clinics",
+        "focus": "High-value patients interested in cosmetic procedures",
+        "features": [
+          "Target by procedure interest (Botox, fillers, laser treatments)",
+          "Income and demographic filtering",
+          "Geographic radius targeting",
+          "Competitor patient identification"
+        ]
+      },
+      {
+        "name": "Patient Identification Pixel",
+        "description": "Identify website visitors interested in aesthetic treatments",
+        "focus": "Convert anonymous traffic into patient leads",
+        "features": [
+          "HIPAA-compliant tracking",
+          "Treatment interest detection",
+          "Insurance vs cash-pay identification",
+          "Appointment intent signals"
+        ]
+      },
+      {
+        "name": "Healthcare Data Enrichment",
+        "description": "Enhance patient records with verified contact and demographic data",
+        "focus": "Improve patient outreach and retention",
+        "features": [
+          "Email and phone verification",
+          "Age and income appending",
+          "Treatment history matching",
+          "Insurance information"
+        ]
+      },
+      {
+        "name": "Multi-Location Practice Management",
+        "description": "Data solutions for medical practices with multiple locations",
+        "focus": "Centralized audience management across locations",
+        "features": [
+          "Location-based audience segmentation",
+          "Cross-location patient tracking",
+          "Regional campaign optimization",
+          "Franchise support"
+        ]
+      },
+      {
+        "name": "Treatment Campaign Activation",
+        "description": "Launch targeted campaigns across all marketing channels",
+        "focus": "Promote specific treatments to qualified audiences",
+        "features": [
+          "Facebook/Instagram integration",
+          "Google Ads integration",
+          "Email marketing sync",
+          "SMS campaign support"
+        ]
+      },
+      {
+        "name": "Competitor Patient Acquisition",
+        "description": "Identify and target patients visiting competitor websites",
+        "focus": "Ethical patient acquisition from competitors",
+        "features": [
+          "Competitor website monitoring",
+          "Patient switching campaigns",
+          "Service comparison messaging",
+          "Special offer targeting"
+        ]
+      },
+      {
+        "name": "ROI Analytics Dashboard",
+        "description": "Track patient acquisition costs and lifetime value",
+        "focus": "Prove marketing ROI for medical practices",
+        "features": [
+          "Cost per patient acquisition",
+          "Treatment conversion tracking",
+          "Revenue attribution",
+          "Campaign performance metrics"
+        ]
+      }
+    ],
+
+    "target_market": [
+      "Medical spas",
+      "Dermatology clinics",
+      "Plastic surgery practices",
+      "Aesthetic clinics",
+      "Wellness centers",
+      "Anti-aging clinics",
+      "Laser treatment centers",
+      "Cosmetic dentistry",
+      "Weight loss clinics",
+      "Healthcare marketing agencies"
+    ],
+
+    "pricing_strategy": "Position at 40-60% below AudienceLab pricing with transparent, tiered pricing model. Focus on SMB medical practices that can't afford enterprise solutions.",
+
+    "key_differentiators": [
+      "Medical aesthetics specialization",
+      "HIPAA compliance built-in",
+      "Transparent, affordable pricing",
+      "Pre-built audiences for common procedures",
+      "Medical practice-specific integrations",
+      "Simplified interface for non-technical users",
+      "White-glove onboarding for practices",
+      "Industry-specific case studies and ROI calculators"
+    ],
+
+    "go_to_market": [
+      "Direct sales to medical practices",
+      "Partner with medical marketing agencies",
+      "Exhibit at medical aesthetics conferences",
+      "Content marketing focused on patient acquisition",
+      "Free ROI calculator for practices",
+      "Case studies from successful clinics",
+      "Referral program for existing clients",
+      "Integration partnerships with practice management software"
+    ]
+  },
+
+  "research_metadata": {
+    "research_date": "2025-11-27",
+    "sources_analyzed": [
+      "Homepage",
+      "Features page",
+      "Integrations page",
+      "SuperPixel page",
+      "Agency solutions page",
+      "Data as a Service page"
+    ],
+    "key_insights": [
+      "AudienceLab is positioned as an enterprise solution with complex features",
+      "Heavy focus on agencies rather than direct businesses",
+      "No transparent pricing creates opportunity for Senova",
+      "Medical/healthcare vertical appears underserved",
+      "Platform requires technical expertise to fully utilize",
+      "Case studies show strong ROI potential in this market"
+    ]
+  }
+}

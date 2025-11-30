@@ -1,0 +1,4 @@
+=== TEST 6: Autoresponder Templates & Tags (Bugs #17, #19) ===
+Template options: 1
+Tag options: 22
+✓ PASS: Both dropdowns populated

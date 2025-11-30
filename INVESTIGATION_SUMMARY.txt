@@ -1,0 +1,52 @@
+BUGS 2-5 INVESTIGATION REPORT
+==============================
+Date: 2025-11-25
+
+FILES ANALYZED:
+- context-engineering-intro/frontend/src/components/contacts/import-duplicates-step.tsx
+- context-engineering-intro/frontend/src/components/contacts/duplicate-bulk-actions.tsx
+- context-engineering-intro/backend/app/api/v1/contacts_import.py
+
+BUG 2: UPDATE ALL / KEEP FIRST DONT UNLOCK PREVIEW
+---
+Root Cause: allResolved validation at lines 283-294 is too strict
+Issue: Line 292 requires existing_contact_id for UPDATE actions
+Why Skip Works: Line 290 returns true immediately for skip action
+Why Update Fails: Line 292 validation requires existing_contact_id to be set
+Backend: Endpoint correctly includes existing_contact_id (lines 1021, 1035, 1049)
+Frontend: Validation rejects the decision despite backend providing required field
+
+BUG 3: NO INDIVIDUAL DUPLICATE HANDLING
+---
+Root Cause: DuplicateCard only shows field-level choices (lines 468-505)
+Issue: DecisionState.action is optional, no UI to set row-level actions
+Missing: Buttons for Skip/Update/Keep at row level
+Users can only control per-field decisions, not per-row actions
+
+BUG 4: DUPLICATE SOURCE UNCLEAR
+---
+Root Cause: DuplicateRow interface lacks duplicate_type field (lines 17-31)
+Issue: Cannot differentiate CSV-internal duplicates vs database matches
+Backend: /validate-duplicates endpoint knows difference but /validate doesnt
+Missing: Visual differentiation (colors, badges) for duplicate type
+
+BUG 5: FALSE DUPLICATES WHEN DATABASE EMPTY
+---
+Root Cause: Using /validate endpoint instead of /validate-duplicates (line 130)
+Issue: /validate does basic validation only, improperly detects duplicates
+Wrong endpoint: /validate (lines 142-193) used instead of /validate-duplicates (lines 196-276)
+Evidence: Test page uses /validate-duplicates and works correctly
+Result: False duplicate detection when importing into empty database
+
+SUMMARY:
+--------
+Bug 2: Validation logic prevents Update All/Keep First from unlocking Next button
+Bug 3: Missing UI for per-row action control
+Bug 4: Missing metadata about duplicate sources
+Bug 5: Using wrong validation endpoint
+
+PRIORITY FIXES:
+1. Fix allResolved validation (Bug 2) - CRITICAL, blocks Next button
+2. Add row-level action buttons (Bug 3) - Important for UX
+3. Add duplicate_type field (Bug 4) - Important for clarity
+4. Switch to validate-duplicates (Bug 5) - Important for data integrity

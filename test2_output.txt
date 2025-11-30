@@ -1,0 +1,3 @@
+=== TEST 2: Template Body in Compose (Bug #6) ===
+Body content length: 0
+✗ FAIL: Body is empty

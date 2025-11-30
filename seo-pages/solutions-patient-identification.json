@@ -1,0 +1,271 @@
+{
+  "path": "/solutions/patient-identification",
+  "seo": {
+    "title": "See 80% of Website Visitors by Name & Email | Patient ID Pixel",
+    "description": "HIPAA-compliant pixel identifies anonymous visitors. Know who's researching Botox before they leave. 5-min setup. See demo with your site.",
+    "keywords": ["website visitor identification", "patient identification pixel", "medical spa visitor tracking", "HIPAA compliant tracking", "anonymous visitor identification"],
+    "og_image": "Dashboard showing identified visitors with names and treatment interests"
+  },
+  "hero": {
+    "headline": "Stop Losing 97% of Your Website Visitors",
+    "subheadline": "Our HIPAA-compliant pixel identifies up to 80% of anonymous visitors by name, email, and treatment interest - without any forms.",
+    "cta_primary": {
+      "text": "See Your Visitors Now",
+      "link": "/demo"
+    },
+    "cta_secondary": {
+      "text": "How It Works",
+      "link": "#how"
+    },
+    "live_counter": {
+      "text": "Practices using our pixel identified",
+      "number": "3,247,892",
+      "suffix": "patients this month"
+    }
+  },
+  "sections": [
+    {
+      "type": "problem_visual",
+      "headline": "You're Paying for Traffic You Can't See",
+      "current_state": {
+        "title": "What You See Now",
+        "stats": [
+          { "metric": "1,000", "label": "Monthly visitors" },
+          { "metric": "30", "label": "Form fills (3%)" },
+          { "metric": "970", "label": "Lost forever" },
+          { "metric": "$0", "label": "ROI from anonymous visitors" }
+        ]
+      },
+      "with_senova": {
+        "title": "What You'll See with Senova",
+        "stats": [
+          { "metric": "1,000", "label": "Monthly visitors" },
+          { "metric": "800", "label": "Identified by name (80%)" },
+          { "metric": "240", "label": "Contactable leads (30%)" },
+          { "metric": "$36,000", "label": "Monthly revenue recovered" }
+        ]
+      }
+    },
+    {
+      "type": "how_it_works",
+      "headline": "From Anonymous to Identified in Milliseconds",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Visitor Lands on Your Site",
+          "description": "Someone searching 'Botox near me' clicks on your website",
+          "icon": "visitor"
+        },
+        {
+          "step": 2,
+          "title": "Pixel Activates Instantly",
+          "description": "Our HIPAA-compliant pixel matches their device to our database",
+          "icon": "pixel"
+        },
+        {
+          "step": 3,
+          "title": "Identity Revealed",
+          "description": "See their name, email, phone, and demographic data",
+          "icon": "identity"
+        },
+        {
+          "step": 4,
+          "title": "Track Their Interest",
+          "description": "Monitor which treatments they research and pages they view",
+          "icon": "tracking"
+        },
+        {
+          "step": 5,
+          "title": "Automated Follow-Up",
+          "description": "Trigger personalized campaigns based on their behavior",
+          "icon": "automation"
+        }
+      ]
+    },
+    {
+      "type": "data_revealed",
+      "headline": "Know Everything About Your Visitors",
+      "subheadline": "Rich profiles created instantly for every identified visitor",
+      "data_points": [
+        {
+          "category": "Contact Information",
+          "fields": ["Full name", "Email address", "Phone number", "Physical address"]
+        },
+        {
+          "category": "Demographics",
+          "fields": ["Age", "Gender", "Income range", "Homeowner status", "Household size"]
+        },
+        {
+          "category": "Treatment Interest",
+          "fields": ["Pages viewed", "Time on site", "Treatments researched", "Price pages checked", "Before/after galleries viewed"]
+        },
+        {
+          "category": "Buying Signals",
+          "fields": ["Number of visits", "Booking page views", "Contact form starts", "Phone number clicks", "Direction searches"]
+        },
+        {
+          "category": "Marketing Data",
+          "fields": ["Traffic source", "Campaign attribution", "Device type", "Location", "Referral source"]
+        }
+      ]
+    },
+    {
+      "type": "compliance",
+      "headline": "100% HIPAA Compliant & Privacy-First",
+      "certifications": [
+        {
+          "title": "HIPAA Compliant",
+          "description": "Full compliance with signed BAA for every customer",
+          "features": ["Encrypted data", "Access controls", "Audit logs", "Data retention policies"]
+        },
+        {
+          "title": "CCPA & GDPR Ready",
+          "description": "Respects user privacy and consent requirements",
+          "features": ["Opt-out mechanisms", "Data deletion rights", "Transparent policies", "Consent management"]
+        },
+        {
+          "title": "No Cookies Required",
+          "description": "Works even with cookie blockers and privacy modes",
+          "features": ["Cookie-less tracking", "First-party data", "Server-side processing", "Future-proof technology"]
+        }
+      ]
+    },
+    {
+      "type": "use_cases",
+      "headline": "Turn Visitors Into Patients",
+      "cases": [
+        {
+          "scenario": "Remarketing Campaigns",
+          "description": "Automatically add visitors to Facebook and Google audiences",
+          "result": "70% lower CPAs on retargeting"
+        },
+        {
+          "scenario": "Abandoned Booking Recovery",
+          "description": "Follow up with visitors who started but didn't complete booking",
+          "result": "43% booking completion rate"
+        },
+        {
+          "scenario": "Competitive Conquest",
+          "description": "Identify when visitors compare you to competitors",
+          "result": "2.5X conversion on comparison shoppers"
+        },
+        {
+          "scenario": "Price Shopper Conversion",
+          "description": "Special offers for visitors who check pricing multiple times",
+          "result": "38% conversion on price-sensitive leads"
+        }
+      ]
+    },
+    {
+      "type": "integration",
+      "headline": "Works with Everything",
+      "subheadline": "5-minute installation, instant results",
+      "platforms": [
+        {
+          "category": "Websites",
+          "supported": ["WordPress", "Wix", "Squarespace", "Custom HTML", "Webflow", "Shopify"]
+        },
+        {
+          "category": "Marketing Tools",
+          "supported": ["Google Ads", "Facebook Ads", "Email platforms", "CRM systems", "SMS tools"]
+        },
+        {
+          "category": "Analytics",
+          "supported": ["Google Analytics", "Facebook Pixel", "Conversion tracking", "Heat mapping", "A/B testing"]
+        }
+      ],
+      "installation": {
+        "time": "5 minutes",
+        "method": "Simple JavaScript snippet",
+        "support": "Free installation help included"
+      }
+    },
+    {
+      "type": "results",
+      "headline": "Practices See Results Immediately",
+      "testimonials": [
+        {
+          "quote": "We identified 847 visitors in the first week. 89 booked appointments - that's $47,000 in revenue we would have lost.",
+          "author": "Dr. James Wilson",
+          "practice": "Precision Aesthetics",
+          "location": "Austin, TX",
+          "metric": "89 recovered bookings in week 1"
+        },
+        {
+          "quote": "The pixel paid for our entire CRM in the first 3 days. We can finally see who's interested in our services.",
+          "author": "Maria Santos",
+          "practice": "Glow Medical Spa",
+          "location": "Miami, FL",
+          "metric": "ROI positive in 72 hours"
+        }
+      ]
+    },
+    {
+      "type": "comparison",
+      "headline": "vs. Other Tracking Methods",
+      "methods": [
+        {
+          "method": "Standard Analytics",
+          "identification": "0%",
+          "data": "Page views only",
+          "hipaa": "N/A",
+          "cost": "Free"
+        },
+        {
+          "method": "Form Fills",
+          "identification": "3%",
+          "data": "What they submit",
+          "hipaa": "Manual",
+          "cost": "Lost opportunity"
+        },
+        {
+          "method": "Chat Tools",
+          "identification": "10%",
+          "data": "If they engage",
+          "hipaa": "Varies",
+          "cost": "$50-200/mo"
+        },
+        {
+          "method": "Senova Pixel",
+          "identification": "80%",
+          "data": "Complete profiles",
+          "hipaa": "Built-in",
+          "cost": "Included"
+        }
+      ]
+    },
+    {
+      "type": "security",
+      "headline": "Bank-Level Security",
+      "features": [
+        "256-bit encryption for all data",
+        "SOC 2 Type II certified infrastructure",
+        "Daily security audits and monitoring",
+        "HIPAA-compliant data handling",
+        "No sensitive health data stored",
+        "Regular third-party penetration testing"
+      ]
+    },
+    {
+      "type": "cta",
+      "headline": "See Your Hidden Visitors Right Now",
+      "subheadline": "Install in 5 minutes and start identifying visitors immediately",
+      "primary_cta": {
+        "text": "Get Your Pixel Now",
+        "link": "/demo"
+      },
+      "secondary_cta": {
+        "text": "Watch 2-Min Demo",
+        "link": "/demo-video"
+      },
+      "guarantee": "30-day money back guarantee if you don't see 50%+ identification rate"
+    }
+  ],
+  "schema_markup": {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Senova Patient Identification Pixel",
+    "description": "HIPAA-compliant website visitor identification for medical practices",
+    "applicationCategory": "Analytics Software"
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "company": {
+    "name": "Senova",
+    "legal_name": "Senova (subsidiary of Noveris Data, LLC)",
+    "parent_company": "Noveris Data, LLC",
+    "product_name": "Senova CRM",
+    "tagline": "Intelligent Patient Acquisition for Medical Aesthetics",
+    "mission_statement": "Empowering medical aesthetics practices with affordable, data-driven marketing solutions that turn anonymous visitors into loyal patients.",
+    "vision": "To be the leading CRM and audience intelligence platform for medical aesthetics, making enterprise-level marketing accessible to practices of all sizes.",
+    "value_proposition": "Get the same powerful audience targeting and patient acquisition tools used by enterprise healthcare organizations, at a fraction of the cost, designed specifically for medical aesthetics."
+  },
+
+  "contact": {
+    "email": "info@senovallc.com",
+    "support_email": "support@senovallc.com",
+    "sales_email": "sales@senovallc.com",
+    "address": {
+      "street": "8 The Green #21994",
+      "city": "Dover",
+      "state": "DE",
+      "zip": "19901",
+      "country": "USA",
+      "formatted": "8 The Green #21994, Dover, DE 19901"
+    },
+    "website": "senovallc.com",
+    "crm_url": "crm.senovallc.com"
+  },
+
+  "brand": {
+    "voice": "Professional, innovative, data-driven, approachable, trustworthy",
+    "personality": [
+      "Expert but not condescending",
+      "Tech-forward but accessible",
+      "Results-focused",
+      "Healthcare-compliant mindset",
+      "Partner-oriented (not vendor)"
+    ],
+    "colors": {
+      "primary": "#4A00D4",
+      "accent": "#B4F9B2",
+      "success": "#61CE70",
+      "dark": "#1D1B21"
+    }
+  },
+
+  "target_audience": {
+    "primary": [
+      "Medical Spas (Med Spas)",
+      "Dermatology Clinics",
+      "Plastic Surgery Practices",
+      "Aesthetic Clinics",
+      "Anti-Aging Centers"
+    ],
+    "secondary": [
+      "Wellness Centers",
+      "Laser Treatment Centers",
+      "Cosmetic Dentistry",
+      "Weight Loss Clinics",
+      "Healthcare Marketing Agencies"
+    ],
+    "decision_makers": [
+      "Practice Owners",
+      "Marketing Directors",
+      "Office Managers",
+      "Medical Directors"
+    ],
+    "pain_points": [
+      "High patient acquisition costs",
+      "Difficulty targeting qualified prospects",
+      "Competition from larger practices",
+      "Complex marketing platforms",
+      "Proving marketing ROI",
+      "HIPAA compliance concerns",
+      "Limited marketing budgets"
+    ]
+  },
+
+  "services": {
+    "crm_platform": {
+      "name": "Senova CRM",
+      "description": "All-in-one patient relationship management designed for medical aesthetics",
+      "features": [
+        "Patient profiles and history",
+        "Appointment scheduling integration",
+        "Treatment tracking",
+        "Automated follow-ups",
+        "Email and SMS campaigns",
+        "Intake forms and consent management",
+        "Multi-location support"
+      ]
+    },
+    "audience_intelligence": {
+      "name": "Audience Intelligence Platform",
+      "description": "Build and target high-value patient audiences across any marketing channel",
+      "features": [
+        "Procedure-based audience targeting",
+        "Income and demographic filtering",
+        "Geographic radius targeting",
+        "Competitor patient identification",
+        "Real-time intent signals"
+      ]
+    },
+    "patient_identification": {
+      "name": "Patient Identification Pixel",
+      "description": "Identify anonymous website visitors and convert them to patients",
+      "features": [
+        "HIPAA-compliant tracking",
+        "Treatment interest detection",
+        "Appointment intent signals",
+        "CRM integration",
+        "Remarketing audience building"
+      ]
+    },
+    "data_enrichment": {
+      "name": "Healthcare Data Enrichment",
+      "description": "Enhance patient records with verified contact and demographic data",
+      "features": [
+        "Email and phone verification",
+        "Demographic data appending",
+        "Treatment history matching",
+        "Data cleaning and deduplication"
+      ]
+    },
+    "campaign_activation": {
+      "name": "Multi-Channel Campaign Activation",
+      "description": "Launch targeted campaigns across all marketing channels",
+      "features": [
+        "Facebook/Instagram integration",
+        "Google Ads integration",
+        "Email marketing automation",
+        "SMS campaigns",
+        "Programmatic advertising (DSP)"
+      ]
+    },
+    "analytics": {
+      "name": "ROI Analytics Dashboard",
+      "description": "Track patient acquisition costs and prove marketing ROI",
+      "features": [
+        "Cost per patient acquisition",
+        "Treatment conversion tracking",
+        "Revenue attribution",
+        "Campaign performance metrics",
+        "Lifetime value calculations"
+      ]
+    },
+    "unified_communications": {
+      "name": "Unified Communications",
+      "description": "All patient communications in one inbox",
+      "features": [
+        "Email, SMS, and web chat",
+        "Voicemail transcription",
+        "Automated responses",
+        "Team collaboration",
+        "Communication history"
+      ]
+    }
+  },
+
+  "unique_selling_points": [
+    "40-60% lower pricing than enterprise solutions",
+    "Built specifically for medical aesthetics",
+    "HIPAA compliance built-in",
+    "Pre-built audiences for common procedures",
+    "No technical expertise required",
+    "Transparent, tiered pricing",
+    "White-glove onboarding included",
+    "Dedicated support for healthcare practices"
+  ],
+
+  "social_proof": {
+    "industries_served": [
+      "Medical Spas",
+      "Dermatology",
+      "Plastic Surgery",
+      "Aesthetic Medicine",
+      "Wellness",
+      "Cosmetic Dentistry"
+    ],
+    "key_benefits": [
+      "Reduce patient acquisition costs by up to 60%",
+      "Identify 80% of anonymous website visitors",
+      "2-3x improvement in conversion rates",
+      "All-in-one platform eliminates tool sprawl",
+      "HIPAA-compliant from day one"
+    ],
+    "trust_indicators": [
+      "HIPAA Compliant",
+      "SOC 2 Compliant",
+      "256-bit Encryption",
+      "99.9% Uptime SLA"
+    ]
+  },
+
+  "website_pages": {
+    "main": [
+      {"name": "Home", "path": "/"},
+      {"name": "Platform", "path": "/platform"},
+      {"name": "Pricing", "path": "/pricing"},
+      {"name": "About", "path": "/about"},
+      {"name": "Contact", "path": "/contact"},
+      {"name": "Login", "path": "/login"},
+      {"name": "Demo", "path": "/demo"}
+    ],
+    "solutions": [
+      {"name": "CRM", "path": "/solutions/crm"},
+      {"name": "Audience Intelligence", "path": "/solutions/audience-intelligence"},
+      {"name": "Patient Identification", "path": "/solutions/patient-identification"},
+      {"name": "Campaign Activation", "path": "/solutions/campaign-activation"},
+      {"name": "Analytics", "path": "/solutions/analytics"}
+    ],
+    "industries": [
+      {"name": "Medical Spas", "path": "/industries/medical-spas"},
+      {"name": "Dermatology", "path": "/industries/dermatology"},
+      {"name": "Plastic Surgery", "path": "/industries/plastic-surgery"},
+      {"name": "Aesthetic Clinics", "path": "/industries/aesthetic-clinics"}
+    ],
+    "resources": [
+      {"name": "Blog", "path": "/blog"},
+      {"name": "Case Studies", "path": "/case-studies"},
+      {"name": "ROI Calculator", "path": "/roi-calculator"},
+      {"name": "Documentation", "path": "/docs"}
+    ],
+    "legal": [
+      {"name": "Privacy Policy", "path": "/privacy-policy"},
+      {"name": "Terms of Service", "path": "/terms-of-service"},
+      {"name": "HIPAA Compliance", "path": "/hipaa"},
+      {"name": "Security", "path": "/security"}
+    ]
+  },
+
+  "pricing_tiers": {
+    "starter": {
+      "name": "Starter",
+      "price": "$299/month",
+      "description": "Perfect for single-location practices",
+      "features": [
+        "Up to 5,000 contacts",
+        "CRM core features",
+        "Email campaigns",
+        "Basic analytics",
+        "Email support"
+      ]
+    },
+    "professional": {
+      "name": "Professional",
+      "price": "$599/month",
+      "description": "For growing practices ready to scale",
+      "features": [
+        "Up to 25,000 contacts",
+        "Everything in Starter",
+        "Audience Intelligence",
+        "Patient Identification Pixel",
+        "Multi-channel campaigns",
+        "Priority support"
+      ]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "Custom",
+      "description": "For multi-location practices and groups",
+      "features": [
+        "Unlimited contacts",
+        "Everything in Professional",
+        "Multi-location management",
+        "Custom integrations",
+        "Dedicated account manager",
+        "Custom reporting"
+      ]
+    }
+  }
+}

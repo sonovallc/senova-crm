@@ -1,0 +1,129 @@
+{
+  "timestamp": "2025-11-29T02:29:39.843Z",
+  "totalTests": 41,
+  "passed": 28,
+  "failed": 13,
+  "errors": [
+    {
+      "element": "Compose Email Link",
+      "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[href=\"/dashboard/email/compose\"]') to be visible\u001b[22m\n"
+    },
+    {
+      "element": "To Field",
+      "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[placeholder*=\"To\"], input[name=\"to\"]') to be visible\u001b[22m\n"
+    },
+    {
+      "element": "CC/BCC Expander",
+      "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"CC/BCC\")') to be visible\u001b[22m\n"
+    },
+    {
+      "element": "Template Dropdown",
+      "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('select:has(option:has-text(\"Select Template\"))') to be visible\u001b[22m\n"
+    },
+    {
+      "element": "Create Template Button",
+      "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Create Template\")') to be visible\u001b[22m\n"
+    },
+    {
+      "element": "Nav Link: Compose",
+      "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[href=\"/dashboard/email/compose\"]') to be visible\u001b[22m\n"
+    },
+    {
+      "element": "Nav Link: Templates",
+      "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[href=\"/dashboard/email/templates\"]') to be visible\u001b[22m\n"
+    },
+    {
+      "element": "Nav Link: Campaigns",
+      "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[href=\"/dashboard/email/campaigns\"]') to be visible\u001b[22m\n"
+    },
+    {
+      "element": "Nav Link: Autoresponders",
+      "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[href=\"/dashboard/email/autoresponders\"]') to be visible\u001b[22m\n"
+    },
+    {
+      "element": "Nav Link: Settings",
+      "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[href=\"/dashboard/settings\"]') to be visible\u001b[22m\n"
+    },
+    {
+      "element": "Nav Link: Calendar",
+      "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[href=\"/dashboard/calendar\"]') to be visible\u001b[22m\n"
+    },
+    {
+      "element": "Modal First Name",
+      "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[name=\"firstName\"], input[placeholder*=\"First\"]') to be visible\u001b[22m\n"
+    },
+    {
+      "element": "Modal Last Name",
+      "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[name=\"lastName\"], input[placeholder*=\"Last\"]') to be visible\u001b[22m\n"
+    }
+  ],
+  "colorViolations": [],
+  "elements": {
+    "button-2": {
+      "text": "Admin",
+      "status": "documented"
+    },
+    "button-3": {
+      "text": "Email",
+      "status": "documented"
+    },
+    "button-4": {
+      "text": "Settings",
+      "status": "documented"
+    },
+    "button-5": {
+      "text": "Logout",
+      "status": "documented"
+    }
+  },
+  "pages": {
+    "Activity Log": {
+      "url": "http://localhost:3004/dashboard/activity-log",
+      "name": "Activity Log",
+      "elements": [],
+      "colorViolations": [],
+      "consoleErrors": [],
+      "screenshot": "screenshots/debug-senova-dashboard/page-activity-log-1764383750977.png"
+    },
+    "Payments": {
+      "url": "http://localhost:3004/dashboard/payments",
+      "name": "Payments",
+      "elements": [],
+      "colorViolations": [],
+      "consoleErrors": [],
+      "screenshot": "screenshots/debug-senova-dashboard/page-payments-1764383756731.png"
+    },
+    "AI Tools": {
+      "url": "http://localhost:3004/dashboard/ai",
+      "name": "AI Tools",
+      "elements": [],
+      "colorViolations": [],
+      "consoleErrors": [],
+      "screenshot": "screenshots/debug-senova-dashboard/page-ai-tools-1764383762969.png"
+    },
+    "Calendar": {
+      "url": "http://localhost:3004/dashboard/calendar",
+      "name": "Calendar",
+      "elements": [],
+      "colorViolations": [],
+      "consoleErrors": [],
+      "screenshot": "screenshots/debug-senova-dashboard/page-calendar-1764383768918.png"
+    },
+    "Multi-tenant Objects": {
+      "url": "http://localhost:3004/dashboard/objects",
+      "name": "Multi-tenant Objects",
+      "elements": [],
+      "colorViolations": [],
+      "consoleErrors": [],
+      "screenshot": "screenshots/debug-senova-dashboard/page-multi-tenant-objects-1764383777490.png"
+    }
+  },
+  "summary": {
+    "passRate": "68.3%",
+    "totalTests": 41,
+    "passed": 28,
+    "failed": 13,
+    "colorViolations": 0,
+    "consoleErrors": 55
+  }
+}

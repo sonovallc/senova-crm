@@ -1,0 +1,281 @@
+{
+  "login": [],
+  "dashboard": [
+    {
+      "element": "Card: Total Contacts",
+      "action": "Found",
+      "result": "Card visible with title",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\card-Total-Contacts-2025-11-24T23-36-30.png",
+      "timestamp": "2025-11-24T23-36-30-626Z"
+    },
+    {
+      "element": "Card: Total Messages",
+      "action": "Found",
+      "result": "Card visible with title",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\card-Total-Messages-2025-11-24T23-36-30.png",
+      "timestamp": "2025-11-24T23-36-30-878Z"
+    },
+    {
+      "element": "Card: Total Revenue",
+      "action": "Found",
+      "result": "Card visible with title",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\card-Total-Revenue-2025-11-24T23-36-30.png",
+      "timestamp": "2025-11-24T23-36-30-982Z"
+    },
+    {
+      "element": "Card: Growth Rate",
+      "action": "Found",
+      "result": "Card visible with title",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\card-Growth-Rate-2025-11-24T23-36-30.png",
+      "timestamp": "2025-11-24T23-36-31-086Z"
+    }
+  ],
+  "navigation": [
+    {
+      "element": "Navigation Discovery",
+      "action": "Initial Screenshot",
+      "result": "Captured dashboard state",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\nav-discovery-initial-2025-11-24T23-34-30.png",
+      "timestamp": "2025-11-24T23-34-31-179Z"
+    },
+    {
+      "element": "Nav Link: Dashboard",
+      "action": "Discovered",
+      "result": "Href: /dashboard",
+      "status": "PASS",
+      "screenshot": null,
+      "timestamp": "2025-11-24T23-34-31-245Z"
+    },
+    {
+      "element": "Nav Link: Inbox",
+      "action": "Discovered",
+      "result": "Href: /dashboard/inbox",
+      "status": "PASS",
+      "screenshot": null,
+      "timestamp": "2025-11-24T23-34-31-265Z"
+    },
+    {
+      "element": "Nav Link: Contacts",
+      "action": "Discovered",
+      "result": "Href: /dashboard/contacts",
+      "status": "PASS",
+      "screenshot": null,
+      "timestamp": "2025-11-24T23-34-31-290Z"
+    },
+    {
+      "element": "Nav Link: Activity Log",
+      "action": "Discovered",
+      "result": "Href: /dashboard/activity-log",
+      "status": "PASS",
+      "screenshot": null,
+      "timestamp": "2025-11-24T23-34-31-316Z"
+    },
+    {
+      "element": "Nav Link: Email",
+      "action": "Discovered",
+      "result": "Href: /dashboard/email/compose",
+      "status": "PASS",
+      "screenshot": null,
+      "timestamp": "2025-11-24T23-34-31-337Z"
+    },
+    {
+      "element": "Nav Link: Payments",
+      "action": "Discovered",
+      "result": "Href: /dashboard/payments",
+      "status": "PASS",
+      "screenshot": null,
+      "timestamp": "2025-11-24T23-34-31-358Z"
+    },
+    {
+      "element": "Nav Link: AI Tools",
+      "action": "Discovered",
+      "result": "Href: /dashboard/ai",
+      "status": "PASS",
+      "screenshot": null,
+      "timestamp": "2025-11-24T23-34-31-377Z"
+    },
+    {
+      "element": "Nav Link: Settings",
+      "action": "Discovered",
+      "result": "Href: /dashboard/settings",
+      "status": "PASS",
+      "screenshot": null,
+      "timestamp": "2025-11-24T23-34-31-395Z"
+    },
+    {
+      "element": "Nav Link: Feature Flags",
+      "action": "Discovered",
+      "result": "Href: /dashboard/settings/feature-flags",
+      "status": "PASS",
+      "screenshot": null,
+      "timestamp": "2025-11-24T23-34-31-409Z"
+    },
+    {
+      "element": "Nav Link: Deleted Contacts",
+      "action": "Discovered",
+      "result": "Href: /dashboard/contacts/deleted",
+      "status": "PASS",
+      "screenshot": null,
+      "timestamp": "2025-11-24T23-34-31-429Z"
+    },
+    {
+      "element": "Nav: Dashboard",
+      "action": "Click & Navigate",
+      "result": "Navigated to http://localhost:3004/dashboard",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\nav-Dashboard-after-2025-11-24T23-34-37.png",
+      "timestamp": "2025-11-24T23-34-37-266Z"
+    },
+    {
+      "element": "Nav: Inbox",
+      "action": "Click & Navigate",
+      "result": "Expected /dashboard/inbox, got http://localhost:3004/dashboard",
+      "status": "FAIL",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\nav-Inbox-after-2025-11-24T23-34-43.png",
+      "timestamp": "2025-11-24T23-34-43-218Z"
+    },
+    {
+      "element": "Nav: Contacts",
+      "action": "Click & Navigate",
+      "result": "Navigated to http://localhost:3004/dashboard/contacts",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\nav-Contacts-after-2025-11-24T23-34-53.png",
+      "timestamp": "2025-11-24T23-34-53-706Z"
+    },
+    {
+      "element": "Nav: Activity Log",
+      "action": "Click & Navigate",
+      "result": "Expected /dashboard/activity, got http://localhost:3004/dashboard",
+      "status": "FAIL",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\nav-Activity-Log-after-2025-11-24T23-34-58.png",
+      "timestamp": "2025-11-24T23-34-58-727Z"
+    },
+    {
+      "element": "Nav: Email",
+      "action": "Click",
+      "result": "Clicked (expandable section)",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\nav-Email-after-2025-11-24T23-35-07.png",
+      "timestamp": "2025-11-24T23-35-07-252Z"
+    },
+    {
+      "element": "Nav: Payments",
+      "action": "Click & Navigate",
+      "result": "Expected /dashboard/payments, got http://localhost:3004/dashboard",
+      "status": "FAIL",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\nav-Payments-after-2025-11-24T23-35-12.png",
+      "timestamp": "2025-11-24T23-35-13-009Z"
+    },
+    {
+      "element": "Nav: AI Tools",
+      "action": "Click & Navigate",
+      "result": "Expected /dashboard/ai-tools, got http://localhost:3004/dashboard",
+      "status": "FAIL",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\nav-AI-Tools-after-2025-11-24T23-35-21.png",
+      "timestamp": "2025-11-24T23-35-21-724Z"
+    },
+    {
+      "element": "Nav: Settings",
+      "action": "Click & Navigate",
+      "result": "Expected /dashboard/settings, got http://localhost:3004/dashboard",
+      "status": "FAIL",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\nav-Settings-after-2025-11-24T23-35-32.png",
+      "timestamp": "2025-11-24T23-35-33-054Z"
+    },
+    {
+      "element": "Nav: Feature Flags",
+      "action": "Click & Navigate",
+      "result": "Expected /dashboard/feature-flags, got http://localhost:3004/dashboard",
+      "status": "FAIL",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\nav-Feature-Flags-after-2025-11-24T23-35-43.png",
+      "timestamp": "2025-11-24T23-35-44-056Z"
+    },
+    {
+      "element": "Nav: Deleted Contacts",
+      "action": "Click & Navigate",
+      "result": "Expected /dashboard/deleted-contacts, got http://localhost:3004/dashboard",
+      "status": "FAIL",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\nav-Deleted-Contacts-after-2025-11-24T23-35-53.png",
+      "timestamp": "2025-11-24T23-35-53-336Z"
+    },
+    {
+      "element": "Email Section",
+      "action": "Expand",
+      "result": "Section expanded",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\email-section-after-expand-2025-11-24T23-36-00.png",
+      "timestamp": "2025-11-24T23-36-01-059Z"
+    },
+    {
+      "element": "Email > Compose",
+      "action": "Find",
+      "result": "Not found or not visible",
+      "status": "FAIL",
+      "screenshot": null,
+      "timestamp": "2025-11-24T23-36-04-344Z"
+    },
+    {
+      "element": "Email > Templates",
+      "action": "Find",
+      "result": "Not found or not visible",
+      "status": "FAIL",
+      "screenshot": null,
+      "timestamp": "2025-11-24T23-36-08-065Z"
+    },
+    {
+      "element": "Email > Campaigns",
+      "action": "Find",
+      "result": "Not found or not visible",
+      "status": "FAIL",
+      "screenshot": null,
+      "timestamp": "2025-11-24T23-36-11-551Z"
+    },
+    {
+      "element": "Email > Autoresponders",
+      "action": "Find",
+      "result": "Not found or not visible",
+      "status": "FAIL",
+      "screenshot": null,
+      "timestamp": "2025-11-24T23-36-15-093Z"
+    },
+    {
+      "element": "Email > Inbox",
+      "action": "Click & Navigate",
+      "result": "Expected /dashboard/email/inbox, got http://localhost:3004/dashboard",
+      "status": "FAIL",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\email-inbox-after-2025-11-24T23-36-20.png",
+      "timestamp": "2025-11-24T23-36-20-404Z"
+    }
+  ],
+  "header": [
+    {
+      "element": "Admin Dropdown",
+      "action": "Click",
+      "result": "Dropdown opened",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\header-admin-after-2025-11-24T23-36-27.png",
+      "timestamp": "2025-11-24T23-36-27-521Z"
+    },
+    {
+      "element": "Logout Button",
+      "action": "Found in dropdown",
+      "result": "Logout button visible",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\header-logout-visible-2025-11-24T23-36-27.png",
+      "timestamp": "2025-11-24T23-36-27-701Z"
+    }
+  ],
+  "errors": [],
+  "navigationLinks": [],
+  "summary": {
+    "total": 33,
+    "passed": 21,
+    "failed": 12,
+    "passRate": "63.6"
+  }
+}

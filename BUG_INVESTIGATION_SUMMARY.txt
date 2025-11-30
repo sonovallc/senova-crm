@@ -1,0 +1,156 @@
+COMPREHENSIVE BUG INVESTIGATION REPORT
+Template Body Not Populating - Bugs #6, #10, #14
+
+ROOT CAUSE IDENTIFIED: TipTap Editor Initialization Timing Issue
+
+ABSOLUTE FILE PATHS
+====================
+
+BUG #6 - Email Composer:
+Path: frontend/src/components/inbox/email-composer.tsx
+Lines 75-80: useQuery for templates
+Lines 117-128: handleTemplateChange function
+Lines 355-360: RichTextEditor component usage
+
+BUG #10 - Email Templates Edit:
+Path: frontend/src/app/(dashboard)/dashboard/email/templates/page.tsx
+Lines 258-267: handleEdit function
+Lines 621-622: RichTextEditor component usage
+
+BUG #14 - Campaign Composer:
+Path: frontend/src/app/(dashboard)/dashboard/email/campaigns/create/page.tsx
+Lines 109-116: handleTemplateChange function
+
+THE FIX LOCATION
+================
+
+File: frontend/src/components/inbox/rich-text-editor.tsx
+Lines: 45-57
+Change: Add setTimeout wrapper around setContent()
+
+INVESTIGATION RESULTS
+====================
+
+1. API Response: body_html IS included in response
+   File: email-templates.ts
+   Field present: YES
+   Data returned: COMPLETE
+
+2. React State Updates: body IS being set correctly
+   All three bugs call setState with body_html
+   Status: CORRECT
+
+3. RichTextEditor Props: value IS being passed
+   All components pass body to RichTextEditor
+   Status: CORRECT
+
+4. RichTextEditor Internal: useEffect NOT working properly
+   Problem: TipTap editor not ready when setContent() called
+   Status: IDENTIFIED - THIS IS THE BUG
+
+DATA FLOW SUMMARY
+=================
+
+Bug #6 Flow:
+1. User selects template
+2. setMessage(template.body_html) called
+3. State updates, component re-renders
+4. RichTextEditor receives value={message}
+5. useEffect calls editor.commands.setContent(message)
+6. RESULT: Body doesn't appear (editor not ready)
+
+Bug #10 Flow:
+1. User clicks edit button
+2. setFormData sets body_html correctly
+3. Edit modal opens
+4. RichTextEditor receives value={formData.body_html}
+5. useEffect calls editor.commands.setContent()
+6. RESULT: Body field stays empty (editor not ready)
+
+Bug #14 Flow:
+1. User selects template
+2. setBodyHtml(template.body_html) called
+3. Component re-renders
+4. RichTextEditor receives value={bodyHtml}
+5. useEffect calls editor.commands.setContent()
+6. RESULT: Body doesn't populate (editor not ready)
+
+THE PROBLEM
+===========
+
+TipTap editor initialization is asynchronous.
+When editor.commands.setContent() is called immediately after
+value prop changes, the editor may not be fully initialized yet.
+
+Solution: Defer the setContent() call using setTimeout to next event loop.
+This gives TipTap time to initialize before we try to set content.
+
+CURRENT CODE (LINES 45-57)
+==========================
+
+useEffect(() => {
+  if (editor) {
+    const currentContent = editor.getHTML()
+    const normalizedValue = value || '<p></p>'
+    const normalizedCurrent = currentContent || '<p></p>'
+
+    if (normalizedValue !== normalizedCurrent) {
+      editor.commands.setContent(value)
+    }
+  }
+}, [value, editor])
+
+FIXED CODE
+==========
+
+useEffect(() => {
+  if (editor) {
+    const currentContent = editor.getHTML()
+    const normalizedValue = value || '<p></p>'
+    const normalizedCurrent = currentContent || '<p></p>'
+
+    if (normalizedValue !== normalizedCurrent) {
+      const timeout = setTimeout(() => {
+        if (editor && editor.isEditable) {
+          editor.commands.setContent(value)
+        }
+      }, 0)
+      
+      return () => clearTimeout(timeout)
+    }
+  }
+}, [value, editor])
+
+KEY CHANGES
+===========
+1. Wrap setContent in setTimeout(..., 0)
+2. Add editor.isEditable check
+3. Add cleanup function for timeout
+
+WHY THIS WORKS
+==============
+- setTimeout defers to next macrotask queue
+- Gives TipTap time to fully initialize
+- Ensures editor is ready before update
+- Cleans up timeout on unmount
+
+IMPACT
+======
+Files to modify: 1 (rich-text-editor.tsx)
+Bugs fixed: 3 (#6, #10, #14)
+Risk: MINIMAL (internal timing fix only)
+Backward compatible: YES
+
+TESTING PLAN
+============
+1. Test Bug #6: Open compose, select template, verify body shows
+2. Test Bug #10: Open templates, edit, verify body shows
+3. Test Bug #14: Open campaigns, select template, verify body shows
+4. Test manual: Type in body, verify it saves
+5. Test multiple: Switch templates, verify content updates
+
+CONCLUSION
+==========
+Single point of failure = Single point of fix
+Modify rich-text-editor.tsx lines 45-57 to fix all three bugs.
+

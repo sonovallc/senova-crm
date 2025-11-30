@@ -1,0 +1,143 @@
+====================================================================
+BUGS #11-12: DETAILED CODE SNIPPETS
+====================================================================
+
+BUG #11 PROBLEM CODE
+====================================================================
+File: rich-text-editor.tsx, Lines 46-66
+
+useEffect(() => {
+  if (editor) {
+    const currentContent = editor.getHTML()
+    const normalizedValue = value || '<p></p>'
+    const normalizedCurrent = currentContent || '<p></p>'
+
+    if (normalizedValue !== normalizedCurrent) {
+      const timeout = setTimeout(() => {
+        if (editor && editor.isEditable) {
+          editor.commands.setContent(value)
+        }
+      }, 0)  // <-- PROBLEM: 0ms too short for Dialog context
+      
+      return () => clearTimeout(timeout)
+    }
+  }
+}, [value, editor])
+
+
+BUG #11 FIX OPTION 1 (SIMPLE)
+====================================================================
+Change line 61 in rich-text-editor.tsx:
+  From: }, 0)
+  To:   }, 100)
+
+This allows Dialog + TipTap to fully initialize.
+
+
+BUG #11 FIX OPTION 2 (BETTER)
+====================================================================
+In page.tsx Edit Modal, add:
+
+const [editorKey, setEditorKey] = useState(0)
+
+useEffect(() => {
+  if (isEditModalOpen) {
+    const timer = setTimeout(() => {
+      setEditorKey(prev => prev + 1)
+    }, 150)
+    return () => clearTimeout(timer)
+  }
+}, [isEditModalOpen])
+
+Then update RichTextEditor:
+<RichTextEditor
+  key={editorKey}
+  value={formData.body_html}
+  onChange={(html) => setFormData({ ...formData, body_html: html })}
+  placeholder="Compose your email template..."
+  className="min-h-[300px]"
+/>
+
+
+BUG #12 PROBLEM CODE
+====================================================================
+File: page.tsx, Lines 145-166
+
+const updateMutation = useMutation({
+  mutationFn: ({ id, data }: { id: string; data: Partial<typeof formData> }) =>
+    emailTemplatesApi.updateTemplate(id, data),
+  onSuccess: () => {
+    toast({ title: 'Template updated', ... })  // FIRST TOAST
+    queryClient.invalidateQueries({ queryKey: ['email-templates'] })  // CAN FAIL
+    setIsEditModalOpen(false)
+    setSelectedTemplate(null)
+    resetForm()
+  },
+  onError: (error) => {
+    toast({ title: 'Failed to update template', ... })  // SECOND TOAST
+  },
+})
+
+
+BUG #12 FIX (PRIMARY)
+====================================================================
+Modify onSuccess in updateMutation:
+
+onSuccess: () => {
+  toast({
+    title: 'Template updated',
+    description: 'Email template has been updated successfully.',
+  })
+  
+  // Wrap invalidation with error handling
+  queryClient.invalidateQueries({ queryKey: ['email-templates'] })
+    .catch(() => {
+      console.warn('Failed to refetch templates after update')
+    })
+  
+  setIsEditModalOpen(false)
+  setSelectedTemplate(null)
+  resetForm()
+},
+
+
+BUG #12 FIX (SECONDARY)
+====================================================================
+File: email-templates.ts, Lines 32-43
+
+updateTemplate: async (
+  id: string,
+  data: {
+    name?: string
+    category?: EmailTemplateCategory
+    subject?: string
+    body_html?: string
+  }
+): Promise<EmailTemplate> => {
+  const response = await api.patch(`/api/v1/email-templates/${id}`, data)
+  
+  // Add validation
+  if (!response.data || !response.data.id) {
+    throw new Error('Invalid response from server')
+  }
+  
+  return response.data
+}
+
+
+SUMMARY OF CHANGES
+====================================================================
+Bug #11:
+  File: rich-text-editor.tsx
+  Line: 61
+  Change: setTimeout delay from 0 to 100
+  
+Bug #12:
+  File: page.tsx
+  Lines: 149-155
+  Change: Add .catch() to invalidateQueries
+  
+  File: email-templates.ts
+  Lines: 40-43
+  Change: Add response validation
+

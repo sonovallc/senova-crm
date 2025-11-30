@@ -1,0 +1,42 @@
+
+=== CSV IMPORT STEPS 7-12 VERIFICATION TEST ===
+
+Steps 1-6: Login and navigate to duplicates page...
+PASS: Steps 1-6 complete, at Step 8
+
+STEP 7: Select Tags
+PASS: Tags page was displayed (Step 7)
+
+STEP 8: Resolve Duplicates
+PASS: Duplicate resolution action: Skip All Duplicates
+
+STEP 9: Preview & Import
+PASS: Preview page displayed
+
+STEP 10: Start Import
+Import started, waiting for completion (up to 3 minutes)...
+PASS: Import process completed
+
+STEP 11: Verify Completion
+
+TEST FAILED: locator.isVisible: Error: strict mode violation: locator('text=/success|imported/i') resolved to 2 elements:
+    1) <p class="text-sm text-muted-foreground">No tags selected. Contacts will be imported witho…</p> aka getByText('No tags selected. Contacts')
+    2) <li>• All imported contacts will be automatically ass…</li> aka getByText('• All imported contacts will')
+
+Call log:
+[2m    - checking visibility of locator('text=/success|imported/i')[22m
+
+node:internal/process/promises:288
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+locator.isVisible: Error: strict mode violation: locator('text=/success|imported/i') resolved to 2 elements:
+    1) <p class="text-sm text-muted-foreground">No tags selected. Contacts will be imported witho…</p> aka getByText('No tags selected. Contacts')
+    2) <li>• All imported contacts will be automatically ass…</li> aka getByText('• All imported contacts will')
+
+Call log:
+[2m    - checking visibility of locator('text=/success|imported/i')[22m
+
+    at C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\test_import_steps7_12_final.js:93:71
+
+Node.js v18.20.2

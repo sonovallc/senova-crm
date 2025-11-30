@@ -1,0 +1,448 @@
+=====================================
+SENOVA CRM PUBLIC WEBSITE AUDIT
+Testing 30 pages for functionality
+=====================================
+
+
+[1/30] Testing: Home (/)
+Category: Core
+  - Navigating to page...
+  ✓ Page loaded (Status: 200)
+  ✓ Screenshot captured
+  ⚠ Broken images: 3
+  ⚠ Color violations found: 5
+  - Found 83 clickable elements
+  - Testing first CTA: "SSenova"
+  ✓ CTA is clickable
+  ❌ PAGE HAS ISSUES: 3 broken images, Color violations: purple, purple, purple, purple, purple
+
+[2/30] Testing: Platform (/platform)
+Category: Core
+  - Navigating to page...
+  ✓ Page loaded (Status: 200)
+  ✓ Screenshot captured
+  ⚠ Broken images: 5
+  ⚠ Color violations found: 5
+  - Found 75 clickable elements
+  - Testing first CTA: "SSenova"
+  ✓ CTA is clickable
+  ❌ PAGE HAS ISSUES: 5 broken images, Color violations: purple, purple, purple, purple, purple
+
+[3/30] Testing: Pricing (/pricing)
+Category: Core
+  - Navigating to page...
+  ✓ Page loaded (Status: 200)
+  ✓ Screenshot captured
+  ⚠ Color violations found: 5
+  - Found 80 clickable elements
+  - Testing first CTA: "SSenova"
+  ✓ CTA is clickable
+  - Testing pricing CTAs...
+  ✓ Found 4 pricing CTAs
+  ✓ Pricing CTA is clickable
+  ❌ PAGE HAS ISSUES: Color violations: purple, purple, purple, purple, purple
+
+[4/30] Testing: About (/about)
+Category: Core
+  - Navigating to page...
+  ✓ Page loaded (Status: 200)
+  ✓ Screenshot captured
+  ⚠ Console errors found: 1
+  ⚠ Color violations found: 5
+  - Found 75 clickable elements
+  - Testing first CTA: "SSenova"
+  ✓ CTA is clickable
+  ❌ PAGE HAS ISSUES: 1 console errors, Color violations: purple, purple, purple, purple, purple
+
+[5/30] Testing: Contact (/contact)
+Category: Core
+  - Navigating to page...
+  ✓ Page loaded (Status: 200)
+  ✓ Screenshot captured
+  ⚠ Color violations found: 5
+  - Found 83 clickable elements
+  - Testing first CTA: "SSenova"
+  ✓ CTA is clickable
+  - Testing contact form...
+  ✓ Contact form fields filled
+  ✓ Submit button found
+  ❌ PAGE HAS ISSUES: Color violations: purple, purple, purple, purple, purple
+
+[6/30] Testing: CRM Solution (/solutions/crm)
+Category: Solutions
+  - Navigating to page...
+  ✓ Page loaded (Status: 200)
+  ✓ Screenshot captured
+  ⚠ Color violations found: 5
+  - Found 75 clickable elements
+  - Testing first CTA: "SSenova"
+  ✓ CTA is clickable
+  ❌ PAGE HAS ISSUES: Color violations: purple, purple, purple, purple, purple
+
+[7/30] Testing: Audience Intelligence (/solutions/audience-intelligence)
+Category: Solutions
+  - Navigating to page...
+  ✓ Page loaded (Status: 200)
+  ✓ Screenshot captured
+  ⚠ Color violations found: 5
+  - Found 76 clickable elements
+  - Testing first CTA: "SSenova"
+  ✓ CTA is clickable
+  ❌ PAGE HAS ISSUES: Color violations: purple, purple, purple, purple, purple
+
+[8/30] Testing: Patient Identification (/solutions/patient-identification)
+Category: Solutions
+  - Navigating to page...
+  ✓ Page loaded (Status: 200)
+  ✓ Screenshot captured
+  ⚠ Color violations found: 5
+  - Found 76 clickable elements
+  - Testing first CTA: "SSenova"
+  ✓ CTA is clickable
+  ❌ PAGE HAS ISSUES: Color violations: purple, purple, purple, purple, purple
+
+[9/30] Testing: Visitor Identification (/solutions/visitor-identification)
+Category: Solutions
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/solutions/visitor-identification", waiting until "networkidle"[22m
+
+
+[10/30] Testing: Campaign Activation (/solutions/campaign-activation)
+Category: Solutions
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/solutions/campaign-activation", waiting until "networkidle"[22m
+
+
+[11/30] Testing: Analytics (/solutions/analytics)
+Category: Solutions
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/solutions/analytics", waiting until "networkidle"[22m
+
+
+[12/30] Testing: Medical Spas (/industries/medical-spas)
+Category: Industries
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/medical-spas", waiting until "networkidle"[22m
+
+
+[13/30] Testing: Dermatology (/industries/dermatology)
+Category: Industries
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/dermatology", waiting until "networkidle"[22m
+
+
+[14/30] Testing: Plastic Surgery (/industries/plastic-surgery)
+Category: Industries
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/plastic-surgery", waiting until "networkidle"[22m
+
+
+[15/30] Testing: Aesthetic Clinics (/industries/aesthetic-clinics)
+Category: Industries
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/aesthetic-clinics", waiting until "networkidle"[22m
+
+
+[16/30] Testing: Restaurants (/industries/restaurants)
+Category: Industries
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/restaurants", waiting until "networkidle"[22m
+
+
+[17/30] Testing: Home Services (/industries/home-services)
+Category: Industries
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/home-services", waiting until "networkidle"[22m
+
+
+[18/30] Testing: Retail (/industries/retail)
+Category: Industries
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/retail", waiting until "networkidle"[22m
+
+
+[19/30] Testing: Professional Services (/industries/professional-services)
+Category: Industries
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/professional-services", waiting until "networkidle"[22m
+
+
+[20/30] Testing: Privacy Policy (/privacy-policy)
+Category: Legal
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/privacy-policy", waiting until "networkidle"[22m
+
+
+[21/30] Testing: Terms of Service (/terms-of-service)
+Category: Legal
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/terms-of-service", waiting until "networkidle"[22m
+
+
+[22/30] Testing: HIPAA (/hipaa)
+Category: Legal
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/hipaa", waiting until "networkidle"[22m
+
+
+[23/30] Testing: Security (/security)
+Category: Legal
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/security", waiting until "networkidle"[22m
+
+
+[24/30] Testing: Compliance (/compliance)
+Category: Legal
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/compliance", waiting until "networkidle"[22m
+
+
+[25/30] Testing: Login (/login)
+Category: Auth
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/login", waiting until "networkidle"[22m
+
+
+[26/30] Testing: Register (/register)
+Category: Auth
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/register", waiting until "networkidle"[22m
+
+
+[27/30] Testing: Blog (/blog)
+Category: Placeholder
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/blog", waiting until "networkidle"[22m
+
+
+[28/30] Testing: Case Studies (/case-studies)
+Category: Placeholder
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/case-studies", waiting until "networkidle"[22m
+
+
+[29/30] Testing: ROI Calculator (/roi-calculator)
+Category: Placeholder
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/roi-calculator", waiting until "networkidle"[22m
+
+
+[30/30] Testing: Documentation (/docs)
+Category: Placeholder
+  - Navigating to page...
+  ❌ ERROR: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/docs", waiting until "networkidle"[22m
+
+
+=====================================
+AUDIT SUMMARY REPORT
+=====================================
+
+Total Pages Tested: 30
+✅ Passed: 0
+❌ Failed: 8
+⚠️  Errors: 22
+Pass Rate: 0.0%
+
+ISSUES FOUND:
+=============
+
+⚠️  CONSOLE ERRORS (1 pages):
+  - /about: 1 errors
+    • Encountered two children with the same key, `%s`. Keys should be unique so that components maintain 
+
+🖼️  BROKEN IMAGES (2 pages):
+  - /: 3 broken images
+  - /platform: 5 broken images
+
+🎨 COLOR VIOLATIONS (8 pages):
+  - /:
+    • BODY.__variable_6ea4a9 __variable_d59ba8 font-body has purple background
+    • HEADER.fixed top-0 z-50 w-full transition-all duration-500 bg-white/50 dark:bg-senova-dark/50 backdrop-blur-md has purple background
+  - /platform:
+    • BODY.__variable_6ea4a9 __variable_d59ba8 font-body has purple background
+    • HEADER.fixed top-0 z-50 w-full transition-all duration-500 bg-white/50 dark:bg-senova-dark/50 backdrop-blur-md has purple background
+  - /pricing:
+    • BODY.__variable_6ea4a9 __variable_d59ba8 font-body has purple background
+    • HEADER.fixed top-0 z-50 w-full transition-all duration-500 bg-white/50 dark:bg-senova-dark/50 backdrop-blur-md has purple background
+  - /about:
+    • BODY.__variable_6ea4a9 __variable_d59ba8 font-body has purple background
+    • HEADER.fixed top-0 z-50 w-full transition-all duration-500 bg-white/50 dark:bg-senova-dark/50 backdrop-blur-md has purple background
+  - /contact:
+    • BODY.__variable_6ea4a9 __variable_d59ba8 font-body has purple background
+    • HEADER.fixed top-0 z-50 w-full transition-all duration-500 bg-white/50 dark:bg-senova-dark/50 backdrop-blur-md has purple background
+  - /solutions/crm:
+    • BODY.__variable_6ea4a9 __variable_d59ba8 font-body has purple background
+    • HEADER.fixed top-0 z-50 w-full transition-all duration-500 bg-white/50 dark:bg-senova-dark/50 backdrop-blur-md has purple background
+  - /solutions/audience-intelligence:
+    • BODY.__variable_6ea4a9 __variable_d59ba8 font-body has purple background
+    • HEADER.fixed top-0 z-50 w-full transition-all duration-500 bg-white/50 dark:bg-senova-dark/50 backdrop-blur-md has purple background
+  - /solutions/patient-identification:
+    • BODY.__variable_6ea4a9 __variable_d59ba8 font-body has purple background
+    • HEADER.fixed top-0 z-50 w-full transition-all duration-500 bg-white/50 dark:bg-senova-dark/50 backdrop-blur-md has purple background
+
+
+RESULTS BY CATEGORY:
+====================
+
+Core:
+  Total: 5 | Passed: 0 | Failed: 5
+  ❌ Home (/) - Issues: 3 broken images, Color violations: purple, purple, purple, purple, purple
+  ❌ Platform (/platform) - Issues: 5 broken images, Color violations: purple, purple, purple, purple, purple
+  ❌ Pricing (/pricing) - Issues: Color violations: purple, purple, purple, purple, purple
+  ❌ About (/about) - Issues: 1 console errors, Color violations: purple, purple, purple, purple, purple
+  ❌ Contact (/contact) - Issues: Color violations: purple, purple, purple, purple, purple
+
+Solutions:
+  Total: 6 | Passed: 0 | Failed: 6
+  ❌ CRM Solution (/solutions/crm) - Issues: Color violations: purple, purple, purple, purple, purple
+  ❌ Audience Intelligence (/solutions/audience-intelligence) - Issues: Color violations: purple, purple, purple, purple, purple
+  ❌ Patient Identification (/solutions/patient-identification) - Issues: Color violations: purple, purple, purple, purple, purple
+  ❌ Visitor Identification (/solutions/visitor-identification) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/solutions/visitor-identification", waiting until "networkidle"[22m
+
+  ❌ Campaign Activation (/solutions/campaign-activation) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/solutions/campaign-activation", waiting until "networkidle"[22m
+
+  ❌ Analytics (/solutions/analytics) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/solutions/analytics", waiting until "networkidle"[22m
+
+
+Industries:
+  Total: 8 | Passed: 0 | Failed: 8
+  ❌ Medical Spas (/industries/medical-spas) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/medical-spas", waiting until "networkidle"[22m
+
+  ❌ Dermatology (/industries/dermatology) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/dermatology", waiting until "networkidle"[22m
+
+  ❌ Plastic Surgery (/industries/plastic-surgery) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/plastic-surgery", waiting until "networkidle"[22m
+
+  ❌ Aesthetic Clinics (/industries/aesthetic-clinics) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/aesthetic-clinics", waiting until "networkidle"[22m
+
+  ❌ Restaurants (/industries/restaurants) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/restaurants", waiting until "networkidle"[22m
+
+  ❌ Home Services (/industries/home-services) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/home-services", waiting until "networkidle"[22m
+
+  ❌ Retail (/industries/retail) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/retail", waiting until "networkidle"[22m
+
+  ❌ Professional Services (/industries/professional-services) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/professional-services", waiting until "networkidle"[22m
+
+
+Legal:
+  Total: 5 | Passed: 0 | Failed: 5
+  ❌ Privacy Policy (/privacy-policy) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/privacy-policy", waiting until "networkidle"[22m
+
+  ❌ Terms of Service (/terms-of-service) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/terms-of-service", waiting until "networkidle"[22m
+
+  ❌ HIPAA (/hipaa) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/hipaa", waiting until "networkidle"[22m
+
+  ❌ Security (/security) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/security", waiting until "networkidle"[22m
+
+  ❌ Compliance (/compliance) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/compliance", waiting until "networkidle"[22m
+
+
+Auth:
+  Total: 2 | Passed: 0 | Failed: 2
+  ❌ Login (/login) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/login", waiting until "networkidle"[22m
+
+  ❌ Register (/register) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/register", waiting until "networkidle"[22m
+
+
+Placeholder:
+  Total: 4 | Passed: 0 | Failed: 4
+  ❌ Blog (/blog) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/blog", waiting until "networkidle"[22m
+
+  ❌ Case Studies (/case-studies) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/case-studies", waiting until "networkidle"[22m
+
+  ❌ ROI Calculator (/roi-calculator) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/roi-calculator", waiting until "networkidle"[22m
+
+  ❌ Documentation (/docs) - Issues: Test error: page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3004/docs", waiting until "networkidle"[22m
+
+
+
+✅ Audit complete!
+📸 Screenshots saved to: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\senova-audit
+📊 Detailed report saved to: SENOVA_PUBLIC_WEBSITE_AUDIT_REPORT.json

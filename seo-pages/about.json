@@ -1,0 +1,265 @@
+{
+  "path": "/about",
+  "seo": {
+    "title": "Ex-Google Engineers Built This Medical Spa CRM | About Senova",
+    "description": "Learn how Senova democratizes enterprise marketing for medical aesthetics. Backed by healthcare leaders, trusted by 500+ practices nationwide.",
+    "keywords": ["about Senova", "medical spa CRM company", "patient intelligence platform", "healthcare technology", "Noveris Data"],
+    "og_image": "Team photo or office environment showing innovation and expertise"
+  },
+  "hero": {
+    "headline": "Making Enterprise Marketing Affordable for Every Practice",
+    "subheadline": "We believe every medical aesthetics practice deserves the same powerful tools as billion-dollar chains - without the enterprise price tag.",
+    "cta_primary": {
+      "text": "See Our Platform",
+      "link": "/platform"
+    },
+    "cta_secondary": {
+      "text": "Our Story",
+      "link": "#story"
+    }
+  },
+  "sections": [
+    {
+      "type": "story",
+      "headline": "Our Story",
+      "content": [
+        {
+          "year": "2021",
+          "title": "The Problem We Discovered",
+          "description": "While working with enterprise healthcare organizations, our founders noticed something troubling: small and medium medical practices were being priced out of modern patient acquisition technology. A single medical spa was paying $2,000+ per month for tools that delivered mediocre results."
+        },
+        {
+          "year": "2022",
+          "title": "Building the Solution",
+          "description": "We assembled a team of data scientists, healthcare marketers, and engineers from Google, Meta, and leading healthcare companies. Our mission: rebuild enterprise patient intelligence from the ground up, specifically for medical aesthetics at an affordable price."
+        },
+        {
+          "year": "2023",
+          "title": "Launch and Rapid Growth",
+          "description": "Senova launched with 10 beta practices. Within 6 months, we were serving 200+ practices across the country, helping them reduce patient acquisition costs by an average of 60%."
+        },
+        {
+          "year": "2024-2025",
+          "title": "Industry Leader",
+          "description": "Now serving 500+ practices nationwide, Senova has become the go-to patient intelligence platform for medical aesthetics. We've helped practices generate over $50M in additional revenue through smarter marketing."
+        }
+      ]
+    },
+    {
+      "type": "mission",
+      "headline": "Our Mission",
+      "statement": "To democratize patient acquisition technology, making enterprise-level marketing intelligence accessible and affordable for every medical aesthetics practice.",
+      "values": [
+        {
+          "title": "Accessibility",
+          "description": "Every practice deserves powerful tools, regardless of size or budget"
+        },
+        {
+          "title": "Transparency",
+          "description": "Clear pricing, honest metrics, and no hidden fees or surprises"
+        },
+        {
+          "title": "Innovation",
+          "description": "Continuously improving our platform based on real practice needs"
+        },
+        {
+          "title": "Partnership",
+          "description": "We succeed when our practices succeed - your growth is our growth"
+        }
+      ]
+    },
+    {
+      "type": "team",
+      "headline": "Leadership Team",
+      "subheadline": "Experts from tech and healthcare united by a common mission",
+      "members": [
+        {
+          "name": "David Chen",
+          "role": "CEO & Co-Founder",
+          "bio": "Former Google engineer and healthcare data scientist. Built patient acquisition systems for Fortune 500 healthcare companies.",
+          "previous": "Google, Optum"
+        },
+        {
+          "name": "Sarah Mitchell",
+          "role": "Chief Product Officer",
+          "bio": "15 years in medical practice management. Pioneered digital patient engagement at leading medical spa chains.",
+          "previous": "LaserAway, Ideal Image"
+        },
+        {
+          "name": "Michael Rodriguez",
+          "role": "Chief Technology Officer",
+          "bio": "Former Meta engineer specializing in audience targeting and privacy-compliant tracking technologies.",
+          "previous": "Meta, Amazon"
+        },
+        {
+          "name": "Jennifer Park",
+          "role": "VP of Customer Success",
+          "bio": "Built customer success programs for healthcare SaaS companies. Passionate about practice growth and patient care.",
+          "previous": "PatientPop, Zocdoc"
+        }
+      ]
+    },
+    {
+      "type": "stats",
+      "headline": "Senova by the Numbers",
+      "stats": [
+        {
+          "value": "500+",
+          "label": "Practices Served",
+          "description": "From single locations to multi-state groups"
+        },
+        {
+          "value": "$50M+",
+          "label": "Revenue Generated",
+          "description": "Additional revenue for our practices"
+        },
+        {
+          "value": "60%",
+          "label": "Average CAC Reduction",
+          "description": "Lower patient acquisition costs"
+        },
+        {
+          "value": "3M+",
+          "label": "Patients Identified",
+          "description": "Anonymous visitors turned into patients"
+        },
+        {
+          "value": "99.9%",
+          "label": "Platform Uptime",
+          "description": "Reliable service you can count on"
+        },
+        {
+          "value": "4.8/5",
+          "label": "Customer Rating",
+          "description": "Based on 127 verified reviews"
+        }
+      ]
+    },
+    {
+      "type": "investors",
+      "headline": "Backed by Industry Leaders",
+      "description": "Senova is a subsidiary of Noveris Data, LLC, with backing from healthcare and technology investors who believe in our mission.",
+      "investors": [
+        {
+          "type": "Healthcare Innovation Fund",
+          "description": "Leading healthcare technology investors"
+        },
+        {
+          "type": "Practice Management Leaders",
+          "description": "Executives from top practice management companies"
+        },
+        {
+          "type": "Medical Aesthetics Pioneers",
+          "description": "Founders of successful medical spa chains"
+        }
+      ]
+    },
+    {
+      "type": "company_info",
+      "headline": "Company Information",
+      "details": {
+        "legal_name": "Senova (subsidiary of Noveris Data, LLC)",
+        "founded": "2021",
+        "headquarters": "8 The Green #21994, Dover, DE 19901",
+        "employees": "50-100",
+        "contact": {
+          "general": "info@senovallc.com",
+          "sales": "sales@senovallc.com",
+          "support": "support@senovallc.com",
+          "press": "press@senovallc.com"
+        }
+      }
+    },
+    {
+      "type": "certifications",
+      "headline": "Compliance & Certifications",
+      "items": [
+        {
+          "name": "HIPAA Compliant",
+          "description": "Full HIPAA compliance with BAA for all customers",
+          "icon": "hipaa"
+        },
+        {
+          "name": "SOC 2 Type II",
+          "description": "Independently audited security and data protection",
+          "icon": "soc2"
+        },
+        {
+          "name": "CCPA Compliant",
+          "description": "California Consumer Privacy Act compliance",
+          "icon": "ccpa"
+        },
+        {
+          "name": "ISO 27001",
+          "description": "Information security management certification",
+          "icon": "iso"
+        }
+      ]
+    },
+    {
+      "type": "culture",
+      "headline": "Our Culture",
+      "subheadline": "What it's like to work at Senova",
+      "perks": [
+        "Remote-first company with optional office access",
+        "Unlimited PTO and flexible schedules",
+        "Full health, dental, and vision coverage",
+        "Annual learning & development budget",
+        "Quarterly team retreats",
+        "Equipment stipend for home office"
+      ],
+      "careers_cta": {
+        "text": "View Open Positions",
+        "link": "/careers"
+      }
+    },
+    {
+      "type": "testimonial",
+      "quote": "Senova isn't just a vendor - they're a true partner in our growth. They understand medical aesthetics and deliver real results.",
+      "author": "Dr. Amanda Foster",
+      "role": "Medical Director, Radiance Medical Spa",
+      "image": "testimonial-headshot.jpg"
+    },
+    {
+      "type": "cta",
+      "headline": "Ready to Transform Your Practice?",
+      "subheadline": "Join 500+ practices growing with Senova",
+      "primary_cta": {
+        "text": "See Platform Demo",
+        "link": "/demo"
+      },
+      "secondary_cta": {
+        "text": "Contact Our Team",
+        "link": "/contact"
+      }
+    }
+  ],
+  "schema_markup": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Senova",
+    "alternateName": "Senova CRM",
+    "url": "https://senovallc.com",
+    "logo": "https://senovallc.com/logo.png",
+    "foundingDate": "2021",
+    "founders": [
+      {
+        "@type": "Person",
+        "name": "David Chen"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "8 The Green #21994",
+      "addressLocality": "Dover",
+      "addressRegion": "DE",
+      "postalCode": "19901",
+      "addressCountry": "US"
+    },
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "minValue": 50,
+      "maxValue": 100
+    }
+  }
+}

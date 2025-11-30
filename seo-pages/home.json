@@ -1,0 +1,209 @@
+{
+  "path": "/",
+  "seo": {
+    "title": "Cut Patient Acquisition Costs by 60% | Senova CRM",
+    "description": "Medical spas save $100K+ yearly with our patient intelligence platform. See 80% of website visitors, 3X conversions. Free ROI calculator inside.",
+    "keywords": ["medical spa CRM", "patient acquisition", "medical aesthetics marketing", "medspa software", "patient intelligence"],
+    "og_image": "Hero image showing dashboard with patient analytics and ROI metrics"
+  },
+  "hero": {
+    "headline": "Turn 80% of Your Website Visitors Into Booked Appointments",
+    "subheadline": "The only CRM built for medical aesthetics that identifies anonymous visitors, targets high-value patients, and proves ROI on every marketing dollar.",
+    "cta_primary": {
+      "text": "See Your First 100 Visitors Free",
+      "link": "/demo"
+    },
+    "cta_secondary": {
+      "text": "Calculate Your ROI",
+      "link": "/roi-calculator"
+    },
+    "stats": [
+      { "value": "80%", "label": "Visitor Identification Rate" },
+      { "value": "60%", "label": "Lower Acquisition Costs" },
+      { "value": "3X", "label": "Conversion Rate Increase" }
+    ]
+  },
+  "sections": [
+    {
+      "type": "problem",
+      "headline": "Your Practice Is Losing $30,000 Every Month",
+      "subheadline": "While enterprise clinics use advanced patient intelligence, you're stuck with basic tools",
+      "problems": [
+        {
+          "title": "97% of website visitors leave without booking",
+          "description": "You paid to bring them there, but can't see who they are or follow up"
+        },
+        {
+          "title": "Facebook ads cost $150+ per new patient",
+          "description": "And half never show up for their appointment"
+        },
+        {
+          "title": "Competitors are stealing your patients",
+          "description": "They're targeting people who visited your site with lower prices"
+        }
+      ]
+    },
+    {
+      "type": "solution",
+      "headline": "Enterprise-Level Patient Intelligence at SMB Prices",
+      "subheadline": "Everything the big chains use, at 40% of the cost",
+      "features": [
+        {
+          "icon": "pixel",
+          "title": "Patient Identification Pixel",
+          "description": "See exactly who visits your website - name, email, procedure interest, and buying intent. HIPAA-compliant and 80% accurate.",
+          "link": "/solutions/patient-identification"
+        },
+        {
+          "icon": "targeting",
+          "title": "Procedure-Based Audiences",
+          "description": "Target people actively researching Botox, fillers, or laser treatments in your area. Pre-built audiences for 50+ procedures.",
+          "link": "/solutions/audience-intelligence"
+        },
+        {
+          "icon": "automation",
+          "title": "Automated Follow-Up Campaigns",
+          "description": "Convert interested visitors with personalized emails and texts based on the pages they viewed and procedures they researched.",
+          "link": "/solutions/campaign-activation"
+        },
+        {
+          "icon": "analytics",
+          "title": "True ROI Tracking",
+          "description": "See exactly which campaigns bring in patients and revenue. Track from first click to lifetime value.",
+          "link": "/solutions/analytics"
+        }
+      ]
+    },
+    {
+      "type": "testimonials",
+      "headline": "Join 500+ Practices Growing with Senova",
+      "testimonials": [
+        {
+          "quote": "We went from $400 per booked appointment to $190 in just 30 days. The visitor identification alone paid for the entire platform.",
+          "author": "Dr. Sarah Mitchell",
+          "role": "Owner, Radiance Medical Spa",
+          "location": "Phoenix, AZ",
+          "metric": "53% reduction in CAC"
+        },
+        {
+          "quote": "Finally, a CRM that understands medical aesthetics. The pre-built Botox audiences converted at 3X our normal rate.",
+          "author": "Jennifer Park",
+          "role": "Marketing Director, Elite Dermatology",
+          "location": "Los Angeles, CA",
+          "metric": "24 extra appointments/month"
+        },
+        {
+          "quote": "We added $200K in revenue just from remarketing to website visitors we couldn't see before. Game-changer.",
+          "author": "Michael Torres",
+          "role": "Practice Manager, Aesthetic Institute",
+          "location": "Miami, FL",
+          "metric": "$200K additional revenue"
+        }
+      ]
+    },
+    {
+      "type": "comparison",
+      "headline": "Why Practices Switch from Basic CRMs",
+      "subheadline": "See how Senova compares to what you're using now",
+      "comparison_table": {
+        "headers": ["Feature", "Basic CRMs", "Enterprise Solutions", "Senova"],
+        "rows": [
+          {
+            "feature": "Visitor Identification",
+            "basic": "❌ None",
+            "enterprise": "✓ 30-40%",
+            "senova": "✓ 80%"
+          },
+          {
+            "feature": "Procedure Audiences",
+            "basic": "❌ None",
+            "enterprise": "✓ Custom only",
+            "senova": "✓ 50+ Pre-built"
+          },
+          {
+            "feature": "HIPAA Compliance",
+            "basic": "❌ Extra cost",
+            "enterprise": "✓ Included",
+            "senova": "✓ Included"
+          },
+          {
+            "feature": "Setup Time",
+            "basic": "2-4 weeks",
+            "enterprise": "2-3 months",
+            "senova": "24 hours"
+          },
+          {
+            "feature": "Monthly Cost",
+            "basic": "$99-299",
+            "enterprise": "$2,000+",
+            "senova": "$299-599"
+          }
+        ]
+      }
+    },
+    {
+      "type": "industries",
+      "headline": "Built for Every Aesthetic Practice",
+      "industries": [
+        {
+          "name": "Medical Spas",
+          "description": "Complete solution for Botox, fillers, and laser treatments",
+          "link": "/industries/medical-spas"
+        },
+        {
+          "name": "Dermatology",
+          "description": "Medical and cosmetic patient management",
+          "link": "/industries/dermatology"
+        },
+        {
+          "name": "Plastic Surgery",
+          "description": "High-value procedure tracking and nurturing",
+          "link": "/industries/plastic-surgery"
+        },
+        {
+          "name": "Aesthetic Clinics",
+          "description": "Multi-treatment patient journeys",
+          "link": "/industries/aesthetic-clinics"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "headline": "See Your Website Visitors Right Now",
+      "subheadline": "Install our pixel in 5 minutes and see your first 100 visitors free. No credit card required.",
+      "primary_cta": {
+        "text": "Start Free Trial",
+        "link": "/demo"
+      },
+      "secondary_cta": {
+        "text": "Schedule Demo",
+        "link": "/contact"
+      },
+      "trust_badges": [
+        "HIPAA Compliant",
+        "SOC 2 Certified",
+        "99.9% Uptime",
+        "24/7 Support"
+      ]
+    }
+  ],
+  "schema_markup": {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Senova CRM",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "299",
+      "highPrice": "599",
+      "priceCurrency": "USD",
+      "offerCount": "3"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "127"
+    }
+  }
+}

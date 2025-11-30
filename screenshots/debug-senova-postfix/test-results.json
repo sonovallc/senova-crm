@@ -1,0 +1,3065 @@
+{
+  "timestamp": "2025-11-28T06:55:52.145Z",
+  "totalPages": 19,
+  "passed": 0,
+  "failed": 19,
+  "errors": 0,
+  "results": [
+    {
+      "name": "Homepage",
+      "url": "http://localhost:3004/",
+      "category": "main",
+      "status": "fail",
+      "errors": [
+        "Console error: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/about\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n"
+      ],
+      "violations": [
+        {
+          "type": "Specific ROI Guarantees",
+          "found": [
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%"
+          ],
+          "severity": "critical"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Platform",
+          "visible": true,
+          "index": 0
+        },
+        {
+          "text": "Solutions",
+          "visible": true,
+          "index": 1
+        },
+        {
+          "text": "Industries",
+          "visible": true,
+          "index": 2
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 3
+        },
+        {
+          "text": "Platform",
+          "visible": false,
+          "index": 4
+        },
+        {
+          "text": "Solutions",
+          "visible": false,
+          "index": 5
+        },
+        {
+          "text": "Industries",
+          "visible": false,
+          "index": 6
+        },
+        {
+          "text": "Subscribe",
+          "visible": true,
+          "index": 7
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 8
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 9
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 10
+        },
+        {
+          "text": "01 Issue",
+          "visible": true,
+          "index": 11
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 12
+        }
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "SSenova",
+          "index": 0
+        },
+        {
+          "href": "/platform",
+          "text": "OverviewComplete platform capabilities",
+          "index": 1
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM FeaturesPatient relationship management",
+          "index": 2
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM360° patient management",
+          "index": 3
+        },
+        {
+          "href": "/solutions/audience-intelligence",
+          "text": "Audience IntelligenceData-driven patient insights",
+          "index": 4
+        },
+        {
+          "href": "/solutions/patient-identification",
+          "text": "Patient IdentificationIdentify website visitors",
+          "index": 5
+        },
+        {
+          "href": "/solutions/campaign-activation",
+          "text": "Campaign ActivationMulti-channel marketing",
+          "index": 6
+        },
+        {
+          "href": "/solutions/analytics",
+          "text": "AnalyticsROI & performance tracking",
+          "index": 7
+        },
+        {
+          "href": "/industries/medical-spas",
+          "text": "Medical SpasSolutions for med spas",
+          "index": 8
+        },
+        {
+          "href": "/industries/dermatology",
+          "text": "DermatologyFor dermatology practices",
+          "index": 9
+        }
+      ],
+      "forms": [
+        {
+          "index": 0,
+          "fields": 1
+        }
+      ],
+      "dropdowns": [],
+      "screenshots": [
+        "screenshots/debug-senova-postfix/main-homepage-initial-1764312952457.png",
+        "screenshots/debug-senova-postfix/main-homepage-button-0-1764312952457.png",
+        "screenshots/debug-senova-postfix/main-homepage-button-1-1764312952457.png",
+        "screenshots/debug-senova-postfix/main-homepage-button-2-1764312952457.png",
+        "screenshots/debug-senova-postfix/main-homepage-button-7-1764312952457.png",
+        "screenshots/debug-senova-postfix/main-homepage-button-11-1764312952457.png",
+        "screenshots/debug-senova-postfix/main-homepage-form-0-1764312952457.png"
+      ]
+    },
+    {
+      "name": "Platform",
+      "url": "http://localhost:3004/platform",
+      "category": "main",
+      "status": "fail",
+      "errors": [
+        "Console error: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/about\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n"
+      ],
+      "violations": [
+        {
+          "type": "Specific ROI Guarantees",
+          "found": [
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%"
+          ],
+          "severity": "critical"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Platform",
+          "visible": true,
+          "index": 0
+        },
+        {
+          "text": "Solutions",
+          "visible": true,
+          "index": 1
+        },
+        {
+          "text": "Industries",
+          "visible": true,
+          "index": 2
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 3
+        },
+        {
+          "text": "Platform",
+          "visible": false,
+          "index": 4
+        },
+        {
+          "text": "Solutions",
+          "visible": false,
+          "index": 5
+        },
+        {
+          "text": "Industries",
+          "visible": false,
+          "index": 6
+        },
+        {
+          "text": "Subscribe",
+          "visible": true,
+          "index": 7
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 8
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 9
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 10
+        }
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "SSenova",
+          "index": 0
+        },
+        {
+          "href": "/platform",
+          "text": "OverviewComplete platform capabilities",
+          "index": 1
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM FeaturesPatient relationship management",
+          "index": 2
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM360° patient management",
+          "index": 3
+        },
+        {
+          "href": "/solutions/audience-intelligence",
+          "text": "Audience IntelligenceData-driven patient insights",
+          "index": 4
+        },
+        {
+          "href": "/solutions/patient-identification",
+          "text": "Patient IdentificationIdentify website visitors",
+          "index": 5
+        },
+        {
+          "href": "/solutions/campaign-activation",
+          "text": "Campaign ActivationMulti-channel marketing",
+          "index": 6
+        },
+        {
+          "href": "/solutions/analytics",
+          "text": "AnalyticsROI & performance tracking",
+          "index": 7
+        },
+        {
+          "href": "/industries/medical-spas",
+          "text": "Medical SpasSolutions for med spas",
+          "index": 8
+        },
+        {
+          "href": "/industries/dermatology",
+          "text": "DermatologyFor dermatology practices",
+          "index": 9
+        }
+      ],
+      "forms": [
+        {
+          "index": 0,
+          "fields": 1
+        }
+      ],
+      "dropdowns": [],
+      "screenshots": [
+        "screenshots/debug-senova-postfix/main-platform-initial-1764312960254.png",
+        "screenshots/debug-senova-postfix/main-platform-button-0-1764312960254.png",
+        "screenshots/debug-senova-postfix/main-platform-button-1-1764312960254.png",
+        "screenshots/debug-senova-postfix/main-platform-button-2-1764312960254.png",
+        "screenshots/debug-senova-postfix/main-platform-button-7-1764312960254.png",
+        "screenshots/debug-senova-postfix/main-platform-form-0-1764312960254.png"
+      ]
+    },
+    {
+      "name": "Pricing",
+      "url": "http://localhost:3004/pricing",
+      "category": "main",
+      "status": "fail",
+      "errors": [
+        "Console error: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/about\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n"
+      ],
+      "violations": [
+        {
+          "type": "Specific ROI Guarantees",
+          "found": [
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%"
+          ],
+          "severity": "critical"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "visible": true,
+          "index": 0
+        },
+        {
+          "text": "01 Issue",
+          "visible": true,
+          "index": 1
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 2
+        },
+        {
+          "text": "Platform",
+          "visible": true,
+          "index": 3
+        },
+        {
+          "text": "Solutions",
+          "visible": true,
+          "index": 4
+        },
+        {
+          "text": "Industries",
+          "visible": true,
+          "index": 5
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 6
+        },
+        {
+          "text": "Platform",
+          "visible": false,
+          "index": 7
+        },
+        {
+          "text": "Solutions",
+          "visible": false,
+          "index": 8
+        },
+        {
+          "text": "Industries",
+          "visible": false,
+          "index": 9
+        },
+        {
+          "text": "Monthly",
+          "visible": true,
+          "index": 10
+        },
+        {
+          "text": "Annual Save 20%",
+          "visible": true,
+          "index": 11
+        },
+        {
+          "text": "Subscribe",
+          "visible": true,
+          "index": 12
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 13
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 14
+        }
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "SSenova",
+          "index": 0
+        },
+        {
+          "href": "/platform",
+          "text": "OverviewComplete platform capabilities",
+          "index": 1
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM FeaturesPatient relationship management",
+          "index": 2
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM360° patient management",
+          "index": 3
+        },
+        {
+          "href": "/solutions/audience-intelligence",
+          "text": "Audience IntelligenceData-driven patient insights",
+          "index": 4
+        },
+        {
+          "href": "/solutions/patient-identification",
+          "text": "Patient IdentificationIdentify website visitors",
+          "index": 5
+        },
+        {
+          "href": "/solutions/campaign-activation",
+          "text": "Campaign ActivationMulti-channel marketing",
+          "index": 6
+        },
+        {
+          "href": "/solutions/analytics",
+          "text": "AnalyticsROI & performance tracking",
+          "index": 7
+        },
+        {
+          "href": "/industries/medical-spas",
+          "text": "Medical SpasSolutions for med spas",
+          "index": 8
+        },
+        {
+          "href": "/industries/dermatology",
+          "text": "DermatologyFor dermatology practices",
+          "index": 9
+        }
+      ],
+      "forms": [
+        {
+          "index": 0,
+          "fields": 1
+        }
+      ],
+      "dropdowns": [],
+      "screenshots": [
+        "screenshots/debug-senova-postfix/main-pricing-initial-1764312970723.png",
+        "screenshots/debug-senova-postfix/main-pricing-button-1-1764312970723.png",
+        "screenshots/debug-senova-postfix/main-pricing-button-3-1764312970723.png",
+        "screenshots/debug-senova-postfix/main-pricing-button-4-1764312970723.png",
+        "screenshots/debug-senova-postfix/main-pricing-button-5-1764312970723.png",
+        "screenshots/debug-senova-postfix/main-pricing-button-10-1764312970723.png",
+        "screenshots/debug-senova-postfix/main-pricing-button-11-1764312970723.png",
+        "screenshots/debug-senova-postfix/main-pricing-button-12-1764312970723.png",
+        "screenshots/debug-senova-postfix/main-pricing-form-0-1764312970723.png"
+      ]
+    },
+    {
+      "name": "Demo",
+      "url": "http://localhost:3004/demo",
+      "category": "main",
+      "status": "fail",
+      "errors": [
+        "Console error: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/about\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n"
+      ],
+      "violations": [
+        {
+          "type": "Specific ROI Guarantees",
+          "found": [
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%"
+          ],
+          "severity": "critical"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Platform",
+          "visible": true,
+          "index": 0
+        },
+        {
+          "text": "Solutions",
+          "visible": true,
+          "index": 1
+        },
+        {
+          "text": "Industries",
+          "visible": true,
+          "index": 2
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 3
+        },
+        {
+          "text": "Platform",
+          "visible": false,
+          "index": 4
+        },
+        {
+          "text": "Solutions",
+          "visible": false,
+          "index": 5
+        },
+        {
+          "text": "Industries",
+          "visible": false,
+          "index": 6
+        },
+        {
+          "text": "Book Your Demo",
+          "visible": true,
+          "index": 7
+        },
+        {
+          "text": "Subscribe",
+          "visible": true,
+          "index": 8
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 9
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 10
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 11
+        }
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "SSenova",
+          "index": 0
+        },
+        {
+          "href": "/platform",
+          "text": "OverviewComplete platform capabilities",
+          "index": 1
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM FeaturesPatient relationship management",
+          "index": 2
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM360° patient management",
+          "index": 3
+        },
+        {
+          "href": "/solutions/audience-intelligence",
+          "text": "Audience IntelligenceData-driven patient insights",
+          "index": 4
+        },
+        {
+          "href": "/solutions/patient-identification",
+          "text": "Patient IdentificationIdentify website visitors",
+          "index": 5
+        },
+        {
+          "href": "/solutions/campaign-activation",
+          "text": "Campaign ActivationMulti-channel marketing",
+          "index": 6
+        },
+        {
+          "href": "/solutions/analytics",
+          "text": "AnalyticsROI & performance tracking",
+          "index": 7
+        },
+        {
+          "href": "/industries/medical-spas",
+          "text": "Medical SpasSolutions for med spas",
+          "index": 8
+        },
+        {
+          "href": "/industries/dermatology",
+          "text": "DermatologyFor dermatology practices",
+          "index": 9
+        }
+      ],
+      "forms": [
+        {
+          "index": 0,
+          "fields": 8
+        },
+        {
+          "index": 1,
+          "fields": 1
+        }
+      ],
+      "dropdowns": [
+        {
+          "index": 0,
+          "optionCount": 6
+        },
+        {
+          "index": 1,
+          "optionCount": 4
+        }
+      ],
+      "screenshots": [
+        "screenshots/debug-senova-postfix/main-demo-initial-1764312983292.png",
+        "screenshots/debug-senova-postfix/main-demo-button-0-1764312983292.png",
+        "screenshots/debug-senova-postfix/main-demo-button-1-1764312983292.png",
+        "screenshots/debug-senova-postfix/main-demo-button-2-1764312983292.png",
+        "screenshots/debug-senova-postfix/main-demo-button-7-1764312983292.png",
+        "screenshots/debug-senova-postfix/main-demo-button-8-1764312983292.png",
+        "screenshots/debug-senova-postfix/main-demo-form-0-1764312983292.png",
+        "screenshots/debug-senova-postfix/main-demo-form-1-1764312983292.png"
+      ]
+    },
+    {
+      "name": "Contact",
+      "url": "http://localhost:3004/contact",
+      "category": "main",
+      "status": "fail",
+      "errors": [
+        "Console error: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/about\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n"
+      ],
+      "violations": [
+        {
+          "type": "Specific ROI Guarantees",
+          "found": [
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%"
+          ],
+          "severity": "critical"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Platform",
+          "visible": true,
+          "index": 0
+        },
+        {
+          "text": "Solutions",
+          "visible": true,
+          "index": 1
+        },
+        {
+          "text": "Industries",
+          "visible": true,
+          "index": 2
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 3
+        },
+        {
+          "text": "Platform",
+          "visible": false,
+          "index": 4
+        },
+        {
+          "text": "Solutions",
+          "visible": false,
+          "index": 5
+        },
+        {
+          "text": "Industries",
+          "visible": false,
+          "index": 6
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 7
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 8
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 9
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 10
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 11
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 12
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 13
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 14
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 15
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 16
+        },
+        {
+          "text": "Email",
+          "visible": true,
+          "index": 17
+        },
+        {
+          "text": "Send Message",
+          "visible": true,
+          "index": 18
+        },
+        {
+          "text": "Subscribe",
+          "visible": true,
+          "index": 19
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 20
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 21
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 22
+        }
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "SSenova",
+          "index": 0
+        },
+        {
+          "href": "/platform",
+          "text": "OverviewComplete platform capabilities",
+          "index": 1
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM FeaturesPatient relationship management",
+          "index": 2
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM360° patient management",
+          "index": 3
+        },
+        {
+          "href": "/solutions/audience-intelligence",
+          "text": "Audience IntelligenceData-driven patient insights",
+          "index": 4
+        },
+        {
+          "href": "/solutions/patient-identification",
+          "text": "Patient IdentificationIdentify website visitors",
+          "index": 5
+        },
+        {
+          "href": "/solutions/campaign-activation",
+          "text": "Campaign ActivationMulti-channel marketing",
+          "index": 6
+        },
+        {
+          "href": "/solutions/analytics",
+          "text": "AnalyticsROI & performance tracking",
+          "index": 7
+        },
+        {
+          "href": "/industries/medical-spas",
+          "text": "Medical SpasSolutions for med spas",
+          "index": 8
+        },
+        {
+          "href": "/industries/dermatology",
+          "text": "DermatologyFor dermatology practices",
+          "index": 9
+        }
+      ],
+      "forms": [
+        {
+          "index": 0,
+          "fields": 16
+        },
+        {
+          "index": 1,
+          "fields": 1
+        }
+      ],
+      "dropdowns": [
+        {
+          "index": 0,
+          "optionCount": 3
+        }
+      ],
+      "screenshots": [
+        "screenshots/debug-senova-postfix/main-contact-initial-1764312993069.png",
+        "screenshots/debug-senova-postfix/main-contact-button-0-1764312993069.png",
+        "screenshots/debug-senova-postfix/main-contact-button-1-1764312993069.png",
+        "screenshots/debug-senova-postfix/main-contact-button-2-1764312993069.png",
+        "screenshots/debug-senova-postfix/main-contact-button-17-1764312993069.png",
+        "screenshots/debug-senova-postfix/main-contact-button-18-1764312993069.png",
+        "screenshots/debug-senova-postfix/main-contact-button-19-1764312993069.png",
+        "screenshots/debug-senova-postfix/main-contact-form-0-1764312993069.png",
+        "screenshots/debug-senova-postfix/main-contact-form-1-1764312993069.png"
+      ]
+    },
+    {
+      "name": "About",
+      "url": "http://localhost:3004/about",
+      "category": "main",
+      "status": "fail",
+      "errors": [
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n"
+      ],
+      "violations": [
+        {
+          "type": "Specific ROI Guarantees",
+          "found": [
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%"
+          ],
+          "severity": "critical"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Platform",
+          "visible": true,
+          "index": 0
+        },
+        {
+          "text": "Solutions",
+          "visible": true,
+          "index": 1
+        },
+        {
+          "text": "Industries",
+          "visible": true,
+          "index": 2
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 3
+        },
+        {
+          "text": "Platform",
+          "visible": false,
+          "index": 4
+        },
+        {
+          "text": "Solutions",
+          "visible": false,
+          "index": 5
+        },
+        {
+          "text": "Industries",
+          "visible": false,
+          "index": 6
+        },
+        {
+          "text": "Subscribe",
+          "visible": true,
+          "index": 7
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 8
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 9
+        },
+        {
+          "text": "12 Issues",
+          "visible": true,
+          "index": 10
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 11
+        }
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "SSenova",
+          "index": 0
+        },
+        {
+          "href": "/platform",
+          "text": "OverviewComplete platform capabilities",
+          "index": 1
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM FeaturesPatient relationship management",
+          "index": 2
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM360° patient management",
+          "index": 3
+        },
+        {
+          "href": "/solutions/audience-intelligence",
+          "text": "Audience IntelligenceData-driven patient insights",
+          "index": 4
+        },
+        {
+          "href": "/solutions/patient-identification",
+          "text": "Patient IdentificationIdentify website visitors",
+          "index": 5
+        },
+        {
+          "href": "/solutions/campaign-activation",
+          "text": "Campaign ActivationMulti-channel marketing",
+          "index": 6
+        },
+        {
+          "href": "/solutions/analytics",
+          "text": "AnalyticsROI & performance tracking",
+          "index": 7
+        },
+        {
+          "href": "/industries/medical-spas",
+          "text": "Medical SpasSolutions for med spas",
+          "index": 8
+        },
+        {
+          "href": "/industries/dermatology",
+          "text": "DermatologyFor dermatology practices",
+          "index": 9
+        }
+      ],
+      "forms": [
+        {
+          "index": 0,
+          "fields": 1
+        }
+      ],
+      "dropdowns": [],
+      "screenshots": [
+        "screenshots/debug-senova-postfix/main-about-initial-1764312999444.png",
+        "screenshots/debug-senova-postfix/main-about-button-0-1764312999444.png",
+        "screenshots/debug-senova-postfix/main-about-button-1-1764312999444.png",
+        "screenshots/debug-senova-postfix/main-about-button-2-1764312999444.png",
+        "screenshots/debug-senova-postfix/main-about-button-7-1764312999444.png",
+        "screenshots/debug-senova-postfix/main-about-button-10-1764312999444.png",
+        "screenshots/debug-senova-postfix/main-about-form-0-1764312999444.png"
+      ]
+    },
+    {
+      "name": "HIPAA",
+      "url": "http://localhost:3004/hipaa",
+      "category": "legal",
+      "status": "fail",
+      "errors": [
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n"
+      ],
+      "violations": [
+        {
+          "type": "Specific ROI Guarantees",
+          "found": [
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%"
+          ],
+          "severity": "critical"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Platform",
+          "visible": true,
+          "index": 0
+        },
+        {
+          "text": "Solutions",
+          "visible": true,
+          "index": 1
+        },
+        {
+          "text": "Industries",
+          "visible": true,
+          "index": 2
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 3
+        },
+        {
+          "text": "Platform",
+          "visible": false,
+          "index": 4
+        },
+        {
+          "text": "Solutions",
+          "visible": false,
+          "index": 5
+        },
+        {
+          "text": "Industries",
+          "visible": false,
+          "index": 6
+        },
+        {
+          "text": "Subscribe",
+          "visible": true,
+          "index": 7
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 8
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 9
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 10
+        }
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "SSenova",
+          "index": 0
+        },
+        {
+          "href": "/platform",
+          "text": "OverviewComplete platform capabilities",
+          "index": 1
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM FeaturesPatient relationship management",
+          "index": 2
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM360° patient management",
+          "index": 3
+        },
+        {
+          "href": "/solutions/audience-intelligence",
+          "text": "Audience IntelligenceData-driven patient insights",
+          "index": 4
+        },
+        {
+          "href": "/solutions/patient-identification",
+          "text": "Patient IdentificationIdentify website visitors",
+          "index": 5
+        },
+        {
+          "href": "/solutions/campaign-activation",
+          "text": "Campaign ActivationMulti-channel marketing",
+          "index": 6
+        },
+        {
+          "href": "/solutions/analytics",
+          "text": "AnalyticsROI & performance tracking",
+          "index": 7
+        },
+        {
+          "href": "/industries/medical-spas",
+          "text": "Medical SpasSolutions for med spas",
+          "index": 8
+        },
+        {
+          "href": "/industries/dermatology",
+          "text": "DermatologyFor dermatology practices",
+          "index": 9
+        }
+      ],
+      "forms": [
+        {
+          "index": 0,
+          "fields": 1
+        }
+      ],
+      "dropdowns": [],
+      "screenshots": [
+        "screenshots/debug-senova-postfix/legal-hipaa-initial-1764313006490.png",
+        "screenshots/debug-senova-postfix/legal-hipaa-button-0-1764313006490.png",
+        "screenshots/debug-senova-postfix/legal-hipaa-button-1-1764313006490.png",
+        "screenshots/debug-senova-postfix/legal-hipaa-button-2-1764313006490.png",
+        "screenshots/debug-senova-postfix/legal-hipaa-button-7-1764313006490.png",
+        "screenshots/debug-senova-postfix/legal-hipaa-form-0-1764313006490.png"
+      ]
+    },
+    {
+      "name": "Security",
+      "url": "http://localhost:3004/security",
+      "category": "legal",
+      "status": "fail",
+      "errors": [
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n"
+      ],
+      "violations": [
+        {
+          "type": "Specific ROI Guarantees",
+          "found": [
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%"
+          ],
+          "severity": "critical"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Platform",
+          "visible": true,
+          "index": 0
+        },
+        {
+          "text": "Solutions",
+          "visible": true,
+          "index": 1
+        },
+        {
+          "text": "Industries",
+          "visible": true,
+          "index": 2
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 3
+        },
+        {
+          "text": "Platform",
+          "visible": false,
+          "index": 4
+        },
+        {
+          "text": "Solutions",
+          "visible": false,
+          "index": 5
+        },
+        {
+          "text": "Industries",
+          "visible": false,
+          "index": 6
+        },
+        {
+          "text": "Subscribe",
+          "visible": true,
+          "index": 7
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 8
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 9
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 10
+        }
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "SSenova",
+          "index": 0
+        },
+        {
+          "href": "/platform",
+          "text": "OverviewComplete platform capabilities",
+          "index": 1
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM FeaturesPatient relationship management",
+          "index": 2
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM360° patient management",
+          "index": 3
+        },
+        {
+          "href": "/solutions/audience-intelligence",
+          "text": "Audience IntelligenceData-driven patient insights",
+          "index": 4
+        },
+        {
+          "href": "/solutions/patient-identification",
+          "text": "Patient IdentificationIdentify website visitors",
+          "index": 5
+        },
+        {
+          "href": "/solutions/campaign-activation",
+          "text": "Campaign ActivationMulti-channel marketing",
+          "index": 6
+        },
+        {
+          "href": "/solutions/analytics",
+          "text": "AnalyticsROI & performance tracking",
+          "index": 7
+        },
+        {
+          "href": "/industries/medical-spas",
+          "text": "Medical SpasSolutions for med spas",
+          "index": 8
+        },
+        {
+          "href": "/industries/dermatology",
+          "text": "DermatologyFor dermatology practices",
+          "index": 9
+        }
+      ],
+      "forms": [
+        {
+          "index": 0,
+          "fields": 1
+        }
+      ],
+      "dropdowns": [],
+      "screenshots": [
+        "screenshots/debug-senova-postfix/legal-security-initial-1764313014064.png",
+        "screenshots/debug-senova-postfix/legal-security-button-0-1764313014064.png",
+        "screenshots/debug-senova-postfix/legal-security-button-1-1764313014064.png",
+        "screenshots/debug-senova-postfix/legal-security-button-2-1764313014064.png",
+        "screenshots/debug-senova-postfix/legal-security-button-7-1764313014064.png",
+        "screenshots/debug-senova-postfix/legal-security-form-0-1764313014064.png"
+      ]
+    },
+    {
+      "name": "Privacy Policy",
+      "url": "http://localhost:3004/privacy-policy",
+      "category": "legal",
+      "status": "fail",
+      "errors": [
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n"
+      ],
+      "violations": [
+        {
+          "type": "Specific ROI Guarantees",
+          "found": [
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%"
+          ],
+          "severity": "critical"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Platform",
+          "visible": true,
+          "index": 0
+        },
+        {
+          "text": "Solutions",
+          "visible": true,
+          "index": 1
+        },
+        {
+          "text": "Industries",
+          "visible": true,
+          "index": 2
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 3
+        },
+        {
+          "text": "Platform",
+          "visible": false,
+          "index": 4
+        },
+        {
+          "text": "Solutions",
+          "visible": false,
+          "index": 5
+        },
+        {
+          "text": "Industries",
+          "visible": false,
+          "index": 6
+        },
+        {
+          "text": "Subscribe",
+          "visible": true,
+          "index": 7
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 8
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 9
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 10
+        }
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "SSenova",
+          "index": 0
+        },
+        {
+          "href": "/platform",
+          "text": "OverviewComplete platform capabilities",
+          "index": 1
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM FeaturesPatient relationship management",
+          "index": 2
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM360° patient management",
+          "index": 3
+        },
+        {
+          "href": "/solutions/audience-intelligence",
+          "text": "Audience IntelligenceData-driven patient insights",
+          "index": 4
+        },
+        {
+          "href": "/solutions/patient-identification",
+          "text": "Patient IdentificationIdentify website visitors",
+          "index": 5
+        },
+        {
+          "href": "/solutions/campaign-activation",
+          "text": "Campaign ActivationMulti-channel marketing",
+          "index": 6
+        },
+        {
+          "href": "/solutions/analytics",
+          "text": "AnalyticsROI & performance tracking",
+          "index": 7
+        },
+        {
+          "href": "/industries/medical-spas",
+          "text": "Medical SpasSolutions for med spas",
+          "index": 8
+        },
+        {
+          "href": "/industries/dermatology",
+          "text": "DermatologyFor dermatology practices",
+          "index": 9
+        }
+      ],
+      "forms": [
+        {
+          "index": 0,
+          "fields": 1
+        }
+      ],
+      "dropdowns": [],
+      "screenshots": [
+        "screenshots/debug-senova-postfix/legal-privacy-policy-initial-1764313021472.png",
+        "screenshots/debug-senova-postfix/legal-privacy-policy-button-0-1764313021472.png",
+        "screenshots/debug-senova-postfix/legal-privacy-policy-button-1-1764313021472.png",
+        "screenshots/debug-senova-postfix/legal-privacy-policy-button-2-1764313021472.png",
+        "screenshots/debug-senova-postfix/legal-privacy-policy-button-7-1764313021472.png",
+        "screenshots/debug-senova-postfix/legal-privacy-policy-form-0-1764313021472.png"
+      ]
+    },
+    {
+      "name": "Terms of Service",
+      "url": "http://localhost:3004/terms-of-service",
+      "category": "legal",
+      "status": "fail",
+      "errors": [
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n"
+      ],
+      "violations": [
+        {
+          "type": "Specific ROI Guarantees",
+          "found": [
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%"
+          ],
+          "severity": "critical"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Platform",
+          "visible": true,
+          "index": 0
+        },
+        {
+          "text": "Solutions",
+          "visible": true,
+          "index": 1
+        },
+        {
+          "text": "Industries",
+          "visible": true,
+          "index": 2
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 3
+        },
+        {
+          "text": "Platform",
+          "visible": false,
+          "index": 4
+        },
+        {
+          "text": "Solutions",
+          "visible": false,
+          "index": 5
+        },
+        {
+          "text": "Industries",
+          "visible": false,
+          "index": 6
+        },
+        {
+          "text": "Subscribe",
+          "visible": true,
+          "index": 7
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 8
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 9
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 10
+        }
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "SSenova",
+          "index": 0
+        },
+        {
+          "href": "/platform",
+          "text": "OverviewComplete platform capabilities",
+          "index": 1
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM FeaturesPatient relationship management",
+          "index": 2
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM360° patient management",
+          "index": 3
+        },
+        {
+          "href": "/solutions/audience-intelligence",
+          "text": "Audience IntelligenceData-driven patient insights",
+          "index": 4
+        },
+        {
+          "href": "/solutions/patient-identification",
+          "text": "Patient IdentificationIdentify website visitors",
+          "index": 5
+        },
+        {
+          "href": "/solutions/campaign-activation",
+          "text": "Campaign ActivationMulti-channel marketing",
+          "index": 6
+        },
+        {
+          "href": "/solutions/analytics",
+          "text": "AnalyticsROI & performance tracking",
+          "index": 7
+        },
+        {
+          "href": "/industries/medical-spas",
+          "text": "Medical SpasSolutions for med spas",
+          "index": 8
+        },
+        {
+          "href": "/industries/dermatology",
+          "text": "DermatologyFor dermatology practices",
+          "index": 9
+        }
+      ],
+      "forms": [
+        {
+          "index": 0,
+          "fields": 1
+        }
+      ],
+      "dropdowns": [],
+      "screenshots": [
+        "screenshots/debug-senova-postfix/legal-terms-of-service-initial-1764313028671.png",
+        "screenshots/debug-senova-postfix/legal-terms-of-service-button-0-1764313028671.png",
+        "screenshots/debug-senova-postfix/legal-terms-of-service-button-1-1764313028671.png",
+        "screenshots/debug-senova-postfix/legal-terms-of-service-button-2-1764313028671.png",
+        "screenshots/debug-senova-postfix/legal-terms-of-service-button-7-1764313028671.png",
+        "screenshots/debug-senova-postfix/legal-terms-of-service-form-0-1764313028671.png"
+      ]
+    },
+    {
+      "name": "CRM Solution",
+      "url": "http://localhost:3004/solutions/crm",
+      "category": "solutions",
+      "status": "fail",
+      "errors": [
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n"
+      ],
+      "violations": [
+        {
+          "type": "Specific ROI Guarantees",
+          "found": [
+            "3.2X",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "3X",
+            "3X",
+            "3X",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "3.2X",
+            "3X",
+            "3X",
+            "3X"
+          ],
+          "severity": "critical"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Platform",
+          "visible": true,
+          "index": 0
+        },
+        {
+          "text": "Solutions",
+          "visible": true,
+          "index": 1
+        },
+        {
+          "text": "Industries",
+          "visible": true,
+          "index": 2
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 3
+        },
+        {
+          "text": "Platform",
+          "visible": false,
+          "index": 4
+        },
+        {
+          "text": "Solutions",
+          "visible": false,
+          "index": 5
+        },
+        {
+          "text": "Industries",
+          "visible": false,
+          "index": 6
+        },
+        {
+          "text": "Subscribe",
+          "visible": true,
+          "index": 7
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 8
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 9
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 10
+        }
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "SSenova",
+          "index": 0
+        },
+        {
+          "href": "/platform",
+          "text": "OverviewComplete platform capabilities",
+          "index": 1
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM FeaturesPatient relationship management",
+          "index": 2
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM360° patient management",
+          "index": 3
+        },
+        {
+          "href": "/solutions/audience-intelligence",
+          "text": "Audience IntelligenceData-driven patient insights",
+          "index": 4
+        },
+        {
+          "href": "/solutions/patient-identification",
+          "text": "Patient IdentificationIdentify website visitors",
+          "index": 5
+        },
+        {
+          "href": "/solutions/campaign-activation",
+          "text": "Campaign ActivationMulti-channel marketing",
+          "index": 6
+        },
+        {
+          "href": "/solutions/analytics",
+          "text": "AnalyticsROI & performance tracking",
+          "index": 7
+        },
+        {
+          "href": "/industries/medical-spas",
+          "text": "Medical SpasSolutions for med spas",
+          "index": 8
+        },
+        {
+          "href": "/industries/dermatology",
+          "text": "DermatologyFor dermatology practices",
+          "index": 9
+        }
+      ],
+      "forms": [
+        {
+          "index": 0,
+          "fields": 1
+        }
+      ],
+      "dropdowns": [],
+      "screenshots": [
+        "screenshots/debug-senova-postfix/solutions-crm-solution-initial-1764313035577.png",
+        "screenshots/debug-senova-postfix/solutions-crm-solution-button-0-1764313035577.png",
+        "screenshots/debug-senova-postfix/solutions-crm-solution-button-1-1764313035577.png",
+        "screenshots/debug-senova-postfix/solutions-crm-solution-button-2-1764313035577.png",
+        "screenshots/debug-senova-postfix/solutions-crm-solution-button-7-1764313035577.png",
+        "screenshots/debug-senova-postfix/solutions-crm-solution-form-0-1764313035577.png"
+      ]
+    },
+    {
+      "name": "Audience Intelligence",
+      "url": "http://localhost:3004/solutions/audience-intelligence",
+      "category": "solutions",
+      "status": "fail",
+      "errors": [
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n"
+      ],
+      "violations": [
+        {
+          "type": "Specific ROI Guarantees",
+          "found": [
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%"
+          ],
+          "severity": "critical"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Platform",
+          "visible": true,
+          "index": 0
+        },
+        {
+          "text": "Solutions",
+          "visible": true,
+          "index": 1
+        },
+        {
+          "text": "Industries",
+          "visible": true,
+          "index": 2
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 3
+        },
+        {
+          "text": "Platform",
+          "visible": false,
+          "index": 4
+        },
+        {
+          "text": "Solutions",
+          "visible": false,
+          "index": 5
+        },
+        {
+          "text": "Industries",
+          "visible": false,
+          "index": 6
+        },
+        {
+          "text": "Subscribe",
+          "visible": true,
+          "index": 7
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 8
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 9
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 10
+        }
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "SSenova",
+          "index": 0
+        },
+        {
+          "href": "/platform",
+          "text": "OverviewComplete platform capabilities",
+          "index": 1
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM FeaturesPatient relationship management",
+          "index": 2
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM360° patient management",
+          "index": 3
+        },
+        {
+          "href": "/solutions/audience-intelligence",
+          "text": "Audience IntelligenceData-driven patient insights",
+          "index": 4
+        },
+        {
+          "href": "/solutions/patient-identification",
+          "text": "Patient IdentificationIdentify website visitors",
+          "index": 5
+        },
+        {
+          "href": "/solutions/campaign-activation",
+          "text": "Campaign ActivationMulti-channel marketing",
+          "index": 6
+        },
+        {
+          "href": "/solutions/analytics",
+          "text": "AnalyticsROI & performance tracking",
+          "index": 7
+        },
+        {
+          "href": "/industries/medical-spas",
+          "text": "Medical SpasSolutions for med spas",
+          "index": 8
+        },
+        {
+          "href": "/industries/dermatology",
+          "text": "DermatologyFor dermatology practices",
+          "index": 9
+        }
+      ],
+      "forms": [
+        {
+          "index": 0,
+          "fields": 1
+        }
+      ],
+      "dropdowns": [],
+      "screenshots": [
+        "screenshots/debug-senova-postfix/solutions-audience-intelligence-initial-1764313043564.png",
+        "screenshots/debug-senova-postfix/solutions-audience-intelligence-button-0-1764313043564.png",
+        "screenshots/debug-senova-postfix/solutions-audience-intelligence-button-1-1764313043564.png",
+        "screenshots/debug-senova-postfix/solutions-audience-intelligence-button-2-1764313043564.png",
+        "screenshots/debug-senova-postfix/solutions-audience-intelligence-button-7-1764313043564.png",
+        "screenshots/debug-senova-postfix/solutions-audience-intelligence-form-0-1764313043564.png"
+      ]
+    },
+    {
+      "name": "Patient Identification",
+      "url": "http://localhost:3004/solutions/patient-identification",
+      "category": "solutions",
+      "status": "fail",
+      "errors": [
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n"
+      ],
+      "violations": [
+        {
+          "type": "Specific ROI Guarantees",
+          "found": [
+            "80%",
+            "80%",
+            "80%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "80%",
+            "80%",
+            "80%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "80%",
+            "80%",
+            "80%",
+            "80%",
+            "80%",
+            "80%"
+          ],
+          "severity": "critical"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Platform",
+          "visible": true,
+          "index": 0
+        },
+        {
+          "text": "Solutions",
+          "visible": true,
+          "index": 1
+        },
+        {
+          "text": "Industries",
+          "visible": true,
+          "index": 2
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 3
+        },
+        {
+          "text": "Platform",
+          "visible": false,
+          "index": 4
+        },
+        {
+          "text": "Solutions",
+          "visible": false,
+          "index": 5
+        },
+        {
+          "text": "Industries",
+          "visible": false,
+          "index": 6
+        },
+        {
+          "text": "Subscribe",
+          "visible": true,
+          "index": 7
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 8
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 9
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 10
+        }
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "SSenova",
+          "index": 0
+        },
+        {
+          "href": "/platform",
+          "text": "OverviewComplete platform capabilities",
+          "index": 1
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM FeaturesPatient relationship management",
+          "index": 2
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM360° patient management",
+          "index": 3
+        },
+        {
+          "href": "/solutions/audience-intelligence",
+          "text": "Audience IntelligenceData-driven patient insights",
+          "index": 4
+        },
+        {
+          "href": "/solutions/patient-identification",
+          "text": "Patient IdentificationIdentify website visitors",
+          "index": 5
+        },
+        {
+          "href": "/solutions/campaign-activation",
+          "text": "Campaign ActivationMulti-channel marketing",
+          "index": 6
+        },
+        {
+          "href": "/solutions/analytics",
+          "text": "AnalyticsROI & performance tracking",
+          "index": 7
+        },
+        {
+          "href": "/industries/medical-spas",
+          "text": "Medical SpasSolutions for med spas",
+          "index": 8
+        },
+        {
+          "href": "/industries/dermatology",
+          "text": "DermatologyFor dermatology practices",
+          "index": 9
+        }
+      ],
+      "forms": [
+        {
+          "index": 0,
+          "fields": 1
+        }
+      ],
+      "dropdowns": [],
+      "screenshots": [
+        "screenshots/debug-senova-postfix/solutions-patient-identification-initial-1764313051152.png",
+        "screenshots/debug-senova-postfix/solutions-patient-identification-button-0-1764313051152.png",
+        "screenshots/debug-senova-postfix/solutions-patient-identification-button-1-1764313051152.png",
+        "screenshots/debug-senova-postfix/solutions-patient-identification-button-2-1764313051152.png",
+        "screenshots/debug-senova-postfix/solutions-patient-identification-button-7-1764313051152.png",
+        "screenshots/debug-senova-postfix/solutions-patient-identification-form-0-1764313051152.png"
+      ]
+    },
+    {
+      "name": "Campaign Activation",
+      "url": "http://localhost:3004/solutions/campaign-activation",
+      "category": "solutions",
+      "status": "fail",
+      "errors": [
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n"
+      ],
+      "violations": [
+        {
+          "type": "Specific ROI Guarantees",
+          "found": [
+            "3X",
+            "60%",
+            "3.2X",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "3X",
+            "3X",
+            "3X",
+            "3X",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "3X",
+            "60%",
+            "3.2X",
+            "3X",
+            "3X",
+            "3X",
+            "3X"
+          ],
+          "severity": "critical"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Platform",
+          "visible": true,
+          "index": 0
+        },
+        {
+          "text": "Solutions",
+          "visible": true,
+          "index": 1
+        },
+        {
+          "text": "Industries",
+          "visible": true,
+          "index": 2
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 3
+        },
+        {
+          "text": "Platform",
+          "visible": false,
+          "index": 4
+        },
+        {
+          "text": "Solutions",
+          "visible": false,
+          "index": 5
+        },
+        {
+          "text": "Industries",
+          "visible": false,
+          "index": 6
+        },
+        {
+          "text": "Subscribe",
+          "visible": true,
+          "index": 7
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 8
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 9
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 10
+        }
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "SSenova",
+          "index": 0
+        },
+        {
+          "href": "/platform",
+          "text": "OverviewComplete platform capabilities",
+          "index": 1
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM FeaturesPatient relationship management",
+          "index": 2
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM360° patient management",
+          "index": 3
+        },
+        {
+          "href": "/solutions/audience-intelligence",
+          "text": "Audience IntelligenceData-driven patient insights",
+          "index": 4
+        },
+        {
+          "href": "/solutions/patient-identification",
+          "text": "Patient IdentificationIdentify website visitors",
+          "index": 5
+        },
+        {
+          "href": "/solutions/campaign-activation",
+          "text": "Campaign ActivationMulti-channel marketing",
+          "index": 6
+        },
+        {
+          "href": "/solutions/analytics",
+          "text": "AnalyticsROI & performance tracking",
+          "index": 7
+        },
+        {
+          "href": "/industries/medical-spas",
+          "text": "Medical SpasSolutions for med spas",
+          "index": 8
+        },
+        {
+          "href": "/industries/dermatology",
+          "text": "DermatologyFor dermatology practices",
+          "index": 9
+        }
+      ],
+      "forms": [
+        {
+          "index": 0,
+          "fields": 1
+        }
+      ],
+      "dropdowns": [],
+      "screenshots": [
+        "screenshots/debug-senova-postfix/solutions-campaign-activation-initial-1764313060460.png",
+        "screenshots/debug-senova-postfix/solutions-campaign-activation-button-0-1764313060460.png",
+        "screenshots/debug-senova-postfix/solutions-campaign-activation-button-1-1764313060460.png",
+        "screenshots/debug-senova-postfix/solutions-campaign-activation-button-2-1764313060460.png",
+        "screenshots/debug-senova-postfix/solutions-campaign-activation-button-7-1764313060460.png",
+        "screenshots/debug-senova-postfix/solutions-campaign-activation-form-0-1764313060460.png"
+      ]
+    },
+    {
+      "name": "Analytics",
+      "url": "http://localhost:3004/solutions/analytics",
+      "category": "solutions",
+      "status": "fail",
+      "errors": [
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n"
+      ],
+      "violations": [
+        {
+          "type": "Specific ROI Guarantees",
+          "found": [
+            "60%",
+            "3.2X",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "3.2X"
+          ],
+          "severity": "critical"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Platform",
+          "visible": true,
+          "index": 0
+        },
+        {
+          "text": "Solutions",
+          "visible": true,
+          "index": 1
+        },
+        {
+          "text": "Industries",
+          "visible": true,
+          "index": 2
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 3
+        },
+        {
+          "text": "Platform",
+          "visible": false,
+          "index": 4
+        },
+        {
+          "text": "Solutions",
+          "visible": false,
+          "index": 5
+        },
+        {
+          "text": "Industries",
+          "visible": false,
+          "index": 6
+        },
+        {
+          "text": "Subscribe",
+          "visible": true,
+          "index": 7
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 8
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 9
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 10
+        }
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "SSenova",
+          "index": 0
+        },
+        {
+          "href": "/platform",
+          "text": "OverviewComplete platform capabilities",
+          "index": 1
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM FeaturesPatient relationship management",
+          "index": 2
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM360° patient management",
+          "index": 3
+        },
+        {
+          "href": "/solutions/audience-intelligence",
+          "text": "Audience IntelligenceData-driven patient insights",
+          "index": 4
+        },
+        {
+          "href": "/solutions/patient-identification",
+          "text": "Patient IdentificationIdentify website visitors",
+          "index": 5
+        },
+        {
+          "href": "/solutions/campaign-activation",
+          "text": "Campaign ActivationMulti-channel marketing",
+          "index": 6
+        },
+        {
+          "href": "/solutions/analytics",
+          "text": "AnalyticsROI & performance tracking",
+          "index": 7
+        },
+        {
+          "href": "/industries/medical-spas",
+          "text": "Medical SpasSolutions for med spas",
+          "index": 8
+        },
+        {
+          "href": "/industries/dermatology",
+          "text": "DermatologyFor dermatology practices",
+          "index": 9
+        }
+      ],
+      "forms": [
+        {
+          "index": 0,
+          "fields": 1
+        }
+      ],
+      "dropdowns": [],
+      "screenshots": [
+        "screenshots/debug-senova-postfix/solutions-analytics-initial-1764313071562.png",
+        "screenshots/debug-senova-postfix/solutions-analytics-button-0-1764313071562.png",
+        "screenshots/debug-senova-postfix/solutions-analytics-button-1-1764313071562.png",
+        "screenshots/debug-senova-postfix/solutions-analytics-button-2-1764313071562.png",
+        "screenshots/debug-senova-postfix/solutions-analytics-button-7-1764313071562.png",
+        "screenshots/debug-senova-postfix/solutions-analytics-form-0-1764313071562.png"
+      ]
+    },
+    {
+      "name": "Medical Spas",
+      "url": "http://localhost:3004/industries/medical-spas",
+      "category": "industries",
+      "status": "fail",
+      "errors": [
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n",
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n"
+      ],
+      "violations": [
+        {
+          "type": "Specific ROI Guarantees",
+          "found": [
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%"
+          ],
+          "severity": "critical"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Platform",
+          "visible": true,
+          "index": 0
+        },
+        {
+          "text": "Solutions",
+          "visible": true,
+          "index": 1
+        },
+        {
+          "text": "Industries",
+          "visible": true,
+          "index": 2
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 3
+        },
+        {
+          "text": "Platform",
+          "visible": false,
+          "index": 4
+        },
+        {
+          "text": "Solutions",
+          "visible": false,
+          "index": 5
+        },
+        {
+          "text": "Industries",
+          "visible": false,
+          "index": 6
+        },
+        {
+          "text": "Subscribe",
+          "visible": true,
+          "index": 7
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 8
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 9
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 10
+        },
+        {
+          "text": "01 Issue",
+          "visible": true,
+          "index": 11
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 12
+        }
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "SSenova",
+          "index": 0
+        },
+        {
+          "href": "/platform",
+          "text": "OverviewComplete platform capabilities",
+          "index": 1
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM FeaturesPatient relationship management",
+          "index": 2
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM360° patient management",
+          "index": 3
+        },
+        {
+          "href": "/solutions/audience-intelligence",
+          "text": "Audience IntelligenceData-driven patient insights",
+          "index": 4
+        },
+        {
+          "href": "/solutions/patient-identification",
+          "text": "Patient IdentificationIdentify website visitors",
+          "index": 5
+        },
+        {
+          "href": "/solutions/campaign-activation",
+          "text": "Campaign ActivationMulti-channel marketing",
+          "index": 6
+        },
+        {
+          "href": "/solutions/analytics",
+          "text": "AnalyticsROI & performance tracking",
+          "index": 7
+        },
+        {
+          "href": "/industries/medical-spas",
+          "text": "Medical SpasSolutions for med spas",
+          "index": 8
+        },
+        {
+          "href": "/industries/dermatology",
+          "text": "DermatologyFor dermatology practices",
+          "index": 9
+        }
+      ],
+      "forms": [
+        {
+          "index": 0,
+          "fields": 1
+        }
+      ],
+      "dropdowns": [],
+      "screenshots": [
+        "screenshots/debug-senova-postfix/industries-medical-spas-initial-1764313081448.png",
+        "screenshots/debug-senova-postfix/industries-medical-spas-button-0-1764313081448.png",
+        "screenshots/debug-senova-postfix/industries-medical-spas-button-1-1764313081448.png",
+        "screenshots/debug-senova-postfix/industries-medical-spas-button-2-1764313081448.png",
+        "screenshots/debug-senova-postfix/industries-medical-spas-button-7-1764313081448.png",
+        "screenshots/debug-senova-postfix/industries-medical-spas-button-11-1764313081448.png",
+        "screenshots/debug-senova-postfix/industries-medical-spas-form-0-1764313081448.png"
+      ]
+    },
+    {
+      "name": "Dermatology",
+      "url": "http://localhost:3004/industries/dermatology",
+      "category": "industries",
+      "status": "fail",
+      "errors": [
+        "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/industrie...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex gap-3...\">\n                              <div className=\"relative f...\">\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"Enter your email\"\n                                  className=\"w-full px-5 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-sen...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                ...\n      ...\n"
+      ],
+      "violations": [
+        {
+          "type": "Specific ROI Guarantees",
+          "found": [
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%"
+          ],
+          "severity": "critical"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Platform",
+          "visible": true,
+          "index": 0
+        },
+        {
+          "text": "Solutions",
+          "visible": true,
+          "index": 1
+        },
+        {
+          "text": "Industries",
+          "visible": true,
+          "index": 2
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 3
+        },
+        {
+          "text": "Platform",
+          "visible": false,
+          "index": 4
+        },
+        {
+          "text": "Solutions",
+          "visible": false,
+          "index": 5
+        },
+        {
+          "text": "Industries",
+          "visible": false,
+          "index": 6
+        },
+        {
+          "text": "Subscribe",
+          "visible": true,
+          "index": 7
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 8
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 9
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 10
+        },
+        {
+          "text": "01 Issue",
+          "visible": true,
+          "index": 11
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 12
+        }
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "SSenova",
+          "index": 0
+        },
+        {
+          "href": "/platform",
+          "text": "OverviewComplete platform capabilities",
+          "index": 1
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM FeaturesPatient relationship management",
+          "index": 2
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM360° patient management",
+          "index": 3
+        },
+        {
+          "href": "/solutions/audience-intelligence",
+          "text": "Audience IntelligenceData-driven patient insights",
+          "index": 4
+        },
+        {
+          "href": "/solutions/patient-identification",
+          "text": "Patient IdentificationIdentify website visitors",
+          "index": 5
+        },
+        {
+          "href": "/solutions/campaign-activation",
+          "text": "Campaign ActivationMulti-channel marketing",
+          "index": 6
+        },
+        {
+          "href": "/solutions/analytics",
+          "text": "AnalyticsROI & performance tracking",
+          "index": 7
+        },
+        {
+          "href": "/industries/medical-spas",
+          "text": "Medical SpasSolutions for med spas",
+          "index": 8
+        },
+        {
+          "href": "/industries/dermatology",
+          "text": "DermatologyFor dermatology practices",
+          "index": 9
+        }
+      ],
+      "forms": [
+        {
+          "index": 0,
+          "fields": 1
+        }
+      ],
+      "dropdowns": [],
+      "screenshots": [
+        "screenshots/debug-senova-postfix/industries-dermatology-initial-1764313095870.png",
+        "screenshots/debug-senova-postfix/industries-dermatology-button-0-1764313095870.png",
+        "screenshots/debug-senova-postfix/industries-dermatology-button-1-1764313095870.png",
+        "screenshots/debug-senova-postfix/industries-dermatology-button-2-1764313095870.png",
+        "screenshots/debug-senova-postfix/industries-dermatology-button-7-1764313095870.png",
+        "screenshots/debug-senova-postfix/industries-dermatology-button-11-1764313095870.png",
+        "screenshots/debug-senova-postfix/industries-dermatology-form-0-1764313095870.png"
+      ]
+    },
+    {
+      "name": "Plastic Surgery",
+      "url": "http://localhost:3004/industries/plastic-surgery",
+      "category": "industries",
+      "status": "fail",
+      "errors": [],
+      "violations": [
+        {
+          "type": "Specific ROI Guarantees",
+          "found": [
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%"
+          ],
+          "severity": "critical"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Platform",
+          "visible": true,
+          "index": 0
+        },
+        {
+          "text": "Solutions",
+          "visible": true,
+          "index": 1
+        },
+        {
+          "text": "Industries",
+          "visible": true,
+          "index": 2
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 3
+        },
+        {
+          "text": "Platform",
+          "visible": false,
+          "index": 4
+        },
+        {
+          "text": "Solutions",
+          "visible": false,
+          "index": 5
+        },
+        {
+          "text": "Industries",
+          "visible": false,
+          "index": 6
+        },
+        {
+          "text": "Subscribe",
+          "visible": true,
+          "index": 7
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 8
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 9
+        }
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "SSenova",
+          "index": 0
+        },
+        {
+          "href": "/platform",
+          "text": "OverviewComplete platform capabilities",
+          "index": 1
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM FeaturesPatient relationship management",
+          "index": 2
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM360° patient management",
+          "index": 3
+        },
+        {
+          "href": "/solutions/audience-intelligence",
+          "text": "Audience IntelligenceData-driven patient insights",
+          "index": 4
+        },
+        {
+          "href": "/solutions/patient-identification",
+          "text": "Patient IdentificationIdentify website visitors",
+          "index": 5
+        },
+        {
+          "href": "/solutions/campaign-activation",
+          "text": "Campaign ActivationMulti-channel marketing",
+          "index": 6
+        },
+        {
+          "href": "/solutions/analytics",
+          "text": "AnalyticsROI & performance tracking",
+          "index": 7
+        },
+        {
+          "href": "/industries/medical-spas",
+          "text": "Medical SpasSolutions for med spas",
+          "index": 8
+        },
+        {
+          "href": "/industries/dermatology",
+          "text": "DermatologyFor dermatology practices",
+          "index": 9
+        }
+      ],
+      "forms": [
+        {
+          "index": 0,
+          "fields": 1
+        }
+      ],
+      "dropdowns": [],
+      "screenshots": [
+        "screenshots/debug-senova-postfix/industries-plastic-surgery-initial-1764313120080.png",
+        "screenshots/debug-senova-postfix/industries-plastic-surgery-button-0-1764313120080.png",
+        "screenshots/debug-senova-postfix/industries-plastic-surgery-button-1-1764313120080.png",
+        "screenshots/debug-senova-postfix/industries-plastic-surgery-button-2-1764313120080.png",
+        "screenshots/debug-senova-postfix/industries-plastic-surgery-button-7-1764313120080.png",
+        "screenshots/debug-senova-postfix/industries-plastic-surgery-form-0-1764313120080.png"
+      ]
+    },
+    {
+      "name": "Aesthetic Clinics",
+      "url": "http://localhost:3004/industries/aesthetic-clinics",
+      "category": "industries",
+      "status": "fail",
+      "errors": [],
+      "violations": [
+        {
+          "type": "Specific ROI Guarantees",
+          "found": [
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%",
+            "60%"
+          ],
+          "severity": "critical"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Platform",
+          "visible": true,
+          "index": 0
+        },
+        {
+          "text": "Solutions",
+          "visible": true,
+          "index": 1
+        },
+        {
+          "text": "Industries",
+          "visible": true,
+          "index": 2
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 3
+        },
+        {
+          "text": "Platform",
+          "visible": false,
+          "index": 4
+        },
+        {
+          "text": "Solutions",
+          "visible": false,
+          "index": 5
+        },
+        {
+          "text": "Industries",
+          "visible": false,
+          "index": 6
+        },
+        {
+          "text": "Subscribe",
+          "visible": true,
+          "index": 7
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 8
+        },
+        {
+          "text": "",
+          "visible": false,
+          "index": 9
+        },
+        {
+          "text": "",
+          "visible": true,
+          "index": 10
+        }
+      ],
+      "links": [
+        {
+          "href": "/",
+          "text": "SSenova",
+          "index": 0
+        },
+        {
+          "href": "/platform",
+          "text": "OverviewComplete platform capabilities",
+          "index": 1
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM FeaturesPatient relationship management",
+          "index": 2
+        },
+        {
+          "href": "/solutions/crm",
+          "text": "CRM360° patient management",
+          "index": 3
+        },
+        {
+          "href": "/solutions/audience-intelligence",
+          "text": "Audience IntelligenceData-driven patient insights",
+          "index": 4
+        },
+        {
+          "href": "/solutions/patient-identification",
+          "text": "Patient IdentificationIdentify website visitors",
+          "index": 5
+        },
+        {
+          "href": "/solutions/campaign-activation",
+          "text": "Campaign ActivationMulti-channel marketing",
+          "index": 6
+        },
+        {
+          "href": "/solutions/analytics",
+          "text": "AnalyticsROI & performance tracking",
+          "index": 7
+        },
+        {
+          "href": "/industries/medical-spas",
+          "text": "Medical SpasSolutions for med spas",
+          "index": 8
+        },
+        {
+          "href": "/industries/dermatology",
+          "text": "DermatologyFor dermatology practices",
+          "index": 9
+        }
+      ],
+      "forms": [
+        {
+          "index": 0,
+          "fields": 1
+        }
+      ],
+      "dropdowns": [],
+      "screenshots": [
+        "screenshots/debug-senova-postfix/industries-aesthetic-clinics-initial-1764313143726.png",
+        "screenshots/debug-senova-postfix/industries-aesthetic-clinics-button-0-1764313143726.png",
+        "screenshots/debug-senova-postfix/industries-aesthetic-clinics-button-1-1764313143726.png",
+        "screenshots/debug-senova-postfix/industries-aesthetic-clinics-button-2-1764313143726.png",
+        "screenshots/debug-senova-postfix/industries-aesthetic-clinics-button-7-1764313143726.png",
+        "screenshots/debug-senova-postfix/industries-aesthetic-clinics-form-0-1764313143726.png"
+      ]
+    }
+  ],
+  "passRate": "0.0"
+}

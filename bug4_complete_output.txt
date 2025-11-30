@@ -1,0 +1,6 @@
+BUG-4: Campaign Deletion Test
+Step 1: Navigate to campaigns
+Step 2: Look for campaigns
+Creating test campaign
+Step 3: Find delete controls
+INCONCLUSIVE: Menu button not found

@@ -1,0 +1,85 @@
+{
+  "totalPages": 13,
+  "passed": [
+    {
+      "page": "Restaurants",
+      "url": "/industries/restaurants",
+      "title": "Restaurant CRM | Senova | Senova CRM",
+      "hasContent": true,
+      "imageCount": 4,
+      "brokenImages": 0
+    },
+    {
+      "page": "Home Services",
+      "url": "/industries/home-services",
+      "title": "Home Services CRM | Senova | Senova CRM",
+      "hasContent": true,
+      "imageCount": 4,
+      "brokenImages": 0
+    }
+  ],
+  "failed": [
+    {
+      "page": "Medical Spas",
+      "url": "/industries/medical-spas",
+      "error": "Server Error: 500"
+    },
+    {
+      "page": "Dermatology",
+      "url": "/industries/dermatology",
+      "error": "Server Error: 500"
+    },
+    {
+      "page": "Plastic Surgery",
+      "url": "/industries/plastic-surgery",
+      "error": "Server Error: 500"
+    },
+    {
+      "page": "Aesthetic Clinics",
+      "url": "/industries/aesthetic-clinics",
+      "error": "Server Error: 500"
+    },
+    {
+      "page": "Legal Attorneys (NEW)",
+      "url": "/industries/legal-attorneys",
+      "error": "404 - Page Not Found"
+    },
+    {
+      "page": "Real Estate (NEW)",
+      "url": "/industries/real-estate",
+      "error": "404 - Page Not Found"
+    },
+    {
+      "page": "Mortgage Lending (NEW)",
+      "url": "/industries/mortgage-lending",
+      "error": "404 - Page Not Found"
+    },
+    {
+      "page": "Insurance (NEW)",
+      "url": "/industries/insurance",
+      "error": "404 - Page Not Found"
+    },
+    {
+      "page": "Marketing Agencies (NEW)",
+      "url": "/industries/marketing-agencies",
+      "error": "404 - Page Not Found"
+    }
+  ],
+  "errors": [
+    {
+      "page": "Retail",
+      "url": "/industries/retail",
+      "error": "page.screenshot: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> C:\\Users\\jwood\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1200\\chrome-headless-shell-win64\\chrome-headless-shell.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --no-sandbox --disable-setuid-sandbox --user-data-dir=C:\\Users\\jwood\\AppData\\Local\\Temp\\playwright_chromiumdev_profile-DCedNV --remote-debugging-pipe --no-startup-window\n<launched> pid=36124\n[pid=36124][err] [1128/203901.422:INFO:CONSOLE:147] \"Uncaught TypeError: Cannot read properties of undefined (reading 'hero')\", source: about://React/Server/webpack-internal:///(rsc)/./src/app/(website)/industries/medical-spas/page.tsx?38 (147)\n[pid=36124][err] [1128/203906.403:INFO:CONSOLE:177] \"Uncaught TypeError: Cannot read properties of undefined (reading 'hero')\", source: about://React/Server/webpack-internal:///(rsc)/./src/app/(website)/industries/dermatology/page.tsx?38 (177)\n[pid=36124][err] [1128/203912.878:INFO:CONSOLE:163] \"Uncaught TypeError: Cannot read properties of undefined (reading 'hero')\", source: about://React/Server/webpack-internal:///(rsc)/./src/app/(website)/industries/plastic-surgery/page.tsx?38 (163)\n[pid=36124][err] [1128/203916.442:INFO:CONSOLE:167] \"Uncaught TypeError: Cannot read properties of undefined (reading 'hero')\", source: about://React/Server/webpack-internal:///(rsc)/./src/app/(website)/industries/aesthetic-clinics/page.tsx?38 (167)\n[pid=36124][err] [1128/203929.094:INFO:CONSOLE:16] \"Image with src \"https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1200&h=800&fit=crop&auto=format\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\", source: webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/utils/warn-once.js (16)\n[pid=36124][err] [1128/203929.095:INFO:CONSOLE:16] \"Image with src \"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&h=800&fit=crop&auto=format\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\", source: webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/utils/warn-once.js (16)\n[pid=36124][err] [1128/203929.095:INFO:CONSOLE:16] \"Image with src \"https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop&auto=format\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\", source: webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/utils/warn-once.js (16)\n[pid=36124][err] [1128/203932.625:INFO:CONSOLE:16] \"Image with src \"https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop&auto=format\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\", source: webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/utils/warn-once.js (16)\n[pid=36124][err] [1128/203932.625:INFO:CONSOLE:16] \"Image with src \"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=800&fit=crop&auto=format\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\", source: webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/utils/warn-once.js (16)\n[pid=36124][err] [1128/203932.625:INFO:CONSOLE:16] \"Image with src \"https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&h=800&fit=crop&auto=format\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\", source: webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/utils/warn-once.js (16)\n[pid=36124][err] [1128/203936.350:INFO:CONSOLE:16] \"Image with src \"https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1200&h=800&fit=crop&auto=format\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\", source: webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/utils/warn-once.js (16)\n[pid=36124][err] [1128/203936.350:INFO:CONSOLE:16] \"Image with src \"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=800&fit=crop&auto=format\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\", source: webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/utils/warn-once.js (16)\n[pid=36124][err] [1128/203936.350:INFO:CONSOLE:16] \"Image with src \"https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&h=800&fit=crop&auto=format\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\", source: webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/utils/warn-once.js (16)\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+    },
+    {
+      "page": "Professional Services",
+      "url": "/industries/professional-services",
+      "error": "page.goto: Target page, context or browser has been closed"
+    }
+  ],
+  "brokenImages": [],
+  "navigationTest": {
+    "error": "page.goto: Target page, context or browser has been closed"
+  },
+  "summary": null
+}

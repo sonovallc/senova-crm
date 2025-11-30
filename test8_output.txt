@@ -1,0 +1,48 @@
+=== TEST 8: EMAIL COMPOSE SELECT CONTACT & SEND ===
+
+This test verifies selecting a contact recipient and sending an email.
+
+Step 1: Login...
+Step 1: PASS - Logged in
+
+Step 2: Navigate to Email Compose...
+Step 2: PASS - On compose page
+
+Step 3: Find contact/recipient selector...
+Found 0 combobox buttons total
+Step 3: WARNING - Recipient dropdown not found
+
+Step 4: Select a contact...
+Found 0 options
+Step 4: WARNING - Could not select contact
+
+Step 5: Fill subject line...
+Step 5: PASS - Subject handled
+
+Step 6: Ensure body has content...
+Selected template for body: "AutoTest_1764123249987Auto Sub"
+Step 6: PASS - Body has content
+
+Step 7: Find Send button...
+Found send button: button:has-text("Send Email")
+Step 7: PASS - Send button found
+
+Step 8: Click Send...
+TEST 8 ERROR: elementHandle.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is not enabled[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    57 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is not enabled[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+
+
+=== TEST 8 RESULT: ERROR ===

@@ -1,0 +1,210 @@
+{
+  "timestamp": "2025-11-28T21:29:16.205Z",
+  "totalTests": 13,
+  "passed": 8,
+  "failed": 5,
+  "errors": [],
+  "modules": {
+    "Authentication": {
+      "pages": {
+        "Login": {
+          "url": "http://localhost:3004/login",
+          "status": "loaded",
+          "screenshots": [
+            "Authentication_Login_loaded_1764365358135.png",
+            "auth_login_form_filled_1764365358656.png",
+            "auth_login_success_dashboard_1764365363020.png"
+          ],
+          "elements": {
+            "emailField": "found",
+            "passwordField": "found",
+            "submitButton": "found"
+          },
+          "errors": [],
+          "loginSuccess": true
+        }
+      }
+    },
+    "Dashboard": {
+      "pages": {
+        "Main": {
+          "url": "http://localhost:3004/dashboard",
+          "status": "loaded",
+          "screenshots": [
+            "Dashboard_Main_loaded_1764365365620.png",
+            "dashboard_sidebar_dashboard_1764365366983.png",
+            "dashboard_sidebar_inbox_1764365368179.png",
+            "dashboard_sidebar_contacts_1764365369594.png",
+            "dashboard_sidebar_objects_1764365370938.png",
+            "dashboard_sidebar_activity_log_1764365372133.png"
+          ],
+          "elements": {
+            "sidebarLinks": 8,
+            "cards": 2,
+            "stats": 0
+          },
+          "errors": []
+        }
+      }
+    },
+    "Contacts": {
+      "pages": {
+        "List": {
+          "url": "http://localhost:3004/dashboard/contacts",
+          "status": "loaded",
+          "screenshots": [
+            "Contacts_List_loaded_1764365374435.png",
+            "contacts_new_contact_modal_1764365378177.png"
+          ],
+          "elements": {
+            "contactRows": 0,
+            "newContactBtn": "found",
+            "importBtn": "found",
+            "exportBtn": "found"
+          },
+          "errors": []
+        }
+      }
+    },
+    "Email": {
+      "pages": {
+        "Inbox": {
+          "url": "http://localhost:3004/dashboard/inbox",
+          "status": "loaded",
+          "screenshots": [
+            "Email_Inbox_loaded_1764365382013.png",
+            "email_compose_opened_1764365386433.png"
+          ],
+          "elements": {
+            "emailItems": 0,
+            "composeBtn": "found",
+            "tabs": 4
+          },
+          "errors": []
+        },
+        "Templates": {
+          "url": "http://localhost:3004/dashboard/email-templates",
+          "status": "error_404",
+          "screenshots": [
+            "Email_Templates_error_1764365388217.png"
+          ],
+          "elements": {},
+          "errors": [
+            "HTTP 404 error"
+          ]
+        },
+        "Campaigns": {
+          "url": "http://localhost:3004/dashboard/campaigns",
+          "status": "error_404",
+          "screenshots": [
+            "Email_Campaigns_error_1764365389396.png"
+          ],
+          "elements": {},
+          "errors": [
+            "HTTP 404 error"
+          ]
+        }
+      }
+    },
+    "Automation": {
+      "pages": {
+        "Autoresponders": {
+          "url": "http://localhost:3004/dashboard/autoresponders",
+          "status": "error_404",
+          "screenshots": [
+            "Automation_Autoresponders_error_1764365397145.png"
+          ],
+          "elements": {},
+          "errors": [
+            "HTTP 404 error"
+          ]
+        },
+        "CloseBot": {
+          "url": "http://localhost:3004/dashboard/closebot",
+          "status": "error_404",
+          "screenshots": [
+            "Automation_CloseBot_error_1764365399237.png"
+          ],
+          "elements": {},
+          "errors": [
+            "HTTP 404 error"
+          ]
+        }
+      }
+    },
+    "Objects": {
+      "pages": {
+        "List": {
+          "url": "http://localhost:3004/dashboard/objects",
+          "status": "loaded",
+          "screenshots": [
+            "Objects_List_loaded_1764365401246.png"
+          ],
+          "elements": {
+            "objects": 0,
+            "createBtn": "found"
+          },
+          "errors": []
+        }
+      }
+    },
+    "Settings": {
+      "pages": {
+        "Main": {
+          "url": "http://localhost:3004/dashboard/settings",
+          "status": "loaded",
+          "screenshots": [
+            "Settings_Main_loaded_1764365405860.png"
+          ],
+          "elements": {
+            "sections": 1,
+            "tabs": 18,
+            "mailgunSection": "found"
+          },
+          "errors": []
+        }
+      }
+    },
+    "Calendar": {
+      "pages": {
+        "View": {
+          "url": "http://localhost:3004/dashboard/calendar",
+          "status": "error_404",
+          "screenshots": [
+            "Calendar_View_error_1764365409648.png"
+          ],
+          "elements": {},
+          "errors": [
+            "HTTP 404 error"
+          ]
+        }
+      }
+    },
+    "Mobile": {
+      "pages": {
+        "Dashboard": {
+          "url": "http://localhost:3004/dashboard",
+          "status": "loaded",
+          "screenshots": [
+            "Mobile_Dashboard_loaded_1764365412966.png",
+            "mobile_dashboard_view_1764365413096.png"
+          ],
+          "elements": {
+            "mobileMenu": "missing"
+          },
+          "errors": []
+        },
+        "Contacts": {
+          "url": "http://localhost:3004/dashboard/contacts",
+          "status": "loaded",
+          "screenshots": [
+            "Mobile_Contacts_loaded_1764365415040.png",
+            "mobile_contacts_view_1764365415567.png"
+          ],
+          "elements": {},
+          "errors": []
+        }
+      }
+    }
+  }
+}

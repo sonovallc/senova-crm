@@ -1,0 +1,317 @@
+[35m================================================================================
+EXHAUSTIVE DEBUG SESSION - SENOVA CRM FULL SYSTEM
+================================================================================[0m
+
+[36m📁 Screenshots directory created: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\context-engineering-intro\screenshots\debug-exhaustive-full[0m
+
+[35m================================================================================
+PHASE 1: TESTING PUBLIC WEBSITE
+================================================================================[0m
+
+
+[36mTesting: Home (/)[0m
+[31m❌ Error testing page: page.goto: Timeout 30000ms exceeded.
+Call log:
+[2m  - navigating to "http://localhost:3004/", waiting until "networkidle"[22m
+[0m
+[34m📸 Screenshot saved: public-home-error-2025-11-29T20-14-41-965Z.png[0m
+
+[36mTesting: About (/about)[0m
+[31m❌ Console Error: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant[0m
+✅ Page loaded in 5221ms
+[34m📸 Screenshot saved: public-about-initial-2025-11-29T20-14-48-963Z.png[0m
+  ❌ Missing element: content
+  ❌ Missing element: team
+  ❌ Missing element: mission
+  [33mFinding clickable elements...[0m
+  Found 7 buttons
+    ✅ Clicked button: Platform
+    ✅ Clicked button: Solutions
+    ✅ Clicked button: Industries
+    ✅ Clicked button: Subscribe
+[31m❌ Console Error: Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant[0m
+    ✅ Clicked button: 
+  Found 47 links
+  Found 1 forms
+[31m❌ Error testing page: locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid="mobile-menu"]') resolved to 2 elements:
+    1) <button type="button" aria-expanded="false" id="mobile-menu-button" aria-label="Toggle menu" data-testid="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300">…</button> aka getByTestId('mobile-menu-button')
+    2) <div id="mobile-menu" data-testid="mobile-menu" class="lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none">…</div> aka getByTestId('mobile-menu')
+
+Call log:
+[2m    - checking visibility of locator('#mobile-menu-button, [data-testid="mobile-menu"]')[22m
+[0m
+[34m📸 Screenshot saved: public-about-error-2025-11-29T20-14-54-040Z.png[0m
+
+[36mTesting: Features (/features)[0m
+[31m❌ Console Error: Failed to load resource: the server responded with a status of 404 (Not Found)[0m
+✅ Page loaded in 2465ms
+[34m📸 Screenshot saved: public-features-initial-2025-11-29T20-14-56-852Z.png[0m
+  ❌ Missing element: feature-list
+  ❌ Missing element: pricing
+  [33mFinding clickable elements...[0m
+  Found 1 buttons
+    ✅ Clicked button: 
+  Found 0 links
+  Found 0 forms
+
+[36mTesting: Pricing (/pricing)[0m
+✅ Page loaded in 3092ms
+[34m📸 Screenshot saved: public-pricing-initial-2025-11-29T20-15-00-578Z.png[0m
+  ❌ Missing element: plans
+  ❌ Missing element: comparison
+  [33mFinding clickable elements...[0m
+  Found 7 buttons
+    ✅ Clicked button: Platform
+    ✅ Clicked button: Solutions
+    ✅ Clicked button: Industries
+    ⚠️ Could not interact with button 3
+    ⚠️ Could not interact with button 4
+  Found 52 links
+  Found 1 forms
+[31m❌ Error testing page: locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid="mobile-menu"]') resolved to 2 elements:
+    1) <button type="button" aria-expanded="false" id="mobile-menu-button" aria-label="Toggle menu" data-testid="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300">…</button> aka getByTestId('mobile-menu-button')
+    2) <div id="mobile-menu" data-testid="mobile-menu" class="lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none">…</div> aka getByTestId('mobile-menu')
+
+Call log:
+[2m    - checking visibility of locator('#mobile-menu-button, [data-testid="mobile-menu"]')[22m
+[0m
+[34m📸 Screenshot saved: public-pricing-error-2025-11-29T20-15-07-179Z.png[0m
+
+[36mTesting: Contact (/contact)[0m
+✅ Page loaded in 7275ms
+[34m📸 Screenshot saved: public-contact-initial-2025-11-29T20-15-15-167Z.png[0m
+  ❌ Missing element: form
+  ❌ Missing element: info
+  [33mFinding clickable elements...[0m
+  Found 17 buttons
+    ✅ Clicked button: Platform
+    ✅ Clicked button: Solutions
+    ✅ Clicked button: Industries
+    ✅ Clicked button: 
+    ✅ Clicked button: 
+  Found 45 links
+  Found 2 forms
+[31m❌ Error testing page: locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid="mobile-menu"]') resolved to 2 elements:
+    1) <button type="button" aria-expanded="false" id="mobile-menu-button" aria-label="Toggle menu" data-testid="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300">…</button> aka getByTestId('mobile-menu-button')
+    2) <div id="mobile-menu" data-testid="mobile-menu" class="lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none">…</div> aka getByTestId('mobile-menu')
+
+Call log:
+[2m    - checking visibility of locator('#mobile-menu-button, [data-testid="mobile-menu"]')[22m
+[0m
+[34m📸 Screenshot saved: public-contact-error-2025-11-29T20-15-18-582Z.png[0m
+
+[36mTesting: Login (/login)[0m
+✅ Page loaded in 3387ms
+[34m📸 Screenshot saved: public-login-initial-2025-11-29T20-15-22-270Z.png[0m
+  ❌ Missing element: form
+  ❌ Missing element: submit-button
+  [33mFinding clickable elements...[0m
+  Found 2 buttons
+    ✅ Clicked button: 
+  Found 2 links
+  Found 1 forms
+
+[36mTesting: Register (/register)[0m
+✅ Page loaded in 2934ms
+[34m📸 Screenshot saved: public-register-initial-2025-11-29T20-15-25-991Z.png[0m
+  ❌ Missing element: form
+  ❌ Missing element: submit-button
+  [33mFinding clickable elements...[0m
+  Found 2 buttons
+    ✅ Clicked button: Create account
+    ✅ Clicked button: 
+  Found 1 links
+  Found 1 forms
+
+[36mTesting: Medical Spas (/industries/medical-spas)[0m
+✅ Page loaded in 4719ms
+[34m📸 Screenshot saved: public-medical-spas-initial-2025-11-29T20-15-32-041Z.png[0m
+  ❌ Missing element: hero
+  ❌ Missing element: features
+  [33mFinding clickable elements...[0m
+  Found 5 buttons
+    ✅ Clicked button: Platform
+    ✅ Clicked button: Solutions
+    ✅ Clicked button: Industries
+    ✅ Clicked button: Subscribe
+    ✅ Clicked button: 
+  Found 49 links
+  Found 1 forms
+[31m❌ Error testing page: locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid="mobile-menu"]') resolved to 2 elements:
+    1) <button type="button" aria-expanded="false" id="mobile-menu-button" aria-label="Toggle menu" data-testid="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300">…</button> aka getByTestId('mobile-menu-button')
+    2) <div id="mobile-menu" data-testid="mobile-menu" class="lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none">…</div> aka getByTestId('mobile-menu')
+
+Call log:
+[2m    - checking visibility of locator('#mobile-menu-button, [data-testid="mobile-menu"]')[22m
+[0m
+[34m📸 Screenshot saved: public-medical spas-error-2025-11-29T20-15-36-803Z.png[0m
+
+[36mTesting: Dermatology (/industries/dermatology)[0m
+✅ Page loaded in 6091ms
+[34m📸 Screenshot saved: public-dermatology-initial-2025-11-29T20-15-43-478Z.png[0m
+  ❌ Missing element: hero
+  ❌ Missing element: features
+  [33mFinding clickable elements...[0m
+  Found 5 buttons
+    ✅ Clicked button: Platform
+    ✅ Clicked button: Solutions
+    ✅ Clicked button: Industries
+    ✅ Clicked button: Subscribe
+    ✅ Clicked button: 
+  Found 49 links
+  Found 1 forms
+[31m❌ Error testing page: locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid="mobile-menu"]') resolved to 2 elements:
+    1) <button type="button" aria-expanded="false" id="mobile-menu-button" aria-label="Toggle menu" data-testid="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300">…</button> aka getByTestId('mobile-menu-button')
+    2) <div id="mobile-menu" data-testid="mobile-menu" class="lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none">…</div> aka getByTestId('mobile-menu')
+
+Call log:
+[2m    - checking visibility of locator('#mobile-menu-button, [data-testid="mobile-menu"]')[22m
+[0m
+[34m📸 Screenshot saved: public-dermatology-error-2025-11-29T20-15-48-436Z.png[0m
+
+[36mTesting: Plastic Surgery (/industries/plastic-surgery)[0m
+✅ Page loaded in 4409ms
+[34m📸 Screenshot saved: public-plastic-surgery-initial-2025-11-29T20-15-53-453Z.png[0m
+  ❌ Missing element: hero
+  ❌ Missing element: features
+  [33mFinding clickable elements...[0m
+  Found 5 buttons
+    ✅ Clicked button: Platform
+    ✅ Clicked button: Solutions
+    ✅ Clicked button: Industries
+    ✅ Clicked button: Subscribe
+    ✅ Clicked button: 
+  Found 49 links
+  Found 1 forms
+[31m❌ Error testing page: locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid="mobile-menu"]') resolved to 2 elements:
+    1) <button type="button" aria-expanded="false" id="mobile-menu-button" aria-label="Toggle menu" data-testid="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300">…</button> aka getByTestId('mobile-menu-button')
+    2) <div id="mobile-menu" data-testid="mobile-menu" class="lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none">…</div> aka getByTestId('mobile-menu')
+
+Call log:
+[2m    - checking visibility of locator('#mobile-menu-button, [data-testid="mobile-menu"]')[22m
+[0m
+[34m📸 Screenshot saved: public-plastic surgery-error-2025-11-29T20-15-58-470Z.png[0m
+
+[36mTesting: Restaurants (/industries/restaurants)[0m
+✅ Page loaded in 4680ms
+[34m📸 Screenshot saved: public-restaurants-initial-2025-11-29T20-16-03-854Z.png[0m
+  ❌ Missing element: hero
+  ❌ Missing element: features
+  [33mFinding clickable elements...[0m
+  Found 8 buttons
+    ✅ Clicked button: Platform
+    ✅ Clicked button: Solutions
+    ✅ Clicked button: Industries
+    ⚠️ Could not interact with button 3
+    ⚠️ Could not interact with button 4
+  Found 48 links
+  Found 1 forms
+[31m❌ Error testing page: locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid="mobile-menu"]') resolved to 2 elements:
+    1) <button type="button" aria-expanded="false" id="mobile-menu-button" aria-label="Toggle menu" data-testid="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300">…</button> aka getByTestId('mobile-menu-button')
+    2) <div id="mobile-menu" data-testid="mobile-menu" class="lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none">…</div> aka getByTestId('mobile-menu')
+
+Call log:
+[2m    - checking visibility of locator('#mobile-menu-button, [data-testid="mobile-menu"]')[22m
+[0m
+[34m📸 Screenshot saved: public-restaurants-error-2025-11-29T20-16-10-380Z.png[0m
+
+[36mTesting: Home Services (/industries/home-services)[0m
+✅ Page loaded in 4331ms
+[34m📸 Screenshot saved: public-home-services-initial-2025-11-29T20-16-15-284Z.png[0m
+  ❌ Missing element: hero
+  ❌ Missing element: features
+  [33mFinding clickable elements...[0m
+  Found 8 buttons
+    ✅ Clicked button: Platform
+    ✅ Clicked button: Solutions
+    ✅ Clicked button: Industries
+    ⚠️ Could not interact with button 3
+    ⚠️ Could not interact with button 4
+  Found 48 links
+  Found 1 forms
+[31m❌ Error testing page: locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid="mobile-menu"]') resolved to 2 elements:
+    1) <button type="button" aria-expanded="false" id="mobile-menu-button" aria-label="Toggle menu" data-testid="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300">…</button> aka getByTestId('mobile-menu-button')
+    2) <div id="mobile-menu" data-testid="mobile-menu" class="lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none">…</div> aka getByTestId('mobile-menu')
+
+Call log:
+[2m    - checking visibility of locator('#mobile-menu-button, [data-testid="mobile-menu"]')[22m
+[0m
+[34m📸 Screenshot saved: public-home services-error-2025-11-29T20-16-21-694Z.png[0m
+
+[36mTesting: Retail (/industries/retail)[0m
+✅ Page loaded in 4203ms
+[34m📸 Screenshot saved: public-retail-initial-2025-11-29T20-16-26-407Z.png[0m
+  ❌ Missing element: hero
+  ❌ Missing element: features
+  [33mFinding clickable elements...[0m
+  Found 8 buttons
+    ✅ Clicked button: Platform
+    ✅ Clicked button: Solutions
+    ✅ Clicked button: Industries
+    ⚠️ Could not interact with button 3
+    ⚠️ Could not interact with button 4
+  Found 48 links
+  Found 1 forms
+[31m❌ Error testing page: locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid="mobile-menu"]') resolved to 2 elements:
+    1) <button type="button" aria-expanded="false" id="mobile-menu-button" aria-label="Toggle menu" data-testid="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300">…</button> aka getByTestId('mobile-menu-button')
+    2) <div id="mobile-menu" data-testid="mobile-menu" class="lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none">…</div> aka getByTestId('mobile-menu')
+
+Call log:
+[2m    - checking visibility of locator('#mobile-menu-button, [data-testid="mobile-menu"]')[22m
+[0m
+[34m📸 Screenshot saved: public-retail-error-2025-11-29T20-16-32-760Z.png[0m
+
+[36mTesting: Professional Services (/industries/professional-services)[0m
+✅ Page loaded in 3867ms
+[34m📸 Screenshot saved: public-professional-services-initial-2025-11-29T20-16-37-119Z.png[0m
+  ❌ Missing element: hero
+  ❌ Missing element: features
+  [33mFinding clickable elements...[0m
+  Found 8 buttons
+    ✅ Clicked button: Platform
+    ✅ Clicked button: Solutions
+    ✅ Clicked button: Industries
+    ⚠️ Could not interact with button 3
+    ⚠️ Could not interact with button 4
+  Found 48 links
+  Found 1 forms
+[31m❌ Error testing page: locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid="mobile-menu"]') resolved to 2 elements:
+    1) <button type="button" aria-expanded="false" id="mobile-menu-button" aria-label="Toggle menu" data-testid="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300">…</button> aka getByTestId('mobile-menu-button')
+    2) <div id="mobile-menu" data-testid="mobile-menu" class="lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none">…</div> aka getByTestId('mobile-menu')
+
+Call log:
+[2m    - checking visibility of locator('#mobile-menu-button, [data-testid="mobile-menu"]')[22m
+[0m
+[34m📸 Screenshot saved: public-professional services-error-2025-11-29T20-16-43-635Z.png[0m
+
+[35m================================================================================
+PHASE 2: TESTING CRM DASHBOARD
+================================================================================[0m
+
+[36mLogging into CRM...[0m
+[34m📸 Screenshot saved: crm-login-page-2025-11-29T20-16-46-953Z.png[0m
+[34m📸 Screenshot saved: crm-login-filled-2025-11-29T20-16-47-166Z.png[0m
+[31m❌ Console Error: Failed to load resource: net::ERR_CONNECTION_REFUSED[0m
+[31m❌ Login failed: page.waitForURL: Timeout 15000ms exceeded.
+=========================== logs ===========================
+waiting for navigation to "**/dashboard" until "load"
+============================================================[0m
+
+[35m================================================================================
+GENERATING COMPREHENSIVE REPORT
+================================================================================[0m
+
+[32m✅ Report saved to: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\context-engineering-intro\DEBUGGER_EXHAUSTIVE_FULL_SITE_REPORT.md[0m
+[32m✅ JSON results saved to: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\context-engineering-intro\debug-results-exhaustive.json[0m
+
+[36m================================================================================
+TEST SUMMARY
+================================================================================[0m
+Public Website: 0% pass rate
+CRM Dashboard: 0% pass rate
+Total Bugs: 0
+Overall System Health: 0%
+
+[32m================================================================================
+EXHAUSTIVE DEBUG SESSION COMPLETE
+================================================================================[0m

@@ -1,0 +1,22 @@
+
+=== CSV IMPORT COMPLETE WORKFLOW TEST (Steps 7-12) ===
+
+Step 0: Getting initial contact count...
+
+TEST FAILED: locator.textContent: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('text=/d+s+Contacts?/i').first()[22m
+
+node:internal/process/promises:288
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+locator.textContent: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('text=/d+s+Contacts?/i').first()[22m
+
+    at C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\test_csv_import_complete.js:21:79 {
+  name: 'TimeoutError'
+}
+
+Node.js v18.20.2

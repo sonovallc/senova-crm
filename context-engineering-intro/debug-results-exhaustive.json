@@ -1,0 +1,1337 @@
+{
+  "startTime": "2025-11-29T20:14:11.422Z",
+  "publicWebsite": {
+    "pages": [
+      {
+        "name": "Home",
+        "path": "/",
+        "status": "fail",
+        "loadTime": 0,
+        "screenshot": null,
+        "elementsFound": [],
+        "elementsMissing": [],
+        "clickableElements": [],
+        "bugs": [
+          {
+            "description": "Page failed to load or test properly",
+            "error": "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/\", waiting until \"networkidle\"\u001b[22m\n",
+            "severity": "High"
+          }
+        ],
+        "consoleErrors": []
+      },
+      {
+        "name": "About",
+        "path": "/about",
+        "status": "fail",
+        "loadTime": 5221,
+        "screenshot": "public-about-initial-2025-11-29T20-14-48-963Z.png",
+        "elementsFound": [],
+        "elementsMissing": [
+          "content",
+          "team",
+          "mission"
+        ],
+        "clickableElements": [
+          {
+            "type": "button",
+            "text": "Platform",
+            "enabled": true,
+            "index": 0
+          },
+          {
+            "type": "button",
+            "text": "Solutions",
+            "enabled": true,
+            "index": 1
+          },
+          {
+            "type": "button",
+            "text": "Industries",
+            "enabled": true,
+            "index": 2
+          },
+          {
+            "type": "button",
+            "text": "Subscribe",
+            "enabled": true,
+            "index": 3
+          },
+          {
+            "type": "button",
+            "text": "No text",
+            "enabled": true,
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "SSenova",
+            "href": "/",
+            "index": 0
+          },
+          {
+            "type": "link",
+            "text": "OverviewComplete platform capabilities",
+            "href": "/platform",
+            "index": 1
+          },
+          {
+            "type": "link",
+            "text": "CRM FeaturesCustomer relationship management",
+            "href": "/solutions/crm",
+            "index": 2
+          },
+          {
+            "type": "link",
+            "text": "CRM360° customer management",
+            "href": "/solutions/crm",
+            "index": 3
+          },
+          {
+            "type": "link",
+            "text": "Audience IntelligenceData-driven customer insights",
+            "href": "/solutions/audience-intelligence",
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "Patient IdentificationAdvanced patient matching system",
+            "href": "/solutions/patient-identification",
+            "index": 5
+          },
+          {
+            "type": "link",
+            "text": "Visitor IdentificationIdentify website visitors",
+            "href": "/solutions/visitor-identification",
+            "index": 6
+          },
+          {
+            "type": "link",
+            "text": "Campaign ActivationMulti-channel marketing",
+            "href": "/solutions/campaign-activation",
+            "index": 7
+          },
+          {
+            "type": "link",
+            "text": "AnalyticsROI & performance tracking",
+            "href": "/solutions/analytics",
+            "index": 8
+          },
+          {
+            "type": "link",
+            "text": "Medical SpasComplete medspa management platform",
+            "href": "/industries/medical-spas",
+            "index": 9
+          }
+        ],
+        "bugs": [
+          {
+            "description": "Page failed to load or test properly",
+            "error": "locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]') resolved to 2 elements:\n    1) <button type=\"button\" aria-expanded=\"false\" id=\"mobile-menu-button\" aria-label=\"Toggle menu\" data-testid=\"mobile-menu-button\" class=\"lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300\">…</button> aka getByTestId('mobile-menu-button')\n    2) <div id=\"mobile-menu\" data-testid=\"mobile-menu\" class=\"lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none\">…</div> aka getByTestId('mobile-menu')\n\nCall log:\n\u001b[2m    - checking visibility of locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]')\u001b[22m\n",
+            "severity": "High"
+          }
+        ],
+        "consoleErrors": []
+      },
+      {
+        "name": "Features",
+        "path": "/features",
+        "status": "partial",
+        "loadTime": 2465,
+        "screenshot": "public-features-initial-2025-11-29T20-14-56-852Z.png",
+        "elementsFound": [],
+        "elementsMissing": [
+          "feature-list",
+          "pricing"
+        ],
+        "clickableElements": [
+          {
+            "type": "button",
+            "text": "No text",
+            "enabled": true,
+            "index": 0
+          }
+        ],
+        "bugs": [],
+        "consoleErrors": [
+          {
+            "text": "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant",
+            "location": {
+              "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+              "lineNumber": 56,
+              "columnNumber": 31
+            }
+          },
+          {
+            "text": "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant",
+            "location": {
+              "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+              "lineNumber": 56,
+              "columnNumber": 31
+            }
+          },
+          {
+            "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+            "location": {
+              "url": "http://localhost:3004/features",
+              "lineNumber": 0,
+              "columnNumber": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "Pricing",
+        "path": "/pricing",
+        "status": "fail",
+        "loadTime": 3092,
+        "screenshot": "public-pricing-initial-2025-11-29T20-15-00-578Z.png",
+        "elementsFound": [],
+        "elementsMissing": [
+          "plans",
+          "comparison"
+        ],
+        "clickableElements": [
+          {
+            "type": "button",
+            "text": "Platform",
+            "enabled": true,
+            "index": 0
+          },
+          {
+            "type": "button",
+            "text": "Solutions",
+            "enabled": true,
+            "index": 1
+          },
+          {
+            "type": "button",
+            "text": "Industries",
+            "enabled": true,
+            "index": 2
+          },
+          {
+            "type": "button",
+            "text": "Monthly",
+            "enabled": true,
+            "index": 3
+          },
+          {
+            "type": "button",
+            "text": "Annual Save 20%",
+            "enabled": true,
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "SSenova",
+            "href": "/",
+            "index": 0
+          },
+          {
+            "type": "link",
+            "text": "OverviewComplete platform capabilities",
+            "href": "/platform",
+            "index": 1
+          },
+          {
+            "type": "link",
+            "text": "CRM FeaturesCustomer relationship management",
+            "href": "/solutions/crm",
+            "index": 2
+          },
+          {
+            "type": "link",
+            "text": "CRM360° customer management",
+            "href": "/solutions/crm",
+            "index": 3
+          },
+          {
+            "type": "link",
+            "text": "Audience IntelligenceData-driven customer insights",
+            "href": "/solutions/audience-intelligence",
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "Patient IdentificationAdvanced patient matching system",
+            "href": "/solutions/patient-identification",
+            "index": 5
+          },
+          {
+            "type": "link",
+            "text": "Visitor IdentificationIdentify website visitors",
+            "href": "/solutions/visitor-identification",
+            "index": 6
+          },
+          {
+            "type": "link",
+            "text": "Campaign ActivationMulti-channel marketing",
+            "href": "/solutions/campaign-activation",
+            "index": 7
+          },
+          {
+            "type": "link",
+            "text": "AnalyticsROI & performance tracking",
+            "href": "/solutions/analytics",
+            "index": 8
+          },
+          {
+            "type": "link",
+            "text": "Medical SpasComplete medspa management platform",
+            "href": "/industries/medical-spas",
+            "index": 9
+          }
+        ],
+        "bugs": [
+          {
+            "description": "Page failed to load or test properly",
+            "error": "locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]') resolved to 2 elements:\n    1) <button type=\"button\" aria-expanded=\"false\" id=\"mobile-menu-button\" aria-label=\"Toggle menu\" data-testid=\"mobile-menu-button\" class=\"lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300\">…</button> aka getByTestId('mobile-menu-button')\n    2) <div id=\"mobile-menu\" data-testid=\"mobile-menu\" class=\"lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none\">…</div> aka getByTestId('mobile-menu')\n\nCall log:\n\u001b[2m    - checking visibility of locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]')\u001b[22m\n",
+            "severity": "High"
+          }
+        ],
+        "consoleErrors": []
+      },
+      {
+        "name": "Contact",
+        "path": "/contact",
+        "status": "fail",
+        "loadTime": 7275,
+        "screenshot": "public-contact-initial-2025-11-29T20-15-15-167Z.png",
+        "elementsFound": [],
+        "elementsMissing": [
+          "form",
+          "info"
+        ],
+        "clickableElements": [
+          {
+            "type": "button",
+            "text": "Platform",
+            "enabled": true,
+            "index": 0
+          },
+          {
+            "type": "button",
+            "text": "Solutions",
+            "enabled": true,
+            "index": 1
+          },
+          {
+            "type": "button",
+            "text": "Industries",
+            "enabled": true,
+            "index": 2
+          },
+          {
+            "type": "button",
+            "text": "No text",
+            "enabled": true,
+            "index": 3
+          },
+          {
+            "type": "button",
+            "text": "No text",
+            "enabled": true,
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "SSenova",
+            "href": "/",
+            "index": 0
+          },
+          {
+            "type": "link",
+            "text": "OverviewComplete platform capabilities",
+            "href": "/platform",
+            "index": 1
+          },
+          {
+            "type": "link",
+            "text": "CRM FeaturesCustomer relationship management",
+            "href": "/solutions/crm",
+            "index": 2
+          },
+          {
+            "type": "link",
+            "text": "CRM360° customer management",
+            "href": "/solutions/crm",
+            "index": 3
+          },
+          {
+            "type": "link",
+            "text": "Audience IntelligenceData-driven customer insights",
+            "href": "/solutions/audience-intelligence",
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "Patient IdentificationAdvanced patient matching system",
+            "href": "/solutions/patient-identification",
+            "index": 5
+          },
+          {
+            "type": "link",
+            "text": "Visitor IdentificationIdentify website visitors",
+            "href": "/solutions/visitor-identification",
+            "index": 6
+          },
+          {
+            "type": "link",
+            "text": "Campaign ActivationMulti-channel marketing",
+            "href": "/solutions/campaign-activation",
+            "index": 7
+          },
+          {
+            "type": "link",
+            "text": "AnalyticsROI & performance tracking",
+            "href": "/solutions/analytics",
+            "index": 8
+          },
+          {
+            "type": "link",
+            "text": "Medical SpasComplete medspa management platform",
+            "href": "/industries/medical-spas",
+            "index": 9
+          }
+        ],
+        "bugs": [
+          {
+            "description": "Page failed to load or test properly",
+            "error": "locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]') resolved to 2 elements:\n    1) <button type=\"button\" aria-expanded=\"false\" id=\"mobile-menu-button\" aria-label=\"Toggle menu\" data-testid=\"mobile-menu-button\" class=\"lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300\">…</button> aka getByTestId('mobile-menu-button')\n    2) <div id=\"mobile-menu\" data-testid=\"mobile-menu\" class=\"lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none\">…</div> aka getByTestId('mobile-menu')\n\nCall log:\n\u001b[2m    - checking visibility of locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]')\u001b[22m\n",
+            "severity": "High"
+          }
+        ],
+        "consoleErrors": []
+      },
+      {
+        "name": "Login",
+        "path": "/login",
+        "status": "partial",
+        "loadTime": 3387,
+        "screenshot": "public-login-initial-2025-11-29T20-15-22-270Z.png",
+        "elementsFound": [],
+        "elementsMissing": [
+          "form",
+          "submit-button"
+        ],
+        "clickableElements": [
+          {
+            "type": "button",
+            "text": "Sign in",
+            "enabled": true,
+            "index": 0
+          },
+          {
+            "type": "button",
+            "text": "No text",
+            "enabled": true,
+            "index": 1
+          },
+          {
+            "type": "link",
+            "text": "Back to Website",
+            "href": "/home",
+            "index": 0
+          },
+          {
+            "type": "link",
+            "text": "Sign up",
+            "href": "/register",
+            "index": 1
+          }
+        ],
+        "bugs": [],
+        "consoleErrors": [
+          {
+            "text": "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant",
+            "location": {
+              "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+              "lineNumber": 56,
+              "columnNumber": 31
+            }
+          },
+          {
+            "text": "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant",
+            "location": {
+              "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+              "lineNumber": 56,
+              "columnNumber": 31
+            }
+          },
+          {
+            "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+            "location": {
+              "url": "http://localhost:3004/features",
+              "lineNumber": 0,
+              "columnNumber": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "Register",
+        "path": "/register",
+        "status": "partial",
+        "loadTime": 2934,
+        "screenshot": "public-register-initial-2025-11-29T20-15-25-991Z.png",
+        "elementsFound": [],
+        "elementsMissing": [
+          "form",
+          "submit-button"
+        ],
+        "clickableElements": [
+          {
+            "type": "button",
+            "text": "Create account",
+            "enabled": true,
+            "index": 0
+          },
+          {
+            "type": "button",
+            "text": "No text",
+            "enabled": true,
+            "index": 1
+          },
+          {
+            "type": "link",
+            "text": "Sign in",
+            "href": "/login",
+            "index": 0
+          }
+        ],
+        "bugs": [],
+        "consoleErrors": [
+          {
+            "text": "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant",
+            "location": {
+              "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+              "lineNumber": 56,
+              "columnNumber": 31
+            }
+          },
+          {
+            "text": "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant",
+            "location": {
+              "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+              "lineNumber": 56,
+              "columnNumber": 31
+            }
+          },
+          {
+            "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+            "location": {
+              "url": "http://localhost:3004/features",
+              "lineNumber": 0,
+              "columnNumber": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "Medical Spas",
+        "path": "/industries/medical-spas",
+        "status": "fail",
+        "loadTime": 4719,
+        "screenshot": "public-medical-spas-initial-2025-11-29T20-15-32-041Z.png",
+        "elementsFound": [],
+        "elementsMissing": [
+          "hero",
+          "features"
+        ],
+        "clickableElements": [
+          {
+            "type": "button",
+            "text": "Platform",
+            "enabled": true,
+            "index": 0
+          },
+          {
+            "type": "button",
+            "text": "Solutions",
+            "enabled": true,
+            "index": 1
+          },
+          {
+            "type": "button",
+            "text": "Industries",
+            "enabled": true,
+            "index": 2
+          },
+          {
+            "type": "button",
+            "text": "Subscribe",
+            "enabled": true,
+            "index": 3
+          },
+          {
+            "type": "button",
+            "text": "No text",
+            "enabled": true,
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "SSenova",
+            "href": "/",
+            "index": 0
+          },
+          {
+            "type": "link",
+            "text": "OverviewComplete platform capabilities",
+            "href": "/platform",
+            "index": 1
+          },
+          {
+            "type": "link",
+            "text": "CRM FeaturesCustomer relationship management",
+            "href": "/solutions/crm",
+            "index": 2
+          },
+          {
+            "type": "link",
+            "text": "CRM360° customer management",
+            "href": "/solutions/crm",
+            "index": 3
+          },
+          {
+            "type": "link",
+            "text": "Audience IntelligenceData-driven customer insights",
+            "href": "/solutions/audience-intelligence",
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "Patient IdentificationAdvanced patient matching system",
+            "href": "/solutions/patient-identification",
+            "index": 5
+          },
+          {
+            "type": "link",
+            "text": "Visitor IdentificationIdentify website visitors",
+            "href": "/solutions/visitor-identification",
+            "index": 6
+          },
+          {
+            "type": "link",
+            "text": "Campaign ActivationMulti-channel marketing",
+            "href": "/solutions/campaign-activation",
+            "index": 7
+          },
+          {
+            "type": "link",
+            "text": "AnalyticsROI & performance tracking",
+            "href": "/solutions/analytics",
+            "index": 8
+          },
+          {
+            "type": "link",
+            "text": "Medical SpasComplete medspa management platform",
+            "href": "/industries/medical-spas",
+            "index": 9
+          }
+        ],
+        "bugs": [
+          {
+            "description": "Page failed to load or test properly",
+            "error": "locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]') resolved to 2 elements:\n    1) <button type=\"button\" aria-expanded=\"false\" id=\"mobile-menu-button\" aria-label=\"Toggle menu\" data-testid=\"mobile-menu-button\" class=\"lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300\">…</button> aka getByTestId('mobile-menu-button')\n    2) <div id=\"mobile-menu\" data-testid=\"mobile-menu\" class=\"lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none\">…</div> aka getByTestId('mobile-menu')\n\nCall log:\n\u001b[2m    - checking visibility of locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]')\u001b[22m\n",
+            "severity": "High"
+          }
+        ],
+        "consoleErrors": []
+      },
+      {
+        "name": "Dermatology",
+        "path": "/industries/dermatology",
+        "status": "fail",
+        "loadTime": 6091,
+        "screenshot": "public-dermatology-initial-2025-11-29T20-15-43-478Z.png",
+        "elementsFound": [],
+        "elementsMissing": [
+          "hero",
+          "features"
+        ],
+        "clickableElements": [
+          {
+            "type": "button",
+            "text": "Platform",
+            "enabled": true,
+            "index": 0
+          },
+          {
+            "type": "button",
+            "text": "Solutions",
+            "enabled": true,
+            "index": 1
+          },
+          {
+            "type": "button",
+            "text": "Industries",
+            "enabled": true,
+            "index": 2
+          },
+          {
+            "type": "button",
+            "text": "Subscribe",
+            "enabled": true,
+            "index": 3
+          },
+          {
+            "type": "button",
+            "text": "No text",
+            "enabled": true,
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "SSenova",
+            "href": "/",
+            "index": 0
+          },
+          {
+            "type": "link",
+            "text": "OverviewComplete platform capabilities",
+            "href": "/platform",
+            "index": 1
+          },
+          {
+            "type": "link",
+            "text": "CRM FeaturesCustomer relationship management",
+            "href": "/solutions/crm",
+            "index": 2
+          },
+          {
+            "type": "link",
+            "text": "CRM360° customer management",
+            "href": "/solutions/crm",
+            "index": 3
+          },
+          {
+            "type": "link",
+            "text": "Audience IntelligenceData-driven customer insights",
+            "href": "/solutions/audience-intelligence",
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "Patient IdentificationAdvanced patient matching system",
+            "href": "/solutions/patient-identification",
+            "index": 5
+          },
+          {
+            "type": "link",
+            "text": "Visitor IdentificationIdentify website visitors",
+            "href": "/solutions/visitor-identification",
+            "index": 6
+          },
+          {
+            "type": "link",
+            "text": "Campaign ActivationMulti-channel marketing",
+            "href": "/solutions/campaign-activation",
+            "index": 7
+          },
+          {
+            "type": "link",
+            "text": "AnalyticsROI & performance tracking",
+            "href": "/solutions/analytics",
+            "index": 8
+          },
+          {
+            "type": "link",
+            "text": "Medical SpasComplete medspa management platform",
+            "href": "/industries/medical-spas",
+            "index": 9
+          }
+        ],
+        "bugs": [
+          {
+            "description": "Page failed to load or test properly",
+            "error": "locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]') resolved to 2 elements:\n    1) <button type=\"button\" aria-expanded=\"false\" id=\"mobile-menu-button\" aria-label=\"Toggle menu\" data-testid=\"mobile-menu-button\" class=\"lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300\">…</button> aka getByTestId('mobile-menu-button')\n    2) <div id=\"mobile-menu\" data-testid=\"mobile-menu\" class=\"lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none\">…</div> aka getByTestId('mobile-menu')\n\nCall log:\n\u001b[2m    - checking visibility of locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]')\u001b[22m\n",
+            "severity": "High"
+          }
+        ],
+        "consoleErrors": []
+      },
+      {
+        "name": "Plastic Surgery",
+        "path": "/industries/plastic-surgery",
+        "status": "fail",
+        "loadTime": 4409,
+        "screenshot": "public-plastic-surgery-initial-2025-11-29T20-15-53-453Z.png",
+        "elementsFound": [],
+        "elementsMissing": [
+          "hero",
+          "features"
+        ],
+        "clickableElements": [
+          {
+            "type": "button",
+            "text": "Platform",
+            "enabled": true,
+            "index": 0
+          },
+          {
+            "type": "button",
+            "text": "Solutions",
+            "enabled": true,
+            "index": 1
+          },
+          {
+            "type": "button",
+            "text": "Industries",
+            "enabled": true,
+            "index": 2
+          },
+          {
+            "type": "button",
+            "text": "Subscribe",
+            "enabled": true,
+            "index": 3
+          },
+          {
+            "type": "button",
+            "text": "No text",
+            "enabled": true,
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "SSenova",
+            "href": "/",
+            "index": 0
+          },
+          {
+            "type": "link",
+            "text": "OverviewComplete platform capabilities",
+            "href": "/platform",
+            "index": 1
+          },
+          {
+            "type": "link",
+            "text": "CRM FeaturesCustomer relationship management",
+            "href": "/solutions/crm",
+            "index": 2
+          },
+          {
+            "type": "link",
+            "text": "CRM360° customer management",
+            "href": "/solutions/crm",
+            "index": 3
+          },
+          {
+            "type": "link",
+            "text": "Audience IntelligenceData-driven customer insights",
+            "href": "/solutions/audience-intelligence",
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "Patient IdentificationAdvanced patient matching system",
+            "href": "/solutions/patient-identification",
+            "index": 5
+          },
+          {
+            "type": "link",
+            "text": "Visitor IdentificationIdentify website visitors",
+            "href": "/solutions/visitor-identification",
+            "index": 6
+          },
+          {
+            "type": "link",
+            "text": "Campaign ActivationMulti-channel marketing",
+            "href": "/solutions/campaign-activation",
+            "index": 7
+          },
+          {
+            "type": "link",
+            "text": "AnalyticsROI & performance tracking",
+            "href": "/solutions/analytics",
+            "index": 8
+          },
+          {
+            "type": "link",
+            "text": "Medical SpasComplete medspa management platform",
+            "href": "/industries/medical-spas",
+            "index": 9
+          }
+        ],
+        "bugs": [
+          {
+            "description": "Page failed to load or test properly",
+            "error": "locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]') resolved to 2 elements:\n    1) <button type=\"button\" aria-expanded=\"false\" id=\"mobile-menu-button\" aria-label=\"Toggle menu\" data-testid=\"mobile-menu-button\" class=\"lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300\">…</button> aka getByTestId('mobile-menu-button')\n    2) <div id=\"mobile-menu\" data-testid=\"mobile-menu\" class=\"lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none\">…</div> aka getByTestId('mobile-menu')\n\nCall log:\n\u001b[2m    - checking visibility of locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]')\u001b[22m\n",
+            "severity": "High"
+          }
+        ],
+        "consoleErrors": []
+      },
+      {
+        "name": "Restaurants",
+        "path": "/industries/restaurants",
+        "status": "fail",
+        "loadTime": 4680,
+        "screenshot": "public-restaurants-initial-2025-11-29T20-16-03-854Z.png",
+        "elementsFound": [],
+        "elementsMissing": [
+          "hero",
+          "features"
+        ],
+        "clickableElements": [
+          {
+            "type": "button",
+            "text": "Platform",
+            "enabled": true,
+            "index": 0
+          },
+          {
+            "type": "button",
+            "text": "Solutions",
+            "enabled": true,
+            "index": 1
+          },
+          {
+            "type": "button",
+            "text": "Industries",
+            "enabled": true,
+            "index": 2
+          },
+          {
+            "type": "button",
+            "text": "Start Free Trial",
+            "enabled": true,
+            "index": 3
+          },
+          {
+            "type": "button",
+            "text": "Book a Demo",
+            "enabled": true,
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "SSenova",
+            "href": "/",
+            "index": 0
+          },
+          {
+            "type": "link",
+            "text": "OverviewComplete platform capabilities",
+            "href": "/platform",
+            "index": 1
+          },
+          {
+            "type": "link",
+            "text": "CRM FeaturesCustomer relationship management",
+            "href": "/solutions/crm",
+            "index": 2
+          },
+          {
+            "type": "link",
+            "text": "CRM360° customer management",
+            "href": "/solutions/crm",
+            "index": 3
+          },
+          {
+            "type": "link",
+            "text": "Audience IntelligenceData-driven customer insights",
+            "href": "/solutions/audience-intelligence",
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "Patient IdentificationAdvanced patient matching system",
+            "href": "/solutions/patient-identification",
+            "index": 5
+          },
+          {
+            "type": "link",
+            "text": "Visitor IdentificationIdentify website visitors",
+            "href": "/solutions/visitor-identification",
+            "index": 6
+          },
+          {
+            "type": "link",
+            "text": "Campaign ActivationMulti-channel marketing",
+            "href": "/solutions/campaign-activation",
+            "index": 7
+          },
+          {
+            "type": "link",
+            "text": "AnalyticsROI & performance tracking",
+            "href": "/solutions/analytics",
+            "index": 8
+          },
+          {
+            "type": "link",
+            "text": "Medical SpasComplete medspa management platform",
+            "href": "/industries/medical-spas",
+            "index": 9
+          }
+        ],
+        "bugs": [
+          {
+            "description": "Page failed to load or test properly",
+            "error": "locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]') resolved to 2 elements:\n    1) <button type=\"button\" aria-expanded=\"false\" id=\"mobile-menu-button\" aria-label=\"Toggle menu\" data-testid=\"mobile-menu-button\" class=\"lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300\">…</button> aka getByTestId('mobile-menu-button')\n    2) <div id=\"mobile-menu\" data-testid=\"mobile-menu\" class=\"lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none\">…</div> aka getByTestId('mobile-menu')\n\nCall log:\n\u001b[2m    - checking visibility of locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]')\u001b[22m\n",
+            "severity": "High"
+          }
+        ],
+        "consoleErrors": []
+      },
+      {
+        "name": "Home Services",
+        "path": "/industries/home-services",
+        "status": "fail",
+        "loadTime": 4331,
+        "screenshot": "public-home-services-initial-2025-11-29T20-16-15-284Z.png",
+        "elementsFound": [],
+        "elementsMissing": [
+          "hero",
+          "features"
+        ],
+        "clickableElements": [
+          {
+            "type": "button",
+            "text": "Platform",
+            "enabled": true,
+            "index": 0
+          },
+          {
+            "type": "button",
+            "text": "Solutions",
+            "enabled": true,
+            "index": 1
+          },
+          {
+            "type": "button",
+            "text": "Industries",
+            "enabled": true,
+            "index": 2
+          },
+          {
+            "type": "button",
+            "text": "Start Free Trial",
+            "enabled": true,
+            "index": 3
+          },
+          {
+            "type": "button",
+            "text": "Book a Demo",
+            "enabled": true,
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "SSenova",
+            "href": "/",
+            "index": 0
+          },
+          {
+            "type": "link",
+            "text": "OverviewComplete platform capabilities",
+            "href": "/platform",
+            "index": 1
+          },
+          {
+            "type": "link",
+            "text": "CRM FeaturesCustomer relationship management",
+            "href": "/solutions/crm",
+            "index": 2
+          },
+          {
+            "type": "link",
+            "text": "CRM360° customer management",
+            "href": "/solutions/crm",
+            "index": 3
+          },
+          {
+            "type": "link",
+            "text": "Audience IntelligenceData-driven customer insights",
+            "href": "/solutions/audience-intelligence",
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "Patient IdentificationAdvanced patient matching system",
+            "href": "/solutions/patient-identification",
+            "index": 5
+          },
+          {
+            "type": "link",
+            "text": "Visitor IdentificationIdentify website visitors",
+            "href": "/solutions/visitor-identification",
+            "index": 6
+          },
+          {
+            "type": "link",
+            "text": "Campaign ActivationMulti-channel marketing",
+            "href": "/solutions/campaign-activation",
+            "index": 7
+          },
+          {
+            "type": "link",
+            "text": "AnalyticsROI & performance tracking",
+            "href": "/solutions/analytics",
+            "index": 8
+          },
+          {
+            "type": "link",
+            "text": "Medical SpasComplete medspa management platform",
+            "href": "/industries/medical-spas",
+            "index": 9
+          }
+        ],
+        "bugs": [
+          {
+            "description": "Page failed to load or test properly",
+            "error": "locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]') resolved to 2 elements:\n    1) <button type=\"button\" aria-expanded=\"false\" id=\"mobile-menu-button\" aria-label=\"Toggle menu\" data-testid=\"mobile-menu-button\" class=\"lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300\">…</button> aka getByTestId('mobile-menu-button')\n    2) <div id=\"mobile-menu\" data-testid=\"mobile-menu\" class=\"lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none\">…</div> aka getByTestId('mobile-menu')\n\nCall log:\n\u001b[2m    - checking visibility of locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]')\u001b[22m\n",
+            "severity": "High"
+          }
+        ],
+        "consoleErrors": []
+      },
+      {
+        "name": "Retail",
+        "path": "/industries/retail",
+        "status": "fail",
+        "loadTime": 4203,
+        "screenshot": "public-retail-initial-2025-11-29T20-16-26-407Z.png",
+        "elementsFound": [],
+        "elementsMissing": [
+          "hero",
+          "features"
+        ],
+        "clickableElements": [
+          {
+            "type": "button",
+            "text": "Platform",
+            "enabled": true,
+            "index": 0
+          },
+          {
+            "type": "button",
+            "text": "Solutions",
+            "enabled": true,
+            "index": 1
+          },
+          {
+            "type": "button",
+            "text": "Industries",
+            "enabled": true,
+            "index": 2
+          },
+          {
+            "type": "button",
+            "text": "Start Free Trial",
+            "enabled": true,
+            "index": 3
+          },
+          {
+            "type": "button",
+            "text": "Book a Demo",
+            "enabled": true,
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "SSenova",
+            "href": "/",
+            "index": 0
+          },
+          {
+            "type": "link",
+            "text": "OverviewComplete platform capabilities",
+            "href": "/platform",
+            "index": 1
+          },
+          {
+            "type": "link",
+            "text": "CRM FeaturesCustomer relationship management",
+            "href": "/solutions/crm",
+            "index": 2
+          },
+          {
+            "type": "link",
+            "text": "CRM360° customer management",
+            "href": "/solutions/crm",
+            "index": 3
+          },
+          {
+            "type": "link",
+            "text": "Audience IntelligenceData-driven customer insights",
+            "href": "/solutions/audience-intelligence",
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "Patient IdentificationAdvanced patient matching system",
+            "href": "/solutions/patient-identification",
+            "index": 5
+          },
+          {
+            "type": "link",
+            "text": "Visitor IdentificationIdentify website visitors",
+            "href": "/solutions/visitor-identification",
+            "index": 6
+          },
+          {
+            "type": "link",
+            "text": "Campaign ActivationMulti-channel marketing",
+            "href": "/solutions/campaign-activation",
+            "index": 7
+          },
+          {
+            "type": "link",
+            "text": "AnalyticsROI & performance tracking",
+            "href": "/solutions/analytics",
+            "index": 8
+          },
+          {
+            "type": "link",
+            "text": "Medical SpasComplete medspa management platform",
+            "href": "/industries/medical-spas",
+            "index": 9
+          }
+        ],
+        "bugs": [
+          {
+            "description": "Page failed to load or test properly",
+            "error": "locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]') resolved to 2 elements:\n    1) <button type=\"button\" aria-expanded=\"false\" id=\"mobile-menu-button\" aria-label=\"Toggle menu\" data-testid=\"mobile-menu-button\" class=\"lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300\">…</button> aka getByTestId('mobile-menu-button')\n    2) <div id=\"mobile-menu\" data-testid=\"mobile-menu\" class=\"lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none\">…</div> aka getByTestId('mobile-menu')\n\nCall log:\n\u001b[2m    - checking visibility of locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]')\u001b[22m\n",
+            "severity": "High"
+          }
+        ],
+        "consoleErrors": []
+      },
+      {
+        "name": "Professional Services",
+        "path": "/industries/professional-services",
+        "status": "fail",
+        "loadTime": 3867,
+        "screenshot": "public-professional-services-initial-2025-11-29T20-16-37-119Z.png",
+        "elementsFound": [],
+        "elementsMissing": [
+          "hero",
+          "features"
+        ],
+        "clickableElements": [
+          {
+            "type": "button",
+            "text": "Platform",
+            "enabled": true,
+            "index": 0
+          },
+          {
+            "type": "button",
+            "text": "Solutions",
+            "enabled": true,
+            "index": 1
+          },
+          {
+            "type": "button",
+            "text": "Industries",
+            "enabled": true,
+            "index": 2
+          },
+          {
+            "type": "button",
+            "text": "Start Free Trial",
+            "enabled": true,
+            "index": 3
+          },
+          {
+            "type": "button",
+            "text": "Book a Demo",
+            "enabled": true,
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "SSenova",
+            "href": "/",
+            "index": 0
+          },
+          {
+            "type": "link",
+            "text": "OverviewComplete platform capabilities",
+            "href": "/platform",
+            "index": 1
+          },
+          {
+            "type": "link",
+            "text": "CRM FeaturesCustomer relationship management",
+            "href": "/solutions/crm",
+            "index": 2
+          },
+          {
+            "type": "link",
+            "text": "CRM360° customer management",
+            "href": "/solutions/crm",
+            "index": 3
+          },
+          {
+            "type": "link",
+            "text": "Audience IntelligenceData-driven customer insights",
+            "href": "/solutions/audience-intelligence",
+            "index": 4
+          },
+          {
+            "type": "link",
+            "text": "Patient IdentificationAdvanced patient matching system",
+            "href": "/solutions/patient-identification",
+            "index": 5
+          },
+          {
+            "type": "link",
+            "text": "Visitor IdentificationIdentify website visitors",
+            "href": "/solutions/visitor-identification",
+            "index": 6
+          },
+          {
+            "type": "link",
+            "text": "Campaign ActivationMulti-channel marketing",
+            "href": "/solutions/campaign-activation",
+            "index": 7
+          },
+          {
+            "type": "link",
+            "text": "AnalyticsROI & performance tracking",
+            "href": "/solutions/analytics",
+            "index": 8
+          },
+          {
+            "type": "link",
+            "text": "Medical SpasComplete medspa management platform",
+            "href": "/industries/medical-spas",
+            "index": 9
+          }
+        ],
+        "bugs": [
+          {
+            "description": "Page failed to load or test properly",
+            "error": "locator.isVisible: Error: strict mode violation: locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]') resolved to 2 elements:\n    1) <button type=\"button\" aria-expanded=\"false\" id=\"mobile-menu-button\" aria-label=\"Toggle menu\" data-testid=\"mobile-menu-button\" class=\"lg:hidden p-2 rounded-lg hover:bg-senova-accent/10 transition-colors duration-300\">…</button> aka getByTestId('mobile-menu-button')\n    2) <div id=\"mobile-menu\" data-testid=\"mobile-menu\" class=\"lg:hidden fixed inset-x-0 top-[73px] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none\">…</div> aka getByTestId('mobile-menu')\n\nCall log:\n\u001b[2m    - checking visibility of locator('#mobile-menu-button, [data-testid=\"mobile-menu\"]')\u001b[22m\n",
+            "severity": "High"
+          }
+        ],
+        "consoleErrors": []
+      }
+    ],
+    "totalTested": 14,
+    "passed": 0,
+    "failed": 11,
+    "bugs": []
+  },
+  "crmDashboard": {
+    "pages": [],
+    "totalTested": 0,
+    "passed": 0,
+    "failed": 0,
+    "bugs": [
+      {
+        "description": "Login failed",
+        "error": "page.waitForURL: Timeout 15000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation to \"**/dashboard\" until \"load\"\n============================================================",
+        "severity": "Critical"
+      }
+    ]
+  },
+  "consoleErrors": [],
+  "performanceIssues": [],
+  "visualIssues": []
+}

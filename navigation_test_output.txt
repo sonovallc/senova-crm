@@ -1,0 +1,98 @@
+Starting exhaustive navigation test...
+
+Logging in...
+Logged in successfully
+
+
+[1] Testing: Dashboard
+  PASS
+
+[2] Testing: Contacts
+  FAIL
+
+[3] Testing: Inbox
+  FAIL
+
+[4] Testing: Email Compose
+  FAIL
+
+[5] Testing: Email Templates
+  FAIL
+
+[6] Testing: Email Campaigns
+  FAIL
+
+[7] Testing: Email Autoresponders
+  FAIL
+
+[8] Testing: Activity Log
+  FAIL
+
+[9] Testing: Payments
+  FAIL
+
+[10] Testing: AI Tools
+  FAIL
+
+[11] Testing: Settings Users
+  ERROR: page.click: Timeout 5000ms exceeded.
+Call log:
+[2m  - waiting for locator('a[href="/dashboard/settings/users"]')[22m
+
+
+[12] Testing: Settings Tags
+  ERROR: page.click: Timeout 5000ms exceeded.
+Call log:
+[2m  - waiting for locator('a[href="/dashboard/settings/tags"]')[22m
+
+
+[13] Testing: Settings Fields
+  ERROR: page.click: Timeout 5000ms exceeded.
+Call log:
+[2m  - waiting for locator('a[href="/dashboard/settings/fields"]')[22m
+
+
+[14] Testing: Settings Email
+  ERROR: page.click: Timeout 5000ms exceeded.
+Call log:
+[2m  - waiting for locator('a[href="/dashboard/settings/email"]')[22m
+
+
+[15] Testing: Settings Feature Flags
+  FAIL
+
+[16] Testing: Settings Mailgun
+  ERROR: page.click: Timeout 5000ms exceeded.
+Call log:
+[2m  - waiting for locator('a[href="/dashboard/settings/integrations/mailgun"]')[22m
+
+
+[17] Testing: Settings Closebot
+  FAIL
+
+
+=== NAVIGATION TEST RESULTS ===
+
+| # | Link Name | Expected URL | Actual URL | Page Loaded | Result |
+|---|-----------|--------------|------------|-------------|--------|
+| 1 | Dashboard | /dashboard | /dashboard | YES | PASS |
+| 2 | Contacts | /dashboard/contacts | /dashboard | YES | FAIL |
+| 3 | Inbox | /dashboard/inbox | /dashboard | YES | FAIL |
+| 4 | Email Compose | /dashboard/email/compose | /dashboard | YES | FAIL |
+| 5 | Email Templates | /dashboard/email/templates | /dashboard | YES | FAIL |
+| 6 | Email Campaigns | /dashboard/email/campaigns | /dashboard | YES | FAIL |
+| 7 | Email Autoresponders | /dashboard/email/autoresponders | /dashboard | YES | FAIL |
+| 8 | Activity Log | /dashboard/activity-log | /dashboard | YES | FAIL |
+| 9 | Payments | /dashboard/payments | /dashboard | YES | FAIL |
+| 10 | AI Tools | /dashboard/ai | /dashboard | YES | FAIL |
+| 11 | Settings Users | /dashboard/settings/users |  | NO | ERROR |
+| 12 | Settings Tags | /dashboard/settings/tags |  | NO | ERROR |
+| 13 | Settings Fields | /dashboard/settings/fields |  | NO | ERROR |
+| 14 | Settings Email | /dashboard/settings/email |  | NO | ERROR |
+| 15 | Settings Feature Flags | /dashboard/settings/feature-flags | /dashboard/ai | YES | FAIL |
+| 16 | Settings Mailgun | /dashboard/settings/integrations/mailgun |  | NO | ERROR |
+| 17 | Settings Closebot | /dashboard/settings/integrations/closebot | /dashboard/settings/feature-flags | YES | FAIL |
+
+=== SUMMARY ===
+Total Tests: 17
+PASS: 1 (5.9%)

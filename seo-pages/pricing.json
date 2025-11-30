@@ -1,0 +1,322 @@
+{
+  "path": "/pricing",
+  "seo": {
+    "title": "Save $1,400/Month vs Enterprise CRMs | Senova Pricing",
+    "description": "Medical spa CRM starting at $299/month. See 80% of visitors, unlimited campaigns, HIPAA included. No setup fees. ROI in 30 days guaranteed.",
+    "keywords": ["medical spa CRM pricing", "medspa software cost", "aesthetic practice CRM price", "affordable patient CRM", "HIPAA compliant CRM pricing"],
+    "og_image": "Pricing comparison table showing 60% savings vs competitors"
+  },
+  "hero": {
+    "headline": "Enterprise Features. SMB Pricing. Guaranteed ROI.",
+    "subheadline": "Transparent pricing with no hidden fees. Every plan includes HIPAA compliance, unlimited users, and white-glove onboarding.",
+    "cta_primary": {
+      "text": "Start 14-Day Free Trial",
+      "link": "/demo"
+    },
+    "cta_secondary": {
+      "text": "Calculate Your ROI",
+      "link": "/roi-calculator"
+    }
+  },
+  "sections": [
+    {
+      "type": "pricing_cards",
+      "headline": "Choose Your Growth Plan",
+      "subheadline": "All plans include core CRM features, HIPAA compliance, and 24/7 support",
+      "billing_toggle": {
+        "monthly": "Monthly",
+        "annual": "Annual (Save 20%)"
+      },
+      "plans": [
+        {
+          "name": "Starter",
+          "price_monthly": "$299",
+          "price_annual": "$239",
+          "description": "Perfect for single-location practices just getting started",
+          "highlight": false,
+          "features": [
+            "Up to 5,000 patient records",
+            "Patient Identification Pixel (30% match rate)",
+            "Email campaign automation",
+            "Basic audience targeting",
+            "Standard analytics dashboard",
+            "2 team members",
+            "Email support",
+            "Setup in 48 hours"
+          ],
+          "limitations": [
+            "Limited to 1 location",
+            "10 campaigns per month",
+            "Basic integrations only"
+          ],
+          "cta": {
+            "text": "Start Free Trial",
+            "link": "/demo?plan=starter"
+          }
+        },
+        {
+          "name": "Professional",
+          "price_monthly": "$599",
+          "price_annual": "$479",
+          "description": "For growing practices ready to scale patient acquisition",
+          "highlight": true,
+          "badge": "Most Popular",
+          "features": [
+            "Up to 25,000 patient records",
+            "Patient Identification Pixel (80% match rate)",
+            "Email + SMS automation",
+            "Advanced audience intelligence",
+            "Custom audience builder",
+            "ROI attribution tracking",
+            "Unlimited team members",
+            "Priority phone + email support",
+            "White-glove onboarding",
+            "All integrations included",
+            "Unlimited campaigns",
+            "A/B testing",
+            "Custom reporting"
+          ],
+          "bonus": "Save $8,400/year vs competitors",
+          "cta": {
+            "text": "Start Free Trial",
+            "link": "/demo?plan=professional"
+          }
+        },
+        {
+          "name": "Enterprise",
+          "price_monthly": "Custom",
+          "price_annual": "Custom",
+          "description": "For multi-location groups and franchises",
+          "highlight": false,
+          "features": [
+            "Unlimited patient records",
+            "Everything in Professional",
+            "Multi-location management",
+            "Custom integrations",
+            "API access",
+            "Dedicated account manager",
+            "Quarterly business reviews",
+            "Custom training programs",
+            "SLA guarantees",
+            "Custom data retention",
+            "Advanced security features",
+            "Priority feature requests"
+          ],
+          "cta": {
+            "text": "Contact Sales",
+            "link": "/contact?plan=enterprise"
+          }
+        }
+      ]
+    },
+    {
+      "type": "comparison",
+      "headline": "See How Much You'll Save",
+      "subheadline": "Compare Senova to other CRM and patient acquisition platforms",
+      "competitors": [
+        {
+          "name": "Senova Professional",
+          "price": "$599/mo",
+          "visitor_id": "80%",
+          "audiences": "Unlimited",
+          "hipaa": "Included",
+          "setup": "Free",
+          "contract": "Month-to-month"
+        },
+        {
+          "name": "Enterprise CRM #1",
+          "price": "$2,000/mo",
+          "visitor_id": "30%",
+          "audiences": "Limited",
+          "hipaa": "+$500/mo",
+          "setup": "$5,000",
+          "contract": "12 months"
+        },
+        {
+          "name": "Enterprise CRM #2",
+          "price": "$1,500/mo",
+          "visitor_id": "Not available",
+          "audiences": "5 max",
+          "hipaa": "+$300/mo",
+          "setup": "$2,500",
+          "contract": "24 months"
+        },
+        {
+          "name": "Basic CRM + Tools",
+          "price": "$800/mo",
+          "visitor_id": "Not available",
+          "audiences": "Manual only",
+          "hipaa": "Not included",
+          "setup": "$1,000",
+          "contract": "12 months"
+        }
+      ],
+      "savings_callout": "Average practice saves $1,400/month with Senova"
+    },
+    {
+      "type": "roi_calculator_teaser",
+      "headline": "Your ROI in Real Numbers",
+      "subheadline": "See exactly how much Senova will save and earn for your practice",
+      "metrics": [
+        {
+          "label": "Average new patients from visitor ID",
+          "value": "12-18/month"
+        },
+        {
+          "label": "Reduction in acquisition cost",
+          "value": "40-60%"
+        },
+        {
+          "label": "Increase in email open rates",
+          "value": "2.5X"
+        },
+        {
+          "label": "Time to positive ROI",
+          "value": "< 30 days"
+        }
+      ],
+      "cta": {
+        "text": "Calculate Your ROI",
+        "link": "/roi-calculator"
+      }
+    },
+    {
+      "type": "features_all_plans",
+      "headline": "Included in Every Plan",
+      "features": [
+        {
+          "category": "Core Platform",
+          "items": [
+            "Patient CRM with full profiles",
+            "HIPAA compliance & BAA",
+            "Unlimited users (varies by plan)",
+            "Mobile app access",
+            "API documentation"
+          ]
+        },
+        {
+          "category": "Security & Compliance",
+          "items": [
+            "256-bit encryption",
+            "SOC 2 Type II certified",
+            "Daily backups",
+            "99.9% uptime SLA",
+            "Audit logs"
+          ]
+        },
+        {
+          "category": "Support & Training",
+          "items": [
+            "Onboarding assistance",
+            "Knowledge base access",
+            "Video training library",
+            "Monthly webinars",
+            "Community forum"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "add_ons",
+      "headline": "Optional Add-Ons",
+      "subheadline": "Enhance your plan with additional capabilities",
+      "add_ons": [
+        {
+          "name": "Additional Data Credits",
+          "description": "Extra visitor identifications and enrichments",
+          "price": "$0.10 per record"
+        },
+        {
+          "name": "Custom Integrations",
+          "description": "Connect to proprietary or legacy systems",
+          "price": "Starting at $500 one-time"
+        },
+        {
+          "name": "Advanced Training",
+          "description": "Custom training program for your team",
+          "price": "$1,000 one-time"
+        },
+        {
+          "name": "Data Migration",
+          "description": "Full-service data import from existing systems",
+          "price": "$500 one-time"
+        }
+      ]
+    },
+    {
+      "type": "guarantee",
+      "headline": "30-Day ROI Guarantee",
+      "description": "If Senova doesn't deliver positive ROI within 30 days, we'll refund your first month and help you export your data.",
+      "terms": [
+        "Valid for new customers on Professional plan or higher",
+        "Requires pixel installation and minimum 100 website visitors",
+        "Must complete onboarding within first week"
+      ]
+    },
+    {
+      "type": "faq",
+      "headline": "Pricing FAQs",
+      "questions": [
+        {
+          "question": "Are there any setup or installation fees?",
+          "answer": "No! Setup, onboarding, and installation are completely free for all plans. We even provide white-glove assistance."
+        },
+        {
+          "question": "Can I change plans anytime?",
+          "answer": "Yes, you can upgrade or downgrade your plan at any time. Changes take effect at your next billing cycle."
+        },
+        {
+          "question": "What happens if I exceed my patient limit?",
+          "answer": "We'll notify you when you're approaching your limit and help you upgrade. We never cut off access to your data."
+        },
+        {
+          "question": "Do you require annual contracts?",
+          "answer": "No contracts required! All plans are month-to-month, though we offer 20% off for annual prepayment."
+        },
+        {
+          "question": "Is HIPAA compliance really included?",
+          "answer": "Yes! Full HIPAA compliance with signed BAA is included in every plan at no extra charge."
+        },
+        {
+          "question": "How accurate is the visitor identification?",
+          "answer": "Our Professional plan identifies 80% of visitors with 95% accuracy. Starter plan identifies 30% of visitors."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "headline": "Start Growing Your Practice Today",
+      "subheadline": "Join 500+ medical aesthetics practices already using Senova",
+      "primary_cta": {
+        "text": "Start 14-Day Free Trial",
+        "link": "/demo"
+      },
+      "secondary_cta": {
+        "text": "Schedule Demo",
+        "link": "/contact"
+      },
+      "trust_text": "No credit card required · Setup in 24 hours · Cancel anytime"
+    }
+  ],
+  "schema_markup": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Senova CRM",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Starter Plan",
+        "price": "299",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2025-12-31"
+      },
+      {
+        "@type": "Offer",
+        "name": "Professional Plan",
+        "price": "599",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2025-12-31"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+Login...
+TEST 1: Composer
+TEST 2: Campaign
+TEST 3: Autoresponder
+TEST 4: Templates
+
+RESULTS:
+PASSED: Composer, Campaign
+FAILED: Autoresponder, Templates
+SCORE: 2/4

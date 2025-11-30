@@ -1,0 +1,59 @@
+{
+  "timestamp": "2025-11-29T23:27:02.717Z",
+  "results": {
+    "login": {
+      "status": "PASS",
+      "notes": "Logged in successfully"
+    },
+    "objectsPageAccess": {
+      "status": "PASS",
+      "notes": "Objects page loads correctly"
+    },
+    "createObject": {
+      "status": "PASS",
+      "notes": "Object created successfully"
+    },
+    "viewObject": {
+      "status": "FAIL",
+      "notes": "No objects in list to view"
+    },
+    "editObject": {
+      "status": "FAIL",
+      "notes": "Edit button not found"
+    },
+    "copyObject": {
+      "status": "FAIL",
+      "notes": "No copy functionality found - MISSING FEATURE"
+    },
+    "contactsTab": {
+      "status": "FAIL",
+      "notes": "Contacts tab not found on object detail"
+    },
+    "assignContacts": {
+      "status": "pending",
+      "notes": ""
+    },
+    "usersTab": {
+      "status": "FAIL",
+      "notes": "Users tab not found on object detail"
+    },
+    "assignUsers": {
+      "status": "pending",
+      "notes": ""
+    },
+    "contactPageObjectAssignment": {
+      "status": "SKIP",
+      "notes": "No contacts to test with"
+    },
+    "deleteObject": {
+      "status": "CHECK",
+      "notes": "Delete may be in context menu"
+    }
+  },
+  "summary": {
+    "pass": 3,
+    "fail": 5,
+    "other": 4
+  },
+  "passRate": "25.0%"
+}

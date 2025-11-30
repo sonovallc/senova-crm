@@ -1,0 +1,752 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Senova Brand Colors - Solar Flare Hot Color Design System */
+    --color-primary: #ff6b35;
+    --color-primary-light: #ff8f5c;
+    --color-primary-dark: #e85a24;
+    --color-secondary: #ff5252;
+    --color-success: #ffc107;
+    --color-warning: #ff5252;
+    --color-info: #ffc107;
+    --color-accent: #ffc107;
+    --color-hot: #ff5252;
+    --color-warm: #ff7043;
+
+    /* Neutrals - Hot palette */
+    --color-black: #000000;
+    --color-dark: #2c2c2c;
+    --color-gray-900: #3d3d3d;
+    --color-gray-700: #5c5c5c;
+    --color-gray-500: #7d7d7d;
+    --color-gray-300: #c4c4c4;
+    --color-gray-100: #f5f5f5;
+    --color-white: #ffffff;
+
+    /* Backgrounds - Warm off-white tones */
+    --bg-primary: #fffbf5;
+    --bg-secondary: #fff8f0;
+    --bg-tertiary: #fff3e8;
+
+    /* Typography */
+    --font-display: "Playfair Display", serif;
+    --font-body: "Plus Jakarta Sans", sans-serif;
+
+    /* Font Sizes */
+    --text-xs: 12px;
+    --text-sm: 14px;
+    --text-base: 16px;
+    --text-lg: 18px;
+    --text-xl: 20px;
+    --text-2xl: 25px;
+    --text-3xl: 34px;
+    --text-4xl: 48px;
+    --text-5xl: 64px;
+    --text-hero: 74px;
+
+    /* Font Weights */
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+
+    /* Spacing */
+    --space-xxs: 4px;
+    --space-xs: 8px;
+    --space-sm: 12px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+    --space-4xl: 96px;
+    --space-5xl: 128px;
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 24px;
+    --radius-full: 50px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.16);
+    --shadow-primary: 0 8px 24px rgba(255, 107, 53, 0.3);
+    --shadow-glow: 0 0 40px rgba(255, 193, 7, 0.4);
+
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+    /* Animations */
+    --duration-instant: 0.05s;
+    --duration-fast: 0.1s;
+    --duration-quick: 0.15s;
+    --duration-moderate: 0.2s;
+    --duration-normal: 0.3s;
+    --duration-slow: 0.4s;
+    --duration-slower: 0.5s;
+    --ease-default: ease-in-out;
+    --ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-elastic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* Z-index */
+    --z-dropdown: 100;
+    --z-modal: 200;
+    --z-toast: 300;
+    --z-tooltip: 400;
+
+    /* Tailwind CSS Variable Overrides for compatibility */
+    --background: 30 60% 98%; /* Warm off-white background */
+    --foreground: 0 0% 15%; /* Dark gray foreground */
+    --card: 30 60% 98%;
+    --card-foreground: 0 0% 15%;
+    --popover: 30 60% 98%;
+    --popover-foreground: 0 0% 15%;
+    --primary: 18 100% 60%; /* Orange #ff6b35 */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary: 0 100% 66%; /* Hot Red #ff5252 */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 45 100% 51%; /* Yellow #ffc107 */
+    --accent-foreground: 0 0% 15%; /* Dark gray */
+    --destructive: 0 100% 66%; /* Hot Red #ff5252 */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 18 100% 60%; /* Orange ring */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 10%; /* Dark gray background */
+    --foreground: 0 0% 100%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 18 100% 60%; /* Orange */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary: 0 100% 66%; /* Hot Red */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 6%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 45 100% 51%; /* Yellow */
+    --accent-foreground: 0 0% 15%; /* Dark gray */
+    --destructive: 0 100% 66%; /* Hot Red */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 18 100% 60%; /* Orange ring */
+    --glass-bg: rgba(44, 44, 44, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.08);
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-body);
+  }
+
+  /* Custom Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(255, 193, 7, 0.8);
+    }
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Utility Classes */
+  .animate-fade-in {
+    animation: fadeIn 0.8s var(--ease-smooth) forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: fadeInUp 0.8s var(--ease-smooth) forwards;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out forwards;
+  }
+
+  .animate-slide-left {
+    animation: slideInLeft 0.5s var(--ease-smooth) forwards;
+  }
+
+  .animate-slide-right {
+    animation: slideInRight 0.5s var(--ease-smooth) forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s var(--ease-smooth) forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 5s ease infinite;
+  }
+
+  /* Stagger children */
+  .stagger-children > * {
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+  }
+
+  .stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+  .stagger-children > *:nth-child(2) { animation-delay: 0.1s; }
+  .stagger-children > *:nth-child(3) { animation-delay: 0.15s; }
+  .stagger-children > *:nth-child(4) { animation-delay: 0.2s; }
+  .stagger-children > *:nth-child(5) { animation-delay: 0.25s; }
+  .stagger-children > *:nth-child(6) { animation-delay: 0.3s; }
+  .stagger-children > *:nth-child(7) { animation-delay: 0.35s; }
+  .stagger-children > *:nth-child(8) { animation-delay: 0.4s; }
+
+  /* Legacy stagger classes */
+  .stagger-1 { animation-delay: 0.05s; }
+  .stagger-2 { animation-delay: 0.1s; }
+  .stagger-3 { animation-delay: 0.15s; }
+  .stagger-4 { animation-delay: 0.2s; }
+  .stagger-5 { animation-delay: 0.25s; }
+  .stagger-6 { animation-delay: 0.3s; }
+
+  /* Hide floating dev tool buttons */
+  #__next-dev-tools,
+  [data-tanstack-query-devtools-button],
+  button[aria-label*="Open Tanstack"],
+  button[aria-label*="Open Next"],
+  button:has(> img[alt*="Tanstack"]),
+  button:has(> img[alt*="Next.js"]),
+  [data-nextjs-portal],
+  [data-nextjs-devtools],
+  #__next-devtools {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+@layer components {
+  /* Container */
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1280px;
+  }
+
+  /* Section Padding */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  /* Typography - Using new fonts */
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  /* Heading Styles with Syne font */
+  .heading-hero {
+    @apply text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight;
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  .heading-1 {
+    @apply text-4xl md:text-5xl font-bold leading-tight;
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  .heading-2 {
+    @apply text-3xl md:text-4xl font-bold leading-tight;
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  .heading-3 {
+    @apply text-2xl md:text-3xl font-semibold leading-snug;
+    font-family: var(--font-display);
+  }
+
+  .heading-4 {
+    @apply text-xl md:text-2xl font-semibold;
+    font-family: var(--font-display);
+  }
+
+  /* Text Styles with Outfit font */
+  .text-lead {
+    @apply text-lg md:text-xl text-gray-600 leading-relaxed;
+    font-family: var(--font-body);
+  }
+
+  .text-body {
+    @apply text-base md:text-lg text-gray-600;
+    font-family: var(--font-body);
+  }
+
+  /* Senova Brand Classes */
+  .senova-primary {
+    color: var(--color-primary);
+  }
+
+  .senova-accent {
+    color: var(--color-primary-light);
+  }
+
+  .senova-dark {
+    color: var(--color-dark);
+  }
+
+  .senova-success {
+    color: var(--color-success);
+  }
+
+  .bg-senova-primary {
+    background-color: var(--color-primary);
+  }
+
+  .bg-senova-accent {
+    background-color: var(--color-primary-light);
+  }
+
+  .bg-senova-dark {
+    background-color: var(--color-dark);
+  }
+
+  /* Gradient Text Effects */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-info));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-navy-gold {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-animated {
+    background: linear-gradient(270deg, var(--color-primary), var(--color-primary-light), var(--color-success));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 5s ease infinite;
+  }
+
+  .gradient-text-hot {
+    background: linear-gradient(135deg, #ff6b35 0%, #ff2d55 50%, #ffb000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Gradient Backgrounds */
+  .gradient-bg-primary {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-info));
+  }
+
+  .gradient-bg-subtle {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(255, 193, 7, 0.05));
+  }
+
+  .gradient-bg-mesh {
+    background:
+      radial-gradient(at 40% 20%, rgba(255, 107, 53, 0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgba(255, 193, 7, 0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, rgba(255, 82, 82, 0.1) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, rgba(255, 112, 67, 0.08) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(255, 107, 53, 0.05) 0px, transparent 50%);
+  }
+
+  /* Glassmorphism Effects */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-dark {
+    background: rgba(29, 27, 33, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Button Styles - Enhanced */
+  .btn-senova {
+    @apply inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-xl;
+    font-family: var(--font-body);
+    transition: all 0.3s var(--ease-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-senova::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+
+  .btn-senova:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  .btn-senova:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+  }
+
+  .btn-senova:active {
+    transform: translateY(-1px);
+  }
+
+  .btn-primary {
+    @apply btn-senova;
+    background: var(--color-primary-light);
+    color: var(--color-dark);
+    font-weight: 600;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .btn-secondary {
+    @apply btn-senova;
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .btn-glass {
+    @apply btn-senova glass;
+    color: var(--color-primary);
+    border: 2px solid rgba(255, 107, 53, 0.2);
+  }
+
+  .btn-glass:hover {
+    background: rgba(255, 107, 53, 0.1);
+    border-color: var(--color-primary);
+  }
+
+  /* Card Styles - Enhanced */
+  .card-senova {
+    @apply bg-white rounded-2xl p-8;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s var(--ease-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-senova::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 193, 7, 0.05), transparent);
+    transform: rotate(45deg);
+    transition: all 0.5s;
+    opacity: 0;
+  }
+
+  .card-senova:hover::before {
+    opacity: 1;
+  }
+
+  .card-senova:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-glass {
+    @apply glass rounded-2xl p-8;
+    transition: all 0.3s var(--ease-smooth);
+  }
+
+  .card-glass:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.15);
+  }
+
+  /* Link Hover Effect */
+  .link-underline {
+    @apply relative transition-colors duration-300;
+    text-decoration: none;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+  }
+
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Badge Styles */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+    font-family: var(--font-body);
+  }
+
+  .badge-primary {
+    @apply badge bg-senova-accent text-senova-dark;
+  }
+
+  .badge-secondary {
+    @apply badge;
+    background: rgba(255, 107, 53, 0.1);
+    color: var(--color-primary);
+  }
+
+  .badge-success {
+    @apply badge;
+    background: rgba(255, 82, 82, 0.1);
+    color: var(--color-success);
+  }
+
+  /* Trust Badge */
+  .trust-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 107, 53, 0.1);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--color-dark);
+  }
+
+  /* Skeleton Loading */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      #f0f0f0 25%,
+      #e0e0e0 50%,
+      #f0f0f0 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Spinner */
+  .spinner {
+    border: 3px solid rgba(255, 107, 53, 0.1);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 0.8s linear infinite;
+  }
+
+  /* Focus Styles */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+    --tw-ring-color: var(--color-primary);
+  }
+
+  /* Geometric Pattern Background */
+  .pattern-bg {
+    background-color: #ffffff;
+    background-image:
+      repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255, 107, 53, 0.03) 35px, rgba(255, 107, 53, 0.03) 70px),
+      repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(255, 193, 7, 0.03) 35px, rgba(255, 193, 7, 0.03) 70px);
+  }
+
+  /* Dots Pattern */
+  .dots-pattern {
+    background-image: radial-gradient(circle, rgba(255, 107, 53, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
+@layer utilities {
+  /* Responsive text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Hover utilities */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_40px_rgba(212,165,116,0.4)];
+  }
+
+  /* Border gradient */
+  .border-gradient {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+  }
+
+  .border-gradient::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+}

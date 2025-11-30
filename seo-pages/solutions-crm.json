@@ -1,0 +1,287 @@
+{
+  "path": "/solutions/crm",
+  "seo": {
+    "title": "Medical Spa CRM That Books 3X More Appointments | Senova",
+    "description": "Purpose-built CRM for aesthetics: Track treatments, automate follow-ups, manage multi-locations. Replace 5 tools with 1. See demo now.",
+    "keywords": ["medical spa CRM", "aesthetic practice CRM", "patient management software", "medspa CRM", "treatment tracking"],
+    "og_image": "CRM dashboard showing patient profiles and appointment management"
+  },
+  "hero": {
+    "headline": "The Only CRM Built Specifically for Medical Aesthetics",
+    "subheadline": "Manage patients, treatments, and campaigns in one HIPAA-compliant platform that actually understands your practice.",
+    "cta_primary": {
+      "text": "See CRM Demo",
+      "link": "/demo"
+    },
+    "cta_secondary": {
+      "text": "Compare Features",
+      "link": "#features"
+    },
+    "hero_image": "CRM dashboard screenshot"
+  },
+  "sections": [
+    {
+      "type": "problem_solution",
+      "problem": {
+        "headline": "Generic CRMs Don't Understand Medical Aesthetics",
+        "pain_points": [
+          "Can't track Botox units or filler syringes",
+          "No treatment history or before/after photos",
+          "Missing consent forms and HIPAA compliance",
+          "No integration with aesthetic-specific tools",
+          "Can't handle membership programs or packages"
+        ]
+      },
+      "solution": {
+        "headline": "Purpose-Built for Your Practice",
+        "benefits": [
+          "Track every unit, syringe, and treatment",
+          "Automated recall for touch-ups and maintenance",
+          "Built-in consent forms and photo management",
+          "Integrates with Aesthetics Pro, Nextech, and more",
+          "Membership and package tracking included"
+        ]
+      }
+    },
+    {
+      "type": "features",
+      "headline": "Complete Patient Management",
+      "features": [
+        {
+          "title": "360° Patient Profiles",
+          "description": "Everything about your patient in one place",
+          "capabilities": [
+            "Complete treatment history with products used",
+            "Before/after photo galleries",
+            "Consent forms and medical history",
+            "Communication preferences",
+            "Lifetime value and visit frequency",
+            "Family/referral connections"
+          ],
+          "image": "patient-profile-screenshot"
+        },
+        {
+          "title": "Smart Treatment Tracking",
+          "description": "Never miss a follow-up or touch-up opportunity",
+          "capabilities": [
+            "Track Botox units by area",
+            "Record filler types and amounts",
+            "Set automatic recall reminders",
+            "Monitor treatment intervals",
+            "Package and membership usage",
+            "Product inventory integration"
+          ],
+          "image": "treatment-tracking"
+        },
+        {
+          "title": "Automated Campaigns",
+          "description": "Right message, right time, automatically",
+          "capabilities": [
+            "Birthday and anniversary campaigns",
+            "Treatment due reminders",
+            "Post-treatment follow-ups",
+            "Win-back campaigns for lapsed patients",
+            "VIP and loyalty programs",
+            "Seasonal promotion automation"
+          ],
+          "image": "automation-workflows"
+        },
+        {
+          "title": "Multi-Location Management",
+          "description": "Manage all locations from one dashboard",
+          "capabilities": [
+            "Centralized patient database",
+            "Location-specific campaigns",
+            "Cross-location reporting",
+            "Provider schedule management",
+            "Inventory tracking by location",
+            "Franchise support tools"
+          ],
+          "image": "multi-location-view"
+        },
+        {
+          "title": "Appointment Intelligence",
+          "description": "Reduce no-shows and optimize scheduling",
+          "capabilities": [
+            "Smart reminder sequences",
+            "No-show prediction algorithms",
+            "Waitlist management",
+            "Provider preference tracking",
+            "Peak time optimization",
+            "Online booking integration"
+          ],
+          "image": "appointment-management"
+        },
+        {
+          "title": "Unified Communications",
+          "description": "Every conversation in one place",
+          "capabilities": [
+            "Email, SMS, and phone logs",
+            "Two-way texting",
+            "Team chat and notes",
+            "Automated responses",
+            "Review request automation",
+            "Social media messaging"
+          ],
+          "image": "unified-inbox"
+        }
+      ]
+    },
+    {
+      "type": "integrations",
+      "headline": "Works with Your Existing Systems",
+      "categories": [
+        {
+          "name": "Practice Management",
+          "systems": ["Aesthetics Pro", "Nextech", "Symplast", "PatientNow", "Zenoti"]
+        },
+        {
+          "name": "Booking & Scheduling",
+          "systems": ["Boulevard", "Vagaro", "Acuity", "Calendly", "SimplePractice"]
+        },
+        {
+          "name": "Payment Processing",
+          "systems": ["Square", "Stripe", "CareCredit", "Cherry", "PatientFi"]
+        },
+        {
+          "name": "Marketing Tools",
+          "systems": ["Mailchimp", "Constant Contact", "Meta Ads", "Google Ads"]
+        }
+      ]
+    },
+    {
+      "type": "use_cases",
+      "headline": "Built for Every Aesthetic Treatment",
+      "cases": [
+        {
+          "treatment": "Injectables",
+          "features": [
+            "Unit and syringe tracking",
+            "Touch-up reminders",
+            "Product lot numbers",
+            "Provider notes"
+          ]
+        },
+        {
+          "treatment": "Laser & Energy",
+          "features": [
+            "Session tracking",
+            "Parameter recording",
+            "Package management",
+            "Photo documentation"
+          ]
+        },
+        {
+          "treatment": "Surgery",
+          "features": [
+            "Pre/post op tracking",
+            "Document management",
+            "Recovery follow-ups",
+            "Referral tracking"
+          ]
+        },
+        {
+          "treatment": "Skincare",
+          "features": [
+            "Product recommendations",
+            "Routine tracking",
+            "Reorder reminders",
+            "Results monitoring"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "roi",
+      "headline": "ROI You Can Measure",
+      "metrics": [
+        {
+          "metric": "30%",
+          "label": "Reduction in no-shows",
+          "description": "Smart reminders and patient engagement"
+        },
+        {
+          "metric": "45%",
+          "label": "Increase in retention",
+          "description": "Automated recall and follow-ups"
+        },
+        {
+          "metric": "3.2X",
+          "label": "More appointments booked",
+          "description": "From automated campaigns"
+        },
+        {
+          "metric": "2 hours",
+          "label": "Saved per day",
+          "description": "On administrative tasks"
+        }
+      ]
+    },
+    {
+      "type": "comparison",
+      "headline": "vs. Generic CRMs",
+      "comparison_points": [
+        {
+          "feature": "Treatment tracking",
+          "generic": "Basic notes only",
+          "senova": "Full unit/syringe/session tracking"
+        },
+        {
+          "feature": "HIPAA compliance",
+          "generic": "Not included",
+          "senova": "Built-in with BAA"
+        },
+        {
+          "feature": "Aesthetic workflows",
+          "generic": "Must customize",
+          "senova": "Pre-built for aesthetics"
+        },
+        {
+          "feature": "Photo management",
+          "generic": "Not available",
+          "senova": "Integrated galleries"
+        },
+        {
+          "feature": "Membership tracking",
+          "generic": "Manual only",
+          "senova": "Automated with usage"
+        }
+      ]
+    },
+    {
+      "type": "testimonial",
+      "quote": "Finally, a CRM that speaks our language. Treatment tracking alone saves us 2 hours daily, and the automated recalls increased our retention by 40%.",
+      "author": "Dr. Michelle Rodriguez",
+      "role": "Owner, Glow Medical Spa",
+      "location": "Dallas, TX",
+      "result": "40% increase in patient retention"
+    },
+    {
+      "type": "cta",
+      "headline": "Ready for a CRM That Gets Medical Aesthetics?",
+      "subheadline": "See how Senova can transform your patient management",
+      "primary_cta": {
+        "text": "Get Personalized Demo",
+        "link": "/demo"
+      },
+      "secondary_cta": {
+        "text": "See Pricing",
+        "link": "/pricing"
+      },
+      "features_list": [
+        "14-day free trial",
+        "No setup fees",
+        "Import existing patients",
+        "White-glove onboarding"
+      ]
+    }
+  ],
+  "schema_markup": {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Senova CRM",
+    "applicationCategory": "Medical Practice Management",
+    "operatingSystem": "Web-based",
+    "description": "CRM platform specifically designed for medical aesthetics practices"
+  }
+}

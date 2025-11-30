@@ -1,0 +1,11 @@
+=== TEST 5: Autoresponder Triggers (Bug #18 INVESTIGATION) ===
+Available trigger options: [
+  'New Contact Created',
+  'Tag Added to Contact',
+  'Date-Based (Birthday, Anniversary)',
+  'Appointment Booked',
+  'Appointment Completed'
+]
+Total options: 5
+✓ PASS: Successfully changed trigger to New Contact
+✓ VERDICT: Bug #18 NOT A BUG - Multiple triggers available

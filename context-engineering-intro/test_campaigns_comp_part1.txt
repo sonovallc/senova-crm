@@ -1,0 +1,40 @@
+const { chromium } = require('playwright');
+const path = require('path');
+const fs = require('fs');
+
+async function comprehensiveCampaignsTest() {
+  const browser = await chromium.launch({ headless: false, slowMo: 300 });
+  const context = await browser.newContext({ viewport: { width: 1920, height: 1080 } });
+  const page = await context.newPage();
+  
+  const screenshotDir = path.join(process.cwd(), 'screenshots', 'campaigns-comprehensive-test');
+  if (!fs.existsSync(screenshotDir)) {
+    fs.mkdirSync(screenshotDir, { recursive: true });
+  }
+
+  const results = { passed: [], failed: [], errors: [] };
+
+  page.on('console', msg => {
+    if (msg.type() === 'error') {
+      console.log('[CONSOLE ERROR]', msg.text());
+      results.errors.push('Console: ' + msg.text());
+    }
+  });
+
+  page.on('pageerror', error => {
+    console.log('[PAGE ERROR]', error.message);
+    results.errors.push('PageError: ' + error.message);
+  });
+
+  console.log('=== COMPREHENSIVE CAMPAIGNS FUNCTIONALITY TEST ===\n');
+
+  try {
+    // LOGIN
+    console.log('>>> LOGGING IN...');
+    await page.goto('http://localhost:3000/login');
+    await page.waitForLoadState('networkidle');
+    await page.fill('input[type="email"]', 'admin@evebeautyma.com');
+    await page.fill('input[type="password"]', 'TestPass123!');
+    await page.click('button[type="submit"]');
+    await page.waitForURL('**/dashboard**', { timeout: 10000 });
+    console.log('OK: Login successful\n');

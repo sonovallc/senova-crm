@@ -1,0 +1,866 @@
+{
+  "timestamp": "2025-11-29T22:06:00.124Z",
+  "totalPages": 33,
+  "passed": [
+    {
+      "path": "/",
+      "name": "Home",
+      "category": "core",
+      "status": 200,
+      "elements": {
+        "buttons": 9,
+        "links": 83,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 94,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/features",
+      "name": "Features",
+      "category": "core",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 87,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/platform",
+      "name": "Platform",
+      "category": "core",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 87,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/pricing",
+      "name": "Pricing",
+      "category": "core",
+      "status": 200,
+      "elements": {
+        "buttons": 12,
+        "links": 78,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 92,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/about",
+      "name": "About",
+      "category": "core",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 73,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 85,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/contact",
+      "name": "Contact",
+      "category": "core",
+      "status": 200,
+      "elements": {
+        "buttons": 22,
+        "links": 71,
+        "inputs": 15,
+        "forms": 2
+      },
+      "totalElements": 110,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/login",
+      "name": "Login",
+      "category": "auth",
+      "status": 200,
+      "elements": {
+        "buttons": 3,
+        "links": 2,
+        "inputs": 2,
+        "forms": 1
+      },
+      "totalElements": 8,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/register",
+      "name": "Register",
+      "category": "auth",
+      "status": 200,
+      "elements": {
+        "buttons": 2,
+        "links": 1,
+        "inputs": 5,
+        "forms": 1
+      },
+      "totalElements": 9,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/solutions/crm",
+      "name": "CRM Solution",
+      "category": "solutions",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 87,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/solutions/lead-management",
+      "name": "Lead Management",
+      "category": "solutions",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 87,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/solutions/automation",
+      "name": "Automation",
+      "category": "solutions",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 87,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/solutions/audience-intelligence",
+      "name": "Audience Intelligence",
+      "category": "solutions",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 76,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 88,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/solutions/patient-identification",
+      "name": "Patient Identification",
+      "category": "solutions",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 76,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 88,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/solutions/campaign-activation",
+      "name": "Campaign Activation",
+      "category": "solutions",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 87,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/solutions/visitor-identification",
+      "name": "Visitor Identification",
+      "category": "solutions",
+      "status": 200,
+      "elements": {
+        "buttons": 13,
+        "links": 74,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 89,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/solutions/analytics",
+      "name": "Analytics",
+      "category": "solutions",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 87,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/industries/medical-spas",
+      "name": "Medical Spas",
+      "category": "industries",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 87,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/industries/dermatology",
+      "name": "Dermatology",
+      "category": "industries",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 87,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/industries/plastic-surgery",
+      "name": "Plastic Surgery",
+      "category": "industries",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 87,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/industries/aesthetic-clinics",
+      "name": "Aesthetic Clinics",
+      "category": "industries",
+      "status": 200,
+      "elements": {
+        "buttons": 9,
+        "links": 75,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 86,
+      "consoleErrors": 1,
+      "networkErrors": 0
+    },
+    {
+      "path": "/industries/legal-attorneys",
+      "name": "Legal/Attorneys",
+      "category": "industries",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 87,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/industries/real-estate",
+      "name": "Real Estate",
+      "category": "industries",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 87,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/industries/mortgage-lending",
+      "name": "Mortgage Lending",
+      "category": "industries",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 87,
+      "consoleErrors": 1,
+      "networkErrors": 0
+    },
+    {
+      "path": "/industries/insurance",
+      "name": "Insurance",
+      "category": "industries",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 87,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/industries/marketing-agencies",
+      "name": "Marketing Agencies",
+      "category": "industries",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 87,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/industries/restaurants",
+      "name": "Restaurants",
+      "category": "industries",
+      "status": 200,
+      "elements": {
+        "buttons": 13,
+        "links": 74,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 89,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/industries/home-services",
+      "name": "Home Services",
+      "category": "industries",
+      "status": 200,
+      "elements": {
+        "buttons": 13,
+        "links": 74,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 89,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/industries/retail",
+      "name": "Retail",
+      "category": "industries",
+      "status": 200,
+      "elements": {
+        "buttons": 13,
+        "links": 74,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 89,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/industries/professional-services",
+      "name": "Professional Services",
+      "category": "industries",
+      "status": 200,
+      "elements": {
+        "buttons": 13,
+        "links": 74,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 89,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/privacy-policy",
+      "name": "Privacy Policy",
+      "category": "legal",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 74,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 86,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/terms-of-service",
+      "name": "Terms of Service",
+      "category": "legal",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 74,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 86,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/hipaa",
+      "name": "HIPAA",
+      "category": "legal",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 87,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    },
+    {
+      "path": "/security",
+      "name": "Security",
+      "category": "legal",
+      "status": 200,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "forms": 1
+      },
+      "totalElements": 87,
+      "consoleErrors": 0,
+      "networkErrors": 0
+    }
+  ],
+  "failed": [],
+  "errors": {
+    "console": [
+      {
+        "page": "/",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/features",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/platform",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/pricing",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/about",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/contact",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/login",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/register",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/solutions/crm",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/solutions/lead-management",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/solutions/automation",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/solutions/audience-intelligence",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/solutions/patient-identification",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/solutions/campaign-activation",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/solutions/visitor-identification",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/solutions/analytics",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/medical-spas",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/dermatology",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/plastic-surgery",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/aesthetic-clinics",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/features",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/platform",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/pricing",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/about",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/contact",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/login",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/register",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/solutions/crm",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/solutions/lead-management",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/solutions/automation",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/solutions/audience-intelligence",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/solutions/patient-identification",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/solutions/campaign-activation",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/solutions/visitor-identification",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/solutions/analytics",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/medical-spas",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/dermatology",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/plastic-surgery",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/aesthetic-clinics",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/legal-attorneys",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/real-estate",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/mortgage-lending",
+        "error": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "network": [],
+    "notFound": [
+      {
+        "page": "/",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/features",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/platform",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/pricing",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/about",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/contact",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/login",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/register",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/solutions/crm",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/solutions/lead-management",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/solutions/automation",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/solutions/audience-intelligence",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/solutions/patient-identification",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/solutions/campaign-activation",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/solutions/visitor-identification",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/solutions/analytics",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/medical-spas",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/dermatology",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/plastic-surgery",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/aesthetic-clinics",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/features",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/platform",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/pricing",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/about",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/contact",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/login",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/register",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/solutions/crm",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/solutions/lead-management",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/solutions/automation",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/solutions/audience-intelligence",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/solutions/patient-identification",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/solutions/campaign-activation",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/solutions/visitor-identification",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/solutions/analytics",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/medical-spas",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/dermatology",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/plastic-surgery",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/aesthetic-clinics",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/legal-attorneys",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/real-estate",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/mortgage-lending",
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      }
+    ]
+  },
+  "dashboard": {
+    "loginSuccess": true,
+    "accessible": true,
+    "error": null
+  },
+  "backend": {
+    "status": "healthy",
+    "health": {
+      "status": "healthy",
+      "environment": "development",
+      "version": "0.1.0"
+    }
+  }
+}

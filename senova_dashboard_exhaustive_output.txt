@@ -1,0 +1,191 @@
+=== SENOVA CRM EXHAUSTIVE DASHBOARD AUDIT ===
+Timestamp: 2025-11-29T02:29:39.843Z
+Base URL: http://localhost:3004
+
+=== PHASE 1: LOGIN ===
+Testing: Login Email Field
+✅ Login Email Field - PASS
+Testing: Login Password Field
+✅ Login Password Field - PASS
+Testing: Sign In Button
+✅ Sign In Button - PASS
+
+=== PHASE 2: MAIN DASHBOARD ===
+
+=== Testing Page: Main Dashboard (http://localhost:3004/dashboard) ===
+Testing: Inbox Nav Link
+✅ Inbox Nav Link - PASS
+Testing: Contacts Nav Link
+✅ Contacts Nav Link - PASS
+Testing: Compose Email Link
+❌ Compose Email Link - FAIL: page.waitForSelector: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[href="/dashboard/email/compose"]') to be visible[22m
+
+
+=== PHASE 3: INBOX MODULE ===
+Testing: Inbox Tab: All
+✅ Inbox Tab: All - PASS
+Testing: Inbox Tab: Unread
+✅ Inbox Tab: Unread - PASS
+Testing: Inbox Tab: Read
+✅ Inbox Tab: Read - PASS
+Testing: Inbox Tab: Archived
+✅ Inbox Tab: Archived - PASS
+Testing: Inbox Compose Button
+✅ Inbox Compose Button - PASS
+
+=== PHASE 4: CONTACTS MODULE ===
+Testing: Contacts Search Field
+✅ Contacts Search Field - PASS
+Testing: Add Contact Button
+✅ Add Contact Button - PASS
+Testing: Import Contacts Button
+✅ Import Contacts Button - PASS
+Testing: Export All Button
+✅ Export All Button - PASS
+
+=== PHASE 5: EMAIL MODULE ===
+Testing: To Field
+❌ To Field - FAIL: page.waitForSelector: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[placeholder*="To"], input[name="to"]') to be visible[22m
+
+Testing: CC/BCC Expander
+❌ CC/BCC Expander - FAIL: page.waitForSelector: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button:has-text("CC/BCC")') to be visible[22m
+
+Testing: Template Dropdown
+❌ Template Dropdown - FAIL: page.waitForSelector: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('select:has(option:has-text("Select Template"))') to be visible[22m
+
+Testing: Variables Dropdown
+✅ Variables Dropdown - PASS
+Testing: Create Template Button
+❌ Create Template Button - FAIL: page.waitForSelector: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button:has-text("Create Template")') to be visible[22m
+
+Testing: Create Campaign Button
+✅ Create Campaign Button - PASS
+Testing: Create Autoresponder Button
+✅ Create Autoresponder Button - PASS
+
+=== PHASE 6: SETTINGS MODULE ===
+Testing: Settings Tab: API Keys
+✅ Settings Tab: API Keys - PASS
+Testing: Settings Tab: Email Config
+✅ Settings Tab: Email Config - PASS
+Testing: Settings Tab: Integrations
+✅ Settings Tab: Integrations - PASS
+Testing: Settings Tab: Profile
+✅ Settings Tab: Profile - PASS
+
+=== Testing Page: Users Management (http://localhost:3004/dashboard/settings/users) ===
+
+=== Testing Page: Tags Management (http://localhost:3004/dashboard/settings/tags) ===
+
+=== Testing Page: Field Visibility (http://localhost:3004/dashboard/settings/fields) ===
+
+=== Testing Page: Mailgun Setup (http://localhost:3004/dashboard/settings/integrations/mailgun) ===
+
+=== Testing Page: Closebot Setup (http://localhost:3004/dashboard/settings/integrations/closebot) ===
+
+=== PHASE 7: OTHER PAGES ===
+
+=== Testing Page: Activity Log (http://localhost:3004/dashboard/activity-log) ===
+
+=== Testing Page: Payments (http://localhost:3004/dashboard/payments) ===
+
+=== Testing Page: AI Tools (http://localhost:3004/dashboard/ai) ===
+
+=== Testing Page: Calendar (http://localhost:3004/dashboard/calendar) ===
+
+=== Testing Page: Multi-tenant Objects (http://localhost:3004/dashboard/objects) ===
+
+=== PHASE 8: NAVIGATION MENU ===
+Testing: Nav Link: Dashboard
+✅ Nav Link: Dashboard - PASS
+Testing: Nav Link: Inbox
+✅ Nav Link: Inbox - PASS
+Testing: Nav Link: Contacts
+✅ Nav Link: Contacts - PASS
+Testing: Nav Link: Compose
+❌ Nav Link: Compose - FAIL: page.waitForSelector: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[href="/dashboard/email/compose"]') to be visible[22m
+
+Testing: Nav Link: Templates
+❌ Nav Link: Templates - FAIL: page.waitForSelector: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[href="/dashboard/email/templates"]') to be visible[22m
+
+Testing: Nav Link: Campaigns
+❌ Nav Link: Campaigns - FAIL: page.waitForSelector: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[href="/dashboard/email/campaigns"]') to be visible[22m
+
+Testing: Nav Link: Autoresponders
+❌ Nav Link: Autoresponders - FAIL: page.waitForSelector: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[href="/dashboard/email/autoresponders"]') to be visible[22m
+
+Testing: Nav Link: Activity
+✅ Nav Link: Activity - PASS
+Testing: Nav Link: Settings
+❌ Nav Link: Settings - FAIL: page.waitForSelector: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[href="/dashboard/settings"]') to be visible[22m
+
+Testing: Nav Link: Calendar
+❌ Nav Link: Calendar - FAIL: page.waitForSelector: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[href="/dashboard/calendar"]') to be visible[22m
+
+Testing: Nav Link: Payments
+✅ Nav Link: Payments - PASS
+Testing: Nav Link: AI Tools
+✅ Nav Link: AI Tools - PASS
+
+=== PHASE 9: MODALS AND POPUPS ===
+Testing: Modal First Name
+❌ Modal First Name - FAIL: page.waitForSelector: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[name="firstName"], input[placeholder*="First"]') to be visible[22m
+
+Testing: Modal Last Name
+❌ Modal Last Name - FAIL: page.waitForSelector: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[name="lastName"], input[placeholder*="Last"]') to be visible[22m
+
+Testing: Modal Email
+✅ Modal Email - PASS
+
+=== PHASE 10: ALL DROPDOWNS ===
+Found 0 dropdown elements
+
+=== PHASE 11: ALL FORM FIELDS ===
+Found 6 input fields
+Testing input 1: type=password, placeholder=Enter Bandwidth API key...
+Testing input 2: type=password, placeholder=Enter Mailgun API key...
+Testing input 3: type=password, placeholder=sk_test_...
+Testing input 4: type=password, placeholder=Enter Square access token...
+Testing input 5: type=password, placeholder=Enter Closebot API key...
+Testing input 6: type=password, placeholder=Enter enrichment service key...
+
+=== PHASE 12: ALL BUTTONS ===
+Found 6 buttons on dashboard
+Button 2: Admin
+Button 3: Email
+Button 4: Settings
+Button 5: Logout
+
+=== GENERATING FINAL REPORT ===
+
+=== AUDIT COMPLETE ===
+Pass Rate: 68.3%
+Report saved to: DEBUG_REPORT_SENOVA_DASHBOARD_EXHAUSTIVE.md
+JSON data saved to: DEBUG_REPORT_SENOVA_DASHBOARD_EXHAUSTIVE.json
+Screenshots saved to: screenshots/debug-senova-dashboard/

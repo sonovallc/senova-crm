@@ -1,0 +1,21 @@
+=== TEST 13: SINGLE CONTACT DELETE (via selection) ===
+
+Step 1: Login...
+Step 1: PASS - Logged in
+
+Step 2: Navigate to Contacts...
+Step 2: PASS
+
+Step 3: Select single contact...
+Found 21 checkboxes
+Step 3: PASS - Selected 1 contact
+
+Step 4: Find Delete button...
+Found Delete button: "Delete (1)"
+Step 4: PASS - Delete (1) button found
+
+Step 5: Click Delete button...
+Step 5: Delete clicked (no confirmation dialog)
+
+=== TEST 13 RESULT: PASS ===
+Single contact delete works via checkbox selection + Delete button

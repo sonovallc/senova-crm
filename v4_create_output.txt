@@ -1,0 +1,85 @@
+=== EXHAUSTIVE CONTACTS MODULE DEBUG V2 ===
+
+SECTION 1: Login
+✓ Login successful
+
+SECTION 2: Contacts List - Initial State
+Initial contact count: 21
+
+SECTION 3: Filter Dropdowns (documented, skipping detailed test)
+  Note: Status filter found but dropdown testing skipped due to UI complexity
+
+SECTION 4: Create Contact - Testing Modal Form
+✓ Create Contact modal opened
+
+Testing: Status dropdown in Create modal...
+  ✓ Found status dropdown with selector: label:has-text("Status") ~ select
+  Status dropdown element type: SELECT
+  Found 4 status options
+    Status option 0: "Lead" (value: LEAD)
+    Status option 1: "Prospect" (value: PROSPECT)
+    Status option 2: "Customer" (value: CUSTOMER)
+    Status option 3: "Inactive" (value: INACTIVE)
+
+Testing: Assigned To dropdown...
+  ✓ Found Assigned To dropdown with selector: label:has-text("Assigned") ~ select
+  Found 35 assignment options
+    Assignment option 0: "Unassigned" (value: unassigned)
+    Assignment option 1: "Test Owner (owner)" (value: 8401978b-9d17-4cc5-b71c-0196e037fc59)
+    Assignment option 2: "Import User (user)" (value: 9bf459e2-a229-4b23-bb8b-2d927b854c3e)
+    Assignment option 3: "Test User (admin)" (value: 711384e4-6b4e-462f-b595-90fbc5128de5)
+    Assignment option 4: "UI Tester (user)" (value: a95f694d-75f2-4ba1-bf9d-a21c3d1f6822)
+    Assignment option 5: "apitest@test.com (admin)" (value: bcbc1a6c-4fdf-4209-8328-ae5ecf5821f7)
+    Assignment option 6: "detailtest@test.com (user)" (value: a73d4b76-e59f-4c9e-b519-80efbadfa15a)
+    Assignment option 7: "largefile@test.com (user)" (value: db60ca5b-2732-49d8-a40b-ca4bc0d992c5)
+    Assignment option 8: "testphase1@test.com (user)" (value: 053712e6-9778-4387-96c5-4ec17d15bbb4)
+    Assignment option 9: "Test User (user)" (value: 190f7fa0-8a7c-402d-94be-b9edb5b84c43)
+    Assignment option 10: "Testx11 Doe (user)" (value: f3fd5154-4914-4cef-a5ee-eb4e5fae48bb)
+    Assignment option 11: "Fix Verified (user)" (value: e0e1aee4-b4ad-495b-959b-cfcc88a90199)
+    Assignment option 12: "Grey 555 (user)" (value: 491898ad-5397-44ed-a9fb-0fdc2f618e16)
+    Assignment option 13: "Test User112 (user)" (value: 91ad6095-3c8a-4673-b1f2-ffa9b0f3b74b)
+    Assignment option 14: "Test ValidationUser (user)" (value: 02d17d50-b1d2-4a2b-9bbb-303a9b977d5c)
+    Assignment option 15: "Josh Testerooni (user)" (value: a87989b3-63e8-4f17-a8b1-ca55bf1dc2ca)
+    Assignment option 16: "Field Admin (admin)" (value: 081d2299-1ccf-4818-ac25-d0239e00fa93)
+    Assignment option 17: "Test Owner (admin)" (value: dd78cead-1540-4963-ab2c-800d71a8a201)
+    Assignment option 18: "Test Admin (admin)" (value: b5ccdfb8-3d4c-4f58-84e3-8ae385ca5072)
+    Assignment option 19: "Regular User (user)" (value: dde14380-f5fd-4e73-8dbd-7dac1c7036a9)
+    Assignment option 20: "Admin User (admin)" (value: 2fe7e9d6-78f4-4f9a-8553-67372161aadb)
+    Assignment option 21: "testx5 Doe (user)" (value: fbe939c8-c0eb-459b-b33a-4d258b925707)
+    Assignment option 22: "testx4 Doe (user)" (value: 0c17c7ea-97bf-4c28-921c-e53e70d24f6a)
+    Assignment option 23: "testx3 Doe (user)" (value: 3517680e-bd12-4e1b-a5ee-1adb830153c1)
+    Assignment option 24: "Testx1 Doe (user)" (value: a3045fac-169c-4736-b4be-09281be4127b)
+    Assignment option 25: "fake one (user)" (value: b717d121-9be2-4356-a0a1-859fa9413f58)
+    Assignment option 26: "Frank Jenkins (user)" (value: 41b87c9e-b998-4626-a8f9-08cbc864e208)
+    Assignment option 27: "John Jenkins (user)" (value: fcc8b333-f26f-414d-932e-37aee185b1b4)
+    Assignment option 28: "test@evebeauty.com (user)" (value: bff3d39c-b3ed-46a1-a330-e48ac1d381b3)
+    Assignment option 29: "Josh Ray (user)" (value: 50173b78-e62a-47f3-bb59-2f798ccd9bda)
+    Assignment option 30: "Registration Test (admin)" (value: 186f3961-afee-4838-9ce1-988b961c4725)
+    Assignment option 31: "CORS Test (admin)" (value: 46babea5-e4f0-4029-8243-65df4c152ced)
+    Assignment option 32: "Demo User (admin)" (value: 0740d271-00e4-48db-919a-c7579039babc)
+    Assignment option 33: "Test User (admin)" (value: ff39c5af-60f3-4130-98eb-0ff252a847ae)
+    Assignment option 34: "Admin User (owner)" (value: 970207ec-58c2-4e3d-bb1d-2eb9a2a9dfa4)
+
+Testing: Tags selector...
+  ✓ Found "Add Tag" button
+  ✓ Tag input field appeared
+
+Filling form with test data...
+Clicking Create button...
+✓ Contact created
+
+SECTION 5: Verifying new contact in list
+Final contact count: 21
+✗ Contact count did not increase
+
+SECTION 6: Testing Contact Card Interactions
+Found 65 contact cards with "Open Messages" button
+Testing: Show more link...
+Testing: Open Messages button...
+  Navigated to: http://localhost:3004/dashboard/contacts
+FATAL ERROR: elementHandle.$: Protocol error (DOM.describeNode): Cannot find context with specified id
+    at C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\test_v4_create_contact.js:395:49 {
+  name: 'Error'
+}
+
+Results written to: EXHAUSTIVE_DEBUG_CONTACTS_V2_RESULTS.json

@@ -1,0 +1,8 @@
+{
+  "timestamp": "2025-11-25T07:39:35.851Z",
+  "buttonNavigates": false,
+  "errorFound": "Button click did not navigate. Expected: /autoresponders/create, Got: http://localhost:3004/dashboard/email/autoresponders",
+  "formFieldsVisible": false,
+  "consoleErrors": [],
+  "directNavigationWorks": true
+}

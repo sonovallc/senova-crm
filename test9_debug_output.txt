@@ -1,0 +1,27 @@
+=== TEST 9: CAMPAIGN WIZARD DEBUG ===
+
+Step 1: Login...
+Step 1: PASS - Logged in
+
+Step 2: Navigate to Campaigns...
+>> REQUEST: GET http://localhost:3004/dashboard/email/campaigns
+>> REQUEST: GET http://localhost:3004/_next/static/chunks/app/(dashboard)/dashboard/email/campaigns/page.js
+>> REQUEST: GET http://localhost:8000/api/v1/campaigns?
+Step 2: PASS
+
+Step 3: Click Create Campaign...
+>> REQUEST: GET http://localhost:3004/dashboard/email/campaigns/create?_rsc=16rnu
+>> REQUEST: GET http://localhost:3004/_next/static/chunks/app/(dashboard)/dashboard/email/campaigns/create/page.js
+Step 3: PASS - On create page
+
+Step 4: Fill Step 1 details...
+Step 4: PASS
+
+Step 5: Click Next to go to Step 2 (Recipients)...
+>> REQUEST: POST http://localhost:8000/api/v1/campaigns/filter-contacts
+Waiting for filter-contacts API response...
+>> REQUEST: POST http://localhost:8000/api/v1/campaigns/filter-contacts
+
+Schedule button: "Next: Schedule & Send" - Disabled: true
+No recipient count text found
+ERROR: page.$: Unexpected token "=" while parsing css selector "[role="alert"], .error, text=error". Did you mean to CSS.escape it?

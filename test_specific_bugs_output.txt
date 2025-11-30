@@ -1,0 +1,158 @@
+=== EVE CRM Specific Bugs Test ===
+
+Step 1: Logging in...
+✓ Logged in successfully
+
+Step 2: Testing BUG-C - Template Selection...
+  Navigating to Inbox...
+  ✓ On Inbox page
+  Looking for Compose Email button...
+  Found compose button with selector: button:has-text("Compose")
+  ✓ Clicked Compose Email button
+  Looking for Template dropdown...
+  Found template dropdown with selector: select:has-text("Template")
+  ✓ Opened template dropdown
+  Found 20 dropdown options
+  Available options: [
+  { value: 'no-template', text: 'Custom (No Template)' },
+  {
+    value: '6447db7a-6196-4398-ae13-eecb82ccb79b',
+    text: 'Test Template 2 20251126 - follow_up'
+  },
+  {
+    value: 'e52595d7-21d1-4a15-bfc0-3169b42befe0',
+    text: 'Jeff Test Template 1 20251125 - promotion'
+  },
+  {
+    value: '5e03b29a-bd76-4c00-931a-60bfb0b53fcf',
+    text: 'AutoTest_1764123249987 - general'
+  },
+  {
+    value: '219c0b55-d93f-46a4-9ba4-fed3d6ef3082',
+    text: 'Jeff test 1 - general'
+  },
+  {
+    value: '76a6f4eb-57aa-4537-bc23-e54525427222',
+    text: 'Testing this feature - general'
+  },
+  {
+    value: '520e4fb3-532e-488a-8189-53a4aa8d68b6',
+    text: "Jeff's first test template - welcome"
+  },
+  {
+    value: '377234b1-821e-4f53-bfab-478dfc800319',
+    text: 'Final Fix Test 1763952992411 - general'
+  },
+  {
+    value: '4c6bad6f-18a2-4dc0-a600-6ad6b8ced0de',
+    text: 'Working Test 1763898561774 - general'
+  },
+  {
+    value: '76e2b498-1a39-44fd-b686-1b96bc2e8605',
+    text: 'BUG-002 Test Template - general'
+  },
+  {
+    value: '27770171-544f-4e6d-bb0a-82cf4dc79893',
+    text: 'New Service Announcement - general'
+  },
+  {
+    value: 'ef7eb1af-b651-401d-8dc6-c4ab0466e8fc',
+    text: 'Birthday Wishes - general'
+  },
+  {
+    value: '5aa84d7a-564d-4871-aef7-6342898329ff',
+    text: 'Event Invitation - general'
+  },
+  {
+    value: 'b40177cf-1a4a-460e-ac9d-0129892b98ea',
+    text: 'Re-Engagement Email - general'
+  },
+  {
+    value: '0b2ca06f-340f-4aae-9a0e-fbfdb881d1fa',
+    text: 'Thank You Email - general'
+  },
+  {
+    value: '1b044dd4-6d9f-4185-b268-a8766ab92d38',
+    text: 'Monthly Newsletter - newsletter'
+  },
+  {
+    value: '1a942a91-df54-4c19-ac81-7e4bb931b844',
+    text: 'Special Promotion - promotion'
+  },
+  {
+    value: 'ecb1ae27-ecab-48ca-8032-20d24bb67d23',
+    text: 'Post-Treatment Follow-Up - follow_up'
+  },
+  {
+    value: '317e04d3-8a99-4be1-a9eb-7052e72f7d78',
+    text: 'Appointment Reminder - appointment'
+  },
+  {
+    value: '3ea886b3-869a-477d-bcfa-e3fd2342f3e1',
+    text: 'Welcome Email - welcome'
+  }
+]
+  ✓ Selected template: Custom (No Template)
+  ✓ Template selection did not navigate to error
+
+Step 3: Testing BUG-F & BUG-G - Campaign Duplicate and Delete...
+  Navigating to Email > Campaigns...
+  ✓ Clicked Email menu
+  ⚠ Campaigns link not found
+  Looking for campaign menu buttons...
+  Found 16 buttons with selector: button:has(svg)
+  Clicking first campaign menu...
+  ✓ Opened campaign menu
+  Looking for Duplicate option...
+  ⚠ Duplicate option not found in menu
+  Visible menu items: [
+  'Eve Beauty MA',
+  'Admin',
+  'Dashboard',
+  'Inbox',
+  'Contacts',
+  'Activity Log',
+  'Email',
+  'Payments',
+  'AI Tools',
+  'Settings',
+  'Deleted Contacts',
+  'Logout',
+  'Compose Email',
+  'Recent Activity',
+  'All',
+  'Unread',
+  'Read',
+  'Archived',
+  'NRNeal Rajdev 2025EMAILtest test',
+  'DBDiana Bunting 2025EMAIL{{linkedin_url}}'
+]
+  Re-opening menu for Delete test...
+Error during test: elementHandle.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <html lang="en">…</html> intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <html lang="en">…</html> intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    56 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <html lang="en">…</html> intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+
+    at C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\test_specific_bugs.js:247:30 {
+  name: 'TimeoutError'
+}

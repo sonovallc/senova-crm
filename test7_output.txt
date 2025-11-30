@@ -1,0 +1,34 @@
+=== TEST 7: EMAIL COMPOSE TEMPLATE SELECTION ===
+
+This test verifies that selecting a template populates the compose form.
+
+Step 1: Login...
+Step 1: PASS - Logged in
+
+Step 2: Navigate to Email Compose...
+Step 2: PASS - On compose page
+
+Step 3: Find template selector...
+Found template selector: button:has-text("Select a template")
+Step 3: PASS - Template dropdown opened
+
+Step 4: Select a template...
+Found 17 options with selector: [role="option"]
+  Option: "AutoTest_1764123249987Auto Subject 1764123249987"
+Selected template: "AutoTest_1764123249987Auto Subject 1764123249987"
+Step 4: PASS - Template selected
+
+Step 5: Verify template content populated...
+Body editor found ([contenteditable="true"]), content length: 62
+Body preview: "This is an automated test template body. Hello {{first_name}}!..."
+
+Step 6: Test dynamic template change...
+Changed to template: "AutoTest_1764123249987Auto Subject 1764123249987"
+New body content length: 62
+
+=== TEST 7 EVALUATION ===
+Template selector found: true
+Template was selected: true
+Content populated: true
+
+=== TEST 7 RESULT: PASS ===

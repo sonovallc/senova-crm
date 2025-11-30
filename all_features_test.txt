@@ -1,0 +1,7 @@
+=== EXHAUSTIVE FEATURE TESTING ===
+
+### CAMPAIGNS WIZARD - ALL PATHS ###
+ERROR: page.fill: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[placeholder*="campaign name" i]')[22m
+

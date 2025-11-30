@@ -1,0 +1,112 @@
+BUG #7-9 INVESTIGATION - CODE LOCATIONS & REFERENCES
+======================================================
+
+DIRECTORY STRUCTURE
+-------------------
+context-engineering-intro/
+├── frontend/
+│   └── src/
+│       ├── components/
+│       │   └── inbox/
+│       │       ├── email-composer.tsx         (Shows correct template pattern)
+│       │       └── contact-selector.tsx       (Related to BUG #8)
+│       ├── lib/
+│       │   └── queries/
+│       │       └── communications.ts          (BUG #7 - contact_id passing)
+│       └── app/
+│           └── (dashboard)/dashboard/email/compose/page.tsx  (PRIMARY - ALL BUGS)
+└── backend/
+    └── app/api/v1/communications.py           (BUG #7 - contact validation)
+
+BUG #7: UUID ERROR
+==================
+Frontend: page.tsx Line 292
+  const primaryContactId = selectedContact?.id || 'manual-recipient'
+  PROBLEM: Uses 'manual-recipient' string as fallback, not a UUID
+
+Backend: communications.py Lines 224-227
+  contact = await db.get(Contact, data.contact_id)
+  if not contact:
+      raise NotFoundError(f"Contact {data.contact_id} not found")
+  PROBLEM: Requires valid UUID, rejects 'manual-recipient'
+
+Frontend API: communications.ts Lines 27-40
+  sendMessage() passes contact_id to backend
+  PROBLEM: No validation that contact_id is valid UUID
+
+BUG #8: TEMPLATE SELECTOR LOCKS
+================================
+Template Query: page.tsx Lines 102-108
+  queryKey: ['email-templates-compose']  (static, doesn't change)
+
+Contact Handler: page.tsx Lines 318-325
+  setContactSearchOpen(false)  (closes popover)
+  POSSIBLE ISSUE: State change might affect template selector
+
+Template Selector: page.tsx Lines 396-454
+  NO disabled prop on button
+  POSSIBLE ISSUE: Race condition between queries
+
+BUG #9: TEMPLATE CANNOT BE CHANGED
+===================================
+Missing State: page.tsx
+  NO selectedTemplateId state variable
+  email-composer.tsx HAS THIS at Line 66
+
+Handler: page.tsx Lines 349-362
+  handleUseTemplate() applies template but doesn't track selection
+  NO setSelectedTemplateId() call
+  NO visual feedback of active template
+
+Button: page.tsx Lines 406-410
+  Always shows: "Select a template to get started..."
+  SHOULD SHOW: "Using: Template Name" when template selected
+  
+CORRECT PATTERN (email-composer.tsx):
+=====================================
+Line 66: const [selectedTemplateId, setSelectedTemplateId] = useState('')
+
+Lines 117-128: 
+  handleTemplateChange() sets selectedTemplateId
+
+Lines 302-315:
+  <Select value={selectedTemplateId} onValueChange={handleTemplateChange}>
+    Allows re-selection of templates
+
+WHAT NEEDS TO CHANGE (page.tsx)
+================================
+Add state:
+  const [selectedTemplateId, setSelectedTemplateId] = useState('')
+
+Update handler:
+  const handleUseTemplate = (template: EmailTemplate) => {
+    setSelectedTemplateId(template.id)  // ADD THIS
+    const populatedSubject = replaceTemplateVariables(...)
+    const populatedBody = replaceTemplateVariables(...)
+    setSubject(populatedSubject)
+    setMessage(populatedBody)
+    setTemplateSearchOpen(false)
+  }
+
+Update button:
+  <span className="flex items-center">
+    <FileCode className="mr-2 h-4 w-4" />
+    {selectedTemplateId 
+      ? `Using: ${templatesData?.items?.find(t => t.id === selectedTemplateId)?.name}`
+      : 'Select a template to get started...'
+    }
+  </span>
+
+TESTING STEPS
+=============
+BUG #7: Type non-database email, try to send
+  EXPECTED: Create contact or prompt
+  ACTUAL: UUID error
+
+BUG #8: Select recipient first, then template
+  EXPECTED: Template selector works
+  ACTUAL: Becomes unresponsive
+
+BUG #9: Select template A, try to select template B
+  EXPECTED: Button shows "Using: Template A", allows changing to B
+  ACTUAL: Button always shows default text, template stuck

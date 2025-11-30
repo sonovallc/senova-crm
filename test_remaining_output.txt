@@ -1,0 +1,18 @@
+=== TESTS 12-18: REMAINING FEATURES ===
+
+Login...
+Logged in
+
+=== TEST 12: CSV EXPORT ===
+Found Export All button
+Test 12: PASS - Export All button exists
+
+=== TEST 13: SINGLE CONTACT DELETE ===
+Test 13: Delete button not found on detail page
+
+=== TEST 14: INBOX VIEW MESSAGES ===
+Inbox page loaded
+Test 14: PASS - Inbox page loads
+
+=== TEST 15: SETTINGS TAGS MANAGEMENT ===
+ERROR: page.$: Unexpected token "=" while parsing css selector "a:has-text("Tags"), button:has-text("Tags"), text=Tags". Did you mean to CSS.escape it?

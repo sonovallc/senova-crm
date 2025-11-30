@@ -1,0 +1,32 @@
+{
+  "bug1": {
+    "status": "FAIL",
+    "details": [
+      "ERROR: Unarchive button not found in UI"
+    ],
+    "screenshots": [
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug1-01-inbox-initial.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug1-02-archived-tab.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug1-03-select-contact.png"
+    ]
+  },
+  "bug4": {
+    "status": "SKIP",
+    "details": [
+      "No campaigns available for testing - need to create test data"
+    ],
+    "screenshots": [
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug4-01-campaigns-list.png"
+    ]
+  },
+  "bug7": {
+    "status": "FAIL",
+    "details": [
+      "ERROR: Timing Mode section not found on autoresponder page"
+    ],
+    "screenshots": [
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug7-01-autoresponders.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug7-02-create-page.png"
+    ]
+  }
+}

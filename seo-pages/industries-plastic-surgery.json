@@ -1,0 +1,310 @@
+{
+  "path": "/industries/plastic-surgery",
+  "seo": {
+    "title": "Plastic Surgery CRM That Converts Consults to Surgery 2X Faster",
+    "description": "Track high-value procedures, manage consultations, automate follow-ups. Built for plastic surgeons. See 47% more surgical bookings.",
+    "keywords": ["plastic surgery CRM", "plastic surgery software", "cosmetic surgery management", "plastic surgery marketing", "surgical practice CRM"],
+    "og_image": "Plastic surgery dashboard with consultation tracking and surgical planning"
+  },
+  "hero": {
+    "headline": "The Premium CRM for Plastic Surgery Practices",
+    "subheadline": "Convert more consultations, track high-value procedures, and build lasting patient relationships with the only CRM designed for plastic surgery.",
+    "cta_primary": {
+      "text": "See Surgery Demo",
+      "link": "/demo?industry=plastic-surgery"
+    },
+    "cta_secondary": {
+      "text": "Calculate Your ROI",
+      "link": "/roi-calculator?industry=plastic-surgery"
+    },
+    "trust_badges": [
+      "HIPAA Compliant",
+      "Photo Management",
+      "Financing Integration",
+      "100+ Surgery Practices"
+    ]
+  },
+  "sections": [
+    {
+      "type": "high_value_focus",
+      "headline": "Built for High-Value Procedures",
+      "subheadline": "Track and nurture patients through longer decision cycles",
+      "procedures": [
+        {
+          "category": "Facial Procedures",
+          "treatments": ["Rhinoplasty", "Facelift", "Blepharoplasty", "Brow Lift", "Otoplasty", "Chin Augmentation"],
+          "avg_value": "$8,500",
+          "decision_time": "3-6 months"
+        },
+        {
+          "category": "Breast Procedures",
+          "treatments": ["Augmentation", "Lift", "Reduction", "Reconstruction", "Revision", "Gynecomastia"],
+          "avg_value": "$7,200",
+          "decision_time": "2-4 months"
+        },
+        {
+          "category": "Body Contouring",
+          "treatments": ["Liposuction", "Tummy Tuck", "Brazilian Butt Lift", "Body Lift", "Arm Lift", "Thigh Lift"],
+          "avg_value": "$9,800",
+          "decision_time": "4-8 months"
+        },
+        {
+          "category": "Non-Surgical",
+          "treatments": ["Injectables", "Thread Lifts", "Skin Resurfacing", "Fat Transfer", "PRP", "Medical Spa Services"],
+          "avg_value": "$1,200",
+          "decision_time": "1-2 weeks"
+        }
+      ]
+    },
+    {
+      "type": "consultation_conversion",
+      "headline": "Convert More Consultations to Surgery",
+      "features": [
+        {
+          "title": "Virtual Consultation Platform",
+          "description": "Offer remote consultations with integrated imaging",
+          "benefits": [
+            "Reach out-of-state patients",
+            "Pre-qualify before in-person visits",
+            "Reduce no-shows by 40%",
+            "Automated follow-up sequences"
+          ]
+        },
+        {
+          "title": "3D Imaging Integration",
+          "description": "Connect with Vectra, Crisalix, and other imaging systems",
+          "benefits": [
+            "Store and manage 3D simulations",
+            "Track revision requests",
+            "Before/after comparisons",
+            "Patient portal access"
+          ]
+        },
+        {
+          "title": "Financing Automation",
+          "description": "Integrated financing options and approval tracking",
+          "benefits": [
+            "CareCredit integration",
+            "Alphaeon connection",
+            "Payment plan management",
+            "Pre-approval campaigns"
+          ]
+        },
+        {
+          "title": "Decision Timeline Tracking",
+          "description": "Monitor where patients are in their surgical journey",
+          "benefits": [
+            "Identify ready-to-book patients",
+            "Trigger timely follow-ups",
+            "Track objections and concerns",
+            "Predictive booking analytics"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "patient_journey",
+      "headline": "Nurture Patients Through the Surgical Journey",
+      "stages": [
+        {
+          "stage": "Research",
+          "duration": "1-3 months",
+          "touchpoints": [
+            "Website visitor identification",
+            "Educational email series",
+            "Procedure guides",
+            "Virtual seminar invites"
+          ]
+        },
+        {
+          "stage": "Consultation",
+          "duration": "2-4 weeks",
+          "touchpoints": [
+            "Pre-consultation questionnaire",
+            "Consent forms",
+            "3D imaging session",
+            "Quote and financing options"
+          ]
+        },
+        {
+          "stage": "Decision",
+          "duration": "1-6 months",
+          "touchpoints": [
+            "Personalized follow-ups",
+            "Objection handling",
+            "Patient testimonials",
+            "Limited-time incentives"
+          ]
+        },
+        {
+          "stage": "Pre-Op",
+          "duration": "2-4 weeks",
+          "touchpoints": [
+            "Pre-op instructions",
+            "Medical clearance tracking",
+            "Surgery coordinator check-ins",
+            "Final payment processing"
+          ]
+        },
+        {
+          "stage": "Post-Op",
+          "duration": "12+ months",
+          "touchpoints": [
+            "Recovery check-ins",
+            "Photo documentation",
+            "Review requests",
+            "Referral programs",
+            "Additional procedure offers"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "photo_management",
+      "headline": "Professional Photo Documentation",
+      "features": [
+        {
+          "title": "HIPAA-Compliant Storage",
+          "description": "Secure, encrypted photo galleries for each patient"
+        },
+        {
+          "title": "Standardized Captures",
+          "description": "Consistent angles and lighting guides for documentation"
+        },
+        {
+          "title": "Progress Tracking",
+          "description": "Timeline views showing healing progression"
+        },
+        {
+          "title": "Marketing Consent",
+          "description": "Track permissions for before/after usage"
+        },
+        {
+          "title": "Portal Access",
+          "description": "Patients can view their own galleries securely"
+        }
+      ]
+    },
+    {
+      "type": "analytics_surgery",
+      "headline": "Track What Matters for Surgery Practices",
+      "metrics": [
+        {
+          "metric": "Consultation to Surgery Rate",
+          "industry_avg": "22%",
+          "with_senova": "47%"
+        },
+        {
+          "metric": "Average Procedure Value",
+          "industry_avg": "$6,200",
+          "with_senova": "$8,900"
+        },
+        {
+          "metric": "Patient Lifetime Value",
+          "industry_avg": "$8,500",
+          "with_senova": "$14,200"
+        },
+        {
+          "metric": "Lead to Consult Time",
+          "industry_avg": "21 days",
+          "with_senova": "11 days"
+        },
+        {
+          "metric": "Cost Per Surgical Booking",
+          "industry_avg": "$1,200",
+          "with_senova": "$520"
+        }
+      ]
+    },
+    {
+      "type": "case_study_surgery",
+      "headline": "Beverly Hills Plastic Surgery Doubles Surgical Bookings",
+      "practice": "Beverly Hills Plastic Surgery Center",
+      "background": "Premier practice struggling with consultation follow-up",
+      "challenges": [
+        "38% of consultations going dark",
+        "No visibility into patient decision timeline",
+        "Manual follow-up taking 20+ hours/week",
+        "Missing financing opportunities"
+      ],
+      "solution": [
+        "Implemented consultation tracking system",
+        "Set up automated nurture sequences",
+        "Integrated financing pre-approvals",
+        "Created urgency campaigns"
+      ],
+      "results": {
+        "surgical_bookings": "+94% in 6 months",
+        "consultation_conversion": "From 22% to 51%",
+        "revenue_increase": "$2.3M additional",
+        "time_saved": "25 hours/week"
+      },
+      "quote": "Senova turned our consultation process from chaos to clockwork. We're booking twice as many surgeries with half the effort.",
+      "author": "Dr. Michael Chen, Founder"
+    },
+    {
+      "type": "marketing_surgery",
+      "headline": "Marketing Tools for Plastic Surgery",
+      "tools": [
+        {
+          "name": "Before/After Galleries",
+          "description": "Showcase results with smart galleries that protect privacy while attracting new patients"
+        },
+        {
+          "name": "Virtual Events",
+          "description": "Host online seminars and Q&A sessions with automated follow-up"
+        },
+        {
+          "name": "Referral Programs",
+          "description": "Track and reward patient referrals automatically"
+        },
+        {
+          "name": "Review Management",
+          "description": "Capture reviews at the perfect moment in recovery"
+        }
+      ]
+    },
+    {
+      "type": "integrations_surgery",
+      "headline": "Connects with Surgical Practice Tools",
+      "systems": [
+        {
+          "category": "EMR/Practice Management",
+          "tools": ["Nextech", "Symplast", "TouchMD", "PatientNow"]
+        },
+        {
+          "category": "Imaging & Simulation",
+          "tools": ["Vectra", "Crisalix", "Canfield", "illusio"]
+        },
+        {
+          "category": "Patient Financing",
+          "tools": ["CareCredit", "Alphaeon", "PatientFi", "Cherry"]
+        },
+        {
+          "category": "Surgery Centers",
+          "tools": ["SurgiSource", "HST", "AdvantX", "Vision"]
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "headline": "Transform Your Surgical Practice",
+      "subheadline": "See why 100+ plastic surgery practices choose Senova",
+      "primary_cta": {
+        "text": "Get Surgical Practice Demo",
+        "link": "/demo?industry=plastic-surgery"
+      },
+      "secondary_cta": {
+        "text": "Download Surgery Marketing Guide",
+        "link": "/resources/plastic-surgery-guide"
+      }
+    }
+  ],
+  "schema_markup": {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Senova for Plastic Surgery",
+    "description": "CRM platform designed for plastic and cosmetic surgery practices",
+    "applicationCategory": "Medical Practice Management"
+  }
+}

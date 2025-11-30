@@ -1,0 +1,348 @@
+{
+  "industries": {
+    "medical-spas": {
+      "name": "Medical Spas",
+      "description": "Luxury medical spa and aesthetics treatment images",
+      "images": {
+        "hero": {
+          "url": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1600&h=900&fit=crop&auto=format",
+          "alt": "Modern medical spa treatment room with ambient lighting",
+          "caption": "State-of-the-art medical spa facilities",
+          "photographer": "Zoe",
+          "unsplashId": "1540555700478-4be289fbecef"
+        },
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Spa facial treatment in progress",
+            "caption": "Professional aesthetic treatments",
+            "photographer": "Antonika Chanel",
+            "unsplashId": "1519823551278-64ac92734fb1"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Clean modern spa reception area",
+            "caption": "Welcoming spa environment",
+            "photographer": "Humphrey Muleba",
+            "unsplashId": "1570172619644-dfd03ed5d881"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Medical spa treatment consultation",
+            "caption": "Personalized consultation services",
+            "photographer": "Christin Hume",
+            "unsplashId": "1560750588-73207b1ef5b8"
+          }
+        ]
+      }
+    },
+    "dermatology": {
+      "name": "Dermatology",
+      "description": "Professional dermatology clinic and skin treatment images",
+      "images": {
+        "hero": {
+          "url": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=1600&h=900&fit=crop&auto=format",
+          "alt": "Dermatologist examining patient skin",
+          "caption": "Expert dermatological care",
+          "photographer": "National Cancer Institute",
+          "unsplashId": "1612349317150-e413f6a5b16d"
+        },
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Modern dermatology clinic interior",
+            "caption": "State-of-the-art facilities",
+            "photographer": "Online Marketing",
+            "unsplashId": "1576091160399-112ba8d25d1d"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Skin analysis equipment",
+            "caption": "Advanced diagnostic technology",
+            "photographer": "Kimia Zarifi",
+            "unsplashId": "1559757148-5c350d0d3c56"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Dermatology consultation room",
+            "caption": "Professional consultation services",
+            "photographer": "National Cancer Institute",
+            "unsplashId": "1631217868264-e5b90bb7e133"
+          }
+        ]
+      }
+    },
+    "plastic-surgery": {
+      "name": "Plastic Surgery",
+      "description": "Cosmetic surgery consultation and medical facility images",
+      "images": {
+        "hero": {
+          "url": "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=1600&h=900&fit=crop&auto=format",
+          "alt": "Modern surgical consultation room",
+          "caption": "Expert cosmetic surgery consultations",
+          "photographer": "Martha Dominguez de Gouveia",
+          "unsplashId": "1551601651-2a8555f1a136"
+        },
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Professional medical team discussion",
+            "caption": "Experienced surgical team",
+            "photographer": "National Cancer Institute",
+            "unsplashId": "1579684385127-1ef15d508118"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Clean modern medical facility",
+            "caption": "State-of-the-art surgical center",
+            "photographer": "rawpixel",
+            "unsplashId": "1516549655169-df83a0774514"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Medical consultation in progress",
+            "caption": "Personalized patient care",
+            "photographer": "Online Marketing",
+            "unsplashId": "1581056771107-24ca5f033842"
+          }
+        ]
+      }
+    },
+    "aesthetic-clinics": {
+      "name": "Aesthetic Clinics",
+      "description": "Beauty treatment clinic and cosmetic procedure images",
+      "images": {
+        "hero": {
+          "url": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&h=900&fit=crop&auto=format",
+          "alt": "Modern aesthetic clinic treatment room",
+          "caption": "Advanced aesthetic treatments",
+          "photographer": "Sam Moghadam Khamseh",
+          "unsplashId": "1629909613654-28e377c37b09"
+        },
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1598887142487-3c854d51eabb?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Aesthetic treatment in progress",
+            "caption": "Non-invasive beauty treatments",
+            "photographer": "engin akyurt",
+            "unsplashId": "1598887142487-3c854d51eabb"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1620828937158-806e05b36550?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Aesthetic clinic consultation",
+            "caption": "Professional beauty consultations",
+            "photographer": "Eben Kassaye",
+            "unsplashId": "1620828937158-806e05b36550"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Modern aesthetic equipment",
+            "caption": "Latest cosmetic technology",
+            "photographer": "Jesper Aggergaard",
+            "unsplashId": "1522337660859-02fbefca4702"
+          }
+        ]
+      }
+    },
+    "legal-attorneys": {
+      "name": "Legal/Attorneys",
+      "description": "Law firm offices and legal consultation images",
+      "images": {
+        "hero": {
+          "url": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&h=900&fit=crop&auto=format",
+          "alt": "Professional law office meeting room",
+          "caption": "Expert legal consultation services",
+          "photographer": "August de Richelieu",
+          "unsplashId": "1589829545856-d10d557cf95f"
+        },
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Legal team collaboration",
+            "caption": "Experienced legal professionals",
+            "photographer": "Sebastian Herrmann",
+            "unsplashId": "1556761175-b413da4baf72"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Law library and legal resources",
+            "caption": "Comprehensive legal resources",
+            "photographer": "Giammarco",
+            "unsplashId": "1479142506502-19b3a3b7ff33"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1575505586569-646b2ca898fc?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Attorney client consultation",
+            "caption": "Personalized legal guidance",
+            "photographer": "Hunters Race",
+            "unsplashId": "1575505586569-646b2ca898fc"
+          }
+        ]
+      }
+    },
+    "real-estate": {
+      "name": "Real Estate",
+      "description": "Real estate agent and property showing images",
+      "images": {
+        "hero": {
+          "url": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&h=900&fit=crop&auto=format",
+          "alt": "Real estate agent showing property",
+          "caption": "Professional property services",
+          "photographer": "Avi Waxman",
+          "unsplashId": "1560518883-ce09059eeffa"
+        },
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=1200&h=800&fit=crop&auto=format",
+            "alt": "House keys handover moment",
+            "caption": "Making homeownership dreams reality",
+            "photographer": "Tierra Mallorca",
+            "unsplashId": "1560520653-9e0e4c89eb11"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1593696140826-c58b021acf8b?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Real estate office meeting",
+            "caption": "Expert real estate guidance",
+            "photographer": "Vu Anh",
+            "unsplashId": "1593696140826-c58b021acf8b"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Modern property exterior",
+            "caption": "Premium property listings",
+            "photographer": "Ronnie George",
+            "unsplashId": "1582407947304-fd86f028f716"
+          }
+        ]
+      }
+    },
+    "mortgage-lending": {
+      "name": "Mortgage/Lending",
+      "description": "Mortgage consultation and home loan document images",
+      "images": {
+        "hero": {
+          "url": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1600&h=900&fit=crop&auto=format",
+          "alt": "Mortgage consultation meeting",
+          "caption": "Expert mortgage advisory services",
+          "photographer": "Cytonn Photography",
+          "unsplashId": "1554224155-8d04cb21cd6c"
+        },
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Signing mortgage documents",
+            "caption": "Streamlined loan processing",
+            "photographer": "Scott Graham",
+            "unsplashId": "1450101499163-c8848c66ca85"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1565373679580-fc0cb538c49a?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Financial advisor consultation",
+            "caption": "Personalized financial solutions",
+            "photographer": "Amy Hirschi",
+            "unsplashId": "1565373679580-fc0cb538c49a"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Home purchase planning",
+            "caption": "Home financing made simple",
+            "photographer": "rawpixel",
+            "unsplashId": "1556742049-0cfed4f6a45d"
+          }
+        ]
+      }
+    },
+    "insurance": {
+      "name": "Insurance",
+      "description": "Insurance agent meetings and policy consultation images",
+      "images": {
+        "hero": {
+          "url": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1600&h=900&fit=crop&auto=format",
+          "alt": "Insurance agent meeting with clients",
+          "caption": "Comprehensive insurance solutions",
+          "photographer": "Vlad Deep",
+          "unsplashId": "1563013544-824ae1b704d3"
+        },
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1556740758-90de374c12ad?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Family protection concept",
+            "caption": "Protecting what matters most",
+            "photographer": "rawpixel",
+            "unsplashId": "1556740758-90de374c12ad"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Insurance policy review meeting",
+            "caption": "Tailored insurance coverage",
+            "photographer": "Amy Hirschi",
+            "unsplashId": "1553729459-efe14ef6055d"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1560472355-536de3962603?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Business insurance consultation",
+            "caption": "Business protection solutions",
+            "photographer": "Medienstürmer",
+            "unsplashId": "1560472355-536de3962603"
+          }
+        ]
+      }
+    },
+    "marketing-agencies": {
+      "name": "Marketing Agencies",
+      "description": "Creative marketing team and digital agency workspace images",
+      "images": {
+        "hero": {
+          "url": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop&auto=format",
+          "alt": "Marketing team brainstorming session",
+          "caption": "Creative marketing solutions",
+          "photographer": "Jason Goodman",
+          "unsplashId": "1552664730-d307ca884978"
+        },
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1553028826-f4804a6dba3b?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Digital agency workspace",
+            "caption": "Modern digital marketing hub",
+            "photographer": "Campaign Creators",
+            "unsplashId": "1553028826-f4804a6dba3b"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Creative team collaboration",
+            "caption": "Strategic marketing planning",
+            "photographer": "Campaign Creators",
+            "unsplashId": "1542744173-8e7e53415bb0"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&h=800&fit=crop&auto=format",
+            "alt": "Marketing strategy session",
+            "caption": "Data-driven marketing strategies",
+            "photographer": "Austin Distel",
+            "unsplashId": "1556761175-5973dc0f32e7"
+          }
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "totalIndustries": 9,
+    "imagesPerIndustry": 4,
+    "totalImages": 36,
+    "imageSpecs": {
+      "hero": {
+        "width": 1600,
+        "height": 900,
+        "aspectRatio": "16:9"
+      },
+      "gallery": {
+        "width": 1200,
+        "height": 800,
+        "aspectRatio": "3:2"
+      }
+    },
+    "source": "Unsplash",
+    "format": "Progressive JPEG with automatic format selection",
+    "quality": "High quality, optimized for web"
+  }
+}

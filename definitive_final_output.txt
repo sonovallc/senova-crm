@@ -1,0 +1,113 @@
+
+=== STARTING DEFINITIVE FINAL TEST ===
+
+1. LOGGING IN...
+[VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o
+[INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[LOG] [Fast Refresh] rebuilding
+[LOG] [Fast Refresh] done in 3582ms
+✓ Login successful
+
+2. TESTING CAMPAIGNS PAGE (CORS CHECK)...
+[LOG] [Fast Refresh] rebuilding
+[LOG] [Fast Refresh] done in 2911ms
+[INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[LOG] Fetching campaigns...
+[ERROR] Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+[ERROR] Failed to load resource: net::ERR_FAILED
+[LOG] Fetching campaigns...
+[ERROR] Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+[ERROR] Failed to load resource: net::ERR_FAILED
+   CORS errors: 2
+   Console errors: 4
+   Stuck loading: false
+   RESULT: FAIL
+
+3. TESTING AUTORESPONDERS PAGE (CORS CHECK)...
+[LOG] [Fast Refresh] rebuilding
+[LOG] [Fast Refresh] done in 2101ms
+[INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+   CORS errors: 0
+   Console errors: 0
+   RESULT: PASS
+
+4. TESTING INBOX FILTER TABS...
+[LOG] [Fast Refresh] rebuilding
+[LOG] [Fast Refresh] done in 2557ms
+[ERROR] Failed to load resource: the server responded with a status of 404 (Not Found)
+[INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+   Filter tabs found: 0
+   RESULT: FAIL
+
+5. TESTING MAILGUN SETTINGS PAGE...
+[LOG] [Fast Refresh] rebuilding
+[LOG] [Fast Refresh] done in 4157ms
+[INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[ERROR] Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+[ERROR] Failed to load resource: net::ERR_FAILED
+[VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
+   Is 404: true
+   Console errors: 2
+   RESULT: FAIL
+
+6. TESTING ALL EMAIL PAGES...
+[LOG] [Fast Refresh] rebuilding
+[LOG] [Fast Refresh] done in 8182ms
+[INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+   compose: FAIL (0 errors)
+[LOG] [Fast Refresh] rebuilding
+[LOG] [Fast Refresh] done in 2632ms
+[INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+   templates: FAIL (0 errors)
+[INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[LOG] Fetching campaigns...
+[ERROR] Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+[ERROR] Failed to load resource: net::ERR_FAILED
+   campaigns-recheck: FAIL (0 errors)
+[LOG] Fetching campaigns...
+[ERROR] Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+[ERROR] Failed to load resource: net::ERR_FAILED
+[INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+   autoresponders-recheck: FAIL (2 errors)
+[INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[ERROR] Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+[ERROR] Failed to load resource: net::ERR_FAILED
+[VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
+   mailgun-recheck: FAIL (2 errors)
+   RESULT: FAIL
+
+
+=== DEFINITIVE FINAL TEST RESULTS ===
+
+ANSWER KEY:
+1. CORS errors present? YES (6 total)
+2. Campaigns page loads? NO
+3. Inbox filter tabs (4 visible)? NO
+4. Mailgun settings loads? NO
+5. All email pages load? NO
+6. Total console errors: 13
+7. Pass rate: 20%
+
+**PRODUCTION READY: NO**
+
+
+CORS ERRORS DETECTED:
+1. [http://localhost:3004/dashboard/email/campaigns] Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+2. [http://localhost:3004/dashboard/email/campaigns] Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+3. [http://localhost:3004/dashboard/settings/integrations/mailgun] Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+4. [http://localhost:3004/dashboard/email/campaigns] Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+5. [http://localhost:3004/dashboard/email/campaigns] Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+6. [http://localhost:3004/dashboard/settings/integrations/mailgun] Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+CONSOLE ERRORS:
+1. [http://localhost:3004/dashboard/email/campaigns] Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+2. [http://localhost:3004/dashboard/email/campaigns] Failed to load resource: net::ERR_FAILED
+3. [http://localhost:3004/dashboard/email/campaigns] Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+4. [http://localhost:3004/dashboard/email/campaigns] Failed to load resource: net::ERR_FAILED
+5. [http://localhost:3004/dashboard/email/inbox] Failed to load resource: the server responded with a status of 404 (Not Found)
+6. [http://localhost:3004/dashboard/settings/integrations/mailgun] Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+7. [http://localhost:3004/dashboard/settings/integrations/mailgun] Failed to load resource: net::ERR_FAILED
+8. [http://localhost:3004/dashboard/email/campaigns] Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+9. [http://localhost:3004/dashboard/email/campaigns] Failed to load resource: net::ERR_FAILED
+10. [http://localhost:3004/dashboard/email/campaigns] Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+... and 3 more

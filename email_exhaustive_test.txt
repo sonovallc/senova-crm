@@ -1,0 +1,211 @@
+🚀 Starting EXHAUSTIVE Email Features Debug...
+
+📸 Screenshots will be saved to: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\exhaustive-debug-email
+
+
+=== LOGIN ===
+✅ Login: Successfully logged in
+
+=== EMAIL COMPOSER ===
+
+Testing To field contact dropdown...
+Found 0 dropdown options
+❌ To field - Contact dropdown: No contacts found in dropdown
+
+Testing manual email entry...
+❌ Manual email entry: Email chip did not appear
+
+Testing CC field...
+✅ CC field toggle
+
+Testing BCC field...
+✅ BCC field toggle
+
+Testing Subject field...
+✅ Subject field
+
+Testing Rich Text Editor Toolbar...
+✅ Rich Text - Bold button
+✅ Rich Text - Italic button
+❌ Rich Text - Underline button: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button[title*="Underline" i], button:has-text("U"), [data-testid="underline"]').first()[22m
+[2m    - locator resolved to <button class="inline-flex items-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full justify-start">…</button>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <html lang="en">…</html> intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <html lang="en">…</html> intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    56 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <html lang="en">…</html> intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+
+❌ Rich Text - Bullet List button: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button[title*="Bullet" i], button[title*="Unordered" i], [data-testid="bullet-list"]').first()[22m
+
+❌ Rich Text - Numbered List button: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button[title*="Numbered" i], button[title*="Ordered" i], [data-testid="numbered-list"]').first()[22m
+
+❌ Rich Text - Link button: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button[title*="Link" i], [data-testid="link"]').first()[22m
+
+
+Testing Variables Dropdown - EVERY OPTION...
+❌ Variables dropdown: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button:has-text("Variable"), button:has-text("Insert"), [data-testid="variables-dropdown"]').first()[22m
+
+🐛 HIGH: Variables dropdown error: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button:has-text("Variable"), button:has-text("Insert"), [data-testid="variables-dropdown"]').first()[22m
+
+
+Testing Template Dropdown...
+Found 0 template options
+
+Testing Send button...
+✅ Send button: Button exists and is visible
+
+=== EMAIL TEMPLATES ===
+
+Testing View Toggle...
+❌ View toggle: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button[title*="Grid" i], button[title*="List" i], [data-testid="view-toggle"]').first()[22m
+
+
+Testing Search Bar...
+✅ Search bar
+
+Testing Category Filter - EVERY OPTION...
+Found 0 category options
+
+Testing Create Template Button...
+✅ Create Template button: Modal opened
+
+Testing Template Creation Modal Fields...
+✅ Modal - Name field
+Found 0 category options in modal
+✅ Modal - Subject field
+✅ Modal - Cancel button
+
+Testing click on existing template...
+❌ Click existing template: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-testid*="template-"], .template-card, .template-item').first()[22m
+
+
+=== EMAIL CAMPAIGNS ===
+
+Testing Search Bar...
+✅ Search bar
+
+Testing Status Filter - EVERY OPTION...
+Found 0 status options
+
+Testing Create Campaign Button...
+✅ Create Campaign button: Wizard opened
+
+Testing Campaign Wizard Step 1...
+❌ Wizard Step 1 - Name field: locator.fill: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[placeholder*="name" i], #campaign-name, [data-testid="campaign-name"]').first()[22m
+
+Found 0 template options
+❌ Wizard Step 1 - Subject field: locator.fill: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[placeholder*="subject" i], #campaign-subject, [data-testid="campaign-subject"]').first()[22m
+
+
+Testing click on existing campaign...
+❌ Click existing campaign: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-testid*="campaign-"], .campaign-card, .campaign-item').first()[22m
+
+
+=== AUTORESPONDERS ===
+
+Testing Create Autoresponder Button...
+✅ Create Autoresponder button
+
+Testing Autoresponder Form Fields...
+❌ Form - Name field: locator.fill: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[placeholder*="name" i], #autoresponder-name, [data-testid="autoresponder-name"]').first()[22m
+
+
+Testing Trigger Type Dropdown - EVERY OPTION...
+Found 0 trigger type options
+
+Testing Status Toggle...
+❌ Status toggle: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[type="checkbox"]:near(:text("Active")), [data-testid="status-toggle"]').first()[22m
+
+
+Testing Timing Mode Dropdown - EVERY OPTION...
+Found 0 timing mode options
+
+Testing click on existing autoresponder...
+❌ Click existing autoresponder: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-testid*="autoresponder-"], .autoresponder-card, .autoresponder-item').first()[22m
+
+
+=== UNIFIED INBOX ===
+
+Testing Filter Tabs - EVERY TAB...
+✅ Filter Tab - All
+✅ Filter Tab - Unread
+✅ Filter Tab - Read
+✅ Filter Tab - Archived
+
+Testing Search Bar...
+❌ Search bar: locator.fill: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[placeholder*="Search" i], input[type="search"], [data-testid="search"]').first()[22m
+
+
+Testing click on conversation...
+❌ Click conversation: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-testid*="conversation-"], .conversation-item, .inbox-item').first()[22m
+
+
+Testing Refresh button...
+❌ Refresh button: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button:has-text("Refresh"), button[title*="Refresh"], [data-testid="refresh-button"]').first()[22m
+
+
+=== GENERATING REPORT ===
+
+✅ Report saved to: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\EXHAUSTIVE_DEBUG_EMAIL_FEATURES.md
+
+================================================================================
+EXHAUSTIVE DEBUG COMPLETE
+================================================================================
+Total Tests: 37
+Passed: 19
+Failed: 18
+Pass Rate: 51.4%
+Bugs Found: 1
+Console Errors: 2
+================================================================================

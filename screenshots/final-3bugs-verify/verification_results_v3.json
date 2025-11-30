@@ -1,0 +1,34 @@
+{
+  "bug1": {
+    "status": "ERROR",
+    "details": [
+      "Exception: Cannot read properties of null (reading 'toLowerCase')"
+    ],
+    "screenshots": [
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug1-01-inbox-initial.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug1-02-archived-tab.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug1-03-contact-opened.png"
+    ]
+  },
+  "bug4": {
+    "status": "SKIP",
+    "details": [
+      "No campaigns available - tried to create but may have failed"
+    ],
+    "screenshots": [
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug4-01-campaigns-list.png"
+    ]
+  },
+  "bug7": {
+    "status": "FAIL",
+    "details": [
+      "Timing Mode section not found on page - may need more scrolling"
+    ],
+    "screenshots": [
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug7-01-autoresponders.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug7-02-create-page-top.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug7-03-scrolled-down.png",
+      "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\final-3bugs-verify\\bug7-04-scrolled-more.png"
+    ]
+  }
+}

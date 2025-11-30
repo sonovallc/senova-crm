@@ -1,0 +1,352 @@
+{
+  "corsErrors": [
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+  ],
+  "consoleErrors": [
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Failed to load resource: net::ERR_FAILED",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Failed to load resource: net::ERR_FAILED",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Failed to load resource: net::ERR_FAILED",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Failed to load resource: net::ERR_FAILED",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Failed to load resource: net::ERR_FAILED",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Failed to load resource: net::ERR_FAILED",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Failed to load resource: net::ERR_FAILED",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Failed to load resource: net::ERR_FAILED",
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Failed to load resource: net::ERR_FAILED"
+  ],
+  "features": {
+    "Campaigns Page - CORS Check": {
+      "name": "Campaigns Page - CORS Check",
+      "url": "http://localhost:3004/dashboard/email/campaigns",
+      "status": "FAIL - CORS ERRORS",
+      "corsErrors": [
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+      ],
+      "consoleErrors": [
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "Failed to load resource: net::ERR_FAILED",
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "Failed to load resource: net::ERR_FAILED"
+      ],
+      "screenshots": [
+        "feature-campaigns-page---cors-check-1764021567823.png"
+      ],
+      "checks": {
+        "Page loads without CORS errors": "PASS"
+      },
+      "error": null
+    },
+    "Autoresponders Page - CORS Check": {
+      "name": "Autoresponders Page - CORS Check",
+      "url": "http://localhost:3004/dashboard/email/autoresponders",
+      "status": "PASS",
+      "corsErrors": [],
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ],
+      "screenshots": [
+        "feature-autoresponders-page---cors-check-1764021579337.png"
+      ],
+      "checks": {
+        "Page loads without CORS errors": "PASS"
+      },
+      "error": null
+    },
+    "Mailgun Settings - CORS Check": {
+      "name": "Mailgun Settings - CORS Check",
+      "url": "http://localhost:3004/dashboard/settings/integrations/mailgun",
+      "status": "FAIL - CORS ERRORS",
+      "corsErrors": [
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+      ],
+      "consoleErrors": [
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "Failed to load resource: net::ERR_FAILED"
+      ],
+      "screenshots": [
+        "feature-mailgun-settings---cors-check-1764021590784.png"
+      ],
+      "checks": {
+        "Page loads without CORS errors": "PASS"
+      },
+      "error": null
+    },
+    "Email Settings - CORS Check": {
+      "name": "Email Settings - CORS Check",
+      "url": "http://localhost:3004/dashboard/settings/email",
+      "status": "FAIL - CORS ERRORS",
+      "corsErrors": [
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+      ],
+      "consoleErrors": [
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "Failed to load resource: net::ERR_FAILED"
+      ],
+      "screenshots": [
+        "feature-email-settings---cors-check-1764021600206.png"
+      ],
+      "checks": {
+        "Page loads without CORS errors": "PASS"
+      },
+      "error": null
+    },
+    "BUG-CAMPAIGNS-LOADING": {
+      "name": "BUG-CAMPAIGNS-LOADING",
+      "url": "http://localhost:3004/dashboard/email/campaigns",
+      "status": "FAIL - CORS ERRORS",
+      "corsErrors": [
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+      ],
+      "consoleErrors": [
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "Failed to load resource: net::ERR_FAILED",
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "Failed to load resource: net::ERR_FAILED"
+      ],
+      "screenshots": [
+        "feature-bug-campaigns-loading-1764021607763.png"
+      ],
+      "checks": {
+        "Campaigns table visible": "FAIL",
+        "Create Campaign button exists": "PASS"
+      },
+      "error": null
+    },
+    "BUG-INBOX-FILTERS": {
+      "name": "BUG-INBOX-FILTERS",
+      "url": "http://localhost:3004/dashboard/inbox",
+      "status": "FAIL - CHECK FAILED",
+      "corsErrors": [],
+      "consoleErrors": [],
+      "screenshots": [
+        "feature-bug-inbox-filters-1764021623492.png"
+      ],
+      "checks": {
+        "All tab exists": "FAIL",
+        "Unread tab exists": "FAIL",
+        "Read tab exists": "FAIL",
+        "Archived tab exists": "FAIL"
+      },
+      "error": null
+    },
+    "BUG-MAILGUN-404": {
+      "name": "BUG-MAILGUN-404",
+      "url": "http://localhost:3004/dashboard/settings/integrations/mailgun",
+      "status": "FAIL - CORS ERRORS",
+      "corsErrors": [
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+      ],
+      "consoleErrors": [
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "Failed to load resource: net::ERR_FAILED"
+      ],
+      "screenshots": [
+        "feature-bug-mailgun-404-1764021627623.png"
+      ],
+      "checks": {
+        "Page loads (not 404)": "PASS",
+        "Mailgun settings form exists": "PASS"
+      },
+      "error": null
+    },
+    "Email Composer": {
+      "name": "Email Composer",
+      "url": "http://localhost:3004/dashboard/email/compose",
+      "status": "FAIL - CHECK FAILED",
+      "corsErrors": [],
+      "consoleErrors": [],
+      "screenshots": [
+        "feature-email-composer-1764021639312.png"
+      ],
+      "checks": {
+        "To field exists": "FAIL",
+        "Subject field exists": "FAIL",
+        "Template selector exists": "FAIL",
+        "Send button exists": "PASS"
+      },
+      "error": null
+    },
+    "Email Templates": {
+      "name": "Email Templates",
+      "url": "http://localhost:3004/dashboard/email/templates",
+      "status": "FAIL - CHECK FAILED",
+      "corsErrors": [],
+      "consoleErrors": [],
+      "screenshots": [
+        "feature-email-templates-1764021648845.png"
+      ],
+      "checks": {
+        "Create Template button exists": "FAIL",
+        "Templates grid/list visible": "PASS"
+      },
+      "error": null
+    },
+    "Email Campaigns": {
+      "name": "Email Campaigns",
+      "url": "http://localhost:3004/dashboard/email/campaigns",
+      "status": "FAIL - CORS ERRORS",
+      "corsErrors": [
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+      ],
+      "consoleErrors": [
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "Failed to load resource: net::ERR_FAILED",
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "Failed to load resource: net::ERR_FAILED"
+      ],
+      "screenshots": [
+        "feature-email-campaigns-1764021653033.png"
+      ],
+      "checks": {
+        "Create Campaign button exists": "PASS"
+      },
+      "error": null
+    },
+    "Autoresponders": {
+      "name": "Autoresponders",
+      "url": "http://localhost:3004/dashboard/email/autoresponders",
+      "status": "PASS",
+      "corsErrors": [],
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ],
+      "screenshots": [
+        "feature-autoresponders-1764021657902.png"
+      ],
+      "checks": {
+        "Create Autoresponder button exists": "PASS"
+      },
+      "error": null
+    },
+    "Unified Inbox": {
+      "name": "Unified Inbox",
+      "url": "http://localhost:3004/dashboard/inbox",
+      "status": "PASS",
+      "corsErrors": [],
+      "consoleErrors": [],
+      "screenshots": [
+        "feature-unified-inbox-1764021661661.png"
+      ],
+      "checks": {
+        "Inbox content area exists": "PASS"
+      },
+      "error": null
+    },
+    "Mailgun Settings": {
+      "name": "Mailgun Settings",
+      "url": "http://localhost:3004/dashboard/settings/integrations/mailgun",
+      "status": "FAIL - CORS ERRORS",
+      "corsErrors": [
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+      ],
+      "consoleErrors": [
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "Failed to load resource: net::ERR_FAILED"
+      ],
+      "screenshots": [
+        "feature-mailgun-settings-1764021665644.png"
+      ],
+      "checks": {},
+      "error": null
+    },
+    "Email Settings": {
+      "name": "Email Settings",
+      "url": "http://localhost:3004/dashboard/settings/email",
+      "status": "FAIL - CORS ERRORS",
+      "corsErrors": [
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+      ],
+      "consoleErrors": [
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "Failed to load resource: net::ERR_FAILED"
+      ],
+      "screenshots": [
+        "feature-email-settings-1764021669617.png"
+      ],
+      "checks": {},
+      "error": null
+    },
+    "Closebot AI": {
+      "name": "Closebot AI",
+      "url": "http://localhost:3004/dashboard/settings/integrations/closebot",
+      "status": "PASS",
+      "corsErrors": [],
+      "consoleErrors": [],
+      "screenshots": [
+        "feature-closebot-ai-1764021676645.png"
+      ],
+      "checks": {
+        "Coming Soon message visible": "PASS"
+      },
+      "error": null
+    }
+  },
+  "bugFixes": {
+    "BUG-CAMPAIGNS-LOADING": "NOT FIXED",
+    "BUG-INBOX-FILTERS": "NOT FIXED",
+    "BUG-MAILGUN-404": "NOT FIXED",
+    "BUG-CORS-001": "NOT FIXED"
+  },
+  "screenshots": [
+    "01-login-page-1764021550556.png",
+    "02-dashboard-after-login-1764021555417.png",
+    "feature-campaigns-page---cors-check-1764021567823.png",
+    "feature-autoresponders-page---cors-check-1764021579337.png",
+    "feature-mailgun-settings---cors-check-1764021590784.png",
+    "feature-email-settings---cors-check-1764021600206.png",
+    "feature-bug-campaigns-loading-1764021607763.png",
+    "feature-bug-inbox-filters-1764021623492.png",
+    "feature-bug-mailgun-404-1764021627623.png",
+    "feature-email-composer-1764021639312.png",
+    "feature-email-templates-1764021648845.png",
+    "feature-email-campaigns-1764021653033.png",
+    "feature-autoresponders-1764021657902.png",
+    "feature-unified-inbox-1764021661661.png",
+    "feature-mailgun-settings-1764021665644.png",
+    "feature-email-settings-1764021669617.png",
+    "feature-closebot-ai-1764021676645.png"
+  ],
+  "startTime": "2025-11-24T21:59:05.003Z",
+  "endTime": "2025-11-24T22:01:16.787Z",
+  "summary": {
+    "totalFeatures": 15,
+    "passedFeatures": 4,
+    "failedFeatures": 11,
+    "passRate": 26.7,
+    "totalCorsErrors": 11,
+    "totalConsoleErrors": 26,
+    "totalScreenshots": 17
+  },
+  "productionReady": "NO"
+}

@@ -1,0 +1,155 @@
+[
+  {
+    "number": 1,
+    "linkName": "Dashboard",
+    "expectedUrl": "/dashboard",
+    "actualUrl": "http://localhost:3004/dashboard",
+    "pageLoaded": true,
+    "result": "PASS",
+    "error": null
+  },
+  {
+    "number": 2,
+    "linkName": "Contacts",
+    "expectedUrl": "/dashboard/contacts",
+    "actualUrl": "http://localhost:3004/dashboard/contacts",
+    "pageLoaded": true,
+    "result": "PASS",
+    "error": null
+  },
+  {
+    "number": 3,
+    "linkName": "Inbox",
+    "expectedUrl": "/dashboard/inbox",
+    "actualUrl": "http://localhost:3004/dashboard/contacts",
+    "pageLoaded": true,
+    "result": "FAIL",
+    "error": null
+  },
+  {
+    "number": 4,
+    "linkName": "Email Compose",
+    "expectedUrl": "/dashboard/email/compose",
+    "actualUrl": "http://localhost:3004/dashboard/contacts",
+    "pageLoaded": true,
+    "result": "FAIL",
+    "error": null
+  },
+  {
+    "number": 5,
+    "linkName": "Email Templates",
+    "expectedUrl": "/dashboard/email/templates",
+    "actualUrl": "http://localhost:3004/dashboard/contacts",
+    "pageLoaded": true,
+    "result": "FAIL",
+    "error": null
+  },
+  {
+    "number": 6,
+    "linkName": "Email Campaigns",
+    "expectedUrl": "/dashboard/email/campaigns",
+    "actualUrl": "http://localhost:3004/dashboard/contacts",
+    "pageLoaded": true,
+    "result": "FAIL",
+    "error": null
+  },
+  {
+    "number": 7,
+    "linkName": "Email Autoresponders",
+    "expectedUrl": "/dashboard/email/autoresponders",
+    "actualUrl": "http://localhost:3004/dashboard/contacts",
+    "pageLoaded": true,
+    "result": "FAIL",
+    "error": null
+  },
+  {
+    "number": 8,
+    "linkName": "Activity Log",
+    "expectedUrl": "/dashboard/activity-log",
+    "actualUrl": "http://localhost:3004/dashboard/contacts",
+    "pageLoaded": true,
+    "result": "FAIL",
+    "error": null
+  },
+  {
+    "number": 9,
+    "linkName": "Payments",
+    "expectedUrl": "/dashboard/payments",
+    "actualUrl": "http://localhost:3004/dashboard/contacts",
+    "pageLoaded": true,
+    "result": "FAIL",
+    "error": null
+  },
+  {
+    "number": 10,
+    "linkName": "AI Tools",
+    "expectedUrl": "/dashboard/ai",
+    "actualUrl": "http://localhost:3004/dashboard/contacts",
+    "pageLoaded": true,
+    "result": "FAIL",
+    "error": null
+  },
+  {
+    "number": 11,
+    "linkName": "Settings Users",
+    "expectedUrl": "/dashboard/settings/users",
+    "actualUrl": "",
+    "pageLoaded": false,
+    "result": "ERROR",
+    "error": "page.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('a[href=\"/dashboard/settings/users\"]')\u001b[22m\n"
+  },
+  {
+    "number": 12,
+    "linkName": "Settings Tags",
+    "expectedUrl": "/dashboard/settings/tags",
+    "actualUrl": "",
+    "pageLoaded": false,
+    "result": "ERROR",
+    "error": "page.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('a[href=\"/dashboard/settings/tags\"]')\u001b[22m\n"
+  },
+  {
+    "number": 13,
+    "linkName": "Settings Fields",
+    "expectedUrl": "/dashboard/settings/fields",
+    "actualUrl": "",
+    "pageLoaded": false,
+    "result": "ERROR",
+    "error": "page.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('a[href=\"/dashboard/settings/fields\"]')\u001b[22m\n"
+  },
+  {
+    "number": 14,
+    "linkName": "Settings Email",
+    "expectedUrl": "/dashboard/settings/email",
+    "actualUrl": "",
+    "pageLoaded": false,
+    "result": "ERROR",
+    "error": "page.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('a[href=\"/dashboard/settings/email\"]')\u001b[22m\n"
+  },
+  {
+    "number": 15,
+    "linkName": "Settings Feature Flags",
+    "expectedUrl": "/dashboard/settings/feature-flags",
+    "actualUrl": "http://localhost:3004/dashboard/contacts",
+    "pageLoaded": true,
+    "result": "FAIL",
+    "error": null
+  },
+  {
+    "number": 16,
+    "linkName": "Settings Mailgun",
+    "expectedUrl": "/dashboard/settings/integrations/mailgun",
+    "actualUrl": "",
+    "pageLoaded": false,
+    "result": "ERROR",
+    "error": "page.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('a[href=\"/dashboard/settings/integrations/mailgun\"]')\u001b[22m\n"
+  },
+  {
+    "number": 17,
+    "linkName": "Settings Closebot",
+    "expectedUrl": "/dashboard/settings/integrations/closebot",
+    "actualUrl": "http://localhost:3004/dashboard/settings/feature-flags",
+    "pageLoaded": true,
+    "result": "FAIL",
+    "error": null
+  }
+]

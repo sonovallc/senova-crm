@@ -1,0 +1,32 @@
+BUGS #6, #10, #14 - INVESTIGATION COMPLETE
+
+ROOT CAUSE: TipTap Editor Initialization Timing Issue
+
+All three bugs have THE SAME root cause:
+  - API returns body_html correctly (CONFIRMED)
+  - React state sets body correctly (CONFIRMED)
+  - RichTextEditor doesn't display it (PROBLEM)
+
+FILE TO FIX:
+  frontend/src/components/inbox/rich-text-editor.tsx
+  Lines: 45-57
+
+BUG LOCATIONS:
+  Bug #6: email-composer.tsx (lines 117-128, 355-360)
+  Bug #10: templates/page.tsx (lines 258-267, 621-622)
+  Bug #14: campaigns/create/page.tsx (lines 109-116)
+
+THE PROBLEM:
+  TipTap editor not ready when useEffect calls setContent()
+  Solution: Wrap setContent in setTimeout to next event loop
+
+FIX SUMMARY:
+  Add: const timeout = setTimeout(() => { ... }, 0)
+  Add: Check editor.isEditable before setContent
+  Add: Cleanup return for timeout
+
+IMPACT:
+  Files changed: 1
+  Bugs fixed: 3
+  Risk: MINIMAL
+  Backward compatible: YES

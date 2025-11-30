@@ -1,0 +1,26 @@
+# Contact Edit Issue Analysis
+
+## Problem
+UI shows 'Contact updated successfully' but database has original values.
+
+## Root Cause
+Backend filters out phones, addresses, websites fields silently at line 800 in contacts.py:
+
+    if field not in allowed_fields:
+        continue  # SKIPS THE FIELD!
+
+## Why
+core_editable_fields set (lines 747-752) is missing these three fields:
+- phones
+- addresses  
+- websites
+
+## Fix
+Add these three to core_editable_fields set in backend/app/api/v1/contacts.py
+
+## Impact
+- Frontend sends phones/addresses/websites to backend
+- Backend silently filters them out
+- Database never updated
+- Frontend shows success toast anyway
+- User sees no changes

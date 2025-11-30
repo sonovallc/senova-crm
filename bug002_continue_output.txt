@@ -1,0 +1,25 @@
+
+=== CONTINUING FROM STEP 2: COLUMN MAPPING ===
+
+We are already on Step 2 of 6 - Map Columns
+✓ File was uploaded successfully in previous run
+
+Step 3: Skipping tags
+
+❌ ERROR: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button:has-text("Next")').first()[22m
+
+node:internal/process/promises:288
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button:has-text("Next")').first()[22m
+
+    at C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\test_bug002_continue.js:46:20 {
+  name: 'TimeoutError'
+}
+
+Node.js v18.20.2

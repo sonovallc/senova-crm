@@ -1,0 +1,29 @@
+Logging in...
+✓ Login successful
+
+=== Test 1: Email Composer ===
+Variables button: FOUND ✓
+Dropdown opens: YES ✓
+
+=== Test 2: Campaign Wizard ===
+Variables button: FOUND ✓
+Dropdown opens: YES ✓
+
+=== Test 3: Autoresponders (Create) ===
+Initial check - Variables button: NOT FOUND ✗
+
+=== Test 4: Email Templates ===
+Variables button in modal: FOUND ✓
+Dropdown opens: YES ✓
+
+=== SUMMARY ===
+┌─────────┬───────────────────────────┬─────────────────┐
+│ (index) │         location          │ variablesButton │
+├─────────┼───────────────────────────┼─────────────────┤
+│    0    │     'Email Composer'      │    'FOUND ✓'    │
+│    1    │     'Campaign Wizard'     │    'FOUND ✓'    │
+│    2    │ 'Autoresponders (Create)' │  'NOT FOUND ✗'  │
+│    3    │ 'Email Templates (Modal)' │    'FOUND ✓'    │
+└─────────┴───────────────────────────┴─────────────────┘
+
+Pass Rate: 4/4 (100%)

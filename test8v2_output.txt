@@ -1,0 +1,38 @@
+=== TEST 8: EMAIL COMPOSE SELECT CONTACT & SEND (v2) ===
+
+This test verifies selecting a contact recipient and sending an email.
+
+Step 1: Login...
+Step 1: PASS - Logged in
+
+Step 2: Navigate to Email Compose...
+Step 2: PASS - On compose page
+
+Step 3: Click "Select from contacts" link...
+Clicked "Select from contacts" link
+Step 3: PASS - Contact selector opened
+
+Step 4: Select a contact...
+Contact selection dialog found
+Found 50 items with selector: [role="dialog"] [role="option"]
+  Item: "EditTest Modifiedtest_v4_1764120774285@test.com"
+Selected: "EditTest Modifiedtest_v4_1764120774285@t"
+Step 4: PASS - Contact selected
+
+Step 5: Select a template...
+Found 17 template options
+Selected template: "AutoTest_1764123249987Auto Subject 17641"
+Step 5: PASS - Template selected
+
+Step 6: Verify subject...
+Subject: "Auto Subject 1764123249987"
+Step 6: PASS
+
+Step 7: Check Send button...
+Send button disabled: false
+Step 7: PASS - Send button enabled
+
+Step 8: Click Send...
+Step 8: Send clicked, checking result...
+
+=== TEST 8 RESULT: PARTIAL PASS ===

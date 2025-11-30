@@ -1,0 +1,151 @@
+CONTACT EDIT PERSISTENCE BUG - INVESTIGATION REPORT
+====================================================
+
+ROOT CAUSE IDENTIFIED: Backend boolean field conversion bug
+
+SEVERITY: CRITICAL - All contact edits fail to persist
+
+QUESTIONS ANSWERED:
+===================
+
+1. What is the exact API endpoint called for contact update?
+   ANSWER: PUT /api/v1/contacts/{contact_id}
+   FILE: context-engineering-intro/frontend/src/lib/queries/contacts.ts
+   LINES: 51-54
+   
+   Code:
+   updateContact: async (id: string, data: Partial<Contact>): Promise<Contact> => {
+     const response = await api.put(`/api/v1/contacts/${id}`, data)
+     return response.data
+   }
+
+2. What fields are included in the request payload?
+   ANSWER: ALL fields - basic fields from React Hook Form MERGED with dynamic fields from state
+   FILE: context-engineering-intro/frontend/src/components/contacts/contact-form.tsx
+   LINES: 408-417
+   
+   Code:
+   const handleFormSubmit = (formData: ContactFormData) => {
+     const completeData = {
+       ...formData,        // first_name, last_name, email, phone, company, status
+       ...fieldValues,     // job_title, company_name, mobile_phone_dnc, etc. (100+ fields)
+     } as ContactFormData
+     onSubmit(completeData, contact ? undefined : tagIds)
+   }
+
+3. Does the backend ContactUpdate schema include ALL editable fields?
+   ANSWER: NO - Schema declares basic fields explicitly but relies on model_config = {"extra": "allow"} 
+           for dynamic fields. However, sanitization logic only recognizes 4 boolean fields out of 200+.
+   FILE: context-engineering-intro/backend/app/schemas/contact.py
+   LINES: 60-87
+   
+   Schema has:
+   - Explicit fields: email, phone, first_name, last_name, company, status, etc.
+   - Line 86: model_config = {"extra": "allow"}  <- Accepts unknown fields
+   - But sanitization doesn't process them correctly
+
+4. Is the API actually being called (or just showing success without calling)?
+   ANSWER: YES - API IS BEING CALLED and returns HTTP 200 SUCCESS
+           BUT changes don't actually persist to the database
+   FILE: context-engineering-intro/frontend/src/lib/queries/contacts.ts (line 52)
+   
+   EVIDENCE OF SILENT FAILURE:
+   - updateContact() is called (line 179 of contacts/page.tsx)
+   - HTTP 200 response received
+   - Query cache invalidated (lines 183-186)
+   - Success toast shown: "Contact updated successfully"
+   - BUT when user re-opens contact, original values are still there
+   - This proves API returns success but doesn't actually save data
+
+5. Is there a bug in the backend update logic?
+   ANSWER: YES - CRITICAL BUG in boolean field conversion
+   FILE: context-engineering-intro/backend/app/api/v1/contacts.py
+   LINES: 750-773
+   
+   THE BUG:
+   ---------
+   The code defines only 4 hardcoded boolean fields:
+   
+   boolean_fields = {
+       'homeowner', 'married', 'direct_number_dnc', 'mobile_phone_dnc',
+       'personal_phone_dnc', 'skiptrace_dnc'
+   }
+   
+   But Contact model has 200+ boolean fields:
+   - mobile_phone_2_dnc through mobile_phone_30_dnc (29 fields!)
+   - personal_phone_2_dnc through personal_phone_30_dnc (29 fields!)
+   - direct_number_2_dnc through direct_number_30_dnc (29 fields!)
+   - company_phone_2_dnc through company_phone_30_dnc (29 fields!)
+   
+   When frontend sends string boolean values like "true" or "false":
+   - Only 4 hardcoded fields are converted to actual booleans
+   - All 200+ other boolean fields remain as STRINGS
+   - SQLAlchemy can't convert string to Boolean column type
+   - Database silently skips the update for those fields
+   - db.commit() succeeds anyway - no error raised!
+   - User sees success message but data didn't save
+
+THE DATA FLOW OF FAILURE:
+==========================
+1. User edits contact (e.g., changes "Mobile Phone DNC" checkbox)
+2. Frontend collects data and calls updateContact()
+3. Sends: {"mobile_phone_2_dnc": "false", "first_name": "John", ...}
+4. Backend ContactUpdate schema accepts it (extra: allow)
+5. Backend sanitization code checks if 'mobile_phone_2_dnc' is in boolean_fields set
+6. FIELD NOT FOUND in hardcoded 4-field set
+7. String value "false" passed directly to SQLAlchemy
+8. SQLAlchemy column expects Boolean, gets String
+9. Database silently fails to update that field
+10. db.commit() succeeds (no error)
+11. Frontend gets HTTP 200, shows success toast
+12. User closes form, re-opens contact
+13. Database still has original values
+14. User sees no change was saved - frustration!
+
+AFFECTED FIELDS:
+================
+- 120+ phone overflow DNC flags (mobile_phone_2-30_dnc, etc.)
+- All 30 overflow phone numbers for each type
+- All 30 overflow email fields
+- All other dynamic boolean/numeric fields
+
+RECOMMENDED FIXES:
+==================
+
+FIX 1: Backend - Generate boolean_fields dynamically
+   Instead of hardcoding 4 fields, generate from Contact model:
+   FILE: backend/app/api/v1/contacts.py around line 751
+   
+   from sqlalchemy import inspect
+   mapper = inspect(Contact)
+   boolean_fields = set()
+   for column in mapper.columns:
+       if isinstance(column.type, Boolean):
+           boolean_fields.add(column.name)
+
+FIX 2: Frontend - Ensure type safety
+   Ensure boolean fields are sent as actual booleans:
+   FILE: frontend/src/components/contacts/contact-form.tsx
+   
+   const sanitizeForBackend = (data) => {
+     Object.keys(data).forEach(key => {
+       if (key.endsWith('_dnc') && typeof data[key] === 'string') {
+         data[key] = data[key].toLowerCase() === 'true'
+       }
+     })
+     return data
+   }
+
+FIX 3: Backend - Explicit schema for all fields
+   List all 200+ fields explicitly in ContactUpdate instead of relying on extra: allow
+
+CODE REFERENCE SUMMARY:
+=======================
+Question 1 - API endpoint:     frontend/src/lib/queries/contacts.ts         lines 51-54
+Question 2 - Fields sent:      frontend/src/components/contacts/contact-form.tsx  lines 408-417
+Question 3 - Schema coverage:  backend/app/schemas/contact.py             lines 60-87
+Question 4 - API called:       frontend/src/lib/queries/contacts.ts        line 52
+Question 5 - Backend bug:      backend/app/api/v1/contacts.py             lines 750-773
+
+BASELINE PATH: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2
+SUB PATH:      context-engineering-intro/

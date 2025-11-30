@@ -1,0 +1,752 @@
+{
+  "summary": {
+    "totalPages": 22,
+    "successfulLoads": 16,
+    "failedLoads": 6,
+    "pagesWithErrors": 7,
+    "contentViolations": [],
+    "brokenLinks": [],
+    "consoleErrors": [
+      {
+        "page": "about",
+        "errors": [
+          "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/privacy-p...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex flex-...\">\n                              <div className=\"flex-1 rel...\">\n                                <div>\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"your@email.com\"\n                                  className=\"relative w-full px-4 py-3 bg-senova-gray-800/50 backdrop-blur-sm border b...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                    ...\n                ...\n      ...\n",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        ]
+      },
+      {
+        "page": "patient-identification",
+        "errors": [
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/privacy-p...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex flex-...\">\n                              <div className=\"flex-1 rel...\">\n                                <div>\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"your@email.com\"\n                                  className=\"relative w-full px-4 py-3 bg-senova-gray-800/50 backdrop-blur-sm border b...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                    ...\n                ...\n      ...\n",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        ]
+      },
+      {
+        "page": "medical-spas",
+        "errors": [
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/privacy-p...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex flex-...\">\n                              <div className=\"flex-1 rel...\">\n                                <div>\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"your@email.com\"\n                                  className=\"relative w-full px-4 py-3 bg-senova-gray-800/50 backdrop-blur-sm border b...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                    ...\n                ...\n      ...\n",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        ]
+      },
+      {
+        "page": "dermatology",
+        "errors": [
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/privacy-p...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex flex-...\">\n                              <div className=\"flex-1 rel...\">\n                                <div>\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"your@email.com\"\n                                  className=\"relative w-full px-4 py-3 bg-senova-gray-800/50 backdrop-blur-sm border b...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                    ...\n                ...\n      ...\n",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        ]
+      },
+      {
+        "page": "plastic-surgery",
+        "errors": [
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/privacy-p...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex flex-...\">\n                              <div className=\"flex-1 rel...\">\n                                <div>\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"your@email.com\"\n                                  className=\"relative w-full px-4 py-3 bg-senova-gray-800/50 backdrop-blur-sm border b...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                    ...\n                ...\n      ...\n",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        ]
+      },
+      {
+        "page": "aesthetic-clinics",
+        "errors": [
+          "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/privacy-p...\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"layout\" pagePath=\"/src/(webs...\">\n          <SegmentTrieNode>\n          <WebsiteLayout>\n            <ChatProviderWrapper>\n              <ChatProvider>\n                <Header>\n                <main>\n                <Footer>\n                  <footer className=\"relative b...\">\n                    <div>\n                    <div>\n                    <div className=\"relative m...\">\n                      <div className=\"border-b b...\">\n                        <div className=\"grid grid-...\">\n                          <div>\n                          <div className=\"lg:text-ri...\" style={{...}}>\n                            <h3>\n                            <p>\n                            <form className=\"flex flex-...\">\n                              <div className=\"flex-1 rel...\">\n                                <div>\n                                <input\n                                  type=\"email\"\n                                  placeholder=\"your@email.com\"\n                                  className=\"relative w-full px-4 py-3 bg-senova-gray-800/50 backdrop-blur-sm border b...\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                      ...\n                    ...\n                ...\n      ...\n",
+          "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        ]
+      },
+      {
+        "page": "hipaa",
+        "errors": [
+          "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        ]
+      }
+    ],
+    "placeholderPages": [
+      "blog",
+      "case-studies",
+      "roi-calculator",
+      "docs"
+    ],
+    "incompletePages": [
+      "patient-identification",
+      "medical-spas",
+      "dermatology",
+      "plastic-surgery",
+      "aesthetic-clinics",
+      "hipaa"
+    ]
+  },
+  "pageDetails": {
+    "home": {
+      "name": "home",
+      "url": "/",
+      "category": "Core",
+      "status": "success",
+      "loadTime": 3437,
+      "issues": [
+        "Specific percentage claims: 50%, 50%, 100%, 100%, 50%, 100%, 100%, 100%, 100%, 40%, 50%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 50%, 50%, 40%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 50%, 50%, 50%, 40%, 50%, 50%",
+        "3 broken images"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 63,
+        "buttons": 9,
+        "images": 3,
+        "forms": 1,
+        "inputs": 1,
+        "headers": 30
+      }
+    },
+    "platform": {
+      "name": "platform",
+      "url": "/platform",
+      "category": "Core",
+      "status": "success",
+      "loadTime": 8785,
+      "issues": [
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%",
+        "5 broken images"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 55,
+        "buttons": 9,
+        "images": 7,
+        "forms": 1,
+        "inputs": 1,
+        "headers": 24
+      }
+    },
+    "pricing": {
+      "name": "pricing",
+      "url": "/pricing",
+      "category": "Core",
+      "status": "success",
+      "loadTime": 7113,
+      "issues": [
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 20%, 50%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 58,
+        "buttons": 12,
+        "images": 0,
+        "forms": 1,
+        "inputs": 1,
+        "headers": 26
+      }
+    },
+    "about": {
+      "name": "about",
+      "url": "/about",
+      "category": "Core",
+      "status": "success",
+      "loadTime": 5133,
+      "issues": [
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%",
+        "1 console errors"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 53,
+        "buttons": 10,
+        "images": 0,
+        "forms": 1,
+        "inputs": 1,
+        "headers": 25
+      }
+    },
+    "contact": {
+      "name": "contact",
+      "url": "/contact",
+      "category": "Core",
+      "status": "success",
+      "loadTime": 11357,
+      "issues": [
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 51,
+        "buttons": 22,
+        "images": 0,
+        "forms": 2,
+        "inputs": 17,
+        "headers": 11
+      }
+    },
+    "crm": {
+      "name": "crm",
+      "url": "/solutions/crm",
+      "category": "Solutions",
+      "status": "success",
+      "loadTime": 4513,
+      "issues": [
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 30%, 45%, 40%, 40%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 30%, 45%, 40%, 40%"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 55,
+        "buttons": 10,
+        "images": 0,
+        "forms": 1,
+        "inputs": 1,
+        "headers": 17
+      }
+    },
+    "audience-intelligence": {
+      "name": "audience-intelligence",
+      "url": "/solutions/audience-intelligence",
+      "category": "Solutions",
+      "status": "success",
+      "loadTime": 4485,
+      "issues": [
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 50%, 40%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 50%, 40%"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 56,
+        "buttons": 10,
+        "images": 0,
+        "forms": 1,
+        "inputs": 1,
+        "headers": 33
+      }
+    },
+    "patient-identification": {
+      "name": "patient-identification",
+      "url": "/solutions/patient-identification",
+      "category": "Solutions",
+      "status": "404",
+      "loadTime": 5393,
+      "issues": [
+        "Page not found (404)",
+        "Minimal content (7 words)",
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%",
+        "1 console errors"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 0,
+        "buttons": 1,
+        "images": 0,
+        "forms": 0,
+        "inputs": 0,
+        "headers": 2
+      }
+    },
+    "campaign-activation": {
+      "name": "campaign-activation",
+      "url": "/solutions/campaign-activation",
+      "category": "Solutions",
+      "status": "success",
+      "loadTime": 4130,
+      "issues": [
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 22%, 18%, 15%, 31%, 24%, 34%, 19%, 41%, 28%, 26%, 16%, 24%, 50%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 50%, 50%, 22%, 18%, 15%, 31%, 24%, 34%, 50%, 19%, 41%, 28%, 26%, 16%, 24%"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 55,
+        "buttons": 10,
+        "images": 0,
+        "forms": 1,
+        "inputs": 1,
+        "headers": 35
+      }
+    },
+    "analytics": {
+      "name": "analytics",
+      "url": "/solutions/analytics",
+      "category": "Solutions",
+      "status": "success",
+      "loadTime": 5591,
+      "issues": [
+        "Specific dollar claims: $47K, $47K",
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 47%, 100%, 60%, 25%, 45%, 62%, 40%, 25%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 47%, 100%, 60%, 25%, 45%, 62%, 40%, 25%"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 55,
+        "buttons": 10,
+        "images": 0,
+        "forms": 1,
+        "inputs": 1,
+        "headers": 34
+      }
+    },
+    "medical-spas": {
+      "name": "medical-spas",
+      "url": "/industries/medical-spas",
+      "category": "Industries",
+      "status": "404",
+      "loadTime": 1570,
+      "issues": [
+        "Page not found (404)",
+        "Minimal content (7 words)",
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%",
+        "1 console errors"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 0,
+        "buttons": 1,
+        "images": 0,
+        "forms": 0,
+        "inputs": 0,
+        "headers": 2
+      }
+    },
+    "dermatology": {
+      "name": "dermatology",
+      "url": "/industries/dermatology",
+      "category": "Industries",
+      "status": "404",
+      "loadTime": 1528,
+      "issues": [
+        "Page not found (404)",
+        "Minimal content (7 words)",
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%",
+        "1 console errors"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 0,
+        "buttons": 1,
+        "images": 0,
+        "forms": 0,
+        "inputs": 0,
+        "headers": 2
+      }
+    },
+    "plastic-surgery": {
+      "name": "plastic-surgery",
+      "url": "/industries/plastic-surgery",
+      "category": "Industries",
+      "status": "404",
+      "loadTime": 1451,
+      "issues": [
+        "Page not found (404)",
+        "Minimal content (7 words)",
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%",
+        "1 console errors"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 0,
+        "buttons": 1,
+        "images": 0,
+        "forms": 0,
+        "inputs": 0,
+        "headers": 2
+      }
+    },
+    "aesthetic-clinics": {
+      "name": "aesthetic-clinics",
+      "url": "/industries/aesthetic-clinics",
+      "category": "Industries",
+      "status": "404",
+      "loadTime": 1508,
+      "issues": [
+        "Page not found (404)",
+        "Minimal content (7 words)",
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%",
+        "1 console errors"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 0,
+        "buttons": 1,
+        "images": 0,
+        "forms": 0,
+        "inputs": 0,
+        "headers": 2
+      }
+    },
+    "privacy-policy": {
+      "name": "privacy-policy",
+      "url": "/privacy-policy",
+      "category": "Legal",
+      "status": "success",
+      "loadTime": 4822,
+      "issues": [
+        "Specific percentage claims: 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 54,
+        "buttons": 9,
+        "images": 0,
+        "forms": 1,
+        "inputs": 1,
+        "headers": 22
+      }
+    },
+    "terms-of-service": {
+      "name": "terms-of-service",
+      "url": "/terms-of-service",
+      "category": "Legal",
+      "status": "success",
+      "loadTime": 5930,
+      "issues": [
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 54,
+        "buttons": 10,
+        "images": 0,
+        "forms": 1,
+        "inputs": 1,
+        "headers": 28
+      }
+    },
+    "hipaa": {
+      "name": "hipaa",
+      "url": "/hipaa",
+      "category": "Legal",
+      "status": "404",
+      "loadTime": 1509,
+      "issues": [
+        "Page not found (404)",
+        "Minimal content (7 words)",
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%",
+        "1 console errors"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 0,
+        "buttons": 1,
+        "images": 0,
+        "forms": 0,
+        "inputs": 0,
+        "headers": 2
+      }
+    },
+    "security": {
+      "name": "security",
+      "url": "/security",
+      "category": "Legal",
+      "status": "success",
+      "loadTime": 4309,
+      "issues": [
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 99%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 99%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 99%, 99%"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 55,
+        "buttons": 10,
+        "images": 0,
+        "forms": 1,
+        "inputs": 1,
+        "headers": 21
+      }
+    },
+    "blog": {
+      "name": "blog",
+      "url": "/blog",
+      "category": "Placeholder",
+      "status": "success",
+      "loadTime": 5183,
+      "issues": [
+        "Placeholder content detected",
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 52,
+        "buttons": 10,
+        "images": 0,
+        "forms": 1,
+        "inputs": 1,
+        "headers": 7
+      }
+    },
+    "case-studies": {
+      "name": "case-studies",
+      "url": "/case-studies",
+      "category": "Placeholder",
+      "status": "success",
+      "loadTime": 4524,
+      "issues": [
+        "Placeholder content detected",
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 52,
+        "buttons": 10,
+        "images": 0,
+        "forms": 1,
+        "inputs": 1,
+        "headers": 7
+      }
+    },
+    "roi-calculator": {
+      "name": "roi-calculator",
+      "url": "/roi-calculator",
+      "category": "Placeholder",
+      "status": "success",
+      "loadTime": 7400,
+      "issues": [
+        "Placeholder content detected",
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 53,
+        "buttons": 10,
+        "images": 0,
+        "forms": 1,
+        "inputs": 1,
+        "headers": 7
+      }
+    },
+    "docs": {
+      "name": "docs",
+      "url": "/docs",
+      "category": "Placeholder",
+      "status": "success",
+      "loadTime": 7969,
+      "issues": [
+        "Placeholder content detected",
+        "Specific percentage claims: 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 90%, 90%, 90%, 90%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%, 100%, 50%, 50%, 100%, 100%, 100%, 100%, 100%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%, 40%, 40%, 60%, 60%"
+      ],
+      "contentChecks": {},
+      "stats": {
+        "links": 53,
+        "buttons": 10,
+        "images": 0,
+        "forms": 1,
+        "inputs": 1,
+        "headers": 7
+      }
+    }
+  },
+  "navigation": {
+    "headerLinks": [
+      {
+        "text": "S\nSenova",
+        "href": "/"
+      },
+      {
+        "text": "Overview\nComplete platform capabilities",
+        "href": "/platform"
+      },
+      {
+        "text": "CRM Features\nCustomer relationship management",
+        "href": "/solutions/crm"
+      },
+      {
+        "text": "CRM\n360° customer management",
+        "href": "/solutions/crm"
+      },
+      {
+        "text": "Audience Intelligence\nData-driven customer insights",
+        "href": "/solutions/audience-intelligence"
+      },
+      {
+        "text": "Visitor Identification\nIdentify website visitors",
+        "href": "/solutions/visitor-identification"
+      },
+      {
+        "text": "Campaign Activation\nMulti-channel marketing",
+        "href": "/solutions/campaign-activation"
+      },
+      {
+        "text": "Analytics\nROI & performance tracking",
+        "href": "/solutions/analytics"
+      },
+      {
+        "text": "Restaurants\nRestaurant management solutions",
+        "href": "/industries/restaurants"
+      },
+      {
+        "text": "Home Services\nFor contractors and service pros",
+        "href": "/industries/home-services"
+      },
+      {
+        "text": "Retail & E-commerce\nRetail business growth",
+        "href": "/industries/retail"
+      },
+      {
+        "text": "Professional Services\nFor consultants and agencies",
+        "href": "/industries/professional-services"
+      },
+      {
+        "text": "Pricing",
+        "href": "/pricing"
+      },
+      {
+        "text": "About",
+        "href": "/about"
+      },
+      {
+        "text": "Contact",
+        "href": "/contact"
+      },
+      {
+        "text": "Login",
+        "href": "/login"
+      },
+      {
+        "text": "Get Demo",
+        "href": "/demo"
+      },
+      {
+        "text": "Overview",
+        "href": "/platform"
+      },
+      {
+        "text": "CRM Features",
+        "href": "/solutions/crm"
+      },
+      {
+        "text": "CRM",
+        "href": "/solutions/crm"
+      },
+      {
+        "text": "Audience Intelligence",
+        "href": "/solutions/audience-intelligence"
+      },
+      {
+        "text": "Visitor Identification",
+        "href": "/solutions/visitor-identification"
+      },
+      {
+        "text": "Campaign Activation",
+        "href": "/solutions/campaign-activation"
+      },
+      {
+        "text": "Analytics",
+        "href": "/solutions/analytics"
+      },
+      {
+        "text": "Restaurants",
+        "href": "/industries/restaurants"
+      },
+      {
+        "text": "Home Services",
+        "href": "/industries/home-services"
+      },
+      {
+        "text": "Retail & E-commerce",
+        "href": "/industries/retail"
+      },
+      {
+        "text": "Professional Services",
+        "href": "/industries/professional-services"
+      },
+      {
+        "text": "Pricing",
+        "href": "/pricing"
+      },
+      {
+        "text": "About",
+        "href": "/about"
+      },
+      {
+        "text": "Contact",
+        "href": "/contact"
+      },
+      {
+        "text": "Login",
+        "href": "/login"
+      },
+      {
+        "text": "Get Demo",
+        "href": "/demo"
+      }
+    ],
+    "footerLinks": [
+      {
+        "text": "About Us",
+        "href": "/about"
+      },
+      {
+        "text": "Contact",
+        "href": "/contact"
+      },
+      {
+        "text": "CRM Platform",
+        "href": "/platform"
+      },
+      {
+        "text": "Customer Intelligence",
+        "href": "/solutions/audience-intelligence"
+      },
+      {
+        "text": "Website Visitor Tracking",
+        "href": "/solutions/visitor-identification"
+      },
+      {
+        "text": "Smart Advertising",
+        "href": "/solutions/campaign-activation"
+      },
+      {
+        "text": "Analytics Dashboard",
+        "href": "/solutions/analytics"
+      },
+      {
+        "text": "Restaurants & Food",
+        "href": "/industries/restaurants"
+      },
+      {
+        "text": "Home Services",
+        "href": "/industries/home-services"
+      },
+      {
+        "text": "Retail & E-commerce",
+        "href": "/industries/retail"
+      },
+      {
+        "text": "Professional Services",
+        "href": "/industries/professional-services"
+      },
+      {
+        "text": "Privacy Policy",
+        "href": "/privacy-policy"
+      },
+      {
+        "text": "Terms of Service",
+        "href": "/terms-of-service"
+      },
+      {
+        "text": "Data Security",
+        "href": "/security"
+      },
+      {
+        "text": "Compliance",
+        "href": "/compliance"
+      },
+      {
+        "text": "",
+        "href": "https://linkedin.com/company/senova"
+      },
+      {
+        "text": "",
+        "href": "https://twitter.com/senovacrm"
+      },
+      {
+        "text": "",
+        "href": "https://youtube.com/@senovacrm"
+      }
+    ],
+    "brokenNavLinks": []
+  }
+}

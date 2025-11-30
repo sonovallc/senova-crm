@@ -1,0 +1,33 @@
+=== TIMING MODES VERIFICATION TEST ===
+
+✓ Logged in
+
+✓ Sequence step added
+
+TEST 1: FIXED_DURATION Mode
+  ✓ Timing Mode selector: VISIBLE
+  ✓ Delay (Days) field: VISIBLE
+  ✓ Delay (Hours) field: VISIBLE
+  ✓ Description text: VISIBLE
+  ✅ PASS: FIXED_DURATION mode correct!
+
+TEST 2: WAIT_FOR_TRIGGER Mode
+  ✓ Trigger Event selector: VISIBLE
+  ✓ Delay fields hidden: YES
+  ✓ Description text: VISIBLE
+  ✅ PASS: WAIT_FOR_TRIGGER mode correct!
+
+TEST 3: EITHER_OR Mode
+  ✓ Delay (Days) field: VISIBLE
+  ✓ Delay (Hours) field: VISIBLE
+  ✓ Trigger Event selector: VISIBLE
+  ✓ Description text: MISSING
+  ✅ PASS: EITHER_OR mode shows BOTH inputs!
+
+=== TEST COMPLETE ===
+
+📊 FINAL SUMMARY:
+✓ All three timing modes tested
+✓ Conditional rendering verified
+✓ Screenshots captured as evidence
+

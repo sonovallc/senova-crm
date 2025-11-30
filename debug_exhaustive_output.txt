@@ -1,0 +1,103 @@
+🚀 Starting Exhaustive Email Features Debug Session
+📅 Timestamp: 2025-11-24T21:24:15.347Z
+📁 Screenshots: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\debug-exhaustive-email-final
+
+
+═══════════════════════════════════════
+🔐 FEATURE 0: LOGIN
+═══════════════════════════════════════
+
+🔴 Console Error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <RedirectErrorBoundary router={{...}}>
+      <InnerLayoutRouter url="/login" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>
+        <SegmentViewNode type="page" pagePath="/src/(auth...">
+          <SegmentTrieNode>
+          <ClientPageRoot Component={function LoginPage} searchParams={{}} params={{}}>
+            <LoginPage params={Promise} searchParams={Promise}>
+              <div className="flex min-h...">
+                <LinkComponent>
+                <_c className="w-full max...">
+                  <div ref={null} className="rounded-lg...">
+                    <_c2>
+                    <_c8>
+                      <div ref={null} className="p-6 pt-0">
+                        <form suppressHydrationWarning={true} onSubmit={function} className="space-y-4">
+                          <div className="space-y-2">
+                            <_c>
+                            <_c id="email" type="email" placeholder="name@examp..." name="email" ...>
+                              <input
+                                type="email"
+                                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 tex..."
+                                ref={function ref}
+                                id="email"
+                                placeholder="name@example.com"
+                                name="email"
+                                onChange={function onChange}
+                                onBlur={function onChange}
+                                disabled={false}
+-                               style={{caret-color:"transparent"}}
+                              >
+                          <div className="space-y-2">
+                            <_c>
+                            <_c id="password" type="password" placeholder="••••••••" name="password" ...>
+                              <input
+                                type="password"
+                                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 tex..."
+                                ref={function ref}
+                                id="password"
+                                placeholder="••••••••"
+                                name="password"
+                                onChange={function onChange}
+                                onBlur={function onChange}
+                                disabled={false}
+-                               style={{caret-color:"transparent"}}
+                              >
+                          ...
+                    ...
+        ...
+      ...
+
+📸 Screenshot saved: login-page-2025-11-24T21-24-18-122Z.png
+📸 Screenshot saved: dashboard-after-login-2025-11-24T21-24-27-152Z.png
+✅ [Login] Login successful: PASS
+
+═══════════════════════════════════════
+✉️ FEATURE 1: EMAIL COMPOSER
+═══════════════════════════════════════
+
+📸 Screenshot saved: composer-initial-2025-11-24T21-24-40-676Z.png
+✅ [Composer] Page loads: PASS
+✅ [Composer] Back to Inbox button visible: PASS
+
+--- Testing Template Dropdown ---
+📸 Screenshot saved: composer-template-dropdown-open-2025-11-24T21-24-42-112Z.png
+Found 14 template options
+Testing template option 1: This is my test templateThis is a test to {{first_name}} with {{company}}
+❌ Test execution error: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[role="option"], [role="menuitem"]').first()[22m
+
+    at runTests (C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\test_exhaustive_email_features.js:165:20) {
+  name: 'TimeoutError'
+}
+📸 Screenshot saved: test-error-2025-11-24T21-25-12-939Z.png
+
+❌ Test session failed: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[role="option"], [role="menuitem"]').first()[22m
+
+    at runTests (C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\test_exhaustive_email_features.js:165:20) {
+  name: 'TimeoutError'
+}

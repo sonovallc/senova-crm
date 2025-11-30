@@ -1,0 +1,316 @@
+========================================
+SENOVA WEBSITE - EXHAUSTIVE DEBUG TEST
+========================================
+Base URL: http://localhost:3004
+Screenshots: C:/Users/jwood/Documents/Projects/claude-code-agents-wizard-v2/screenshots/senova-exhaustive-debug
+Started: 2025-11-28T06:23:51.658Z
+
+========== TESTING PUBLIC PAGES ==========
+
+[1] Testing Home (/)
+  ❌ Error testing page: page.goto: Timeout 30000ms exceeded.
+Call log:
+[2m  - navigating to "http://localhost:3004/", waiting until "networkidle"[22m
+
+  Status: ERROR
+  Issues: page.goto: Timeout 30000ms exceeded.
+Call log:
+[2m  - navigating to "http://localhost:3004/", waiting until "networkidle"[22m
+
+
+[2] Testing Platform (/platform)
+  ✅ Page loaded successfully
+  Found 61 links
+    Testing link: "SSenova" -> /
+    Testing link: "OverviewComplete platform capabilities" -> /platform
+    Testing link: "CRM FeaturesPatient relationship management" -> /solutions/crm
+    Testing link: "CRM360° patient management" -> /solutions/crm
+    Testing link: "Audience IntelligenceData-driven patient insights" -> /solutions/audience-intelligence
+  Found 13 buttons
+    Button "Platform" is visible
+    Button "Solutions" is visible
+    Button "Industries" is visible
+  Found 0 dropdowns
+  Found 1 forms
+    Form 1 has 1 inputs
+  Status: FAILED
+  Issues: Contains forbidden content: "60%", 1 console errors found
+
+[3] Testing Pricing (/pricing)
+  ✅ Page loaded successfully
+  Found 64 links
+    Testing link: "SSenova" -> /
+    Testing link: "OverviewComplete platform capabilities" -> /platform
+    Testing link: "CRM FeaturesPatient relationship management" -> /solutions/crm
+    Testing link: "CRM360° patient management" -> /solutions/crm
+    Testing link: "Audience IntelligenceData-driven patient insights" -> /solutions/audience-intelligence
+  Found 13 buttons
+    Button "Platform" is visible
+    Button "Solutions" is visible
+    Button "Industries" is visible
+  Found 0 dropdowns
+  Found 1 forms
+    Form 1 has 1 inputs
+  Status: FAILED
+  Issues: Contains forbidden content: "60%"
+
+[4] Testing About (/about)
+  ✅ Page loaded successfully
+  Found 59 links
+    Testing link: "SSenova" -> /
+    Testing link: "OverviewComplete platform capabilities" -> /platform
+    Testing link: "CRM FeaturesPatient relationship management" -> /solutions/crm
+    Testing link: "CRM360° patient management" -> /solutions/crm
+    Testing link: "Audience IntelligenceData-driven patient insights" -> /solutions/audience-intelligence
+  Found 13 buttons
+    Button "Platform" is visible
+    Button "Solutions" is visible
+    Button "Industries" is visible
+  Found 0 dropdowns
+  Found 1 forms
+    Form 1 has 1 inputs
+  Status: FAILED
+  Issues: Contains forbidden content: "60%", 1 console errors found
+
+[5] Testing Contact (/contact)
+  ✅ Page loaded successfully
+  Found 57 links
+    Testing link: "SSenova" -> /
+    Testing link: "OverviewComplete platform capabilities" -> /platform
+    Testing link: "CRM FeaturesPatient relationship management" -> /solutions/crm
+    Testing link: "CRM360° patient management" -> /solutions/crm
+    Testing link: "Audience IntelligenceData-driven patient insights" -> /solutions/audience-intelligence
+  Found 25 buttons
+    Button "Platform" is visible
+    Button "Solutions" is visible
+    Button "Industries" is visible
+  Found 1 dropdowns
+  Found 2 forms
+    Form 1 has 16 inputs
+    Form 2 has 1 inputs
+  Status: FAILED
+  Issues: Contains forbidden content: "60%", 1 console errors found
+
+[6] Testing CRM Solution (/solutions/crm)
+  ✅ Page loaded successfully
+  Found 61 links
+    Testing link: "SSenova" -> /
+    Testing link: "OverviewComplete platform capabilities" -> /platform
+    Testing link: "CRM FeaturesPatient relationship management" -> /solutions/crm
+    Testing link: "CRM360° patient management" -> /solutions/crm
+    Testing link: "Audience IntelligenceData-driven patient insights" -> /solutions/audience-intelligence
+  Found 13 buttons
+    Button "Platform" is visible
+    Button "Solutions" is visible
+    Button "Industries" is visible
+  Found 0 dropdowns
+  Found 1 forms
+    Form 1 has 1 inputs
+  Status: FAILED
+  Issues: Contains forbidden content: "60%", Contains forbidden content: "3X", 1 console errors found
+
+[7] Testing Audience Intelligence (/solutions/audience-intelligence)
+  ❌ Page load failed: 500
+  Found 2 links
+    Testing link: "Next.js 15.5.6 (outdated)Webpack" -> https://nextjs.org/docs/messages/version-staleness
+    Testing link: "" -> https://nextjs.org/docs/app/building-your-application/configuring/debugging#server-side-code
+  Found 7 buttons
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+  Found 0 dropdowns
+  Found 0 forms
+  Status: FAILED
+  Issues: Page returned status 500, 6 console errors found
+
+[8] Testing Patient Identification (/solutions/patient-identification)
+  ❌ Error testing page: page.goto: net::ERR_ABORTED at http://localhost:3004/solutions/patient-identification
+Call log:
+[2m  - navigating to "http://localhost:3004/solutions/patient-identification", waiting until "networkidle"[22m
+
+  Status: ERROR
+  Issues: page.goto: net::ERR_ABORTED at http://localhost:3004/solutions/patient-identification
+Call log:
+[2m  - navigating to "http://localhost:3004/solutions/patient-identification", waiting until "networkidle"[22m
+
+
+[9] Testing Campaign Activation (/solutions/campaign-activation)
+  ❌ Page load failed: unknown
+  Found 2 links
+    Testing link: "Next.js 15.5.6 (outdated)Webpack" -> https://nextjs.org/docs/messages/version-staleness
+    Testing link: "" -> https://nextjs.org/docs/app/building-your-application/configuring/debugging#server-side-code
+  Found 7 buttons
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+  Found 0 dropdowns
+  Found 0 forms
+  Status: FAILED
+  Issues: Page returned status unknown, 6 console errors found
+
+[10] Testing Analytics (/solutions/analytics)
+  ❌ Error testing page: page.goto: net::ERR_ABORTED at http://localhost:3004/solutions/analytics
+Call log:
+[2m  - navigating to "http://localhost:3004/solutions/analytics", waiting until "networkidle"[22m
+
+  Status: ERROR
+  Issues: page.goto: net::ERR_ABORTED at http://localhost:3004/solutions/analytics
+Call log:
+[2m  - navigating to "http://localhost:3004/solutions/analytics", waiting until "networkidle"[22m
+
+
+[11] Testing Medical Spas (/industries/medical-spas)
+  ❌ Page load failed: unknown
+  Found 2 links
+    Testing link: "Next.js 15.5.6 (outdated)Webpack" -> https://nextjs.org/docs/messages/version-staleness
+    Testing link: "" -> https://nextjs.org/docs/app/building-your-application/configuring/debugging#server-side-code
+  Found 7 buttons
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+  Found 0 dropdowns
+  Found 0 forms
+  Status: FAILED
+  Issues: Page returned status unknown, 9 console errors found
+
+[12] Testing Dermatology (/industries/dermatology)
+  ❌ Error testing page: page.goto: net::ERR_ABORTED at http://localhost:3004/industries/dermatology
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/dermatology", waiting until "networkidle"[22m
+
+  Status: ERROR
+  Issues: page.goto: net::ERR_ABORTED at http://localhost:3004/industries/dermatology
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/dermatology", waiting until "networkidle"[22m
+
+
+[13] Testing Plastic Surgery (/industries/plastic-surgery)
+  ❌ Page load failed: unknown
+  Found 2 links
+    Testing link: "Next.js 15.5.6 (outdated)Webpack" -> https://nextjs.org/docs/messages/version-staleness
+    Testing link: "" -> https://nextjs.org/docs/app/building-your-application/configuring/debugging#server-side-code
+  Found 7 buttons
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+  Found 0 dropdowns
+  Found 0 forms
+  Status: FAILED
+  Issues: Page returned status unknown, 6 console errors found
+
+[14] Testing Aesthetic Clinics (/industries/aesthetic-clinics)
+  ❌ Error testing page: page.goto: net::ERR_ABORTED at http://localhost:3004/industries/aesthetic-clinics
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/aesthetic-clinics", waiting until "networkidle"[22m
+
+  Status: ERROR
+  Issues: page.goto: net::ERR_ABORTED at http://localhost:3004/industries/aesthetic-clinics
+Call log:
+[2m  - navigating to "http://localhost:3004/industries/aesthetic-clinics", waiting until "networkidle"[22m
+
+
+[15] Testing Privacy Policy (/privacy-policy)
+  ❌ Page load failed: unknown
+  Found 2 links
+    Testing link: "Next.js 15.5.6 (outdated)Webpack" -> https://nextjs.org/docs/messages/version-staleness
+    Testing link: "" -> https://nextjs.org/docs/app/building-your-application/configuring/debugging#server-side-code
+  Found 7 buttons
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+  Found 0 dropdowns
+  Found 0 forms
+  Status: FAILED
+  Issues: Page returned status unknown, 9 console errors found
+
+[16] Testing Terms of Service (/terms-of-service)
+  ❌ Error testing page: page.goto: net::ERR_ABORTED at http://localhost:3004/terms-of-service
+Call log:
+[2m  - navigating to "http://localhost:3004/terms-of-service", waiting until "networkidle"[22m
+
+  Status: ERROR
+  Issues: page.goto: net::ERR_ABORTED at http://localhost:3004/terms-of-service
+Call log:
+[2m  - navigating to "http://localhost:3004/terms-of-service", waiting until "networkidle"[22m
+
+
+[17] Testing HIPAA (/hipaa)
+  ❌ Page load failed: unknown
+  Found 2 links
+    Testing link: "Next.js 15.5.6 (outdated)Webpack" -> https://nextjs.org/docs/messages/version-staleness
+    Testing link: "" -> https://nextjs.org/docs/app/building-your-application/configuring/debugging#server-side-code
+  Found 7 buttons
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+  Found 0 dropdowns
+  Found 0 forms
+  Status: FAILED
+  Issues: Page returned status unknown, 6 console errors found
+
+[18] Testing Security (/security)
+  ❌ Error testing page: page.goto: net::ERR_ABORTED at http://localhost:3004/security
+Call log:
+[2m  - navigating to "http://localhost:3004/security", waiting until "networkidle"[22m
+
+  Status: ERROR
+  Issues: page.goto: net::ERR_ABORTED at http://localhost:3004/security
+Call log:
+[2m  - navigating to "http://localhost:3004/security", waiting until "networkidle"[22m
+
+
+[19] Testing Login (/login)
+  ❌ Page load failed: unknown
+  Found 2 links
+    Testing link: "Next.js 15.5.6 (outdated)Webpack" -> https://nextjs.org/docs/messages/version-staleness
+    Testing link: "" -> https://nextjs.org/docs/app/building-your-application/configuring/debugging#server-side-code
+  Found 7 buttons
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+    Button "" is visible
+  Found 0 dropdowns
+  Found 0 forms
+  Status: FAILED
+  Issues: Page returned status unknown, 6 console errors found
+
+[20] Testing Demo (/demo)
+  ❌ Error testing page: page.goto: net::ERR_ABORTED at http://localhost:3004/demo
+Call log:
+[2m  - navigating to "http://localhost:3004/demo", waiting until "networkidle"[22m
+
+  Status: ERROR
+  Issues: page.goto: net::ERR_ABORTED at http://localhost:3004/demo
+Call log:
+[2m  - navigating to "http://localhost:3004/demo", waiting until "networkidle"[22m
+
+
+========== TESTING DASHBOARD (AFTER LOGIN) ==========
+Logging in...
+❌ Dashboard test error: page.fill: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[type="email"]')[22m
+
+
+========== TESTING MOBILE VIEWPORT ==========
+Fatal error: page.goto: net::ERR_ABORTED at http://localhost:3004/
+Call log:
+[2m  - navigating to "http://localhost:3004/", waiting until "networkidle"[22m
+
+    at testMobileView (C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\test_senova_exhaustive_debug.js:354:16)
+    at async main (C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\test_senova_exhaustive_debug.js:504:9) {
+  name: 'Error'
+}

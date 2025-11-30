@@ -1,0 +1,326 @@
+{
+  "path": "/hipaa",
+  "seo": {
+    "title": "HIPAA Compliance Built-In | Senova Medical Data Security",
+    "description": "Full HIPAA compliance with BAA included. 256-bit encryption, audit logs, access controls. Protecting patient data for 500+ practices.",
+    "keywords": ["HIPAA compliance", "medical data security", "BAA agreement", "PHI protection", "healthcare compliance"],
+    "og_image": "HIPAA compliance certification badge"
+  },
+  "hero": {
+    "headline": "100% HIPAA Compliant from Day One",
+    "subheadline": "Enterprise-level security and compliance built into every aspect of Senova. BAA included with every plan at no extra cost.",
+    "cta_primary": {
+      "text": "Get Security Overview",
+      "link": "/demo"
+    },
+    "cta_secondary": {
+      "text": "Download BAA Template",
+      "link": "/resources/baa-template"
+    },
+    "badges": [
+      "HIPAA Compliant",
+      "SOC 2 Type II",
+      "256-bit Encryption",
+      "BAA Included"
+    ]
+  },
+  "sections": [
+    {
+      "type": "overview",
+      "headline": "Complete HIPAA Compliance Solution",
+      "content": "Senova is designed from the ground up to meet and exceed HIPAA requirements for protecting patient health information (PHI). We serve as a Business Associate to covered entities and maintain comprehensive safeguards to ensure the confidentiality, integrity, and availability of all PHI.",
+      "key_points": [
+        "Business Associate Agreement (BAA) included with all plans",
+        "No additional fees for HIPAA compliance features",
+        "Regular third-party security audits",
+        "Comprehensive staff training on HIPAA requirements",
+        "24/7 monitoring and incident response"
+      ]
+    },
+    {
+      "type": "technical_safeguards",
+      "headline": "Technical Safeguards",
+      "description": "Advanced technical controls protect PHI at every level",
+      "safeguards": [
+        {
+          "control": "Access Control",
+          "implementation": [
+            "Unique user identification for every account",
+            "Automatic logoff after 15 minutes of inactivity",
+            "Role-based access controls (RBAC)",
+            "Multi-factor authentication (MFA) available",
+            "Encryption of user credentials"
+          ]
+        },
+        {
+          "control": "Audit Controls",
+          "implementation": [
+            "Comprehensive audit logs of all PHI access",
+            "Real-time monitoring of suspicious activity",
+            "Log retention for minimum 7 years",
+            "Tamper-proof audit trail",
+            "Regular audit log reviews"
+          ]
+        },
+        {
+          "control": "Integrity Controls",
+          "implementation": [
+            "Electronic mechanisms to verify PHI integrity",
+            "Version control for all records",
+            "Automated backups every 4 hours",
+            "Checksum validation",
+            "Change tracking and history"
+          ]
+        },
+        {
+          "control": "Transmission Security",
+          "implementation": [
+            "256-bit SSL/TLS encryption for all data in transit",
+            "VPN options for enhanced security",
+            "Encrypted email communications",
+            "Secure file transfer protocols",
+            "End-to-end encryption for sensitive operations"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "physical_safeguards",
+      "headline": "Physical Safeguards",
+      "description": "Data center and facility security measures",
+      "safeguards": [
+        {
+          "area": "Data Centers",
+          "measures": [
+            "SOC 2 Type II certified facilities",
+            "24/7 physical security personnel",
+            "Biometric access controls",
+            "Security cameras and monitoring",
+            "Environmental controls and redundancy"
+          ]
+        },
+        {
+          "area": "Workstation Security",
+          "measures": [
+            "Encrypted workstation hard drives",
+            "Automatic screen locks",
+            "Remote wipe capabilities",
+            "Secure disposal procedures",
+            "Mobile device management"
+          ]
+        },
+        {
+          "area": "Device Controls",
+          "measures": [
+            "Inventory of all devices accessing PHI",
+            "Encryption requirements for all devices",
+            "Regular security updates",
+            "Prohibited use of personal devices",
+            "Secure media disposal"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "administrative_safeguards",
+      "headline": "Administrative Safeguards",
+      "description": "Policies and procedures to ensure HIPAA compliance",
+      "safeguards": [
+        {
+          "category": "Workforce Training",
+          "items": [
+            "HIPAA training for all employees upon hire",
+            "Annual refresher training",
+            "Role-specific security training",
+            "Incident response training",
+            "Documentation of all training"
+          ]
+        },
+        {
+          "category": "Access Management",
+          "items": [
+            "Background checks for all employees",
+            "Minimum necessary access principle",
+            "Regular access reviews and updates",
+            "Immediate termination of access upon departure",
+            "Privileged access management"
+          ]
+        },
+        {
+          "category": "Risk Management",
+          "items": [
+            "Annual risk assessments",
+            "Vulnerability scanning and penetration testing",
+            "Security incident response plan",
+            "Business continuity planning",
+            "Disaster recovery procedures"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "baa_included",
+      "headline": "Business Associate Agreement (BAA)",
+      "content": "Every Senova customer receives a signed Business Associate Agreement at no additional cost. Our BAA covers:",
+      "coverage": [
+        "Clear definition of PHI handling responsibilities",
+        "Commitment to implement all required safeguards",
+        "Incident reporting within 24 hours",
+        "Cooperation with breach investigations",
+        "Return or destruction of PHI upon termination",
+        "Subcontractor compliance requirements",
+        "Indemnification provisions"
+      ],
+      "cta": {
+        "text": "Request Your BAA",
+        "link": "/contact"
+      }
+    },
+    {
+      "type": "breach_response",
+      "headline": "Breach Response Protocol",
+      "description": "In the unlikely event of a security incident:",
+      "steps": [
+        {
+          "timeframe": "Immediate",
+          "action": "Incident containment and investigation begins"
+        },
+        {
+          "timeframe": "Within 24 hours",
+          "action": "Initial notification to affected customers"
+        },
+        {
+          "timeframe": "Within 72 hours",
+          "action": "Detailed incident report and remediation plan"
+        },
+        {
+          "timeframe": "Within 60 days",
+          "action": "Required regulatory notifications completed"
+        },
+        {
+          "timeframe": "Ongoing",
+          "action": "Support for affected parties and prevention improvements"
+        }
+      ]
+    },
+    {
+      "type": "compliance_features",
+      "headline": "Built-In Compliance Features",
+      "features": [
+        {
+          "feature": "Automatic Audit Logs",
+          "description": "Every access, modification, and transmission of PHI is logged automatically"
+        },
+        {
+          "feature": "Data Encryption",
+          "description": "256-bit AES encryption at rest and in transit for all PHI"
+        },
+        {
+          "feature": "Access Controls",
+          "description": "Granular role-based permissions with principle of least privilege"
+        },
+        {
+          "feature": "Data Backup",
+          "description": "Automated encrypted backups with point-in-time recovery"
+        },
+        {
+          "feature": "Consent Management",
+          "description": "Track and manage patient consent for data use and marketing"
+        },
+        {
+          "feature": "Data Retention",
+          "description": "Configurable retention policies with automatic purging"
+        }
+      ]
+    },
+    {
+      "type": "certifications",
+      "headline": "Third-Party Validations",
+      "certifications": [
+        {
+          "cert": "SOC 2 Type II",
+          "description": "Annual audit of security controls and processes",
+          "auditor": "Independent CPA firm"
+        },
+        {
+          "cert": "HIPAA Risk Assessment",
+          "description": "Comprehensive evaluation of HIPAA compliance",
+          "auditor": "Healthcare security specialists"
+        },
+        {
+          "cert": "Penetration Testing",
+          "description": "Quarterly security testing by ethical hackers",
+          "auditor": "Third-party security firm"
+        },
+        {
+          "cert": "Vulnerability Scanning",
+          "description": "Continuous automated security scanning",
+          "auditor": "Industry-leading security tools"
+        }
+      ]
+    },
+    {
+      "type": "customer_responsibilities",
+      "headline": "Shared Responsibility Model",
+      "description": "While we handle the technical compliance, customers must:",
+      "responsibilities": [
+        "Train staff on HIPAA requirements",
+        "Manage user access appropriately",
+        "Report incidents promptly",
+        "Use strong passwords and MFA",
+        "Follow minimum necessary principles",
+        "Maintain physical security of devices",
+        "Obtain patient consent as required"
+      ]
+    },
+    {
+      "type": "faq",
+      "headline": "HIPAA Compliance FAQs",
+      "questions": [
+        {
+          "question": "Is the BAA really included at no extra cost?",
+          "answer": "Yes! Every Senova plan includes a signed BAA at no additional charge. We believe HIPAA compliance shouldn't be a premium feature."
+        },
+        {
+          "question": "How quickly can I get a signed BAA?",
+          "answer": "We typically provide signed BAAs within 24 hours of request. For new customers, it's included in your onboarding package."
+        },
+        {
+          "question": "Do you support HIPAA audits?",
+          "answer": "Absolutely. We provide all necessary documentation and support for HIPAA audits, including audit logs and compliance reports."
+        },
+        {
+          "question": "What about subcontractors?",
+          "answer": "All our subcontractors who may access PHI are required to sign BAAs and maintain HIPAA compliance."
+        },
+        {
+          "question": "How do you handle state-specific requirements?",
+          "answer": "Our compliance framework meets or exceeds all state requirements. We stay updated on evolving regulations."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "headline": "Security You Can Trust",
+      "subheadline": "Join 500+ healthcare practices that trust Senova with their patient data",
+      "primary_cta": {
+        "text": "Get Security Demo",
+        "link": "/demo"
+      },
+      "secondary_cta": {
+        "text": "Download Compliance Guide",
+        "link": "/resources/hipaa-guide"
+      }
+    }
+  ],
+  "schema_markup": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "HIPAA Compliance",
+    "description": "Senova's HIPAA compliance and healthcare data security measures",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Senova"
+    }
+  }
+}

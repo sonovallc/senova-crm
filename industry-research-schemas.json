@@ -1,0 +1,551 @@
+{
+  "industries": [
+    {
+      "name": "Legal & Law Firms",
+      "slug": "legal-attorneys",
+      "tagline": "Transform Your Law Practice with Intelligent Client Management",
+      "description": "Senova CRM empowers law firms to streamline case management, automate client intake, and maximize billable hours while maintaining compliance and client satisfaction.",
+      "painPoints": [
+        {
+          "title": "Client Intake Chaos",
+          "description": "Manual intake processes leading to lost leads, incomplete information, and delayed response times that cost your firm valuable clients.",
+          "icon": "UserX"
+        },
+        {
+          "title": "Billable Hours Leakage",
+          "description": "Attorneys lose 15-20% of billable time due to poor time tracking and administrative overhead that could be automated.",
+          "icon": "Clock"
+        },
+        {
+          "title": "Case Management Nightmare",
+          "description": "Scattered documents, missed deadlines, and lack of visibility across cases leading to malpractice risks and client dissatisfaction.",
+          "icon": "FolderX"
+        },
+        {
+          "title": "Client Communication Gaps",
+          "description": "Inconsistent follow-ups, delayed responses, and lack of automated updates resulting in poor client satisfaction and negative reviews.",
+          "icon": "MessageSquareX"
+        }
+      ],
+      "solutions": [
+        {
+          "title": "Automated Client Intake",
+          "description": "Transform your intake process with intelligent forms, automated conflict checks, and instant lead qualification.",
+          "features": [
+            "Smart intake forms with conditional logic",
+            "Automated conflict checking",
+            "Instant lead scoring and routing",
+            "Document collection portal"
+          ]
+        },
+        {
+          "title": "Time & Billing Integration",
+          "description": "Capture every billable minute with automated time tracking and seamless billing system integration.",
+          "features": [
+            "One-click time tracking",
+            "Automated billing reminders",
+            "Integration with QuickBooks/Clio",
+            "Real-time profitability analytics"
+          ]
+        },
+        {
+          "title": "Complete Case Management",
+          "description": "Centralize all case information, documents, and communications in one secure, compliant platform.",
+          "features": [
+            "Matter-centric organization",
+            "Automated deadline tracking",
+            "Document management system",
+            "Court calendar integration"
+          ]
+        },
+        {
+          "title": "Client Portal & Communication",
+          "description": "Keep clients informed and engaged with automated updates, secure messaging, and 24/7 portal access.",
+          "features": [
+            "Secure client portal",
+            "Automated case updates",
+            "Two-way texting compliance",
+            "Review management system"
+          ]
+        }
+      ],
+      "results": [
+        {
+          "metric": "47%",
+          "description": "Average increase in client intake conversion"
+        },
+        {
+          "metric": "2.3 hours",
+          "description": "Saved per attorney per day on admin tasks"
+        },
+        {
+          "metric": "89%",
+          "description": "Client satisfaction score improvement"
+        },
+        {
+          "metric": "$127K",
+          "description": "Additional revenue per attorney annually"
+        }
+      ],
+      "features": [
+        "Legal-specific intake forms",
+        "Conflict checking system",
+        "Time tracking integration",
+        "Document management",
+        "Court calendar sync",
+        "Client portal access",
+        "Automated billing",
+        "Trust accounting compliance",
+        "Matter management",
+        "Task automation",
+        "Email integration",
+        "Performance analytics"
+      ],
+      "testimonial": {
+        "quote": "Senova transformed our 12-attorney firm. We've increased our billable hours by 28% while actually working fewer hours overall. The automated intake alone has paid for the system ten times over.",
+        "author": "Sarah Mitchell",
+        "title": "Managing Partner",
+        "company": "Mitchell & Associates Law Firm"
+      }
+    },
+    {
+      "name": "Real Estate",
+      "slug": "real-estate",
+      "tagline": "Close More Deals with Intelligent Lead Management",
+      "description": "Senova CRM helps real estate professionals nurture leads, automate follow-ups, and close more deals with AI-powered property matching and automated marketing campaigns.",
+      "painPoints": [
+        {
+          "title": "Lead Response Chaos",
+          "description": "Slow response times to inquiries costing agents deals - studies show 78% of buyers work with the first agent who responds.",
+          "icon": "Timer"
+        },
+        {
+          "title": "Follow-Up Failure",
+          "description": "Manual follow-up systems causing agents to lose 67% of potential deals due to inconsistent nurturing and forgotten leads.",
+          "icon": "UserMinus"
+        },
+        {
+          "title": "Property Matching Mess",
+          "description": "Hours wasted manually matching buyers to properties and sending individual listings instead of automated alerts.",
+          "icon": "Home"
+        },
+        {
+          "title": "Transaction Tracking Trouble",
+          "description": "Juggling multiple deals, missing critical deadlines, and losing track of transaction stages costing commissions.",
+          "icon": "FileX"
+        }
+      ],
+      "solutions": [
+        {
+          "title": "Instant Lead Response",
+          "description": "Respond to every lead within 60 seconds with AI-powered auto-response and intelligent lead routing.",
+          "features": [
+            "60-second lead response",
+            "AI chatbot qualification",
+            "Smart lead routing",
+            "Mobile instant alerts"
+          ]
+        },
+        {
+          "title": "Automated Nurture Campaigns",
+          "description": "Never lose another lead with automated drip campaigns tailored to buyer behavior and preferences.",
+          "features": [
+            "Behavior-triggered campaigns",
+            "Personalized property alerts",
+            "Market update automation",
+            "Birthday/anniversary reminders"
+          ]
+        },
+        {
+          "title": "Smart Property Matching",
+          "description": "AI-powered property matching automatically connects buyers with perfect properties based on their preferences.",
+          "features": [
+            "MLS integration",
+            "AI preference learning",
+            "Automated property alerts",
+            "Virtual showing scheduler"
+          ]
+        },
+        {
+          "title": "Transaction Pipeline Management",
+          "description": "Visual pipeline tracking ensures no deal falls through the cracks with automated task management.",
+          "features": [
+            "Visual deal pipeline",
+            "Automated task creation",
+            "Document e-signature",
+            "Commission tracking"
+          ]
+        }
+      ],
+      "results": [
+        {
+          "metric": "52%",
+          "description": "More deals closed per agent"
+        },
+        {
+          "metric": "3.7x",
+          "description": "Faster lead response time"
+        },
+        {
+          "metric": "31%",
+          "description": "Increase in referral business"
+        },
+        {
+          "metric": "$94K",
+          "description": "Additional GCI per agent annually"
+        }
+      ],
+      "features": [
+        "MLS integration",
+        "Lead capture forms",
+        "Instant lead response",
+        "Property matching AI",
+        "Transaction management",
+        "E-signature integration",
+        "Open house management",
+        "Showing scheduler",
+        "Commission calculator",
+        "Marketing automation",
+        "Social media integration",
+        "Performance dashboard"
+      ],
+      "testimonial": {
+        "quote": "Senova helped me go from closing 18 deals a year to 47. The automated follow-up system alone keeps me top-of-mind with hundreds of leads I used to forget about.",
+        "author": "Michael Chen",
+        "title": "Top Producer",
+        "company": "Premier Realty Group"
+      }
+    },
+    {
+      "name": "Mortgage & Lending",
+      "slug": "mortgage-lending",
+      "tagline": "Streamline Your Loan Pipeline from Application to Close",
+      "description": "Senova CRM helps mortgage professionals manage loan pipelines, ensure compliance, automate document collection, and close loans faster with intelligent automation.",
+      "painPoints": [
+        {
+          "title": "Document Collection Chaos",
+          "description": "Chasing borrowers for documents wastes 40% of loan officer time and delays closings by weeks.",
+          "icon": "FileQuestion"
+        },
+        {
+          "title": "Compliance Nightmares",
+          "description": "Missing TRID deadlines, RESPA violations, and audit failures resulting in penalties and lost licenses.",
+          "icon": "Shield"
+        },
+        {
+          "title": "Pipeline Visibility Problems",
+          "description": "Lack of real-time pipeline visibility causing bottlenecks, missed rate locks, and poor borrower experience.",
+          "icon": "Eye"
+        },
+        {
+          "title": "Referral Partner Disconnect",
+          "description": "Poor communication with real estate agents and referral partners leading to lost business and damaged relationships.",
+          "icon": "Users"
+        }
+      ],
+      "solutions": [
+        {
+          "title": "Automated Document Collection",
+          "description": "Streamline document gathering with smart portals, automated reminders, and instant verification.",
+          "features": [
+            "Borrower document portal",
+            "Automated chase sequences",
+            "OCR document reading",
+            "Instant verification checks"
+          ]
+        },
+        {
+          "title": "Compliance Automation",
+          "description": "Never miss a deadline with automated TRID tracking, built-in compliance checks, and audit trails.",
+          "features": [
+            "TRID timeline tracking",
+            "Automated disclosure delivery",
+            "Built-in compliance rules",
+            "Complete audit trails"
+          ]
+        },
+        {
+          "title": "Real-Time Pipeline Management",
+          "description": "Complete visibility into every loan with visual pipelines, bottleneck alerts, and predictive analytics.",
+          "features": [
+            "Visual loan pipeline",
+            "Milestone automation",
+            "Rate lock tracking",
+            "Closing prediction AI"
+          ]
+        },
+        {
+          "title": "Partner Portal & Communication",
+          "description": "Keep referral partners informed with automated updates and dedicated portals for seamless collaboration.",
+          "features": [
+            "Realtor partner portal",
+            "Automated status updates",
+            "Co-marketing tools",
+            "Referral tracking system"
+          ]
+        }
+      ],
+      "results": [
+        {
+          "metric": "38%",
+          "description": "Faster loan closing times"
+        },
+        {
+          "metric": "91%",
+          "description": "First-time document completion"
+        },
+        {
+          "metric": "100%",
+          "description": "TRID compliance rate"
+        },
+        {
+          "metric": "$218K",
+          "description": "Additional loans closed per LO annually"
+        }
+      ],
+      "features": [
+        "Loan application portal",
+        "Document management",
+        "Compliance tracking",
+        "Pipeline visualization",
+        "Rate lock tracking",
+        "Automated underwriting",
+        "Partner portals",
+        "Credit pull integration",
+        "Income verification",
+        "Closing coordination",
+        "Commission tracking",
+        "Reporting analytics"
+      ],
+      "testimonial": {
+        "quote": "Senova cut our average closing time from 42 days to 26 days. The compliance automation has saved us from multiple potential violations. It's not just a CRM, it's a complete loan operating system.",
+        "author": "Jennifer Rodriguez",
+        "title": "VP of Operations",
+        "company": "First National Mortgage"
+      }
+    },
+    {
+      "name": "Insurance",
+      "slug": "insurance",
+      "tagline": "Maximize Retention and Cross-Sell with Intelligent Policy Management",
+      "description": "Senova CRM helps insurance agents track policies, automate renewals, identify cross-sell opportunities, and deliver exceptional customer service that drives retention.",
+      "painPoints": [
+        {
+          "title": "Renewal Revenue Loss",
+          "description": "Missing renewal opportunities costs agencies 15-20% of recurring revenue due to poor tracking and follow-up.",
+          "icon": "RefreshCw"
+        },
+        {
+          "title": "Cross-Sell Blindness",
+          "description": "Agents miss 73% of cross-sell opportunities by not knowing client life events and coverage gaps.",
+          "icon": "Package"
+        },
+        {
+          "title": "Quote Follow-Up Failure",
+          "description": "60% of quotes never get proper follow-up, leaving money on the table and prospects with competitors.",
+          "icon": "FileText"
+        },
+        {
+          "title": "Client Service Struggles",
+          "description": "Poor response times to claims and service requests leading to client defection and negative reviews.",
+          "icon": "HeartCrack"
+        }
+      ],
+      "solutions": [
+        {
+          "title": "Automated Renewal Management",
+          "description": "Never miss a renewal with automated tracking, early outreach, and intelligent retention campaigns.",
+          "features": [
+            "90-day renewal alerts",
+            "Automated renewal campaigns",
+            "Rate shopping reminders",
+            "Retention risk scoring"
+          ]
+        },
+        {
+          "title": "Smart Cross-Sell Engine",
+          "description": "AI identifies coverage gaps and life events to suggest relevant products at the perfect time.",
+          "features": [
+            "Coverage gap analysis",
+            "Life event triggers",
+            "Bundle recommendations",
+            "Needs assessment automation"
+          ]
+        },
+        {
+          "title": "Quote Nurture Automation",
+          "description": "Convert more quotes with persistent follow-up campaigns and competitive intelligence.",
+          "features": [
+            "Multi-touch quote follow-up",
+            "Competitor comparison tools",
+            "Price drop alerts",
+            "Instant quote generation"
+          ]
+        },
+        {
+          "title": "Client Service Portal",
+          "description": "Deliver exceptional service with 24/7 self-service options and instant claim support.",
+          "features": [
+            "Client self-service portal",
+            "Claims tracking system",
+            "Policy document vault",
+            "Mobile app access"
+          ]
+        }
+      ],
+      "results": [
+        {
+          "metric": "94%",
+          "description": "Policy renewal rate achieved"
+        },
+        {
+          "metric": "2.8x",
+          "description": "More policies per household"
+        },
+        {
+          "metric": "47%",
+          "description": "Quote-to-bind improvement"
+        },
+        {
+          "metric": "$156K",
+          "description": "Additional premium per agent annually"
+        }
+      ],
+      "features": [
+        "Policy tracking system",
+        "Renewal automation",
+        "Quote management",
+        "Claims tracking",
+        "Cross-sell intelligence",
+        "Commission tracking",
+        "Carrier integration",
+        "Document management",
+        "Client portal",
+        "Risk assessment tools",
+        "Marketing automation",
+        "Performance analytics"
+      ],
+      "testimonial": {
+        "quote": "Senova increased our retention rate from 82% to 94% in just one year. The cross-sell intelligence has helped us grow policies per household by 2.8x. It's transformed how we serve our clients.",
+        "author": "Robert Thompson",
+        "title": "Agency Owner",
+        "company": "Thompson Insurance Group"
+      }
+    },
+    {
+      "name": "Marketing Agencies",
+      "slug": "marketing-agencies",
+      "tagline": "Not Your Competition – Your Secret Weapon for Client Success",
+      "description": "Senova CRM partners with marketing agencies as a white-label solution, helping you deliver exceptional results for clients while creating new revenue streams and improving retention.",
+      "painPoints": [
+        {
+          "title": "Client Retention Crisis",
+          "description": "Agencies lose 20-30% of clients annually due to inability to prove ROI and deliver measurable results.",
+          "icon": "UserX"
+        },
+        {
+          "title": "Manual Reporting Hell",
+          "description": "Teams waste 15+ hours weekly creating client reports instead of doing strategic work that drives results.",
+          "icon": "FileSpreadsheet"
+        },
+        {
+          "title": "Tool Sprawl Chaos",
+          "description": "Managing 10+ different tools per client leading to inefficiency, high costs, and integration nightmares.",
+          "icon": "Puzzle"
+        },
+        {
+          "title": "Revenue Growth Plateau",
+          "description": "Struggling to scale beyond project work into recurring revenue and higher-margin services.",
+          "icon": "TrendingDown"
+        }
+      ],
+      "solutions": [
+        {
+          "title": "White-Label CRM Platform",
+          "description": "Offer Senova as your own branded CRM solution to clients, creating new recurring revenue streams.",
+          "features": [
+            "Full white-label branding",
+            "Custom domain setup",
+            "Multi-tenant architecture",
+            "Revenue sharing program"
+          ]
+        },
+        {
+          "title": "Automated Client Reporting",
+          "description": "Generate beautiful client reports in seconds with real-time data and customizable templates.",
+          "features": [
+            "One-click report generation",
+            "Custom branded templates",
+            "Real-time ROI tracking",
+            "Automated report delivery"
+          ]
+        },
+        {
+          "title": "Unified Client Hub",
+          "description": "Manage all client campaigns, leads, and communications from one powerful platform.",
+          "features": [
+            "Multi-client dashboard",
+            "Campaign management tools",
+            "Lead tracking & attribution",
+            "Team collaboration features"
+          ]
+        },
+        {
+          "title": "Agency Growth Accelerator",
+          "description": "Tools and training to help you scale your agency with automation and systematization.",
+          "features": [
+            "Agency playbooks & templates",
+            "Sales enablement tools",
+            "Partner certification program",
+            "Priority support channel"
+          ]
+        }
+      ],
+      "results": [
+        {
+          "metric": "71%",
+          "description": "Increase in client retention"
+        },
+        {
+          "metric": "$42K",
+          "description": "Monthly recurring revenue added"
+        },
+        {
+          "metric": "87%",
+          "description": "Reduction in reporting time"
+        },
+        {
+          "metric": "3.2x",
+          "description": "Average client lifetime value increase"
+        }
+      ],
+      "features": [
+        "White-label platform",
+        "Multi-client management",
+        "Campaign tracking",
+        "Lead attribution",
+        "Automated reporting",
+        "Client portals",
+        "Team collaboration",
+        "API integrations",
+        "Revenue sharing",
+        "Training resources",
+        "Priority support",
+        "Custom development"
+      ],
+      "testimonial": {
+        "quote": "Senova isn't competing with us – they're empowering us. We've added $42K in monthly recurring revenue by offering Senova as our own CRM solution. Our client retention has skyrocketed because we can finally prove ROI instantly.",
+        "author": "Amanda Foster",
+        "title": "CEO",
+        "company": "Digital Momentum Agency"
+      }
+    }
+  ],
+  "metadata": {
+    "created": "2024-11-28",
+    "version": "1.0",
+    "totalIndustries": 5,
+    "researchMethod": "Industry best practices and common CRM pain points analysis",
+    "usage": "These schemas should be used to create industry-specific landing pages for Senova CRM"
+  }
+}

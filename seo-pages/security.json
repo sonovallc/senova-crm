@@ -1,0 +1,382 @@
+{
+  "path": "/security",
+  "seo": {
+    "title": "Bank-Level Security for Medical Data | Senova Security",
+    "description": "Enterprise security for patient data: 256-bit encryption, SOC 2 certified, 99.9% uptime SLA. See how we protect 500+ medical practices.",
+    "keywords": ["medical data security", "CRM security", "SOC 2 compliance", "data encryption", "healthcare cybersecurity"],
+    "og_image": "Security infrastructure diagram with certifications"
+  },
+  "hero": {
+    "headline": "Enterprise Security Built for Healthcare",
+    "subheadline": "Multiple layers of protection keep your patient data safe. SOC 2 certified, 256-bit encrypted, and monitored 24/7.",
+    "cta_primary": {
+      "text": "Download Security Whitepaper",
+      "link": "/resources/security-whitepaper"
+    },
+    "cta_secondary": {
+      "text": "Schedule Security Review",
+      "link": "/contact"
+    },
+    "certifications": [
+      {
+        "name": "SOC 2 Type II",
+        "icon": "soc2"
+      },
+      {
+        "name": "HIPAA Compliant",
+        "icon": "hipaa"
+      },
+      {
+        "name": "256-bit Encryption",
+        "icon": "encryption"
+      },
+      {
+        "name": "ISO 27001",
+        "icon": "iso"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "type": "security_overview",
+      "headline": "Defense in Depth",
+      "subheadline": "Multiple layers of security protect your data at every level",
+      "layers": [
+        {
+          "layer": "Network Security",
+          "protections": [
+            "Web Application Firewall (WAF)",
+            "DDoS protection",
+            "Intrusion detection systems",
+            "Network segmentation",
+            "VPC isolation"
+          ]
+        },
+        {
+          "layer": "Application Security",
+          "protections": [
+            "Secure coding practices",
+            "Regular security updates",
+            "Input validation",
+            "SQL injection prevention",
+            "XSS protection"
+          ]
+        },
+        {
+          "layer": "Data Security",
+          "protections": [
+            "256-bit AES encryption",
+            "Encryption at rest and in transit",
+            "Key management service",
+            "Data loss prevention",
+            "Secure deletion"
+          ]
+        },
+        {
+          "layer": "Access Security",
+          "protections": [
+            "Multi-factor authentication",
+            "Role-based access control",
+            "Session management",
+            "Password policies",
+            "IP whitelisting available"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "headline": "World-Class Infrastructure",
+      "description": "Built on industry-leading cloud infrastructure",
+      "features": [
+        {
+          "title": "Data Centers",
+          "details": [
+            "AWS US-East and US-West regions",
+            "SOC 1/2/3 certified facilities",
+            "99.99% infrastructure SLA",
+            "Redundant power and cooling",
+            "Physical security 24/7"
+          ]
+        },
+        {
+          "title": "High Availability",
+          "details": [
+            "Multi-region deployment",
+            "Automatic failover",
+            "Load balancing",
+            "Database replication",
+            "Zero-downtime deployments"
+          ]
+        },
+        {
+          "title": "Backup & Recovery",
+          "details": [
+            "Automated backups every 4 hours",
+            "Point-in-time recovery",
+            "Geo-redundant storage",
+            "30-day retention minimum",
+            "Tested recovery procedures"
+          ]
+        },
+        {
+          "title": "Performance",
+          "details": [
+            "Global CDN distribution",
+            "Auto-scaling infrastructure",
+            "Database optimization",
+            "Caching layers",
+            "Sub-second response times"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "encryption",
+      "headline": "Military-Grade Encryption",
+      "subheadline": "Your data is encrypted at every stage",
+      "encryption_types": [
+        {
+          "type": "Data at Rest",
+          "method": "AES-256 encryption",
+          "details": "All stored data encrypted using industry-standard AES-256 encryption with regularly rotated keys"
+        },
+        {
+          "type": "Data in Transit",
+          "method": "TLS 1.3",
+          "details": "All data transmission uses TLS 1.3 with perfect forward secrecy"
+        },
+        {
+          "type": "Database Encryption",
+          "method": "Transparent Data Encryption",
+          "details": "Database-level encryption with encrypted backups and logs"
+        },
+        {
+          "type": "File Storage",
+          "method": "Encrypted object storage",
+          "details": "All files and attachments encrypted with unique keys per object"
+        }
+      ]
+    },
+    {
+      "type": "access_control",
+      "headline": "Comprehensive Access Controls",
+      "features": [
+        {
+          "feature": "Multi-Factor Authentication (MFA)",
+          "description": "Optional MFA for all accounts using TOTP or SMS",
+          "benefit": "99% reduction in account takeover risk"
+        },
+        {
+          "feature": "Single Sign-On (SSO)",
+          "description": "SAML 2.0 support for enterprise SSO providers",
+          "benefit": "Centralized access management"
+        },
+        {
+          "feature": "Role-Based Access Control (RBAC)",
+          "description": "Granular permissions based on job function",
+          "benefit": "Principle of least privilege enforcement"
+        },
+        {
+          "feature": "Session Management",
+          "description": "Automatic timeout, concurrent session limits",
+          "benefit": "Reduced risk from unattended workstations"
+        },
+        {
+          "feature": "API Security",
+          "description": "OAuth 2.0, rate limiting, API keys",
+          "benefit": "Secure programmatic access"
+        }
+      ]
+    },
+    {
+      "type": "monitoring",
+      "headline": "24/7 Security Monitoring",
+      "capabilities": [
+        {
+          "title": "Real-Time Threat Detection",
+          "tools": [
+            "Automated threat intelligence",
+            "Behavioral analytics",
+            "Anomaly detection",
+            "Security information and event management (SIEM)",
+            "Correlation analysis"
+          ]
+        },
+        {
+          "title": "Incident Response",
+          "process": [
+            "24/7 security operations center",
+            "15-minute response time SLA",
+            "Automated containment",
+            "Forensic analysis",
+            "Customer notification within 24 hours"
+          ]
+        },
+        {
+          "title": "Audit Logging",
+          "features": [
+            "Comprehensive activity logs",
+            "Immutable audit trail",
+            "7-year retention",
+            "Real-time log analysis",
+            "Compliance reporting"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "compliance",
+      "headline": "Compliance & Certifications",
+      "certifications": [
+        {
+          "name": "SOC 2 Type II",
+          "description": "Annual independent audit of security controls",
+          "scope": "Security, availability, processing integrity, confidentiality"
+        },
+        {
+          "name": "HIPAA",
+          "description": "Full HIPAA compliance with BAA",
+          "scope": "Technical, physical, and administrative safeguards"
+        },
+        {
+          "name": "ISO 27001",
+          "description": "Information security management system",
+          "scope": "Comprehensive security framework"
+        },
+        {
+          "name": "CCPA/GDPR",
+          "description": "Privacy regulation compliance",
+          "scope": "Data protection and privacy rights"
+        }
+      ]
+    },
+    {
+      "type": "vulnerability_management",
+      "headline": "Proactive Vulnerability Management",
+      "practices": [
+        {
+          "practice": "Penetration Testing",
+          "frequency": "Quarterly",
+          "description": "Third-party ethical hackers test our defenses"
+        },
+        {
+          "practice": "Vulnerability Scanning",
+          "frequency": "Continuous",
+          "description": "Automated scanning for known vulnerabilities"
+        },
+        {
+          "practice": "Security Patches",
+          "frequency": "Within 24 hours",
+          "description": "Critical patches applied immediately"
+        },
+        {
+          "practice": "Code Reviews",
+          "frequency": "Every deployment",
+          "description": "Security review of all code changes"
+        },
+        {
+          "practice": "Dependency Management",
+          "frequency": "Daily",
+          "description": "Monitoring and updating third-party libraries"
+        }
+      ]
+    },
+    {
+      "type": "team_security",
+      "headline": "Security-First Culture",
+      "measures": [
+        "Background checks for all employees",
+        "Security training during onboarding",
+        "Annual security awareness training",
+        "Principle of least privilege for staff",
+        "Clean desk policy",
+        "Incident response drills",
+        "Security champions in each team"
+      ]
+    },
+    {
+      "type": "customer_controls",
+      "headline": "Security Controls You Manage",
+      "controls": [
+        {
+          "control": "Password Policies",
+          "options": ["Minimum length", "Complexity requirements", "Expiration settings", "History restrictions"]
+        },
+        {
+          "control": "Access Management",
+          "options": ["User roles and permissions", "IP whitelisting", "MFA enforcement", "SSO configuration"]
+        },
+        {
+          "control": "Data Retention",
+          "options": ["Retention periods", "Automatic deletion", "Export controls", "Audit log access"]
+        }
+      ]
+    },
+    {
+      "type": "transparency",
+      "headline": "Security Transparency",
+      "commitments": [
+        {
+          "commitment": "Status Page",
+          "description": "Real-time system status at status.senovallc.com",
+          "availability": "Public"
+        },
+        {
+          "commitment": "Security Updates",
+          "description": "Monthly security newsletter with threats and updates",
+          "availability": "All customers"
+        },
+        {
+          "commitment": "Incident Reports",
+          "description": "Detailed post-mortems for any incidents",
+          "availability": "Affected customers"
+        },
+        {
+          "commitment": "Audit Reports",
+          "description": "SOC 2 and compliance reports available",
+          "availability": "Upon request with NDA"
+        }
+      ]
+    },
+    {
+      "type": "bug_bounty",
+      "headline": "Security Bug Bounty Program",
+      "description": "We partner with security researchers to identify and fix vulnerabilities",
+      "details": [
+        "Rewards up to $5,000 for critical vulnerabilities",
+        "Safe harbor for good-faith research",
+        "Average response time: 24 hours",
+        "Hall of fame for contributors"
+      ],
+      "cta": {
+        "text": "Report a Vulnerability",
+        "link": "/security/bug-bounty"
+      }
+    },
+    {
+      "type": "cta",
+      "headline": "Security You Can Verify",
+      "subheadline": "Request our security documentation and compliance reports",
+      "primary_cta": {
+        "text": "Request Security Audit",
+        "link": "/contact"
+      },
+      "secondary_cta": {
+        "text": "View Status Page",
+        "link": "https://status.senovallc.com"
+      },
+      "trust_text": "Protecting patient data for 500+ medical practices"
+    }
+  ],
+  "schema_markup": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Security",
+    "description": "Senova's comprehensive security measures and certifications",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Senova"
+    }
+  }
+}

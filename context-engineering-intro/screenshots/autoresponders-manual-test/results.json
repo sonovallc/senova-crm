@@ -1,0 +1,10 @@
+{
+  "pass": [],
+  "fail": [
+    "Custom Content radio not found",
+    "Bold button",
+    "Italic button",
+    "Variables dropdown",
+    "Timing selector not found"
+  ]
+}

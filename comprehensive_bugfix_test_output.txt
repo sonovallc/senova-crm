@@ -1,0 +1,6 @@
+npm ERR! Missing script: "test"
+npm ERR! 
+npm ERR! To see a list of scripts, run:
+npm ERR!   npm run
+
+npm ERR! A complete log of this run can be found in: C:\Users\jwood\AppData\Local\npm-cache\_logs\2025-11-25T23_05_39_703Z-debug-0.log

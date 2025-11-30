@@ -1,0 +1,346 @@
+{
+  "timestamp": "2025-11-28T03:15:52.627Z",
+  "tests": {
+    "login": {
+      "status": "passed",
+      "screenshots": [
+        "login-page-initial-2025-11-28T03-15-56-443Z.png",
+        "login-form-filled-2025-11-28T03-15-57-339Z.png",
+        "login-success-dashboard-2025-11-28T03-16-07-561Z.png"
+      ],
+      "errors": []
+    },
+    "branding": {
+      "status": "failed",
+      "screenshots": [],
+      "errors": []
+    },
+    "dashboard": {
+      "status": "passed",
+      "screenshots": [
+        "dashboard-main-2025-11-28T03-16-07-708Z.png"
+      ],
+      "errors": []
+    },
+    "navigation": {
+      "status": "passed",
+      "screenshots": [],
+      "errors": []
+    },
+    "publicPages": {
+      "status": "failed",
+      "screenshots": [
+        "public-home-2025-11-28T03-16-26-349Z.png",
+        "public-platform-2025-11-28T03-16-29-620Z.png",
+        "public-pricing-2025-11-28T03-16-32-282Z.png",
+        "public-about-2025-11-28T03-16-40-144Z.png",
+        "public-contact-2025-11-28T03-16-49-216Z.png",
+        "public-crm solution-2025-11-28T03-16-52-434Z.png",
+        "public-audience intelligence-2025-11-28T03-16-55-012Z.png",
+        "public-medical spas-2025-11-28T03-16-57-296Z.png",
+        "public-hipaa-2025-11-28T03-16-59-743Z.png",
+        "public-security-2025-11-28T03-17-02-285Z.png"
+      ],
+      "errors": []
+    },
+    "objects": {
+      "status": "passed",
+      "screenshots": [
+        "objects-list-page-2025-11-28T03-16-09-483Z.png"
+      ],
+      "errors": []
+    },
+    "design": {
+      "status": "passed",
+      "screenshots": [
+        "design-hover-effects-2025-11-28T03-17-06-336Z.png",
+        "design-mobile-view-2025-11-28T03-17-06-474Z.png"
+      ],
+      "errors": []
+    }
+  },
+  "brandingIssues": [
+    {
+      "url": "http://localhost:3004/login",
+      "matches": [
+        "Eve CRM",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty"
+      ],
+      "count": 11
+    },
+    {
+      "url": "http://localhost:3004/login",
+      "matches": [
+        "Eve CRM",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty"
+      ],
+      "count": 11
+    },
+    {
+      "url": "http://localhost:3004/home",
+      "matches": [
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "evebeauty",
+        "evebeauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "evebeauty",
+        "evebeauty",
+        "Eve Beauty"
+      ],
+      "count": 15
+    },
+    {
+      "url": "http://localhost:3004/platform",
+      "matches": [
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty"
+      ],
+      "count": 11
+    },
+    {
+      "url": "http://localhost:3004/pricing",
+      "matches": [
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty"
+      ],
+      "count": 11
+    },
+    {
+      "url": "http://localhost:3004/about",
+      "matches": [
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "evebeauty",
+        "Eve Beauty",
+        "evebeauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "evebeauty",
+        "Eve Beauty",
+        "evebeauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty"
+      ],
+      "count": 30
+    },
+    {
+      "url": "http://localhost:3004/contact",
+      "matches": [
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "evebeauty",
+        "Eve Beauty",
+        "evebeauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "evebeauty",
+        "Eve Beauty",
+        "evebeauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "evebeauty",
+        "Eve Beauty"
+      ],
+      "count": 28
+    },
+    {
+      "url": "http://localhost:3004/solutions/crm",
+      "matches": [
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty"
+      ],
+      "count": 11
+    },
+    {
+      "url": "http://localhost:3004/solutions/audience-intelligence",
+      "matches": [
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty"
+      ],
+      "count": 11
+    },
+    {
+      "url": "http://localhost:3004/industries/medical-spas",
+      "matches": [
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty"
+      ],
+      "count": 11
+    },
+    {
+      "url": "http://localhost:3004/hipaa",
+      "matches": [
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty"
+      ],
+      "count": 11
+    },
+    {
+      "url": "http://localhost:3004/security",
+      "matches": [
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty",
+        "Eve Beauty"
+      ],
+      "count": 11
+    }
+  ],
+  "consoleErrors": [],
+  "brokenLinks": [
+    {
+      "name": "Platform",
+      "url": "/platform",
+      "status": 404
+    },
+    {
+      "name": "Pricing",
+      "url": "/pricing",
+      "status": 404
+    },
+    {
+      "name": "CRM Solution",
+      "url": "/solutions/crm",
+      "status": 404
+    },
+    {
+      "name": "Audience Intelligence",
+      "url": "/solutions/audience-intelligence",
+      "status": 404
+    },
+    {
+      "name": "Medical Spas",
+      "url": "/industries/medical-spas",
+      "status": 404
+    },
+    {
+      "name": "HIPAA",
+      "url": "/hipaa",
+      "status": 404
+    },
+    {
+      "name": "Security",
+      "url": "/security",
+      "status": 404
+    }
+  ]
+}

@@ -1,0 +1,458 @@
+{
+  "totalTests": 71,
+  "passed": 48,
+  "failed": 23,
+  "bugs": [
+    {
+      "id": "BUG-CONSOLE-1",
+      "severity": "Medium",
+      "feature": "Console",
+      "description": "JavaScript error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. ...",
+      "screenshot": ""
+    },
+    {
+      "id": "BUG-F5-ERROR",
+      "severity": "High",
+      "feature": "Feature 5",
+      "description": "Feature 5 test crashed: elementHandle.click: Element is not attached to the DOM\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n",
+      "screenshot": ""
+    },
+    {
+      "id": "BUG-F7-ERROR",
+      "severity": "High",
+      "feature": "Feature 7",
+      "description": "Feature 7 test crashed: page.$: SyntaxError: Invalid flags supplied to RegExp constructor 'i, p, div'\n    at new RegExp (<anonymous>)\n    at createTextMatcher (<anonymous>:7786:16)\n    at Object.queryAll (<anonymous>:6691:33)\n    at InjectedScript._queryEngineAll (<anonymous>:6664:49)\n    at InjectedScript.querySelectorAll (<anonymous>:6651:30)\n    at InjectedScript.querySelector (<anonymous>:6576:25)\n    at eval (eval at evaluate (:290:30), <anonymous>:2:23)\n    at UtilityScript.evaluate (<anonymous>:292:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "screenshot": ""
+    },
+    {
+      "id": "BUG-F8-ERROR",
+      "severity": "High",
+      "feature": "Feature 8",
+      "description": "Feature 8 test crashed: page.$: SyntaxError: Invalid flags supplied to RegExp constructor 'i, [role=\"alert\"]'\n    at new RegExp (<anonymous>)\n    at createTextMatcher (<anonymous>:7786:16)\n    at Object.queryAll (<anonymous>:6691:33)\n    at InjectedScript._queryEngineAll (<anonymous>:6664:49)\n    at InjectedScript.querySelectorAll (<anonymous>:6651:30)\n    at InjectedScript.querySelector (<anonymous>:6576:25)\n    at eval (eval at evaluate (:290:30), <anonymous>:2:23)\n    at UtilityScript.evaluate (<anonymous>:292:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "screenshot": ""
+    }
+  ],
+  "features": {
+    "Console": {
+      "passed": 0,
+      "failed": 1,
+      "tests": [
+        {
+          "test": "1 JavaScript errors found",
+          "status": "FAIL",
+          "details": ""
+        }
+      ]
+    },
+    "Login": {
+      "passed": 1,
+      "failed": 0,
+      "tests": [
+        {
+          "test": "Login with valid credentials",
+          "status": "PASS",
+          "details": ""
+        }
+      ]
+    },
+    "Feature 1": {
+      "passed": 4,
+      "failed": 4,
+      "tests": [
+        {
+          "test": "Navigate to inbox page",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Page title visible",
+          "status": "PASS",
+          "details": "Eve CRM"
+        },
+        {
+          "test": "Filter: All",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Filter: Unread",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Filter: Read",
+          "status": "FAIL",
+          "details": "Button not found"
+        },
+        {
+          "test": "Filter: Archived",
+          "status": "FAIL",
+          "details": "Button not found"
+        },
+        {
+          "test": "Email list loaded (0 items)",
+          "status": "FAIL",
+          "details": ""
+        },
+        {
+          "test": "Pagination controls (0 buttons)",
+          "status": "FAIL",
+          "details": ""
+        }
+      ]
+    },
+    "Feature 2": {
+      "passed": 14,
+      "failed": 4,
+      "tests": [
+        {
+          "test": "Navigate to composer page",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Open template dropdown",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Template options count: 15",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Select template 2: This is my test templateThis is a test to {{first_name}} with {{company}}",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Select template 3: Final Fix Test 1763952992411Test Subject Line",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Open contact dropdown",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Contact options count: 8",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Select contact: Aaatest Updatetest@frog.com",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Manual email input field",
+          "status": "FAIL",
+          "details": "Not found"
+        },
+        {
+          "test": "Open CC field",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Open BCC field",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Subject field",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Message editor",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Bold button",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Italic button",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Variables dropdown",
+          "status": "FAIL",
+          "details": "Error: page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b["
+        },
+        {
+          "test": "Send button",
+          "status": "FAIL",
+          "details": "Not found"
+        },
+        {
+          "test": "Cancel button",
+          "status": "FAIL",
+          "details": "Not found"
+        }
+      ]
+    },
+    "Feature 3": {
+      "passed": 7,
+      "failed": 2,
+      "tests": [
+        {
+          "test": "Navigate to templates page",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Open create template modal",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Template name field",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Category dropdown",
+          "status": "FAIL",
+          "details": "Not found"
+        },
+        {
+          "test": "Template subject field",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Template body editor",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Close create modal",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Template cards loaded: 0",
+          "status": "FAIL",
+          "details": ""
+        },
+        {
+          "test": "Search templates",
+          "status": "PASS",
+          "details": ""
+        }
+      ]
+    },
+    "Feature 4": {
+      "passed": 5,
+      "failed": 3,
+      "tests": [
+        {
+          "test": "Navigate to campaigns page",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Open campaign wizard",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Campaign name field",
+          "status": "FAIL",
+          "details": "Not found"
+        },
+        {
+          "test": "Template dropdown in campaign",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Template options: 6",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Select template for campaign",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Next button",
+          "status": "FAIL",
+          "details": "Not found"
+        },
+        {
+          "test": "Campaign cards loaded: 0",
+          "status": "FAIL",
+          "details": ""
+        }
+      ]
+    },
+    "Feature 5": {
+      "passed": 4,
+      "failed": 1,
+      "tests": [
+        {
+          "test": "Navigate to autoresponders page",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Open create autoresponder modal",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Autoresponder name field",
+          "status": "FAIL",
+          "details": "Not found"
+        },
+        {
+          "test": "Trigger dropdown",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Trigger option: All Triggers",
+          "status": "PASS",
+          "details": ""
+        }
+      ]
+    },
+    "Feature 6": {
+      "passed": 1,
+      "failed": 7,
+      "tests": [
+        {
+          "test": "Navigate to Mailgun settings",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "API Key field",
+          "status": "FAIL",
+          "details": "Not found"
+        },
+        {
+          "test": "Domain field",
+          "status": "FAIL",
+          "details": "Not found"
+        },
+        {
+          "test": "Sender Name field",
+          "status": "FAIL",
+          "details": "Not found"
+        },
+        {
+          "test": "Sender Email field",
+          "status": "FAIL",
+          "details": "Not found"
+        },
+        {
+          "test": "Rate limit field",
+          "status": "FAIL",
+          "details": "Not found"
+        },
+        {
+          "test": "Test connection button",
+          "status": "FAIL",
+          "details": "Not found"
+        },
+        {
+          "test": "Save button",
+          "status": "FAIL",
+          "details": "Not found"
+        }
+      ]
+    },
+    "Feature 7": {
+      "passed": 2,
+      "failed": 1,
+      "tests": [
+        {
+          "test": "Navigate to Closebot settings",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Coming soon message",
+          "status": "FAIL",
+          "details": "Not found"
+        },
+        {
+          "test": "Disabled inputs: 4",
+          "status": "PASS",
+          "details": ""
+        }
+      ]
+    },
+    "Feature 8": {
+      "passed": 2,
+      "failed": 0,
+      "tests": [
+        {
+          "test": "Navigate to composer for manual email test",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Valid email entry",
+          "status": "PASS",
+          "details": ""
+        }
+      ]
+    },
+    "Navigation": {
+      "passed": 8,
+      "failed": 0,
+      "tests": [
+        {
+          "test": "Dashboard link (http://localhost:3004/dashboard)",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Inbox link (http://localhost:3004/dashboard/inbox)",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Compose link (http://localhost:3004/dashboard/email/compose)",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Contacts link (http://localhost:3004/dashboard/email/compose)",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Templates link (http://localhost:3004/dashboard/email/compose)",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Campaigns link (http://localhost:3004/dashboard/email/compose)",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Autoresponders link (http://localhost:3004/dashboard/email/compose)",
+          "status": "PASS",
+          "details": ""
+        },
+        {
+          "test": "Settings link (http://localhost:3004/dashboard/email/compose)",
+          "status": "PASS",
+          "details": ""
+        }
+      ]
+    }
+  }
+}

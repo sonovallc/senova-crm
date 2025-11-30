@@ -1,0 +1,74 @@
+{
+  "navigation": {
+    "NAV-001": {
+      "name": "Inbox",
+      "status": "FAIL",
+      "reason": "404 Page Not Found",
+      "url": "http://localhost:3004/dashboard",
+      "screenshot": "nav-nav-001-inbox.png"
+    },
+    "NAV-002": {
+      "name": "Activity Log",
+      "status": "FAIL",
+      "reason": "Link element not found in sidebar",
+      "screenshot": null
+    },
+    "NAV-003": {
+      "name": "Payments",
+      "status": "FAIL",
+      "reason": "404 Page Not Found",
+      "url": "http://localhost:3004/dashboard",
+      "screenshot": "nav-nav-003-payments.png"
+    },
+    "NAV-004": {
+      "name": "AI Tools",
+      "status": "FAIL",
+      "reason": "Link element not found in sidebar",
+      "screenshot": null
+    },
+    "NAV-005": {
+      "name": "Settings",
+      "status": "FAIL",
+      "reason": "Link element not found in sidebar",
+      "screenshot": null
+    },
+    "NAV-006": {
+      "name": "Feature Flags",
+      "status": "FAIL",
+      "reason": "Link element not found in sidebar",
+      "screenshot": null
+    },
+    "NAV-007": {
+      "name": "Deleted Contacts",
+      "status": "FAIL",
+      "reason": "404 Page Not Found",
+      "url": "http://localhost:3004/dashboard",
+      "screenshot": "nav-nav-007-deleted-contacts.png"
+    }
+  },
+  "emailSubmenu": {
+    "status": "FAIL",
+    "reason": "Email link not found in sidebar",
+    "screenshot": null
+  },
+  "cors": {
+    "campaigns": {
+      "status": "FAIL",
+      "errors": [
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/campaigns?' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+      ],
+      "screenshot": "cors-001-campaigns.png"
+    },
+    "autoresponders": {
+      "status": "PASS",
+      "screenshot": "cors-001-autoresponders.png"
+    }
+  },
+  "variablesDropdown": {
+    "status": "FAIL",
+    "reason": "Insert Variable button not found (data-testid attribute missing)",
+    "screenshot": null
+  },
+  "timestamp": "2025-11-25T00:49:51.373Z"
+}

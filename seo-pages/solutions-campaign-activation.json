@@ -1,0 +1,302 @@
+{
+  "path": "/solutions/campaign-activation",
+  "seo": {
+    "title": "Launch Botox Campaigns That Convert 3X Better | Multi-Channel Marketing",
+    "description": "One-click campaign launch across email, SMS, Facebook, Google. Pre-built templates for 50+ treatments. See 3X higher conversions. Demo available.",
+    "keywords": ["medical spa marketing campaigns", "aesthetic marketing automation", "multi-channel campaigns", "botox marketing", "patient campaign management"],
+    "og_image": "Campaign dashboard showing multi-channel campaign performance"
+  },
+  "hero": {
+    "headline": "Launch Campaigns That Actually Fill Your Calendar",
+    "subheadline": "One platform to create, launch, and track campaigns across email, SMS, social media, and paid ads - with templates proven to convert.",
+    "cta_primary": {
+      "text": "Launch Your First Campaign",
+      "link": "/demo"
+    },
+    "cta_secondary": {
+      "text": "See Campaign Templates",
+      "link": "#templates"
+    },
+    "stats": [
+      { "value": "3X", "label": "Higher Conversion" },
+      { "value": "60%", "label": "Less Time" },
+      { "value": "45%", "label": "Lower Cost" }
+    ]
+  },
+  "sections": [
+    {
+      "type": "problem",
+      "headline": "Your Campaigns Are Scattered and Ineffective",
+      "issues": [
+        "Different tools for email, SMS, and social media",
+        "Generic templates that don't speak to aesthetic patients",
+        "No way to track which campaigns actually book appointments",
+        "Hours spent creating campaigns that get 2% open rates",
+        "Missing the right timing for patient outreach"
+      ]
+    },
+    {
+      "type": "solution_overview",
+      "headline": "Everything You Need in One Platform",
+      "capabilities": [
+        {
+          "title": "Multi-Channel Orchestration",
+          "description": "Launch coordinated campaigns across all channels from one dashboard",
+          "channels": ["Email", "SMS", "Facebook", "Instagram", "Google Ads", "Direct Mail"]
+        },
+        {
+          "title": "Aesthetic-Specific Templates",
+          "description": "50+ proven templates for every treatment and season",
+          "categories": ["Injectables", "Body Contouring", "Skin Treatments", "Promotions", "Events"]
+        },
+        {
+          "title": "Smart Automation",
+          "description": "Set it and forget it with intelligent campaign workflows",
+          "automations": ["Welcome series", "Birthday offers", "Treatment reminders", "Win-back campaigns", "VIP programs"]
+        },
+        {
+          "title": "Real-Time Optimization",
+          "description": "AI-powered optimization for maximum conversions",
+          "features": ["A/B testing", "Send time optimization", "Subject line testing", "Audience optimization"]
+        }
+      ]
+    },
+    {
+      "type": "campaign_templates",
+      "headline": "50+ Proven Campaign Templates",
+      "subheadline": "Launch in minutes with templates that convert",
+      "categories": [
+        {
+          "name": "Seasonal Campaigns",
+          "templates": [
+            {
+              "name": "Spring Renewal",
+              "description": "Target winter skin damage with laser and chemical peels",
+              "conversion_rate": "12%"
+            },
+            {
+              "name": "Summer Body Prep",
+              "description": "CoolSculpting and laser hair removal push",
+              "conversion_rate": "15%"
+            },
+            {
+              "name": "Holiday Glow Up",
+              "description": "Botox and fillers for party season",
+              "conversion_rate": "18%"
+            },
+            {
+              "name": "New Year New You",
+              "description": "Complete transformation packages",
+              "conversion_rate": "14%"
+            }
+          ]
+        },
+        {
+          "name": "Treatment-Specific",
+          "templates": [
+            {
+              "name": "First-Time Botox",
+              "description": "Education and special offer for Botox beginners",
+              "conversion_rate": "22%"
+            },
+            {
+              "name": "Filler Touch-Up",
+              "description": "Reminder campaigns for maintenance",
+              "conversion_rate": "34%"
+            },
+            {
+              "name": "Package Completion",
+              "description": "Encourage completion of treatment packages",
+              "conversion_rate": "41%"
+            },
+            {
+              "name": "Membership Upgrade",
+              "description": "Convert one-time patients to members",
+              "conversion_rate": "19%"
+            }
+          ]
+        },
+        {
+          "name": "Automated Workflows",
+          "templates": [
+            {
+              "name": "New Patient Welcome",
+              "description": "5-email series for new patients",
+              "conversion_rate": "28%"
+            },
+            {
+              "name": "Birthday Month Special",
+              "description": "Personalized birthday offers",
+              "conversion_rate": "31%"
+            },
+            {
+              "name": "Lapsed Patient Win-Back",
+              "description": "Re-engage patients after 6+ months",
+              "conversion_rate": "16%"
+            },
+            {
+              "name": "Post-Treatment Follow-Up",
+              "description": "Satisfaction check and upsell",
+              "conversion_rate": "24%"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "campaign_builder",
+      "headline": "Build Campaigns in Minutes, Not Hours",
+      "features": [
+        {
+          "title": "Drag-and-Drop Editor",
+          "description": "Beautiful emails without coding or design skills",
+          "tools": ["Template library", "Image editor", "Mobile preview", "Brand kit"]
+        },
+        {
+          "title": "Smart Personalization",
+          "description": "Dynamic content based on patient data",
+          "variables": ["First name", "Last treatment", "Birthday", "Preferred provider", "Membership status"]
+        },
+        {
+          "title": "Audience Segmentation",
+          "description": "Target the right patients with the right message",
+          "segments": ["VIP patients", "Birthday month", "Treatment due", "High spenders", "New patients"]
+        },
+        {
+          "title": "Compliance Built-In",
+          "description": "HIPAA-compliant with automatic opt-out management",
+          "features": ["Consent tracking", "Unsubscribe handling", "Audit logs", "Data encryption"]
+        }
+      ]
+    },
+    {
+      "type": "channels",
+      "headline": "Every Channel, One Platform",
+      "channels": [
+        {
+          "name": "Email Marketing",
+          "features": [
+            "Unlimited sends",
+            "99% deliverability",
+            "Mobile-responsive templates",
+            "Advanced personalization"
+          ],
+          "stats": { "open_rate": "45%", "click_rate": "12%" }
+        },
+        {
+          "name": "SMS Campaigns",
+          "features": [
+            "Two-way messaging",
+            "MMS support",
+            "Appointment reminders",
+            "Flash sales alerts"
+          ],
+          "stats": { "open_rate": "98%", "response_rate": "25%" }
+        },
+        {
+          "name": "Social Media",
+          "features": [
+            "Facebook & Instagram posts",
+            "Story templates",
+            "Paid ad creation",
+            "Audience sync"
+          ],
+          "stats": { "engagement": "5.2%", "reach_multiplier": "3X" }
+        },
+        {
+          "name": "Paid Advertising",
+          "features": [
+            "Google Ads integration",
+            "Facebook Ads sync",
+            "Retargeting campaigns",
+            "Lookalike audiences"
+          ],
+          "stats": { "cpa_reduction": "45%", "roas": "4.2X" }
+        }
+      ]
+    },
+    {
+      "type": "analytics",
+      "headline": "Know What Works, Double Down on Success",
+      "metrics": [
+        {
+          "category": "Campaign Performance",
+          "kpis": ["Open rates", "Click rates", "Conversion rates", "Revenue generated", "ROI by campaign"]
+        },
+        {
+          "category": "Patient Insights",
+          "kpis": ["Best performing segments", "Optimal send times", "Device preferences", "Content engagement"]
+        },
+        {
+          "category": "Channel Attribution",
+          "kpis": ["First touch", "Last touch", "Multi-touch attribution", "Channel contribution", "Cross-channel journey"]
+        }
+      ]
+    },
+    {
+      "type": "case_study",
+      "client": "Beverly Hills Aesthetics",
+      "challenge": "Spending $5,000/month on campaigns with 2% conversion rate",
+      "solution": "Implemented multi-channel campaigns with smart segmentation",
+      "implementation": [
+        "Migrated from 5 tools to Senova",
+        "Set up automated workflows",
+        "Created targeted segments",
+        "Launched A/B testing"
+      ],
+      "results": [
+        { "metric": "8.5%", "label": "Conversion rate (4X improvement)" },
+        { "metric": "$127K", "label": "Additional monthly revenue" },
+        { "metric": "65%", "label": "Reduction in marketing costs" },
+        { "metric": "15hrs", "label": "Saved per week on campaign management" }
+      ],
+      "quote": "Senova transformed our marketing. We're booking 3X more appointments with half the effort.",
+      "author": "Rachel Chen, Marketing Director"
+    },
+    {
+      "type": "automation",
+      "headline": "Set It and Forget It",
+      "subheadline": "Automated campaigns that run themselves",
+      "workflows": [
+        {
+          "trigger": "New patient books",
+          "actions": ["Welcome email", "Pre-appointment reminder", "Post-treatment follow-up", "Review request", "Next treatment suggestion"]
+        },
+        {
+          "trigger": "Treatment due",
+          "actions": ["Reminder email", "SMS if no open", "Special offer", "Easy booking link", "Provider availability"]
+        },
+        {
+          "trigger": "Cart abandonment",
+          "actions": ["Recovery email in 1 hour", "SMS reminder", "Limited-time discount", "Customer service follow-up"]
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "headline": "Ready to Fill Your Calendar?",
+      "subheadline": "Launch your first campaign in minutes with our proven templates",
+      "primary_cta": {
+        "text": "Start Free Trial",
+        "link": "/demo"
+      },
+      "secondary_cta": {
+        "text": "See Campaign Examples",
+        "link": "/campaign-gallery"
+      },
+      "features": [
+        "14-day free trial",
+        "50+ templates included",
+        "White-glove setup",
+        "No contracts"
+      ]
+    }
+  ],
+  "schema_markup": {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Senova Campaign Activation",
+    "description": "Multi-channel marketing campaign platform for medical aesthetics",
+    "applicationCategory": "Marketing Automation"
+  }
+}

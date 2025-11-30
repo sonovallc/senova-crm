@@ -1,0 +1,65 @@
+{
+  "tests": [
+    {
+      "msg": "Login successful",
+      "status": "PASS"
+    },
+    {
+      "msg": "Screenshot 1 saved",
+      "status": "PASS"
+    },
+    {
+      "msg": "Checkboxes found: 0",
+      "status": "FAIL"
+    },
+    {
+      "msg": "Select-all checkbox: FOUND",
+      "status": "PASS"
+    },
+    {
+      "msg": "Row checkboxes: FOUND",
+      "status": "PASS"
+    },
+    {
+      "msg": "Individual selection works",
+      "status": "PASS"
+    },
+    {
+      "msg": "Selection counter: FOUND",
+      "status": "PASS"
+    },
+    {
+      "msg": "Bulk action bar: FOUND",
+      "status": "PASS"
+    },
+    {
+      "msg": "Add Tags button: FOUND",
+      "status": "PASS"
+    },
+    {
+      "msg": "Remove Tags button: FOUND",
+      "status": "PASS"
+    },
+    {
+      "msg": "Export button: FOUND",
+      "status": "PASS"
+    },
+    {
+      "msg": "Delete button: FOUND",
+      "status": "PASS"
+    },
+    {
+      "msg": "Bulk action bar screenshot saved",
+      "status": "PASS"
+    },
+    {
+      "msg": "Select all works",
+      "status": "PASS"
+    },
+    {
+      "msg": "SUMMARY: 13 passed, 1 failed",
+      "status": "FAIL"
+    }
+  ],
+  "screenshots": []
+}

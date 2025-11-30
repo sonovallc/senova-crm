@@ -1,0 +1,664 @@
+{
+  "summary": {
+    "totalPages": 30,
+    "passed": 0,
+    "failed": 8,
+    "errors": 22,
+    "passRate": "0.0%",
+    "timestamp": "2025-11-29T02:28:49.142Z"
+  },
+  "issues": {
+    "fourOhFour": [],
+    "consoleErrors": [
+      {
+        "url": "/about",
+        "errors": [
+          "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant"
+        ]
+      }
+    ],
+    "brokenImages": [
+      {
+        "url": "/",
+        "images": [
+          "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1507003211169-0a1dd7228f2d%3Fw%3D400%26h%3D400%26fit%3Dcrop%26auto%3Dformat&w=3840&q=75",
+          "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1573496359142-b8d87734a5a2%3Fw%3D400%26h%3D400%26fit%3Dcrop%26auto%3Dformat&w=3840&q=75",
+          "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1560250097-0b93528c311a%3Fw%3D400%26h%3D400%26fit%3Dcrop%26auto%3Dformat&w=3840&q=75"
+        ]
+      },
+      {
+        "url": "/platform",
+        "images": [
+          "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1551288049-bebda4e38f71%3Fw%3D800%26h%3D600%26fit%3Dcrop%26auto%3Dformat&w=3840&q=75",
+          "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1556742521-9713bf272865%3Fw%3D800%26h%3D600%26fit%3Dcrop%26auto%3Dformat&w=3840&q=75",
+          "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1553484771-371a605b060b%3Fw%3D800%26h%3D600%26fit%3Dcrop%26auto%3Dformat&w=3840&q=75",
+          "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1504868584819-f8e8b4b6d7e3%3Fw%3D800%26h%3D600%26fit%3Dcrop%26auto%3Dformat&w=3840&q=75",
+          "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1543286386-713bdd548da4%3Fw%3D800%26h%3D600%26fit%3Dcrop%26auto%3Dformat&w=3840&q=75"
+        ]
+      }
+    ],
+    "colorViolations": [
+      {
+        "url": "/",
+        "violations": [
+          {
+            "element": "BODY.__variable_6ea4a9 __variable_d59ba8 font-body",
+            "type": "background",
+            "color": "purple",
+            "value": "rgb(253, 250, 247)"
+          },
+          {
+            "element": "HEADER.fixed top-0 z-50 w-full transition-all duration-500 bg-white/50 dark:bg-senova-dark/50 backdrop-blur-md",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.5)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          }
+        ]
+      },
+      {
+        "url": "/platform",
+        "violations": [
+          {
+            "element": "BODY.__variable_6ea4a9 __variable_d59ba8 font-body",
+            "type": "background",
+            "color": "purple",
+            "value": "rgb(253, 250, 247)"
+          },
+          {
+            "element": "HEADER.fixed top-0 z-50 w-full transition-all duration-500 bg-white/50 dark:bg-senova-dark/50 backdrop-blur-md",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.5)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          }
+        ]
+      },
+      {
+        "url": "/pricing",
+        "violations": [
+          {
+            "element": "BODY.__variable_6ea4a9 __variable_d59ba8 font-body",
+            "type": "background",
+            "color": "purple",
+            "value": "rgb(253, 250, 247)"
+          },
+          {
+            "element": "HEADER.fixed top-0 z-50 w-full transition-all duration-500 bg-white/50 dark:bg-senova-dark/50 backdrop-blur-md",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.5)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          }
+        ]
+      },
+      {
+        "url": "/about",
+        "violations": [
+          {
+            "element": "BODY.__variable_6ea4a9 __variable_d59ba8 font-body",
+            "type": "background",
+            "color": "purple",
+            "value": "rgb(253, 250, 247)"
+          },
+          {
+            "element": "HEADER.fixed top-0 z-50 w-full transition-all duration-500 bg-white/50 dark:bg-senova-dark/50 backdrop-blur-md",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.5)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          }
+        ]
+      },
+      {
+        "url": "/contact",
+        "violations": [
+          {
+            "element": "BODY.__variable_6ea4a9 __variable_d59ba8 font-body",
+            "type": "background",
+            "color": "purple",
+            "value": "rgb(253, 250, 247)"
+          },
+          {
+            "element": "HEADER.fixed top-0 z-50 w-full transition-all duration-500 bg-white/50 dark:bg-senova-dark/50 backdrop-blur-md",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.5)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          }
+        ]
+      },
+      {
+        "url": "/solutions/crm",
+        "violations": [
+          {
+            "element": "BODY.__variable_6ea4a9 __variable_d59ba8 font-body",
+            "type": "background",
+            "color": "purple",
+            "value": "rgb(253, 250, 247)"
+          },
+          {
+            "element": "HEADER.fixed top-0 z-50 w-full transition-all duration-500 bg-white/50 dark:bg-senova-dark/50 backdrop-blur-md",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.5)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          }
+        ]
+      },
+      {
+        "url": "/solutions/audience-intelligence",
+        "violations": [
+          {
+            "element": "BODY.__variable_6ea4a9 __variable_d59ba8 font-body",
+            "type": "background",
+            "color": "purple",
+            "value": "rgb(253, 250, 247)"
+          },
+          {
+            "element": "HEADER.fixed top-0 z-50 w-full transition-all duration-500 bg-white/50 dark:bg-senova-dark/50 backdrop-blur-md",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.5)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          }
+        ]
+      },
+      {
+        "url": "/solutions/patient-identification",
+        "violations": [
+          {
+            "element": "BODY.__variable_6ea4a9 __variable_d59ba8 font-body",
+            "type": "background",
+            "color": "purple",
+            "value": "rgb(253, 250, 247)"
+          },
+          {
+            "element": "HEADER.fixed top-0 z-50 w-full transition-all duration-500 bg-white/50 dark:bg-senova-dark/50 backdrop-blur-md",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.5)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          },
+          {
+            "element": "DIV.relative min-w-[320px] rounded-2xl bg-white/95 dark:bg-senova-dark/95 backdrop-blur-xl shadow-2xl border border-senova-gray-100/20 overflow-hidden",
+            "type": "background",
+            "color": "purple",
+            "value": "rgba(255, 255, 255, 0.95)"
+          }
+        ]
+      }
+    ],
+    "missingContent": [],
+    "brokenCTAs": [],
+    "formErrors": []
+  },
+  "detailedResults": [
+    {
+      "url": "/",
+      "name": "Home",
+      "category": "Core",
+      "status": "FAIL",
+      "issues": [
+        "3 broken images",
+        "Color violations: purple, purple, purple, purple, purple"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:25:50.826Z"
+    },
+    {
+      "url": "/platform",
+      "name": "Platform",
+      "category": "Core",
+      "status": "FAIL",
+      "issues": [
+        "5 broken images",
+        "Color violations: purple, purple, purple, purple, purple"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:26:11.584Z"
+    },
+    {
+      "url": "/pricing",
+      "name": "Pricing",
+      "category": "Core",
+      "status": "FAIL",
+      "issues": [
+        "Color violations: purple, purple, purple, purple, purple"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:26:35.073Z"
+    },
+    {
+      "url": "/about",
+      "name": "About",
+      "category": "Core",
+      "status": "FAIL",
+      "issues": [
+        "1 console errors",
+        "Color violations: purple, purple, purple, purple, purple"
+      ],
+      "consoleErrors": [
+        "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant"
+      ],
+      "timestamp": "2025-11-29T02:26:59.289Z"
+    },
+    {
+      "url": "/contact",
+      "name": "Contact",
+      "category": "Core",
+      "status": "FAIL",
+      "issues": [
+        "Color violations: purple, purple, purple, purple, purple"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:27:25.358Z"
+    },
+    {
+      "url": "/solutions/crm",
+      "name": "CRM Solution",
+      "category": "Solutions",
+      "status": "FAIL",
+      "issues": [
+        "Color violations: purple, purple, purple, purple, purple"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:27:51.798Z"
+    },
+    {
+      "url": "/solutions/audience-intelligence",
+      "name": "Audience Intelligence",
+      "category": "Solutions",
+      "status": "FAIL",
+      "issues": [
+        "Color violations: purple, purple, purple, purple, purple"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:11.746Z"
+    },
+    {
+      "url": "/solutions/patient-identification",
+      "name": "Patient Identification",
+      "category": "Solutions",
+      "status": "FAIL",
+      "issues": [
+        "Color violations: purple, purple, purple, purple, purple"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:27.367Z"
+    },
+    {
+      "url": "/solutions/visitor-identification",
+      "name": "Visitor Identification",
+      "category": "Solutions",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/solutions/visitor-identification\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:44.510Z"
+    },
+    {
+      "url": "/solutions/campaign-activation",
+      "name": "Campaign Activation",
+      "category": "Solutions",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/solutions/campaign-activation\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.083Z"
+    },
+    {
+      "url": "/solutions/analytics",
+      "name": "Analytics",
+      "category": "Solutions",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/solutions/analytics\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.087Z"
+    },
+    {
+      "url": "/industries/medical-spas",
+      "name": "Medical Spas",
+      "category": "Industries",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/industries/medical-spas\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.090Z"
+    },
+    {
+      "url": "/industries/dermatology",
+      "name": "Dermatology",
+      "category": "Industries",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/industries/dermatology\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.093Z"
+    },
+    {
+      "url": "/industries/plastic-surgery",
+      "name": "Plastic Surgery",
+      "category": "Industries",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/industries/plastic-surgery\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.095Z"
+    },
+    {
+      "url": "/industries/aesthetic-clinics",
+      "name": "Aesthetic Clinics",
+      "category": "Industries",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/industries/aesthetic-clinics\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.101Z"
+    },
+    {
+      "url": "/industries/restaurants",
+      "name": "Restaurants",
+      "category": "Industries",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/industries/restaurants\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.104Z"
+    },
+    {
+      "url": "/industries/home-services",
+      "name": "Home Services",
+      "category": "Industries",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/industries/home-services\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.106Z"
+    },
+    {
+      "url": "/industries/retail",
+      "name": "Retail",
+      "category": "Industries",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/industries/retail\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.108Z"
+    },
+    {
+      "url": "/industries/professional-services",
+      "name": "Professional Services",
+      "category": "Industries",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/industries/professional-services\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.112Z"
+    },
+    {
+      "url": "/privacy-policy",
+      "name": "Privacy Policy",
+      "category": "Legal",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/privacy-policy\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.115Z"
+    },
+    {
+      "url": "/terms-of-service",
+      "name": "Terms of Service",
+      "category": "Legal",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/terms-of-service\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.116Z"
+    },
+    {
+      "url": "/hipaa",
+      "name": "HIPAA",
+      "category": "Legal",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/hipaa\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.118Z"
+    },
+    {
+      "url": "/security",
+      "name": "Security",
+      "category": "Legal",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/security\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.123Z"
+    },
+    {
+      "url": "/compliance",
+      "name": "Compliance",
+      "category": "Legal",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/compliance\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.125Z"
+    },
+    {
+      "url": "/login",
+      "name": "Login",
+      "category": "Auth",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/login\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.128Z"
+    },
+    {
+      "url": "/register",
+      "name": "Register",
+      "category": "Auth",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/register\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.131Z"
+    },
+    {
+      "url": "/blog",
+      "name": "Blog",
+      "category": "Placeholder",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/blog\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.133Z"
+    },
+    {
+      "url": "/case-studies",
+      "name": "Case Studies",
+      "category": "Placeholder",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/case-studies\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.135Z"
+    },
+    {
+      "url": "/roi-calculator",
+      "name": "ROI Calculator",
+      "category": "Placeholder",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/roi-calculator\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.136Z"
+    },
+    {
+      "url": "/docs",
+      "name": "Documentation",
+      "category": "Placeholder",
+      "status": "ERROR",
+      "issues": [
+        "Test error: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/docs\", waiting until \"networkidle\"\u001b[22m\n"
+      ],
+      "consoleErrors": [],
+      "timestamp": "2025-11-29T02:28:49.138Z"
+    }
+  ],
+  "screenshotsPath": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\senova-audit"
+}

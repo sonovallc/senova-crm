@@ -1,0 +1,155 @@
+================================================================================
+BUGS #11-12 INVESTIGATION REPORT: TEMPLATE EDIT ISSUES
+================================================================================
+Investigation Date: 2025-11-25
+Status: COMPLETE - ROOT CAUSES IDENTIFIED
+Severity: BUG #11 (High), BUG #12 (High)
+
+================================================================================
+BUG #11: EDIT TEMPLATE BODY CONTENT EMPTY
+================================================================================
+
+ROOT CAUSE IDENTIFIED:
+RichTextEditor not properly initializing in Dialog context
+
+LOCATION:
+File 1: context-engineering-intro/frontend/src/components/inbox/rich-text-editor.tsx
+  Lines: 46-66 (useEffect hook for content updates)
+  
+File 2: context-engineering-intro/frontend/src/app/(dashboard)/dashboard/email/templates/page.tsx
+  Lines: 619-626 (RichTextEditor in Edit Modal)
+  Lines: 569-666 (Full Edit Modal Dialog)
+  Lines: 258-267 (handleEdit function)
+
+PROBLEM EXPLANATION:
+1. When Edit button clicked, handleEdit() correctly sets formData.body_html
+2. Dialog opens with isEditModalOpen=true
+3. RichTextEditor mounts and TipTap editor initializes
+4. useEffect tries to update content via setTimeout(0)
+5. BUT: Dialog rendering cycle interferes with TipTap initialization
+6. When setTimeout fires, editor might not be fully initialized (editor.isEditable=false)
+7. Result: Body field remains empty despite formData containing the content
+
+CRITICAL CODE SECTION (rich-text-editor.tsx):
+  Line 61: setTimeout(() => { ... }, 0)  // 0ms delay insufficient for Dialog context
+  
+WHY PREVIOUS BUG #10 FIX INCOMPLETE:
+- Bug #10 fix (setTimeout) works in simple contexts
+- But fails in Dialog context because:
+  * Dialog animations interfere with TipTap state
+  * 0ms delay not enough for Dialog + TipTap dual initialization
+  * editor.isEditable check fails during Dialog render cycle
+
+================================================================================
+BUG #12: SUCCESS AND ERROR NOTIFICATIONS SIMULTANEOUSLY
+================================================================================
+
+ROOT CAUSE IDENTIFIED:
+Query invalidation failure after successful mutation update
+
+LOCATION:
+File 1: context-engineering-intro/frontend/src/app/(dashboard)/dashboard/email/templates/page.tsx
+  Lines: 145-166 (updateMutation with onSuccess/onError callbacks)
+  
+File 2: context-engineering-intro/frontend/src/lib/queries/email-templates.ts
+  Lines: 32-43 (updateTemplate API call, no response validation)
+
+PROBLEM EXPLANATION:
+1. User clicks "Save Changes"
+2. API PATCH request succeeds (HTTP 200)
+3. onSuccess callback fires immediately:
+   - Shows success toast "Template updated"
+   - Calls queryClient.invalidateQueries()
+   - Closes modal and resets form
+4. The invalidateQueries() triggers a refetch of email-templates list
+5. If this refetch FAILS (network blip, backend error, race condition):
+   - Error handlers are triggered
+   - Second toast shown "Failed to update template"
+6. Result: Both success AND error toasts visible simultaneously
+
+CRITICAL CODE SECTION (page.tsx, lines 149-155):
+  onSuccess: () => {
+    toast({ success message })
+    queryClient.invalidateQueries({ queryKey: ['email-templates'] })  <-- CAN FAIL
+    setIsEditModalOpen(false)
+    ...
+  }
+
+SECONDARY ISSUE:
+File: context-engineering-intro/frontend/src/lib/queries/email-templates.ts
+  Lines: 40-43: updateTemplate function doesn't validate API response
+  - If API returns 200 with error in body, treated as success
+  - No validation of response.data before returning
+
+================================================================================
+COMPARISON TABLE
+================================================================================
+
+BUG #11 - Body Empty in Edit Mode
+  Root Cause: TipTap not initialized in Dialog render cycle
+  Primary File: rich-text-editor.tsx (line 61)
+  Secondary File: page.tsx (Edit Modal, lines 619-626)
+  Fix Complexity: MEDIUM (change setTimeout delay OR use Dialog callbacks)
+  Priority: HIGH (blocks editing)
+
+BUG #12 - Dual Toast Notifications
+  Root Cause: invalidateQueries failure after successful mutation
+  Primary File: page.tsx (updateMutation, lines 149-155)
+  Secondary File: email-templates.ts (API validation, lines 40-43)
+  Fix Complexity: MEDIUM (add error handling around invalidation)
+  Priority: HIGH (confusing UX)
+
+================================================================================
+RECOMMENDED FIXES
+================================================================================
+
+FIX #11 - OPTION 1 (SIMPLEST):
+File: rich-text-editor.tsx, Line 61
+  Change: setTimeout(() => { ... }, 0)
+  To: setTimeout(() => { ... }, 100)
+  Reason: 100ms delay allows both Dialog and TipTap to fully initialize
+
+FIX #11 - OPTION 2 (PREFERRED):
+File: page.tsx, Edit Modal Dialog (lines 569-666)
+  Add useEffect to trigger editor update when Dialog fully opens
+  Use Dialog's onOpenChange callback to signal when dialog is ready
+  More precise timing control for Dialog context
+
+FIX #12 - PRIMARY SOLUTION:
+File: page.tsx, updateMutation onSuccess (lines 149-155)
+  Wrap invalidateQueries in try-catch:
+    queryClient.invalidateQueries({ queryKey: ['email-templates'] })
+      .catch(() => console.warn('Failed to refetch templates'))
+  This prevents refetch errors from cascading into error toasts
+
+FIX #12 - SECONDARY SOLUTION (ALSO DO):
+File: email-templates.ts, updateTemplate function (lines 40-43)
+  Add response validation:
+    if (!response.data || !response.data.id) {
+      throw new Error('Invalid response from server')
+    }
+  This ensures API responses are validated before returning
+
+================================================================================
+FILES TO MODIFY
+================================================================================
+
+For Bug #11:
+  1. C:\...\frontend\src\components\inbox\rich-text-editor.tsx
+     Edit line 61: Increase setTimeout from 0 to 100ms
+     
+  OR
+  
+  2. C:\...\frontend\src\app\(dashboard)\dashboard\email\templates\page.tsx
+     Edit lines 569-666: Add Dialog callback-based timing
+
+For Bug #12:
+  1. C:\...\frontend\src\app\(dashboard)\dashboard\email\templates\page.tsx
+     Edit lines 149-155: Add error handling around invalidateQueries
+     
+  2. C:\...\frontend\src\lib\queries\email-templates.ts
+     Edit lines 40-43: Add response validation
+
+================================================================================
+INVESTIGATION COMPLETE
+================================================================================

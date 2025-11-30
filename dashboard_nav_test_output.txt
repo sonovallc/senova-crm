@@ -1,0 +1,11 @@
+DASHBOARD NAVIGATION TEST
+========================
+
+1. LOGGING IN...
+   Login submitted
+
+   Current URL: http://localhost:3004/login
+
+   ✗ Login failed - not on dashboard
+
+Browser closed

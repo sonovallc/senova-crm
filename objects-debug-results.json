@@ -1,0 +1,40 @@
+{
+  "summary": {
+    "totalTests": 2,
+    "passed": 1,
+    "failed": 1,
+    "errors": [],
+    "passRate": "50.00"
+  },
+  "details": {
+    "objectsList": {
+      "error": "locator.textContent: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('h1')\u001b[22m\n"
+    },
+    "createObject": {
+      "error": "Create button not found"
+    },
+    "objectDetail": {
+      "error": "No objects found to test"
+    },
+    "editObject": {
+      "error": "No objects found to edit"
+    },
+    "duplicateObject": {
+      "error": "No action menus found"
+    },
+    "deleteObject": {
+      "error": "No action menus found"
+    },
+    "edgeCases": {
+      "emptyState": {
+        "shown": false,
+        "status": "FAIL"
+      },
+      "browserNavigation": {
+        "maintained": true,
+        "status": "PASS"
+      }
+    },
+    "consoleErrors": {}
+  }
+}

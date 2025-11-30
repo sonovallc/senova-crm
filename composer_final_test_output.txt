@@ -1,0 +1,25 @@
+=== Sequence Timing Modes Test ===
+
+✓ Logged in
+
+✓ Page loaded
+
+
+❌ TEST FAILED
+ERROR: locator.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[id="sequence-enabled"]')[22m
+
+node:internal/process/promises:288
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+locator.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[id="sequence-enabled"]')[22m
+
+    at test (C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\test_composer_final.js:33:23) {
+  name: 'TimeoutError'
+}
+
+Node.js v18.20.2

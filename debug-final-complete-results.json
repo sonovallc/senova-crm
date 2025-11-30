@@ -1,0 +1,259 @@
+{
+  "timestamp": "2025-11-29T20:56:07.290Z",
+  "publicPages": {
+    "Home": {
+      "status": 200,
+      "passed": true,
+      "elements": {
+        "buttons": 10,
+        "links": 83,
+        "inputs": 1,
+        "selects": 0
+      },
+      "errors": 0,
+      "warnings": 0
+    },
+    "Features": {
+      "status": 200,
+      "passed": true,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "selects": 0
+      },
+      "errors": 0,
+      "warnings": 0
+    },
+    "Platform": {
+      "status": 200,
+      "passed": true,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "selects": 0
+      },
+      "errors": 0,
+      "warnings": 0
+    },
+    "Pricing": {
+      "status": 200,
+      "passed": true,
+      "elements": {
+        "buttons": 12,
+        "links": 78,
+        "inputs": 1,
+        "selects": 0
+      },
+      "errors": 0,
+      "warnings": 0
+    },
+    "About": {
+      "status": 200,
+      "passed": true,
+      "elements": {
+        "buttons": 12,
+        "links": 73,
+        "inputs": 1,
+        "selects": 0
+      },
+      "errors": 1,
+      "warnings": 0
+    },
+    "Contact": {
+      "status": 200,
+      "passed": true,
+      "elements": {
+        "buttons": 22,
+        "links": 71,
+        "inputs": 15,
+        "selects": 1
+      },
+      "errors": 0,
+      "warnings": 0
+    },
+    "Login": {
+      "status": 200,
+      "passed": true,
+      "elements": {
+        "buttons": 3,
+        "links": 2,
+        "inputs": 2,
+        "selects": 0
+      },
+      "errors": 0,
+      "warnings": 0
+    },
+    "Register": {
+      "status": 200,
+      "passed": true,
+      "elements": {
+        "buttons": 3,
+        "links": 1,
+        "inputs": 5,
+        "selects": 0
+      },
+      "errors": 0,
+      "warnings": 0
+    },
+    "Industry-medical-spas": {
+      "status": 200,
+      "passed": true,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "selects": 0
+      },
+      "errors": 0,
+      "warnings": 0
+    },
+    "Industry-dermatology": {
+      "status": 200,
+      "passed": true,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "selects": 0
+      },
+      "errors": 0,
+      "warnings": 0
+    },
+    "Industry-plastic-surgery": {
+      "status": 200,
+      "passed": true,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "selects": 0
+      },
+      "errors": 0,
+      "warnings": 0
+    },
+    "Industry-restaurants": {
+      "status": 200,
+      "passed": true,
+      "elements": {
+        "buttons": 13,
+        "links": 74,
+        "inputs": 1,
+        "selects": 0
+      },
+      "errors": 0,
+      "warnings": 0
+    },
+    "Solution-lead-management": {
+      "status": 404,
+      "passed": false,
+      "elements": {
+        "buttons": 2,
+        "links": 0,
+        "inputs": 0,
+        "selects": 0
+      },
+      "errors": 1,
+      "warnings": 0
+    },
+    "Solution-customer-engagement": {
+      "status": 404,
+      "passed": false,
+      "elements": {
+        "buttons": 2,
+        "links": 0,
+        "inputs": 0,
+        "selects": 0
+      },
+      "errors": 1,
+      "warnings": 0
+    },
+    "Solution-analytics": {
+      "status": 200,
+      "passed": true,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "selects": 0
+      },
+      "errors": 0,
+      "warnings": 0
+    },
+    "Solution-automation": {
+      "status": 404,
+      "passed": false,
+      "elements": {
+        "buttons": 2,
+        "links": 0,
+        "inputs": 0,
+        "selects": 0
+      },
+      "errors": 1,
+      "warnings": 0
+    }
+  },
+  "dashboardPages": {},
+  "bugVerifications": {
+    "Login": {
+      "passed": false,
+      "error": "Login failed"
+    },
+    "Features-BugCheck": {
+      "status": 200,
+      "passed": true,
+      "elements": {
+        "buttons": 10,
+        "links": 75,
+        "inputs": 1,
+        "selects": 0
+      },
+      "errors": 0,
+      "warnings": 0
+    },
+    "Features-404-Fixed": true,
+    "No-Console-Errors": false,
+    "No-Hydration-Warnings": true,
+    "No-Duplicate-Keys": true,
+    "Backend-API-Healthy": true
+  },
+  "errors": [
+    {
+      "time": "2025-11-29T20:57:06.952Z",
+      "url": "http://localhost:3004/about",
+      "text": "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant"
+    },
+    {
+      "time": "2025-11-29T20:58:56.176Z",
+      "url": "http://localhost:3004/solutions/lead-management",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "time": "2025-11-29T20:59:08.070Z",
+      "url": "http://localhost:3004/solutions/customer-engagement",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "time": "2025-11-29T20:59:31.176Z",
+      "url": "http://localhost:3004/solutions/automation",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    }
+  ],
+  "warnings": [],
+  "totalTests": 17,
+  "passed": 14,
+  "failed": 3,
+  "summary": {
+    "totalPages": 16,
+    "passedPages": 13,
+    "failedPages": 3,
+    "pageSuccessRate": "81.3%",
+    "bugFixesTotal": 7,
+    "bugFixesPassed": 4,
+    "bugFixesFailed": 3,
+    "bugFixSuccessRate": "57.1%",
+    "overallHealthScore": "69.2%",
+    "productionReady": false
+  }
+}

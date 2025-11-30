@@ -1,0 +1,782 @@
+[
+  {
+    "type": "verbose",
+    "text": "[DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+    "timestamp": "2025-11-25T10:50:25.249Z"
+  },
+  {
+    "type": "info",
+    "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "timestamp": "2025-11-25T10:50:25.957Z"
+  },
+  {
+    "type": "info",
+    "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "timestamp": "2025-11-25T10:50:29.746Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Starting auto-mapping...",
+    "timestamp": "2025-11-25T10:50:45.393Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Available fields count: 86",
+    "timestamp": "2025-11-25T10:50:45.399Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] CSV columns: [UUID, FIRST_NAME, LAST_NAME, PERSONAL_ADDRESS, PERSONAL_CITY, PERSONAL_STATE, PERSONAL_ZIP, PERSONAL_ZIP4, AGE_RANGE, CHILDREN, GENDER, HOMEOWNER, MARRIED, NET_WORTH, INCOME_RANGE, DIRECT_NUMBER, DIRECT_NUMBER_DNC, MOBILE_PHONE, MOBILE_PHONE_DNC, PERSONAL_PHONE, PERSONAL_PHONE_DNC, BUSINESS_EMAIL, PERSONAL_EMAILS, PERSONAL_VERIFIED_EMAILS, BUSINESS_VERIFIED_EMAILS, SHA256_PERSONAL_EMAIL, SHA256_BUSINESS_EMAIL, JOB_TITLE, HEADLINE, DEPARTMENT, SENIORITY_LEVEL, INFERRED_YEARS_EXPERIENCE, COMPANY_NAME_HISTORY, JOB_TITLE_HISTORY, EDUCATION_HISTORY, COMPANY_ADDRESS, COMPANY_DESCRIPTION, COMPANY_DOMAIN, COMPANY_EMPLOYEE_COUNT, COMPANY_LINKEDIN_URL, COMPANY_NAME, COMPANY_PHONE, COMPANY_REVENUE, COMPANY_SIC, COMPANY_NAICS, COMPANY_CITY, COMPANY_STATE, COMPANY_ZIP, COMPANY_INDUSTRY, LINKEDIN_URL, TWITTER_URL, FACEBOOK_URL, SOCIAL_CONNECTIONS, SKILLS, INTERESTS, SKIPTRACE_MATCH_SCORE, SKIPTRACE_NAME, SKIPTRACE_ADDRESS, SKIPTRACE_CITY, SKIPTRACE_STATE, SKIPTRACE_ZIP, SKIPTRACE_LANDLINE_NUMBERS, SKIPTRACE_WIRELESS_NUMBERS, SKIPTRACE_CREDIT_RATING, SKIPTRACE_DNC, SKIPTRACE_EXACT_AGE, SKIPTRACE_ETHNIC_CODE, SKIPTRACE_LANGUAGE_CODE, SKIPTRACE_IP, SKIPTRACE_B2B_ADDRESS, SKIPTRACE_B2B_PHONE, SKIPTRACE_B2B_SOURCE, SKIPTRACE_B2B_WEBSITE, VALID_PHONES]",
+    "timestamp": "2025-11-25T10:50:45.400Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"UUID\" -> normalized: \"uuid\"",
+    "timestamp": "2025-11-25T10:50:45.406Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Special mapping: \"UUID\" -> \"provider_uuid\"",
+    "timestamp": "2025-11-25T10:50:45.406Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"FIRST_NAME\" -> normalized: \"firstname\"",
+    "timestamp": "2025-11-25T10:50:45.406Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"FIRST_NAME\" -> \"first_name\"",
+    "timestamp": "2025-11-25T10:50:45.406Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"LAST_NAME\" -> normalized: \"lastname\"",
+    "timestamp": "2025-11-25T10:50:45.407Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"LAST_NAME\" -> \"last_name\"",
+    "timestamp": "2025-11-25T10:50:45.407Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"PERSONAL_ADDRESS\" -> normalized: \"personaladdress\"",
+    "timestamp": "2025-11-25T10:50:45.407Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"PERSONAL_ADDRESS\" -> \"personal_address\"",
+    "timestamp": "2025-11-25T10:50:45.407Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"PERSONAL_CITY\" -> normalized: \"personalcity\"",
+    "timestamp": "2025-11-25T10:50:45.407Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"PERSONAL_CITY\" -> \"personal_city\"",
+    "timestamp": "2025-11-25T10:50:45.407Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"PERSONAL_STATE\" -> normalized: \"personalstate\"",
+    "timestamp": "2025-11-25T10:50:45.407Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"PERSONAL_STATE\" -> \"personal_state\"",
+    "timestamp": "2025-11-25T10:50:45.407Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"PERSONAL_ZIP\" -> normalized: \"personalzip\"",
+    "timestamp": "2025-11-25T10:50:45.407Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"PERSONAL_ZIP\" -> \"personal_zip\"",
+    "timestamp": "2025-11-25T10:50:45.407Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"PERSONAL_ZIP4\" -> normalized: \"personalzip4\"",
+    "timestamp": "2025-11-25T10:50:45.408Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"PERSONAL_ZIP4\" -> \"personal_zip4\"",
+    "timestamp": "2025-11-25T10:50:45.408Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"AGE_RANGE\" -> normalized: \"agerange\"",
+    "timestamp": "2025-11-25T10:50:45.408Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"AGE_RANGE\" -> \"age_range\"",
+    "timestamp": "2025-11-25T10:50:45.408Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"CHILDREN\" -> normalized: \"children\"",
+    "timestamp": "2025-11-25T10:50:45.409Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"CHILDREN\" -> \"children\"",
+    "timestamp": "2025-11-25T10:50:45.409Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"GENDER\" -> normalized: \"gender\"",
+    "timestamp": "2025-11-25T10:50:45.409Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"GENDER\" -> \"gender\"",
+    "timestamp": "2025-11-25T10:50:45.409Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"HOMEOWNER\" -> normalized: \"homeowner\"",
+    "timestamp": "2025-11-25T10:50:45.410Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"HOMEOWNER\" -> \"homeowner\"",
+    "timestamp": "2025-11-25T10:50:45.410Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"MARRIED\" -> normalized: \"married\"",
+    "timestamp": "2025-11-25T10:50:45.410Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"MARRIED\" -> \"married\"",
+    "timestamp": "2025-11-25T10:50:45.410Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"NET_WORTH\" -> normalized: \"networth\"",
+    "timestamp": "2025-11-25T10:50:45.410Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"NET_WORTH\" -> \"net_worth\"",
+    "timestamp": "2025-11-25T10:50:45.413Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"INCOME_RANGE\" -> normalized: \"incomerange\"",
+    "timestamp": "2025-11-25T10:50:45.414Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"INCOME_RANGE\" -> \"income_range\"",
+    "timestamp": "2025-11-25T10:50:45.414Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"DIRECT_NUMBER\" -> normalized: \"directnumber\"",
+    "timestamp": "2025-11-25T10:50:45.414Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"DIRECT_NUMBER\" -> \"direct_number\"",
+    "timestamp": "2025-11-25T10:50:45.414Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"DIRECT_NUMBER_DNC\" -> normalized: \"directnumberdnc\"",
+    "timestamp": "2025-11-25T10:50:45.414Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"DIRECT_NUMBER_DNC\" -> \"direct_number_dnc\"",
+    "timestamp": "2025-11-25T10:50:45.414Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"MOBILE_PHONE\" -> normalized: \"mobilephone\"",
+    "timestamp": "2025-11-25T10:50:45.414Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"MOBILE_PHONE\" -> \"mobile_phone\"",
+    "timestamp": "2025-11-25T10:50:45.414Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"MOBILE_PHONE_DNC\" -> normalized: \"mobilephonednc\"",
+    "timestamp": "2025-11-25T10:50:45.414Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"MOBILE_PHONE_DNC\" -> \"mobile_phone_dnc\"",
+    "timestamp": "2025-11-25T10:50:45.414Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"PERSONAL_PHONE\" -> normalized: \"personalphone\"",
+    "timestamp": "2025-11-25T10:50:45.414Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"PERSONAL_PHONE\" -> \"personal_phone\"",
+    "timestamp": "2025-11-25T10:50:45.414Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"PERSONAL_PHONE_DNC\" -> normalized: \"personalphonednc\"",
+    "timestamp": "2025-11-25T10:50:45.414Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"PERSONAL_PHONE_DNC\" -> \"personal_phone_dnc\"",
+    "timestamp": "2025-11-25T10:50:45.415Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"BUSINESS_EMAIL\" -> normalized: \"businessemail\"",
+    "timestamp": "2025-11-25T10:50:45.415Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"BUSINESS_EMAIL\" -> \"business_email\"",
+    "timestamp": "2025-11-25T10:50:45.416Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"PERSONAL_EMAILS\" -> normalized: \"personalemails\"",
+    "timestamp": "2025-11-25T10:50:45.417Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"PERSONAL_EMAILS\" -> \"personal_emails\"",
+    "timestamp": "2025-11-25T10:50:45.417Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"PERSONAL_VERIFIED_EMAILS\" -> normalized: \"personalverifiedemails\"",
+    "timestamp": "2025-11-25T10:50:45.417Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"PERSONAL_VERIFIED_EMAILS\" -> \"personal_verified_emails\"",
+    "timestamp": "2025-11-25T10:50:45.417Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"BUSINESS_VERIFIED_EMAILS\" -> normalized: \"businessverifiedemails\"",
+    "timestamp": "2025-11-25T10:50:45.417Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"BUSINESS_VERIFIED_EMAILS\" -> \"business_verified_emails\"",
+    "timestamp": "2025-11-25T10:50:45.417Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SHA256_PERSONAL_EMAIL\" -> normalized: \"sha256personalemail\"",
+    "timestamp": "2025-11-25T10:50:45.417Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SHA256_PERSONAL_EMAIL\" -> \"sha256_personal_email\"",
+    "timestamp": "2025-11-25T10:50:45.418Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SHA256_BUSINESS_EMAIL\" -> normalized: \"sha256businessemail\"",
+    "timestamp": "2025-11-25T10:50:45.418Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SHA256_BUSINESS_EMAIL\" -> \"sha256_business_email\"",
+    "timestamp": "2025-11-25T10:50:45.418Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"JOB_TITLE\" -> normalized: \"jobtitle\"",
+    "timestamp": "2025-11-25T10:50:45.418Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"JOB_TITLE\" -> \"job_title\"",
+    "timestamp": "2025-11-25T10:50:45.421Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"HEADLINE\" -> normalized: \"headline\"",
+    "timestamp": "2025-11-25T10:50:45.421Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"HEADLINE\" -> \"headline\"",
+    "timestamp": "2025-11-25T10:50:45.421Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"DEPARTMENT\" -> normalized: \"department\"",
+    "timestamp": "2025-11-25T10:50:45.421Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"DEPARTMENT\" -> \"department\"",
+    "timestamp": "2025-11-25T10:50:45.421Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SENIORITY_LEVEL\" -> normalized: \"senioritylevel\"",
+    "timestamp": "2025-11-25T10:50:45.421Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SENIORITY_LEVEL\" -> \"seniority_level\"",
+    "timestamp": "2025-11-25T10:50:45.421Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"INFERRED_YEARS_EXPERIENCE\" -> normalized: \"inferredyearsexperience\"",
+    "timestamp": "2025-11-25T10:50:45.421Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"INFERRED_YEARS_EXPERIENCE\" -> \"inferred_years_experience\"",
+    "timestamp": "2025-11-25T10:50:45.421Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"COMPANY_NAME_HISTORY\" -> normalized: \"companynamehistory\"",
+    "timestamp": "2025-11-25T10:50:45.421Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"COMPANY_NAME_HISTORY\" -> \"company_name_history\"",
+    "timestamp": "2025-11-25T10:50:45.422Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"JOB_TITLE_HISTORY\" -> normalized: \"jobtitlehistory\"",
+    "timestamp": "2025-11-25T10:50:45.422Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"JOB_TITLE_HISTORY\" -> \"job_title_history\"",
+    "timestamp": "2025-11-25T10:50:45.422Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"EDUCATION_HISTORY\" -> normalized: \"educationhistory\"",
+    "timestamp": "2025-11-25T10:50:45.422Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"EDUCATION_HISTORY\" -> \"education_history\"",
+    "timestamp": "2025-11-25T10:50:45.422Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"COMPANY_ADDRESS\" -> normalized: \"companyaddress\"",
+    "timestamp": "2025-11-25T10:50:45.422Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"COMPANY_ADDRESS\" -> \"company_address\"",
+    "timestamp": "2025-11-25T10:50:45.422Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"COMPANY_DESCRIPTION\" -> normalized: \"companydescription\"",
+    "timestamp": "2025-11-25T10:50:45.422Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"COMPANY_DESCRIPTION\" -> \"company_description\"",
+    "timestamp": "2025-11-25T10:50:45.422Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"COMPANY_DOMAIN\" -> normalized: \"companydomain\"",
+    "timestamp": "2025-11-25T10:50:45.422Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"COMPANY_DOMAIN\" -> \"company_domain\"",
+    "timestamp": "2025-11-25T10:50:45.422Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"COMPANY_EMPLOYEE_COUNT\" -> normalized: \"companyemployeecount\"",
+    "timestamp": "2025-11-25T10:50:45.422Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"COMPANY_EMPLOYEE_COUNT\" -> \"company_employee_count\"",
+    "timestamp": "2025-11-25T10:50:45.422Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"COMPANY_LINKEDIN_URL\" -> normalized: \"companylinkedinurl\"",
+    "timestamp": "2025-11-25T10:50:45.423Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"COMPANY_LINKEDIN_URL\" -> \"company_linkedin_url\"",
+    "timestamp": "2025-11-25T10:50:45.423Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"COMPANY_NAME\" -> normalized: \"companyname\"",
+    "timestamp": "2025-11-25T10:50:45.423Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"COMPANY_NAME\" -> \"company_name\"",
+    "timestamp": "2025-11-25T10:50:45.423Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"COMPANY_PHONE\" -> normalized: \"companyphone\"",
+    "timestamp": "2025-11-25T10:50:45.423Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"COMPANY_PHONE\" -> \"company_phone\"",
+    "timestamp": "2025-11-25T10:50:45.428Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"COMPANY_REVENUE\" -> normalized: \"companyrevenue\"",
+    "timestamp": "2025-11-25T10:50:45.428Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"COMPANY_REVENUE\" -> \"company_revenue\"",
+    "timestamp": "2025-11-25T10:50:45.429Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"COMPANY_SIC\" -> normalized: \"companysic\"",
+    "timestamp": "2025-11-25T10:50:45.429Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"COMPANY_SIC\" -> \"company_sic\"",
+    "timestamp": "2025-11-25T10:50:45.429Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"COMPANY_NAICS\" -> normalized: \"companynaics\"",
+    "timestamp": "2025-11-25T10:50:45.429Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"COMPANY_NAICS\" -> \"company_naics\"",
+    "timestamp": "2025-11-25T10:50:45.429Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"COMPANY_CITY\" -> normalized: \"companycity\"",
+    "timestamp": "2025-11-25T10:50:45.429Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"COMPANY_CITY\" -> \"company_city\"",
+    "timestamp": "2025-11-25T10:50:45.429Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"COMPANY_STATE\" -> normalized: \"companystate\"",
+    "timestamp": "2025-11-25T10:50:45.429Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"COMPANY_STATE\" -> \"company_state\"",
+    "timestamp": "2025-11-25T10:50:45.429Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"COMPANY_ZIP\" -> normalized: \"companyzip\"",
+    "timestamp": "2025-11-25T10:50:45.429Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"COMPANY_ZIP\" -> \"company_zip\"",
+    "timestamp": "2025-11-25T10:50:45.429Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"COMPANY_INDUSTRY\" -> normalized: \"companyindustry\"",
+    "timestamp": "2025-11-25T10:50:45.429Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"COMPANY_INDUSTRY\" -> \"company_industry\"",
+    "timestamp": "2025-11-25T10:50:45.430Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"LINKEDIN_URL\" -> normalized: \"linkedinurl\"",
+    "timestamp": "2025-11-25T10:50:45.430Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"LINKEDIN_URL\" -> \"linkedin_url\"",
+    "timestamp": "2025-11-25T10:50:45.430Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"TWITTER_URL\" -> normalized: \"twitterurl\"",
+    "timestamp": "2025-11-25T10:50:45.430Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"TWITTER_URL\" -> \"twitter_url\"",
+    "timestamp": "2025-11-25T10:50:45.430Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"FACEBOOK_URL\" -> normalized: \"facebookurl\"",
+    "timestamp": "2025-11-25T10:50:45.430Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"FACEBOOK_URL\" -> \"facebook_url\"",
+    "timestamp": "2025-11-25T10:50:45.430Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SOCIAL_CONNECTIONS\" -> normalized: \"socialconnections\"",
+    "timestamp": "2025-11-25T10:50:45.430Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SOCIAL_CONNECTIONS\" -> \"social_connections\"",
+    "timestamp": "2025-11-25T10:50:45.430Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SKILLS\" -> normalized: \"skills\"",
+    "timestamp": "2025-11-25T10:50:45.430Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SKILLS\" -> \"skills\"",
+    "timestamp": "2025-11-25T10:50:45.430Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"INTERESTS\" -> normalized: \"interests\"",
+    "timestamp": "2025-11-25T10:50:45.430Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"INTERESTS\" -> \"interests\"",
+    "timestamp": "2025-11-25T10:50:45.430Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SKIPTRACE_MATCH_SCORE\" -> normalized: \"skiptracematchscore\"",
+    "timestamp": "2025-11-25T10:50:45.430Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SKIPTRACE_MATCH_SCORE\" -> \"skiptrace_match_score\"",
+    "timestamp": "2025-11-25T10:50:45.435Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SKIPTRACE_NAME\" -> normalized: \"skiptracename\"",
+    "timestamp": "2025-11-25T10:50:45.436Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SKIPTRACE_NAME\" -> \"skiptrace_name\"",
+    "timestamp": "2025-11-25T10:50:45.436Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SKIPTRACE_ADDRESS\" -> normalized: \"skiptraceaddress\"",
+    "timestamp": "2025-11-25T10:50:45.436Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SKIPTRACE_ADDRESS\" -> \"skiptrace_address\"",
+    "timestamp": "2025-11-25T10:50:45.436Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SKIPTRACE_CITY\" -> normalized: \"skiptracecity\"",
+    "timestamp": "2025-11-25T10:50:45.436Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SKIPTRACE_CITY\" -> \"skiptrace_city\"",
+    "timestamp": "2025-11-25T10:50:45.436Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SKIPTRACE_STATE\" -> normalized: \"skiptracestate\"",
+    "timestamp": "2025-11-25T10:50:45.436Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SKIPTRACE_STATE\" -> \"skiptrace_state\"",
+    "timestamp": "2025-11-25T10:50:45.436Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SKIPTRACE_ZIP\" -> normalized: \"skiptracezip\"",
+    "timestamp": "2025-11-25T10:50:45.436Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SKIPTRACE_ZIP\" -> \"skiptrace_zip\"",
+    "timestamp": "2025-11-25T10:50:45.436Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SKIPTRACE_LANDLINE_NUMBERS\" -> normalized: \"skiptracelandlinenumbers\"",
+    "timestamp": "2025-11-25T10:50:45.436Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SKIPTRACE_LANDLINE_NUMBERS\" -> \"skiptrace_landline_numbers\"",
+    "timestamp": "2025-11-25T10:50:45.437Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SKIPTRACE_WIRELESS_NUMBERS\" -> normalized: \"skiptracewirelessnumbers\"",
+    "timestamp": "2025-11-25T10:50:45.437Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SKIPTRACE_WIRELESS_NUMBERS\" -> \"skiptrace_wireless_numbers\"",
+    "timestamp": "2025-11-25T10:50:45.437Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SKIPTRACE_CREDIT_RATING\" -> normalized: \"skiptracecreditrating\"",
+    "timestamp": "2025-11-25T10:50:45.437Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SKIPTRACE_CREDIT_RATING\" -> \"skiptrace_credit_rating\"",
+    "timestamp": "2025-11-25T10:50:45.437Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SKIPTRACE_DNC\" -> normalized: \"skiptracednc\"",
+    "timestamp": "2025-11-25T10:50:45.437Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SKIPTRACE_DNC\" -> \"skiptrace_dnc\"",
+    "timestamp": "2025-11-25T10:50:45.437Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SKIPTRACE_EXACT_AGE\" -> normalized: \"skiptraceexactage\"",
+    "timestamp": "2025-11-25T10:50:45.437Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SKIPTRACE_EXACT_AGE\" -> \"skiptrace_exact_age\"",
+    "timestamp": "2025-11-25T10:50:45.437Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SKIPTRACE_ETHNIC_CODE\" -> normalized: \"skiptraceethniccode\"",
+    "timestamp": "2025-11-25T10:50:45.437Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SKIPTRACE_ETHNIC_CODE\" -> \"skiptrace_ethnic_code\"",
+    "timestamp": "2025-11-25T10:50:45.437Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SKIPTRACE_LANGUAGE_CODE\" -> normalized: \"skiptracelanguagecode\"",
+    "timestamp": "2025-11-25T10:50:45.437Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SKIPTRACE_LANGUAGE_CODE\" -> \"skiptrace_language_code\"",
+    "timestamp": "2025-11-25T10:50:45.438Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SKIPTRACE_IP\" -> normalized: \"skiptraceip\"",
+    "timestamp": "2025-11-25T10:50:45.438Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SKIPTRACE_IP\" -> \"skiptrace_ip\"",
+    "timestamp": "2025-11-25T10:50:45.438Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SKIPTRACE_B2B_ADDRESS\" -> normalized: \"skiptraceb2baddress\"",
+    "timestamp": "2025-11-25T10:50:45.438Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SKIPTRACE_B2B_ADDRESS\" -> \"skiptrace_b2b_address\"",
+    "timestamp": "2025-11-25T10:50:45.439Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SKIPTRACE_B2B_PHONE\" -> normalized: \"skiptraceb2bphone\"",
+    "timestamp": "2025-11-25T10:50:45.439Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SKIPTRACE_B2B_PHONE\" -> \"skiptrace_b2b_phone\"",
+    "timestamp": "2025-11-25T10:50:45.440Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SKIPTRACE_B2B_SOURCE\" -> normalized: \"skiptraceb2bsource\"",
+    "timestamp": "2025-11-25T10:50:45.440Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SKIPTRACE_B2B_SOURCE\" -> \"skiptrace_b2b_source\"",
+    "timestamp": "2025-11-25T10:50:45.440Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"SKIPTRACE_B2B_WEBSITE\" -> normalized: \"skiptraceb2bwebsite\"",
+    "timestamp": "2025-11-25T10:50:45.440Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"SKIPTRACE_B2B_WEBSITE\" -> \"skiptrace_b2b_website\"",
+    "timestamp": "2025-11-25T10:50:45.440Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Processing column \"VALID_PHONES\" -> normalized: \"validphones\"",
+    "timestamp": "2025-11-25T10:50:45.440Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] ✓ Exact match: \"VALID_PHONES\" -> \"valid_phones\"",
+    "timestamp": "2025-11-25T10:50:45.440Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Final mapping: {UUID: provider_uuid, FIRST_NAME: first_name, LAST_NAME: last_name, PERSONAL_ADDRESS: personal_address, PERSONAL_CITY: personal_city}",
+    "timestamp": "2025-11-25T10:50:45.440Z"
+  },
+  {
+    "type": "log",
+    "text": "[AUTO-MAP] Mapped 74 of 74 columns",
+    "timestamp": "2025-11-25T10:50:45.441Z"
+  }
+]

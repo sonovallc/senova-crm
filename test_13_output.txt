@@ -1,0 +1,32 @@
+=== TEST 13: CONTACT DETAIL & DELETE ===
+
+Login...
+Logged in
+
+Navigating to contacts...
+Found 20 contact links
+  Link 0: "EditTest Modified" -> /dashboard/contacts/ffd67bca-b883-4d50-98d2-d32030eb7b8c
+  Link 1: "EDITED_1764116219143 Gomez" -> /dashboard/contacts/e76b00f7-2ec1-4aaa-b12d-725f516780dc
+  Link 2: "Patricia Botelho" -> /dashboard/contacts/b434d815-e289-42ff-9713-fac52db3ed83
+  Link 3: "John Goad" -> /dashboard/contacts/d40a476f-b3ef-41f6-a463-7811db809acc
+  Link 4: "Debra Degroat" -> /dashboard/contacts/c0444b1f-e391-423e-96cf-9432f64c8341
+
+Clicking first contact link: /dashboard/contacts/ffd67bca-b883-4d50-98d2-d32030eb7b8c
+URL after click: http://localhost:3004/dashboard/contacts/ffd67bca-b883-4d50-98d2-d32030eb7b8c
+
+Current URL: http://localhost:3004/dashboard/contacts/ffd67bca-b883-4d50-98d2-d32030eb7b8c
+
+Found 11 buttons on page:
+  Button 0: text="Admin" aria="none"
+  Button 1: text="Email" aria="none"
+  Button 2: text="Settings" aria="none"
+  Button 3: text="Logout" aria="none"
+  Button 4: text="Back" aria="none"
+  Button 5: text="Edit" aria="none"
+  Button 6: text="All Activity" aria="none"
+  Button 7: text="Refresh" aria="none"
+  Button 8: text="Retry" aria="none"
+  Button 9: text="" aria="Open Tanstack query devtools"
+  Button 10: text="" aria="Open Next.js Dev Tools"
+
+No standalone delete button. Checking for bulk delete with selection...

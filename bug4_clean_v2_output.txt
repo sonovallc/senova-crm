@@ -1,0 +1,7 @@
+BUG-4: Campaign Deletion Test
+1. Logging in...
+Test failed: page.waitForURL: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation to "**/dashboard/**" until "load"
+  navigated to "http://localhost:3004/dashboard"
+============================================================

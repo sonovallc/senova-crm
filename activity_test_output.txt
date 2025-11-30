@@ -1,0 +1,18 @@
+Starting Activity Log Tests...
+
+TEST 1: Login to EVE CRM
+TEST FAILED: page.fill: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[name="password"]')[22m
+
+page.fill: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[name="password"]')[22m
+
+    at runTests (C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\test_activity_log_fixed.js:20:16)
+[Error: ENOENT: no such file or directory, open 'C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\UsersjwoodDocumentsProjectsclaude-code-agents-wizard-v2context-engineering-intro	estingexhaustive-debug\activity_log_ERROR.png'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\UsersjwoodDocumentsProjectsclaude-code-agents-wizard-v2context-engineering-intro\testingexhaustive-debug\\activity_log_ERROR.png'
+}

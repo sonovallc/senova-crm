@@ -1,0 +1,68 @@
+=== COMPLETE EMAIL COMPOSE WORKFLOW TEST ===
+Date: 2025-11-24T06:23:14.277Z
+URL: http://localhost:3004/dashboard/email/compose
+
+TEST 1: Login and Navigate to Compose
+✓ Compose page loaded: true
+Result: PASS
+
+TEST 2: Select Template and Auto-Fill
+⚠ No template menu items found
+Result: FAIL
+
+TEST 3: Select Recipient - BUG-017 CRITICAL TEST
+TEST FAILED WITH ERROR: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button:has-text("Select a contact")')[22m
+[2m    - locator resolved to <button type="button" role="combobox" data-state="closed" aria-expanded="false" aria-haspopup="dialog" aria-controls="radix-_r_3_" class="inline-flex items-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full jus…>…</button>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div cmdk-item="" role="option" id="radix-_r_b_" aria-disabled="false" aria-selected="false" data-disabled="false" data-selected="false" data-value="Final Fix Test 1763952992411 general Test Subject Line" class="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50">…</div> from <div data-radix-popper-content-wrapper="">…</div> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div cmdk-item="" role="option" id="radix-_r_b_" aria-disabled="false" aria-selected="false" data-disabled="false" data-selected="false" data-value="Final Fix Test 1763952992411 general Test Subject Line" class="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50">…</div> from <div data-radix-popper-content-wrapper="">…</div> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    57 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <div cmdk-item="" role="option" id="radix-_r_b_" aria-disabled="false" aria-selected="false" data-disabled="false" data-selected="false" data-value="Final Fix Test 1763952992411 general Test Subject Line" class="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50">…</div> from <div data-radix-popper-content-wrapper="">…</div> subtree intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+
+Stack: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button:has-text("Select a contact")')[22m
+[2m    - locator resolved to <button type="button" role="combobox" data-state="closed" aria-expanded="false" aria-haspopup="dialog" aria-controls="radix-_r_3_" class="inline-flex items-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full jus…>…</button>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div cmdk-item="" role="option" id="radix-_r_b_" aria-disabled="false" aria-selected="false" data-disabled="false" data-selected="false" data-value="Final Fix Test 1763952992411 general Test Subject Line" class="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50">…</div> from <div data-radix-popper-content-wrapper="">…</div> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div cmdk-item="" role="option" id="radix-_r_b_" aria-disabled="false" aria-selected="false" data-disabled="false" data-selected="false" data-value="Final Fix Test 1763952992411 general Test Subject Line" class="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50">…</div> from <div data-radix-popper-content-wrapper="">…</div> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    57 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <div cmdk-item="" role="option" id="radix-_r_b_" aria-disabled="false" aria-selected="false" data-disabled="false" data-selected="false" data-value="Final Fix Test 1763952992411 general Test Subject Line" class="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50">…</div> from <div data-radix-popper-content-wrapper="">…</div> subtree intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+
+    at testCompleteEmailWorkflow (C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\context-engineering-intro\test_email_workflow_FINAL.js:117:27)

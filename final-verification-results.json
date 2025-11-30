@@ -1,0 +1,549 @@
+{
+  "publicWebsite": {
+    "total": 22,
+    "passed": 9,
+    "failed": 13,
+    "pages": [
+      {
+        "name": "Home",
+        "path": "/",
+        "status": "FAILED",
+        "error": "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"networkidle\"\u001b[22m\n",
+        "screenshot": null
+      },
+      {
+        "name": "About",
+        "path": "/about",
+        "status": "PASSED",
+        "hasContent": true,
+        "screenshots": {
+          "desktop": "public--about-desktop.png",
+          "mobile": "public--about-mobile.png"
+        }
+      },
+      {
+        "name": "Pricing",
+        "path": "/pricing",
+        "status": "PASSED",
+        "hasContent": true,
+        "screenshots": {
+          "desktop": "public--pricing-desktop.png",
+          "mobile": "public--pricing-mobile.png"
+        }
+      },
+      {
+        "name": "Contact",
+        "path": "/contact",
+        "status": "PASSED",
+        "hasContent": true,
+        "screenshots": {
+          "desktop": "public--contact-desktop.png",
+          "mobile": "public--contact-mobile.png"
+        }
+      },
+      {
+        "name": "Support",
+        "path": "/support",
+        "status": "FAILED",
+        "error": "HTTP 404",
+        "screenshot": null
+      },
+      {
+        "name": "Privacy",
+        "path": "/privacy",
+        "status": "FAILED",
+        "error": "HTTP 404",
+        "screenshot": null
+      },
+      {
+        "name": "Terms",
+        "path": "/terms",
+        "status": "FAILED",
+        "error": "HTTP 404",
+        "screenshot": null
+      },
+      {
+        "name": "HIPAA Compliance",
+        "path": "/hipaa",
+        "status": "PASSED",
+        "hasContent": true,
+        "screenshots": {
+          "desktop": "public--hipaa-desktop.png",
+          "mobile": "public--hipaa-mobile.png"
+        }
+      },
+      {
+        "name": "Patient Acquisition",
+        "path": "/features/patient-acquisition",
+        "status": "FAILED",
+        "error": "HTTP 404",
+        "screenshot": null
+      },
+      {
+        "name": "Patient Engagement",
+        "path": "/features/patient-engagement",
+        "status": "FAILED",
+        "error": "HTTP 404",
+        "screenshot": null
+      },
+      {
+        "name": "Practice Growth",
+        "path": "/features/practice-growth",
+        "status": "FAILED",
+        "error": "HTTP 404",
+        "screenshot": null
+      },
+      {
+        "name": "Reputation Management",
+        "path": "/features/reputation-management",
+        "status": "FAILED",
+        "error": "HTTP 404",
+        "screenshot": null
+      },
+      {
+        "name": "Patient Identification",
+        "path": "/solutions/patient-identification",
+        "status": "PASSED",
+        "hasContent": true,
+        "screenshots": {
+          "desktop": "public--solutions-patient-identification-desktop.png",
+          "mobile": "public--solutions-patient-identification-mobile.png"
+        }
+      },
+      {
+        "name": "Conversion Optimization",
+        "path": "/solutions/conversion-optimization",
+        "status": "FAILED",
+        "error": "HTTP 404",
+        "screenshot": null
+      },
+      {
+        "name": "Patient Retention",
+        "path": "/solutions/patient-retention",
+        "status": "FAILED",
+        "error": "HTTP 404",
+        "screenshot": null
+      },
+      {
+        "name": "Medical Spas",
+        "path": "/industries/medical-spas",
+        "status": "PASSED",
+        "hasContent": true,
+        "screenshots": {
+          "desktop": "public--industries-medical-spas-desktop.png",
+          "mobile": "public--industries-medical-spas-mobile.png"
+        }
+      },
+      {
+        "name": "Dermatology",
+        "path": "/industries/dermatology",
+        "status": "PASSED",
+        "hasContent": true,
+        "screenshots": {
+          "desktop": "public--industries-dermatology-desktop.png",
+          "mobile": "public--industries-dermatology-mobile.png"
+        }
+      },
+      {
+        "name": "Plastic Surgery",
+        "path": "/industries/plastic-surgery",
+        "status": "PASSED",
+        "hasContent": true,
+        "screenshots": {
+          "desktop": "public--industries-plastic-surgery-desktop.png",
+          "mobile": "public--industries-plastic-surgery-mobile.png"
+        }
+      },
+      {
+        "name": "Aesthetic Clinics",
+        "path": "/industries/aesthetic-clinics",
+        "status": "PASSED",
+        "hasContent": true,
+        "screenshots": {
+          "desktop": "public--industries-aesthetic-clinics-desktop.png",
+          "mobile": "public--industries-aesthetic-clinics-mobile.png"
+        }
+      },
+      {
+        "name": "Resources",
+        "path": "/resources",
+        "status": "FAILED",
+        "error": "HTTP 404",
+        "screenshot": null
+      },
+      {
+        "name": "Blog",
+        "path": "/resources/blog",
+        "status": "FAILED",
+        "error": "HTTP 404",
+        "screenshot": null
+      },
+      {
+        "name": "Case Studies",
+        "path": "/resources/case-studies",
+        "status": "FAILED",
+        "error": "HTTP 404",
+        "screenshot": null
+      }
+    ]
+  },
+  "crmDashboard": {
+    "total": 12,
+    "passed": 12,
+    "failed": 0,
+    "features": [
+      {
+        "name": "Login",
+        "path": "/login",
+        "status": "PASSED",
+        "hydrationWarnings": 0,
+        "screenshot": "crm-login-page.png"
+      },
+      {
+        "name": "Dashboard",
+        "path": "/dashboard",
+        "status": "PASSED",
+        "isRedirect": false,
+        "redirectTo": null,
+        "screenshots": {
+          "desktop": "crm--dashboard-desktop.png",
+          "mobile": "crm--dashboard-mobile.png"
+        }
+      },
+      {
+        "name": "Contacts",
+        "path": "/dashboard/contacts",
+        "status": "PASSED",
+        "isRedirect": false,
+        "redirectTo": null,
+        "screenshots": {
+          "desktop": "crm--dashboard-contacts-desktop.png",
+          "mobile": "crm--dashboard-contacts-mobile.png"
+        }
+      },
+      {
+        "name": "Inbox",
+        "path": "/dashboard/inbox",
+        "status": "PASSED",
+        "isRedirect": false,
+        "redirectTo": null,
+        "screenshots": {
+          "desktop": "crm--dashboard-inbox-desktop.png",
+          "mobile": "crm--dashboard-inbox-mobile.png"
+        }
+      },
+      {
+        "name": "Email Templates (Redirect)",
+        "path": "/dashboard/email-templates",
+        "status": "PASSED",
+        "isRedirect": true,
+        "redirectTo": "http://localhost:3000/dashboard/email/templates",
+        "screenshots": {
+          "desktop": "crm--dashboard-email-templates-desktop.png",
+          "mobile": "crm--dashboard-email-templates-mobile.png"
+        }
+      },
+      {
+        "name": "Campaigns (Redirect)",
+        "path": "/dashboard/campaigns",
+        "status": "PASSED",
+        "isRedirect": true,
+        "redirectTo": "http://localhost:3000/dashboard/email/campaigns",
+        "screenshots": {
+          "desktop": "crm--dashboard-campaigns-desktop.png",
+          "mobile": "crm--dashboard-campaigns-mobile.png"
+        }
+      },
+      {
+        "name": "Autoresponders (Redirect)",
+        "path": "/dashboard/autoresponders",
+        "status": "PASSED",
+        "isRedirect": true,
+        "redirectTo": "http://localhost:3000/dashboard/email/autoresponders",
+        "screenshots": {
+          "desktop": "crm--dashboard-autoresponders-desktop.png",
+          "mobile": "crm--dashboard-autoresponders-mobile.png"
+        }
+      },
+      {
+        "name": "CloseBot",
+        "path": "/dashboard/closebot",
+        "status": "PASSED",
+        "isRedirect": false,
+        "redirectTo": null,
+        "screenshots": {
+          "desktop": "crm--dashboard-closebot-desktop.png",
+          "mobile": "crm--dashboard-closebot-mobile.png"
+        }
+      },
+      {
+        "name": "Calendar",
+        "path": "/dashboard/calendar",
+        "status": "PASSED",
+        "isRedirect": false,
+        "redirectTo": null,
+        "screenshots": {
+          "desktop": "crm--dashboard-calendar-desktop.png",
+          "mobile": "crm--dashboard-calendar-mobile.png"
+        }
+      },
+      {
+        "name": "Settings",
+        "path": "/dashboard/settings",
+        "status": "PASSED",
+        "isRedirect": false,
+        "redirectTo": null,
+        "screenshots": {
+          "desktop": "crm--dashboard-settings-desktop.png",
+          "mobile": "crm--dashboard-settings-mobile.png"
+        }
+      },
+      {
+        "name": "AI Tools",
+        "path": "/dashboard/ai-tools",
+        "status": "PASSED",
+        "isRedirect": true,
+        "redirectTo": "http://localhost:3000/dashboard/ai",
+        "screenshots": {
+          "desktop": "crm--dashboard-ai-tools-desktop.png",
+          "mobile": "crm--dashboard-ai-tools-mobile.png"
+        }
+      },
+      {
+        "name": "Payments",
+        "path": "/dashboard/payments",
+        "status": "PASSED",
+        "isRedirect": false,
+        "redirectTo": null,
+        "screenshots": {
+          "desktop": "crm--dashboard-payments-desktop.png",
+          "mobile": "crm--dashboard-payments-mobile.png"
+        }
+      }
+    ]
+  },
+  "issues": [
+    {
+      "type": "Test Error",
+      "page": "/",
+      "message": "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"networkidle\"\u001b[22m\n"
+    },
+    {
+      "type": "Console Error",
+      "page": "http://localhost:3000/about",
+      "message": "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Compliant"
+    },
+    {
+      "type": "Console Error",
+      "page": "http://localhost:3000/support",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "HTTP Error",
+      "page": "/support",
+      "message": "Page returned 404"
+    },
+    {
+      "type": "Console Error",
+      "page": "http://localhost:3000/privacy",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "HTTP Error",
+      "page": "/privacy",
+      "message": "Page returned 404"
+    },
+    {
+      "type": "Console Error",
+      "page": "http://localhost:3000/terms",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "HTTP Error",
+      "page": "/terms",
+      "message": "Page returned 404"
+    },
+    {
+      "type": "Console Error",
+      "page": "http://localhost:3000/features/patient-acquisition",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "HTTP Error",
+      "page": "/features/patient-acquisition",
+      "message": "Page returned 404"
+    },
+    {
+      "type": "Console Error",
+      "page": "http://localhost:3000/features/patient-engagement",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "HTTP Error",
+      "page": "/features/patient-engagement",
+      "message": "Page returned 404"
+    },
+    {
+      "type": "Console Error",
+      "page": "http://localhost:3000/features/practice-growth",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "HTTP Error",
+      "page": "/features/practice-growth",
+      "message": "Page returned 404"
+    },
+    {
+      "type": "Console Error",
+      "page": "http://localhost:3000/features/reputation-management",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "HTTP Error",
+      "page": "/features/reputation-management",
+      "message": "Page returned 404"
+    },
+    {
+      "type": "Console Error",
+      "page": "http://localhost:3000/solutions/conversion-optimization",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "HTTP Error",
+      "page": "/solutions/conversion-optimization",
+      "message": "Page returned 404"
+    },
+    {
+      "type": "Console Error",
+      "page": "http://localhost:3000/solutions/patient-retention",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "HTTP Error",
+      "page": "/solutions/patient-retention",
+      "message": "Page returned 404"
+    },
+    {
+      "type": "Console Error",
+      "page": "http://localhost:3000/resources",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "HTTP Error",
+      "page": "/resources",
+      "message": "Page returned 404"
+    },
+    {
+      "type": "Console Error",
+      "page": "http://localhost:3000/resources/blog",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "HTTP Error",
+      "page": "/resources/blog",
+      "message": "Page returned 404"
+    },
+    {
+      "type": "Console Error",
+      "page": "http://localhost:3000/resources/case-studies",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "HTTP Error",
+      "page": "/resources/case-studies",
+      "message": "Page returned 404"
+    },
+    {
+      "type": "Mobile Navigation",
+      "page": "/dashboard",
+      "message": "Hamburger menu not found in mobile view"
+    },
+    {
+      "type": "Console Error (CRM)",
+      "page": "http://localhost:3000/dashboard/contacts",
+      "message": "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/contacts/?page=1&page_size=20' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+    },
+    {
+      "type": "Console Error (CRM)",
+      "page": "http://localhost:3000/dashboard/contacts",
+      "message": "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/contacts/?page=1&page_size=20' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+    },
+    {
+      "type": "Mobile Navigation",
+      "page": "/dashboard/contacts",
+      "message": "Hamburger menu not found in mobile view"
+    },
+    {
+      "type": "Console Error (CRM)",
+      "page": "http://localhost:3000/dashboard/inbox",
+      "message": "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/communications/inbox/threads?sort_by=recent_activity' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+    },
+    {
+      "type": "Console Error (CRM)",
+      "page": "http://localhost:3000/dashboard/inbox",
+      "message": "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/communications/inbox/threads?sort_by=recent_activity' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+    },
+    {
+      "type": "Mobile Navigation",
+      "page": "/dashboard/inbox",
+      "message": "Hamburger menu not found in mobile view"
+    },
+    {
+      "type": "Mobile Navigation",
+      "page": "/dashboard/email-templates",
+      "message": "Hamburger menu not found in mobile view"
+    },
+    {
+      "type": "Mobile Navigation",
+      "page": "/dashboard/campaigns",
+      "message": "Hamburger menu not found in mobile view"
+    },
+    {
+      "type": "Mobile Navigation",
+      "page": "/dashboard/autoresponders",
+      "message": "Hamburger menu not found in mobile view"
+    },
+    {
+      "type": "Console Error (CRM)",
+      "page": "http://localhost:3000/dashboard/closebot",
+      "message": "<%s> cannot contain a nested %s.\nSee this log for the ancestor stack trace. p <div>"
+    },
+    {
+      "type": "Mobile Navigation",
+      "page": "/dashboard/closebot",
+      "message": "Hamburger menu not found in mobile view"
+    },
+    {
+      "type": "Mobile Navigation",
+      "page": "/dashboard/calendar",
+      "message": "Hamburger menu not found in mobile view"
+    },
+    {
+      "type": "Mobile Navigation",
+      "page": "/dashboard/settings",
+      "message": "Hamburger menu not found in mobile view"
+    },
+    {
+      "type": "Mobile Navigation",
+      "page": "/dashboard/ai-tools",
+      "message": "Hamburger menu not found in mobile view"
+    },
+    {
+      "type": "Console Error (CRM)",
+      "page": "http://localhost:3000/dashboard/payments",
+      "message": "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/payments' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+    },
+    {
+      "type": "Console Error (CRM)",
+      "page": "http://localhost:3000/dashboard/payments",
+      "message": "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/payments' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+    },
+    {
+      "type": "Mobile Navigation",
+      "page": "/dashboard/payments",
+      "message": "Hamburger menu not found in mobile view"
+    }
+  ],
+  "startTime": "2025-11-28T22:22:44.175Z",
+  "endTime": "2025-11-28T22:26:57.119Z"
+}

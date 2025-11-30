@@ -1,0 +1,235 @@
+{
+  "summary": {
+    "totalPages": 19,
+    "passedPages": 17,
+    "failedPages": 2,
+    "passRate": "89.47%",
+    "timestamp": "2025-11-28T07:03:01.355Z"
+  },
+  "violations": {
+    "soc2Certified": [],
+    "smb": [
+      "Homepage",
+      "Pricing"
+    ],
+    "roiGuarantees": [],
+    "addressIssues": [],
+    "comingSoon": [],
+    "httpErrors": []
+  },
+  "detailedResults": [
+    {
+      "name": "Homepage",
+      "url": "http://localhost:3004/",
+      "category": "main",
+      "status": "FAIL",
+      "errors": [],
+      "violations": [
+        "Contains \"SMB\" - should use \"Accessible Pricing\""
+      ],
+      "screenshots": [
+        "main-homepage-1764313278479.png"
+      ]
+    },
+    {
+      "name": "Platform",
+      "url": "http://localhost:3004/platform",
+      "category": "main",
+      "status": "PASS",
+      "errors": [],
+      "violations": [],
+      "screenshots": [
+        "main-platform-1764313284562.png"
+      ]
+    },
+    {
+      "name": "Pricing",
+      "url": "http://localhost:3004/pricing",
+      "category": "main",
+      "status": "FAIL",
+      "errors": [],
+      "violations": [
+        "Contains \"SMB\" - should use \"Accessible Pricing\""
+      ],
+      "screenshots": [
+        "main-pricing-1764313288477.png"
+      ]
+    },
+    {
+      "name": "Demo",
+      "url": "http://localhost:3004/demo",
+      "category": "main",
+      "status": "PASS",
+      "errors": [],
+      "violations": [],
+      "screenshots": [
+        "main-demo-1764313294383.png"
+      ]
+    },
+    {
+      "name": "Contact",
+      "url": "http://localhost:3004/contact",
+      "category": "main",
+      "status": "PASS",
+      "errors": [],
+      "violations": [],
+      "screenshots": [
+        "main-contact-1764313298873.png"
+      ]
+    },
+    {
+      "name": "About",
+      "url": "http://localhost:3004/about",
+      "category": "main",
+      "status": "PASS",
+      "errors": [],
+      "violations": [],
+      "screenshots": [
+        "main-about-1764313301937.png"
+      ]
+    },
+    {
+      "name": "HIPAA",
+      "url": "http://localhost:3004/hipaa",
+      "category": "legal",
+      "status": "PASS",
+      "errors": [],
+      "violations": [],
+      "screenshots": [
+        "legal-hipaa-1764313304542.png"
+      ]
+    },
+    {
+      "name": "Security",
+      "url": "http://localhost:3004/security",
+      "category": "legal",
+      "status": "PASS",
+      "errors": [],
+      "violations": [],
+      "screenshots": [
+        "legal-security-1764313308511.png"
+      ]
+    },
+    {
+      "name": "Privacy Policy",
+      "url": "http://localhost:3004/privacy-policy",
+      "category": "legal",
+      "status": "PASS",
+      "errors": [],
+      "violations": [],
+      "screenshots": [
+        "legal-privacy-policy-1764313311843.png"
+      ]
+    },
+    {
+      "name": "Terms of Service",
+      "url": "http://localhost:3004/terms-of-service",
+      "category": "legal",
+      "status": "PASS",
+      "errors": [],
+      "violations": [],
+      "screenshots": [
+        "legal-terms-of-service-1764313315042.png"
+      ]
+    },
+    {
+      "name": "CRM Solution",
+      "url": "http://localhost:3004/solutions/crm",
+      "category": "solution",
+      "status": "PASS",
+      "errors": [],
+      "violations": [],
+      "screenshots": [
+        "solution-crm-solution-1764313321706.png"
+      ]
+    },
+    {
+      "name": "Audience Intelligence",
+      "url": "http://localhost:3004/solutions/audience-intelligence",
+      "category": "solution",
+      "status": "PASS",
+      "errors": [],
+      "violations": [],
+      "screenshots": [
+        "solution-audience-intelligence-1764313327380.png"
+      ]
+    },
+    {
+      "name": "Patient Identification",
+      "url": "http://localhost:3004/solutions/patient-identification",
+      "category": "solution",
+      "status": "PASS",
+      "errors": [],
+      "violations": [],
+      "screenshots": [
+        "solution-patient-identification-1764313336497.png"
+      ]
+    },
+    {
+      "name": "Campaign Activation",
+      "url": "http://localhost:3004/solutions/campaign-activation",
+      "category": "solution",
+      "status": "PASS",
+      "errors": [],
+      "violations": [],
+      "screenshots": [
+        "solution-campaign-activation-1764313345077.png"
+      ]
+    },
+    {
+      "name": "Analytics",
+      "url": "http://localhost:3004/solutions/analytics",
+      "category": "solution",
+      "status": "PASS",
+      "errors": [],
+      "violations": [],
+      "screenshots": [
+        "solution-analytics-1764313355326.png"
+      ]
+    },
+    {
+      "name": "Medical Spas",
+      "url": "http://localhost:3004/industries/medical-spas",
+      "category": "industry",
+      "status": "PASS",
+      "errors": [],
+      "violations": [],
+      "screenshots": [
+        "industry-medical-spas-1764313362430.png"
+      ]
+    },
+    {
+      "name": "Dermatology",
+      "url": "http://localhost:3004/industries/dermatology",
+      "category": "industry",
+      "status": "PASS",
+      "errors": [],
+      "violations": [],
+      "screenshots": [
+        "industry-dermatology-1764313368125.png"
+      ]
+    },
+    {
+      "name": "Plastic Surgery",
+      "url": "http://localhost:3004/industries/plastic-surgery",
+      "category": "industry",
+      "status": "PASS",
+      "errors": [],
+      "violations": [],
+      "screenshots": [
+        "industry-plastic-surgery-1764313374561.png"
+      ]
+    },
+    {
+      "name": "Aesthetic Clinics",
+      "url": "http://localhost:3004/industries/aesthetic-clinics",
+      "category": "industry",
+      "status": "PASS",
+      "errors": [],
+      "violations": [],
+      "screenshots": [
+        "industry-aesthetic-clinics-1764313380052.png"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "path": "/privacy-policy",
+  "seo": {
+    "title": "Privacy Policy | Senova - Your Data Protected",
+    "description": "How Senova protects your personal and patient data. HIPAA compliant, CCPA ready, transparent data practices. Last updated November 2024.",
+    "keywords": ["privacy policy", "data protection", "HIPAA privacy", "patient data security", "CCPA compliance"],
+    "og_image": "Privacy policy document header"
+  },
+  "hero": {
+    "headline": "Privacy Policy",
+    "subheadline": "Your privacy is fundamental to our mission. Learn how we protect and handle your data.",
+    "last_updated": "November 27, 2024",
+    "effective_date": "January 1, 2024"
+  },
+  "sections": [
+    {
+      "type": "overview",
+      "title": "Overview",
+      "content": "Senova (\"we,\" \"us,\" or \"our\") operates the Senova CRM platform and related services. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our platform, website, or services. We are committed to protecting your privacy and maintaining the security of your personal and patient information in compliance with HIPAA, CCPA, and other applicable regulations."
+    },
+    {
+      "type": "information_collected",
+      "title": "Information We Collect",
+      "categories": [
+        {
+          "name": "Account Information",
+          "items": [
+            "Name and contact details",
+            "Practice information",
+            "Billing and payment data",
+            "Login credentials",
+            "Communication preferences"
+          ]
+        },
+        {
+          "name": "Patient Data (Covered by HIPAA)",
+          "items": [
+            "Patient demographics",
+            "Contact information",
+            "Treatment history",
+            "Appointment data",
+            "Marketing preferences"
+          ]
+        },
+        {
+          "name": "Usage Data",
+          "items": [
+            "Platform interaction data",
+            "Feature usage statistics",
+            "Performance metrics",
+            "Error logs",
+            "Session information"
+          ]
+        },
+        {
+          "name": "Website Visitor Data",
+          "items": [
+            "IP address",
+            "Browser information",
+            "Device identifiers",
+            "Cookies and tracking pixels",
+            "Referral sources"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "data_use",
+      "title": "How We Use Your Information",
+      "purposes": [
+        {
+          "purpose": "Service Delivery",
+          "description": "To provide, maintain, and improve our CRM platform and related services"
+        },
+        {
+          "purpose": "Communication",
+          "description": "To respond to inquiries, provide support, and send service-related notifications"
+        },
+        {
+          "purpose": "Security",
+          "description": "To detect, prevent, and address technical issues and protect against fraud"
+        },
+        {
+          "purpose": "Compliance",
+          "description": "To comply with legal obligations and enforce our terms of service"
+        },
+        {
+          "purpose": "Analytics",
+          "description": "To understand usage patterns and improve our services (using aggregated data)"
+        }
+      ]
+    },
+    {
+      "type": "data_sharing",
+      "title": "Information Sharing and Disclosure",
+      "conditions": [
+        {
+          "condition": "With Your Consent",
+          "description": "We share information when you explicitly authorize us to do so"
+        },
+        {
+          "condition": "Service Providers",
+          "description": "With trusted third parties who assist in operating our platform (under strict confidentiality agreements)"
+        },
+        {
+          "condition": "Legal Requirements",
+          "description": "When required by law, subpoena, or other legal process"
+        },
+        {
+          "condition": "Business Transfers",
+          "description": "In connection with mergers, acquisitions, or asset sales (with continued protection)"
+        },
+        {
+          "condition": "Aggregated Data",
+          "description": "We may share aggregated, anonymized data that cannot identify individuals"
+        }
+      ],
+      "never_share": [
+        "We never sell your personal information",
+        "We never share patient data without explicit authorization",
+        "We never use patient data for advertising"
+      ]
+    },
+    {
+      "type": "data_security",
+      "title": "Data Security",
+      "measures": [
+        "256-bit encryption for data in transit and at rest",
+        "SOC 2 Type II certified infrastructure",
+        "Regular security audits and penetration testing",
+        "Strict access controls and authentication",
+        "24/7 monitoring and intrusion detection",
+        "Incident response procedures",
+        "Employee training on data protection"
+      ]
+    },
+    {
+      "type": "hipaa_compliance",
+      "title": "HIPAA Compliance",
+      "content": "For healthcare providers using our platform, we act as a Business Associate under HIPAA. We will enter into a Business Associate Agreement (BAA) with you and maintain appropriate safeguards for Protected Health Information (PHI). Our platform is designed to meet or exceed HIPAA's technical, physical, and administrative safeguards."
+    },
+    {
+      "type": "user_rights",
+      "title": "Your Rights and Choices",
+      "rights": [
+        {
+          "right": "Access",
+          "description": "Request access to your personal information we hold"
+        },
+        {
+          "right": "Correction",
+          "description": "Request corrections to inaccurate or incomplete information"
+        },
+        {
+          "right": "Deletion",
+          "description": "Request deletion of your information (subject to legal requirements)"
+        },
+        {
+          "right": "Portability",
+          "description": "Receive your data in a structured, machine-readable format"
+        },
+        {
+          "right": "Opt-Out",
+          "description": "Opt out of marketing communications at any time"
+        },
+        {
+          "right": "Restriction",
+          "description": "Request restriction of processing in certain circumstances"
+        }
+      ]
+    },
+    {
+      "type": "cookies",
+      "title": "Cookies and Tracking Technologies",
+      "description": "We use cookies and similar technologies to enhance your experience, analyze usage, and support marketing efforts.",
+      "types": [
+        {
+          "type": "Essential Cookies",
+          "purpose": "Required for platform functionality and security"
+        },
+        {
+          "type": "Analytics Cookies",
+          "purpose": "Help us understand platform usage and improve services"
+        },
+        {
+          "type": "Marketing Cookies",
+          "purpose": "Used to deliver relevant advertising (website only, not in platform)"
+        }
+      ],
+      "control": "You can control cookies through your browser settings. Note that disabling cookies may affect platform functionality."
+    },
+    {
+      "type": "ccpa_rights",
+      "title": "California Privacy Rights (CCPA)",
+      "content": "California residents have additional rights under the California Consumer Privacy Act (CCPA):",
+      "rights": [
+        "Right to know what personal information is collected, used, shared, or sold",
+        "Right to delete personal information (with exceptions)",
+        "Right to opt-out of the sale of personal information (we do not sell personal information)",
+        "Right to non-discrimination for exercising privacy rights"
+      ]
+    },
+    {
+      "type": "data_retention",
+      "title": "Data Retention",
+      "policy": "We retain information for as long as necessary to provide our services and comply with legal obligations. Retention periods vary based on the type of information and purpose of collection. Patient data is retained according to HIPAA requirements and your retention settings."
+    },
+    {
+      "type": "international",
+      "title": "International Data Transfers",
+      "content": "Our services are provided from the United States. If you access our services from other countries, please be aware that your information may be transferred to, stored, and processed in the United States where our servers are located."
+    },
+    {
+      "type": "children",
+      "title": "Children's Privacy",
+      "content": "Our services are not intended for individuals under 18 years of age. We do not knowingly collect personal information from children under 18. If we learn we have collected information from a child under 18, we will delete that information promptly."
+    },
+    {
+      "type": "changes",
+      "title": "Changes to This Policy",
+      "content": "We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new policy on this page and updating the \"Last Updated\" date. For significant changes, we will provide additional notice via email or through the platform."
+    },
+    {
+      "type": "contact",
+      "title": "Contact Us",
+      "content": "If you have questions about this Privacy Policy or our privacy practices, please contact us:",
+      "contact_info": {
+        "email": "privacy@senovallc.com",
+        "phone": "1-844-SENOVA1",
+        "address": "Senova, 8 The Green #21994, Dover, DE 19901",
+        "dpo": "Data Protection Officer: dpo@senovallc.com"
+      }
+    }
+  ],
+  "schema_markup": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Privacy Policy",
+    "description": "Senova's privacy policy and data protection practices",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Senova"
+    }
+  }
+}

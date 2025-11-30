@@ -1,0 +1,142 @@
+Starting Exhaustive Dashboard & Navigation Debug...
+
+Application URL: http://localhost:3004
+Screenshot Directory: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\exhaustive-debug-dashboard
+
+
+========== TESTING LOGIN PAGE ==========
+
+[CONSOLE ERROR] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <RedirectErrorBoundary router={{...}}>
+      <InnerLayoutRouter url="/login" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>
+        <SegmentViewNode type="page" pagePath="/src/(auth...">
+          <SegmentTrieNode>
+          <ClientPageRoot Component={function LoginPage} searchParams={{}} params={{}}>
+            <LoginPage params={Promise} searchParams={Promise}>
+              <div className="flex min-h...">
+                <LinkComponent>
+                <_c className="w-full max...">
+                  <div ref={null} className="rounded-lg...">
+                    <_c2>
+                    <_c8>
+                      <div ref={null} className="p-6 pt-0">
+                        <form suppressHydrationWarning={true} onSubmit={function} className="space-y-4">
+                          <div className="space-y-2">
+                            <_c>
+                            <_c id="email" type="email" placeholder="name@examp..." name="email" ...>
+                              <input
+                                type="email"
+                                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 tex..."
+                                ref={function ref}
+                                id="email"
+                                placeholder="name@example.com"
+                                name="email"
+                                onChange={function onChange}
+                                onBlur={function onChange}
+                                disabled={false}
+-                               style={{caret-color:"transparent"}}
+                              >
+                          <div className="space-y-2">
+                            <_c>
+                            <_c id="password" type="password" placeholder="••••••••" name="password" ...>
+                              <input
+                                type="password"
+                                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 tex..."
+                                ref={function ref}
+                                id="password"
+                                placeholder="••••••••"
+                                name="password"
+                                onChange={function onChange}
+                                onBlur={function onChange}
+                                disabled={false}
+-                               style={{caret-color:"transparent"}}
+                              >
+                          ...
+                    ...
+        ...
+      ...
+
+[LOGIN] Login Page - Initial Load: PASS
+  Screenshot: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\exhaustive-debug-dashboard\login-initial-2025-11-25T04-54-20.png
+[LOGIN] Email Field - Type text: PASS
+  Screenshot: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\exhaustive-debug-dashboard\login-email-after-2025-11-25T04-54-21.png
+[LOGIN] Password Field - Type text: PASS
+  Screenshot: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\exhaustive-debug-dashboard\login-password-after-2025-11-25T04-54-22.png
+[LOGIN] Submit Button (empty) - Click: PASS
+  Screenshot: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\exhaustive-debug-dashboard\login-empty-submit-after-2025-11-25T04-54-26.png
+[CONSOLE ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized)
+[LOGIN] Submit Button (invalid creds) - Click: PASS
+  Screenshot: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\exhaustive-debug-dashboard\login-invalid-after-2025-11-25T04-54-30.png
+[LOGIN] Submit Button (valid creds) - Click: PASS
+  Screenshot: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\exhaustive-debug-dashboard\login-valid-after-dashboard-2025-11-25T04-54-34.png
+
+========== TESTING DASHBOARD PAGE ==========
+
+[DASHBOARD] Dashboard Page - Initial Load: PASS
+  Screenshot: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\exhaustive-debug-dashboard\dashboard-initial-2025-11-25T04-54-35.png
+Found 7 buttons on dashboard
+[DASHBOARD] Button: "Admin" - Click: PASS
+  Screenshot: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\exhaustive-debug-dashboard\dashboard-button-0-after-2025-11-25T04-54-36.png
+[DASHBOARD] Button: "Email" - Click: PASS
+  Screenshot: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\exhaustive-debug-dashboard\dashboard-button-1-after-2025-11-25T04-54-41.png
+[DASHBOARD] Button: "Settings" - Click: PASS
+  Screenshot: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\exhaustive-debug-dashboard\dashboard-button-2-after-2025-11-25T04-54-45.png
+[CONSOLE ERROR] Failed to load resource: the server responded with a status of 422 (Unprocessable Entity)
+[PAGE ERROR] AxiosError
+[DASHBOARD] Button: "Logout" - Click: PASS
+  Screenshot: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\exhaustive-debug-dashboard\dashboard-button-3-after-2025-11-25T04-54-49.png
+[DASHBOARD] Button 4 - Click: FAIL
+[DASHBOARD] Button 5 - Click: FAIL
+[DASHBOARD] Button 6 - Click: FAIL
+Found 1 potential stat cards/widgets
+[DASHBOARD] Stat Card/Widget 0 - Found: PASS
+  Screenshot: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\exhaustive-debug-dashboard\dashboard-card-0-2025-11-25T04-56-21.png
+Found 2 links on dashboard
+[DASHBOARD] Link: "Back to Website" - Found: PASS
+[DASHBOARD] Link: "Sign up" - Found: PASS
+
+========== TESTING SIDEBAR NAVIGATION ==========
+
+[NAVIGATION] Sidebar - Initial State: PASS
+  Screenshot: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\exhaustive-debug-dashboard\sidebar-initial-2025-11-25T04-56-25.png
+Testing 0 navigation links
+Found 1 collapsible elements
+[NAVIGATION] Collapsible Section 0 - Toggle: PASS
+  Screenshot: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\exhaustive-debug-dashboard\collapse-0-after-2025-11-25T04-56-26.png
+
+========== TESTING HEADER/TOP BAR ==========
+
+[HEADER] Header/Top Bar - Initial State: PASS
+  Screenshot: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\screenshots\exhaustive-debug-dashboard\header-initial-2025-11-25T04-56-28.png
+[HEADER] User Profile Dropdown - Find: FAIL
+[HEADER] Notifications - Find: PASS
+[HEADER] Search Bar - Find: PASS
+
+========== GENERATING REPORT ==========
+
+
+Report saved to: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\EXHAUSTIVE_DEBUG_DASHBOARD_NAV.md
+JSON results saved to: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\debug_dashboard_nav_results.json
+
+========================================
+EXHAUSTIVE DEBUG COMPLETE
+========================================
+Total Tests: 23
+Passed: 19
+Failed: 4
+Pass Rate: 82.6%
+Report: C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\EXHAUSTIVE_DEBUG_DASHBOARD_NAV.md
+========================================
+

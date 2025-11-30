@@ -1,0 +1,24 @@
+=== TEST 10: AUTORESPONDER CREATE ===
+
+Step 1: Login...
+Step 1: PASS - Logged in
+
+Step 2: Navigate to Autoresponders...
+Step 2: PASS - On autoresponders page
+
+Step 3: Click New Autoresponder...
+Clicked: button:has-text("Create Autoresponder")
+Step 3: PASS - Create form opened
+
+Step 4: Fill autoresponder details...
+Selected trigger
+Step 4: PASS - Details filled
+
+Step 5: Save autoresponder...
+Clicked save: button:has-text("Create Autoresponder")
+Step 5: PASS - Save attempted
+
+Step 6: Verify autoresponder created...
+Step 6: Autoresponder list visible
+
+=== TEST 10 RESULT: PARTIAL PASS ===

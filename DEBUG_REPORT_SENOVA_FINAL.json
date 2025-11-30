@@ -1,0 +1,85 @@
+{
+  "tested": 15,
+  "passed": 2,
+  "failed": 13,
+  "issues": [
+    {
+      "page": "Home",
+      "issues": [
+        "Server error: 500"
+      ]
+    },
+    {
+      "page": "About",
+      "issues": [
+        "Server error: 500"
+      ]
+    },
+    {
+      "page": "Platform",
+      "issues": [
+        "Server error: 500"
+      ]
+    },
+    {
+      "page": "Pricing",
+      "issues": [
+        "Server error: 500"
+      ]
+    },
+    {
+      "page": "Contact",
+      "issues": [
+        "Server error: 500"
+      ]
+    },
+    {
+      "page": "Demo",
+      "issues": [
+        "Error: Cannot read properties of null (reading 'status')"
+      ]
+    },
+    {
+      "page": "Audience Intelligence",
+      "issues": [
+        "Server error: 500"
+      ]
+    },
+    {
+      "page": "Patient Identification",
+      "issues": [
+        "Error: Cannot read properties of null (reading 'status')"
+      ]
+    },
+    {
+      "page": "Campaign Activation",
+      "issues": [
+        "Error: Cannot read properties of null (reading 'status')"
+      ]
+    },
+    {
+      "page": "Analytics",
+      "issues": [
+        "Error: Cannot read properties of null (reading 'status')"
+      ]
+    },
+    {
+      "page": "Privacy Policy",
+      "issues": [
+        "Error: Cannot read properties of null (reading 'status')"
+      ]
+    },
+    {
+      "page": "Terms of Service",
+      "issues": [
+        "Error: Cannot read properties of null (reading 'status')"
+      ]
+    },
+    {
+      "page": "Security",
+      "issues": [
+        "Error: Cannot read properties of null (reading 'status')"
+      ]
+    }
+  ]
+}

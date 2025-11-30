@@ -1,0 +1,13 @@
+=== Sequence Timing Modes Test ===
+
+T1: Login
+PASS: Login successful
+
+T2: Navigate to Create Autoresponder
+PASS: Page loaded
+
+T3: Fill basic info
+ERROR: page.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[id="mode-template"]')[22m
+

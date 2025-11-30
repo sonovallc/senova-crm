@@ -1,0 +1,626 @@
+{
+  "hero": [
+    {
+      "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80",
+      "alt": "Modern analytics dashboard showing colorful business metrics and charts",
+      "credit": {
+        "photographer": "Luke Chesser",
+        "unsplashUrl": "https://unsplash.com/photos/JKUTrJ4vK00"
+      },
+      "category": "hero",
+      "suggestedUse": "Homepage hero background"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80",
+      "alt": "Business intelligence dashboard on laptop and mobile devices",
+      "credit": {
+        "photographer": "Carlos Muza",
+        "unsplashUrl": "https://unsplash.com/photos/hpjSkU2UYSU"
+      },
+      "category": "hero",
+      "suggestedUse": "Solutions page hero"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1920&q=80",
+      "alt": "Data visualization and analytics on multiple screens",
+      "credit": {
+        "photographer": "Adeolu Eletu",
+        "unsplashUrl": "https://unsplash.com/photos/unRkg2jH1j0"
+      },
+      "category": "hero",
+      "suggestedUse": "Features page hero"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=1920&q=80",
+      "alt": "Modern workspace with analytics dashboard on screen",
+      "credit": {
+        "photographer": "Franck",
+        "unsplashUrl": "https://unsplash.com/photos/DoWZMPZ-M9s"
+      },
+      "category": "hero",
+      "suggestedUse": "Industries page hero"
+    }
+  ],
+  "features": [
+    {
+      "url": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80",
+      "alt": "Team collaborating over data analytics on laptop",
+      "credit": {
+        "photographer": "Austin Distel",
+        "unsplashUrl": "https://unsplash.com/photos/wD1LRb9OeEo"
+      },
+      "category": "features",
+      "suggestedUse": "Audience Intelligence feature card"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&q=80",
+      "alt": "Business team analyzing data together",
+      "credit": {
+        "photographer": "Austin Distel",
+        "unsplashUrl": "https://unsplash.com/photos/rxpThOwuVgE"
+      },
+      "category": "features",
+      "suggestedUse": "CRM Integration feature card"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80",
+      "alt": "Professional team meeting in modern office",
+      "credit": {
+        "photographer": "Austin Distel",
+        "unsplashUrl": "https://unsplash.com/photos/VvAcrVa56fc"
+      },
+      "category": "features",
+      "suggestedUse": "Collaborative Workspaces feature"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80",
+      "alt": "Business professionals in strategy meeting",
+      "credit": {
+        "photographer": "Campaign Creators",
+        "unsplashUrl": "https://unsplash.com/photos/gMsnXqILjp4"
+      },
+      "category": "features",
+      "suggestedUse": "Campaign Management feature"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1573167243872-43c6433b9d40?w=1200&q=80",
+      "alt": "Marketing dashboard with KPI metrics",
+      "credit": {
+        "photographer": "Adeolu Eletu",
+        "unsplashUrl": "https://unsplash.com/photos/DqWYKeSO27g"
+      },
+      "category": "features",
+      "suggestedUse": "Analytics & Reporting feature"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=1200&q=80",
+      "alt": "Data analysis graphs and charts on screen",
+      "credit": {
+        "photographer": "Isaac Smith",
+        "unsplashUrl": "https://unsplash.com/photos/6EnTPvPPL6I"
+      },
+      "category": "features",
+      "suggestedUse": "Data Visualization feature"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80",
+      "alt": "Customer journey mapping visualization",
+      "credit": {
+        "photographer": "UX Indonesia",
+        "unsplashUrl": "https://unsplash.com/photos/8mikJ83LmSQ"
+      },
+      "category": "features",
+      "suggestedUse": "Customer Journey Mapping feature"
+    }
+  ],
+  "solutions": [
+    {
+      "url": "https://images.unsplash.com/photo-1556155092-490a1ba16284?w=1920&q=80",
+      "alt": "Email marketing campaign dashboard",
+      "credit": {
+        "photographer": "Stephen Phillips",
+        "unsplashUrl": "https://unsplash.com/photos/3Mhgvrk4tjM"
+      },
+      "category": "solutions",
+      "suggestedUse": "Email Marketing solution page"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1432888622747-4eb9a8f2c2c7?w=1920&q=80",
+      "alt": "Social media analytics dashboard",
+      "credit": {
+        "photographer": "Georgia de Lotz",
+        "unsplashUrl": "https://unsplash.com/photos/JX5_MxSl8TM"
+      },
+      "category": "solutions",
+      "suggestedUse": "Social Media Management solution"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=1920&q=80",
+      "alt": "Lead generation funnel visualization",
+      "credit": {
+        "photographer": "Carlos Muza",
+        "unsplashUrl": "https://unsplash.com/photos/hpjSkU2UYSU"
+      },
+      "category": "solutions",
+      "suggestedUse": "Lead Generation solution"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=1920&q=80",
+      "alt": "Customer segmentation analysis",
+      "credit": {
+        "photographer": "UX Indonesia",
+        "unsplashUrl": "https://unsplash.com/photos/qC2n6RQU4Vw"
+      },
+      "category": "solutions",
+      "suggestedUse": "Customer Segmentation solution"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1561070791-2b4f2b775d8b?w=1920&q=80",
+      "alt": "Marketing automation workflow diagram",
+      "credit": {
+        "photographer": "Campaign Creators",
+        "unsplashUrl": "https://unsplash.com/photos/OGOWDVLbMSc"
+      },
+      "category": "solutions",
+      "suggestedUse": "Marketing Automation solution"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&q=80",
+      "alt": "Team using technology for collaboration",
+      "credit": {
+        "photographer": "Marvin Meyer",
+        "unsplashUrl": "https://unsplash.com/photos/SYTO3xs06fU"
+      },
+      "category": "solutions",
+      "suggestedUse": "Team Collaboration solution"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1580894742597-87bc8789db3d?w=1920&q=80",
+      "alt": "Customer relationship management interface",
+      "credit": {
+        "photographer": "Blake Wisz",
+        "unsplashUrl": "https://unsplash.com/photos/pRMYsfrSV_o"
+      },
+      "category": "solutions",
+      "suggestedUse": "CRM Integration solution"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80",
+      "alt": "Business intelligence reporting dashboard",
+      "credit": {
+        "photographer": "Sebastian Herrmann",
+        "unsplashUrl": "https://unsplash.com/photos/jzTQVxCyKYs"
+      },
+      "category": "solutions",
+      "suggestedUse": "Reporting & Analytics solution"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1552581234-26160f608093?w=1920&q=80",
+      "alt": "Digital transformation strategy meeting",
+      "credit": {
+        "photographer": "You X Ventures",
+        "unsplashUrl": "https://unsplash.com/photos/Oalh2MojUuk"
+      },
+      "category": "solutions",
+      "suggestedUse": "Digital Transformation solution"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1542744094-3a31c272f5d6?w=1920&q=80",
+      "alt": "Customer experience optimization dashboard",
+      "credit": {
+        "photographer": "Austin Distel",
+        "unsplashUrl": "https://unsplash.com/photos/goFBjlQiZFU"
+      },
+      "category": "solutions",
+      "suggestedUse": "Customer Experience solution"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1560472355-536de3962603?w=1920&q=80",
+      "alt": "Performance metrics and KPIs display",
+      "credit": {
+        "photographer": "Scott Graham",
+        "unsplashUrl": "https://unsplash.com/photos/5fNmWej4tAA"
+      },
+      "category": "solutions",
+      "suggestedUse": "Performance Management solution"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1920&q=80",
+      "alt": "Data security and compliance visualization",
+      "credit": {
+        "photographer": "Franck",
+        "unsplashUrl": "https://unsplash.com/photos/U3sOwViXhks"
+      },
+      "category": "solutions",
+      "suggestedUse": "Data Security solution"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=1920&q=80",
+      "alt": "Customer feedback analysis dashboard",
+      "credit": {
+        "photographer": "Blake Wisz",
+        "unsplashUrl": "https://unsplash.com/photos/Xn5FbEM9564"
+      },
+      "category": "solutions",
+      "suggestedUse": "Customer Feedback solution"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1556740758-90de374c12ad?w=1920&q=80",
+      "alt": "Conversion rate optimization metrics",
+      "credit": {
+        "photographer": "Stephen Dawson",
+        "unsplashUrl": "https://unsplash.com/photos/qwtCeJ5cLYs"
+      },
+      "category": "solutions",
+      "suggestedUse": "Conversion Optimization solution"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=1920&q=80",
+      "alt": "Real-time analytics monitoring",
+      "credit": {
+        "photographer": "William Iven",
+        "unsplashUrl": "https://unsplash.com/photos/jrh5lAq-mIs"
+      },
+      "category": "solutions",
+      "suggestedUse": "Real-time Analytics solution"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=1920&q=80",
+      "alt": "Sales pipeline management dashboard",
+      "credit": {
+        "photographer": "Austin Distel",
+        "unsplashUrl": "https://unsplash.com/photos/wD1LRb9OeEo"
+      },
+      "category": "solutions",
+      "suggestedUse": "Sales Pipeline Management solution"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1920&q=80",
+      "alt": "Revenue growth analytics chart",
+      "credit": {
+        "photographer": "Adeolu Eletu",
+        "unsplashUrl": "https://unsplash.com/photos/E7RLgUjjazc"
+      },
+      "category": "solutions",
+      "suggestedUse": "Revenue Optimization solution"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?w=1920&q=80",
+      "alt": "Customer service management interface",
+      "credit": {
+        "photographer": "Charanjeet Dhiman",
+        "unsplashUrl": "https://unsplash.com/photos/mHusyBu4bxM"
+      },
+      "category": "solutions",
+      "suggestedUse": "Customer Service solution"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=1920&q=80",
+      "alt": "Marketing ROI dashboard visualization",
+      "credit": {
+        "photographer": "rawpixel",
+        "unsplashUrl": "https://unsplash.com/photos/1Z2niiBPg5A"
+      },
+      "category": "solutions",
+      "suggestedUse": "Marketing ROI Analysis solution"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920&q=80",
+      "alt": "Healthcare technology integration",
+      "credit": {
+        "photographer": "National Cancer Institute",
+        "unsplashUrl": "https://unsplash.com/photos/N_aihp118p8"
+      },
+      "category": "solutions",
+      "suggestedUse": "Healthcare Integration solution"
+    }
+  ],
+  "industries": [
+    {
+      "url": "https://images.unsplash.com/photo-1629904853716-f0bc54eea481?w=1920&q=80",
+      "alt": "Modern medical spa reception area with elegant interior",
+      "credit": {
+        "photographer": "Usman Yousaf",
+        "unsplashUrl": "https://unsplash.com/photos/pTrhfmj2jDA"
+      },
+      "category": "industries",
+      "suggestedUse": "Medical Aesthetics industry page"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=1920&q=80",
+      "alt": "Healthcare professional at computer reviewing patient data",
+      "credit": {
+        "photographer": "National Cancer Institute",
+        "unsplashUrl": "https://unsplash.com/photos/L8tWZT4CcVQ"
+      },
+      "category": "industries",
+      "suggestedUse": "Healthcare providers industry page"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1920&q=80",
+      "alt": "Medical clinic modern waiting room",
+      "credit": {
+        "photographer": "Martha Dominguez",
+        "unsplashUrl": "https://unsplash.com/photos/pAZTbhx5GXg"
+      },
+      "category": "industries",
+      "suggestedUse": "Medical Clinics industry page"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=1920&q=80",
+      "alt": "Healthcare consultation room with modern equipment",
+      "credit": {
+        "photographer": "National Cancer Institute",
+        "unsplashUrl": "https://unsplash.com/photos/DK--4VrpiBo"
+      },
+      "category": "industries",
+      "suggestedUse": "Specialty Clinics industry page"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1540485485249-76764678c2b0?w=1920&q=80",
+      "alt": "Spa and wellness center interior",
+      "credit": {
+        "photographer": "Alan Caishan",
+        "unsplashUrl": "https://unsplash.com/photos/U2BI3GMn6FU"
+      },
+      "category": "industries",
+      "suggestedUse": "Wellness Centers industry page"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=80",
+      "alt": "Medical professional consulting with patient",
+      "credit": {
+        "photographer": "National Cancer Institute",
+        "unsplashUrl": "https://unsplash.com/photos/PC6p7zzWM88"
+      },
+      "category": "industries",
+      "suggestedUse": "Patient Consultation industry section"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&q=80",
+      "alt": "Healthcare technology and digital records",
+      "credit": {
+        "photographer": "National Cancer Institute",
+        "unsplashUrl": "https://unsplash.com/photos/BxXgTQEw1M4"
+      },
+      "category": "industries",
+      "suggestedUse": "Digital Healthcare industry page"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1920&q=80",
+      "alt": "Modern dermatology clinic interior",
+      "credit": {
+        "photographer": "Nik Shuliahin",
+        "unsplashUrl": "https://unsplash.com/photos/BuNWp1bL0nc"
+      },
+      "category": "industries",
+      "suggestedUse": "Dermatology Clinics industry page"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=1920&q=80",
+      "alt": "Medical data analysis on computer screen",
+      "credit": {
+        "photographer": "National Cancer Institute",
+        "unsplashUrl": "https://unsplash.com/photos/XrLSV-CKmuQ"
+      },
+      "category": "industries",
+      "suggestedUse": "Healthcare Analytics industry section"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1920&q=80",
+      "alt": "Healthcare team collaboration meeting",
+      "credit": {
+        "photographer": "National Cancer Institute",
+        "unsplashUrl": "https://unsplash.com/photos/uVnRa6mOLOM"
+      },
+      "category": "industries",
+      "suggestedUse": "Healthcare Teams industry page"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1612277795421-9bc7706a4791?w=1920&q=80",
+      "alt": "Modern plastic surgery clinic reception",
+      "credit": {
+        "photographer": "Chokniti Khongchum",
+        "unsplashUrl": "https://unsplash.com/photos/rAV4tPaKzM0"
+      },
+      "category": "industries",
+      "suggestedUse": "Plastic Surgery Centers industry page"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1920&q=80",
+      "alt": "Luxury spa treatment room",
+      "credit": {
+        "photographer": "Katherine Hanlon",
+        "unsplashUrl": "https://unsplash.com/photos/ModxYZ13weg"
+      },
+      "category": "industries",
+      "suggestedUse": "Luxury Spas industry page"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=1920&q=80",
+      "alt": "Medical office administrative desk",
+      "credit": {
+        "photographer": "Online Marketing",
+        "unsplashUrl": "https://unsplash.com/photos/hIgeoQjS_iE"
+      },
+      "category": "industries",
+      "suggestedUse": "Medical Office Management industry"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1598493575903-ff826b87262f?w=1920&q=80",
+      "alt": "Healthcare practice management software",
+      "credit": {
+        "photographer": "Hush Naidoo",
+        "unsplashUrl": "https://unsplash.com/photos/yo01Z-9HQAw"
+      },
+      "category": "industries",
+      "suggestedUse": "Practice Management industry section"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1920&q=80",
+      "alt": "Medical spa treatment planning consultation",
+      "credit": {
+        "photographer": "Christin Hume",
+        "unsplashUrl": "https://unsplash.com/photos/0MoF-Fe0w0A"
+      },
+      "category": "industries",
+      "suggestedUse": "Treatment Planning industry page"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1615461066841-f4c2a4dced35?w=1920&q=80",
+      "alt": "Healthcare marketing strategy meeting",
+      "credit": {
+        "photographer": "Campaign Creators",
+        "unsplashUrl": "https://unsplash.com/photos/e6n7uoEnYbs"
+      },
+      "category": "industries",
+      "suggestedUse": "Healthcare Marketing industry page"
+    }
+  ],
+  "about": [
+    {
+      "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80",
+      "alt": "Diverse team collaborating in modern startup office",
+      "credit": {
+        "photographer": "Annie Spratt",
+        "unsplashUrl": "https://unsplash.com/photos/QckxruozjRg"
+      },
+      "category": "about",
+      "suggestedUse": "About Us team section"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1920&q=80",
+      "alt": "Creative team brainstorming session",
+      "credit": {
+        "photographer": "Brooke Cagle",
+        "unsplashUrl": "https://unsplash.com/photos/g1Kr4Ozfoac"
+      },
+      "category": "about",
+      "suggestedUse": "Our Team page"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1920&q=80",
+      "alt": "Modern tech startup office space",
+      "credit": {
+        "photographer": "Shridhar Gupta",
+        "unsplashUrl": "https://unsplash.com/photos/dZxQn4VEv2M"
+      },
+      "category": "about",
+      "suggestedUse": "Office Culture section"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=1920&q=80",
+      "alt": "Modern corporate office interior with open workspace",
+      "credit": {
+        "photographer": "Proxyclick Visitor Management System",
+        "unsplashUrl": "https://unsplash.com/photos/ZNcvZsnplUM"
+      },
+      "category": "about",
+      "suggestedUse": "Company headquarters section"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80",
+      "alt": "Business team celebrating success",
+      "credit": {
+        "photographer": "Jason Goodman",
+        "unsplashUrl": "https://unsplash.com/photos/6awfTPJdc0E"
+      },
+      "category": "about",
+      "suggestedUse": "Company Values section"
+    }
+  ],
+  "contact": [
+    {
+      "url": "https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&q=80",
+      "alt": "Modern contact center with customer service team",
+      "credit": {
+        "photographer": "Berkeley Communications",
+        "unsplashUrl": "https://unsplash.com/photos/WEDDt-u3q3o"
+      },
+      "category": "contact",
+      "suggestedUse": "Contact Us hero"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1920&q=80",
+      "alt": "Customer support team working at computers",
+      "credit": {
+        "photographer": "Icons8 Team",
+        "unsplashUrl": "https://unsplash.com/photos/r-enAOPw8Rs"
+      },
+      "category": "contact",
+      "suggestedUse": "Support Team section"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1596524430615-b46475ddff6e?w=1920&q=80",
+      "alt": "Contact us concept with communication icons",
+      "credit": {
+        "photographer": "Melanie Deziel",
+        "unsplashUrl": "https://unsplash.com/photos/fSWQPBxqClg"
+      },
+      "category": "contact",
+      "suggestedUse": "Contact methods section"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=1920&q=80",
+      "alt": "Customer service representative on phone call",
+      "credit": {
+        "photographer": "Berkeley Communications",
+        "unsplashUrl": "https://unsplash.com/photos/WEDDt-u3q3o"
+      },
+      "category": "contact",
+      "suggestedUse": "Phone Support section"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1920&q=80",
+      "alt": "Person typing email on laptop for support",
+      "credit": {
+        "photographer": "Glenn Carstens-Peters",
+        "unsplashUrl": "https://unsplash.com/photos/npxXWgQ33ZQ"
+      },
+      "category": "contact",
+      "suggestedUse": "Email Support section"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1553775282-20af80779df7?w=1920&q=80",
+      "alt": "Global support network visualization",
+      "credit": {
+        "photographer": "Nastya Dulhiier",
+        "unsplashUrl": "https://unsplash.com/photos/OKOOGO578eo"
+      },
+      "category": "contact",
+      "suggestedUse": "Global Support section"
+    }
+  ],
+  "general": [
+    {
+      "url": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80",
+      "alt": "Tech startup team working collaboratively",
+      "credit": {
+        "photographer": "Alex Kotliarskyi",
+        "unsplashUrl": "https://unsplash.com/photos/QBpZGqEMsKg"
+      },
+      "category": "general",
+      "suggestedUse": "General team/collaboration imagery"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80",
+      "alt": "Abstract data visualization network",
+      "credit": {
+        "photographer": "NASA",
+        "unsplashUrl": "https://unsplash.com/photos/Q1p7bh3SHj8"
+      },
+      "category": "general",
+      "suggestedUse": "Technology/data abstract background"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80",
+      "alt": "Modern technology and circuit board abstract",
+      "credit": {
+        "photographer": "Alexandre Debiève",
+        "unsplashUrl": "https://unsplash.com/photos/FO7JIlwjOtU"
+      },
+      "category": "general",
+      "suggestedUse": "Technology abstract background"
+    }
+  ]
+}

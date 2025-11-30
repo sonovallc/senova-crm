@@ -1,0 +1,60 @@
+[
+  {
+    "page": "homepage",
+    "url": "http://localhost:3004/",
+    "status": "FAIL",
+    "httpStatus": 200,
+    "issues": [
+      "Missing \"Accessible Pricing\""
+    ],
+    "screenshot": "homepage.png"
+  },
+  {
+    "page": "pricing",
+    "url": "http://localhost:3004/pricing",
+    "status": "PASS",
+    "httpStatus": 200,
+    "issues": [],
+    "screenshot": "pricing.png"
+  },
+  {
+    "page": "contact",
+    "url": "http://localhost:3004/contact",
+    "status": "PASS",
+    "httpStatus": 200,
+    "issues": [],
+    "screenshot": "contact.png"
+  },
+  {
+    "page": "about",
+    "url": "http://localhost:3004/about",
+    "status": "PASS",
+    "httpStatus": 200,
+    "issues": [],
+    "screenshot": "about.png"
+  },
+  {
+    "page": "security",
+    "url": "http://localhost:3004/security",
+    "status": "PASS",
+    "httpStatus": 200,
+    "issues": [],
+    "screenshot": "security.png"
+  },
+  {
+    "page": "solutions-crm",
+    "url": "http://localhost:3004/solutions/crm",
+    "status": "PASS",
+    "httpStatus": 200,
+    "issues": [],
+    "screenshot": "solutions-crm.png"
+  },
+  {
+    "page": "industries-medical",
+    "url": "http://localhost:3004/industries/medical-spas",
+    "status": "PASS",
+    "httpStatus": 200,
+    "issues": [],
+    "screenshot": "industries-medical.png"
+  }
+]

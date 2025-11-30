@@ -1,0 +1,1 @@
+| 2025-11-26 | BUG-001 CSV Import Fix | Playwright screenshot verification | ✓ PASS | bug001-step4-review-CRITICAL.png (1384 new, 154 duplicates) |

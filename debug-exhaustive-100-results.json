@@ -1,0 +1,1606 @@
+{
+  "timestamp": "2025-11-29T21:53:48.147Z",
+  "summary": {
+    "totalPages": 33,
+    "passedPages": 33,
+    "failedPages": 0,
+    "totalElements": 2770,
+    "testedElements": 908,
+    "consoleErrors": 11,
+    "networkErrors": 11
+  },
+  "backend": {
+    "status": "healthy",
+    "health": {
+      "status": "healthy",
+      "environment": "development",
+      "version": "0.1.0"
+    }
+  },
+  "pages": {
+    "/": {
+      "url": "/",
+      "category": "publicCore",
+      "status": "passed",
+      "loadTime": 10397,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 83,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "publicCore-home-1764453243889.png"
+    },
+    "/features": {
+      "url": "/features",
+      "category": "publicCore",
+      "status": "passed",
+      "loadTime": 3662,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 75,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "publicCore-features-1764453254503.png"
+    },
+    "/platform": {
+      "url": "/platform",
+      "category": "publicCore",
+      "status": "passed",
+      "loadTime": 4175,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 75,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "publicCore-platform-1764453265485.png"
+    },
+    "/pricing": {
+      "url": "/pricing",
+      "category": "publicCore",
+      "status": "passed",
+      "loadTime": 4041,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 12,
+          "tested": 7,
+          "working": 5
+        },
+        "links": {
+          "count": 78,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "publicCore-pricing-1764453336537.png"
+    },
+    "/about": {
+      "url": "/about",
+      "category": "publicCore",
+      "status": "passed",
+      "loadTime": 1824,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 73,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "publicCore-about-1764453344988.png"
+    },
+    "/contact": {
+      "url": "/contact",
+      "category": "publicCore",
+      "status": "passed",
+      "loadTime": 6585,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 22,
+          "tested": 17,
+          "working": 17
+        },
+        "links": {
+          "count": 71,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 15,
+          "tested": 15,
+          "working": 15
+        },
+        "dropdowns": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "checkboxes": {
+          "count": 10,
+          "tested": 10,
+          "working": 10
+        },
+        "forms": {
+          "count": 2,
+          "tested": 2,
+          "working": 2
+        }
+      },
+      "errors": [],
+      "screenshot": "publicCore-contact-1764453361551.png"
+    },
+    "/login": {
+      "url": "/login",
+      "category": "authentication",
+      "status": "passed",
+      "loadTime": 3205,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 3,
+          "tested": 2,
+          "working": 2
+        },
+        "links": {
+          "count": 2,
+          "tested": 2,
+          "working": 2
+        },
+        "inputs": {
+          "count": 2,
+          "tested": 2,
+          "working": 2
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "authentication-login-1764453369878.png"
+    },
+    "/register": {
+      "url": "/register",
+      "category": "authentication",
+      "status": "passed",
+      "loadTime": 2356,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 3,
+          "tested": 2,
+          "working": 2
+        },
+        "links": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "inputs": {
+          "count": 5,
+          "tested": 5,
+          "working": 5
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "authentication-register-1764453376949.png"
+    },
+    "/solutions/crm": {
+      "url": "/solutions/crm",
+      "category": "solutions",
+      "status": "passed",
+      "loadTime": 3827,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 75,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "solutions-solutions-crm-1764453386945.png"
+    },
+    "/solutions/lead-management": {
+      "url": "/solutions/lead-management",
+      "category": "solutions",
+      "status": "passed",
+      "loadTime": 4396,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 75,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "solutions-solutions-lead-management-1764453398074.png"
+    },
+    "/solutions/automation": {
+      "url": "/solutions/automation",
+      "category": "solutions",
+      "status": "passed",
+      "loadTime": 4461,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 75,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "solutions-solutions-automation-1764453409160.png"
+    },
+    "/solutions/audience-intelligence": {
+      "url": "/solutions/audience-intelligence",
+      "category": "solutions",
+      "status": "passed",
+      "loadTime": 4292,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 76,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "solutions-solutions-audience-intelligence-1764453419976.png"
+    },
+    "/solutions/patient-identification": {
+      "url": "/solutions/patient-identification",
+      "category": "solutions",
+      "status": "passed",
+      "loadTime": 4165,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 76,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "solutions-solutions-patient-identification-1764453430837.png"
+    },
+    "/solutions/campaign-activation": {
+      "url": "/solutions/campaign-activation",
+      "category": "solutions",
+      "status": "passed",
+      "loadTime": 4007,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 75,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "solutions-solutions-campaign-activation-1764453441484.png"
+    },
+    "/solutions/visitor-identification": {
+      "url": "/solutions/visitor-identification",
+      "category": "solutions",
+      "status": "passed",
+      "loadTime": 3170,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 13,
+          "tested": 8,
+          "working": 5
+        },
+        "links": {
+          "count": 74,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "solutions-solutions-visitor-identification-1764453541409.png"
+    },
+    "/solutions/analytics": {
+      "url": "/solutions/analytics",
+      "category": "solutions",
+      "status": "passed",
+      "loadTime": 4362,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 75,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "solutions-solutions-analytics-1764453551959.png"
+    },
+    "/industries/medical-spas": {
+      "url": "/industries/medical-spas",
+      "category": "industries",
+      "status": "passed",
+      "loadTime": 5402,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 75,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [
+        {
+          "page": "/industries/medical-spas",
+          "type": "console",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "page": "/industries/medical-spas",
+          "type": "console",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "screenshot": "industries-industries-medical-spas-1764453563926.png"
+    },
+    "/industries/dermatology": {
+      "url": "/industries/dermatology",
+      "category": "industries",
+      "status": "passed",
+      "loadTime": 3559,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 75,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [
+        {
+          "page": "/industries/dermatology",
+          "type": "console",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "page": "/industries/dermatology",
+          "type": "console",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "screenshot": "industries-industries-dermatology-1764453574442.png"
+    },
+    "/industries/plastic-surgery": {
+      "url": "/industries/plastic-surgery",
+      "category": "industries",
+      "status": "passed",
+      "loadTime": 3818,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 75,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [
+        {
+          "page": "/industries/plastic-surgery",
+          "type": "console",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "page": "/industries/plastic-surgery",
+          "type": "console",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "screenshot": "industries-industries-plastic-surgery-1764453584989.png"
+    },
+    "/industries/aesthetic-clinics": {
+      "url": "/industries/aesthetic-clinics",
+      "category": "industries",
+      "status": "passed",
+      "loadTime": 4463,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 75,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [
+        {
+          "page": "/industries/aesthetic-clinics",
+          "type": "console",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "page": "/industries/aesthetic-clinics",
+          "type": "console",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "screenshot": "industries-industries-aesthetic-clinics-1764453596628.png"
+    },
+    "/industries/legal-attorneys": {
+      "url": "/industries/legal-attorneys",
+      "category": "industries",
+      "status": "passed",
+      "loadTime": 10781,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 75,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [
+        {
+          "page": "/industries/legal-attorneys",
+          "type": "console",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "screenshot": "industries-industries-legal-attorneys-1764453614022.png"
+    },
+    "/industries/real-estate": {
+      "url": "/industries/real-estate",
+      "category": "industries",
+      "status": "passed",
+      "loadTime": 4531,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 75,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [
+        {
+          "page": "/industries/real-estate",
+          "type": "console",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "screenshot": "industries-industries-real-estate-1764453625290.png"
+    },
+    "/industries/mortgage-lending": {
+      "url": "/industries/mortgage-lending",
+      "category": "industries",
+      "status": "passed",
+      "loadTime": 4096,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 75,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [
+        {
+          "page": "/industries/mortgage-lending",
+          "type": "console",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "screenshot": "industries-industries-mortgage-lending-1764453635981.png"
+    },
+    "/industries/insurance": {
+      "url": "/industries/insurance",
+      "category": "industries",
+      "status": "passed",
+      "loadTime": 4843,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 75,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "industries-industries-insurance-1764453647300.png"
+    },
+    "/industries/marketing-agencies": {
+      "url": "/industries/marketing-agencies",
+      "category": "industries",
+      "status": "passed",
+      "loadTime": 4694,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 75,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "industries-industries-marketing-agencies-1764453658940.png"
+    },
+    "/industries/restaurants": {
+      "url": "/industries/restaurants",
+      "category": "industries",
+      "status": "passed",
+      "loadTime": 5828,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 13,
+          "tested": 8,
+          "working": 5
+        },
+        "links": {
+          "count": 74,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "industries-industries-restaurants-1764453761578.png"
+    },
+    "/industries/home-services": {
+      "url": "/industries/home-services",
+      "category": "industries",
+      "status": "passed",
+      "loadTime": 6820,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 13,
+          "tested": 8,
+          "working": 5
+        },
+        "links": {
+          "count": 74,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "industries-industries-home-services-1764453865110.png"
+    },
+    "/industries/retail": {
+      "url": "/industries/retail",
+      "category": "industries",
+      "status": "passed",
+      "loadTime": 6813,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 13,
+          "tested": 8,
+          "working": 5
+        },
+        "links": {
+          "count": 74,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "industries-industries-retail-1764453968629.png"
+    },
+    "/industries/professional-services": {
+      "url": "/industries/professional-services",
+      "category": "industries",
+      "status": "passed",
+      "loadTime": 10329,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 13,
+          "tested": 8,
+          "working": 5
+        },
+        "links": {
+          "count": 74,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "industries-industries-professional-services-1764454075896.png"
+    },
+    "/privacy-policy": {
+      "url": "/privacy-policy",
+      "category": "legal",
+      "status": "passed",
+      "loadTime": 11260,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 74,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "legal-privacy-policy-1764454094430.png"
+    },
+    "/terms-of-service": {
+      "url": "/terms-of-service",
+      "category": "legal",
+      "status": "passed",
+      "loadTime": 15747,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 74,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "legal-terms-of-service-1764454117307.png"
+    },
+    "/hipaa": {
+      "url": "/hipaa",
+      "category": "legal",
+      "status": "passed",
+      "loadTime": 16396,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 75,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "legal-hipaa-1764454140315.png"
+    },
+    "/security": {
+      "url": "/security",
+      "category": "legal",
+      "status": "passed",
+      "loadTime": 13209,
+      "httpStatus": 200,
+      "elements": {
+        "buttons": {
+          "count": 10,
+          "tested": 5,
+          "working": 5
+        },
+        "links": {
+          "count": 75,
+          "tested": 20,
+          "working": 20
+        },
+        "inputs": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        },
+        "dropdowns": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "checkboxes": {
+          "count": 0,
+          "tested": 0,
+          "working": 0
+        },
+        "forms": {
+          "count": 1,
+          "tested": 1,
+          "working": 1
+        }
+      },
+      "errors": [],
+      "screenshot": "legal-security-1764454161066.png"
+    }
+  },
+  "errors": {
+    "console": [
+      {
+        "page": "/industries/medical-spas",
+        "type": "console",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/dermatology",
+        "type": "console",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/plastic-surgery",
+        "type": "console",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/aesthetic-clinics",
+        "type": "console",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/medical-spas",
+        "type": "console",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/dermatology",
+        "type": "console",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/plastic-surgery",
+        "type": "console",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/aesthetic-clinics",
+        "type": "console",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/legal-attorneys",
+        "type": "console",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/real-estate",
+        "type": "console",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "page": "/industries/mortgage-lending",
+        "type": "console",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      }
+    ],
+    "network": [
+      {
+        "page": "/industries/medical-spas",
+        "type": "network",
+        "status": 404,
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/dermatology",
+        "type": "network",
+        "status": 404,
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/plastic-surgery",
+        "type": "network",
+        "status": 404,
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/aesthetic-clinics",
+        "type": "network",
+        "status": 404,
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620828937158-806e05b36550%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/medical-spas",
+        "type": "network",
+        "status": 404,
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/dermatology",
+        "type": "network",
+        "status": 404,
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/plastic-surgery",
+        "type": "network",
+        "status": 404,
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/aesthetic-clinics",
+        "type": "network",
+        "status": 404,
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/legal-attorneys",
+        "type": "network",
+        "status": 404,
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/real-estate",
+        "type": "network",
+        "status": 404,
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      },
+      {
+        "page": "/industries/mortgage-lending",
+        "type": "network",
+        "status": 404,
+        "url": "http://localhost:3004/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1565373679580-fc0cb538c49a%3Fw%3D1200%26h%3D800%26fit%3Dcrop%26auto%3Dformat&w=1920&q=75"
+      }
+    ],
+    "broken": [
+      {
+        "type": "login",
+        "url": "/login",
+        "error": "Failed to authenticate"
+      }
+    ]
+  },
+  "screenshots": [
+    "publicCore-home-1764453243889.png",
+    "publicCore-features-1764453254503.png",
+    "publicCore-platform-1764453265485.png",
+    "publicCore-pricing-1764453336537.png",
+    "publicCore-about-1764453344988.png",
+    "publicCore-contact-1764453361551.png",
+    "authentication-login-1764453369878.png",
+    "authentication-register-1764453376949.png",
+    "solutions-solutions-crm-1764453386945.png",
+    "solutions-solutions-lead-management-1764453398074.png",
+    "solutions-solutions-automation-1764453409160.png",
+    "solutions-solutions-audience-intelligence-1764453419976.png",
+    "solutions-solutions-patient-identification-1764453430837.png",
+    "solutions-solutions-campaign-activation-1764453441484.png",
+    "solutions-solutions-visitor-identification-1764453541409.png",
+    "solutions-solutions-analytics-1764453551959.png",
+    "industries-industries-medical-spas-1764453563926.png",
+    "industries-industries-dermatology-1764453574442.png",
+    "industries-industries-plastic-surgery-1764453584989.png",
+    "industries-industries-aesthetic-clinics-1764453596628.png",
+    "industries-industries-legal-attorneys-1764453614022.png",
+    "industries-industries-real-estate-1764453625290.png",
+    "industries-industries-mortgage-lending-1764453635981.png",
+    "industries-industries-insurance-1764453647300.png",
+    "industries-industries-marketing-agencies-1764453658940.png",
+    "industries-industries-restaurants-1764453761578.png",
+    "industries-industries-home-services-1764453865110.png",
+    "industries-industries-retail-1764453968629.png",
+    "industries-industries-professional-services-1764454075896.png",
+    "legal-privacy-policy-1764454094430.png",
+    "legal-terms-of-service-1764454117307.png",
+    "legal-hipaa-1764454140315.png",
+    "legal-security-1764454161066.png"
+  ]
+}

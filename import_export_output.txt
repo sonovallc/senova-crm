@@ -1,0 +1,26 @@
+=== CSV IMPORT AND EXPORT TEST ===
+
+LOGIN
+OK: Logged in
+
+NAVIGATE TO IMPORT
+OK: Import page loaded
+
+UPLOAD CSV
+OK: File selected, waiting for processing...
+OK: On mapping page
+
+AUTO-MAP COLUMNS
+OK: Auto-mapped
+OK: On tags page
+
+SKIP TAGS
+OK: On review page
+
+
+EXECUTE IMPORT
+
+❌ ERROR: page.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button:has-text("Import")')[22m
+

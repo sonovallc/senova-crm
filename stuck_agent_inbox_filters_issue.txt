@@ -1,0 +1,47 @@
+STUCK AGENT ESCALATION - BUG-INBOX-FILTERS
+
+ISSUE: Backend Missing Archived Support
+========================================
+
+TASK: Add "Read" and "Archived" filter options to Inbox page
+
+PROBLEM DISCOVERED:
+- The Communication model has NO 'archived' field or status
+- Current CommunicationStatus enum values: PENDING, SENT, DELIVERED, FAILED, READ
+- There is no backend support for archiving emails
+
+FILE LOCATIONS:
+- Frontend: context-engineering-intro/frontend/src/app/(dashboard)/dashboard/inbox/page.tsx (lines 309-350)
+- Backend Model: context-engineering-intro/backend/app/models/communication.py (lines 28-34)
+
+CURRENT FILTER IMPLEMENTATION:
+- Lines 309-319: Three tabs defined (All, Unread, Pending)
+- Line 338: Unread filter: conversations.filter((c) => c.status !== 'read')
+- Line 346: Pending filter: conversations.filter((c) => c.status === 'pending')
+
+POSSIBLE SOLUTIONS:
+
+Option 1: Partial Implementation (Read only)
+- Add "Read" filter (works with existing status)
+- Skip "Archived" filter (would require backend changes)
+- PRO: Deliverable immediately, no breaking changes
+- CON: Does not fully satisfy bug requirements
+
+Option 2: Full Implementation with Placeholder
+- Add "Read" filter (functional)
+- Add "Archived" filter (shows empty results with note)
+- PRO: UI complete, sets expectation for future feature
+- CON: Archived filter non-functional until backend updated
+
+Option 3: Request Backend Changes First
+- Add 'archived' status to CommunicationStatus enum
+- Add database migration
+- Update API endpoints to support archived filter
+- Then implement frontend filters
+- PRO: Complete solution
+- CON: Requires backend changes, more time
+
+HUMAN DECISION NEEDED:
+Which option should I proceed with?
+
+CONTEXT: This is for production CRM system. Bug severity: Medium.

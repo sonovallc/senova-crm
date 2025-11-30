@@ -1,0 +1,15 @@
+{
+  "publicWebsite": {
+    "actualBadgeColor": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(38, 38, 38)",
+      "className": "absolute -top-4 left-1/2 -translate-x-1/2"
+    },
+    "save20Text": {
+      "color": "rgb(22, 163, 74)",
+      "className": "text-green-600 ml-1"
+    }
+  },
+  "crmDashboard": {},
+  "timestamp": "2025-11-29T06:35:48.314Z"
+}

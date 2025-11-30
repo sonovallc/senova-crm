@@ -1,0 +1,203 @@
+================================================================================
+BUGS #11-12 INVESTIGATION - EXECUTIVE SUMMARY
+================================================================================
+Investigation Date: November 25, 2025
+Status: COMPLETE
+Severity: HIGH (Both bugs block key functionality)
+
+================================================================================
+QUICK REFERENCE
+================================================================================
+
+BUG #11: Edit Template Body Field Empty
+  Root Cause: TipTap editor initialization timing issue in Dialog context
+  Location: rich-text-editor.tsx line 61 + page.tsx Edit Modal
+  Fix: Increase setTimeout from 0ms to 100ms
+  Effort: 5 minutes
+  
+BUG #12: Dual Success/Error Toast Notifications
+  Root Cause: Query invalidation failure cascades to error callback
+  Location: page.tsx updateMutation lines 149-155
+  Fix: Add .catch() error handling around invalidateQueries
+  Effort: 10 minutes
+
+================================================================================
+BUG #11: EDIT TEMPLATE BODY CONTENT EMPTY
+================================================================================
+
+USER EXPERIENCE:
+- User clicks "Edit" on a template
+- Modal opens with empty body field
+- Name, subject, category fields populate correctly
+- User cannot see/edit template body content
+
+TECHNICAL ROOT CAUSE:
+- RichTextEditor uses TipTap rich text editor
+- When Dialog opens, RichTextEditor mounts with correct value prop
+- TipTap editor initializes asynchronously
+- useEffect tries to set content via setTimeout(0)
+- But 0ms delay insufficient for Dialog + TipTap dual initialization
+- editor.isEditable check fails, setContent skipped
+- Result: Empty editor
+
+WHY PREVIOUS FIX (#10) INCOMPLETE:
+- setTimeout(0) works in simple contexts (Create modal)
+- Fails in Dialog because animation/rendering interferes
+- Need longer delay or callback-based approach
+
+IMPACT:
+- CRITICAL: Users cannot edit template body content
+- Blocks workflow for any template editing
+- Affects all custom templates
+
+RECOMMENDED FIX:
+- Change setTimeout delay in rich-text-editor.tsx from 0 to 100ms
+- Alternative: Use Dialog onOpenChange callback for timing control
+- Estimated fix time: 5 minutes
+
+FILES TO MODIFY:
+- context-engineering-intro/frontend/src/components/inbox/rich-text-editor.tsx (Line 61)
+
+================================================================================
+BUG #12: BOTH SUCCESS AND ERROR TOASTS APPEAR
+================================================================================
+
+USER EXPERIENCE:
+- User saves template edits
+- Two toasts appear simultaneously:
+  1. Green toast: "Template updated successfully"
+  2. Red toast: "Failed to update template"
+- Confusing UX - which one actually happened?
+
+TECHNICAL ROOT CAUSE:
+- updateMutation.onSuccess fires toast("success") immediately
+- Then calls queryClient.invalidateQueries() to refetch template list
+- If refetch fails (network, backend error, race condition):
+  - Error handler triggered
+  - onError callback fires toast("error")
+  - User sees both toasts at same time
+- Root issue: No error handling around invalidateQueries call
+
+RACE CONDITION SCENARIO:
+1. User clicks Save
+2. API PATCH succeeds (HTTP 200)
+3. onSuccess fires → Toast: "Template updated"
+4. invalidateQueries() starts refetch of templates list
+5. Refetch fails (network timeout, backend error, etc)
+6. Error handler triggered → Toast: "Failed to update template"
+7. User sees both toasts
+
+SECONDARY ISSUE:
+- updateTemplate API function has no response validation
+- Could be returning invalid data but still marked as success
+
+IMPACT:
+- HIGH: Confusing user feedback
+- Users unsure if save actually worked
+- No way to know which error occurred
+- Risk of users retrying operations
+
+RECOMMENDED FIX:
+Primary: Add .catch() error handling to invalidateQueries
+  - Prevents cascading errors
+  - Ensures only one toast shown
+  - Estimated fix time: 5 minutes
+
+Secondary: Add response validation to updateTemplate API
+  - Catches invalid server responses earlier
+  - Better error reporting
+  - Estimated fix time: 5 minutes
+
+FILES TO MODIFY:
+- context-engineering-intro/frontend/src/app/(dashboard)/dashboard/email/templates/page.tsx (Lines 149-155)
+- context-engineering-intro/frontend/src/lib/queries/email-templates.ts (Lines 40-43)
+
+================================================================================
+INVESTIGATION FINDINGS
+================================================================================
+
+Root Causes Identified:
+  ✓ Bug #11: 0ms setTimeout delay insufficient for Dialog context
+  ✓ Bug #12: No error handling around query invalidation
+
+Data Flow Issues:
+  ✓ handleEdit correctly loads template data
+  ✓ formData correctly populated
+  ✓ Issue in RichTextEditor/TipTap integration (Bug #11)
+  ✓ Issue in mutation error handling (Bug #12)
+
+Secondary Issues Found:
+  - API response validation missing in updateTemplate
+  - Could mask server-side errors
+  - Recommend adding validation
+
+Related Issues:
+  - Bug #10 (similar timing issue) was partially fixed
+  - Fix insufficient for Edit modal Dialog context
+  - Current fix uses setTimeout(0) which is unreliable
+
+================================================================================
+RECOMMENDED ACTION PLAN
+================================================================================
+
+PHASE 1 - QUICK FIXES (15 minutes total)
+Step 1: Fix Bug #11 (5 minutes)
+  File: rich-text-editor.tsx, Line 61
+  Change: }, 0) → }, 100)
+  
+Step 2: Fix Bug #12 Primary (5 minutes)
+  File: page.tsx, Lines 154-155
+  Change: Add .catch() around invalidateQueries
+  
+Step 3: Fix Bug #12 Secondary (5 minutes)
+  File: email-templates.ts, Lines 40-43
+  Change: Add response validation
+
+PHASE 2 - VERIFICATION (10 minutes)
+Step 1: Test Bug #11
+  - Open templates page
+  - Click Edit on any template with body
+  - Verify body field populates
+  - Edit and save
+  
+Step 2: Test Bug #12
+  - Save edited template
+  - Verify only success toast appears
+  - Simulate network error
+  - Verify appropriate error toast appears (not both)
+
+PHASE 3 - DEPLOYMENT
+  - Update project status tracker
+  - Mark bugs resolved
+  - Add to release notes
+
+================================================================================
+DETAILED INFORMATION
+================================================================================
+
+For detailed code analysis, see:
+  BUG_011-012_DETAILED_INVESTIGATION.md - Full investigation report
+  BUG_011-012_CODE_FIXES.txt - Code snippets and fixes
+
+For code references, see:
+  context-engineering-intro/frontend/src/components/inbox/rich-text-editor.tsx
+  context-engineering-intro/frontend/src/app/(dashboard)/dashboard/email/templates/page.tsx
+  context-engineering-intro/frontend/src/lib/queries/email-templates.ts
+
+For backend context, see:
+  context-engineering-intro/backend/app/api/v1/email_templates.py (updateTemplate endpoint)
+
+================================================================================
+INVESTIGATION COMPLETE
+================================================================================
+
+This investigation identified:
+✓ Root causes for both bugs
+✓ Exact file locations and line numbers
+✓ Why previous fixes were incomplete
+✓ Recommended solutions with code changes
+✓ Testing procedures
+✓ Implementation effort estimates
+
+Ready for implementation.
+

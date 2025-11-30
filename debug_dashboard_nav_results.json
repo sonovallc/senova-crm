@@ -1,0 +1,223 @@
+{
+  "login": [
+    {
+      "element": "Login Page",
+      "action": "Initial Load",
+      "result": "Page loaded",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\login-initial-2025-11-25T04-54-20.png",
+      "timestamp": "2025-11-25T04-54-20-895Z"
+    },
+    {
+      "element": "Email Field",
+      "action": "Type text",
+      "result": "Text entered successfully",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\login-email-after-2025-11-25T04-54-21.png",
+      "timestamp": "2025-11-25T04-54-22-024Z"
+    },
+    {
+      "element": "Password Field",
+      "action": "Type text",
+      "result": "Text entered successfully",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\login-password-after-2025-11-25T04-54-22.png",
+      "timestamp": "2025-11-25T04-54-22-367Z"
+    },
+    {
+      "element": "Submit Button (empty)",
+      "action": "Click",
+      "result": "Validation triggered (expected)",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\login-empty-submit-after-2025-11-25T04-54-26.png",
+      "timestamp": "2025-11-25T04-54-26-187Z"
+    },
+    {
+      "element": "Submit Button (invalid creds)",
+      "action": "Click",
+      "result": "Error message shown (expected)",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\login-invalid-after-2025-11-25T04-54-30.png",
+      "timestamp": "2025-11-25T04-54-30-756Z"
+    },
+    {
+      "element": "Submit Button (valid creds)",
+      "action": "Click",
+      "result": "Login successful, navigated to dashboard",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\login-valid-after-dashboard-2025-11-25T04-54-34.png",
+      "timestamp": "2025-11-25T04-54-35-101Z"
+    }
+  ],
+  "dashboard": [
+    {
+      "element": "Dashboard Page",
+      "action": "Initial Load",
+      "result": "Dashboard loaded",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\dashboard-initial-2025-11-25T04-54-35.png",
+      "timestamp": "2025-11-25T04-54-35-276Z"
+    },
+    {
+      "element": "Button: \"Admin\"",
+      "action": "Click",
+      "result": "Button clicked successfully",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\dashboard-button-0-after-2025-11-25T04-54-36.png",
+      "timestamp": "2025-11-25T04-54-36-827Z"
+    },
+    {
+      "element": "Button: \"Email\"",
+      "action": "Click",
+      "result": "Button clicked successfully",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\dashboard-button-1-after-2025-11-25T04-54-41.png",
+      "timestamp": "2025-11-25T04-54-42-007Z"
+    },
+    {
+      "element": "Button: \"Settings\"",
+      "action": "Click",
+      "result": "Button clicked successfully",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\dashboard-button-2-after-2025-11-25T04-54-45.png",
+      "timestamp": "2025-11-25T04-54-46-119Z"
+    },
+    {
+      "element": "Button: \"Logout\"",
+      "action": "Click",
+      "result": "Button clicked successfully",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\dashboard-button-3-after-2025-11-25T04-54-49.png",
+      "timestamp": "2025-11-25T04-54-49-988Z"
+    },
+    {
+      "element": "Button 4",
+      "action": "Click",
+      "result": "Error: locator.textContent: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button').nth(4)\u001b[22m\n",
+      "status": "FAIL",
+      "screenshot": null,
+      "timestamp": "2025-11-25T04-55-21-888Z"
+    },
+    {
+      "element": "Button 5",
+      "action": "Click",
+      "result": "Error: locator.textContent: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button').nth(5)\u001b[22m\n",
+      "status": "FAIL",
+      "screenshot": null,
+      "timestamp": "2025-11-25T04-55-51-904Z"
+    },
+    {
+      "element": "Button 6",
+      "action": "Click",
+      "result": "Error: locator.textContent: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button').nth(6)\u001b[22m\n",
+      "status": "FAIL",
+      "screenshot": null,
+      "timestamp": "2025-11-25T04-56-21-916Z"
+    },
+    {
+      "element": "Stat Card/Widget 0",
+      "action": "Found",
+      "result": "Card visible",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\dashboard-card-0-2025-11-25T04-56-21.png",
+      "timestamp": "2025-11-25T04-56-22-069Z"
+    },
+    {
+      "element": "Link: \"Back to Website\"",
+      "action": "Found",
+      "result": "Href: /home",
+      "status": "PASS",
+      "screenshot": null,
+      "timestamp": "2025-11-25T04-56-22-099Z"
+    },
+    {
+      "element": "Link: \"Sign up\"",
+      "action": "Found",
+      "result": "Href: /register",
+      "status": "PASS",
+      "screenshot": null,
+      "timestamp": "2025-11-25T04-56-22-122Z"
+    }
+  ],
+  "navigation": [
+    {
+      "element": "Sidebar",
+      "action": "Initial State",
+      "result": "Sidebar visible",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\sidebar-initial-2025-11-25T04-56-25.png",
+      "timestamp": "2025-11-25T04-56-25-384Z"
+    },
+    {
+      "element": "Collapsible Section 0",
+      "action": "Toggle",
+      "result": "Section toggled",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\collapse-0-after-2025-11-25T04-56-26.png",
+      "timestamp": "2025-11-25T04-56-26-386Z"
+    }
+  ],
+  "header": [
+    {
+      "element": "Header/Top Bar",
+      "action": "Initial State",
+      "result": "Header visible",
+      "status": "PASS",
+      "screenshot": "C:\\Users\\jwood\\Documents\\Projects\\claude-code-agents-wizard-v2\\screenshots\\exhaustive-debug-dashboard\\header-initial-2025-11-25T04-56-28.png",
+      "timestamp": "2025-11-25T04-56-29-189Z"
+    },
+    {
+      "element": "User Profile Dropdown",
+      "action": "Find",
+      "result": "Dropdown not found",
+      "status": "FAIL",
+      "screenshot": null,
+      "timestamp": "2025-11-25T04-56-29-219Z"
+    },
+    {
+      "element": "Notifications",
+      "action": "Find",
+      "result": "Notifications not found (may not exist)",
+      "status": "PASS",
+      "screenshot": null,
+      "timestamp": "2025-11-25T04-56-29-239Z"
+    },
+    {
+      "element": "Search Bar",
+      "action": "Find",
+      "result": "Search bar not found (may not exist)",
+      "status": "PASS",
+      "screenshot": null,
+      "timestamp": "2025-11-25T04-56-29-244Z"
+    }
+  ],
+  "errors": [
+    {
+      "type": "console-error",
+      "message": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/login\" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>\n        <SegmentViewNode type=\"page\" pagePath=\"/src/(auth...\">\n          <SegmentTrieNode>\n          <ClientPageRoot Component={function LoginPage} searchParams={{}} params={{}}>\n            <LoginPage params={Promise} searchParams={Promise}>\n              <div className=\"flex min-h...\">\n                <LinkComponent>\n                <_c className=\"w-full max...\">\n                  <div ref={null} className=\"rounded-lg...\">\n                    <_c2>\n                    <_c8>\n                      <div ref={null} className=\"p-6 pt-0\">\n                        <form suppressHydrationWarning={true} onSubmit={function} className=\"space-y-4\">\n                          <div className=\"space-y-2\">\n                            <_c>\n                            <_c id=\"email\" type=\"email\" placeholder=\"name@examp...\" name=\"email\" ...>\n                              <input\n                                type=\"email\"\n                                className=\"flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 tex...\"\n                                ref={function ref}\n                                id=\"email\"\n                                placeholder=\"name@example.com\"\n                                name=\"email\"\n                                onChange={function onChange}\n                                onBlur={function onChange}\n                                disabled={false}\n-                               style={{caret-color:\"transparent\"}}\n                              >\n                          <div className=\"space-y-2\">\n                            <_c>\n                            <_c id=\"password\" type=\"password\" placeholder=\"••••••••\" name=\"password\" ...>\n                              <input\n                                type=\"password\"\n                                className=\"flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 tex...\"\n                                ref={function ref}\n                                id=\"password\"\n                                placeholder=\"••••••••\"\n                                name=\"password\"\n                                onChange={function onChange}\n                                onBlur={function onChange}\n                                disabled={false}\n-                               style={{caret-color:\"transparent\"}}\n                              >\n                          ...\n                    ...\n        ...\n      ...\n",
+      "timestamp": "2025-11-25T04:54:20.484Z"
+    },
+    {
+      "type": "console-error",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "timestamp": "2025-11-25T04:54:28.595Z"
+    },
+    {
+      "type": "console-error",
+      "message": "Failed to load resource: the server responded with a status of 422 (Unprocessable Entity)",
+      "timestamp": "2025-11-25T04:54:48.791Z"
+    },
+    {
+      "type": "page-error",
+      "message": "AxiosError",
+      "stack": "",
+      "timestamp": "2025-11-25T04:54:48.797Z"
+    }
+  ],
+  "summary": {
+    "total": 23,
+    "passed": 19,
+    "failed": 4,
+    "passRate": "82.6"
+  }
+}

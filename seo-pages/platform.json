@@ -1,0 +1,266 @@
+{
+  "path": "/platform",
+  "seo": {
+    "title": "Medical Spa Software That Pays for Itself in 30 Days",
+    "description": "All-in-one CRM platform: See website visitors, build patient audiences, automate marketing. Used by 500+ aesthetic practices. Live demo available.",
+    "keywords": ["medical spa platform", "aesthetic practice software", "patient CRM", "medspa technology", "practice management"],
+    "og_image": "Platform overview showing all features in a unified dashboard"
+  },
+  "hero": {
+    "headline": "The Complete Patient Intelligence Platform for Medical Aesthetics",
+    "subheadline": "One platform that identifies visitors, builds audiences, automates campaigns, and proves ROI - replacing 5+ separate tools.",
+    "cta_primary": {
+      "text": "See Platform Demo",
+      "link": "/demo"
+    },
+    "cta_secondary": {
+      "text": "Compare Features",
+      "link": "#features"
+    }
+  },
+  "sections": [
+    {
+      "type": "overview",
+      "headline": "Everything You Need to Grow Your Practice",
+      "subheadline": "Stop juggling multiple tools. Get enterprise capabilities in one affordable platform.",
+      "capabilities": [
+        {
+          "category": "Patient Intelligence",
+          "features": [
+            "Identify 80% of anonymous website visitors",
+            "Track procedure interest and buying intent",
+            "Build audiences from 280M+ consumer profiles",
+            "Competitor patient identification"
+          ]
+        },
+        {
+          "category": "CRM & Management",
+          "features": [
+            "Complete patient profiles and history",
+            "Appointment scheduling integration",
+            "Treatment tracking and notes",
+            "Multi-location support"
+          ]
+        },
+        {
+          "category": "Marketing Automation",
+          "features": [
+            "Email and SMS campaigns",
+            "Facebook/Instagram integration",
+            "Google Ads sync",
+            "Automated follow-up sequences"
+          ]
+        },
+        {
+          "category": "Analytics & ROI",
+          "features": [
+            "Cost per patient acquisition",
+            "Revenue attribution tracking",
+            "Campaign performance metrics",
+            "Lifetime value calculations"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "features_detailed",
+      "headline": "Platform Features That Drive Results",
+      "features": [
+        {
+          "title": "Patient Identification Pixel",
+          "description": "Our HIPAA-compliant pixel identifies up to 80% of your website visitors by name, email, and procedure interest - without forms or cookies.",
+          "benefits": [
+            "See visitor names and contact info instantly",
+            "Track which procedures they're researching",
+            "Capture visitors who don't fill out forms",
+            "Build remarketing audiences automatically"
+          ],
+          "stats": {
+            "identification_rate": "80%",
+            "accuracy": "95%",
+            "setup_time": "5 minutes"
+          }
+        },
+        {
+          "title": "Audience Intelligence Engine",
+          "description": "Build and target custom patient audiences using 280M+ verified profiles and 60B+ behavioral signals updated weekly.",
+          "benefits": [
+            "Target by procedure interest (Botox, fillers, etc.)",
+            "Filter by income, age, and location",
+            "Find competitor's patients ethically",
+            "Access pre-built procedure audiences"
+          ],
+          "stats": {
+            "profiles": "280M+",
+            "accuracy": "95%",
+            "pre_built_audiences": "50+"
+          }
+        },
+        {
+          "title": "Unified Communications Hub",
+          "description": "Manage all patient communications in one inbox - email, SMS, web chat, and social messages with team collaboration.",
+          "benefits": [
+            "Never miss a patient inquiry",
+            "Automated response templates",
+            "Team assignment and notes",
+            "Complete communication history"
+          ],
+          "stats": {
+            "response_time": "< 2 min",
+            "channels": "5+",
+            "automation_rate": "70%"
+          }
+        },
+        {
+          "title": "Campaign Activation Center",
+          "description": "Launch targeted campaigns across all channels from one place - email, SMS, social media, and paid advertising.",
+          "benefits": [
+            "One-click audience sync to all platforms",
+            "Pre-built campaign templates",
+            "A/B testing built-in",
+            "Automated drip campaigns"
+          ],
+          "stats": {
+            "platforms": "10+",
+            "templates": "100+",
+            "automation_workflows": "25+"
+          }
+        },
+        {
+          "title": "ROI Analytics Dashboard",
+          "description": "Track every dollar from first click to lifetime patient value with attribution modeling and revenue tracking.",
+          "benefits": [
+            "See true cost per acquisition",
+            "Track revenue by campaign",
+            "Measure lifetime patient value",
+            "Identify most profitable channels"
+          ],
+          "stats": {
+            "metrics_tracked": "50+",
+            "attribution_window": "90 days",
+            "reporting_frequency": "Real-time"
+          }
+        },
+        {
+          "title": "Data Enrichment Service",
+          "description": "Automatically enhance patient records with verified contact information, demographics, and behavioral data.",
+          "benefits": [
+            "Fix incorrect email addresses",
+            "Add missing phone numbers",
+            "Append demographic data",
+            "Update contact preferences"
+          ],
+          "stats": {
+            "enrichment_rate": "85%",
+            "data_accuracy": "95%",
+            "fields_available": "200+"
+          }
+        }
+      ]
+    },
+    {
+      "type": "integrations",
+      "headline": "Connects with Your Existing Tools",
+      "subheadline": "Seamlessly integrate with practice management, marketing, and advertising platforms",
+      "categories": [
+        {
+          "name": "Practice Management",
+          "integrations": ["Aesthetics Pro", "Nextech", "Symplast", "Zenoti", "Boulevard"]
+        },
+        {
+          "name": "Marketing Platforms",
+          "integrations": ["Mailchimp", "Constant Contact", "ActiveCampaign", "HubSpot", "Klaviyo"]
+        },
+        {
+          "name": "Advertising",
+          "integrations": ["Facebook Ads", "Google Ads", "Instagram", "TikTok", "YouTube"]
+        },
+        {
+          "name": "Communications",
+          "integrations": ["Twilio", "RingCentral", "Zoom", "Calendly", "TypeForm"]
+        }
+      ]
+    },
+    {
+      "type": "security",
+      "headline": "Enterprise Security, Healthcare Compliance",
+      "features": [
+        {
+          "title": "HIPAA Compliant",
+          "description": "Full HIPAA compliance with BAA included, encrypted data storage, and audit logs"
+        },
+        {
+          "title": "SOC 2 Type II Certified",
+          "description": "Independently audited security controls and data protection processes"
+        },
+        {
+          "title": "256-bit Encryption",
+          "description": "Bank-level encryption for all data in transit and at rest"
+        },
+        {
+          "title": "99.9% Uptime SLA",
+          "description": "Guaranteed availability with redundant infrastructure and 24/7 monitoring"
+        }
+      ]
+    },
+    {
+      "type": "onboarding",
+      "headline": "White-Glove Setup in 24 Hours",
+      "timeline": [
+        {
+          "step": 1,
+          "title": "Pixel Installation",
+          "description": "5-minute setup to start identifying visitors",
+          "time": "Day 1"
+        },
+        {
+          "step": 2,
+          "title": "Data Import",
+          "description": "Import existing patients and enrich records",
+          "time": "Day 1"
+        },
+        {
+          "step": 3,
+          "title": "Campaign Setup",
+          "description": "Configure first audiences and campaigns",
+          "time": "Day 2"
+        },
+        {
+          "step": 4,
+          "title": "Team Training",
+          "description": "Live training session for your team",
+          "time": "Day 2-3"
+        },
+        {
+          "step": 5,
+          "title": "Launch",
+          "description": "Go live with full support",
+          "time": "Day 3"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "headline": "Ready to See the Platform in Action?",
+      "subheadline": "Get a personalized demo and see your actual website visitors",
+      "primary_cta": {
+        "text": "Get Live Demo",
+        "link": "/demo"
+      },
+      "secondary_cta": {
+        "text": "View Pricing",
+        "link": "/pricing"
+      }
+    }
+  ],
+  "schema_markup": {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Senova CRM Platform",
+    "description": "Complete patient intelligence platform for medical aesthetics",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web-based",
+    "requirements": "Modern web browser, JavaScript enabled",
+    "screenshot": "https://senovallc.com/images/platform-dashboard.png"
+  }
+}

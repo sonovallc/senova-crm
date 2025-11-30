@@ -1,0 +1,119 @@
+[
+  {
+    "name": "01-homepage",
+    "url": "http://localhost:3004/",
+    "status": "FAIL",
+    "reason": "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3004/\", waiting until \"networkidle\"\u001b[22m\n"
+  },
+  {
+    "name": "02-platform",
+    "url": "http://localhost:3004/platform",
+    "status": "PASS",
+    "screenshot": "02-platform.png"
+  },
+  {
+    "name": "03-pricing",
+    "url": "http://localhost:3004/pricing",
+    "status": "FAIL",
+    "violations": [
+      "Missing required text: \"accessible price\""
+    ],
+    "screenshot": "03-pricing.png"
+  },
+  {
+    "name": "04-demo",
+    "url": "http://localhost:3004/demo",
+    "status": "PASS",
+    "screenshot": "04-demo.png"
+  },
+  {
+    "name": "05-contact",
+    "url": "http://localhost:3004/contact",
+    "status": "PASS",
+    "screenshot": "05-contact.png"
+  },
+  {
+    "name": "06-about",
+    "url": "http://localhost:3004/about",
+    "status": "PASS",
+    "screenshot": "06-about.png"
+  },
+  {
+    "name": "07-hipaa",
+    "url": "http://localhost:3004/hipaa",
+    "status": "PASS",
+    "screenshot": "07-hipaa.png"
+  },
+  {
+    "name": "08-security",
+    "url": "http://localhost:3004/security",
+    "status": "PASS",
+    "screenshot": "08-security.png"
+  },
+  {
+    "name": "09-privacy-policy",
+    "url": "http://localhost:3004/privacy-policy",
+    "status": "PASS",
+    "screenshot": "09-privacy-policy.png"
+  },
+  {
+    "name": "10-terms-of-service",
+    "url": "http://localhost:3004/terms-of-service",
+    "status": "PASS",
+    "screenshot": "10-terms-of-service.png"
+  },
+  {
+    "name": "11-solutions-crm",
+    "url": "http://localhost:3004/solutions/crm",
+    "status": "PASS",
+    "screenshot": "11-solutions-crm.png"
+  },
+  {
+    "name": "12-solutions-audience",
+    "url": "http://localhost:3004/solutions/audience-intelligence",
+    "status": "PASS",
+    "screenshot": "12-solutions-audience.png"
+  },
+  {
+    "name": "13-solutions-patient",
+    "url": "http://localhost:3004/solutions/patient-identification",
+    "status": "PASS",
+    "screenshot": "13-solutions-patient.png"
+  },
+  {
+    "name": "14-solutions-campaign",
+    "url": "http://localhost:3004/solutions/campaign-activation",
+    "status": "PASS",
+    "screenshot": "14-solutions-campaign.png"
+  },
+  {
+    "name": "15-solutions-analytics",
+    "url": "http://localhost:3004/solutions/analytics",
+    "status": "PASS",
+    "screenshot": "15-solutions-analytics.png"
+  },
+  {
+    "name": "16-industries-medical-spas",
+    "url": "http://localhost:3004/industries/medical-spas",
+    "status": "PASS",
+    "screenshot": "16-industries-medical-spas.png"
+  },
+  {
+    "name": "17-industries-dermatology",
+    "url": "http://localhost:3004/industries/dermatology",
+    "status": "PASS",
+    "screenshot": "17-industries-dermatology.png"
+  },
+  {
+    "name": "18-industries-plastic-surgery",
+    "url": "http://localhost:3004/industries/plastic-surgery",
+    "status": "PASS",
+    "screenshot": "18-industries-plastic-surgery.png"
+  },
+  {
+    "name": "19-industries-aesthetic-clinics",
+    "url": "http://localhost:3004/industries/aesthetic-clinics",
+    "status": "PASS",
+    "screenshot": "19-industries-aesthetic-clinics.png"
+  }
+]

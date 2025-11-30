@@ -1,0 +1,6 @@
+🚀 Starting Senova Design Verification...
+
+📋 Testing 21 pages...
+
+[1/21] Testing: home (/)
+  Status: 200

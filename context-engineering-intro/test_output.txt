@@ -1,0 +1,45 @@
+Testing public pages...
+✓ /
+✓ /platform
+✓ /pricing
+✓ /about
+✓ /contact
+✓ /solutions/crm
+✓ /solutions/audience-intelligence
+✓ /solutions/patient-identification
+✓ /solutions/campaign-activation
+✓ /solutions/analytics
+✓ /industries/medical-spas
+✓ /industries/dermatology
+✓ /industries/plastic-surgery
+✓ /industries/aesthetic-clinics
+✓ /privacy-policy
+✓ /terms-of-service
+✓ /hipaa
+✓ /security
+✓ /compliance
+✓ /blog
+✓ /case-studies
+✓ /roi-calculator
+✓ /docs
+
+Testing login and dashboard...
+✓ Login successful
+✓ /dashboard
+✓ /dashboard/contacts
+✓ /dashboard/inbox
+✓ /dashboard/objects
+✓ /dashboard/settings
+✓ /dashboard/closebot
+✓ /dashboard/calendar
+
+Testing mobile viewport...
+✗ Mobile menu not found
+
+=== RESULTS ===
+Passed: 31
+Failed: 1
+Total: 32
+Pass Rate: 96.9%
+
+❌ NOT PRODUCTION READY - 1 tests failed

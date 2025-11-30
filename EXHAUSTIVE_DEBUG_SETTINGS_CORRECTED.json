@@ -1,0 +1,382 @@
+{
+  "timestamp": "2025-11-25T00:02:36.619Z",
+  "totalElements": 881,
+  "totalTests": 46,
+  "passed": 39,
+  "failed": 7,
+  "pages": {
+    "Settings Main Page": {
+      "elements": [
+        {
+          "element": "User Management section",
+          "test": "Section exists",
+          "status": "PASS",
+          "details": "Section visible on page",
+          "timestamp": "2025-11-25T00:02:50.440Z"
+        },
+        {
+          "element": "Field Visibility section",
+          "test": "Section exists",
+          "status": "PASS",
+          "details": "Section visible on page",
+          "timestamp": "2025-11-25T00:02:50.448Z"
+        },
+        {
+          "element": "Tags Management section",
+          "test": "Section exists",
+          "status": "PASS",
+          "details": "Section visible on page",
+          "timestamp": "2025-11-25T00:02:50.454Z"
+        },
+        {
+          "element": "Communication Services section",
+          "test": "Section exists",
+          "status": "PASS",
+          "details": "Section visible on page",
+          "timestamp": "2025-11-25T00:02:50.460Z"
+        },
+        {
+          "element": "Payment Gateways section",
+          "test": "Section exists",
+          "status": "PASS",
+          "details": "Section visible on page",
+          "timestamp": "2025-11-25T00:02:50.465Z"
+        },
+        {
+          "element": "Tab: API Keys",
+          "test": "Click tab",
+          "status": "PASS",
+          "details": "Tab switched successfully",
+          "timestamp": "2025-11-25T00:02:52.414Z"
+        },
+        {
+          "element": "Tab: Email Configuration",
+          "test": "Click tab",
+          "status": "PASS",
+          "details": "Tab switched successfully",
+          "timestamp": "2025-11-25T00:02:54.396Z"
+        },
+        {
+          "element": "Tab: Integrations",
+          "test": "Click tab",
+          "status": "PASS",
+          "details": "Tab switched successfully",
+          "timestamp": "2025-11-25T00:02:56.327Z"
+        },
+        {
+          "element": "Tab: Profile",
+          "test": "Click tab",
+          "status": "PASS",
+          "details": "Tab switched successfully",
+          "timestamp": "2025-11-25T00:02:58.251Z"
+        },
+        {
+          "element": "Manage Users button",
+          "test": "Click and navigate",
+          "status": "PASS",
+          "details": "Navigated to http://localhost:3004/dashboard/settings/users",
+          "timestamp": "2025-11-25T00:03:00.700Z"
+        },
+        {
+          "element": "Manage Fields button",
+          "test": "Click and navigate",
+          "status": "PASS",
+          "details": "Navigated to http://localhost:3004/dashboard/settings/fields",
+          "timestamp": "2025-11-25T00:03:07.378Z"
+        },
+        {
+          "element": "Manage Tags button",
+          "test": "Click and navigate",
+          "status": "PASS",
+          "details": "Navigated to http://localhost:3004/dashboard/settings/tags",
+          "timestamp": "2025-11-25T00:03:13.697Z"
+        },
+        {
+          "element": "API field: Enter Bandwidth API key...",
+          "test": "Fill with text",
+          "status": "PASS",
+          "details": "Field accepts input",
+          "timestamp": "2025-11-25T00:03:17.756Z"
+        },
+        {
+          "element": "API field: Enter Mailgun API key...",
+          "test": "Fill with text",
+          "status": "PASS",
+          "details": "Field accepts input",
+          "timestamp": "2025-11-25T00:03:18.284Z"
+        },
+        {
+          "element": "API field: sk_test_...",
+          "test": "Fill with text",
+          "status": "PASS",
+          "details": "Field accepts input",
+          "timestamp": "2025-11-25T00:03:18.769Z"
+        },
+        {
+          "element": "API field: Enter Square access token...",
+          "test": "Fill with text",
+          "status": "PASS",
+          "details": "Field accepts input",
+          "timestamp": "2025-11-25T00:03:19.284Z"
+        },
+        {
+          "element": "API field: Enter Closebot API key...",
+          "test": "Fill with text",
+          "status": "PASS",
+          "details": "Field accepts input",
+          "timestamp": "2025-11-25T00:03:19.814Z"
+        },
+        {
+          "element": "API field: Enter enrichment service key...",
+          "test": "Fill with text",
+          "status": "PASS",
+          "details": "Field accepts input",
+          "timestamp": "2025-11-25T00:03:20.345Z"
+        },
+        {
+          "element": "Toggle button 1",
+          "test": "Click toggle",
+          "status": "PASS",
+          "details": "Button clicked",
+          "timestamp": "2025-11-25T00:03:21.172Z"
+        },
+        {
+          "element": "Toggle button 2",
+          "test": "Click toggle",
+          "status": "FAIL",
+          "details": "elementHandle.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    9 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n",
+          "timestamp": "2025-11-25T00:03:26.370Z"
+        },
+        {
+          "element": "Toggle button 3",
+          "test": "Click toggle",
+          "status": "FAIL",
+          "details": "elementHandle.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div tabindex=\"-1\" role=\"menuitem\" data-orientation=\"vertical\" data-radix-collection-item=\"\" class=\"relative flex select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 cursor-pointer text-destructive\">…</div> from <div dir=\"ltr\" data-radix-popper-content-wrapper=\"\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <a tabindex=\"-1\" role=\"menuitem\" href=\"/dashboard/settings\" data-orientation=\"vertical\" data-radix-collection-item=\"\" class=\"relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 cursor-pointer\">…</a> from <div dir=\"ltr\" data-radix-popper-content-wrapper=\"\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <a tabindex=\"-1\" role=\"menuitem\" href=\"/dashboard/settings\" data-orientation=\"vertical\" data-radix-collection-item=\"\" class=\"relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 cursor-pointer\">…</a> from <div dir=\"ltr\" data-radix-popper-content-wrapper=\"\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <a tabindex=\"-1\" role=\"menuitem\" href=\"/dashboard/settings\" data-orientation=\"vertical\" data-radix-collection-item=\"\" class=\"relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 cursor-pointer\">…</a> from <div dir=\"ltr\" data-radix-popper-content-wrapper=\"\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n",
+          "timestamp": "2025-11-25T00:03:31.574Z"
+        },
+        {
+          "element": "Toggle button 4",
+          "test": "Click toggle",
+          "status": "FAIL",
+          "details": "elementHandle.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <a tabindex=\"-1\" role=\"menuitem\" href=\"/dashboard/settings\" data-orientation=\"vertical\" data-radix-collection-item=\"\" class=\"relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 cursor-pointer\">…</a> from <div dir=\"ltr\" data-radix-popper-content-wrapper=\"\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <a tabindex=\"-1\" role=\"menuitem\" href=\"/dashboard/settings\" data-orientation=\"vertical\" data-radix-collection-item=\"\" class=\"relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 cursor-pointer\">…</a> from <div dir=\"ltr\" data-radix-popper-content-wrapper=\"\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <a tabindex=\"-1\" role=\"menuitem\" href=\"/dashboard/settings\" data-orientation=\"vertical\" data-radix-collection-item=\"\" class=\"relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 cursor-pointer\">…</a> from <div dir=\"ltr\" data-radix-popper-content-wrapper=\"\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n",
+          "timestamp": "2025-11-25T00:03:36.743Z"
+        },
+        {
+          "element": "Toggle button 5",
+          "test": "Click toggle",
+          "status": "FAIL",
+          "details": "elementHandle.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <a tabindex=\"-1\" role=\"menuitem\" href=\"/dashboard/settings\" data-orientation=\"vertical\" data-radix-collection-item=\"\" class=\"relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 cursor-pointer\">…</a> from <div dir=\"ltr\" data-radix-popper-content-wrapper=\"\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <html lang=\"en\">…</html> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <a tabindex=\"-1\" role=\"menuitem\" href=\"/dashboard/settings\" data-orientation=\"vertical\" data-radix-collection-item=\"\" class=\"relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 cursor-pointer\">…</a> from <div dir=\"ltr\" data-radix-popper-content-wrapper=\"\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <a tabindex=\"-1\" role=\"menuitem\" href=\"/dashboard/settings\" data-orientation=\"vertical\" data-radix-collection-item=\"\" class=\"relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 cursor-pointer\">…</a> from <div dir=\"ltr\" data-radix-popper-content-wrapper=\"\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n",
+          "timestamp": "2025-11-25T00:03:41.936Z"
+        }
+      ],
+      "tests": 23,
+      "passed": 19,
+      "failed": 4
+    },
+    "Mailgun Settings": {
+      "elements": [
+        {
+          "element": "API Key field",
+          "test": "Fill with text",
+          "status": "PASS",
+          "details": "Field accepts input",
+          "timestamp": "2025-11-25T00:04:03.311Z"
+        },
+        {
+          "element": "Show/Hide toggle",
+          "test": "Element exists",
+          "status": "FAIL",
+          "details": "Toggle not found",
+          "timestamp": "2025-11-25T00:04:03.316Z"
+        },
+        {
+          "element": "Domain field",
+          "test": "Element exists",
+          "status": "FAIL",
+          "details": "Field not found",
+          "timestamp": "2025-11-25T00:04:03.325Z"
+        },
+        {
+          "element": "Region dropdown",
+          "test": "Element exists",
+          "status": "FAIL",
+          "details": "Dropdown not found",
+          "timestamp": "2025-11-25T00:04:03.332Z"
+        },
+        {
+          "element": "From Email field",
+          "test": "Fill with email",
+          "status": "PASS",
+          "details": "Field accepts input",
+          "timestamp": "2025-11-25T00:04:04.066Z"
+        },
+        {
+          "element": "From Name field",
+          "test": "Fill with text",
+          "status": "PASS",
+          "details": "Field accepts input",
+          "timestamp": "2025-11-25T00:04:04.791Z"
+        },
+        {
+          "element": "Save Settings button",
+          "test": "Click button",
+          "status": "PASS",
+          "details": "Button clicked, form submitted",
+          "timestamp": "2025-11-25T00:04:08.268Z"
+        }
+      ],
+      "tests": 7,
+      "passed": 4,
+      "failed": 3
+    },
+    "Closebot Settings": {
+      "elements": [
+        {
+          "element": "Coming Soon badge",
+          "test": "Badge visible",
+          "status": "PASS",
+          "details": "Badge displayed",
+          "timestamp": "2025-11-25T00:04:20.661Z"
+        },
+        {
+          "element": "About section",
+          "test": "Section visible",
+          "status": "PASS",
+          "details": "Section displayed",
+          "timestamp": "2025-11-25T00:04:20.676Z"
+        },
+        {
+          "element": "Features section",
+          "test": "Section visible",
+          "status": "PASS",
+          "details": "Section displayed",
+          "timestamp": "2025-11-25T00:04:20.687Z"
+        },
+        {
+          "element": "Feature: Auto-Response",
+          "test": "Feature listed",
+          "status": "PASS",
+          "details": "Feature visible",
+          "timestamp": "2025-11-25T00:04:20.694Z"
+        },
+        {
+          "element": "Feature: Smart Follow-ups",
+          "test": "Feature listed",
+          "status": "PASS",
+          "details": "Feature visible",
+          "timestamp": "2025-11-25T00:04:20.702Z"
+        },
+        {
+          "element": "Feature: Sentiment Analysis",
+          "test": "Feature listed",
+          "status": "PASS",
+          "details": "Feature visible",
+          "timestamp": "2025-11-25T00:04:20.708Z"
+        },
+        {
+          "element": "Feature: Lead Qualification",
+          "test": "Feature listed",
+          "status": "PASS",
+          "details": "Feature visible",
+          "timestamp": "2025-11-25T00:04:20.714Z"
+        },
+        {
+          "element": "Configuration section",
+          "test": "Section visible",
+          "status": "PASS",
+          "details": "Section displayed",
+          "timestamp": "2025-11-25T00:04:20.725Z"
+        },
+        {
+          "element": "Disabled input fields",
+          "test": "Fields disabled",
+          "status": "PASS",
+          "details": "2 fields disabled as expected",
+          "timestamp": "2025-11-25T00:04:20.738Z"
+        }
+      ],
+      "tests": 9,
+      "passed": 9,
+      "failed": 0
+    },
+    "Field Visibility": {
+      "elements": [
+        {
+          "element": "Field toggle 1",
+          "test": "Toggle switch",
+          "status": "PASS",
+          "details": "Toggled successfully",
+          "timestamp": "2025-11-25T00:04:37.219Z"
+        },
+        {
+          "element": "Field toggle 2",
+          "test": "Toggle switch",
+          "status": "PASS",
+          "details": "Toggled successfully",
+          "timestamp": "2025-11-25T00:04:38.536Z"
+        },
+        {
+          "element": "Field toggle 3",
+          "test": "Toggle switch",
+          "status": "PASS",
+          "details": "Toggled successfully",
+          "timestamp": "2025-11-25T00:04:39.843Z"
+        },
+        {
+          "element": "Field toggle 4",
+          "test": "Toggle switch",
+          "status": "PASS",
+          "details": "Toggled successfully",
+          "timestamp": "2025-11-25T00:04:41.183Z"
+        },
+        {
+          "element": "Field toggle 5",
+          "test": "Toggle switch",
+          "status": "PASS",
+          "details": "Toggled successfully",
+          "timestamp": "2025-11-25T00:04:42.484Z"
+        },
+        {
+          "element": "Save button",
+          "test": "Click button",
+          "status": "PASS",
+          "details": "Settings saved",
+          "timestamp": "2025-11-25T00:04:45.555Z"
+        }
+      ],
+      "tests": 6,
+      "passed": 6,
+      "failed": 0
+    },
+    "Tags Management": {
+      "elements": [
+        {
+          "element": "Create Tag button",
+          "test": "Click button",
+          "status": "PASS",
+          "details": "Modal opened",
+          "timestamp": "2025-11-25T00:04:54.775Z"
+        }
+      ],
+      "tests": 1,
+      "passed": 1,
+      "failed": 0
+    }
+  },
+  "bugs": [
+    {
+      "id": "MAILGUN-003",
+      "severity": "Critical",
+      "element": "Domain field",
+      "issue": "Required field not found",
+      "screenshot": "15-mailgun-initial.png"
+    },
+    {
+      "id": "MAILGUN-004",
+      "severity": "Critical",
+      "element": "Region dropdown",
+      "issue": "Required dropdown not found",
+      "screenshot": "15-mailgun-initial.png"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+STEP 1: Navigate to Templates Page
+[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[log] [Fast Refresh] rebuilding
+Current URL: http://localhost:3000/dashboard/email/templates
+OK: Templates page loaded
+STEP 2: Open Create Template Modal
+[log] [Fast Refresh] done in 1830ms
+[verbose] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o
+TEST FAILED: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('button:has-text("New Template")') to be visible[22m
+

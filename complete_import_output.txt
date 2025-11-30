@@ -1,0 +1,33 @@
+
+=== COMPLETE CSV IMPORT WORKFLOW TEST ===
+
+STEP 1-7: Getting to Duplicates page...
+PASS: At Step 8 - Duplicates page
+
+STEP 8: Resolving duplicates...
+Found bulk action button: Skip All Duplicates
+PASS: Clicked bulk action
+
+STEP 9: Next to Preview...
+PASS: Preview page displayed
+
+STEP 10: Starting import...
+Waiting for import to complete (up to 90s)...
+
+TEST FAILED: page.waitForSelector: Timeout 90000ms exceeded.
+Call log:
+[2m  - waiting for locator('text=/Import Complete|Success|Completed/i') to be visible[22m
+
+node:internal/process/promises:288
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+page.waitForSelector: Timeout 90000ms exceeded.
+Call log:
+[2m  - waiting for locator('text=/Import Complete|Success|Completed/i') to be visible[22m
+
+    at C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\test_complete_import_with_scroll.js:93:16 {
+  name: 'TimeoutError'
+}
+
+Node.js v18.20.2

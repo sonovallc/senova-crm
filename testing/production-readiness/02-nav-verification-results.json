@@ -1,0 +1,44 @@
+{
+  "overall": "FAIL",
+  "results": [
+    {
+      "link": "1. Dashboard",
+      "status": "PASS",
+      "reason": "OK",
+      "url": "http://localhost:3004/dashboard"
+    },
+    {
+      "link": "2. Inbox",
+      "status": "PASS",
+      "reason": "OK",
+      "url": "http://localhost:3004/dashboard/inbox"
+    },
+    {
+      "link": "3. Contacts",
+      "status": "PASS",
+      "reason": "OK",
+      "url": "http://localhost:3004/dashboard/contacts"
+    },
+    {
+      "link": "4. Activity Log",
+      "status": "FAIL",
+      "reason": "Wrong URL",
+      "expected": "/dashboard/activity-log",
+      "actual": "http://localhost:3004/dashboard"
+    },
+    {
+      "link": "5. Payments",
+      "status": "FAIL",
+      "reason": "Wrong URL",
+      "expected": "/dashboard/payments",
+      "actual": "http://localhost:3004/dashboard"
+    },
+    {
+      "link": "6. AI Tools",
+      "status": "FAIL",
+      "reason": "Wrong URL",
+      "expected": "/dashboard/ai",
+      "actual": "http://localhost:3004/dashboard"
+    }
+  ]
+}

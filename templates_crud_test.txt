@@ -1,0 +1,59 @@
+=== EMAIL TEMPLATES CRUD TESTING ===
+Existing templates: 0
+
+Testing CREATE with category: General
+ERROR: page.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('text=General')[22m
+[2m    - locator resolved to 9 elements. Proceeding with the first one: <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground mb-2">General</div>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div tabindex="0" translate="no" contenteditable="true" class="tiptap ProseMirror prose prose-sm max-w-none focus:outline-none min-h-[120px] p-3">…</div> from <div role="dialog" tabindex="-1" id="radix-_r_8_" data-state="open" aria-labelledby="radix-_r_9_" aria-describedby="radix-_r_a_" class="fixed left-[50%] top-[50%] z-[60] w-full overflow-y-auto translate-x-[-50%] translate-y-[-50%] gap-4 border bg-white dark:bg-gray-900 p-6 pb-8 shadow-lg duration-200 pointer-events-auto data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 …>…</div> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m    - element is visible, enabled and stable[22m
+[2m    - scrolling into view if needed[22m
+[2m    - done scrolling[22m
+[2m    - <p class="text-xs text-muted-foreground mt-1">Available variables: {{contact_name}}, {{first_na…</p> from <div role="dialog" tabindex="-1" id="radix-_r_8_" data-state="open" aria-labelledby="radix-_r_9_" aria-describedby="radix-_r_a_" class="fixed left-[50%] top-[50%] z-[60] w-full overflow-y-auto translate-x-[-50%] translate-y-[-50%] gap-4 border bg-white dark:bg-gray-900 p-6 pb-8 shadow-lg duration-200 pointer-events-auto data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 …>…</div> subtree intercepts pointer events[22m
+[2m  2 × retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m      - waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <html lang="en">…</html> intercepts pointer events[22m
+[2m  14 × retrying click action[22m
+[2m       - waiting 500ms[22m
+[2m       - waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <div tabindex="0" translate="no" contenteditable="true" class="tiptap ProseMirror prose prose-sm max-w-none focus:outline-none min-h-[120px] p-3">…</div> from <div role="dialog" tabindex="-1" id="radix-_r_8_" data-state="open" aria-labelledby="radix-_r_9_" aria-describedby="radix-_r_a_" class="fixed left-[50%] top-[50%] z-[60] w-full overflow-y-auto translate-x-[-50%] translate-y-[-50%] gap-4 border bg-white dark:bg-gray-900 p-6 pb-8 shadow-lg duration-200 pointer-events-auto data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 …>…</div> subtree intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+[2m       - waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <p class="text-xs text-muted-foreground mt-1">Available variables: {{contact_name}}, {{first_na…</p> from <div role="dialog" tabindex="-1" id="radix-_r_8_" data-state="open" aria-labelledby="radix-_r_9_" aria-describedby="radix-_r_a_" class="fixed left-[50%] top-[50%] z-[60] w-full overflow-y-auto translate-x-[-50%] translate-y-[-50%] gap-4 border bg-white dark:bg-gray-900 p-6 pb-8 shadow-lg duration-200 pointer-events-auto data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 …>…</div> subtree intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+[2m       - waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <html lang="en">…</html> intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+[2m       - waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <html lang="en">…</html> intercepts pointer events[22m
+[2m  - retrying click action[22m
+[2m    - waiting 500ms[22m
+

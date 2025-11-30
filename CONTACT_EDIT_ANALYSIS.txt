@@ -1,0 +1,159 @@
+CONTACT EDIT FUNCTIONALITY ANALYSIS
+====================================
+
+PROBLEM STATEMENT
+The UI shows "Contact updated successfully" toast, but the database shows original values.
+The edit is not persisting to the database.
+
+ARCHITECTURE OVERVIEW
+
+Frontend Flow:
+  ContactForm (component)
+    -> handleUpdateContact(data) in contacts page
+    -> updateMutation.mutate({ id, data })
+    -> contactsApi.updateContact(id, data)
+    -> api.put(`/api/v1/contacts/{id}`, data)
+
+Backend Flow:
+  PUT /api/v1/contacts/{contact_id}
+    -> update_contact() endpoint
+    -> Validates data with ContactUpdate schema
+    -> Updates contact fields in database
+    -> Commits transaction
+    -> Returns updated contact
+
+KEY FILES
+
+Frontend:
+1. frontend/src/components/contacts/contact-form.tsx
+   - Form component with react-hook-form
+   - handleFormSubmit() merges react-hook-form data with dynamic field values
+   - Calls onSubmit(completeData) prop
+
+2. frontend/src/app/(dashboard)/dashboard/contacts/page.tsx
+   - handleUpdateContact() at line 251-255 calls updateMutation.mutate()
+   - updateMutation defined at lines 178-203
+   - On success: invalidates cache and shows success toast
+   - Form rendered with onSubmit={editingContactId ? handleUpdateContact : handleCreateContact}
+
+3. frontend/src/lib/queries/contacts.ts
+   - updateContact() at lines 51-54 makes PUT request
+
+Backend:
+1. backend/app/api/v1/contacts.py
+   - update_contact() endpoint at lines 715-859
+   - Handles permission checks (RBAC)
+   - Updates fields based on ContactUpdate schema
+   - Commits transaction at line 824
+   - Refreshes contact at line 825
+
+2. backend/app/schemas/contact.py
+   - ContactUpdate schema at lines 60-86
+   - Allows all fields needed for updates
+   - Has model_config = {"extra": "allow"} for dynamic fields
+
+CRITICAL ISSUE: FIELD FILTERING SKIPS UPDATES SILENTLY
+
+Location: backend/app/api/v1/contacts.py lines 753-801
+
+The update endpoint defines allowed_fields as:
+  core_editable_fields = {
+    "first_name", "last_name", "email", "phone", "company",
+    "notes", "street_address", "city", "state", "zip_code", "country",
+    "source", "status", "assigned_to_id", "pipeline_id", "pipeline_stage",
+    "custom_fields", "tags"
+  }
+  allowed_fields = set(visible_fields).union(core_editable_fields)
+
+Then it iterates through received fields:
+  for field, value in sanitized_data.items():
+    # Only allow updating fields that the user can see
+    if field not in allowed_fields:
+      continue  # <-- SILENTLY SKIPS THE FIELD!
+    
+    # ... rest of update logic never executes for skipped fields
+
+PROBLEM: If a field is NOT in both visible_fields AND core_editable_fields,
+it gets silently ignored with no error message!
+
+MISSING FIELDS FROM core_editable_fields:
+- phones (array of PhoneNumber objects)
+- addresses (array of Address objects)
+- websites (array of strings)
+
+These fields ARE defined in ContactUpdate schema but NOT in core_editable_fields!
+
+IMPACT:
+If you try to update phones, addresses, or websites fields, they will be
+silently ignored because they're not in allowed_fields. The backend will:
+1. Return HTTP 200 OK
+2. Show success message in frontend
+3. NOT actually update the database
+4. Return the UNCHANGED contact object
+
+OTHER POTENTIAL ISSUES
+
+1. Dynamic Field Values Not Being Sent
+   In contact-form.tsx, fieldValues state tracks dynamic fields
+   But if fieldValues aren't properly populated, they won't be sent to API
+
+2. Frontend Form Data Merging (lines 408-417 in contact-form.tsx)
+   completeData = { ...formData, ...fieldValues }
+   If a field is in both objects, fieldValues overwrites formData
+
+3. Success Toast Shown Regardless
+   The updateMutation onSuccess always shows "Contact updated successfully"
+   even if NO fields were actually updated due to permission filtering
+
+4. No Error Feedback to User
+   When fields are silently filtered out, user gets success message
+   but sees no actual changes - very confusing!
+
+VERIFICATION STEPS
+
+1. Check Network Request:
+   - Open DevTools → Network tab
+   - Edit a contact
+   - Look for PUT /api/v1/contacts/{id} request
+   - Inspect request payload: are the fields you're editing there?
+   - Inspect response: what does the API return?
+
+2. Check Backend Logs:
+   - Look for any permission denied errors
+   - Check if fields are being filtered out
+   - Enable debug logging to see which fields are skipped
+
+3. Test Database:
+   - Update a contact in the UI
+   - Query database directly: SELECT * FROM contacts WHERE id = 'xxx'
+   - Are the values changed or still original?
+
+4. Check Permissions:
+   - Get current user's role
+   - Check what fields are in visible_fields for that role
+   - Verify updated fields are in visible_fields
+
+MOST LIKELY ROOT CAUSE
+
+The "phones", "addresses", and "websites" fields are being sent to the backend
+but are NOT in the core_editable_fields list, so they get silently filtered out
+at line 800 of contacts.py:
+
+  if field not in allowed_fields:
+    continue
+
+The endpoint still returns HTTP 200 OK and the contact object, so the frontend
+thinks the update succeeded. But the database was never actually updated.
+
+SOLUTION
+
+Add missing fields to core_editable_fields in contacts.py line 747-752:
+
+  core_editable_fields = {
+    "first_name", "last_name", "email", "phone", "company",
+    "notes", "street_address", "city", "state", "zip_code", "country",
+    "source", "status", "assigned_to_id", "pipeline_id", "pipeline_stage",
+    "custom_fields", "tags",
+    "phones", "addresses", "websites"  # <-- ADD THESE!
+  }
+

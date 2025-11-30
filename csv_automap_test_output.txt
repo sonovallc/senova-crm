@@ -1,0 +1,41 @@
+
+=== STEP 1: LOGIN ===
+[BROWSER VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o
+[BROWSER INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[BROWSER LOG] [Fast Refresh] rebuilding
+[BROWSER LOG] [Fast Refresh] done in 3724ms
+Success: Login successful
+
+=== STEP 2: NAVIGATE TO CONTACTS ===
+[BROWSER LOG] [Fast Refresh] rebuilding
+[BROWSER LOG] [Fast Refresh] done in 3883ms
+[BROWSER INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Success: On contacts page
+
+=== STEP 3: OPEN IMPORT MODAL ===
+[BROWSER LOG] [Fast Refresh] rebuilding
+Success: Import modal opened
+
+=== STEP 4: UPLOAD CSV FILE ===
+[BROWSER LOG] [Fast Refresh] done in 2281ms
+Success: CSV file selected
+
+=== STEP 5: WAIT FOR FILE PROCESSING (up to 90 seconds) ===
+
+ERROR TEST FAILED: page.waitForSelector: Timeout 90000ms exceeded.
+Call log:
+[2m  - waiting for locator('text=Map CSV Columns') to be visible[22m
+
+node:internal/process/promises:288
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+page.waitForSelector: Timeout 90000ms exceeded.
+Call log:
+[2m  - waiting for locator('text=Map CSV Columns') to be visible[22m
+
+    at C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\test_csv_automap_with_console.js:61:16 {
+  name: 'TimeoutError'
+}
+
+Node.js v18.20.2

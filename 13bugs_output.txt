@@ -1,0 +1,5 @@
+
+> claude-code-agents-wizard-v2@1.0.0 test
+> echo "Error: no test specified" && exit 1 test_bug017_comprehensive.js
+
+"Error: no test specified" 

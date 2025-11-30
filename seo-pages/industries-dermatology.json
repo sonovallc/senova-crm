@@ -1,0 +1,269 @@
+{
+  "path": "/industries/dermatology",
+  "seo": {
+    "title": "Dermatology Practice Software That Grows Revenue 45% | Senova",
+    "description": "CRM for dermatology: Manage medical & cosmetic patients, track treatments, automate recalls. HIPAA compliant. 200+ practices thriving.",
+    "keywords": ["dermatology software", "dermatology CRM", "dermatology practice management", "cosmetic dermatology software", "dermatology EMR"],
+    "og_image": "Dermatology dashboard showing medical and cosmetic patient management"
+  },
+  "hero": {
+    "headline": "The Smart CRM for Modern Dermatology Practices",
+    "subheadline": "Balance medical and cosmetic services with one platform that tracks treatments, automates marketing, and proves ROI.",
+    "cta_primary": {
+      "text": "See Dermatology Demo",
+      "link": "/demo?industry=dermatology"
+    },
+    "cta_secondary": {
+      "text": "Calculate Your Growth",
+      "link": "/roi-calculator?industry=dermatology"
+    },
+    "stats": [
+      { "value": "200+", "label": "Dermatology Practices" },
+      { "value": "45%", "label": "Revenue Growth" },
+      { "value": "2.8X", "label": "Cosmetic Conversion" }
+    ]
+  },
+  "sections": [
+    {
+      "type": "dual_practice",
+      "headline": "One Platform for Medical and Cosmetic",
+      "subheadline": "Seamlessly manage both sides of your dermatology practice",
+      "medical_side": {
+        "title": "Medical Dermatology",
+        "features": [
+          "Insurance verification integration",
+          "Medical record compliance",
+          "Prescription tracking",
+          "Follow-up scheduling",
+          "Referral management",
+          "Skin cancer screening reminders"
+        ]
+      },
+      "cosmetic_side": {
+        "title": "Cosmetic Dermatology",
+        "features": [
+          "Cash-pay optimization",
+          "Treatment package sales",
+          "Before/after galleries",
+          "Membership programs",
+          "Aesthetic consultations",
+          "Cross-sell opportunities"
+        ]
+      },
+      "bridge": "Intelligently identify medical patients ready for cosmetic treatments"
+    },
+    {
+      "type": "conversion_engine",
+      "headline": "Convert More Medical Patients to Cosmetic",
+      "subheadline": "AI identifies cross-sell opportunities you're missing",
+      "opportunities": [
+        {
+          "trigger": "Acne patient turns 18",
+          "action": "Acne scar treatment campaign",
+          "conversion_rate": "32%"
+        },
+        {
+          "trigger": "Rosacea management patient",
+          "action": "IPL treatment education",
+          "conversion_rate": "28%"
+        },
+        {
+          "trigger": "Skin check completed",
+          "action": "Anti-aging consultation offer",
+          "conversion_rate": "24%"
+        },
+        {
+          "trigger": "Melasma treatment",
+          "action": "Chemical peel series",
+          "conversion_rate": "41%"
+        }
+      ],
+      "stat": "Average practice adds $127K in cosmetic revenue"
+    },
+    {
+      "type": "treatments_dermatology",
+      "headline": "Track Every Treatment Type",
+      "categories": [
+        {
+          "name": "Medical Treatments",
+          "items": [
+            "Acne management",
+            "Eczema/Psoriasis",
+            "Skin cancer screening",
+            "Mole removal",
+            "Rashes and allergies",
+            "Hair loss treatments"
+          ]
+        },
+        {
+          "name": "Cosmetic Procedures",
+          "items": [
+            "Botox & Fillers",
+            "Chemical peels",
+            "Laser treatments",
+            "Microneedling",
+            "PRP therapy",
+            "Sclerotherapy"
+          ]
+        },
+        {
+          "name": "Advanced Treatments",
+          "items": [
+            "Mohs surgery follow-up",
+            "Photodynamic therapy",
+            "Patch testing",
+            "Biologics management",
+            "UV therapy",
+            "Skin biopsy tracking"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "workflow_automation",
+      "headline": "Automate Your Entire Patient Journey",
+      "workflows": [
+        {
+          "name": "New Patient Onboarding",
+          "steps": [
+            "Online intake forms",
+            "Insurance verification",
+            "Welcome email series",
+            "First appointment reminder",
+            "Post-visit survey",
+            "Follow-up scheduling"
+          ]
+        },
+        {
+          "name": "Skin Check Recalls",
+          "steps": [
+            "Annual reminder scheduling",
+            "Risk-based prioritization",
+            "Multi-channel outreach",
+            "Easy online booking",
+            "No-show prevention",
+            "Results communication"
+          ]
+        },
+        {
+          "name": "Cosmetic Upsell",
+          "steps": [
+            "Opportunity identification",
+            "Educational content",
+            "Consultation scheduling",
+            "Treatment planning",
+            "Financing options",
+            "Package sales"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "analytics_dermatology",
+      "headline": "Metrics That Matter for Dermatology",
+      "kpis": [
+        {
+          "metric": "Medical to Cosmetic Conversion",
+          "benchmark": "Industry avg: 15%",
+          "with_senova": "32% average"
+        },
+        {
+          "metric": "Patient Lifetime Value",
+          "benchmark": "Industry avg: $1,800",
+          "with_senova": "$3,400 average"
+        },
+        {
+          "metric": "Recall Compliance Rate",
+          "benchmark": "Industry avg: 42%",
+          "with_senova": "71% average"
+        },
+        {
+          "metric": "No-Show Rate",
+          "benchmark": "Industry avg: 18%",
+          "with_senova": "8% average"
+        }
+      ]
+    },
+    {
+      "type": "case_study_dermatology",
+      "headline": "How Austin Dermatology Doubled Cosmetic Revenue",
+      "practice": "Austin Dermatology Associates",
+      "size": "3 providers, 2 locations",
+      "challenge": "Only 10% of medical patients trying cosmetic services",
+      "solution": [
+        "Implemented Senova patient intelligence",
+        "Set up automated cross-sell campaigns",
+        "Created treatment journey mapping",
+        "Launched targeted education series"
+      ],
+      "results": {
+        "cosmetic_revenue": "+112% in 6 months",
+        "conversion_rate": "31% medical to cosmetic",
+        "new_cosmetic_patients": "147 from existing base",
+        "roi": "5.2X on marketing spend"
+      },
+      "quote": "Senova showed us goldmines in our existing patient base. We doubled cosmetic revenue without a single new patient.",
+      "author": "Dr. Rachel Martinez, Managing Partner"
+    },
+    {
+      "type": "integrations_dermatology",
+      "headline": "Integrates with Dermatology Systems",
+      "categories": [
+        {
+          "name": "EMR/Practice Management",
+          "systems": ["NextGen", "Modernizing Medicine", "AdvancedMD", "DrChrono"]
+        },
+        {
+          "name": "Imaging & Documentation",
+          "systems": ["Canfield", "Vectra", "IntelliStudio", "DermEngine"]
+        },
+        {
+          "name": "Billing & Insurance",
+          "systems": ["Kareo", "SimplePractice", "ClearBalance", "TempoPay"]
+        }
+      ]
+    },
+    {
+      "type": "compliance_features",
+      "headline": "Built for Healthcare Compliance",
+      "features": [
+        {
+          "title": "HIPAA Compliant",
+          "description": "Full HIPAA compliance with BAA and audit trails"
+        },
+        {
+          "title": "MIPS Reporting",
+          "description": "Track quality measures for MIPS compliance"
+        },
+        {
+          "title": "Consent Management",
+          "description": "Digital consent forms with e-signature"
+        },
+        {
+          "title": "Data Security",
+          "description": "256-bit encryption and SOC 2 certification"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "headline": "Ready to Grow Your Dermatology Practice?",
+      "subheadline": "See how Senova can transform both medical and cosmetic revenue",
+      "primary_cta": {
+        "text": "Get Dermatology Demo",
+        "link": "/demo?industry=dermatology"
+      },
+      "secondary_cta": {
+        "text": "Download Growth Guide",
+        "link": "/resources/dermatology-growth-guide"
+      }
+    }
+  ],
+  "schema_markup": {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Senova for Dermatology",
+    "description": "CRM platform for dermatology practices managing medical and cosmetic services",
+    "applicationCategory": "Medical Practice Management"
+  }
+}

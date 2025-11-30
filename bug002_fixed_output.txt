@@ -1,0 +1,29 @@
+
+=== PART 1: CSV IMPORT ===
+
+Step 1: Login
+✓ Logged in
+
+Step 2: Navigate to import
+✓ Import page loaded
+
+Step 3: Upload CSV file
+✓ File selected, waiting for processing...
+
+❌ TEST FAILED: page.waitForSelector: Timeout 60000ms exceeded.
+Call log:
+[2m  - waiting for locator('button:has-text("Next"):not([disabled])') to be visible[22m
+
+node:internal/process/promises:288
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+page.waitForSelector: Timeout 60000ms exceeded.
+Call log:
+[2m  - waiting for locator('button:has-text("Next"):not([disabled])') to be visible[22m
+
+    at C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\test_bug002_fixed.js:34:16 {
+  name: 'TimeoutError'
+}
+
+Node.js v18.20.2

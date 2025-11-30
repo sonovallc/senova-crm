@@ -1,0 +1,46 @@
+
+=== BUG-001: CSV Import 0 New Contacts Fix Verification ===
+
+Step 1: Login...
+Login successful
+
+Step 2: Navigate to Import page...
+On import page
+
+Step 3: Upload CSV file...
+Waiting for file processing and auto-advance to Map Columns...
+File processed and advanced to Map Columns (Step 2)
+
+Step 4: Auto-map columns...
+Columns mapped
+
+Step 5: Click Next to go to Tags (Step 3)...
+On tags page
+
+Step 6: Click Next/Skip to go to Review Duplicates (Step 4)...
+Navigated to Review Duplicates
+
+=== CRITICAL TEST: Review Duplicates (Step 4) ===
+Waiting 10 seconds for /validate-duplicates API call to complete...
+
+=== PAGE CONTENT ANALYSIS ===
+
+Counts Found on Page:
+- New contacts: 1384
+- Duplicates: 154
+- Conflicts: 0
+- Invalid: 0
+
+=== VERIFICATION RESULTS ===
+
+*** PASS: Fix worked! ***
+New contacts count is 1384
+The /validate-duplicates endpoint is returning proper ValidationSummary
+BUG-001 is RESOLVED
+
+=== TEST SUMMARY ===
+Test completed successfully
+Screenshots saved to screenshots/ directory
+
+Final Result: *** PASS ***
+

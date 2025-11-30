@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-11-25T12:06:42.217Z",
+  "tests": [
+    {
+      "message": "Navigating to http://localhost:3004/login",
+      "status": "TEST",
+      "timestamp": "2025-11-25T12:06:42.218Z"
+    },
+    {
+      "message": "Logging in with test credentials",
+      "status": "TEST",
+      "timestamp": "2025-11-25T12:06:47.749Z"
+    },
+    {
+      "message": "Fatal error: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"password\"]').first()\u001b[22m\n",
+      "status": "FAIL",
+      "timestamp": "2025-11-25T12:07:17.900Z"
+    }
+  ],
+  "screenshots": []
+}

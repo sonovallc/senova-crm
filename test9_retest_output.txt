@@ -1,0 +1,28 @@
+=== TEST 9: CAMPAIGN WIZARD DEBUG ===
+
+Step 1: Login...
+Step 1: PASS - Logged in
+
+Step 2: Navigate to Campaigns...
+>> REQUEST: GET http://localhost:3004/dashboard/email/campaigns
+>> REQUEST: GET http://localhost:3004/_next/static/chunks/app/(dashboard)/dashboard/email/campaigns/page.js
+>> REQUEST: GET http://localhost:8000/api/v1/campaigns?
+Step 2: PASS
+
+Step 3: Click Create Campaign...
+>> REQUEST: GET http://localhost:3004/dashboard/email/campaigns/create?_rsc=16rnu
+>> REQUEST: GET http://localhost:3004/_next/static/chunks/app/(dashboard)/dashboard/email/campaigns/create/page.js
+Step 3: PASS - On create page
+
+Step 4: Fill Step 1 details...
+Step 4: PASS
+
+Step 5: Click Next to go to Step 2 (Recipients)...
+>> REQUEST: POST http://localhost:8000/api/v1/campaigns/filter-contacts
+Waiting for filter-contacts API response...
+<< RESPONSE: 200 http://localhost:8000/api/v1/campaigns/filter-contacts
+   Response body: {"total_count":1385,"preview":[{"id":"05319468-de80-4725-b8e7-a7649c19489d","first_name":"Maria","last_name":"Canales","email":"maria.canales@yale.edu","phone":"+12035933397","company":null},{"id":"d7b150d3-59e7-4158-aa20-f2e679c12755","first_name":"Carmen","last_name":"Vargas","email":"calicea@easternturbo.com","phone":"+16178233665","company":null},{"id":"6d50b9e6-19e6-4776-90c4-1dfa076f4254","first_name":"Leo","last_name":"Greene","email":"leo.greene@cullinaneng.com","phone":"+16177500435","company":null},{"id":"3f1f111e-0448-4f0f-9880-6fc77abbc39c","first_name":"Matthew","last_name":"Adams","email":"matthew.adams@pega.com","phone":"+16784281156","company":null},{"id":"5ff4d102-143a-48ad-b2cd-23f0e2ba7ac3","first_name":"Sandra","last_name":"Jackson","email":"daninrogers@aol.com","phone":"+18608741616","company":null},{"id":"054bc20e-5d9b-475e-bdad-3fff1328c7b9","first_name":"Joanne","last_name":"Hayes","email":"jhayes@healthplansinc.com","phone":"+15084756537","company":null},{"id":"77bc8e17-1582-415f-b2aa-ca1b8ebc5d9f","first_name":"Giri","last_name":"Kishore","email":"giri.kishore@philips.com","phone":"+17705101200","company":null},{"id":"5507becd-5b59-4414-a7be-1b66c3071785","first_name":"Sara","last_name":"Rosenberry","email":"rosenberrysa@hotmail.com","phone":"+12022577737","company":null},{"id":"4044f451-acc1-456b-a0aa-91162b7b6d25","first_name":"Paul","last_name":"Keplin","email":"paul.keplin@mass.gov","phone":"+16176452726","company":null},{"id":"653952f2-10f6-4805-9586-b1d50fe73093","first_name":"David","last_name":"Weller","email":"david.weller@kadant.com","phone":"+18012314129","company":null}]}
+
+Schedule button: "Next: Schedule & Send" - Disabled: false
+Recipient text: 1385 recipients will receive this campaign
+ERROR: page.$: Unexpected token "=" while parsing css selector "[role="alert"], .error, text=error". Did you mean to CSS.escape it?

@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "name": "Page Load",
+      "status": "PASS"
+    },
+    {
+      "name": "Mailgun Heading",
+      "status": "PASS"
+    },
+    {
+      "name": "Form Fields",
+      "status": "FAIL"
+    },
+    {
+      "name": "Save Button",
+      "status": "PASS"
+    }
+  ],
+  "passed": 3,
+  "failed": 1,
+  "bugs": [],
+  "consoleErrors": [
+    "Access to XMLHttpRequest at 'http://localhost:8000/api/v1/mailgun/settings' from origin 'http://localhost:3004' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Failed to load resource: net::ERR_FAILED"
+  ]
+}
