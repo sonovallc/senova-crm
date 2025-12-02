@@ -110,7 +110,7 @@ export function ObjectUsersTab({ objectId, canManage = false }: ObjectUsersTabPr
             </div>
           ) : (
             <div className="space-y-4">
-              {users.map((objectUser) => (
+              {users.filter(objectUser => objectUser.user != null).map((objectUser) => (
                 <div
                   key={objectUser.id}
                   className="p-4 bg-senova-gray-50 rounded-lg"
@@ -123,14 +123,18 @@ export function ObjectUsersTab({ objectId, canManage = false }: ObjectUsersTabPr
                       <div>
                         <div className="flex items-center gap-2 mb-1">
                           <p className="font-medium text-senova-gray-900">
-                            {objectUser.user.first_name} {objectUser.user.last_name}
+                            {objectUser.user ?
+                              `${objectUser.user.first_name || ''} ${objectUser.user.last_name || ''}`.trim() || 'Unknown User'
+                              : 'Unknown User'}
                           </p>
-                          <Badge className={getRoleBadgeColor(objectUser.user.role)}>
-                            {objectUser.user.role.charAt(0).toUpperCase() + objectUser.user.role.slice(1)}
+                          <Badge className={getRoleBadgeColor(objectUser.user?.role || 'user')}>
+                            {objectUser.user?.role ?
+                              objectUser.user.role.charAt(0).toUpperCase() + objectUser.user.role.slice(1)
+                              : 'User'}
                           </Badge>
                         </div>
                         <p className="text-sm text-senova-gray-600 mb-3">
-                          {objectUser.user.email}
+                          {objectUser.user?.email || 'No email available'}
                         </p>
 
                         {/* Permissions */}

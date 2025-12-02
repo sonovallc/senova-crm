@@ -55,17 +55,17 @@ export default function CalendarPage() {
 
   // Mock events data
   const events = [
-    { id: 1, title: 'Consultation with Sarah J.', time: '9:00 AM', type: 'video', duration: '30 min', color: 'bg-senova-primary' },
-    { id: 2, title: 'Treatment - Mike Chen', time: '10:30 AM', type: 'in-person', duration: '1 hour', color: 'bg-senova-success' },
+    { id: 1, title: 'Consultation - Client #1247', time: '9:00 AM', type: 'video', duration: '30 min', color: 'bg-senova-primary' },
+    { id: 2, title: 'Treatment - Client #1246', time: '10:30 AM', type: 'in-person', duration: '1 hour', color: 'bg-senova-success' },
     { id: 3, title: 'Follow-up Call', time: '2:00 PM', type: 'phone', duration: '15 min', color: 'bg-senova-info' },
     { id: 4, title: 'Team Meeting', time: '4:00 PM', type: 'video', duration: '45 min', color: 'bg-senova-warning' }
   ]
 
   const upcomingAppointments = [
-    { id: 1, name: 'Emily Davis', service: 'Initial Consultation', date: 'Today', time: '9:00 AM', type: 'video' },
-    { id: 2, name: 'James Wilson', service: 'Follow-up Treatment', date: 'Today', time: '10:30 AM', type: 'in-person' },
-    { id: 3, name: 'Lisa Anderson', service: 'Skin Analysis', date: 'Tomorrow', time: '11:00 AM', type: 'in-person' },
-    { id: 4, name: 'Robert Brown', service: 'Treatment Plan Review', date: 'Tomorrow', time: '2:30 PM', type: 'phone' }
+    { id: 1, name: 'Client #1247', service: 'Initial Consultation', date: 'Today', time: '9:00 AM', type: 'video' },
+    { id: 2, name: 'Client #1246', service: 'Follow-up Treatment', date: 'Today', time: '10:30 AM', type: 'in-person' },
+    { id: 3, name: 'Client #1245', service: 'Skin Analysis', date: 'Tomorrow', time: '11:00 AM', type: 'in-person' },
+    { id: 4, name: 'Client #1244', service: 'Treatment Plan Review', date: 'Tomorrow', time: '2:30 PM', type: 'phone' }
   ]
 
   const stats = {

@@ -364,6 +364,78 @@ class ObjectService:
 
         return contacts, total
 
+    async def list_object_contacts_with_details(
+        self,
+        user: User,
+        object_id: UUID,
+        skip: int = 0,
+        limit: int = 100,
+        search: Optional[str] = None
+    ) -> Tuple[List[ObjectContact], int]:
+        """List ObjectContact records with full contact details"""
+        # Check permission
+        has_permission, _ = await self.check_object_permission(
+            user, object_id, "can_view"
+        )
+
+        if not has_permission and user.role != UserRole.OWNER:
+            raise PermissionDeniedError("You don't have access to this object")
+
+        # Build query for ObjectContact with joined Contact
+        query = (
+            select(ObjectContact)
+            .options(joinedload(ObjectContact.contact))
+            .where(ObjectContact.object_id == object_id)
+        )
+
+        # Apply search filter on contact fields
+        if search:
+            query = query.join(Contact).where(
+                or_(
+                    Contact.first_name.ilike(f"%{search}%"),
+                    Contact.last_name.ilike(f"%{search}%"),
+                    Contact.email.ilike(f"%{search}%"),
+                    Contact.phone.ilike(f"%{search}%")
+                )
+            )
+
+        # For non-owner users, filter based on role
+        if user.role == UserRole.USER:
+            if not search:  # Only join if not already joined
+                query = query.join(Contact)
+            query = query.where(Contact.assigned_to == user.id)
+
+        # Get total count - need a simpler query for count
+        count_base = (
+            select(func.count(ObjectContact.id))
+            .where(ObjectContact.object_id == object_id)
+        )
+        if search:
+            count_base = count_base.join(Contact).where(
+                or_(
+                    Contact.first_name.ilike(f"%{search}%"),
+                    Contact.last_name.ilike(f"%{search}%"),
+                    Contact.email.ilike(f"%{search}%"),
+                    Contact.phone.ilike(f"%{search}%")
+                )
+            )
+        if user.role == UserRole.USER:
+            if not search:
+                count_base = count_base.join(Contact)
+            count_base = count_base.where(Contact.assigned_to == user.id)
+
+        total_result = await self.db.execute(count_base)
+        total = total_result.scalar() or 0
+
+        # Apply pagination
+        query = query.offset(skip).limit(limit)
+
+        # Execute query
+        result = await self.db.execute(query)
+        object_contacts = result.unique().scalars().all()
+
+        return object_contacts, total
+
     async def assign_contacts_to_object(
         self,
         user: User,

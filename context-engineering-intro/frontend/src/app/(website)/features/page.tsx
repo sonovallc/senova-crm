@@ -33,12 +33,12 @@ const heroData = {
   headline: "Every Feature You Need to Grow Your Business",
   subheadline: "Stop juggling multiple tools. Get everything you need in one powerful platform that's easy to use and affordable for growing businesses.",
   ctaPrimary: {
-    text: "Start Free Trial",
-    link: "/demo"
+    text: "Get Started",
+    link: "/pricing"
   },
   ctaSecondary: {
-    text: "Watch Demo",
-    link: "#demo-video"
+    text: "Book Consultation",
+    link: "/contact"
   }
 }
 
@@ -400,84 +400,6 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* Comparison Table */}
-      <section className="section-padding bg-gradient-to-br from-senova-primary/5 to-senova-accent/5">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center mb-12">
-            <h2 className="heading-2 mb-4">
-              Why Teams Choose Senova
-            </h2>
-            <p className="text-lead">
-              See how we compare to using multiple tools or expensive enterprise solutions.
-            </p>
-          </div>
-
-          <div className="max-w-5xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-              <table className="w-full">
-                <thead>
-                  <tr className="bg-gray-50 border-b">
-                    <th className="text-left p-6 font-semibold">Feature</th>
-                    <th className="text-center p-6 font-semibold text-senova-primary">Senova</th>
-                    <th className="text-center p-6 font-semibold text-gray-500">Multiple Tools</th>
-                    <th className="text-center p-6 font-semibold text-gray-500">Enterprise CRM</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { feature: "Starting Price", senova: "$97/month", multiple: "$500+/month", enterprise: "$3000+/month" },
-                    { feature: "Setup Time", senova: "Same day", multiple: "2-4 weeks", enterprise: "3-6 months" },
-                    { feature: "Learning Curve", senova: "Easy", multiple: "Complex", enterprise: "Very Complex" },
-                    { feature: "All-in-One Platform", senova: true, multiple: false, enterprise: true },
-                    { feature: "No User Limits", senova: true, multiple: false, enterprise: false },
-                    { feature: "Free Support", senova: true, multiple: false, enterprise: false },
-                    { feature: "Free Training", senova: true, multiple: false, enterprise: false },
-                    { feature: "Cancel Anytime", senova: true, multiple: "Varies", enterprise: false },
-                  ].map((row, index) => (
-                    <tr key={index} className="border-b hover:bg-gray-50">
-                      <td className="p-6 font-medium">{row.feature}</td>
-                      <td className="p-6 text-center">
-                        {typeof row.senova === 'boolean' ? (
-                          row.senova ? (
-                            <CheckCircle className="h-6 w-6 text-green-500 mx-auto" />
-                          ) : (
-                            <X className="h-6 w-6 text-gray-400 mx-auto" />
-                          )
-                        ) : (
-                          <span className="font-semibold text-senova-primary">{row.senova}</span>
-                        )}
-                      </td>
-                      <td className="p-6 text-center">
-                        {typeof row.multiple === 'boolean' ? (
-                          row.multiple ? (
-                            <CheckCircle className="h-6 w-6 text-green-500 mx-auto" />
-                          ) : (
-                            <X className="h-6 w-6 text-gray-400 mx-auto" />
-                          )
-                        ) : (
-                          <span className="text-gray-600">{row.multiple}</span>
-                        )}
-                      </td>
-                      <td className="p-6 text-center">
-                        {typeof row.enterprise === 'boolean' ? (
-                          row.enterprise ? (
-                            <CheckCircle className="h-6 w-6 text-green-500 mx-auto" />
-                          ) : (
-                            <X className="h-6 w-6 text-gray-400 mx-auto" />
-                          )
-                        ) : (
-                          <span className="text-gray-600">{row.enterprise}</span>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Demo Video Section */}
       <section id="demo-video" className="section-padding">
         <div className="container">
@@ -509,8 +431,8 @@ export default function FeaturesPage() {
         headline="Ready to Consolidate Your Tech Stack?"
         subheadline="Stop paying for multiple tools. Get everything you need in Senova for one low price."
         primaryCta={{
-          text: "Start 30-Day Free Trial",
-          link: "/demo"
+          text: "Get Started Today",
+          link: "/pricing"
         }}
         secondaryCta={{
           text: "Compare Pricing",

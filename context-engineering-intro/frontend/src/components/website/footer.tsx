@@ -19,13 +19,26 @@ const footerLinks = {
       { name: 'Analytics Dashboard', href: '/solutions/analytics' },
     ]
   },
-  industries: {
-    title: 'Industries We Serve',
+  resources: {
+    title: 'Resources',
     links: [
-      { name: 'Restaurants & Food', href: '/industries/restaurants' },
-      { name: 'Home Services', href: '/industries/home-services' },
-      { name: 'Retail & E-commerce', href: '/industries/retail' },
-      { name: 'Professional Services', href: '/industries/professional-services' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'ROI Calculator', href: '/roi-calculator' },
+    ]
+  },
+  industries: {
+    title: 'Industries',
+    links: [
+      { name: 'Medical Spas', href: '/industries/medical-spas' },
+      { name: 'Dermatology', href: '/industries/dermatology' },
+      { name: 'Plastic Surgery', href: '/industries/plastic-surgery' },
+      { name: 'Aesthetic Clinics', href: '/industries/aesthetic-clinics' },
+      { name: 'Real Estate', href: '/industries/real-estate' },
+      { name: 'Legal & Law Firms', href: '/industries/legal-attorneys' },
+      { name: 'Insurance', href: '/industries/insurance' },
+      { name: 'Mortgage & Lending', href: '/industries/mortgage-lending' },
+      { name: 'Marketing Agencies', href: '/industries/marketing-agencies' },
+      { name: 'View All Industries', href: '/industries' },
     ]
   },
   legal: {
@@ -34,7 +47,6 @@ const footerLinks = {
       { name: 'Privacy Policy', href: '/privacy-policy' },
       { name: 'Terms of Service', href: '/terms-of-service' },
       { name: 'Data Security', href: '/security' },
-      { name: 'Compliance', href: '/compliance' },
     ]
   },
 }
@@ -123,7 +135,7 @@ export function Footer() {
         </div>
 
         {/* Middle Section - Links with hover effects */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
           {Object.entries(footerLinks).map(([key, section], index) => (
             <div
               key={key}

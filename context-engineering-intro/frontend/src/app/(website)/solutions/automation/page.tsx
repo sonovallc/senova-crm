@@ -131,7 +131,7 @@ export default function AutomationPage() {
               so you can focus on strategy and growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/demo" className="btn-primary">
+              <Link href="/contact" className="btn-primary">
                 See Automation Demo
               </Link>
               <Link href="#workflows" className="btn-secondary">
@@ -369,7 +369,7 @@ export default function AutomationPage() {
           </div>
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {['Salesforce', 'HubSpot', 'Slack', 'Google Workspace', 'Microsoft 365', 'Zapier', 'Stripe', 'Shopify'].map((tool, idx) => (
+              {['CRM Systems', 'Marketing Platforms', 'Team Chat', 'Cloud Office', 'Microsoft 365', 'Automation Tools', 'Payment Systems', 'E-commerce'].map((tool, idx) => (
                 <div key={idx} className="flex items-center justify-center">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2">
@@ -417,7 +417,7 @@ export default function AutomationPage() {
               Start saving 20+ hours per week with intelligent automation
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link href="/demo" className="btn-primary">
+              <Link href="/contact" className="btn-primary">
                 Get Automation Demo
               </Link>
               <Link href="/pricing" className="btn-secondary">
@@ -425,7 +425,7 @@ export default function AutomationPage() {
               </Link>
             </div>
             <div className="flex flex-wrap gap-6 justify-center text-sm text-gray-600">
-              {['14-day free trial', 'No code required', 'Pre-built templates', 'Expert support'].map((item, idx) => (
+              {['Professional consultation', 'No code required', 'Pre-built templates', 'Expert support'].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-green-500" />
                   <span>{item}</span>

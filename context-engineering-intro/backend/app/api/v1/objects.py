@@ -34,6 +34,11 @@ from app.schemas.object import (
     BulkUserAssignment,
     BulkOperationResult,
     ObjectSearchParams,
+    ObjectContactWithContact,
+    ObjectContactListResponse,
+    ContactBasicInfo,
+    ObjectUserWithUser,
+    UserBasicInfo,
 )
 from app.schemas.contact import ContactResponse
 from app.core.exceptions import (
@@ -169,7 +174,7 @@ async def delete_object(
 
 # ==================== Contact Management Endpoints ====================
 
-@router.get("/{object_id}/contacts", response_model=List[ContactResponse])
+@router.get("/{object_id}/contacts", response_model=ObjectContactListResponse)
 async def list_object_contacts(
     object_id: UUID,
     current_user: CurrentUser,
@@ -177,9 +182,9 @@ async def list_object_contacts(
     skip: int = Query(0, ge=0, description="Number of items to skip"),
     limit: int = Query(100, ge=1, le=1000, description="Number of items to return"),
     search: Optional[str] = Query(None, description="Search in contact name, email, phone")
-) -> List[ContactResponse]:
+) -> ObjectContactListResponse:
     """
-    List contacts in an object
+    List contacts in an object with full ObjectContact relationship info
 
     - Owner/Admin: Can see all contacts in the object
     - User: Can only see contacts assigned to them within the object
@@ -187,7 +192,7 @@ async def list_object_contacts(
     service = ObjectService(db)
 
     try:
-        contacts, total = await service.list_object_contacts(
+        object_contacts, total = await service.list_object_contacts_with_details(
             current_user,
             object_id,
             skip=skip,
@@ -195,24 +200,42 @@ async def list_object_contacts(
             search=search
         )
 
-        # Convert to ContactResponse objects
-        return [
-            ContactResponse(
-                id=contact.id,
-                first_name=contact.first_name,
-                last_name=contact.last_name,
-                email=contact.email,
-                phone=contact.phone,
-                status=contact.status,
-                source=contact.source,
-                created_at=contact.created_at,
-                updated_at=contact.updated_at,
-                tags=contact.tags or [],
-                assigned_to=contact.assigned_to,
-                custom_fields=contact.custom_fields or {}
-            )
-            for contact in contacts
-        ]
+        # Calculate pagination info
+        page = (skip // limit) + 1 if limit > 0 else 1
+        page_size = limit
+        pages = (total + limit - 1) // limit if limit > 0 else 1
+
+        # Convert to response format with nested contact
+        items = []
+        for oc in object_contacts:
+            contact_info = ContactBasicInfo(
+                id=oc.contact.id,
+                first_name=oc.contact.first_name,
+                last_name=oc.contact.last_name,
+                email=oc.contact.email,
+                phone=oc.contact.phone,
+                company=oc.contact.company,
+                status=oc.contact.status.value if oc.contact.status else None
+            ) if oc.contact else None
+
+            if contact_info:
+                items.append(ObjectContactWithContact(
+                    id=oc.id,
+                    object_id=oc.object_id,
+                    contact_id=oc.contact_id,
+                    role=oc.role,
+                    department=oc.department,
+                    assigned_at=oc.assigned_at,
+                    contact=contact_info
+                ))
+
+        return ObjectContactListResponse(
+            items=items,
+            total=total,
+            page=page,
+            page_size=page_size,
+            pages=pages
+        )
     except PermissionDeniedError as e:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail=str(e))
 
@@ -310,14 +333,14 @@ async def remove_contact_from_object(
 
 # ==================== User/Profile Management Endpoints ====================
 
-@router.get("/{object_id}/users", response_model=List[ObjectUserResponse])
+@router.get("/{object_id}/users", response_model=List[ObjectUserWithUser])
 async def list_object_users(
     object_id: UUID,
     current_user: CurrentUser,
     db: DatabaseSession
-) -> List[ObjectUserResponse]:
+) -> List[ObjectUserWithUser]:
     """
-    List users assigned to an object
+    List users assigned to an object with nested user info
 
     Users must have view permission on the object or be an Owner.
     """
@@ -326,20 +349,26 @@ async def list_object_users(
     try:
         object_users = await service.list_object_users(current_user, object_id)
 
-        # Convert to response format
+        # Convert to response format with nested user
         responses = []
         for ou in object_users:
-            responses.append(ObjectUserResponse(
-                id=ou.id,
-                object_id=ou.object_id,
-                user_id=ou.user_id,
-                permissions=PermissionSet(**ou.permissions) if ou.permissions else PermissionSet(),
-                role_name=ou.role_name,
-                assigned_at=ou.assigned_at,
-                assigned_by=ou.assigned_by,
-                user_email=ou.user.email if ou.user else None,
-                user_name=f"{ou.user.first_name} {ou.user.last_name}" if ou.user else None
-            ))
+            if ou.user:
+                user_info = UserBasicInfo(
+                    id=ou.user.id,
+                    email=ou.user.email,
+                    first_name=ou.user.first_name,
+                    last_name=ou.user.last_name,
+                    role=ou.user.role.value if ou.user.role else None
+                )
+                responses.append(ObjectUserWithUser(
+                    id=ou.id,
+                    object_id=ou.object_id,
+                    user_id=ou.user_id,
+                    permissions=PermissionSet(**ou.permissions) if ou.permissions else PermissionSet(),
+                    role_name=ou.role_name,
+                    assigned_at=ou.assigned_at,
+                    user=user_info
+                ))
 
         return responses
     except PermissionDeniedError as e:

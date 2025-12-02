@@ -100,7 +100,7 @@ export default function CustomerEngagementPage() {
               that makes every customer feel valued and understood.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/demo" className="btn-primary">
+              <Link href="/contact" className="btn-primary">
                 See Engagement Demo
               </Link>
               <Link href="#features" className="btn-secondary">
@@ -356,7 +356,7 @@ export default function CustomerEngagementPage() {
               See how Senova can transform your customer engagement
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link href="/demo" className="btn-primary">
+              <Link href="/contact" className="btn-primary">
                 Get Personalized Demo
               </Link>
               <Link href="/pricing" className="btn-secondary">
@@ -364,7 +364,7 @@ export default function CustomerEngagementPage() {
               </Link>
             </div>
             <div className="flex flex-wrap gap-6 justify-center text-sm text-gray-600">
-              {['14-day free trial', 'No setup fees', 'Migration support', 'Dedicated success manager'].map((item, idx) => (
+              {['Professional consultation', 'No setup fees', 'Migration support', 'Dedicated success manager'].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-green-500" />
                   <span>{item}</span>

@@ -6,7 +6,7 @@ import { images } from '@/lib/images';
 
 export const metadata: Metadata = {
   title: 'CRM for Dermatology Practices | Patient Management Software | Senova',
-  description: 'HIPAA-compliant CRM built for dermatology. Manage medical and cosmetic patients, track treatments, automate recalls, and grow your practice by 45%.',
+  description: 'HIPAA-compliant CRM built for dermatology. Manage medical and cosmetic patients, track treatments, automate recalls, and grow your practice.',
   openGraph: {
     title: 'CRM for Dermatology Practices | Patient Management Software',
     description: 'HIPAA-compliant CRM built for dermatology practices. Manage patients, track treatments, automate recalls.',
@@ -81,10 +81,10 @@ const solutions = [
 ];
 
 const results = [
-  { metric: '45%', description: 'Practice growth', detail: 'Average in first year' },
-  { metric: '60%', description: 'More skin checks', detail: 'From automated recalls' },
-  { metric: '2.5X', description: 'Cosmetic revenue', detail: 'Through targeted marketing' },
-  { metric: '30%', description: 'Time saved', detail: 'On administrative tasks' },
+  { metric: 'Increased', description: 'Practice growth', detail: 'Measurable results in first year' },
+  { metric: 'More', description: 'Skin checks scheduled', detail: 'From automated recalls' },
+  { metric: 'Higher', description: 'Cosmetic revenue', detail: 'Through targeted marketing' },
+  { metric: 'Significant', description: 'Time saved', detail: 'On administrative tasks' },
 ];
 
 const features = [
@@ -102,13 +102,7 @@ const features = [
   'Multi-location support',
 ];
 
-const comparisonData = [
-  { feature: 'Medical & cosmetic tracking', generic: 'Requires two systems', senova: 'Unified platform' },
-  { feature: 'HIPAA compliance', generic: 'Extra cost add-on', senova: 'Built-in with BAA' },
-  { feature: 'Skin check recalls', generic: 'Manual process', senova: 'Fully automated' },
-  { feature: 'Photo management', generic: 'Third-party storage', senova: 'Integrated galleries' },
-  { feature: 'Insurance workflows', generic: 'Not available', senova: 'Complete support' },
-];
+{/* Removed: competitor comparison data */}
 
 export default function DermatologyPage() {
   return (
@@ -141,8 +135,8 @@ export default function DermatologyPage() {
               Manage medical and cosmetic patients, automate recalls, track treatments, and grow your practice - all while staying HIPAA compliant.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/demo" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 transition-all">
-                See Dermatology Demo
+              <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 transition-all">
+                Schedule a Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link href="/pricing" className="inline-flex items-center justify-center px-6 py-3 border-2 border-blue-600 text-base font-medium rounded-lg text-blue-600 bg-white hover:bg-blue-50 transition-all">
@@ -150,7 +144,7 @@ export default function DermatologyPage() {
               </Link>
             </div>
             <div className="mt-8 flex flex-wrap gap-6 justify-center text-sm text-gray-600">
-              {['HIPAA Compliant', 'EMR Integration', '14-Day Trial', 'No Setup Fees'].map((item) => (
+              {['HIPAA Compliant', 'EMR Integration', 'Expert Support', 'No Setup Fees'].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-green-500" />
                   <span>{item}</span>
@@ -324,7 +318,7 @@ export default function DermatologyPage() {
                 Proven Results for Dermatology Practices
               </h2>
               <p className="text-xl text-blue-100">
-                Join leading dermatologists who've transformed their practices
+                Discover how Senova can transform your dermatology practice
               </p>
             </div>
             <div className="grid md:grid-cols-4 gap-8">
@@ -340,51 +334,7 @@ export default function DermatologyPage() {
         </div>
       </section>
 
-      {/* Comparison Table */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                Why Dermatologists Choose Senova
-              </h2>
-              <p className="text-xl text-gray-600">
-                See how we compare to generic CRM solutions
-              </p>
-            </div>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr className="border-b-2 border-gray-200">
-                    <th className="text-left py-4 px-6 font-semibold text-gray-900">Feature</th>
-                    <th className="text-center py-4 px-6 font-semibold text-gray-500">Generic CRM</th>
-                    <th className="text-center py-4 px-6 font-semibold text-blue-600">Senova for Dermatology</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonData.map((row, idx) => (
-                    <tr key={idx} className="border-b border-gray-100">
-                      <td className="py-4 px-6 font-medium text-gray-900">{row.feature}</td>
-                      <td className="py-4 px-6 text-center text-gray-500">
-                        <div className="flex items-center justify-center gap-2">
-                          <X className="w-4 h-4 text-red-500" />
-                          <span>{row.generic}</span>
-                        </div>
-                      </td>
-                      <td className="py-4 px-6 text-center text-blue-600 font-semibold">
-                        <div className="flex items-center justify-center gap-2">
-                          <Check className="w-4 h-4 text-green-500" />
-                          <span>{row.senova}</span>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Removed: competitor comparison table */}
 
       {/* Features Grid */}
       <section className="py-20 bg-gray-50">
@@ -407,28 +357,6 @@ export default function DermatologyPage() {
         </div>
       </section>
 
-      {/* Testimonial */}
-      <section className="py-20 bg-blue-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl">
-              <Clock className="w-12 h-12 text-blue-500 mb-6" />
-              <blockquote className="text-2xl text-gray-700 italic mb-6">
-                "Senova revolutionized our practice. The automated skin check recalls increased our medical revenue by 60%, while the cosmetic marketing tools doubled our aesthetic procedures. It's the perfect blend for modern dermatology."
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div>
-                  <div className="font-bold text-gray-900">Dr. Michael Thompson</div>
-                  <div className="text-gray-600">Thompson Dermatology Associates • Miami, FL</div>
-                </div>
-              </div>
-              <div className="mt-4 text-blue-600 font-semibold">
-                60% increase in annual skin checks
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 to-teal-50">
@@ -441,8 +369,8 @@ export default function DermatologyPage() {
               See how Senova can help you deliver better patient care while growing your practice
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link href="/demo" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 transition-all">
-                Book Dermatology Demo
+              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 transition-all">
+                Get Started
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 border-2 border-blue-600 text-lg font-medium rounded-lg text-blue-600 bg-white hover:bg-blue-50 transition-all">
@@ -450,7 +378,7 @@ export default function DermatologyPage() {
               </Link>
             </div>
             <p className="text-sm text-gray-600">
-              HIPAA compliant • EMR integration • 14-day free trial • White-glove onboarding
+              HIPAA compliant • EMR integration • Professional consultation • White-glove onboarding
             </p>
           </div>
         </div>

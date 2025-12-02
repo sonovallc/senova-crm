@@ -6,7 +6,7 @@ import { images } from '@/lib/images';
 
 export const metadata: Metadata = {
   title: 'White-Label CRM for Marketing Agencies | Partner Program | Senova',
-  description: 'Not your competition - your secret weapon for client success. White-label CRM partnership, automated reporting, and $42K MRR added. Join our partner program.',
+  description: 'Not your competition - your secret weapon for client success. White-label CRM partnership, automated reporting, and increased MRR. Join our partner program.',
   openGraph: {
     title: 'White-Label CRM for Marketing Agencies | Partner Program',
     description: 'Your secret weapon for client success. White-label CRM partnership with revenue sharing.',
@@ -17,12 +17,12 @@ export const metadata: Metadata = {
 const painPoints = [
   {
     title: 'Client Retention Crisis',
-    description: 'Agencies lose 20-30% of clients annually',
+    description: 'Agencies lose significant clients annually',
     icon: UserX,
   },
   {
     title: 'Manual Reporting Hell',
-    description: 'Teams waste 15+ hours weekly creating reports',
+    description: 'Teams waste many hours weekly creating reports',
     icon: FileSpreadsheet,
   },
   {
@@ -81,10 +81,10 @@ const solutions = [
 ];
 
 const results = [
-  { metric: '71%', description: 'Client retention increase', detail: 'Through better service delivery' },
-  { metric: '$42K', description: 'MRR added', detail: 'From CRM revenue sharing' },
-  { metric: '87%', description: 'Reduction in reporting time', detail: 'With automated reports' },
-  { metric: '3.2x', description: 'Client lifetime value', detail: 'From retention & upsell' },
+  { metric: 'Better', description: 'Client retention', detail: 'Through better service delivery' },
+  { metric: 'Higher', description: 'MRR added', detail: 'From CRM revenue sharing' },
+  { metric: 'Faster', description: 'Reporting', detail: 'With automated reports' },
+  { metric: 'Increased', description: 'Client lifetime value', detail: 'From retention & upsell' },
 ];
 
 const features = [
@@ -123,13 +123,13 @@ export default function MarketingAgenciesPage() {
               Join our white-label partnership program. Offer Senova CRM as your own branded solution, add recurring revenue, and deliver exceptional results for your clients.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/partners/demo" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-hot hover:from-orange-700 hover:to-red-600 transition-all">
+              <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-hot hover:from-orange-700 hover:to-red-600 transition-all">
                 Become a Partner
                 <Rocket className="ml-2 w-5 h-5" />
               </Link>
-              <Link href="/partners/info" className="inline-flex items-center justify-center px-6 py-3 border-2 border-senova-electric text-base font-medium rounded-lg bg-senova-electric text-white hover:bg-senova-electric-600 hover:scale-105 shadow-lg transition-all">
+              <Link href="/pricing" className="inline-flex items-center justify-center px-6 py-3 border-2 border-senova-electric text-base font-medium rounded-lg bg-senova-electric text-white hover:bg-senova-electric-600 hover:scale-105 shadow-lg transition-all">
                 <Zap className="mr-2 w-5 h-5" />
-                Partner Program Info
+                View Partner Pricing
               </Link>
             </div>
             <div className="mt-8 flex flex-wrap gap-6 justify-center text-sm text-gray-600">
@@ -154,7 +154,7 @@ export default function MarketingAgenciesPage() {
             </div>
             <div className="flex items-center gap-2">
               <Zap className="w-6 h-6" />
-              <span className="font-semibold">30% Revenue Share</span>
+              <span className="font-semibold">Competitive Revenue Share</span>
             </div>
             <div className="flex items-center gap-2">
               <Handshake className="w-6 h-6" />
@@ -302,49 +302,7 @@ export default function MarketingAgenciesPage() {
         </div>
       </section>
 
-      {/* Testimonial - Partner Success Story */}
-      <section className="py-20 bg-senova-bg-tertiary">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl">
-              <Rocket className="w-12 h-12 text-senova-primary mb-6" />
-              <blockquote className="text-2xl text-gray-700 italic mb-6">
-                "Senova isn't competing with us - they're empowering us. We've added $42K in monthly recurring revenue by offering Senova as our own CRM solution."
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div>
-                  <div className="font-bold text-gray-900">Amanda Foster</div>
-                  <div className="text-gray-600">CEO • Digital Momentum Agency</div>
-                </div>
-              </div>
-              <div className="mt-4 text-senova-primary font-semibold">
-                $42K MRR added + 71% client retention improvement
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Integration Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Integrates with Your Agency Stack
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Works seamlessly with the tools you already use
-            </p>
-            <div className="flex flex-wrap gap-8 justify-center items-center">
-              {['HubSpot', 'Zapier', 'Google Analytics', 'Facebook Ads', 'Mailchimp'].map((tool) => (
-                <div key={tool} className="text-lg font-semibold text-gray-700 px-6 py-3 bg-gray-100 rounded-lg">
-                  {tool}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section - Partner Focus */}
       <section className="py-20 bg-gradient-to-br from-orange-50 to-red-50">
@@ -357,16 +315,16 @@ export default function MarketingAgenciesPage() {
               Join 200+ agencies already succeeding with Senova's Partner Program
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link href="/partners/apply" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-hot hover:from-orange-700 hover:to-red-600 transition-all">
+              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-hot hover:from-orange-700 hover:to-red-600 transition-all">
                 Apply for Partner Program
                 <Rocket className="ml-2 w-5 h-5" />
               </Link>
-              <Link href="/partners/demo" className="inline-flex items-center justify-center px-8 py-4 border-2 border-senova-primary text-lg font-medium rounded-lg text-senova-primary bg-white hover:bg-orange-50 transition-all">
-                Schedule Partner Call
+              <Link href="/pricing" className="inline-flex items-center justify-center px-8 py-4 border-2 border-senova-primary text-lg font-medium rounded-lg text-senova-primary bg-white hover:bg-orange-50 transition-all">
+                View Pricing Options
               </Link>
             </div>
             <p className="text-sm text-gray-600">
-              30% revenue share • White-label ready • Full training included • Dedicated partner success team
+              Revenue share program • White-label ready • Full training included • Dedicated partner success team
             </p>
           </div>
         </div>

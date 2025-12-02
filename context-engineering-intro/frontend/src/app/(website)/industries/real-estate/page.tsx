@@ -6,7 +6,7 @@ import { images } from '@/lib/images';
 
 export const metadata: Metadata = {
   title: 'CRM for Real Estate Agents | Lead Management & Automation | Senova',
-  description: 'Close more deals with intelligent lead management. Instant response, automated nurture campaigns, property matching, and 52% more deals closed. See demo.',
+  description: 'Close more deals with intelligent lead management. Instant response, automated nurture campaigns, property matching, and more deals closed. See demo.',
   openGraph: {
     title: 'CRM for Real Estate Agents | Lead Management & Automation',
     description: 'Close more deals with intelligent lead management. Instant response and automated nurture campaigns.',
@@ -17,12 +17,12 @@ export const metadata: Metadata = {
 const painPoints = [
   {
     title: 'Lead Response Chaos',
-    description: 'Slow response times costing agents deals - 78% of buyers work with first agent who responds',
+    description: 'Slow response times costing agents deals - most buyers work with first agent who responds',
     icon: Timer,
   },
   {
     title: 'Follow-Up Failure',
-    description: 'Manual follow-up systems causing 67% deal loss',
+    description: 'Manual follow-up systems causing significant deal loss',
     icon: UserMinus,
   },
   {
@@ -39,67 +39,67 @@ const painPoints = [
 
 const solutions = [
   {
-    title: 'Instant Lead Response',
-    description: 'Respond within 60 seconds with AI-powered auto-response',
+    title: 'Fast Lead Response',
+    description: 'Quick lead response tools to help you be first',
     features: [
-      '60-second lead response',
-      'AI chatbot qualification',
-      'Smart lead routing',
-      'Mobile instant alerts',
+      'Lead notification alerts',
+      'Quick response templates',
+      'Lead routing options',
+      'Mobile notifications',
     ],
   },
   {
     title: 'Automated Nurture Campaigns',
     description: 'Never lose another lead with automated drip campaigns',
     features: [
-      'Behavior-triggered campaigns',
-      'Personalized property alerts',
-      'Market update automation',
+      'Email drip campaigns',
+      'Personalized follow-ups',
+      'Scheduled outreach',
       'Birthday/anniversary reminders',
     ],
   },
   {
-    title: 'Smart Property Matching',
-    description: 'AI-powered property matching automatically connects buyers',
+    title: 'Lead Organization',
+    description: 'Keep your leads organized and prioritized',
     features: [
-      'MLS integration',
-      'AI preference learning',
-      'Automated property alerts',
-      'Virtual showing scheduler',
+      'Lead scoring',
+      'Custom tags and segments',
+      'Search and filter',
+      'Notes and activity tracking',
     ],
   },
   {
-    title: 'Transaction Pipeline Management',
+    title: 'Deal Pipeline Management',
     description: 'Visual pipeline tracking ensures no deal falls through',
     features: [
       'Visual deal pipeline',
-      'Automated task creation',
-      'Document e-signature',
-      'Commission tracking',
+      'Task management',
+      'Status tracking',
+      'Revenue forecasting',
     ],
   },
 ];
 
 const results = [
-  { metric: '52%', description: 'More deals closed', detail: 'Through better lead management' },
-  { metric: '3.7x', description: 'Faster lead response', detail: 'With instant automation' },
-  { metric: '31%', description: 'Referral increase', detail: 'From improved client service' },
-  { metric: '$94K', description: 'Additional GCI/agent', detail: 'From efficiency gains' },
+  { metric: 'More', description: 'Deals closed', detail: 'Through better lead management' },
+  { metric: 'Faster', description: 'Lead response', detail: 'With instant automation' },
+  { metric: 'Increased', description: 'Referrals', detail: 'From improved client service' },
+  { metric: 'Higher', description: 'GCI per agent', detail: 'From efficiency gains' },
 ];
 
 const features = [
-  'MLS integration',
   'Lead capture forms',
-  'Instant lead response',
-  'Property matching AI',
-  'Transaction management',
-  'E-signature integration',
-  'Open house management',
-  'Showing scheduler',
-  'Commission calculator',
+  'Quick lead response',
+  'Contact management',
+  'Deal pipeline tracking',
+  'Email automation',
+  'Task reminders',
+  'Lead scoring',
+  'Reporting dashboard',
   'Marketing automation',
-  'Social media integration',
-  'Performance dashboard',
+  'Mobile access',
+  'Team collaboration',
+  'Performance analytics',
 ];
 
 export default function RealEstatePage() {
@@ -123,8 +123,8 @@ export default function RealEstatePage() {
               Respond instantly, nurture automatically, match properties intelligently, and close more deals - all in one platform designed specifically for real estate agents.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/demo" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-accent hover:from-orange-700 hover:to-amber-600 transition-all">
-                See Real Estate Demo
+              <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-accent hover:from-orange-700 hover:to-amber-600 transition-all">
+                Schedule a Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link href="/pricing" className="inline-flex items-center justify-center px-6 py-3 border-2 border-senova-primary text-base font-medium rounded-lg text-senova-primary bg-white hover:bg-amber-50 transition-all">
@@ -132,7 +132,7 @@ export default function RealEstatePage() {
               </Link>
             </div>
             <div className="mt-8 flex flex-wrap gap-6 justify-center text-sm text-gray-600">
-              {['MLS Integration', 'Instant Lead Response', '14-Day Free Trial', 'Import Your Database'].map((item) => (
+              {['Lead Automation', 'Instant Response Tools', 'Professional Support', 'Import Your Database'].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-senova-primary" />
                   <span>{item}</span>
@@ -241,7 +241,7 @@ export default function RealEstatePage() {
                 Real Results from Top Producers
               </h2>
               <p className="text-xl text-amber-100">
-                Join thousands of successful agents using Senova
+                Join successful agents using Senova
               </p>
             </div>
             <div className="grid md:grid-cols-4 gap-8">
@@ -281,43 +281,51 @@ export default function RealEstatePage() {
         </div>
       </section>
 
-      {/* Testimonial */}
+      {/* Success Story */}
       <section className="py-20 bg-senova-bg-tertiary">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl">
               <Building className="w-12 h-12 text-senova-primary mb-6" />
-              <blockquote className="text-2xl text-gray-700 italic mb-6">
-                "Senova helped me go from closing 18 deals a year to 47. The automated follow-up system alone keeps me top-of-mind with hundreds of leads."
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div>
-                  <div className="font-bold text-gray-900">Michael Chen</div>
-                  <div className="text-gray-600">Top Producer • Premier Realty Group</div>
-                </div>
-              </div>
-              <div className="mt-4 text-senova-primary font-semibold">
-                161% increase in closed deals
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Transform Your Real Estate Business
+              </h3>
+              <p className="text-lg text-gray-700 mb-4">
+                Our automated follow-up system helps agents stay top-of-mind with their leads, ensuring no opportunity is missed.
+              </p>
+              <p className="text-gray-600">
+                With intelligent lead nurturing and automated campaigns, you can focus on what you do best - closing deals and building relationships.
+              </p>
+              <div className="mt-6 text-senova-primary font-semibold">
+                Join successful real estate professionals using Senova
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Integration Section */}
+      {/* Platform Features Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Integrates with Your Real Estate Tools
+              Built-In Tools for Real Estate Success
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Works seamlessly with popular real estate platforms
+              Everything you need to manage your real estate business in one platform
             </p>
-            <div className="flex flex-wrap gap-8 justify-center items-center">
-              {['Zillow', 'Realtor.com', 'MLS Systems', 'DocuSign', 'Dotloop'].map((tool) => (
-                <div key={tool} className="text-lg font-semibold text-gray-700 px-6 py-3 bg-gray-100 rounded-lg">
-                  {tool}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+              {[
+                { name: 'Email Campaigns', desc: 'Send automated drip sequences' },
+                { name: 'Lead Forms', desc: 'Capture leads from your website' },
+                { name: 'Task Manager', desc: 'Never miss a follow-up' },
+                { name: 'Contact Database', desc: 'Organize all your leads' },
+                { name: 'Performance Reports', desc: 'Track your conversion rates' },
+                { name: 'Mobile Access', desc: 'Work from anywhere' },
+              ].map((tool) => (
+                <div key={tool.name} className="text-center p-4 bg-gray-50 rounded-lg">
+                  <div className="text-lg font-semibold text-gray-900 mb-1">{tool.name}</div>
+                  <div className="text-sm text-gray-600">{tool.desc}</div>
                 </div>
               ))}
             </div>
@@ -336,8 +344,8 @@ export default function RealEstatePage() {
               See why top producers choose Senova CRM
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link href="/demo" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-accent hover:from-orange-700 hover:to-amber-600 transition-all">
-                Book Your Real Estate Demo
+              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-accent hover:from-orange-700 hover:to-amber-600 transition-all">
+                Get Started
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 border-2 border-senova-primary text-lg font-medium rounded-lg text-senova-primary bg-white hover:bg-amber-50 transition-all">
@@ -345,7 +353,7 @@ export default function RealEstatePage() {
               </Link>
             </div>
             <p className="text-sm text-gray-600">
-              No credit card required • 14-day free trial • Import your existing database
+              No credit card required • Professional consultation • Import your existing database
             </p>
           </div>
         </div>

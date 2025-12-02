@@ -452,14 +452,15 @@ class ContactImporter:
             row_identifiers[row_id] = {"emails": emails, "phones": phones}
 
             if not emails and not phones:
-                summary.invalid_rows.append(
-                    ValidationError(
-                        row_num=row_id,
-                        field="email/phone",
-                        message="Row has no usable email or phone",
-                        row_data=row,
-                    )
-                )
+                # Log warning but don't block import - some contacts may only have names/company
+                import logging
+                logger = logging.getLogger(__name__)
+                logger.warning(f"Row {row_id} has no email or phone - will create contact with name/company only")
+
+                # Add to a warnings list instead of invalid_rows to allow import
+                # Note: These rows won't have duplicate detection since they have no identifiers
+                summary.identifiers[row_id] = {"emails": [], "phones": []}
+                # Skip duplicate detection for this row but don't mark as invalid
                 continue
 
             summary.identifiers[row_id] = {"emails": emails, "phones": phones}
@@ -752,7 +753,7 @@ class ContactImporter:
             phone_value: Single phone or comma-delimited list like "+1234567890, +0987654321"
 
         Returns:
-            bool: True if at least one valid phone found (10-11 digits for US numbers)
+            bool: True if at least one valid phone found (7-15 digits for international support)
         """
         if not phone_value:
             return False
@@ -770,8 +771,8 @@ class ContactImporter:
             if phone:
                 # Remove all non-digit characters (parentheses, spaces, dashes, plus)
                 cleaned = re.sub(r'[^0-9]', '', phone)
-                # US phone numbers: 10-11 digits (with or without country code)
-                if 10 <= len(cleaned) <= 11:
+                # Accept 7-15 digits for international phone number support
+                if 7 <= len(cleaned) <= 15:
                     return True
 
         return False

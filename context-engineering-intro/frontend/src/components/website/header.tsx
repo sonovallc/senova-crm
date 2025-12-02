@@ -3,11 +3,21 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Menu, X, ChevronDown, LogIn, Calendar, Sparkles, Users, Brain, Megaphone, BarChart3, Building2 } from 'lucide-react'
+import { Menu, X, ChevronDown, LogIn, Calendar, Sparkles, Users, Brain, Megaphone, BarChart3, Building2, BookOpen, Calculator } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 // Navigation structure with megamenu dropdowns
-const navigation = {
+const navigation: Record<string, {
+  name: string;
+  icon?: any;
+  href?: string;
+  dropdown?: Array<{
+    name: string;
+    href: string;
+    description: string;
+    icon: any;
+  }> | null;
+}> = {
   platform: {
     name: 'Platform',
     icon: Sparkles,
@@ -21,8 +31,8 @@ const navigation = {
     icon: Brain,
     dropdown: [
       { name: 'CRM', href: '/solutions/crm', description: '360° customer management', icon: Users },
+      { name: 'Lead Management', href: '/solutions/lead-management', description: 'Capture and nurture leads', icon: Users },
       { name: 'Audience Intelligence', href: '/solutions/audience-intelligence', description: 'Data-driven customer insights', icon: Brain },
-      { name: 'Patient Identification', href: '/solutions/patient-identification', description: 'Advanced patient matching system', icon: Sparkles },
       { name: 'Visitor Identification', href: '/solutions/visitor-identification', description: 'Identify website visitors', icon: Sparkles },
       { name: 'Campaign Activation', href: '/solutions/campaign-activation', description: 'Multi-channel marketing', icon: Megaphone },
       { name: 'Analytics', href: '/solutions/analytics', description: 'ROI & performance tracking', icon: BarChart3 },
@@ -31,20 +41,28 @@ const navigation = {
   industries: {
     name: 'Industries',
     icon: Building2,
+    href: '/industries',
     dropdown: [
-      { name: 'Medical Spas', href: '/industries/medical-spas', description: 'Complete medspa management platform', icon: Building2 },
-      { name: 'Dermatology', href: '/industries/dermatology', description: 'For dermatology practices', icon: Building2 },
-      { name: 'Plastic Surgery', href: '/industries/plastic-surgery', description: 'Plastic surgery patient management', icon: Building2 },
-      { name: 'Aesthetic Clinics', href: '/industries/aesthetic-clinics', description: 'Aesthetic clinic solutions', icon: Building2 },
-      { name: 'Legal & Law Firms', href: '/industries/legal-attorneys', description: 'CRM for attorneys and law firms', icon: Building2 },
-      { name: 'Real Estate', href: '/industries/real-estate', description: 'Close more deals with smart lead management', icon: Building2 },
-      { name: 'Mortgage & Lending', href: '/industries/mortgage-lending', description: 'Streamline your loan pipeline', icon: Building2 },
-      { name: 'Insurance', href: '/industries/insurance', description: 'Maximize retention and cross-sell', icon: Building2 },
-      { name: 'Marketing Agencies', href: '/industries/marketing-agencies', description: 'Your secret weapon for client success', icon: Building2 },
-      { name: 'Restaurants', href: '/industries/restaurants', description: 'Restaurant management solutions', icon: Building2 },
-      { name: 'Home Services', href: '/industries/home-services', description: 'For contractors and service pros', icon: Building2 },
-      { name: 'Retail & E-commerce', href: '/industries/retail', description: 'Retail business growth', icon: Building2 },
-      { name: 'Professional Services', href: '/industries/professional-services', description: 'For consultants and agencies', icon: Building2 },
+      // Medical Aesthetics
+      { name: 'Medical Spas', href: '/industries/medical-spas', description: 'Grow your medspa with data intelligence', icon: Building2 },
+      { name: 'Dermatology', href: '/industries/dermatology', description: 'Patient acquisition for dermatologists', icon: Building2 },
+      { name: 'Plastic Surgery', href: '/industries/plastic-surgery', description: 'Attract qualified cosmetic patients', icon: Building2 },
+      { name: 'Aesthetic Clinics', href: '/industries/aesthetic-clinics', description: 'Marketing for aesthetic practices', icon: Building2 },
+
+      // Business Services
+      { name: 'Legal & Law Firms', href: '/industries/legal-attorneys', description: 'Client acquisition for attorneys', icon: Building2 },
+      { name: 'Real Estate', href: '/industries/real-estate', description: 'Lead generation for agents', icon: Building2 },
+      { name: 'Insurance', href: '/industries/insurance', description: 'Find and retain policyholders', icon: Building2 },
+      { name: 'Mortgage & Lending', href: '/industries/mortgage-lending', description: 'Loan officer lead generation', icon: Building2 },
+      { name: 'Marketing Agencies', href: '/industries/marketing-agencies', description: 'Data tools for agencies', icon: Building2 },
+    ]
+  },
+  resources: {
+    name: 'Resources',
+    icon: BookOpen,
+    dropdown: [
+      { name: 'Blog', href: '/blog', description: 'Tips and insights to grow your business', icon: BookOpen },
+      { name: 'ROI Calculator', href: '/roi-calculator', description: 'Calculate your return on investment', icon: Calculator },
     ]
   },
   pricing: {
@@ -68,6 +86,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,8 +94,14 @@ export function Header() {
     }
 
     window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      // Clean up any pending timeout on unmount
+      if (dropdownTimeout) {
+        clearTimeout(dropdownTimeout)
+      }
+    }
+  }, [dropdownTimeout])
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -89,6 +114,24 @@ export function Header() {
       return () => document.removeEventListener('click', handleClickOutside)
     }
   }, [activeDropdown])
+
+  // Handler functions for mouse enter/leave with delay
+  const handleMouseEnter = (key: string) => {
+    // Clear any pending timeout when entering
+    if (dropdownTimeout) {
+      clearTimeout(dropdownTimeout)
+      setDropdownTimeout(null)
+    }
+    setActiveDropdown(key)
+  }
+
+  const handleMouseLeave = () => {
+    // Add 600ms delay before closing for more forgiveness
+    const timeout = setTimeout(() => {
+      setActiveDropdown(null)
+    }, 600)
+    setDropdownTimeout(timeout)
+  }
 
   const handleDropdownToggle = (key: string, e: React.MouseEvent) => {
     e.stopPropagation()
@@ -123,48 +166,77 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation with Megamenu */}
-          <div className="hidden lg:flex lg:items-center lg:gap-x-1">
+          <div className="hidden lg:flex lg:items-center lg:gap-x-1" suppressHydrationWarning>
             {Object.entries(navigation).map(([key, item]) => (
-              <div key={key} className="relative">
+              <div
+                key={key}
+                className="relative group"
+                suppressHydrationWarning
+                onMouseEnter={() => item.dropdown && handleMouseEnter(key)}
+                onMouseLeave={() => item.dropdown && handleMouseLeave()}
+              >
                 {item.dropdown ? (
-                  <button
-                    onMouseEnter={() => setActiveDropdown(key)}
-                    onMouseLeave={() => setActiveDropdown(null)}
-                    className={cn(
-                      'flex items-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-lg transition-all duration-300',
-                      'text-senova-gray-700 hover:text-senova-primary hover:bg-senova-accent/10',
-                      activeDropdown === key && 'text-senova-primary bg-senova-accent/10'
-                    )}
-                  >
-                    {item.icon && <item.icon className="h-4 w-4" />}
-                    {item.name}
-                    <ChevronDown className={cn(
-                      'h-3.5 w-3.5 transition-transform duration-300',
-                      activeDropdown === key && 'rotate-180'
-                    )} />
-                  </button>
-                ) : (
+                  item.href ? (
+                    // Link with dropdown (for Industries)
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        'flex items-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-lg transition-all duration-300',
+                        'text-senova-gray-700 hover:text-senova-primary hover:bg-senova-accent/10',
+                        activeDropdown === key && 'text-senova-primary bg-senova-accent/10'
+                      )}
+                    >
+                      {item.icon && <item.icon className="h-4 w-4" />}
+                      {item.name}
+                      <ChevronDown className={cn(
+                        'h-3.5 w-3.5 transition-transform duration-300',
+                        activeDropdown === key && 'rotate-180'
+                      )} />
+                    </Link>
+                  ) : (
+                    // Button with dropdown (no href)
+                    <button
+                      className={cn(
+                        'flex items-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-lg transition-all duration-300',
+                        'text-senova-gray-700 hover:text-senova-primary hover:bg-senova-accent/10',
+                        activeDropdown === key && 'text-senova-primary bg-senova-accent/10'
+                      )}
+                    >
+                      {item.icon && <item.icon className="h-4 w-4" />}
+                      {item.name}
+                      <ChevronDown className={cn(
+                        'h-3.5 w-3.5 transition-transform duration-300',
+                        activeDropdown === key && 'rotate-180'
+                      )} />
+                    </button>
+                  )
+                ) : item.href ? (
                   <Link
                     href={item.href}
                     className="flex items-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-lg transition-all duration-300 text-senova-gray-700 hover:text-senova-primary hover:bg-senova-accent/10"
                   >
                     {item.name}
                   </Link>
-                )}
+                ) : null}
 
                 {/* Megamenu Dropdown with glassmorphism */}
                 {item.dropdown && (
                   <div
                     className={cn(
-                      'absolute top-full left-0 mt-2 transition-all duration-300 transform origin-top',
+                      'absolute top-full -left-4 -right-4 pt-2 pb-4 px-4 transition-all duration-300 transform origin-top z-50',
                       activeDropdown === key
-                        ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto'
-                        : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'
+                        ? 'opacity-100 scale-100 translate-y-0 visible'
+                        : 'opacity-0 scale-95 -translate-y-2 invisible'
                     )}
-                    onMouseEnter={() => setActiveDropdown(key)}
-                    onMouseLeave={() => setActiveDropdown(null)}
+                    style={{ pointerEvents: activeDropdown === key ? 'auto' : 'none' }}
+                    suppressHydrationWarning
+                    onMouseEnter={() => handleMouseEnter(key)}
+                    onMouseLeave={() => handleMouseLeave()}
                   >
-                    <div className="relative">
+                    {/* Invisible bridge to maintain hover zone - extends from trigger button to dropdown */}
+                    <div className="absolute -top-2 left-0 right-0 h-4 bg-transparent" style={{ pointerEvents: 'auto' }}></div>
+
+                    <div className="relative mt-2">
                       {/* Glow effect */}
                       <div className="absolute inset-0 bg-gradient-to-br from-senova-accent/20 to-senova-primary/20 rounded-2xl blur-xl"></div>
 
@@ -176,10 +248,8 @@ export function Header() {
                               key={`${key}-${subItem.href}-${index}`}
                               href={subItem.href}
                               className={cn(
-                                'flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-senova-accent/10 hover:to-senova-primary/10 transition-all duration-300 group',
-                                'animate-fade-in',
+                                'flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-senova-accent/10 hover:to-senova-primary/10 transition-all duration-300 group'
                               )}
-                              style={{ animationDelay: `${index * 50}ms` }}
                               onClick={() => setActiveDropdown(null)}
                             >
                               <div className="mt-0.5 p-2 rounded-lg bg-gradient-to-br from-senova-accent/20 to-senova-primary/20 group-hover:from-senova-accent/30 group-hover:to-senova-primary/30 transition-colors duration-300">
@@ -224,9 +294,9 @@ export function Header() {
                 className="relative gap-2 bg-gradient-to-r from-senova-accent to-senova-success text-senova-dark hover:text-white border-0 font-bold px-6 py-2.5 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl"
                 asChild
               >
-                <Link href="/demo">
+                <Link href="/contact">
                   <Calendar className="h-4 w-4" />
-                  Get Demo
+                  Book Consultation
                 </Link>
               </Button>
             </div>
@@ -267,19 +337,38 @@ export function Header() {
                 <div key={key}>
                   {item.dropdown ? (
                     <>
-                      <button
-                        onClick={(e) => handleDropdownToggle(key, e)}
-                        className="w-full flex items-center justify-between px-3 py-2.5 text-base font-medium text-senova-dark hover:bg-gradient-to-r hover:from-senova-accent/10 hover:to-senova-primary/10 rounded-lg transition-all duration-300"
-                      >
-                        <span className="flex items-center gap-2">
-                          {item.icon && <item.icon className="h-5 w-5" />}
-                          {item.name}
-                        </span>
-                        <ChevronDown className={cn(
-                          'h-4 w-4 transition-transform duration-300',
-                          activeDropdown === key && 'rotate-180'
-                        )} />
-                      </button>
+                      <div className="flex items-center">
+                        {item.href ? (
+                          // Link to Industries landing page
+                          <Link
+                            href={item.href}
+                            className="flex-1 px-3 py-2.5 text-base font-medium text-senova-dark hover:bg-gradient-to-r hover:from-senova-accent/10 hover:to-senova-primary/10 rounded-lg transition-all duration-300"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            <span className="flex items-center gap-2">
+                              {item.icon && <item.icon className="h-5 w-5" />}
+                              {item.name}
+                            </span>
+                          </Link>
+                        ) : (
+                          // Just the text (not clickable)
+                          <span className="flex-1 px-3 py-2.5 text-base font-medium text-senova-dark">
+                            <span className="flex items-center gap-2">
+                              {item.icon && <item.icon className="h-5 w-5" />}
+                              {item.name}
+                            </span>
+                          </span>
+                        )}
+                        <button
+                          onClick={(e) => handleDropdownToggle(key, e)}
+                          className="px-3 py-2.5 hover:bg-gradient-to-r hover:from-senova-accent/10 hover:to-senova-primary/10 rounded-lg transition-all duration-300"
+                        >
+                          <ChevronDown className={cn(
+                            'h-4 w-4 transition-transform duration-300',
+                            activeDropdown === key && 'rotate-180'
+                          )} />
+                        </button>
+                      </div>
                       <div
                         className={cn(
                           'overflow-hidden transition-all duration-300',
@@ -304,7 +393,7 @@ export function Header() {
                         </div>
                       </div>
                     </>
-                  ) : (
+                  ) : item.href ? (
                     <Link
                       href={item.href}
                       className="block px-3 py-2.5 text-base font-medium text-senova-dark hover:bg-gradient-to-r hover:from-senova-accent/10 hover:to-senova-primary/10 rounded-lg transition-all duration-300"
@@ -312,7 +401,7 @@ export function Header() {
                     >
                       {item.name}
                     </Link>
-                  )}
+                  ) : null}
                 </div>
               ))}
 
@@ -332,9 +421,9 @@ export function Header() {
                   className="w-full gap-2 bg-gradient-to-r from-senova-accent to-senova-success text-senova-dark hover:text-white transition-all duration-300"
                   asChild
                 >
-                  <Link href="/demo" onClick={() => setMobileMenuOpen(false)}>
+                  <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
                     <Calendar className="h-4 w-4" />
-                    Get Demo
+                    Book Consultation
                   </Link>
                 </Button>
               </div>

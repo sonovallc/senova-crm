@@ -6,7 +6,7 @@ import { images } from '@/lib/images';
 
 export const metadata: Metadata = {
   title: 'CRM for Law Firms & Attorneys | Legal Practice Management | Senova',
-  description: 'Transform your law practice with intelligent client management. Automate intake, track billable hours, manage cases, and increase revenue by 47%. See demo.',
+  description: 'Transform your law practice with intelligent client management. Automate intake, track billable hours, manage cases, and increase revenue. See demo.',
   openGraph: {
     title: 'CRM for Law Firms & Attorneys | Legal Practice Management',
     description: 'Transform your law practice with intelligent client management. Automate intake and track billable hours.',
@@ -22,7 +22,7 @@ const painPoints = [
   },
   {
     title: 'Billable Hours Leakage',
-    description: 'Attorneys lose 15-20% of billable time due to poor time tracking',
+    description: 'Attorneys lose significant billable time due to poor time tracking',
     icon: Clock,
   },
   {
@@ -81,10 +81,10 @@ const solutions = [
 ];
 
 const results = [
-  { metric: '47%', description: 'Intake conversion increase', detail: 'More leads become clients' },
-  { metric: '2.3 hrs', description: 'Saved per attorney/day', detail: 'On administrative tasks' },
-  { metric: '89%', description: 'Client satisfaction', detail: 'Through better communication' },
-  { metric: '$127K', description: 'Additional revenue/attorney', detail: 'From improved efficiency' },
+  { metric: 'Higher', description: 'Intake conversion', detail: 'More leads become clients' },
+  { metric: 'Hours', description: 'Saved per attorney/day', detail: 'On administrative tasks' },
+  { metric: 'Better', description: 'Client satisfaction', detail: 'Through better communication' },
+  { metric: 'More', description: 'Revenue per attorney', detail: 'From improved efficiency' },
 ];
 
 const features = [
@@ -123,8 +123,8 @@ export default function LegalAttorneysPage() {
               Automate intake, track billable hours, manage cases, and deliver exceptional client service - all in one platform designed specifically for law firms.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/demo" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-hot hover:from-orange-700 hover:to-red-600 transition-all">
-                See Law Firm Demo
+              <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-hot hover:from-orange-700 hover:to-red-600 transition-all">
+                Schedule a Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link href="/pricing" className="inline-flex items-center justify-center px-6 py-3 border-2 border-senova-primary text-base font-medium rounded-lg text-senova-primary bg-white hover:bg-orange-50 transition-all">
@@ -132,7 +132,7 @@ export default function LegalAttorneysPage() {
               </Link>
             </div>
             <div className="mt-8 flex flex-wrap gap-6 justify-center text-sm text-gray-600">
-              {['Bar Compliant', 'Secure Client Portal', '14-Day Free Trial', 'Import Existing Clients'].map((item) => (
+              {['Bar Compliant', 'Secure Client Portal', 'Professional Support', 'Import Existing Clients'].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-orange-500" />
                   <span>{item}</span>
@@ -281,23 +281,31 @@ export default function LegalAttorneysPage() {
         </div>
       </section>
 
-      {/* Testimonial */}
+      {/* Trust & Credibility Section */}
       <section className="py-20 bg-senova-bg-tertiary">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl">
-              <Briefcase className="w-12 h-12 text-senova-primary mb-6" />
-              <blockquote className="text-2xl text-gray-700 italic mb-6">
-                "Senova transformed our 12-attorney firm. We've increased our billable hours by 28% while actually working fewer hours overall."
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div>
-                  <div className="font-bold text-gray-900">Sarah Mitchell</div>
-                  <div className="text-gray-600">Managing Partner • Mitchell & Associates Law Firm</div>
+            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl text-center">
+              <Briefcase className="w-12 h-12 text-senova-primary mb-6 mx-auto" />
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Built for Law Firms Like Yours
+              </h2>
+              <p className="text-xl text-gray-600 mb-6">
+                From solo practitioners to multi-attorney firms, our platform adapts to your practice's unique needs.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6 mt-8">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-senova-primary mb-2">Secure</div>
+                  <p className="text-gray-600">Enterprise-grade security for sensitive client data</p>
                 </div>
-              </div>
-              <div className="mt-4 text-senova-primary font-semibold">
-                28% increase in billable hours
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-senova-primary mb-2">Compliant</div>
+                  <p className="text-gray-600">Built with legal industry requirements in mind</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-senova-primary mb-2">Scalable</div>
+                  <p className="text-gray-600">Grows with your practice as you expand</p>
+                </div>
               </div>
             </div>
           </div>
@@ -336,8 +344,8 @@ export default function LegalAttorneysPage() {
               See why hundreds of law firms choose Senova CRM
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link href="/demo" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-hot hover:from-orange-700 hover:to-red-600 transition-all">
-                Book Your Law Firm Demo
+              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-hot hover:from-orange-700 hover:to-red-600 transition-all">
+                Get Started
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 border-2 border-senova-primary text-lg font-medium rounded-lg text-senova-primary bg-white hover:bg-orange-50 transition-all">
@@ -345,7 +353,7 @@ export default function LegalAttorneysPage() {
               </Link>
             </div>
             <p className="text-sm text-gray-600">
-              No credit card required • 14-day free trial • Import your existing clients
+              No credit card required • Professional consultation • Import your existing clients
             </p>
           </div>
         </div>

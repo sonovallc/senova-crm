@@ -41,7 +41,6 @@ const integrations = [
     items: [
       { name: 'Auth0', icon: Lock, status: 'Available' },
       { name: 'Okta', icon: Shield, status: 'Available' },
-      { name: 'AWS HIPAA', icon: Cloud, status: 'Available' },
       { name: 'Google Cloud HIPAA', icon: Cloud, status: 'Available' },
     ]
   }
@@ -70,7 +69,7 @@ export default function IntegrationsPage() {
               className="bg-gradient-to-r from-senova-accent to-senova-success text-senova-dark hover:text-white font-bold"
               asChild
             >
-              <Link href="/demo">
+              <Link href="/contact">
                 See Integrations Demo
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>

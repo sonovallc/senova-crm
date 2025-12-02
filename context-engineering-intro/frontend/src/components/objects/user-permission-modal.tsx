@@ -50,7 +50,11 @@ export function UserPermissionModal({
   // Fetch available users
   const { data: users, isLoading: loadingUsers } = useQuery({
     queryKey: ['users'],
-    queryFn: () => api.get<User[]>('/api/v1/users').then(res => res.data),
+    queryFn: async () => {
+      const res = await api.get('/api/v1/users')
+      // Backend returns { items: [...], total, page, page_size, pages }
+      return res.data?.items || res.data || []
+    },
     enabled: !existingUser,
   })
 
@@ -184,11 +188,19 @@ export function UserPermissionModal({
                       <Loader2 className="h-4 w-4 animate-spin mx-auto" />
                     </div>
                   ) : (
-                    users?.map((user) => (
-                      <SelectItem key={user.id} value={user.id}>
-                        {user.first_name} {user.last_name} ({user.email})
-                      </SelectItem>
-                    ))
+                    Array.isArray(users) && users.length > 0 ? (
+                      users
+                        .filter((user) => user?.id) // Ensure user has valid id
+                        .map((user) => (
+                          <SelectItem key={user.id} value={user.id}>
+                            {user.first_name} {user.last_name} ({user.email})
+                          </SelectItem>
+                        ))
+                    ) : (
+                      <div className="p-4 text-center text-gray-500">
+                        No users available
+                      </div>
+                    )
                   )}
                 </SelectContent>
               </Select>

@@ -32,7 +32,7 @@ const stats = [
   { icon: Users, value: 'Growing', label: 'Customer Base' },
   { icon: Code, value: 'Modern', label: 'Tech Stack' },
   { icon: Shield, value: 'GDPR', label: 'GDPR Compliant' },
-  { icon: Lock, value: 'SOC 2', label: 'SOC 2 Compliant' },
+  { icon: Lock, value: 'Secure', label: 'Data Protected' },
 ]
 
 const coreValues = [
@@ -44,7 +44,7 @@ const coreValues = [
   {
     icon: Shield,
     title: 'Security',
-    description: 'Your data security is paramount. We maintain GDPR compliance, SOC 2 compliance, and use bank-level encryption to protect sensitive information.',
+    description: 'Your data security is paramount. We maintain GDPR compliance, use bank-level encryption, and follow industry best practices to protect sensitive information.',
   },
   {
     icon: Brain,
@@ -77,7 +77,7 @@ const whyChooseUs = [
   {
     icon: Shield,
     title: 'Enterprise Security',
-    description: 'Bank-level encryption, GDPR compliance, and SOC 2 compliance keep your data safe.',
+    description: 'Bank-level encryption, GDPR compliance, and enterprise security frameworks keep your data safe.',
   },
   {
     icon: Building2,
@@ -236,7 +236,7 @@ export function AboutSection() {
             <h3 className="mb-6 text-3xl font-bold text-slate-900">Built With Modern Technology</h3>
             <p className="text-lg leading-relaxed text-slate-600">
               We use cutting-edge technology to deliver a fast, reliable, and scalable platform. Our infrastructure
-              is built on cloud-native architecture with advanced security, real-time analytics, and AI-powered features
+              is built on cloud-native architecture with advanced security, comprehensive analytics, and AI-powered features
               that help you stay ahead of the competition.
             </p>
           </div>
@@ -315,7 +315,7 @@ export function AboutSection() {
                 className="bg-primary text-white hover:bg-primary/90"
                 asChild
               >
-                <a href="/demo">Schedule a Demo</a>
+                <a href="/contact">Book Consultation</a>
               </Button>
               <Button
                 size="lg"

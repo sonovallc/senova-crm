@@ -10,33 +10,7 @@ export const images = {
   },
 
   industries: {
-    // EXISTING (keep these)
-    restaurants: {
-      hero: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&h=900&fit=crop&auto=format',
-      interior: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1200&h=800&fit=crop&auto=format',
-      dining: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&h=800&fit=crop&auto=format',
-      kitchen: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop&auto=format',
-    },
-    homeServices: {
-      hero: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&h=900&fit=crop&auto=format',
-      plumber: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop&auto=format',
-      electrician: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=800&fit=crop&auto=format',
-      contractor: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&h=800&fit=crop&auto=format',
-    },
-    retail: {
-      hero: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&h=900&fit=crop&auto=format',
-      store: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1200&h=800&fit=crop&auto=format',
-      ecommerce: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=800&fit=crop&auto=format',
-      shopping: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&h=800&fit=crop&auto=format',
-    },
-    professionalServices: {
-      hero: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1600&h=900&fit=crop&auto=format',
-      office: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=800&fit=crop&auto=format',
-      consulting: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&h=800&fit=crop&auto=format',
-      meeting: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1200&h=800&fit=crop&auto=format',
-    },
-
-    // NEW - Medical Aesthetics
+    // Medical Aesthetics
     medicalSpas: {
       hero: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1600&h=900&fit=crop&auto=format',
       treatment: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1200&h=800&fit=crop&auto=format',
@@ -152,10 +126,6 @@ export function getRandomTestimonialImage() {
 
 // Helper function to get industry-specific images
 export function getIndustryImages(industry:
-  | 'restaurants'
-  | 'homeServices'
-  | 'retail'
-  | 'professionalServices'
   | 'medicalSpas'
   | 'dermatology'
   | 'plasticSurgery'
@@ -166,5 +136,5 @@ export function getIndustryImages(industry:
   | 'insurance'
   | 'marketingAgencies'
 ) {
-  return images.industries[industry] || images.industries.professionalServices
+  return images.industries[industry] || images.industries.medicalSpas
 }

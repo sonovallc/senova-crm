@@ -94,16 +94,16 @@ export function BulkAssignmentModal({ objectId, onClose, onSuccess }: BulkAssign
           <div>
             <Label htmlFor="status">Contact Status</Label>
             <Select
-              value={filters.status?.[0] || ''}
+              value={filters.status?.[0] || 'all'}
               onValueChange={(value) =>
-                setFilters({ ...filters, status: value ? [value] : undefined })
+                setFilters({ ...filters, status: value && value !== 'all' ? [value] : undefined })
               }
             >
               <SelectTrigger id="status">
                 <SelectValue placeholder="All statuses" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All statuses</SelectItem>
+                <SelectItem value="all">All statuses</SelectItem>
                 <SelectItem value="LEAD">Lead</SelectItem>
                 <SelectItem value="PROSPECT">Prospect</SelectItem>
                 <SelectItem value="CUSTOMER">Customer</SelectItem>

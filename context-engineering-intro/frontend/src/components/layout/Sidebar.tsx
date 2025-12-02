@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Home, Inbox, Users, CreditCard, Brain, Settings, LogOut, History, Trash2, Flag, Mail, Send, FileText, Megaphone, Zap, Edit3, Bot, ChevronDown, ChevronRight, Tag, List, Building2, Calendar } from 'lucide-react'
+import { Home, Inbox, Users, CreditCard, Brain, Settings, LogOut, History, Trash2, Flag, Mail, Send, FileText, Megaphone, Zap, Edit3, Bot, ChevronDown, ChevronRight, Tag, List, Building2 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
@@ -36,7 +36,8 @@ const baseNavigation: NavigationItem[] = [
   },
   { name: 'Payments', href: '/dashboard/payments', icon: CreditCard },
   { name: 'AI Tools', href: '/dashboard/ai', icon: Brain },
-  { name: 'Calendar', href: '/dashboard/calendar', icon: Calendar },
+  // Calendar page exists but hidden from navigation for now
+  // { name: 'Calendar', href: '/dashboard/calendar', icon: Calendar },
   {
     name: 'Settings',
     href: '/dashboard/settings',
@@ -45,7 +46,8 @@ const baseNavigation: NavigationItem[] = [
       { name: 'Users', href: '/dashboard/settings/users', icon: Users },
       { name: 'Tags', href: '/dashboard/settings/tags', icon: Tag },
       { name: 'Fields', href: '/dashboard/settings/fields', icon: List },
-      { name: 'Feature Flags', href: '/dashboard/settings/feature-flags', icon: Flag },
+      // Feature Flags hidden - admin/developer feature not for production
+      // { name: 'Feature Flags', href: '/dashboard/settings/feature-flags', icon: Flag },
       { name: 'Mailgun', href: '/dashboard/settings/integrations/mailgun', icon: Send },
       { name: 'Closebot', href: '/dashboard/settings/integrations/closebot', icon: Bot },
     ]
@@ -76,13 +78,8 @@ function getNavigation(role?: UserRole | null): NavigationItem[] {
     items.push({ name: 'Deleted Contacts', href: '/dashboard/contacts/deleted', icon: Trash2 })
   }
 
-  // Filter Feature Flags from Settings children for non-owner roles
-  if (role !== 'owner') {
-    const settingsItem = items.find(item => item.name === 'Settings')
-    if (settingsItem?.children) {
-      settingsItem.children = settingsItem.children.filter(child => child.name !== 'Feature Flags')
-    }
-  }
+  // Feature Flags is already hidden from navigation for all users
+  // No need to filter since it's commented out in baseNavigation
 
   return items.filter(item => item.visible !== false)
 }

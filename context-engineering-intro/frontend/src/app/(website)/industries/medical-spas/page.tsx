@@ -6,7 +6,7 @@ import { images } from '@/lib/images';
 
 export const metadata: Metadata = {
   title: 'CRM for Medical Spas | Patient Management & Marketing | Senova',
-  description: 'Purpose-built CRM for medical spas. Track treatments, manage memberships, automate marketing, and grow revenue by 40%. HIPAA compliant. See demo.',
+  description: 'Purpose-built CRM for medical spas. Track treatments, manage memberships, automate marketing, and grow revenue. HIPAA compliant. See demo.',
   openGraph: {
     title: 'CRM for Medical Spas | Patient Management & Marketing',
     description: 'Purpose-built CRM for medical spas. Track treatments, manage memberships, and automate marketing.',
@@ -73,7 +73,7 @@ const solutions = [
     description: 'Built specifically for medical aesthetics compliance',
     features: [
       'Encrypted patient data',
-      'BAA included',
+      'HIPAA compliance support',
       'Audit trails',
       'Secure photo storage',
     ],
@@ -81,10 +81,10 @@ const solutions = [
 ];
 
 const results = [
-  { metric: '40%', description: 'Average revenue increase', detail: 'From automated recalls and campaigns' },
-  { metric: '65%', description: 'Higher retention rate', detail: 'Patients stay engaged longer' },
-  { metric: '3.5X', description: 'More treatment bookings', detail: 'From targeted marketing' },
-  { metric: '2 hours', description: 'Daily time savings', detail: 'On administrative tasks' },
+  { metric: 'Growth', description: 'Revenue increase', detail: 'From automated recalls and campaigns' },
+  { metric: 'Better', description: 'Retention rate', detail: 'Patients stay engaged longer' },
+  { metric: 'More', description: 'Treatment bookings', detail: 'From targeted marketing' },
+  { metric: 'Faster', description: 'Daily workflows', detail: 'Streamlined administrative tasks' },
 ];
 
 const features = [
@@ -126,15 +126,15 @@ export default function MedicalSpasPage() {
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               The CRM That Grows Your
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500 block">
-                Medical Spa Revenue by 40%
+                Medical Spa Revenue
               </span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
               Track treatments, manage memberships, automate patient marketing, and stay HIPAA compliant - all in one platform designed specifically for medical spas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/demo" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 transition-all">
-                See Med Spa Demo
+              <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 transition-all">
+                Schedule a Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link href="/pricing" className="inline-flex items-center justify-center px-6 py-3 border-2 border-orange-600 text-base font-medium rounded-lg text-orange-600 bg-white hover:bg-orange-50 transition-all">
@@ -142,7 +142,7 @@ export default function MedicalSpasPage() {
               </Link>
             </div>
             <div className="mt-8 flex flex-wrap gap-6 justify-center text-sm text-gray-600">
-              {['HIPAA Compliant', 'No Setup Fees', '14-Day Free Trial', 'Import Existing Patients'].map((item) => (
+              {['HIPAA Compliant', 'No Setup Fees', 'Professional Support', 'Import Existing Patients'].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-green-500" />
                   <span>{item}</span>
@@ -261,7 +261,7 @@ export default function MedicalSpasPage() {
                 Real Results from Real Med Spas
               </h2>
               <p className="text-xl text-orange-100">
-                Join hundreds of successful medical spas using Senova
+                See the results Senova can deliver for your medical spa
               </p>
             </div>
             <div className="grid md:grid-cols-4 gap-8">
@@ -301,49 +301,9 @@ export default function MedicalSpasPage() {
         </div>
       </section>
 
-      {/* Testimonial */}
-      <section className="py-20 bg-orange-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl">
-              <Heart className="w-12 h-12 text-red-500 mb-6" />
-              <blockquote className="text-2xl text-gray-700 italic mb-6">
-                "Senova transformed how we manage our medical spa. The automated Botox reminders alone increased our revenue by 35%, and the membership tracking saves us hours every week. It's like having an extra team member!"
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div>
-                  <div className="font-bold text-gray-900">Dr. Sarah Chen</div>
-                  <div className="text-gray-600">Glow Medical Spa • Los Angeles, CA</div>
-                </div>
-              </div>
-              <div className="mt-4 text-orange-600 font-semibold">
-                35% revenue increase in 6 months
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* TODO: Add real testimonial when available */}
 
-      {/* Integration Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Integrates with Your Existing Tools
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Works seamlessly with popular medical spa software
-            </p>
-            <div className="flex flex-wrap gap-8 justify-center items-center">
-              {['Aesthetic Pro', 'Nextech', 'PatientNow', 'Symplast', 'TouchMD'].map((tool) => (
-                <div key={tool} className="text-lg font-semibold text-gray-700 px-6 py-3 bg-gray-100 rounded-lg">
-                  {tool}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Integration Section - Removed until integrations are built */}
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-orange-50 to-amber-50">
@@ -353,11 +313,11 @@ export default function MedicalSpasPage() {
               Ready to Grow Your Medical Spa?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              See why hundreds of medical spas choose Senova CRM
+              Discover how Senova CRM can transform your med spa operations
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link href="/demo" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 transition-all">
-                Book Your Med Spa Demo
+              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 transition-all">
+                Get Started
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 border-2 border-orange-600 text-lg font-medium rounded-lg text-orange-600 bg-white hover:bg-orange-50 transition-all">
@@ -365,7 +325,7 @@ export default function MedicalSpasPage() {
               </Link>
             </div>
             <p className="text-sm text-gray-600">
-              No credit card required • 14-day free trial • Import your existing patients
+              No credit card required • Professional consultation • Import your existing patients
             </p>
           </div>
         </div>

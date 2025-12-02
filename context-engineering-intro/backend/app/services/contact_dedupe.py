@@ -19,6 +19,13 @@ def normalize_email(value: Optional[str]) -> Optional[str]:
 
 
 def normalize_phone(value: Optional[str]) -> Optional[str]:
+    """Normalize phone number to a consistent format.
+
+    Accepts various phone formats including:
+    - US: 10 digits (adds +1), 11 digits starting with 1
+    - International: 7-15 digits
+    - Various separators (dashes, spaces, parentheses, dots)
+    """
     if not value:
         return None
 
@@ -26,14 +33,25 @@ def normalize_phone(value: Optional[str]) -> Optional[str]:
     if not phone:
         return None
 
-    digits = re.sub(r"[^\d+]", "", phone).lstrip("+")
+    # Extract digits only (remove all formatting)
+    digits = re.sub(r"[^\d]", "", phone)
 
-    if len(digits) == 11 and digits.startswith("1"):
-        return f"+{digits}"
+    # Too short to be a valid phone
+    if len(digits) < 7:
+        return None
+
+    # Too long to be a valid phone (max international is ~15)
+    if len(digits) > 15:
+        return None
+
+    # US phone formatting
     if len(digits) == 10:
         return f"+1{digits}"
-
-    return None
+    elif len(digits) == 11 and digits.startswith("1"):
+        return f"+{digits}"
+    else:
+        # Accept as international format
+        return f"+{digits}"
 
 
 def explode_emails(value: Optional[str]) -> List[str]:

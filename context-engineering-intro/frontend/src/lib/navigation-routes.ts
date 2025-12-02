@@ -20,7 +20,7 @@ export const routes: Route[] = [
   { name: 'About', path: '/about', category: 'company', priority: 0.7, seoPage: 'about.json' },
   { name: 'Contact', path: '/contact', category: 'company', priority: 0.8, seoPage: 'contact.json' },
   { name: 'Login', path: '/login', category: 'main', priority: 0.5 },
-  { name: 'Get Demo', path: '/demo', category: 'main', priority: 0.9 },
+  { name: 'Consultation', path: '/demo', category: 'main', priority: 0.9 },
 
   // Platform/Solutions Pages
   { name: 'CRM', path: '/solutions/crm', category: 'platform', priority: 0.8, seoPage: 'solutions-crm.json', description: 'Customer relationship management' },
@@ -29,17 +29,26 @@ export const routes: Route[] = [
   { name: 'Campaign Activation', path: '/solutions/campaign-activation', category: 'platform', priority: 0.8, seoPage: 'solutions-campaign-activation.json', description: 'Multi-channel campaigns' },
   { name: 'Analytics', path: '/solutions/analytics', category: 'platform', priority: 0.8, seoPage: 'solutions-analytics.json', description: 'ROI & performance tracking' },
 
-  // Industry Pages
-  { name: 'Restaurants', path: '/industries/restaurants', category: 'industries', priority: 0.8, seoPage: 'industries-restaurants.json', description: 'Solutions for restaurants' },
-  { name: 'Home Services', path: '/industries/home-services', category: 'industries', priority: 0.8, seoPage: 'industries-home-services.json', description: 'For service professionals' },
-  { name: 'Retail', path: '/industries/retail', category: 'industries', priority: 0.8, seoPage: 'industries-retail.json', description: 'Retail business growth' },
-  { name: 'Professional Services', path: '/industries/professional-services', category: 'industries', priority: 0.8, seoPage: 'industries-professional-services.json', description: 'For consultants and agencies' },
+  // Industries Landing Page
+  { name: 'Industries', path: '/industries', category: 'industries', priority: 0.9, description: 'All industry solutions' },
+
+  // Industry Pages - Medical Aesthetics
+  { name: 'Medical Spas', path: '/industries/medical-spas', category: 'industries', priority: 0.8, seoPage: 'industries-medical-spas.json', description: 'Complete medspa management platform' },
+  { name: 'Dermatology', path: '/industries/dermatology', category: 'industries', priority: 0.8, seoPage: 'industries-dermatology.json', description: 'For dermatology practices' },
+  { name: 'Plastic Surgery', path: '/industries/plastic-surgery', category: 'industries', priority: 0.8, seoPage: 'industries-plastic-surgery.json', description: 'Plastic surgery patient management' },
+  { name: 'Aesthetic Clinics', path: '/industries/aesthetic-clinics', category: 'industries', priority: 0.8, seoPage: 'industries-aesthetic-clinics.json', description: 'Aesthetic clinic solutions' },
+
+  // Industry Pages - Business Services
+  { name: 'Legal & Law Firms', path: '/industries/legal-attorneys', category: 'industries', priority: 0.8, seoPage: 'industries-legal-attorneys.json', description: 'CRM for attorneys and law firms' },
+  { name: 'Real Estate', path: '/industries/real-estate', category: 'industries', priority: 0.8, seoPage: 'industries-real-estate.json', description: 'Close more deals with smart lead management' },
+  { name: 'Mortgage & Lending', path: '/industries/mortgage-lending', category: 'industries', priority: 0.8, seoPage: 'industries-mortgage-lending.json', description: 'Streamline your loan pipeline' },
+  { name: 'Insurance', path: '/industries/insurance', category: 'industries', priority: 0.8, seoPage: 'industries-insurance.json', description: 'Maximize retention and cross-sell' },
+  { name: 'Marketing Agencies', path: '/industries/marketing-agencies', category: 'industries', priority: 0.8, seoPage: 'industries-marketing-agencies.json', description: 'Your secret weapon for client success' },
+
 
   // Resource Pages
   { name: 'Blog', path: '/blog', category: 'resources', priority: 0.7, description: 'Latest insights and trends' },
-  { name: 'Case Studies', path: '/case-studies', category: 'resources', priority: 0.7, description: 'Success stories' },
   { name: 'ROI Calculator', path: '/roi-calculator', category: 'resources', priority: 0.7, description: 'Calculate your ROI' },
-  { name: 'Documentation', path: '/docs', category: 'resources', priority: 0.6, description: 'Product documentation' },
 
   // Legal Pages
   { name: 'Privacy Policy', path: '/privacy-policy', category: 'legal', priority: 0.5, seoPage: 'privacy-policy.json' },

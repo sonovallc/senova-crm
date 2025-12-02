@@ -1,617 +1,316 @@
 'use client'
 
 import { useState } from 'react'
-import { Metadata } from 'next'
-import { SenovaHero } from '@/components/website/senova-hero'
-import { CTASection } from '@/components/website/cta-section'
-import { Check, X, Star, Target, DollarSign } from 'lucide-react'
 import Link from 'next/link'
-import Script from 'next/script'
+import {
+  Check,
+  ChevronDown,
+  Database,
+  Zap,
+  TrendingUp,
+  Users,
+  UserPlus,
+  Target,
+  Settings,
+  Layout,
+  Wrench,
+  Mail,
+  Palette,
+  BarChart,
+  ArrowRight,
+  Sparkles
+} from 'lucide-react'
 
-// Note: In a client component, we need to export metadata differently
-// export const metadata: Metadata = {
-//   title: 'Affordable CRM & Advertising Pricing for Small Business',
-//   description: 'Transparent pricing for small business CRM and advertising. No hidden fees, no minimums, no contracts. Start free and only pay for what you use.',
-//   keywords: 'small business CRM pricing, affordable advertising, marketing automation pricing, transparent pricing',
-// }
+// Import pricing data from schema
+import {
+  PRICING_TIERS,
+  A_LA_CARTE_SERVICES
+} from '@/data/pricing'
 
-const plans = [
+// FAQ data specific to pricing
+const pricingFAQ = [
   {
-    name: "Starter",
-    priceMonthly: "$299",
-    priceAnnual: "$239",
-    description: "Perfect for businesses just getting started",
-    highlight: false,
-    features: [
-      "Up to 5,000 customers",
-      "See who visits your website",
-      "Email marketing campaigns",
-      "Basic customer insights",
-      "Simple advertising tools",
-      "Analytics dashboard",
-      "2 team members",
-      "Email support",
-      "Setup in 24 hours"
-    ],
-    limitations: [
-      "Limited to 1 location",
-      "10 campaigns per month",
-      "Basic features only"
-    ],
-    ctaText: "Start Free Trial",
-    ctaLink: "/demo?plan=starter"
+    question: "What's included in the Raw Data Package?",
+    answer: "The Raw Data Package includes custom audience segments based on your criteria, access to 600M+ verified profiles, 250B+ weekly behavioral signals, data delivery via CSV/API/CRM import, email/phone/address append, company firmographics enrichment, and quarterly data refresh. Perfect for agencies and businesses with existing marketing teams."
   },
   {
-    name: "Professional",
-    priceMonthly: "$599",
-    priceAnnual: "$479",
-    description: "For growing businesses ready to scale",
-    highlight: true,
-    badge: "Most Popular",
-    features: [
-      "Up to 25,000 customers",
-      "Direct advertising at wholesale prices",
-      "Find customers like your best ones",
-      "Complete advertising control",
-      "Advertise on any platform",
-      "Skip the middleman markups",
-      "Email + Text marketing",
-      "Smart customer finder",
-      "Custom audiences",
-      "Track your real ROI",
-      "Unlimited team members",
-      "Priority phone + email support",
-      "Free setup and training",
-      "All features included",
-      "Unlimited campaigns",
-      "A/B testing tools",
-      "Custom reports"
-    ],
-    bonus: "Best value for growing businesses",
-    ctaText: "Start Free Trial",
-    ctaLink: "/demo?plan=professional"
+    question: "How does Data Activation differ from Raw Data?",
+    answer: "Data Activation includes everything in Raw Data, plus we handle the entire campaign execution for you. This includes DSP campaign setup, landing page creation, pixel installation, visitor enrichment, AI agent lead outreach, full CRM access with email marketing, automation workflows, and monthly strategy calls. You get the data AND the execution."
   },
   {
-    name: "Enterprise",
-    priceMonthly: "Custom",
-    priceAnnual: "Custom",
-    description: "For multi-location businesses",
-    highlight: false,
-    features: [
-      "Unlimited customers",
-      "Everything in Professional",
-      "Multiple locations",
-      "Custom connections",
-      "API access",
-      "Dedicated account manager",
-      "Quarterly business reviews",
-      "Custom training",
-      "Priority support",
-      "Custom data storage",
-      "Advanced security",
-      "First access to new features"
-    ],
-    ctaText: "Contact Sales",
-    ctaLink: "/contact?plan=enterprise"
+    question: "What are wholesale media rates?",
+    answer: "Through our DSP partnerships, we offer CPM rates of $2-6 compared to industry standard $20-30. This means your advertising budget goes 5-10x further. We charge a flat management fee starting at $500/month plus your actual media spend with no markup - complete transparency."
+  },
+  {
+    question: "Can I switch plans later?",
+    answer: "Absolutely! You can upgrade or downgrade your plan at any time. If you upgrade mid-month, we'll prorate the difference. Many clients start with Raw Data to test our data quality, then upgrade to Data Activation once they see the results."
+  },
+  {
+    question: "What's the minimum commitment?",
+    answer: "Raw Data Packages are one-time purchases with no commitment. Data Activation requires a 3-month initial commitment, then goes month-to-month. DSP Management is monthly with no long-term contract. White Glove services typically require annual commitment due to the customization involved."
+  },
+  {
+    question: "Do you offer custom enterprise pricing?",
+    answer: "Yes! For organizations with unique needs or high-volume requirements, we offer custom enterprise packages. These can include volume discounts, custom SLAs, dedicated infrastructure, white-label options, and specialized support. Contact our sales team to discuss your specific requirements."
   }
 ]
 
-const competitors = [
-  {
-    name: "Senova Professional",
-    price: "$599/mo",
-    visitorId: "Yes - Advanced",
-    audiences: "Unlimited",
-    compliance: "Included",
-    setup: "Free",
-    contract: "Month-to-month",
-    highlighted: true
-  },
-  {
-    name: "Big Agency #1",
-    price: "$2,000/mo",
-    visitorId: "Limited",
-    audiences: "Limited",
-    compliance: "+$500/mo",
-    setup: "$5,000",
-    contract: "12 months"
-  },
-  {
-    name: "Enterprise CRM",
-    price: "$1,500/mo",
-    visitorId: "Not available",
-    audiences: "5 max",
-    compliance: "+$300/mo",
-    setup: "$2,500",
-    contract: "24 months"
-  },
-  {
-    name: "Basic CRM + Tools",
-    price: "$800/mo",
-    visitorId: "Not available",
-    audiences: "Manual only",
-    compliance: "Not included",
-    setup: "$1,000",
-    contract: "12 months"
-  }
-]
+// Icon mapping for services
+const iconMap: { [key: string]: React.ElementType } = {
+  Database,
+  Target,
+  Users,
+  UserPlus,
+  Settings,
+  Layout,
+  Wrench,
+  Mail,
+  Palette,
+  BarChart,
+  Zap,
+  TrendingUp
+}
 
 export default function PricingPage() {
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly')
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
+
+  // Get the main 3 tiers (excluding white-glove)
+  const mainTiers = PRICING_TIERS.filter(tier => tier.id !== 'white-glove')
+  const whiteGloveTier = PRICING_TIERS.find(tier => tier.id === 'white-glove')
 
   return (
-    <>
-      {/* Schema.org structured data */}
-      <Script
-        id="schema-org"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            "name": "Senova CRM",
-            "offers": {
-              "@type": "AggregateOffer",
-              "lowPrice": "299",
-              "highPrice": "599",
-              "priceCurrency": "USD",
-              "offerCount": "3"
-            }
-          })
-        }}
-      />
+    <div className="min-h-screen bg-white">
+      {/* Hero Section with Gradient Background */}
+      <section className="relative bg-gradient-to-br from-blue-900 via-slate-900 to-violet-900 overflow-hidden">
+        {/* Animated glow effect */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-violet-500/20 to-transparent rounded-full animate-pulse" />
 
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-b from-white to-gray-50">
-        <div className="container">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="heading-hero animate-in mb-6">
-              <span className="gradient-text">Honest Pricing That Grows With Your Business</span>
-            </h1>
-            <p className="text-lead animate-in stagger-1 mb-10">
-              No hidden fees, no minimums, no contracts. Start small and grow big. Save 30-50% compared to agencies.
-            </p>
-            <div className="animate-in stagger-2 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/demo" className="btn-primary">
-                Start 14-Day Free Trial
-              </Link>
-              <Link href="/roi-calculator" className="btn-secondary">
-                Calculate Your Savings
-              </Link>
-            </div>
+        <div className="relative z-10 px-4 py-24 mx-auto max-w-7xl text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+            Simple, Transparent Pricing
+          </h1>
+          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            Choose the plan that fits your growth goals
+          </p>
+        </div>
+      </section>
+
+      {/* Main Pricing Cards */}
+      <section className="relative -mt-16 z-20 px-4 pb-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {mainTiers.map((tier) => {
+              const IconComponent = tier.icon ? iconMap[tier.icon] : Database
+              const isPopular = tier.popular
+
+              return (
+                <div
+                  key={tier.id}
+                  className={`relative bg-white rounded-2xl shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
+                    isPopular ? 'scale-105 border-2 border-blue-500' : 'border border-gray-200'
+                  }`}
+                >
+                  {/* Popular badge */}
+                  {tier.badge && (
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                      <span className="bg-gradient-to-r from-blue-600 to-violet-600 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
+                        {tier.badge}
+                      </span>
+                    </div>
+                  )}
+
+                  <div className="p-8">
+                    {/* Icon */}
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-violet-100 rounded-2xl flex items-center justify-center mb-6">
+                      <IconComponent className={`w-8 h-8 ${isPopular ? 'text-blue-600' : 'text-slate-700'}`} />
+                    </div>
+
+                    {/* Name and price */}
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">{tier.name}</h3>
+                    <div className="mb-4">
+                      <span className="text-3xl font-bold text-blue-600">{tier.price}</span>
+                    </div>
+                    <p className="text-sm text-blue-500 font-medium mb-4">{tier.startingAt}</p>
+
+                    {/* Description */}
+                    <p className="text-gray-600 mb-6">{tier.description}</p>
+
+                    {/* Features list */}
+                    <ul className="space-y-3 mb-8">
+                      {tier.features.slice(0, 8).map((feature, idx) => (
+                        <li key={idx} className="flex items-start">
+                          <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                            <Check className="w-3 h-3 text-emerald-600" />
+                          </div>
+                          <span className="text-sm text-gray-700">{feature}</span>
+                        </li>
+                      ))}
+                      {tier.features.length > 8 && (
+                        <li className="text-sm text-blue-600 font-medium ml-8">
+                          +{tier.features.length - 8} more features
+                        </li>
+                      )}
+                    </ul>
+
+                    {/* CTA Button */}
+                    <Link
+                      href={tier.ctaLink || '/contact'}
+                      className={`block w-full py-3 px-6 rounded-xl font-semibold text-center transition-all ${
+                        isPopular
+                          ? 'bg-gradient-to-r from-blue-600 to-violet-600 text-white hover:from-blue-700 hover:to-violet-700 shadow-lg'
+                          : 'bg-gray-100 text-gray-800 hover:bg-gray-200 border border-gray-300'
+                      }`}
+                    >
+                      {tier.cta}
+                    </Link>
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
 
-      {/* Simple Value Proposition */}
-      <section className="section-padding bg-gradient-to-br from-senova-primary/5 to-senova-info/5">
-        <div className="container">
-          <div className="mx-auto max-w-5xl">
-            <div className="text-center mb-12">
-              <h2 className="heading-2 gradient-text mb-4">Why Pay More for Less?</h2>
-              <p className="text-lead text-gray-700">
-                See how much you could save
-              </p>
+      {/* White Glove Section */}
+      {whiteGloveTier && (
+        <section className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 py-20 relative overflow-hidden">
+          {/* Background accent */}
+          <div className="absolute inset-0 bg-gradient-to-t from-transparent via-violet-500/5 to-transparent" />
+
+          <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
+            <h2 className="text-4xl font-bold text-white mb-4 bg-gradient-to-r from-white to-violet-200 bg-clip-text text-transparent">
+              Need Everything Done For You?
+            </h2>
+            <p className="text-xl text-blue-100 mb-12 max-w-3xl mx-auto">
+              Our White Glove service handles everything from strategy to execution
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              {[
+                { title: 'Full-Service Management', desc: 'Complete campaign management from strategy to optimization' },
+                { title: 'Creative Production', desc: 'Professional ads, landing pages, and content creation' },
+                { title: 'Dedicated Team', desc: 'Your own team of data scientists and marketing experts' },
+                { title: 'Performance Guarantee', desc: 'Results-driven approach with guaranteed benchmarks' }
+              ].map((item, idx) => (
+                <div key={idx} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
+                  <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
+                  <p className="text-sm text-blue-100">{item.desc}</p>
+                </div>
+              ))}
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div className="bg-white rounded-xl p-8 shadow-lg">
-                <h3 className="heading-3 mb-4 text-red-600">What You Pay Now</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <X className="h-5 w-5 mr-2 mt-0.5 text-red-500 flex-shrink-0" />
-                    <span>Agencies add 30-50% markup to your ads</span>
-                  </li>
-                  <li className="flex items-start">
-                    <X className="h-5 w-5 mr-2 mt-0.5 text-red-500 flex-shrink-0" />
-                    <span>$2,000-5,000/month in management fees</span>
-                  </li>
-                  <li className="flex items-start">
-                    <X className="h-5 w-5 mr-2 mt-0.5 text-red-500 flex-shrink-0" />
-                    <span>Locked contracts you can't escape</span>
-                  </li>
-                  <li className="flex items-start">
-                    <X className="h-5 w-5 mr-2 mt-0.5 text-red-500 flex-shrink-0" />
-                    <span>They keep your data when you leave</span>
-                  </li>
-                </ul>
-              </div>
+            <Link
+              href="/contact?tier=white-glove"
+              className="inline-flex items-center gap-2 bg-white text-slate-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-all shadow-xl"
+            >
+              Get Custom Pricing
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </section>
+      )}
 
-              <div className="bg-white rounded-xl p-8 shadow-lg border-2 border-green-500">
-                <h3 className="heading-3 mb-4 text-green-600">What You Pay With Senova</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 mr-2 mt-0.5 text-green-500 flex-shrink-0" />
-                    <span>Buy ads directly at wholesale prices</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 mr-2 mt-0.5 text-green-500 flex-shrink-0" />
-                    <span>One simple monthly fee, no surprises</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 mr-2 mt-0.5 text-green-500 flex-shrink-0" />
-                    <span>Cancel anytime, no questions asked</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 mr-2 mt-0.5 text-green-500 flex-shrink-0" />
-                    <span>Your data is always yours to keep</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+      {/* A La Carte Services */}
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">A La Carte Services</h2>
+            <p className="text-xl text-gray-600">Add specialized services to any plan</p>
+          </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-lg">
-              <div className="text-center">
-                <p className="text-lg font-semibold mb-2">Start With Any Budget</p>
-                <p className="text-gray-700">
-                  While other platforms require thousands per month to get started, Senova works with any budget.
-                  Start small, test what works, then scale up when you're ready.
-                </p>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {A_LA_CARTE_SERVICES.map((service) => {
+              const ServiceIcon = service.icon ? iconMap[service.icon] : Database
+
+              return (
+                <div
+                  key={service.id}
+                  className="bg-white rounded-xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all cursor-pointer group"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-violet-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <ServiceIcon className="w-6 h-6 text-blue-600" />
+                  </div>
+
+                  <h3 className="text-lg font-semibold text-slate-900 mb-2">{service.name}</h3>
+                  <p className="text-sm text-gray-600 mb-3">{service.description}</p>
+                  <p className="text-lg font-bold text-blue-600">{service.startingAt}</p>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
 
-      {/* Pricing Cards */}
-      <section className="section-padding">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center mb-12">
-            <h2 className="heading-2 mb-4">Choose Your Growth Plan</h2>
-            <p className="text-lead mb-8">
-              All plans include customer management, marketing tools, and real support
-            </p>
+      {/* FAQ Section */}
+      <section className="bg-white py-20">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-4xl font-bold text-slate-900 text-center mb-12">
+            Frequently Asked Questions
+          </h2>
 
-            {/* Billing Toggle */}
-            <div className="inline-flex items-center bg-gray-100 rounded-full p-1">
-              <button
-                onClick={() => setBillingCycle('monthly')}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                  billingCycle === 'monthly'
-                    ? 'bg-white text-gray-900 shadow-sm'
-                    : 'text-gray-600 hover:text-gray-900'
-                }`}
-              >
-                Monthly
-              </button>
-              <button
-                onClick={() => setBillingCycle('annual')}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                  billingCycle === 'annual'
-                    ? 'bg-white text-gray-900 shadow-sm'
-                    : 'text-gray-600 hover:text-gray-900'
-                }`}
-              >
-                Annual <span className="text-senova-electric font-semibold ml-1">Save 20%</span>
-              </button>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {plans.map((plan, index) => (
+          <div className="space-y-4">
+            {pricingFAQ.map((faq, index) => (
               <div
                 key={index}
-                className={`relative rounded-2xl p-8 ${
-                  plan.highlight
-                    ? 'border-2 shadow-xl scale-105 z-10'
-                    : 'border shadow-lg'
-                }`}
-                style={{
-                  borderColor: plan.highlight ? 'var(--color-primary)' : '#e5e7eb',
-                  backgroundColor: plan.highlight ? 'rgba(74, 0, 212, 0.02)' : 'white'
-                }}
+                className="border border-gray-200 rounded-xl overflow-hidden hover:border-blue-300 transition-all"
               >
-                {plan.badge && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span
-                      className="inline-flex items-center rounded-full px-4 py-1 text-xs font-semibold text-white bg-senova-electric shadow-lg"
-                    >
-                      <Star className="h-3 w-3 mr-1" />
-                      {plan.badge}
-                    </span>
-                  </div>
-                )}
-
-                <div className="text-center mb-8">
-                  <h3 className="heading-3 mb-2">{plan.name}</h3>
-                  <div className="mb-4">
-                    <span className="text-5xl font-bold">
-                      {billingCycle === 'monthly' ? plan.priceMonthly : plan.priceAnnual}
-                    </span>
-                    {plan.priceMonthly !== 'Custom' && (
-                      <span className="text-gray-600">/month</span>
-                    )}
-                  </div>
-                  <p className="text-gray-600">{plan.description}</p>
-                  {plan.bonus && (
-                    <p className="mt-2 text-sm font-semibold" style={{ color: 'var(--color-success)' }}>
-                      {plan.bonus}
-                    </p>
-                  )}
-                </div>
-
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start text-sm">
-                      <Check className="h-5 w-5 flex-shrink-0 mt-0.5 mr-3" style={{ color: 'var(--color-success)' }} />
-                      <span className="text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                  {plan.limitations?.map((limitation, limitIndex) => (
-                    <li key={limitIndex} className="flex items-start text-sm">
-                      <X className="h-5 w-5 flex-shrink-0 mt-0.5 mr-3 text-gray-400" />
-                      <span className="text-gray-500">{limitation}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Link
-                  href={plan.ctaLink}
-                  className={plan.highlight ? 'btn-primary w-full' : 'btn-secondary w-full'}
+                <button
+                  onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
+                  className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
                 >
-                  {plan.ctaText}
-                </Link>
+                  <span className="font-semibold text-slate-900">{faq.question}</span>
+                  <ChevronDown
+                    className={`w-5 h-5 text-blue-600 transition-transform ${
+                      expandedFaq === index ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+
+                <div
+                  className={`px-6 bg-gray-50 overflow-hidden transition-all duration-300 ${
+                    expandedFaq === index ? 'py-4 max-h-96' : 'max-h-0'
+                  }`}
+                >
+                  <p className="text-gray-600">{faq.answer}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Comparison Table */}
-      <section className="section-padding bg-gray-50">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center mb-12">
-            <h2 className="heading-2 mb-4">See How We Compare</h2>
-            <p className="text-lead">
-              Compare Senova to agencies and other CRM platforms
-            </p>
+      {/* Final CTA */}
+      <section className="bg-gradient-to-r from-blue-600 to-violet-600 py-20">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Ready to Transform Your Marketing?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8">
+            Join businesses using Senova to reach the right customers
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-all shadow-xl"
+            >
+              <Sparkles className="w-5 h-5" />
+              Get Started
+            </Link>
+            <Link
+              href="/pricing"
+              className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-all"
+            >
+              View Pricing Details
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
 
-          <div className="max-w-5xl mx-auto overflow-hidden rounded-xl border border-gray-200 shadow-lg bg-white">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="bg-gray-50">
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Feature</th>
-                    {competitors.map((competitor, index) => (
-                      <th
-                        key={index}
-                        className={`px-6 py-4 text-center text-sm font-semibold ${
-                          competitor.highlighted
-                            ? 'bg-gradient-to-b from-[rgba(180,249,178,0.3)] to-[rgba(180,249,178,0.1)] text-gray-900'
-                            : 'text-gray-700'
-                        }`}
-                      >
-                        {competitor.name}
-                        {competitor.highlighted && (
-                          <span
-                            className="block mt-1 text-xs rounded-full px-2 py-0.5 mx-auto w-fit"
-                            style={{
-                              backgroundColor: 'var(--color-primary)',
-                              color: 'white'
-                            }}
-                          >
-                            Better Value
-                          </span>
-                        )}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-t">
-                    <td className="px-6 py-4 text-sm font-medium text-gray-900">Monthly Price</td>
-                    {competitors.map((competitor, index) => (
-                      <td
-                        key={index}
-                        className={`px-6 py-4 text-center text-sm ${
-                          competitor.highlighted
-                            ? 'font-bold bg-gradient-to-b from-[rgba(180,249,178,0.1)] to-transparent'
-                            : ''
-                        }`}
-                      >
-                        {competitor.price}
-                      </td>
-                    ))}
-                  </tr>
-                  <tr className="border-t bg-gray-50/50">
-                    <td className="px-6 py-4 text-sm font-medium text-gray-900">Website Visitor Tracking</td>
-                    {competitors.map((competitor, index) => (
-                      <td
-                        key={index}
-                        className={`px-6 py-4 text-center text-sm ${
-                          competitor.highlighted
-                            ? 'font-bold bg-gradient-to-b from-[rgba(180,249,178,0.1)] to-transparent'
-                            : ''
-                        }`}
-                      >
-                        {competitor.visitorId}
-                      </td>
-                    ))}
-                  </tr>
-                  <tr className="border-t">
-                    <td className="px-6 py-4 text-sm font-medium text-gray-900">Smart Audiences</td>
-                    {competitors.map((competitor, index) => (
-                      <td
-                        key={index}
-                        className={`px-6 py-4 text-center text-sm ${
-                          competitor.highlighted
-                            ? 'font-bold bg-gradient-to-b from-[rgba(180,249,178,0.1)] to-transparent'
-                            : ''
-                        }`}
-                      >
-                        {competitor.audiences}
-                      </td>
-                    ))}
-                  </tr>
-                  <tr className="border-t bg-gray-50/50">
-                    <td className="px-6 py-4 text-sm font-medium text-gray-900">Compliance & Security</td>
-                    {competitors.map((competitor, index) => (
-                      <td
-                        key={index}
-                        className={`px-6 py-4 text-center text-sm ${
-                          competitor.highlighted
-                            ? 'font-bold bg-gradient-to-b from-[rgba(180,249,178,0.1)] to-transparent'
-                            : ''
-                        }`}
-                      >
-                        {competitor.compliance}
-                      </td>
-                    ))}
-                  </tr>
-                  <tr className="border-t">
-                    <td className="px-6 py-4 text-sm font-medium text-gray-900">Setup Fee</td>
-                    {competitors.map((competitor, index) => (
-                      <td
-                        key={index}
-                        className={`px-6 py-4 text-center text-sm ${
-                          competitor.highlighted
-                            ? 'font-bold bg-gradient-to-b from-[rgba(180,249,178,0.1)] to-transparent'
-                            : ''
-                        }`}
-                      >
-                        {competitor.setup}
-                      </td>
-                    ))}
-                  </tr>
-                  <tr className="border-t bg-gray-50/50">
-                    <td className="px-6 py-4 text-sm font-medium text-gray-900">Contract Required</td>
-                    {competitors.map((competitor, index) => (
-                      <td
-                        key={index}
-                        className={`px-6 py-4 text-center text-sm ${
-                          competitor.highlighted
-                            ? 'font-bold bg-gradient-to-b from-[rgba(180,249,178,0.1)] to-transparent'
-                            : ''
-                        }`}
-                      >
-                        {competitor.contract}
-                      </td>
-                    ))}
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+          <p className="text-sm text-blue-100 mt-6">
+            Flexible plans • Professional consultation • Tailored solutions
+          </p>
         </div>
       </section>
-
-      {/* What's Included Section */}
-      <section className="section-padding bg-gradient-to-br from-orange-50 to-amber-50">
-        <div className="container">
-          <div className="mx-auto max-w-6xl">
-            <h2 className="heading-2 text-center mb-4">What's Included in Every Plan</h2>
-            <p className="text-lead text-center mb-12">
-              Big business tools at small business prices - no hidden costs
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white rounded-xl p-6 shadow-md">
-                <div className="h-12 w-12 rounded-lg bg-orange-100 flex items-center justify-center mb-4">
-                  <Target className="h-6 w-6 text-orange-600" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">Smart Advertising Tools</h3>
-                <p className="text-gray-600 mb-3">
-                  Find and reach the right customers without the confusion
-                </p>
-                <ul className="space-y-1 text-sm text-gray-600">
-                  <li>• Target the right people</li>
-                  <li>• Control where ads show</li>
-                  <li>• Advertise anywhere online</li>
-                </ul>
-              </div>
-
-              <div className="bg-white rounded-xl p-6 shadow-md">
-                <div className="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
-                  <DollarSign className="h-6 w-6 text-green-600" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">Transparent Pricing</h3>
-                <p className="text-gray-600 mb-3">
-                  No hidden fees, no surprises, no long contracts
-                </p>
-                <ul className="space-y-1 text-sm text-gray-600">
-                  <li>• See where every dollar goes</li>
-                  <li>• Cancel or change anytime</li>
-                  <li>• Scale up or down as needed</li>
-                </ul>
-              </div>
-
-              <div className="bg-white rounded-xl p-6 shadow-md">
-                <div className="h-12 w-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
-                  <Check className="h-6 w-6 text-blue-600" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">Everything You Need</h3>
-                <p className="text-gray-600 mb-3">
-                  Full platform access with no limits or restrictions
-                </p>
-                <ul className="space-y-1 text-sm text-gray-600">
-                  <li>• Real-time reports and insights</li>
-                  <li>• Works with any business type</li>
-                  <li>• Security and compliance included</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="section-padding">
-        <div className="container">
-          <div className="mx-auto max-w-3xl">
-            <h2 className="heading-2 text-center mb-12">Frequently Asked Questions</h2>
-
-            <div className="space-y-8">
-              {[
-                {
-                  question: "What's included in the free trial?",
-                  answer: "You get full access to all Professional plan features for 14 days. No credit card required. We'll help you get set up and show you how everything works."
-                },
-                {
-                  question: "Can I change plans anytime?",
-                  answer: "Yes! You can upgrade, downgrade, or cancel your plan at any time. Changes take effect on your next billing date."
-                },
-                {
-                  question: "Do I really save money vs agencies?",
-                  answer: "Yes! Most businesses save 30-50% compared to agency fees. You pay wholesale prices for advertising and skip the markups."
-                },
-                {
-                  question: "What happens to my data if I cancel?",
-                  answer: "Your data is always yours. If you cancel, we'll give you a full export of all your customer records and keep them secure for 90 days."
-                },
-                {
-                  question: "Do you offer discounts for multiple locations?",
-                  answer: "Yes! Our Enterprise plan offers volume discounts for businesses with multiple locations. Contact our sales team for custom pricing."
-                }
-              ].map((faq, index) => (
-                <div key={index} className="border-b pb-8 last:border-b-0">
-                  <h3 className="heading-4 mb-4">{faq.question}</h3>
-                  <p className="text-gray-600">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <CTASection
-        headline="Start Getting More Customers Today"
-        subheadline="Join thousands of businesses already saving money and growing with Senova"
-        primaryCta={{
-          text: "Start Free Trial",
-          link: "/demo"
-        }}
-        secondaryCta={{
-          text: "Talk to Sales",
-          link: "/contact"
-        }}
-        trustBadges={[
-          "No credit card required",
-          "14-day free trial",
-          "Cancel anytime"
-        ]}
-      />
-    </>
+    </div>
   )
 }

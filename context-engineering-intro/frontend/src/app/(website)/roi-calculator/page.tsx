@@ -1,423 +1,532 @@
-'use client'
+"use client"
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { Calculator, TrendingUp, DollarSign, Clock, Users, ChevronRight, Info, CheckCircle } from 'lucide-react';
+import { useState, useEffect } from 'react'
+import {
+  calculateROI,
+  formatCurrency,
+  formatPercentage,
+  formatNumber,
+  getDefaultValues,
+  getRecommendedTier,
+  INDUSTRY_BENCHMARKS,
+  TIER_CONFIG,
+  type ROIInputs,
+  type IndustryType,
+  type TierType
+} from '@/data/roi-calculator'
+import {
+  Calculator,
+  TrendingUp,
+  DollarSign,
+  Users,
+  BarChart3,
+  Building2,
+  ChevronDown,
+  Info,
+  Sparkles,
+  ArrowRight,
+  ChartBar,
+  Target,
+  Zap
+} from 'lucide-react'
 
 export default function ROICalculatorPage() {
-  // Form state
-  const [formData, setFormData] = useState({
-    currentCustomers: 1000,
-    avgRevenuePerCustomer: 150,
-    monthlyMarketingSpend: 2000,
-    currentConversionRate: 2,
-    hoursPerWeekOnTasks: 20
-  });
+  // Initialize with default values for medical-aesthetics industry
+  const [inputs, setInputs] = useState<ROIInputs>({
+    industry: 'medical-aesthetics',
+    currentMonthlyAdSpend: 5000,
+    currentCostPerLead: 150,
+    averageCustomerValue: 3500,
+    monthlyWebsiteVisitors: 5000,
+    selectedTier: 'data-activation'
+  })
 
-  const [showResults, setShowResults] = useState(false);
+  const [results, setResults] = useState<ReturnType<typeof calculateROI> | null>(null)
+  const [showResults, setShowResults] = useState(false)
 
-  // Handle input changes
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({
+  // Calculate results whenever inputs change
+  useEffect(() => {
+    const calculated = calculateROI(inputs)
+    setResults(calculated)
+  }, [inputs])
+
+  // Update defaults when industry changes
+  const handleIndustryChange = (industry: IndustryType) => {
+    const defaults = getDefaultValues(industry)
+    setInputs(prev => ({
       ...prev,
-      [field]: parseFloat(value) || 0
-    }));
-  };
+      industry,
+      ...defaults
+    }))
+  }
 
-  // Calculate ROI
-  const calculateROI = () => {
-    setShowResults(true);
-    // Scroll to results
+  // Get recommended tier based on ad spend
+  useEffect(() => {
+    const recommended = getRecommendedTier(inputs)
+    setInputs(prev => ({ ...prev, selectedTier: recommended }))
+  }, [inputs.currentMonthlyAdSpend])
+
+  const handleCalculate = () => {
+    setShowResults(true)
+    // Smooth scroll to results
     setTimeout(() => {
-      document.getElementById('results')?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
-  };
-
-  // ROI Calculations
-  const calculations = {
-    // Revenue improvements
-    revenueIncrease: Math.round(formData.currentCustomers * formData.avgRevenuePerCustomer * 0.40), // 40% increase
-    newCustomersPerMonth: Math.round(formData.currentCustomers * 0.15), // 15% growth
-    improvedConversionRate: Math.round(formData.currentConversionRate * 2.5), // 2.5x improvement
-
-    // Cost savings
-    timeSavedHours: Math.round(formData.hoursPerWeekOnTasks * 0.65), // 65% time saved
-    timeSavedValue: Math.round(formData.hoursPerWeekOnTasks * 0.65 * 50 * 4), // $50/hour * 4 weeks
-    marketingEfficiency: Math.round(formData.monthlyMarketingSpend * 0.35), // 35% more efficient
-
-    // Senova costs
-    monthlySubscription: 599, // Professional plan
-
-    // Total ROI
-    get monthlyBenefit() {
-      return this.revenueIncrease + this.timeSavedValue + this.marketingEfficiency;
-    },
-    get netMonthlyROI() {
-      return this.monthlyBenefit - this.monthlySubscription;
-    },
-    get annualROI() {
-      return this.netMonthlyROI * 12;
-    },
-    get roiPercentage() {
-      return Math.round((this.netMonthlyROI / this.monthlySubscription) * 100);
-    }
-  };
+      document.getElementById('results-section')?.scrollIntoView({ behavior: 'smooth' })
+    }, 100)
+  }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-orange-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Hero Section */}
-      <section className="relative py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="flex justify-center mb-6">
-            <div className="p-4 bg-orange-100 rounded-full">
-              <Calculator className="w-12 h-12 text-orange-600" />
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-violet-600/20 blur-3xl"></div>
+
+        <div className="relative container mx-auto px-6 py-20">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="inline-flex items-center justify-center w-20 h-20 mb-8 rounded-2xl bg-gradient-to-br from-blue-500 to-violet-600 shadow-2xl">
+              <Calculator className="w-10 h-10 text-white" />
+            </div>
+
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+              ROI Calculator
+            </h1>
+
+            <p className="text-xl text-slate-300 mb-8">
+              Discover how much you can save with Senova's data intelligence platform
+            </p>
+
+            {/* Quick Stats */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mt-12">
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
+                <div className="text-3xl font-bold text-white mb-2">15-20%</div>
+                <div className="text-slate-300 text-sm">Visitor Identification</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
+                <div className="text-3xl font-bold text-white mb-2">$2-6</div>
+                <div className="text-slate-300 text-sm">CPM vs $20-30 Industry</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
+                <div className="text-3xl font-bold text-white mb-2">45-55%</div>
+                <div className="text-slate-300 text-sm">Lower Cost Per Lead</div>
+              </div>
             </div>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            ROI Calculator
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            See your potential return on investment with Senova CRM. Based on real results from thousands of businesses like yours.
-          </p>
         </div>
       </section>
 
-      {/* Calculator Section */}
-      <section className="px-6 pb-20">
-        <div className="max-w-5xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
-              Tell Us About Your Business
-            </h2>
+      {/* Calculator Form */}
+      <section className="container mx-auto px-6 py-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/20 p-8">
+            <h2 className="text-2xl font-bold text-white mb-8">Enter Your Business Details</h2>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Current Customers */}
+            <div className="space-y-8">
+              {/* Industry Selection */}
               <div>
-                <label className="flex items-center gap-2 text-gray-700 font-semibold mb-2">
-                  Current Number of Customers
-                  <div className="group relative">
-                    <Info className="w-4 h-4 text-gray-400 cursor-help" />
-                    <div className="hidden group-hover:block absolute left-0 top-6 w-64 p-3 bg-gray-900 text-white text-sm rounded-lg z-10">
-                      Include all active customers in your database
-                    </div>
-                  </div>
+                <label className="block text-sm font-medium text-slate-300 mb-3">
+                  Select Your Industry
                 </label>
-                <div className="relative">
-                  <Users className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type="number"
-                    value={formData.currentCustomers}
-                    onChange={(e) => handleInputChange('currentCustomers', e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    placeholder="1000"
-                  />
-                </div>
-              </div>
-
-              {/* Average Revenue */}
-              <div>
-                <label className="flex items-center gap-2 text-gray-700 font-semibold mb-2">
-                  Average Revenue per Customer ($)
-                  <div className="group relative">
-                    <Info className="w-4 h-4 text-gray-400 cursor-help" />
-                    <div className="hidden group-hover:block absolute left-0 top-6 w-64 p-3 bg-gray-900 text-white text-sm rounded-lg z-10">
-                      Average transaction or monthly value per customer
-                    </div>
-                  </div>
-                </label>
-                <div className="relative">
-                  <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type="number"
-                    value={formData.avgRevenuePerCustomer}
-                    onChange={(e) => handleInputChange('avgRevenuePerCustomer', e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    placeholder="150"
-                  />
-                </div>
-              </div>
-
-              {/* Marketing Spend */}
-              <div>
-                <label className="flex items-center gap-2 text-gray-700 font-semibold mb-2">
-                  Monthly Marketing Spend ($)
-                  <div className="group relative">
-                    <Info className="w-4 h-4 text-gray-400 cursor-help" />
-                    <div className="hidden group-hover:block absolute left-0 top-6 w-64 p-3 bg-gray-900 text-white text-sm rounded-lg z-10">
-                      Total spend on ads, email, and other marketing
-                    </div>
-                  </div>
-                </label>
-                <div className="relative">
-                  <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type="number"
-                    value={formData.monthlyMarketingSpend}
-                    onChange={(e) => handleInputChange('monthlyMarketingSpend', e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    placeholder="2000"
-                  />
-                </div>
-              </div>
-
-              {/* Conversion Rate */}
-              <div>
-                <label className="flex items-center gap-2 text-gray-700 font-semibold mb-2">
-                  Current Conversion Rate (%)
-                  <div className="group relative">
-                    <Info className="w-4 h-4 text-gray-400 cursor-help" />
-                    <div className="hidden group-hover:block absolute left-0 top-6 w-64 p-3 bg-gray-900 text-white text-sm rounded-lg z-10">
-                      Percentage of leads that become customers
-                    </div>
-                  </div>
-                </label>
-                <div className="relative">
-                  <TrendingUp className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type="number"
-                    value={formData.currentConversionRate}
-                    onChange={(e) => handleInputChange('currentConversionRate', e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    placeholder="2"
-                    step="0.1"
-                  />
-                </div>
-              </div>
-
-              {/* Time on Tasks */}
-              <div className="md:col-span-2">
-                <label className="flex items-center gap-2 text-gray-700 font-semibold mb-2">
-                  Hours per Week on Manual Tasks
-                  <div className="group relative">
-                    <Info className="w-4 h-4 text-gray-400 cursor-help" />
-                    <div className="hidden group-hover:block absolute left-0 top-6 w-64 p-3 bg-gray-900 text-white text-sm rounded-lg z-10">
-                      Time spent on follow-ups, data entry, campaign creation, etc.
-                    </div>
-                  </div>
-                </label>
-                <div className="relative">
-                  <Clock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type="number"
-                    value={formData.hoursPerWeekOnTasks}
-                    onChange={(e) => handleInputChange('hoursPerWeekOnTasks', e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    placeholder="20"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <button
-              onClick={calculateROI}
-              className="w-full md:w-auto mt-8 px-12 py-4 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors font-semibold text-lg flex items-center justify-center gap-2"
-            >
-              Calculate My ROI
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
-
-          {/* Results Section */}
-          {showResults && (
-            <div id="results" className="mt-12 space-y-8">
-              {/* Summary Card */}
-              <div className="bg-gradient-to-r from-orange-600 to-amber-600 rounded-2xl shadow-xl p-8 md:p-12 text-white">
-                <h2 className="text-3xl font-bold mb-8">Your Estimated ROI with Senova</h2>
-
-                <div className="grid md:grid-cols-3 gap-8">
-                  <div className="text-center">
-                    <div className="text-5xl font-bold mb-2">
-                      ${calculations.annualROI.toLocaleString()}
-                    </div>
-                    <div className="text-white/90">Annual Net Return</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-5xl font-bold mb-2">
-                      {calculations.roiPercentage}%
-                    </div>
-                    <div className="text-white/90">ROI Percentage</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-5xl font-bold mb-2">
-                      3 mo
-                    </div>
-                    <div className="text-white/90">Payback Period</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Detailed Breakdown */}
-              <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Detailed Breakdown</h3>
-
-                <div className="space-y-6">
-                  {/* Revenue Gains */}
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                      <TrendingUp className="w-5 h-5 text-green-600" />
-                      Revenue Improvements
-                    </h4>
-                    <div className="space-y-3 pl-7">
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-600">40% Revenue Increase from Automation</span>
-                        <span className="font-semibold text-green-600">
-                          +${calculations.revenueIncrease.toLocaleString()}/mo
-                        </span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-600">New Customers from Better Targeting</span>
-                        <span className="font-semibold text-green-600">
-                          +{calculations.newCustomersPerMonth}/mo
-                        </span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-600">Improved Conversion Rate</span>
-                        <span className="font-semibold text-green-600">
-                          {calculations.improvedConversionRate}%
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Cost Savings */}
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                      <Clock className="w-5 h-5 text-blue-600" />
-                      Time & Cost Savings
-                    </h4>
-                    <div className="space-y-3 pl-7">
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-600">Hours Saved on Manual Tasks</span>
-                        <span className="font-semibold text-blue-600">
-                          {calculations.timeSavedHours} hrs/week
-                        </span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-600">Value of Time Saved</span>
-                        <span className="font-semibold text-blue-600">
-                          +${calculations.timeSavedValue.toLocaleString()}/mo
-                        </span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-600">Marketing Efficiency Gains</span>
-                        <span className="font-semibold text-blue-600">
-                          +${calculations.marketingEfficiency.toLocaleString()}/mo
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Investment */}
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                      <DollarSign className="w-5 h-5 text-orange-600" />
-                      Your Investment
-                    </h4>
-                    <div className="space-y-3 pl-7">
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-600">Senova Professional Plan</span>
-                        <span className="font-semibold text-orange-600">
-                          ${calculations.monthlySubscription}/mo
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Net Result */}
-                  <div className="border-t pt-6">
-                    <div className="flex justify-between items-center text-lg">
-                      <span className="font-bold text-gray-900">Net Monthly ROI</span>
-                      <span className="font-bold text-green-600 text-2xl">
-                        +${calculations.netMonthlyROI.toLocaleString()}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* What's Included */}
-              <div className="bg-gray-50 rounded-2xl p-8 md:p-12">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">What's Included in Your Senova Investment</h3>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  {[
-                    'Complete CRM with unlimited contacts',
-                    'Website visitor identification',
-                    'Automated email & text campaigns',
-                    'Smart customer segmentation',
-                    'Direct advertising at wholesale rates',
-                    'AI-powered insights & recommendations',
-                    'Appointment scheduling & reminders',
-                    'Review management & reputation tools',
-                    'Custom reporting & analytics',
-                    'Unlimited team members',
-                    'Priority support & training',
-                    'All features, no hidden costs'
-                  ].map((feature, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
-                    </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  {Object.entries(INDUSTRY_BENCHMARKS).map(([key, data]) => (
+                    <button
+                      key={key}
+                      onClick={() => handleIndustryChange(key as IndustryType)}
+                      className={`p-4 rounded-xl border-2 transition-all ${
+                        inputs.industry === key
+                          ? 'bg-gradient-to-r from-blue-500 to-violet-600 border-transparent text-white shadow-lg'
+                          : 'bg-white/5 border-white/20 text-slate-300 hover:bg-white/10'
+                      }`}
+                    >
+                      <div className="font-semibold">{data.industryName}</div>
+                    </button>
                   ))}
                 </div>
               </div>
 
-              {/* CTA Section */}
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Ready to Start Growing Your Business?
-                </h3>
-                <p className="text-gray-600 mb-8">
-                  Join thousands of businesses achieving these results with Senova CRM.
-                </p>
-                <div className="flex gap-4 justify-center">
-                  <Link
-                    href="/demo"
-                    className="px-8 py-4 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors font-semibold text-lg"
-                  >
-                    Get Your Free Demo
-                  </Link>
-                  <Link
-                    href="/pricing"
-                    className="px-8 py-4 bg-white text-orange-600 border-2 border-orange-600 rounded-lg hover:bg-orange-50 transition-colors font-semibold text-lg"
-                  >
-                    View Pricing Plans
-                  </Link>
+              {/* Monthly Ad Spend */}
+              <div>
+                <div className="flex justify-between items-center mb-3">
+                  <label className="text-sm font-medium text-slate-300">
+                    Current Monthly Ad Spend
+                  </label>
+                  <span className="text-2xl font-bold text-white">
+                    {formatCurrency(inputs.currentMonthlyAdSpend)}
+                  </span>
                 </div>
-                <p className="text-sm text-gray-500 mt-6">
-                  No credit card required • 14-day free trial • Cancel anytime
-                </p>
+                <input
+                  type="range"
+                  min="500"
+                  max="50000"
+                  step="500"
+                  value={inputs.currentMonthlyAdSpend}
+                  onChange={(e) => setInputs(prev => ({
+                    ...prev,
+                    currentMonthlyAdSpend: parseInt(e.target.value)
+                  }))}
+                  className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-violet-500"
+                />
+                <div className="flex justify-between mt-2 text-xs text-slate-400">
+                  <span>$500</span>
+                  <span>$50,000</span>
+                </div>
               </div>
+
+              {/* Cost Per Lead */}
+              <div>
+                <div className="flex justify-between items-center mb-3">
+                  <label className="text-sm font-medium text-slate-300">
+                    Current Cost Per Lead
+                  </label>
+                  <span className="text-2xl font-bold text-white">
+                    {formatCurrency(inputs.currentCostPerLead)}
+                  </span>
+                </div>
+                <input
+                  type="range"
+                  min="20"
+                  max="500"
+                  step="10"
+                  value={inputs.currentCostPerLead}
+                  onChange={(e) => setInputs(prev => ({
+                    ...prev,
+                    currentCostPerLead: parseInt(e.target.value)
+                  }))}
+                  className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-violet-500"
+                />
+                <div className="flex justify-between mt-2 text-xs text-slate-400">
+                  <span>$20</span>
+                  <span>$500</span>
+                </div>
+              </div>
+
+              {/* Average Customer Value */}
+              <div>
+                <div className="flex justify-between items-center mb-3">
+                  <label className="text-sm font-medium text-slate-300">
+                    Average Customer Value
+                  </label>
+                  <span className="text-2xl font-bold text-white">
+                    {formatCurrency(inputs.averageCustomerValue)}
+                  </span>
+                </div>
+                <input
+                  type="range"
+                  min="500"
+                  max="50000"
+                  step="500"
+                  value={inputs.averageCustomerValue}
+                  onChange={(e) => setInputs(prev => ({
+                    ...prev,
+                    averageCustomerValue: parseInt(e.target.value)
+                  }))}
+                  className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-violet-500"
+                />
+                <div className="flex justify-between mt-2 text-xs text-slate-400">
+                  <span>$500</span>
+                  <span>$50,000</span>
+                </div>
+              </div>
+
+              {/* Monthly Website Visitors */}
+              <div>
+                <div className="flex justify-between items-center mb-3">
+                  <label className="text-sm font-medium text-slate-300">
+                    Monthly Website Visitors (Optional)
+                  </label>
+                  <span className="text-2xl font-bold text-white">
+                    {formatNumber(inputs.monthlyWebsiteVisitors || 0)}
+                  </span>
+                </div>
+                <input
+                  type="range"
+                  min="100"
+                  max="100000"
+                  step="100"
+                  value={inputs.monthlyWebsiteVisitors || 5000}
+                  onChange={(e) => setInputs(prev => ({
+                    ...prev,
+                    monthlyWebsiteVisitors: parseInt(e.target.value)
+                  }))}
+                  className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-violet-500"
+                />
+                <div className="flex justify-between mt-2 text-xs text-slate-400">
+                  <span>100</span>
+                  <span>100,000</span>
+                </div>
+              </div>
+
+              {/* Service Tier Selection */}
+              <div>
+                <label className="block text-sm font-medium text-slate-300 mb-3">
+                  Select Service Tier
+                </label>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {Object.entries(TIER_CONFIG).map(([key, tier]) => (
+                    <button
+                      key={key}
+                      onClick={() => setInputs(prev => ({
+                        ...prev,
+                        selectedTier: key as TierType
+                      }))}
+                      className={`p-6 rounded-xl border-2 text-left transition-all ${
+                        inputs.selectedTier === key
+                          ? 'bg-gradient-to-r from-blue-500 to-violet-600 border-transparent text-white shadow-lg'
+                          : 'bg-white/5 border-white/20 text-slate-300 hover:bg-white/10'
+                      }`}
+                    >
+                      <div className="font-bold text-lg mb-2">{tier.name}</div>
+                      <div className="text-2xl font-bold mb-2">
+                        {formatCurrency(tier.monthlyPrice)}/mo
+                      </div>
+                      <div className="text-sm opacity-90">
+                        {tier.benefits[0]}
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Calculate Button */}
+              <button
+                onClick={handleCalculate}
+                className="w-full py-4 bg-gradient-to-r from-blue-500 to-violet-600 text-white rounded-xl font-bold text-lg hover:shadow-xl transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2"
+              >
+                Calculate My ROI
+                <ArrowRight className="w-5 h-5" />
+              </button>
             </div>
-          )}
+          </div>
         </div>
       </section>
 
-      {/* Trust Badges */}
-      <section className="px-6 pb-20">
-        <div className="max-w-5xl mx-auto">
-          <div className="bg-white rounded-2xl shadow p-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-gray-900">5,000+</div>
-                <div className="text-gray-600 mt-1">Happy Customers</div>
+      {/* Results Section */}
+      {showResults && results && (
+        <section id="results-section" className="container mx-auto px-6 py-16">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-white text-center mb-12">
+              Your Projected Results with Senova
+            </h2>
+
+            {/* Big Numbers */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-lg rounded-2xl p-8 border border-green-500/30">
+                <div className="text-sm font-medium text-green-300 mb-2">Monthly Savings</div>
+                <div className="text-4xl font-bold text-white mb-2">
+                  {formatCurrency(results.projectedMonthlySavings)}
+                </div>
+                <div className="text-sm text-green-300">
+                  {formatCurrency(results.projectedAnnualSavings)} annually
+                </div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-gray-900">852%</div>
-                <div className="text-gray-600 mt-1">Average ROI</div>
+
+              <div className="bg-gradient-to-br from-purple-500/20 to-violet-500/20 backdrop-blur-lg rounded-2xl p-8 border border-purple-500/30">
+                <div className="text-sm font-medium text-purple-300 mb-2">New Leads/Month</div>
+                <div className="text-4xl font-bold text-white mb-2">
+                  +{results.projectedNewLeads}
+                </div>
+                <div className="text-sm text-purple-300">
+                  {formatPercentage(results.metrics.leadIncreaseRate)} increase
+                </div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-gray-900">4.9/5</div>
-                <div className="text-gray-600 mt-1">Customer Rating</div>
+
+              <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 backdrop-blur-lg rounded-2xl p-8 border border-blue-500/30">
+                <div className="text-sm font-medium text-blue-300 mb-2">Projected ROI</div>
+                <div className="text-4xl font-bold text-white mb-2">
+                  {formatPercentage(results.projectedROI, false)}
+                </div>
+                <div className="text-sm text-blue-300">
+                  {results.metrics.paybackPeriod} month payback
+                </div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-gray-900">24/7</div>
-                <div className="text-gray-600 mt-1">Support Available</div>
+            </div>
+
+            {/* Before vs After Comparison */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              {/* Current State */}
+              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
+                <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                  <span className="text-red-400">Before</span> Senova
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex justify-between">
+                    <span className="text-slate-300">Monthly Ad Spend</span>
+                    <span className="text-white font-semibold">
+                      {formatCurrency(results.currentState.monthlyAdSpend)}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-300">Cost Per Lead</span>
+                    <span className="text-white font-semibold">
+                      {formatCurrency(results.currentState.costPerLead)}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-300">Leads Per Month</span>
+                    <span className="text-white font-semibold">
+                      {results.currentState.leadsPerMonth}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-300">Monthly Revenue</span>
+                    <span className="text-white font-semibold">
+                      {formatCurrency(results.currentState.monthlyRevenue)}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* With Senova */}
+              <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-lg rounded-2xl p-8 border border-green-500/30">
+                <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                  <span className="text-green-400">With</span> Senova
+                  <Sparkles className="w-5 h-5 text-yellow-400" />
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex justify-between">
+                    <span className="text-green-100">Monthly Ad Spend</span>
+                    <span className="text-white font-semibold">
+                      {formatCurrency(results.withSenova.monthlyAdSpend)}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-green-100">Cost Per Lead</span>
+                    <span className="text-white font-semibold">
+                      {formatCurrency(results.withSenova.costPerLead)}
+                      <span className="text-green-400 text-sm ml-2">
+                        -{results.metrics.cplReduction}%
+                      </span>
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-green-100">Leads Per Month</span>
+                    <span className="text-white font-semibold">
+                      {results.withSenova.leadsPerMonth}
+                      <span className="text-green-400 text-sm ml-2">
+                        +{results.projectedNewLeads}
+                      </span>
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-green-100">Monthly Revenue</span>
+                    <span className="text-white font-semibold">
+                      {formatCurrency(results.withSenova.monthlyRevenue)}
+                      <span className="text-green-400 text-sm ml-2">
+                        +{results.metrics.revenueIncreaseRate}%
+                      </span>
+                    </span>
+                  </div>
+                  <div className="flex justify-between pt-4 border-t border-green-400/30">
+                    <span className="text-green-100">Senova Monthly Cost</span>
+                    <span className="text-white font-semibold">
+                      {formatCurrency(results.withSenova.senovaMonthlyCost)}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Tier Benefits */}
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 mb-12">
+              <h3 className="text-xl font-bold text-white mb-6">
+                Your {TIER_CONFIG[inputs.selectedTier].name} Benefits
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {results.tierBenefits.map((benefit, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <Zap className="w-5 h-5 text-yellow-400 mt-0.5" />
+                    <span className="text-slate-300">{benefit}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA Section */}
+            <div className="text-center">
+              <div className="bg-gradient-to-r from-blue-500 to-violet-600 rounded-2xl p-8 shadow-2xl">
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Ready to Save {formatCurrency(results.projectedMonthlySavings)}/month?
+                </h3>
+                <p className="text-blue-100 mb-6">
+                  Start capturing these savings with Senova's data intelligence platform
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href="/contact"
+                    className="inline-flex items-center justify-center px-8 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+                  >
+                    Book Consultation
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </a>
+                  <a
+                    href="/pricing"
+                    className="inline-flex items-center justify-center px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors border border-blue-400"
+                  >
+                    View Pricing
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* How It Works */}
+      <section className="container mx-auto px-6 py-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">
+            How Senova Delivers ROI
+          </h2>
+
+          <div className="grid gap-6">
+            <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center flex-shrink-0">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-2">
+                    78% Visitor Identification
+                  </h3>
+                  <p className="text-slate-300">
+                    Identify anonymous website visitors and turn them into qualified leads with our advanced tracking technology.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center flex-shrink-0">
+                  <DollarSign className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-2">
+                    $2-6 CPM vs $20-30 Industry Average
+                  </h3>
+                  <p className="text-slate-300">
+                    Access wholesale DSP rates that are 75-85% lower than traditional advertising platforms.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center flex-shrink-0">
+                  <Target className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-2">
+                    30-55% Reduction in Cost Per Lead
+                  </h3>
+                  <p className="text-slate-300">
+                    Combine better targeting with lower costs to dramatically reduce your cost per acquisition.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-    </main>
-  );
+    </div>
+  )
 }

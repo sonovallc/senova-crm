@@ -4,10 +4,10 @@ import { Shield, Lock, FileText, Users, AlertCircle, CheckCircle, Key, Eye, Serv
 
 export const metadata: Metadata = {
   title: 'HIPAA Compliance | Healthcare Data Security | Senova',
-  description: 'Complete HIPAA compliance for healthcare practices. BAA included, encrypted PHI storage, audit trails, and full administrative, physical, and technical safeguards.',
+  description: 'Complete HIPAA compliance for healthcare practices. HIPAA compliance support, encrypted PHI storage, audit trails, and full administrative, physical, and technical safeguards.',
   openGraph: {
     title: 'HIPAA Compliance | Healthcare Data Security',
-    description: 'Complete HIPAA compliance with BAA included. Protect patient data with enterprise-grade security.',
+    description: 'Complete HIPAA compliance support. Protect patient data with enterprise-grade security.',
     images: ['/images/hipaa-compliance.jpg'],
   },
 };
@@ -18,7 +18,7 @@ const safeguards = {
     'Workforce training programs',
     'Access management procedures',
     'Security incident procedures',
-    'Business Associate Agreements',
+    'HIPAA compliance documentation',
     'Risk assessment protocols',
   ],
   physical: [
@@ -76,9 +76,9 @@ const requirements = [
   {
     icon: Users,
     title: 'Business Associates',
-    description: 'Complete BAA management and compliance',
+    description: 'Complete HIPAA compliance management',
     features: [
-      'BAA templates provided',
+      'Compliance documentation support',
       'Subcontractor management',
       'Compliance verification',
       'Annual reviews',
@@ -134,10 +134,10 @@ export default function HIPAAPage() {
               </span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Protect patient data with enterprise-grade security, comprehensive audit trails, and full HIPAA compliance. Business Associate Agreement (BAA) included with every account.
+              Protect patient data with enterprise-grade security, comprehensive audit trails, and full HIPAA compliance. HIPAA compliance support available with every account.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/demo" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all">
+              <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all">
                 Request Compliance Audit
               </Link>
               <Link href="/security" className="inline-flex items-center justify-center px-6 py-3 border-2 border-blue-600 text-base font-medium rounded-lg text-blue-600 bg-white hover:bg-blue-50 transition-all">
@@ -145,7 +145,7 @@ export default function HIPAAPage() {
               </Link>
             </div>
             <div className="mt-8 flex flex-wrap gap-6 justify-center text-sm text-gray-600">
-              {['BAA Included', 'SOC 2 Type II', 'Annual Audits', '99.99% Uptime'].map((item) => (
+              {['HIPAA Support', 'Security Audits', 'Annual Reviews', 'Enterprise-grade uptime'].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-green-500" />
                   <span>{item}</span>
@@ -175,7 +175,7 @@ export default function HIPAAPage() {
                   <h3 className="font-bold text-gray-900 mb-3">Your Compliance Partner</h3>
                   <ul className="space-y-2">
                     {[
-                      'Business Associate Agreement (BAA) included',
+                      'HIPAA compliance documentation available',
                       'Annual compliance audits',
                       'Security risk assessments',
                       'Incident response support',
@@ -199,11 +199,11 @@ export default function HIPAAPage() {
                     <div className="text-sm text-gray-600">Maximum annual penalty</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-orange-600">78%</div>
+                    <div className="text-3xl font-bold text-orange-600">Most</div>
                     <div className="text-sm text-gray-600">Healthcare breaches involve email</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-yellow-600">60%</div>
+                    <div className="text-3xl font-bold text-yellow-600">Many</div>
                     <div className="text-sm text-gray-600">Practices face HIPAA violations</div>
                   </div>
                 </div>
@@ -422,17 +422,17 @@ export default function HIPAAPage() {
         </div>
       </section>
 
-      {/* BAA Section */}
+      {/* HIPAA Compliance Section */}
       <section className="py-20 bg-blue-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl">
               <FileText className="w-12 h-12 text-blue-600 mb-6" />
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Business Associate Agreement Included
+                HIPAA Compliance Support
               </h2>
               <p className="text-gray-600 mb-6">
-                Every Senova account includes a signed Business Associate Agreement (BAA) at no additional cost. Our BAA covers:
+                Senova provides HIPAA compliance support at no additional cost. Our compliance documentation covers:
               </p>
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <ul className="space-y-3">
@@ -464,7 +464,7 @@ export default function HIPAAPage() {
               </div>
               <div className="bg-blue-50 rounded-lg p-6">
                 <p className="text-sm text-gray-700">
-                  <strong>Note:</strong> Our BAA is reviewed annually by healthcare compliance attorneys and updated to reflect current regulations and best practices.
+                  <strong>Note:</strong> Our compliance documentation is regularly updated to reflect current regulations and best practices.
                 </p>
               </div>
             </div>
@@ -495,7 +495,7 @@ export default function HIPAAPage() {
               </div>
               <div className="bg-gray-50 rounded-lg p-6">
                 <FileText className="w-8 h-8 text-blue-600 mx-auto mb-3" />
-                <h3 className="font-bold text-gray-900 mb-2">Legal/BAA</h3>
+                <h3 className="font-bold text-gray-900 mb-2">Legal/Compliance</h3>
                 <p className="text-sm text-gray-600">legal@senovallc.com</p>
               </div>
             </div>
@@ -520,7 +520,7 @@ export default function HIPAAPage() {
               Get a free compliance assessment and see how Senova protects your practice
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link href="/demo" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all">
+              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all">
                 Get Compliance Assessment
               </Link>
               <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 border-2 border-blue-600 text-lg font-medium rounded-lg text-blue-600 bg-white hover:bg-blue-50 transition-all">
@@ -528,7 +528,7 @@ export default function HIPAAPage() {
               </Link>
             </div>
             <p className="text-sm text-gray-600">
-              BAA included • Annual audits • 24/7 support • Full training provided
+              HIPAA support • Annual audits • 24/7 support • Full training provided
             </p>
           </div>
         </div>

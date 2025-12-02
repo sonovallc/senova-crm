@@ -9,8 +9,8 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { ObjectContactsTab } from '@/components/objects/object-contacts-tab'
 import { ObjectUsersTab } from '@/components/objects/object-users-tab'
-import { ObjectWebsitesTab } from '@/components/objects/object-websites-tab'
-import { ArrowLeft, Building2, Edit, Settings, Globe, Users, UserCheck, Calendar, User } from 'lucide-react'
+// ObjectWebsitesTab import removed - feature not currently active
+import { ArrowLeft, Building2, Edit, Settings, Users, UserCheck, Calendar, User } from 'lucide-react'
 import { useAuth } from '@/contexts/auth-context'
 import { Badge } from '@/components/ui/badge'
 import { format } from 'date-fns'
@@ -58,7 +58,7 @@ export default function ObjectDetailPage() {
 
   const canEdit = user?.role === 'owner' || user?.role === 'admin'
   const canManageUsers = user?.role === 'owner'
-  const canManageWebsites = user?.role === 'owner' || user?.role === 'admin'
+  // canManageWebsites removed - feature not currently active
 
   const typeColors = {
     company: 'bg-blue-100 text-blue-800',
@@ -123,10 +123,11 @@ export default function ObjectDetailPage() {
             <UserCheck className="mr-2 h-4 w-4" />
             Users
           </TabsTrigger>
-          <TabsTrigger value="websites" className="data-[state=active]:bg-white">
+          {/* Websites functionality commented out for future use */}
+          {/* <TabsTrigger value="websites" className="data-[state=active]:bg-white">
             <Globe className="mr-2 h-4 w-4" />
             Websites
-          </TabsTrigger>
+          </TabsTrigger> */}
         </TabsList>
 
         {/* Information Tab */}
@@ -263,13 +264,13 @@ export default function ObjectDetailPage() {
           />
         </TabsContent>
 
-        {/* Websites Tab */}
-        <TabsContent value="websites">
+        {/* Websites Tab - commented out for future use */}
+        {/* <TabsContent value="websites">
           <ObjectWebsitesTab
             objectId={object.id}
-            canManage={canManageWebsites}
+            canManage={user?.role === 'owner' || user?.role === 'admin'}
           />
-        </TabsContent>
+        </TabsContent> */}
       </Tabs>
     </div>
   )

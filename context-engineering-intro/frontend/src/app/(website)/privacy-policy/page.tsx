@@ -81,7 +81,7 @@ export default function PrivacyPolicyPage() {
             <ul className="list-disc space-y-2 pl-6">
               <li>256-bit AES encryption for data at rest</li>
               <li>TLS 1.3 encryption for data in transit</li>
-              <li>SOC 2 Type II compliant infrastructure</li>
+              <li>Enterprise-grade secure infrastructure</li>
               <li>Regular security audits and penetration testing</li>
               <li>Access controls and authentication</li>
             </ul>

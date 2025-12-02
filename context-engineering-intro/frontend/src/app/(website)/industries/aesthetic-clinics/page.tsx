@@ -6,11 +6,10 @@ import { images } from '@/lib/images';
 
 export const metadata: Metadata = {
   title: 'CRM for Aesthetic Clinics | Client Management Software | Senova',
-  description: 'All-in-one CRM for aesthetic clinics. Manage clients, track treatments, automate marketing, handle memberships. Grow revenue by 45%. See demo.',
+  description: 'All-in-one CRM for aesthetic clinics. Manage clients, track treatments, automate marketing, handle memberships. Grow revenue. See demo.',
   openGraph: {
     title: 'CRM for Aesthetic Clinics | Client Management Software',
-    description: 'All-in-one CRM for aesthetic clinics. Manage clients, track treatments, and grow revenue by 45%.',
-    images: ['/images/aesthetic-clinic-crm.jpg'],
+    description: 'All-in-one CRM for aesthetic clinics. Manage clients, track treatments, and grow revenue.',
   },
 };
 
@@ -96,10 +95,10 @@ const treatments = [
 ];
 
 const results = [
-  { metric: '45%', description: 'Revenue increase', detail: 'Average in year one' },
-  { metric: '70%', description: 'Better retention', detail: 'Clients stay active longer' },
-  { metric: '3X', description: 'More bookings', detail: 'From automated campaigns' },
-  { metric: '85%', description: 'Membership renewals', detail: 'With auto-reminders' },
+  { metric: 'Higher', description: 'Revenue growth', detail: 'Measurable increase in year one' },
+  { metric: 'Better', description: 'Client retention', detail: 'Clients stay active longer' },
+  { metric: 'More', description: 'Bookings', detail: 'From automated campaigns' },
+  { metric: 'Improved', description: 'Membership renewals', detail: 'With auto-reminders' },
 ];
 
 const features = [
@@ -145,15 +144,15 @@ export default function AestheticClinicsPage() {
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               The CRM That Grows Your
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-rose-600 block">
-                Aesthetic Clinic by 45%
+                Aesthetic Clinic Revenue
               </span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
               Manage clients, track treatments, automate retention marketing, and handle memberships - all in one platform built specifically for aesthetic clinics.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/demo" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-violet-600 to-rose-600 hover:from-violet-700 hover:to-rose-700 transition-all">
-                See Aesthetic Clinic Demo
+              <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-violet-600 to-rose-600 hover:from-violet-700 hover:to-rose-700 transition-all">
+                Schedule a Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link href="/pricing" className="inline-flex items-center justify-center px-6 py-3 border-2 border-violet-600 text-base font-medium rounded-lg text-violet-600 bg-white hover:bg-violet-50 transition-all">
@@ -161,7 +160,7 @@ export default function AestheticClinicsPage() {
               </Link>
             </div>
             <div className="mt-8 flex flex-wrap gap-6 justify-center text-sm text-gray-600">
-              {['No Setup Fees', '14-Day Free Trial', 'Import Existing Clients', 'Full Training Included'].map((item) => (
+              {['No Setup Fees', 'Professional Support', 'Import Existing Clients', 'Full Training Included'].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-green-500" />
                   <span>{item}</span>
@@ -310,7 +309,7 @@ export default function AestheticClinicsPage() {
                 Real Results from Real Clinics
               </h2>
               <p className="text-xl text-violet-100">
-                Join hundreds of successful aesthetic clinics
+                Experience the growth potential for your aesthetic clinic
               </p>
             </div>
             <div className="grid md:grid-cols-4 gap-8">
@@ -380,16 +379,18 @@ export default function AestheticClinicsPage() {
                 </ul>
               </div>
               <div className="bg-white rounded-xl p-8 shadow-xl">
-                <div className="text-4xl font-bold text-violet-600 mb-2">85%</div>
+                <div className="text-4xl font-bold text-violet-600 mb-2">Boost</div>
                 <div className="text-xl font-semibold text-gray-900 mb-4">
-                  Average membership renewal rate
+                  Your Membership Revenue
                 </div>
                 <p className="text-gray-600">
-                  "Our membership program went from 50 to 500+ members in 6 months. The automated reminders and usage tracking made it effortless to scale."
+                  Transform your membership program with automated tracking, renewal reminders, and usage analytics. Our platform helps aesthetic clinics build sustainable recurring revenue through effective membership management.
                 </p>
-                <div className="mt-4">
-                  <div className="font-bold text-gray-900">Emma Thompson</div>
-                  <div className="text-sm text-gray-600">Radiance Aesthetic Clinic • Chicago</div>
+                <div className="mt-6">
+                  <Link href="/contact" className="inline-flex items-center text-violet-600 font-semibold hover:text-violet-700">
+                    Learn About Membership Tools
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -418,23 +419,31 @@ export default function AestheticClinicsPage() {
         </div>
       </section>
 
-      {/* Testimonial */}
+      {/* Trust & Credibility */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="bg-gradient-to-br from-violet-50 to-rose-50 rounded-2xl p-8 md:p-12 shadow-xl">
               <Heart className="w-12 h-12 text-rose-500 mb-6" />
-              <blockquote className="text-2xl text-gray-700 italic mb-6">
-                "Senova completely transformed our clinic operations. The automated recalls bring clients back consistently, membership management is seamless, and our revenue has grown 45% in just 8 months. It's the best investment we've made."
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div>
-                  <div className="font-bold text-gray-900">Dr. Lisa Park</div>
-                  <div className="text-gray-600">Bloom Aesthetic Clinic • San Francisco, CA</div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Trusted by Leading Aesthetic Clinics
+              </h2>
+              <p className="text-xl text-gray-700 mb-6">
+                Join a growing community of aesthetic clinics that are transforming their operations with our comprehensive CRM platform. From solo practitioners to multi-location clinics, we help businesses streamline operations, improve client retention, and grow revenue.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6 mt-8">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-violet-600">Comprehensive</div>
+                  <div className="text-gray-600">All-in-one solution</div>
                 </div>
-              </div>
-              <div className="mt-4 text-violet-600 font-semibold">
-                45% revenue growth | 500+ active members | 70% retention rate
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-violet-600">Dedicated</div>
+                  <div className="text-gray-600">Support team</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-violet-600">Proven</div>
+                  <div className="text-gray-600">Results-driven platform</div>
+                </div>
               </div>
             </div>
           </div>
@@ -470,19 +479,19 @@ export default function AestheticClinicsPage() {
               Ready to Grow Your Aesthetic Clinic?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Join hundreds of successful clinics using Senova CRM
+              Join successful clinics using Senova CRM
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link href="/demo" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-violet-600 to-rose-600 hover:from-violet-700 hover:to-rose-700 transition-all">
-                Book Your Clinic Demo
+              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-violet-600 to-rose-600 hover:from-violet-700 hover:to-rose-700 transition-all">
+                Get Started
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 border-2 border-violet-600 text-lg font-medium rounded-lg text-violet-600 bg-white hover:bg-violet-50 transition-all">
-                Talk to Sales
+                Contact Us
               </Link>
             </div>
             <p className="text-sm text-gray-600">
-              No credit card required • 14-day free trial • Import your client list • Full onboarding support
+              No credit card required • Professional consultation • Import your client list • Full onboarding support
             </p>
           </div>
         </div>

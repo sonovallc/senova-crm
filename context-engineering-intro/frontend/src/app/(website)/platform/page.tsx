@@ -77,7 +77,7 @@ const capabilities = [
     category: "See What Works",
     icon: BarChart3,
     features: [
-      "Real-time analytics",
+      "Daily analytics updates",
       "ROI tracking",
       "Customer insights",
       "Performance reports"
@@ -113,7 +113,7 @@ const coreFeatures = [
     stats: [
       { label: "People", value: "Millions" },
       { label: "Lists", value: "50+" },
-      { label: "Updates", value: "Weekly" }
+      { label: "Updates", value: "Daily" }
     ]
   },
   {
@@ -127,8 +127,8 @@ const coreFeatures = [
     ],
     stats: [
       { label: "Platforms", value: "1000s" },
-      { label: "Templates", value: "100+" },
-      { label: "Support", value: "24/7" }
+      { label: "Setup", value: "Quick" },
+      { label: "Support", value: "Included" }
     ]
   },
   {
@@ -141,9 +141,9 @@ const coreFeatures = [
       "Find your best marketing channels"
     ],
     stats: [
-      { label: "Reports", value: "20+" },
-      { label: "Updates", value: "Real-time" },
-      { label: "History", value: "Forever" }
+      { label: "Reports", value: "Core" },
+      { label: "Updates", value: "Every 24 hours" },
+      { label: "History", value: "12 months" }
     ]
   }
 ]
@@ -415,9 +415,9 @@ export default function PlatformPage() {
       {/* CTA Section */}
       <CTASection
         headline="Ready to Stop Overpaying for Marketing?"
-        subheadline="Join thousands of small businesses saving money and getting more customers with Senova."
+        subheadline="Start saving money and getting more customers with Senova."
         primaryCta={{
-          text: "Start Your Free Trial",
+          text: "Get Started Today",
           link: "/demo"
         }}
         secondaryCta={{
@@ -425,8 +425,6 @@ export default function PlatformPage() {
           link: "/contact"
         }}
         trustBadges={[
-          "30-Day Money Back",
-          "No Setup Fees",
           "Cancel Anytime",
           "Free Training Included"
         ]}

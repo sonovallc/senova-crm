@@ -1,4 +1,13 @@
-import type { Contact, User } from './index'
+import type { Contact } from './index'
+
+// Minimal user info for Object User assignments
+export interface ObjectUserBasicInfo {
+  id: string;
+  email: string;
+  first_name?: string | null;
+  last_name?: string | null;
+  role?: string | null;
+}
 
 export interface CompanyInfo {
   legal_name?: string;
@@ -34,7 +43,7 @@ export interface ObjectUser {
   id: string;
   object_id: string;
   user_id: string;
-  user: User;
+  user: ObjectUserBasicInfo;
   permissions: ObjectPermissions;
   assigned_at: string;
 }

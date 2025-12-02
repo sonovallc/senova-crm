@@ -6,18 +6,17 @@ import { images } from '@/lib/images';
 
 export const metadata: Metadata = {
   title: 'CRM for Mortgage Lenders | Loan Pipeline Management | Senova',
-  description: 'Streamline your loan pipeline from application to close. Automated document collection, compliance tracking, and 38% faster closing. See demo.',
+  description: 'Streamline your loan pipeline from application to close. Automated document collection, compliance tracking, and faster closing. See demo.',
   openGraph: {
     title: 'CRM for Mortgage Lenders | Loan Pipeline Management',
     description: 'Streamline your loan pipeline from application to close. Automated document collection and compliance.',
-    images: ['/images/mortgage-lending-crm.jpg'],
   },
 };
 
 const painPoints = [
   {
     title: 'Document Collection Chaos',
-    description: 'Chasing borrowers for documents wastes 40% of loan officer time',
+    description: 'Chasing borrowers for documents wastes significant loan officer time',
     icon: FileQuestion,
   },
   {
@@ -81,10 +80,10 @@ const solutions = [
 ];
 
 const results = [
-  { metric: '38%', description: 'Faster closing', detail: 'From 42 to 26 days average' },
-  { metric: '91%', description: 'First-time doc completion', detail: 'Reduced back-and-forth' },
-  { metric: '100%', description: 'TRID compliance', detail: 'Zero violations' },
-  { metric: '$218K', description: 'Additional loans/LO', detail: 'From improved efficiency' },
+  { metric: 'Faster', description: 'Loan closing', detail: 'Reduced processing time' },
+  { metric: 'Better', description: 'First-time doc completion', detail: 'Reduced back-and-forth' },
+  { metric: 'Full', description: 'TRID compliance', detail: 'Stay compliant' },
+  { metric: 'More', description: 'Loans processed', detail: 'From improved efficiency' },
 ];
 
 const features = [
@@ -120,11 +119,11 @@ export default function MortgageLendingPage() {
               </span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Automate document collection, ensure compliance, manage your pipeline, and close loans 38% faster - all in one platform designed specifically for mortgage lenders.
+              Automate document collection, ensure compliance, manage your pipeline, and close loans faster - all in one platform designed specifically for mortgage lenders.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/demo" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-hot hover:from-orange-700 hover:to-red-600 transition-all">
-                See Mortgage Demo
+              <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-hot hover:from-orange-700 hover:to-red-600 transition-all">
+                Schedule a Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link href="/pricing" className="inline-flex items-center justify-center px-6 py-3 border-2 border-senova-primary text-base font-medium rounded-lg text-senova-primary bg-white hover:bg-orange-50 transition-all">
@@ -132,7 +131,7 @@ export default function MortgageLendingPage() {
               </Link>
             </div>
             <div className="mt-8 flex flex-wrap gap-6 justify-center text-sm text-gray-600">
-              {['TRID Compliant', 'Automated Docs', '14-Day Free Trial', 'LOS Integration'].map((item) => (
+              {['TRID Compliant', 'Automated Docs', 'Professional Support', 'LOS Integration'].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-senova-primary" />
                   <span>{item}</span>
@@ -281,23 +280,29 @@ export default function MortgageLendingPage() {
         </div>
       </section>
 
-      {/* Testimonial */}
+      {/* Trust & Credibility Section */}
       <section className="py-20 bg-senova-bg-tertiary">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl">
-              <DollarSign className="w-12 h-12 text-senova-primary mb-6" />
-              <blockquote className="text-2xl text-gray-700 italic mb-6">
-                "Senova cut our average closing time from 42 days to 26 days. The compliance automation has saved us from multiple potential violations."
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div>
-                  <div className="font-bold text-gray-900">Jennifer Rodriguez</div>
-                  <div className="text-gray-600">VP of Operations • First National Mortgage</div>
-                </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <DollarSign className="w-12 h-12 text-senova-primary mb-6 mx-auto" />
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Trusted by Mortgage Lenders Nationwide
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              Our platform is designed to help lenders streamline their operations, ensure compliance, and close loans faster.
+            </p>
+            <div className="grid md:grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="text-2xl font-bold text-senova-primary mb-2">Faster Processing</div>
+                <p className="text-gray-600">Reduce time-consuming manual tasks</p>
               </div>
-              <div className="mt-4 text-senova-primary font-semibold">
-                38% reduction in closing time
+              <div>
+                <div className="text-2xl font-bold text-senova-primary mb-2">Better Compliance</div>
+                <p className="text-gray-600">Stay compliant with automated tracking</p>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-senova-primary mb-2">More Efficiency</div>
+                <p className="text-gray-600">Process more loans with less effort</p>
               </div>
             </div>
           </div>
@@ -336,8 +341,8 @@ export default function MortgageLendingPage() {
               See why hundreds of lenders choose Senova CRM
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link href="/demo" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-hot hover:from-orange-700 hover:to-red-600 transition-all">
-                Book Your Mortgage Demo
+              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-hot hover:from-orange-700 hover:to-red-600 transition-all">
+                Get Started
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 border-2 border-senova-primary text-lg font-medium rounded-lg text-senova-primary bg-white hover:bg-orange-50 transition-all">
@@ -345,7 +350,7 @@ export default function MortgageLendingPage() {
               </Link>
             </div>
             <p className="text-sm text-gray-600">
-              No credit card required • 14-day free trial • Import your pipeline
+              No credit card required • Professional consultation • Import your pipeline
             </p>
           </div>
         </div>

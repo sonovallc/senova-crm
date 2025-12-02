@@ -2,12 +2,12 @@ import { Metadata } from 'next';
 import { Calendar, Clock, CheckCircle, Users, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Book Your Demo | See Senova CRM in Action',
-  description: 'Get a personalized demo of Senova CRM for your aesthetic practice. See how to save time, increase revenue, and grow your practice.',
+  title: 'Book Your Consultation | Senova CRM Solutions',
+  description: 'Schedule a personalized consultation to discover how Senova CRM can transform your aesthetic practice. Tailored solutions for your specific needs.',
   openGraph: {
-    title: 'Book Your Demo | Senova CRM',
-    description: 'Get a personalized demo of Senova CRM for your aesthetic practice.',
-    images: ['/images/demo.jpg'],
+    title: 'Book Your Consultation | Senova CRM',
+    description: 'Schedule a personalized consultation to discover how Senova CRM can transform your aesthetic practice.',
+    images: ['/images/consultation.jpg'],
   },
 };
 
@@ -21,11 +21,11 @@ export default function DemoPage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                  See Senova in Action
+                  Schedule Your Consultation
                 </h1>
                 <p className="text-xl text-gray-600 mb-8">
-                  Get a personalized demo showing exactly how Senova can transform your aesthetic practice.
-                  No generic pitches - just solutions for your specific needs.
+                  Get personalized guidance on how Senova can transform your aesthetic practice.
+                  No generic pitches - just tailored solutions for your specific needs.
                 </p>
                 <div className="space-y-4">
                   {[
@@ -43,9 +43,9 @@ export default function DemoPage() {
                 </div>
               </div>
 
-              {/* Demo Request Form */}
+              {/* Consultation Request Form */}
               <div className="bg-white rounded-xl shadow-xl p-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Schedule Your Demo</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Book Your Consultation</h2>
                 <form className="space-y-4">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
@@ -149,7 +149,7 @@ export default function DemoPage() {
                     type="submit"
                     className="w-full btn-primary flex items-center justify-center gap-2"
                   >
-                    Book Your Demo
+                    Schedule Consultation
                     <ArrowRight className="w-4 h-4" />
                   </button>
 
@@ -172,7 +172,7 @@ export default function DemoPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-              What to Expect in Your Demo
+              What to Expect in Your Consultation
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               {[
@@ -205,19 +205,7 @@ export default function DemoPage() {
         </div>
       </section>
 
-      {/* Testimonial */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <blockquote className="text-2xl text-gray-700 italic mb-6">
-              "The demo was exactly what we needed. No fluff, just real solutions for our practice.
-              We signed up immediately and saw ROI within 30 days."
-            </blockquote>
-            <div className="font-semibold text-gray-900">Dr. Sarah Chen</div>
-            <div className="text-gray-600">Radiance Medical Spa, San Francisco</div>
-          </div>
-        </div>
-      </section>
+      {/* TODO: Add real testimonial when available */}
     </main>
   );
 }

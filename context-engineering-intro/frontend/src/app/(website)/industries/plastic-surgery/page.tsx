@@ -6,7 +6,7 @@ import { images } from '@/lib/images';
 
 export const metadata: Metadata = {
   title: 'CRM for Plastic Surgery Practices | Patient Management | Senova',
-  description: 'HIPAA-compliant CRM designed for plastic surgeons. Manage consultations, track procedures, store before/after photos, and increase conversions by 50%.',
+  description: 'HIPAA-compliant CRM designed for plastic surgeons. Manage consultations, track procedures, store before/after photos, and increase conversions significantly.',
   openGraph: {
     title: 'CRM for Plastic Surgery Practices | Patient Management',
     description: 'HIPAA-compliant CRM designed for plastic surgeons. Manage consultations, track procedures, and grow your practice.',
@@ -81,10 +81,10 @@ const solutions = [
 ];
 
 const results = [
-  { metric: '50%', description: 'Higher conversion rate', detail: 'From consultation to surgery' },
-  { metric: '3X', description: 'More referrals', detail: 'Through automated programs' },
-  { metric: '40%', description: 'Revenue growth', detail: 'Average in first year' },
-  { metric: '5 hours', description: 'Weekly time saved', detail: 'On admin tasks' },
+  { metric: 'Higher', description: 'Conversion rate', detail: 'From consultation to surgery' },
+  { metric: 'More', description: 'Referrals', detail: 'Through automated programs' },
+  { metric: 'Strong', description: 'Revenue growth', detail: 'In first year' },
+  { metric: 'Hours', description: 'Weekly time saved', detail: 'On admin tasks' },
 ];
 
 const procedures = [
@@ -141,15 +141,15 @@ export default function PlasticSurgeryPage() {
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               The CRM That Helps You Convert
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-amber-600 block">
-                50% More Consultations
+                More Consultations
               </span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
               Manage consultations, track procedures, store photos securely, and nurture patients through their journey - all HIPAA compliant.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/demo" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-700 hover:to-amber-700 transition-all">
-                See Plastic Surgery Demo
+              <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-700 hover:to-amber-700 transition-all">
+                Schedule a Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link href="/pricing" className="inline-flex items-center justify-center px-6 py-3 border-2 border-rose-600 text-base font-medium rounded-lg text-rose-600 bg-white hover:bg-rose-50 transition-all">
@@ -157,7 +157,7 @@ export default function PlasticSurgeryPage() {
               </Link>
             </div>
             <div className="mt-8 flex flex-wrap gap-6 justify-center text-sm text-gray-600">
-              {['HIPAA Compliant', 'Secure Photo Storage', 'Free Trial', 'White-Glove Setup'].map((item) => (
+              {['HIPAA Compliant', 'Secure Photo Storage', 'Get Started', 'White-Glove Setup'].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-green-500" />
                   <span>{item}</span>
@@ -307,7 +307,7 @@ export default function PlasticSurgeryPage() {
                 Results That Transform Practices
               </h2>
               <p className="text-xl text-rose-100">
-                Join leading plastic surgeons using Senova
+                See the impact Senova can have on your plastic surgery practice
               </p>
             </div>
             <div className="grid md:grid-cols-4 gap-8">
@@ -398,36 +398,77 @@ export default function PlasticSurgeryPage() {
                 </ul>
               </div>
               <div className="bg-white rounded-xl p-8 shadow-xl">
-                <blockquote className="text-xl text-gray-700 italic mb-4">
-                  "The photo management alone is worth the investment. We went from chaos to complete organization, and our consultation conversion rate increased by 45% when we could easily show relevant before/after photos."
-                </blockquote>
-                <div>
-                  <div className="font-bold text-gray-900">Dr. Jennifer Martinez</div>
-                  <div className="text-gray-600">Beverly Hills Plastic Surgery</div>
+                <div className="text-xl text-gray-700 mb-4">
+                  <strong>Why Plastic Surgeons Choose Senova:</strong>
                 </div>
+                <ul className="space-y-3 text-gray-600">
+                  <li className="flex items-start gap-2">
+                    <span className="text-rose-600">•</span>
+                    Complete photo organization and management
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-rose-600">•</span>
+                    Streamlined consultation processes
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-rose-600">•</span>
+                    Improved patient communication tools
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-rose-600">•</span>
+                    Secure, HIPAA-compliant platform
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonial */}
+      {/* Trust Indicators */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="bg-gradient-to-br from-rose-50 to-amber-50 rounded-2xl p-8 md:p-12 shadow-xl">
               <TrendingUp className="w-12 h-12 text-rose-500 mb-6" />
-              <blockquote className="text-2xl text-gray-700 italic mb-6">
-                "Senova transformed our practice. The consultation tracking and automated follow-ups increased our conversion rate by 50%. The secure photo management gives us peace of mind, and the marketing automation brings in 3x more referrals."
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div>
-                  <div className="font-bold text-gray-900">Dr. Robert Chen</div>
-                  <div className="text-gray-600">Chen Plastic Surgery Center • New York, NY</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                Trusted by Leading Plastic Surgery Practices
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <h4 className="font-semibold text-gray-900">Key Benefits Reported:</h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Better consultation tracking</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Improved follow-up processes</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Secure photo management</span>
+                    </li>
+                  </ul>
                 </div>
-              </div>
-              <div className="mt-4 text-rose-600 font-semibold">
-                50% increase in consultation conversions
+                <div className="space-y-4">
+                  <h4 className="font-semibold text-gray-900">Common Results:</h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Higher conversion rates</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>More patient referrals</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Time savings on admin tasks</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -445,8 +486,8 @@ export default function PlasticSurgeryPage() {
               See why leading plastic surgeons choose Senova CRM
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link href="/demo" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-700 hover:to-amber-700 transition-all">
-                Book Your Demo
+              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-700 hover:to-amber-700 transition-all">
+                Get Started
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 border-2 border-rose-600 text-lg font-medium rounded-lg text-rose-600 bg-white hover:bg-rose-50 transition-all">
@@ -454,7 +495,7 @@ export default function PlasticSurgeryPage() {
               </Link>
             </div>
             <p className="text-sm text-gray-600">
-              HIPAA compliant • Secure photo storage • 14-day free trial • Full training included
+              HIPAA compliant • Secure photo storage • Professional consultation • Full training included
             </p>
           </div>
         </div>

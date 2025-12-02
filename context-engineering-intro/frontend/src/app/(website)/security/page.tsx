@@ -4,10 +4,10 @@ import { Shield, Lock, Server, Eye, AlertTriangle, CheckCircle } from 'lucide-re
 
 export const metadata: Metadata = {
   title: 'Security & Data Protection | Enterprise Security | Senova',
-  description: 'Bank-level security with 256-bit encryption, SOC 2 Type II compliance, and 99.99% uptime. Learn about our security infrastructure.',
+  description: 'Bank-level security with 256-bit encryption, enterprise-grade compliance, and 99.99% uptime. Learn about our security infrastructure.',
   openGraph: {
     title: 'Security & Data Protection | Senova',
-    description: 'Bank-level security with 256-bit encryption, SOC 2 Type II compliance.',
+    description: 'Bank-level security with 256-bit encryption, enterprise security standards.',
     images: ['/images/security.jpg'],
   },
 };
@@ -28,7 +28,7 @@ export default function SecurityPage() {
               and comprehensive security protocols that exceed industry standards.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/demo" className="btn-primary">
+              <Link href="/contact" className="btn-primary">
                 Request Security Audit
               </Link>
               <Link href="/hipaa" className="btn-secondary">
@@ -50,7 +50,7 @@ export default function SecurityPage() {
               {[
                 {
                   icon: Server,
-                  title: 'AWS Infrastructure',
+                  title: 'Cloud Infrastructure',
                   points: ['Multiple availability zones', '99.99% uptime SLA', 'Auto-scaling', 'DDoS protection'],
                 },
                 {
@@ -103,7 +103,7 @@ export default function SecurityPage() {
                 },
                 {
                   title: 'Compliance',
-                  features: ['HIPAA compliant', 'SOC 2 Type II', 'GDPR ready', 'CCPA compliant'],
+                  features: ['HIPAA compliant', 'GDPR ready', 'CCPA compliant'],
                 },
                 {
                   title: 'Backup & Recovery',
@@ -136,9 +136,8 @@ export default function SecurityPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-12">Compliant & Verified Security</h2>
-            <div className="grid md:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-3 gap-8">
               {[
-                { cert: 'SOC 2 Type II', desc: 'Compliant' },
                 { cert: 'HIPAA', desc: 'Full compliance' },
                 { cert: 'ISO 27001', desc: 'In progress' },
                 { cert: 'PCI DSS', desc: 'Level 1' },
@@ -196,7 +195,7 @@ export default function SecurityPage() {
               <Link href="/contact" className="btn-primary">
                 Contact Security Team
               </Link>
-              <Link href="/demo" className="btn-secondary">
+              <Link href="/contact" className="btn-secondary">
                 Request Demo
               </Link>
             </div>

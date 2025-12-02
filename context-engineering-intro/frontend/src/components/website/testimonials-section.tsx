@@ -3,44 +3,16 @@
 import { motion } from 'framer-motion'
 import { Star, Quote } from 'lucide-react'
 
-const testimonials = [
-  {
-    id: 1,
-    name: 'Michael Thompson',
-    location: 'Boston, MA',
-    rating: 5,
-    text: "Senova CRM transformed how we manage customer relationships. Our team is more organized, and we've increased customer retention by 35% in just 6 months.",
-    business: 'Thompson Consulting',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop',
-  },
-  {
-    id: 2,
-    name: 'Lisa Chen',
-    location: 'Cambridge, MA',
-    rating: 5,
-    text: "The automation features save us hours every week. Email campaigns, follow-ups, and customer segmentation all run seamlessly. Best CRM investment we've made!",
-    business: 'Digital Marketing Pro',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop',
-  },
-  {
-    id: 3,
-    name: 'David Rodriguez',
-    location: 'Somerville, MA',
-    rating: 5,
-    text: "Finally, a CRM that's actually easy to use! Our entire team adopted it within days. The customer insights have helped us double our conversion rates.",
-    business: 'Rodriguez Home Services',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop',
-  },
-  {
-    id: 4,
-    name: 'Sarah Williams',
-    location: 'Newton, MA',
-    rating: 5,
-    text: 'Senova helped us scale from 100 to 1,000+ customers smoothly. The reporting features give us real-time insights that drive better business decisions.',
-    business: 'Williams & Associates',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop',
-  },
-]
+// TODO: Add real testimonials when available
+const testimonials: Array<{
+  id: number;
+  name: string;
+  location: string;
+  rating: number;
+  text: string;
+  business: string;
+  image: string;
+}> = []
 
 const StarRating = ({ rating }: { rating: number }) => {
   return (
@@ -60,6 +32,11 @@ const StarRating = ({ rating }: { rating: number }) => {
 }
 
 export function TestimonialsSection() {
+  // Don't render the section if there are no testimonials
+  if (testimonials.length === 0) {
+    return null;
+  }
+
   return (
     <section className="relative py-12 sm:py-20 bg-gradient-to-br from-slate-50 to-white overflow-hidden">
       {/* Background decoration */}
@@ -147,16 +124,16 @@ export function TestimonialsSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <a
-              href="/signup"
+              href="/pricing"
               className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-xl hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
-              Start Free Trial
+              Get Started
             </a>
             <a
-              href="/demo"
+              href="/contact"
               className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-primary font-semibold rounded-xl border-2 border-primary/20 hover:border-primary/40 hover:shadow-lg transition-all duration-300"
             >
-              Book a Demo
+              Book Consultation
             </a>
           </div>
         </motion.div>

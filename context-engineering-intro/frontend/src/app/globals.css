@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+@import '../styles/design-system.css';
 
 @tailwind base;
 @tailwind components;
@@ -446,6 +447,8 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    padding-bottom: 0.1em;
+    display: inline-block;
   }
 
   .gradient-text-navy-gold {
@@ -453,6 +456,8 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    padding-bottom: 0.1em;
+    display: inline-block;
   }
 
   .gradient-text-animated {
@@ -462,6 +467,8 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: gradient-shift 5s ease infinite;
+    padding-bottom: 0.1em;
+    display: inline-block;
   }
 
   .gradient-text-hot {
@@ -469,6 +476,8 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    padding-bottom: 0.1em;
+    display: inline-block;
   }
 
   /* Gradient Backgrounds */
@@ -480,6 +489,7 @@
     background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(255, 193, 7, 0.05));
   }
 
+  /* Enhanced Gradient Mesh Backgrounds - Cutting Edge Design */
   .gradient-bg-mesh {
     background:
       radial-gradient(at 40% 20%, rgba(255, 107, 53, 0.15) 0px, transparent 50%),
@@ -489,13 +499,55 @@
       radial-gradient(at 0% 100%, rgba(255, 107, 53, 0.05) 0px, transparent 50%);
   }
 
-  /* Glassmorphism Effects */
+  .gradient-mesh-cool {
+    background:
+      radial-gradient(at 40% 20%, hsla(28,100%,74%,0.3) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsla(189,100%,56%,0.3) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsla(355,100%,93%,0.3) 0px, transparent 50%);
+  }
+
+  .gradient-mesh-vibrant {
+    background:
+      radial-gradient(at 20% 80%, hsla(280,100%,70%,0.25) 0px, transparent 50%),
+      radial-gradient(at 80% 20%, hsla(189,100%,56%,0.25) 0px, transparent 50%),
+      radial-gradient(at 40% 40%, hsla(360,100%,70%,0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 80%, hsla(45,100%,60%,0.2) 0px, transparent 50%);
+  }
+
+  .gradient-mesh-sunset {
+    background:
+      radial-gradient(at 0% 0%, hsla(15,100%,65%,0.3) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, hsla(45,100%,60%,0.2) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(320,100%,65%,0.25) 0px, transparent 50%);
+  }
+
+  /* Enhanced Glassmorphism Effects - Premium Design */
   .glass {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  }
+
+  .glass-premium {
+    background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow:
+      0 8px 32px 0 rgba(31, 38, 135, 0.2),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   }
 
   .glass-light {
@@ -510,6 +562,80 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Glow Effects - Modern Lighting */
+  .glow-text {
+    text-shadow:
+      0 0 10px rgba(255, 107, 53, 0.5),
+      0 0 20px rgba(255, 107, 53, 0.3),
+      0 0 30px rgba(255, 107, 53, 0.2);
+  }
+
+  .glow-text-hot {
+    text-shadow:
+      0 0 20px rgba(255, 82, 82, 0.6),
+      0 0 40px rgba(255, 82, 82, 0.4),
+      0 0 60px rgba(255, 82, 82, 0.2);
+  }
+
+  .glow-card {
+    box-shadow:
+      0 0 20px rgba(255, 107, 53, 0.2),
+      0 0 40px rgba(255, 107, 53, 0.1),
+      0 0 60px rgba(255, 107, 53, 0.05);
+  }
+
+  .glow-card-hover {
+    transition: all 0.3s ease;
+  }
+
+  .glow-card-hover:hover {
+    box-shadow:
+      0 0 25px rgba(255, 107, 53, 0.3),
+      0 0 50px rgba(255, 107, 53, 0.2),
+      0 0 75px rgba(255, 107, 53, 0.1);
+    transform: translateY(-2px);
+  }
+
+  /* Gradient Borders - Premium Style */
+  .gradient-border {
+    background: linear-gradient(#fff, #fff) padding-box,
+                linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%) border-box;
+    border: 2px solid transparent;
+    border-radius: 12px;
+  }
+
+  .gradient-border-thick {
+    background: linear-gradient(#fff, #fff) padding-box,
+                linear-gradient(135deg, var(--color-primary) 0%, var(--color-hot) 50%, var(--color-accent) 100%) border-box;
+    border: 3px solid transparent;
+    border-radius: 16px;
+  }
+
+  .gradient-border-animated {
+    position: relative;
+    background: #fff;
+    border-radius: 12px;
+  }
+
+  .gradient-border-animated::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(45deg,
+      var(--color-primary),
+      var(--color-accent),
+      var(--color-hot),
+      var(--color-primary));
+    background-size: 300% 300%;
+    animation: gradient-shift 3s ease infinite;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                  linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
   }
 
   /* Button Styles - Enhanced */
@@ -714,9 +840,174 @@
     background-image: radial-gradient(circle, rgba(255, 107, 53, 0.1) 1px, transparent 1px);
     background-size: 20px 20px;
   }
+
+  /* Bento Grid Layout - Modern Card System */
+  .bento-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-auto-rows: minmax(200px, auto);
+  }
+
+  .bento-grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .bento-grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .bento-item {
+    @apply rounded-2xl p-6 transition-all duration-300;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95));
+    border: 1px solid rgba(255, 107, 53, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bento-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .bento-item:hover::before {
+    transform: scaleX(1);
+  }
+
+  .bento-item:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(255, 107, 53, 0.2);
+  }
+
+  /* Floating Animation */
+  .floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+
+  @keyframes floating {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Pulse Animation */
+  .pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  /* Modern Shadow System */
+  .shadow-soft {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .shadow-hover {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-glow {
+    box-shadow:
+      0 10px 40px rgba(255, 107, 53, 0.15),
+      0 0 0 1px rgba(255, 107, 53, 0.1);
+  }
+
+  .shadow-elevation-1 {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .shadow-elevation-2 {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-elevation-3 {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Animated Underline */
+  .underline-animated {
+    position: relative;
+    display: inline-block;
+  }
+
+  .underline-animated::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .underline-animated:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Card Hover States */
+  .card-hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  /* Text Gradients Enhanced */
+  .text-gradient-premium {
+    background: linear-gradient(135deg,
+      var(--color-primary) 0%,
+      var(--color-accent) 25%,
+      var(--color-hot) 50%,
+      var(--color-primary) 75%,
+      var(--color-accent) 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease infinite;
+    padding-bottom: 0.1em;
+    display: inline-block;
+  }
 }
 
 @layer utilities {
+  /* GLOBAL FIX: Prevent text cutoff on ALL gradient text elements */
+  /* Uses !important to ensure styles aren't overridden */
+  /* Added overflow:visible and line-height to prevent clipping */
+  .gradient-text,
+  .gradient-text-hot,
+  .gradient-text-navy-gold,
+  .gradient-text-animated,
+  .text-gradient-premium,
+  [class*="bg-clip-text"],
+  [class*="text-transparent"][class*="bg-gradient"] {
+    padding-bottom: 0.2em !important;
+    overflow: visible !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Specific fix for block-level gradient text elements */
+  span[class*="bg-clip-text"].block,
+  span[class*="text-transparent"].block {
+    padding-bottom: 0.25em !important;
+    overflow: visible !important;
+  }
+
   /* Responsive text utilities */
   .text-balance {
     text-wrap: balance;
@@ -748,5 +1039,15 @@
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
+  }
+
+  /* Navigation Dropdown CSS Fallback for better hover support */
+  @media (hover: hover) {
+    .group:hover .group-hover\:dropdown-show {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: scale(1) translateY(0) !important;
+      pointer-events: auto !important;
+    }
   }
 }

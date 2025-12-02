@@ -87,11 +87,46 @@ class ObjectContactInDB(ObjectContactBase):
     assigned_by: UUID
 
 
+class ContactBasicInfo(BaseModel):
+    """Basic contact info for embedding in ObjectContact response"""
+    model_config = ConfigDict(from_attributes=True)
+
+    id: UUID
+    first_name: Optional[str] = None
+    last_name: Optional[str] = None
+    email: Optional[str] = None
+    phone: Optional[str] = None
+    company: Optional[str] = None
+    status: Optional[str] = None
+
+
 class ObjectContactResponse(ObjectContactInDB):
     """Schema for ObjectContact API response with expanded info"""
     contact_name: Optional[str] = None
     contact_email: Optional[str] = None
     assigner_name: Optional[str] = None
+
+
+class ObjectContactWithContact(BaseModel):
+    """Schema for ObjectContact with full nested contact object"""
+    model_config = ConfigDict(from_attributes=True)
+
+    id: UUID
+    object_id: UUID
+    contact_id: UUID
+    role: Optional[str] = None
+    department: Optional[str] = None
+    assigned_at: datetime
+    contact: ContactBasicInfo
+
+
+class ObjectContactListResponse(BaseModel):
+    """Schema for paginated ObjectContact list response"""
+    items: List[ObjectContactWithContact]
+    total: int
+    page: int
+    page_size: int
+    pages: int
 
 
 # ============= ObjectUser Schemas =============
@@ -142,6 +177,30 @@ class ObjectUserResponse(ObjectUserInDB):
     user_email: Optional[str] = None
     user_name: Optional[str] = None
     assigner_name: Optional[str] = None
+
+
+class UserBasicInfo(BaseModel):
+    """Basic user info for embedding in ObjectUser response"""
+    model_config = ConfigDict(from_attributes=True)
+
+    id: UUID
+    email: str
+    first_name: Optional[str] = None
+    last_name: Optional[str] = None
+    role: Optional[str] = None
+
+
+class ObjectUserWithUser(BaseModel):
+    """Schema for ObjectUser with full nested user object"""
+    model_config = ConfigDict(from_attributes=True)
+
+    id: UUID
+    object_id: UUID
+    user_id: UUID
+    permissions: PermissionSet
+    role_name: Optional[str] = None
+    assigned_at: datetime
+    user: UserBasicInfo
 
 
 # ============= ObjectWebsite Schemas =============

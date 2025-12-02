@@ -61,7 +61,7 @@ export default function TermsOfServicePage() {
               <li>All fees are non-refundable except as required by law</li>
               <li>We may change pricing with 30 days notice</li>
               <li>Failure to pay may result in service suspension</li>
-              <li>14-day free trial available for new customers</li>
+              <li>Professional consultation available to discuss your needs</li>
             </ul>
           </section>
 
@@ -74,7 +74,7 @@ export default function TermsOfServicePage() {
             </p>
             <h3 className="mb-2 text-xl font-semibold text-slate-800">HIPAA Compliance</h3>
             <p className="mb-4">
-              We will execute a Business Associate Agreement (BAA) and comply with HIPAA requirements for handling PHI.
+              We will provide appropriate HIPAA compliance documentation and comply with HIPAA requirements for handling PHI.
             </p>
             <h3 className="mb-2 text-xl font-semibold text-slate-800">Data Portability</h3>
             <p>
@@ -98,7 +98,7 @@ export default function TermsOfServicePage() {
           <section>
             <h2 className="mb-4 text-2xl font-semibold text-slate-900">7. Service Level Agreement</h2>
             <p className="mb-4">
-              We strive for 99.9% uptime. Scheduled maintenance will be communicated in advance.
+              We strive for maximum uptime. Scheduled maintenance will be communicated in advance.
               Credits may be available for extended downtime per our SLA policy.
             </p>
           </section>

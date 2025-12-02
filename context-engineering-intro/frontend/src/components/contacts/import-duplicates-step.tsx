@@ -143,7 +143,19 @@ export default function ImportDuplicatesStep({
         })
 
         if (!response.ok) {
-          throw new Error("Failed to validate import")
+          const errorData = await response.json().catch(() => ({}))
+          const errorDetail = errorData.detail || errorData.message || "Failed to validate import"
+
+          // Provide more specific error messages for common issues
+          if (errorDetail.includes("phone")) {
+            throw new Error(`Phone validation issue: ${errorDetail}. Phone numbers should be 7-15 digits.`)
+          } else if (errorDetail.includes("email")) {
+            throw new Error(`Email validation issue: ${errorDetail}`)
+          } else if (errorDetail.includes("Invalid") || errorDetail.includes("invalid")) {
+            throw new Error(`Validation failed: ${errorDetail}. Please check your data format.`)
+          } else {
+            throw new Error(errorDetail)
+          }
         }
 
         const data = await response.json()

@@ -6,7 +6,7 @@ import { images } from '@/lib/images';
 
 export const metadata: Metadata = {
   title: 'CRM for Insurance Agencies | Policy Management & Cross-Sell | Senova',
-  description: 'Maximize retention and cross-sell with intelligent policy management. Automated renewals, coverage gap analysis, and 94% retention rate. See demo.',
+  description: 'Maximize retention and cross-sell with intelligent policy management. Automated renewals, coverage gap analysis, and improved retention. See demo.',
   openGraph: {
     title: 'CRM for Insurance Agencies | Policy Management & Cross-Sell',
     description: 'Maximize retention and cross-sell with intelligent policy management. Automated renewals and coverage gaps.',
@@ -17,17 +17,17 @@ export const metadata: Metadata = {
 const painPoints = [
   {
     title: 'Renewal Revenue Loss',
-    description: 'Missing renewal opportunities costs 15-20% of recurring revenue',
+    description: 'Missing renewal opportunities costs significant recurring revenue',
     icon: RefreshCw,
   },
   {
     title: 'Cross-Sell Blindness',
-    description: 'Agents miss 73% of cross-sell opportunities',
+    description: 'Agents miss many cross-sell opportunities',
     icon: Package,
   },
   {
     title: 'Quote Follow-Up Failure',
-    description: '60% of quotes never get proper follow-up',
+    description: 'Many quotes never get proper follow-up',
     icon: FileText,
   },
   {
@@ -81,10 +81,10 @@ const solutions = [
 ];
 
 const results = [
-  { metric: '94%', description: 'Renewal rate', detail: 'Up from 82% baseline' },
-  { metric: '2.8x', description: 'Policies per household', detail: 'Through cross-sell' },
-  { metric: '47%', description: 'Quote-to-bind improvement', detail: 'With automated follow-up' },
-  { metric: '$156K', description: 'Additional premium/agent', detail: 'From retention & cross-sell' },
+  { metric: 'High', description: 'Renewal rate', detail: 'Improved from baseline' },
+  { metric: 'More', description: 'Policies per household', detail: 'Through cross-sell' },
+  { metric: 'Better', description: 'Quote-to-bind ratio', detail: 'With automated follow-up' },
+  { metric: 'Higher', description: 'Premium per agent', detail: 'From retention & cross-sell' },
 ];
 
 const features = [
@@ -123,8 +123,8 @@ export default function InsurancePage() {
               Automate renewals, identify coverage gaps, nurture quotes, and deliver exceptional service - all in one platform designed specifically for insurance agencies.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/demo" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-accent hover:from-orange-700 hover:to-amber-600 transition-all">
-                See Insurance Demo
+              <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-accent hover:from-orange-700 hover:to-amber-600 transition-all">
+                Schedule a Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link href="/pricing" className="inline-flex items-center justify-center px-6 py-3 border-2 border-senova-primary text-base font-medium rounded-lg text-senova-primary bg-white hover:bg-amber-50 transition-all">
@@ -132,7 +132,7 @@ export default function InsurancePage() {
               </Link>
             </div>
             <div className="mt-8 flex flex-wrap gap-6 justify-center text-sm text-gray-600">
-              {['Carrier Integration', 'Renewal Automation', '14-Day Free Trial', 'Import Your Book'].map((item) => (
+              {['Carrier Integration', 'Renewal Automation', 'Professional Support', 'Import Your Book'].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-senova-primary" />
                   <span>{item}</span>
@@ -241,7 +241,7 @@ export default function InsurancePage() {
                 Real Results from Real Agencies
               </h2>
               <p className="text-xl text-amber-100">
-                Join hundreds of successful insurance agencies using Senova
+                Join successful insurance agencies using Senova
               </p>
             </div>
             <div className="grid md:grid-cols-4 gap-8">
@@ -281,28 +281,6 @@ export default function InsurancePage() {
         </div>
       </section>
 
-      {/* Testimonial */}
-      <section className="py-20 bg-senova-bg-tertiary">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl">
-              <Shield className="w-12 h-12 text-senova-primary mb-6" />
-              <blockquote className="text-2xl text-gray-700 italic mb-6">
-                "Senova increased our retention rate from 82% to 94% in just one year. The cross-sell intelligence has helped us grow policies per household by 2.8x."
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div>
-                  <div className="font-bold text-gray-900">Robert Thompson</div>
-                  <div className="text-gray-600">Agency Owner • Thompson Insurance Group</div>
-                </div>
-              </div>
-              <div className="mt-4 text-senova-primary font-semibold">
-                12% retention increase + 180% cross-sell growth
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Integration Section */}
       <section className="py-20 bg-white">
@@ -333,11 +311,11 @@ export default function InsurancePage() {
               Ready to Grow Your Insurance Agency?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              See why hundreds of agencies choose Senova CRM
+              See why agencies choose Senova CRM
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link href="/demo" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-accent hover:from-orange-700 hover:to-amber-600 transition-all">
-                Book Your Insurance Demo
+              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-senova-primary to-senova-accent hover:from-orange-700 hover:to-amber-600 transition-all">
+                Get Started
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 border-2 border-senova-primary text-lg font-medium rounded-lg text-senova-primary bg-white hover:bg-amber-50 transition-all">
@@ -345,7 +323,7 @@ export default function InsurancePage() {
               </Link>
             </div>
             <p className="text-sm text-gray-600">
-              No credit card required • 14-day free trial • Import your book of business
+              No credit card required • Professional consultation • Import your book of business
             </p>
           </div>
         </div>

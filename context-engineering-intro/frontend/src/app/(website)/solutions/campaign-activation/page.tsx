@@ -1,403 +1,329 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Check, Zap, Mail, MessageSquare, Globe, TrendingUp, Calendar, Users, Target } from 'lucide-react';
+import { Check, ArrowRight, Rocket, Mail, MessageSquare, Globe, TrendingUp, Target, DollarSign, Zap } from 'lucide-react';
+import '../../../../styles/design-system.css';
 
 export const metadata: Metadata = {
-  title: 'Smart Business Advertising Platform | Reach More Customers',
-  description: 'Find new customers online with smart advertising that works everywhere. Skip the agency markups and advertise directly at wholesale prices. Start today.',
+  title: 'Campaign Activation - Wholesale DSP Access | Senova',
+  description: 'Launch campaigns at $2-6 CPM vs industry $20-30. Direct DSP access, no markups, all channels. Start advertising at wholesale rates today.',
   openGraph: {
-    title: 'Smart Business Advertising Platform | Reach More Customers',
-    description: 'Find new customers online with smart advertising that works everywhere. Skip the agency markups and advertise directly at wholesale prices. Start today.',
-    images: ['/images/campaign-dashboard.jpg'],
+    title: 'Campaign Activation - Wholesale DSP Access',
+    description: 'Skip the middleman. Access wholesale programmatic advertising rates directly.',
+    images: ['/images/campaign-activation.jpg'],
   },
 };
 
-const stats = [
-  { value: '50%', label: 'Lower Ad Costs' },
-  { value: '24hr', label: 'Campaign Launch' },
-  { value: '5-10x', label: 'Return on Spend' },
+const features = [
+  {
+    title: 'Multi-Channel Campaigns',
+    description: 'Reach customers everywhere they are',
+    icon: Globe,
+    gradient: 'from-green-500 to-emerald-600',
+    capabilities: [
+      'Display advertising across 2M+ websites',
+      'Social media: Facebook, Instagram, LinkedIn',
+      'Connected TV and streaming platforms',
+      'Email marketing to verified addresses',
+      'SMS/text messaging campaigns',
+      'Mobile app advertising',
+    ],
+  },
+  {
+    title: 'Wholesale DSP Access',
+    description: 'Agency rates without the agency',
+    icon: DollarSign,
+    gradient: 'from-yellow-500 to-orange-600',
+    capabilities: [
+      'CPM rates of $2-6 vs $20-30 industry average',
+      'No markups or hidden fees',
+      'Direct access to The Trade Desk',
+      'Amazon DSP integration',
+      'Google DV360 connection',
+      'Facebook Business Manager',
+    ],
+  },
+  {
+    title: 'Smart Automation',
+    description: 'Set it and forget it campaigns',
+    icon: Zap,
+    gradient: 'from-purple-500 to-pink-600',
+    capabilities: [
+      'Automated bid optimization',
+      'Dynamic creative optimization',
+      'Weather-triggered campaigns',
+      'Time-of-day scheduling',
+      'Frequency capping',
+      'Cross-device targeting',
+    ],
+  },
+  {
+    title: 'Real-Time Analytics',
+    description: 'Know what works instantly',
+    icon: TrendingUp,
+    gradient: 'from-blue-500 to-indigo-600',
+    capabilities: [
+      'Live campaign dashboards',
+      'Conversion tracking',
+      'Attribution reporting',
+      'A/B testing built-in',
+      'ROI calculation',
+      'Competitive benchmarking',
+    ],
+  },
 ];
 
-const channels = [
-  { name: 'Email', icon: Mail },
-  { name: 'Text/SMS', icon: MessageSquare },
-  { name: 'Social Media', icon: Globe },
-  { name: 'News Sites', icon: Globe },
-  { name: 'Mobile Apps', icon: Target },
-  { name: 'Streaming TV', icon: Globe },
+const processSteps = [
+  {
+    number: '01',
+    title: 'Define Audience',
+    description: 'Choose from pre-built or custom audiences'
+  },
+  {
+    number: '02',
+    title: 'Select Channels',
+    description: 'Pick where your ads will appear'
+  },
+  {
+    number: '03',
+    title: 'Set Budget',
+    description: 'Control costs with daily limits'
+  },
+  {
+    number: '04',
+    title: 'Launch & Optimize',
+    description: 'AI optimizes for best results'
+  }
 ];
 
-const campaignTemplates = [
-  { name: 'New Customer Welcome', description: 'Turn first-time buyers into repeat customers', rate: '22%' },
-  { name: 'Win Back Old Customers', description: 'Bring back customers who haven\'t bought in a while', rate: '18%' },
-  { name: 'Seasonal Promotions', description: 'Holiday and seasonal campaigns that work', rate: '15%' },
-  { name: 'Birthday Specials', description: 'Personalized birthday offers', rate: '31%' },
-];
-
-const businessTemplates = [
-  { name: 'Restaurant Lunch Rush', description: 'Fill tables during slow hours', rate: '24%' },
-  { name: 'Service Appointment Reminders', description: 'Keep your schedule full', rate: '34%' },
-  { name: 'Product Launch', description: 'Introduce new products or services', rate: '19%' },
-  { name: 'Loyalty Program', description: 'Reward your best customers', rate: '41%' },
-];
-
-const automatedWorkflows = [
-  { name: 'Welcome Series', description: '5-email series for new customers', rate: '28%' },
-  { name: 'Abandoned Cart Recovery', description: 'Bring back window shoppers', rate: '26%' },
-  { name: 'Customer Reviews', description: 'Ask happy customers for reviews', rate: '16%' },
-  { name: 'Referral Program', description: 'Turn customers into advocates', rate: '24%' },
-];
-
-const results = [
-  { metric: '2x', description: 'More customers from campaigns' },
-  { metric: '50%', description: 'Less spent on advertising' },
-  { metric: '3x', description: 'Better email open rates' },
-  { metric: '5x', description: 'Return on ad spend' },
+const benefits = [
+  {
+    icon: Rocket,
+    title: 'Launch in 24 Hours',
+    description: 'From idea to live campaign in one day'
+  },
+  {
+    icon: Target,
+    title: 'Precision Targeting',
+    description: 'Reach exactly who you want, when you want'
+  },
+  {
+    icon: Mail,
+    title: 'All Channels Included',
+    description: 'Email, SMS, display, social, TV - all in one'
+  },
+  {
+    icon: MessageSquare,
+    title: 'No Contracts',
+    description: 'Month-to-month, pause or cancel anytime'
+  }
 ];
 
 export default function CampaignActivationPage() {
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-orange-50 via-white to-amber-50 py-20 md:py-32">
-        <div className="container mx-auto px-4">
+      {/* Hero Section with Gradient */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-green-900 to-emerald-900 py-20 md:py-32">
+        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
+
+        <div className="container relative mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Your Customers Are Everywhere.{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">
-                Now Your Ads Can Be Too.
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+              <span className="text-emerald-400 text-sm font-semibold">SOLUTION: CAMPAIGN ACTIVATION</span>
+            </div>
+
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
+              Advertise at{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-400">
+                Wholesale Rates
               </span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              Show your ads to people who actually want what you sell. Reach them on websites, apps, streaming services - everywhere they spend time online.
+
+            <p className="text-xl md:text-2xl text-emerald-100 mb-8 max-w-3xl mx-auto">
+              Skip the agency markups. Get direct DSP access at $2-6 CPM instead of $20-30.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Link href="/demo" className="btn-primary">
-                Start Your First Campaign
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-600 to-green-600 text-white font-semibold rounded-lg hover:shadow-xl hover:shadow-emerald-500/25 transition-all duration-300 hover:-translate-y-0.5"
+              >
+                See Campaign Demo
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
-              <Link href="#templates" className="btn-secondary">
-                See Campaign Templates
+              <Link
+                href="/pricing"
+                className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300"
+              >
+                View Pricing
               </Link>
             </div>
-            <div className="flex justify-center gap-12">
-              {stats.map((stat, idx) => (
-                <div key={idx} className="text-center">
-                  <div className="text-3xl font-bold text-orange-600">{stat.value}</div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
+
+            {/* Trust Badges */}
+            <div className="mt-12 flex flex-wrap gap-6 justify-center text-sm text-emerald-200">
+              {['No contracts', '$100 minimum', 'Cancel anytime', 'White-label available'].map((badge, idx) => (
+                <div key={idx} className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-emerald-400" />
+                  <span>{badge}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
+
+        {/* Animated Background Elements */}
+        <div className="absolute top-1/4 -right-64 w-96 h-96 bg-emerald-500 rounded-full blur-3xl opacity-10 animate-pulse" />
+        <div className="absolute bottom-1/4 -left-64 w-96 h-96 bg-green-500 rounded-full blur-3xl opacity-10 animate-pulse delay-1000" />
       </section>
 
-      {/* Problem Section */}
-      <section className="py-20 bg-white">
+      {/* Features Section with Premium Cards */}
+      <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">
-              Your Marketing Is Too Complicated and Expensive
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Complete Campaign Management
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[
-                'Different tools for email, text, and social media',
-                'Generic templates that don\'t speak to your customers',
-                'No way to track which ads actually work',
-                'Hours spent creating campaigns nobody sees',
-                'Missing the right time to reach customers',
-                'Can\'t advertise on most websites',
-              ].map((issue, idx) => (
-                <div key={idx} className="bg-red-50 rounded-lg p-4 text-left border border-red-100">
-                  <p className="text-gray-700">{issue}</p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Everything you need to launch, manage, and optimize campaigns
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {features.map((feature, idx) => (
+              <div
+                key={idx}
+                className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden"
+              >
+                {/* Gradient Background on Hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+
+                <div className="relative">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className={`p-3 bg-gradient-to-br ${feature.gradient} rounded-xl shadow-lg`}>
+                      <feature.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{feature.title}</h3>
+                      <p className="text-gray-600">{feature.description}</p>
+                    </div>
+                  </div>
+
+                  <ul className="space-y-3">
+                    {feature.capabilities.map((cap, capIdx) => (
+                      <li key={capIdx} className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">{cap}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Solution Overview */}
+      {/* How It Works Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
-              Everything You Need in One Simple Platform
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              How It Works
             </h2>
-            <p className="text-xl text-gray-600 mb-12 text-center">
-              Create, launch, and track campaigns across all channels
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Launch your first campaign in minutes
             </p>
+          </div>
 
-            {/* Multi-Channel Grid */}
-            <div className="bg-white rounded-xl p-8 shadow-lg mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Advertise Everywhere at Once</h3>
-              <p className="text-gray-600 mb-8">Launch campaigns across all platforms from one simple dashboard</p>
-              <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
-                {channels.map((channel, idx) => (
-                  <div key={idx} className="text-center">
-                    <div className="w-16 h-16 bg-amber-100 rounded-lg flex items-center justify-center mx-auto mb-2">
-                      <channel.icon className="w-8 h-8 text-orange-600" />
-                    </div>
-                    <p className="text-sm font-medium text-gray-700">{channel.name}</p>
+          <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {processSteps.map((step, idx) => (
+              <div key={idx} className="relative">
+                {idx < processSteps.length - 1 && (
+                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-gray-300 to-transparent" />
+                )}
+                <div className="text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-600 to-green-600 text-white text-2xl font-bold rounded-2xl mb-4 shadow-lg">
+                    {step.number}
                   </div>
-                ))}
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
+                  <p className="text-gray-600">{step.description}</p>
+                </div>
               </div>
-            </div>
-
-            {/* Features Grid */}
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-xl p-6 shadow-lg">
-                <Calendar className="w-10 h-10 text-orange-600 mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Set It and Forget It</h3>
-                <p className="text-gray-600 mb-4">Campaigns that run themselves while you run your business</p>
-                <ul className="space-y-2">
-                  {['Welcome new customers', 'Birthday offers', 'Service reminders', 'Win-back campaigns'].map((item, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-                      <Check className="w-4 h-4 text-green-500" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-lg">
-                <TrendingUp className="w-10 h-10 text-orange-600 mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-2">See What Actually Works</h3>
-                <p className="text-gray-600 mb-4">Know exactly which ads bring in customers</p>
-                <ul className="space-y-2">
-                  {['Test different messages', 'Best time to send', 'Track every sale', 'Stop wasting money'].map((item, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-                      <Check className="w-4 h-4 text-green-500" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Smart Targeting Features */}
-      <section className="py-20 bg-gradient-to-br from-senova-primary/5 to-senova-info/5">
+      {/* Benefits Section */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
-              Find Customers Who Actually Want What You Sell
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Why Choose Senova
             </h2>
-            <p className="text-xl text-gray-600 mb-12 text-center">
-              Stop wasting money showing ads to the wrong people
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Direct access, transparent pricing, real results
             </p>
+          </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Find the Right People */}
-              <div className="bg-white rounded-xl p-8 shadow-lg">
-                <Target className="w-12 h-12 text-orange-600 mb-4" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Find the Right People</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Target by age, income, location, interests</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Find people actively looking for your products</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Reach specific neighborhoods or areas</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Use data from millions of real shoppers</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Reach Them Anywhere */}
-              <div className="bg-white rounded-xl p-8 shadow-lg">
-                <Globe className="w-12 h-12 text-orange-600 mb-4" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Reach Them Anywhere</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Your ads on news sites and blogs</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>In mobile apps and games</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>On streaming TV services</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Beyond just Facebook and Google</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Smart Campaign Management */}
-              <div className="bg-white rounded-xl p-8 shadow-lg">
-                <TrendingUp className="w-12 h-12 text-orange-600 mb-4" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Smart Campaign Management</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Automatically finds what works best</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Test different messages easily</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Spend more on what works</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Know your cost per customer</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Save Money */}
-              <div className="bg-white rounded-xl p-8 shadow-lg">
-                <Zap className="w-12 h-12 text-orange-600 mb-4" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Skip the Middleman</h3>
-                <p className="text-gray-700 mb-4">
-                  Buy advertising directly at wholesale prices, just like big companies do.
-                  No agency markups, no hidden fees.
-                </p>
-                <div className="bg-amber-50 rounded-lg p-4 border border-orange-200">
-                  <p className="text-sm text-orange-900">
-                    <strong>Save 30-50%:</strong> Most businesses cut their advertising costs in half while reaching more customers.
-                  </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {benefits.map((benefit, idx) => (
+              <div key={idx} className="text-center group">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-100 to-green-100 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <benefit.icon className="w-8 h-8 text-emerald-700" />
                 </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.description}</p>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Campaign Templates */}
-      <section id="templates" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">50+ Proven Campaign Templates</h2>
-              <p className="text-xl text-gray-600">Launch campaigns in minutes with templates that actually work</p>
-            </div>
+      {/* CTA Section with Gradient */}
+      <section className="relative py-20 bg-gradient-to-br from-emerald-900 via-green-900 to-teal-900 overflow-hidden">
+        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
 
-            {/* Template Categories */}
-            <div className="space-y-12">
-              {/* General Business Campaigns */}
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Customer Campaigns</h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {campaignTemplates.map((template, idx) => (
-                    <div key={idx} className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
-                      <div className="flex justify-between items-start mb-2">
-                        <h4 className="text-lg font-semibold text-gray-900">{template.name}</h4>
-                        <span className="bg-green-100 text-green-700 text-sm font-semibold px-2 py-1 rounded">
-                          {template.rate} success rate
-                        </span>
-                      </div>
-                      <p className="text-gray-600 text-sm">{template.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Business-Specific */}
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Business-Specific Templates</h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {businessTemplates.map((template, idx) => (
-                    <div key={idx} className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
-                      <div className="flex justify-between items-start mb-2">
-                        <h4 className="text-lg font-semibold text-gray-900">{template.name}</h4>
-                        <span className="bg-green-100 text-green-700 text-sm font-semibold px-2 py-1 rounded">
-                          {template.rate} success rate
-                        </span>
-                      </div>
-                      <p className="text-gray-600 text-sm">{template.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Automated Workflows */}
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Automated Workflows</h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {automatedWorkflows.map((template, idx) => (
-                    <div key={idx} className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
-                      <div className="flex justify-between items-start mb-2">
-                        <h4 className="text-lg font-semibold text-gray-900">{template.name}</h4>
-                        <span className="bg-green-100 text-green-700 text-sm font-semibold px-2 py-1 rounded">
-                          {template.rate} success rate
-                        </span>
-                      </div>
-                      <p className="text-gray-600 text-sm">{template.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Results Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-600 to-red-600 text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold mb-12 text-center">Real Results from Real Businesses</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {results.map((result, idx) => (
-                <div key={idx} className="text-center">
-                  <div className="text-4xl font-bold mb-2">{result.metric}</div>
-                  <div className="text-orange-200">{result.description}</div>
-                </div>
-              ))}
-            </div>
-            <blockquote className="text-xl italic text-center mt-12 text-amber-100">
-              "The campaign templates alone saved us 20 hours a month. Our welcome emails now get
-              opened 3x more often, and we're spending half as much on advertising."
-            </blockquote>
-            <p className="text-center mt-4 text-orange-200">- Maria Rodriguez, Restaurant Owner</p>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-50 to-amber-50">
-        <div className="container mx-auto px-4">
+        <div className="container relative mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Ready to Get More Customers?
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Stop Overpaying for Advertising
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Start with our proven templates and see results in days, not months
+            <p className="text-xl text-emerald-100 mb-8">
+              Get wholesale rates that agencies pay, not retail markups
             </p>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link href="/demo" className="btn-primary">
-                Start Free Trial
+              <Link
+                href="/contact"
+                className="inline-flex items-center px-8 py-4 bg-white text-emerald-900 font-semibold rounded-lg hover:shadow-xl hover:shadow-white/25 transition-all duration-300 hover:-translate-y-0.5"
+              >
+                Start Saving Today
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
-              <Link href="/pricing" className="btn-secondary">
-                See Pricing
+              <Link
+                href="/pricing"
+                className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300"
+              >
+                See Rate Comparison
               </Link>
             </div>
-            <div className="flex flex-wrap gap-6 justify-center text-sm text-gray-600">
-              {['50+ templates included', 'No setup fees', 'Launch in minutes', 'Cancel anytime'].map((item, idx) => (
+
+            <div className="flex flex-wrap gap-6 justify-center text-sm text-emerald-200">
+              {['$100 minimum spend', 'No setup fees', 'Pause anytime', 'Full transparency'].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-green-500" />
+                  <Check className="w-4 h-4 text-emerald-400" />
                   <span>{item}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
+
+        {/* Animated Elements */}
+        <div className="absolute top-1/3 -right-48 w-96 h-96 bg-emerald-500 rounded-full blur-3xl opacity-20 animate-pulse" />
+        <div className="absolute bottom-1/3 -left-48 w-96 h-96 bg-green-500 rounded-full blur-3xl opacity-20 animate-pulse delay-1000" />
       </section>
     </main>
   );

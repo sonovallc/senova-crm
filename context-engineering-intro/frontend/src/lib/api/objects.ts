@@ -72,15 +72,13 @@ export const objectsApi = {
 
     return api.get<any>(`/api/v1/objects/${id}/contacts`, { params: backendParams }).then(res => {
       const data = res.data;
-      // Transform backend response to match Paginated<T> type
-      const total = data.total || 0;
-
+      // Backend now returns ObjectContactListResponse with items, total, page, page_size, pages
       return {
-        items: data.contacts || data.items || [],
-        total: total,
-        page: page,
-        page_size: page_size,
-        pages: Math.ceil(total / page_size)
+        items: data.items || [],
+        total: data.total || 0,
+        page: data.page || page,
+        page_size: data.page_size || page_size,
+        pages: data.pages || Math.ceil((data.total || 0) / page_size)
       } as Paginated<ObjectContact>;
     });
   },

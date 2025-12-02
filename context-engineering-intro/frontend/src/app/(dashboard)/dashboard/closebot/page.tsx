@@ -37,10 +37,10 @@ export default function ClosebotPage() {
   }
 
   const recentConversations = [
-    { id: 1, customer: 'Sarah Johnson', status: 'active', topic: 'Product inquiry', time: '2 min ago' },
-    { id: 2, customer: 'Mike Chen', status: 'resolved', topic: 'Appointment booking', time: '15 min ago' },
-    { id: 3, customer: 'Emily Davis', status: 'active', topic: 'Service pricing', time: '1 hour ago' },
-    { id: 4, customer: 'James Wilson', status: 'pending', topic: 'Technical support', time: '2 hours ago' }
+    { id: 1, customer: 'Customer #1247', status: 'active', topic: 'Product inquiry', time: '2 min ago' },
+    { id: 2, customer: 'Customer #1246', status: 'resolved', topic: 'Appointment booking', time: '15 min ago' },
+    { id: 3, customer: 'Customer #1245', status: 'active', topic: 'Service pricing', time: '1 hour ago' },
+    { id: 4, customer: 'Customer #1244', status: 'pending', topic: 'Technical support', time: '2 hours ago' }
   ]
 
   return (
