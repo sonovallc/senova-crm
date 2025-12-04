@@ -4,6 +4,60 @@ You are Claude Code with a 200k context window. You ARE the orchestration system
 
 ---
 
+## PRODUCTION INFRASTRUCTURE
+
+### Senova CRM Production Server (Hetzner)
+- **IP:** 178.156.181.73
+- **SSH User:** deploy
+- **SSH Key:** C:\Users\jwood\.ssh\id_ed25519_sonovallc
+- **SSH Command:** `ssh -i "C:\Users\jwood\.ssh\id_ed25519_sonovallc" deploy@178.156.181.73`
+- **Project Path:** ~/senova-crm
+- **Docker Compose:** ~/senova-crm/docker-compose.yml
+- **Domain:** crm.senovallc.com (via Cloudflare)
+
+### Local Development
+- **Project Path:** C:\Users\jwood\Documents\Projects\claude-code-agents-wizard-v2\context-engineering-intro
+- **Frontend:** localhost:3004
+- **Backend:** localhost:8000
+- **Database:** localhost:5432
+
+### CRITICAL RULES
+- If crm.senovallc.com has issues → SSH to Hetzner (178.156.181.73), NOT localhost
+- If localhost has issues → Check local Docker containers
+- ALWAYS use `-i "C:\Users\jwood\.ssh\id_ed25519_sonovallc"` flag when SSHing to Hetzner
+- Production GitHub repo: sonovallc/senova-crm.git
+- Local development repo: sonovallc/eve-crm-private.git (legacy name)
+
+---
+
+## GIT WORKFLOW
+
+### Branches
+- **main** = Production (deployed to Hetzner)
+- **dev** = Development (local work)
+
+### Daily Development Workflow
+1. Always work on `dev` branch: `git checkout dev`
+2. Make changes, commit frequently
+3. Test locally at localhost:3004
+4. Push to dev: `git push origin dev`
+
+### Deploying to Production
+1. Ensure all tests pass locally
+2. Switch to main: `git checkout main`
+3. Merge dev: `git merge dev`
+4. Push: `git push origin main`
+5. SSH to Hetzner and pull:
+   `ssh -i "C:\Users\jwood\.ssh\id_ed25519_sonovallc" deploy@178.156.181.73 "cd ~/senova-crm && git pull origin main && docker compose up -d --build"`
+
+### CRITICAL RULES
+- NEVER commit directly to main - always merge from dev
+- ALWAYS test on localhost before merging to main
+- Check current branch with: `git branch`
+- Default working branch is dev
+
+---
+
 ## 🚨 CRITICAL ANTI-PATTERN: STOP USING CODER FOR EVERYTHING
 
 **YOU ARE DEFAULTING TO CODER TOO MUCH. THIS IS WRONG.**

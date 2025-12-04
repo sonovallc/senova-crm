@@ -46,6 +46,7 @@ async def register(
     Returns access token, refresh token, and user information
     """
     # Role validation based on current user permissions
+    # Only OWNER can create new users (admin cannot create users)
     if current_user:
         # Authenticated user creating another user
         if user_data.role == "owner":
@@ -53,15 +54,11 @@ async def register(
                 status_code=status.HTTP_403_FORBIDDEN,
                 detail="Cannot create owner role"
             )
-        if user_data.role == "admin" and current_user.role != "owner":
+        # Only owner can create users (admin cannot)
+        if current_user.role != "owner":
             raise HTTPException(
                 status_code=status.HTTP_403_FORBIDDEN,
-                detail="Only owner can create admin users"
-            )
-        if current_user.role not in ["owner", "admin"]:
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail="Only owner and admin can create users"
+                detail="Only owner can create users"
             )
     else:
         # Public registration - force user role
@@ -128,12 +125,26 @@ async def login(
 
     Returns access token, refresh token, and user information
     """
+    import logging
+    logger = logging.getLogger(__name__)
+
+    logger.info(f"[LOGIN] Login attempt for email: {credentials.email}")
+
     # Find user by email
     result = await db.execute(select(User).where(User.email == credentials.email))
     user = result.scalar_one_or_none()
 
+    if user:
+        logger.info(f"[LOGIN] Found user: {user.email}, id: {user.id}")
+        logger.info(f"[LOGIN] Stored hash prefix: {user.hashed_password[:50]}...")
+        password_valid = verify_password(credentials.password, user.hashed_password)
+        logger.info(f"[LOGIN] Password verification result: {password_valid}")
+    else:
+        logger.info(f"[LOGIN] User not found: {credentials.email}")
+        password_valid = False
+
     # Verify credentials
-    if not user or not verify_password(credentials.password, user.hashed_password):
+    if not user or not password_valid:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Incorrect email or password",

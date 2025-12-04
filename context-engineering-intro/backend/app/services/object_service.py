@@ -522,7 +522,7 @@ class ObjectService:
             raise PermissionDeniedError("You don't have permission to manage contacts in this object")
 
         # Build query based on filters
-        query = select(Contact.id).where(Contact.deleted == False)
+        query = select(Contact.id).where(Contact.deleted_at.is_(None))
 
         # Apply filters
         if filters.get("tag_ids"):
@@ -546,6 +546,19 @@ class ObjectService:
                     Contact.email.ilike(search_term)
                 )
             )
+
+        # Add missing filter handlers
+        if filters.get("has_email"):
+            query = query.where(Contact.email.isnot(None)).where(Contact.email != '')
+
+        if filters.get("has_phone"):
+            query = query.where(Contact.phone.isnot(None)).where(Contact.phone != '')
+
+        if filters.get("updated_after"):
+            query = query.where(Contact.updated_at >= filters["updated_after"])
+
+        if filters.get("updated_before"):
+            query = query.where(Contact.updated_at <= filters["updated_before"])
 
         if filters.get("exclude_object_ids"):
             # Exclude contacts already in specified objects
@@ -723,8 +736,25 @@ class ObjectService:
         if not has_permission and user.role != UserRole.OWNER:
             raise PermissionDeniedError("You don't have permission to manage users in this object")
 
-        # Can't remove the last owner
-        if user.role == UserRole.OWNER:
+        # Check if user being removed has owner-level permissions on this object
+        user_assignment = await self.db.execute(
+            select(ObjectUser).where(
+                and_(
+                    ObjectUser.object_id == object_id,
+                    ObjectUser.user_id == user_id
+                )
+            )
+        )
+        user_to_remove = user_assignment.scalar_one_or_none()
+
+        if not user_to_remove:
+            # User is not assigned to this object
+            return False
+
+        # If the user being removed has can_delete_object (owner-level) permission,
+        # check if they're the last one with that permission
+        user_permissions = user_to_remove.permissions or {}
+        if user_permissions.get("can_delete_object", False):
             owner_count = await self.db.execute(
                 select(func.count(ObjectUser.id)).where(
                     and_(

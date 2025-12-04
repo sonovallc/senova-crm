@@ -8,6 +8,17 @@ import uuid
 from app.models.communication import CommunicationType, CommunicationDirection, CommunicationStatus
 
 
+class UserRef(BaseModel):
+    """User reference for communication sender"""
+    id: uuid.UUID
+    email: str
+    first_name: Optional[str] = None
+    last_name: Optional[str] = None
+    role: Optional[str] = None
+
+    model_config = {"from_attributes": True}
+
+
 class CommunicationBase(BaseModel):
     """Base communication schema"""
     type: CommunicationType
@@ -21,6 +32,7 @@ class CommunicationCreate(CommunicationBase):
     """Schema for creating communication (sending message)"""
     media_urls: List[str] = []
     thread_id: Optional[uuid.UUID] = None
+    profile_id: Optional[uuid.UUID] = Field(None, description="Email sending profile ID for outbound emails")
 
 
 class CommunicationResponse(CommunicationBase):
@@ -29,6 +41,7 @@ class CommunicationResponse(CommunicationBase):
     direction: CommunicationDirection
     status: CommunicationStatus
     user_id: Optional[uuid.UUID] = None
+    user: Optional[UserRef] = None
     from_address: Optional[str] = None
     media_urls: List[str] = []
     external_id: Optional[str] = None

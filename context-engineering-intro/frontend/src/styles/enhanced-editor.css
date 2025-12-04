@@ -1,0 +1,50 @@
+/* Enhanced Rich Text Editor Styles */
+.enhanced-editor {
+  min-height: 200px;
+}
+
+.enhanced-editor .ProseMirror {
+  min-height: 200px;
+  padding: 12px;
+  outline: none;
+}
+
+.enhanced-editor .ProseMirror:focus {
+  outline: none;
+}
+
+/* Editor content styles */
+.enhanced-editor .ProseMirror p {
+  margin: 0 0 8px 0;
+}
+
+.enhanced-editor .ProseMirror h1,
+.enhanced-editor .ProseMirror h2,
+.enhanced-editor .ProseMirror h3 {
+  margin: 16px 0 8px 0;
+}
+
+.enhanced-editor .ProseMirror ul,
+.enhanced-editor .ProseMirror ol {
+  padding-left: 24px;
+  margin: 8px 0;
+}
+
+.enhanced-editor .ProseMirror blockquote {
+  border-left: 3px solid #e5e7eb;
+  padding-left: 16px;
+  margin: 8px 0;
+}
+
+.enhanced-editor .ProseMirror code {
+  background-color: #f3f4f6;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.enhanced-editor .ProseMirror pre {
+  background-color: #f3f4f6;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+}

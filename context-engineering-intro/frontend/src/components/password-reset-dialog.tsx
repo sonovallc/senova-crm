@@ -19,6 +19,7 @@ import {
   isPasswordValid,
   type PasswordRequirement,
 } from '@/lib/utils'
+import { useToast } from '@/hooks/use-toast'
 
 interface PasswordResetDialogProps {
   open: boolean
@@ -43,6 +44,7 @@ export function PasswordResetDialog({
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState('')
+  const { toast } = useToast()
 
   const requirements = validatePassword(password)
   const strength = getPasswordStrength(password)
@@ -67,8 +69,13 @@ export function PasswordResetDialog({
 
     try {
       const token = sessionStorage.getItem('access_token')
+      const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/reset-password`
+
+      console.log('[Password Reset] Starting password reset for user:', userId)
+      console.log('[Password Reset] API URL:', apiUrl)
+
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/reset-password`,
+        apiUrl,
         {
           method: 'POST',
           credentials: 'include',
@@ -83,10 +90,19 @@ export function PasswordResetDialog({
         }
       )
 
+      console.log('[Password Reset] Response status:', response.status)
+
       if (!response.ok) {
         const data = await response.json()
         throw new Error(data.detail || 'Failed to reset password')
       }
+
+      // Show success toast
+      toast({
+        title: 'Password Reset Successful',
+        description: `Password for ${userEmail} has been reset. They can now login with the new password.`,
+        variant: 'default',
+      })
 
       // Reset form and close dialog
       setPassword('')
@@ -98,7 +114,13 @@ export function PasswordResetDialog({
         onSuccess()
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to reset password')
+      const errorMessage = err instanceof Error ? err.message : 'Failed to reset password'
+      setError(errorMessage)
+      toast({
+        title: 'Password Reset Failed',
+        description: errorMessage,
+        variant: 'destructive',
+      })
     } finally {
       setIsSubmitting(false)
     }

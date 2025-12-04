@@ -11,6 +11,7 @@ import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Switch } from '@/components/ui/switch'
 import { useToast } from '@/hooks/use-toast'
+import { formatErrorMessage } from '@/lib/error-handler'
 import { Filter, Loader2, Users } from 'lucide-react'
 
 interface BulkAssignmentModalProps {
@@ -28,16 +29,34 @@ export function BulkAssignmentModal({ objectId, onClose, onSuccess }: BulkAssign
     mutationFn: (filters: BulkContactAssignmentFilters) =>
       objectsApi.bulkAssignContacts(objectId, filters),
     onSuccess: (data: any) => {
+      const assignedCount = data.assigned_count ?? data.succeeded ?? 0;
       toast({
         title: 'Success',
-        description: `${data.assigned_count || 0} contacts assigned successfully`,
+        description: `${assignedCount} contacts assigned successfully`,
       })
       onSuccess()
     },
     onError: (error: any) => {
+      // Handle different error formats including single validation errors
+      let errorMessage: string;
+
+      // Check if detail is a single validation error object (not an array)
+      if (error?.response?.data?.detail && typeof error.response.data.detail === 'object' && !Array.isArray(error.response.data.detail)) {
+        const detail = error.response.data.detail;
+        // Check if it's a FastAPI validation error format {type, loc, msg, input}
+        if (detail.msg) {
+          errorMessage = detail.msg;
+        } else {
+          errorMessage = formatErrorMessage(error);
+        }
+      } else {
+        // Use the comprehensive error handler for all other cases
+        errorMessage = formatErrorMessage(error);
+      }
+
       toast({
         title: 'Error',
-        description: error?.response?.data?.detail || 'Failed to assign contacts',
+        description: errorMessage,
         variant: 'destructive',
       })
     },

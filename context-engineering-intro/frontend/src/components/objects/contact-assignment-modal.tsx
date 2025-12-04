@@ -11,6 +11,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Checkbox } from '@/components/ui/checkbox'
 import { useToast } from '@/hooks/use-toast'
+import { formatErrorMessage } from '@/lib/error-handler'
 import { Search, User, Mail, Phone, Loader2 } from 'lucide-react'
 
 interface ContactAssignmentModalProps {
@@ -50,7 +51,7 @@ export function ContactAssignmentModal({ objectId, onClose, onSuccess }: Contact
     onError: (error: any) => {
       toast({
         title: 'Error',
-        description: error?.response?.data?.detail || 'Failed to assign contacts',
+        description: formatErrorMessage(error),
         variant: 'destructive',
       })
     },

@@ -13,6 +13,7 @@ import { Badge } from '@/components/ui/badge'
 import { ContactAssignmentModal } from '@/components/objects/contact-assignment-modal'
 import { BulkAssignmentModal } from '@/components/objects/bulk-assignment-modal'
 import { useToast } from '@/hooks/use-toast'
+import { formatErrorMessage } from '@/lib/error-handler'
 import { Plus, Search, Users, Trash2, Filter, Mail, Phone, Building, User } from 'lucide-react'
 
 interface ObjectContactsTabProps {
@@ -54,7 +55,7 @@ export function ObjectContactsTab({ objectId, canManage = false }: ObjectContact
     onError: (error: any) => {
       toast({
         title: 'Error',
-        description: error?.response?.data?.detail || 'Failed to remove contact',
+        description: formatErrorMessage(error),
         variant: 'destructive',
       })
     },
@@ -75,7 +76,7 @@ export function ObjectContactsTab({ objectId, canManage = false }: ObjectContact
     onError: (error: any) => {
       toast({
         title: 'Error',
-        description: error?.response?.data?.detail || 'Failed to update contact',
+        description: formatErrorMessage(error),
         variant: 'destructive',
       })
     },
@@ -160,7 +161,14 @@ export function ObjectContactsTab({ objectId, canManage = false }: ObjectContact
               )}
             </div>
           ) : (
-            <div className="space-y-3">
+            <>
+              {/* Total count display */}
+              <div className="mb-4 flex items-center justify-between">
+                <span className="text-sm text-gray-500">
+                  Total: {contactsData.total} contacts
+                </span>
+              </div>
+              <div className="space-y-3">
               {contactsData.items.map((objectContact) => (
                 <div
                   key={objectContact.id}
@@ -213,7 +221,8 @@ export function ObjectContactsTab({ objectId, canManage = false }: ObjectContact
                   )}
                 </div>
               ))}
-            </div>
+              </div>
+            </>
           )}
 
           {/* Pagination */}

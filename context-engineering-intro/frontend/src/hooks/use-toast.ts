@@ -133,6 +133,25 @@ function dispatch(action: Action) {
 function toast({ ...props }: Omit<ToasterToast, 'id'>) {
   const id = genId()
 
+  // Ensure description is always a string to prevent React child errors
+  const safeProps = { ...props }
+  if (safeProps.description && typeof safeProps.description === 'object') {
+    const obj = safeProps.description as any
+    if (obj.msg) {
+      safeProps.description = obj.msg
+    } else if (obj.message) {
+      safeProps.description = obj.message
+    } else if (obj.detail) {
+      safeProps.description = obj.detail
+    } else if (Array.isArray(obj)) {
+      // Handle array of errors
+      safeProps.description = obj.map((e: any) => e.msg || e.message || JSON.stringify(e)).join(', ')
+    } else {
+      // Fallback to JSON stringify
+      safeProps.description = JSON.stringify(safeProps.description)
+    }
+  }
+
   const update = (props: ToasterToast) =>
     dispatch({
       type: 'UPDATE_TOAST',
@@ -143,7 +162,7 @@ function toast({ ...props }: Omit<ToasterToast, 'id'>) {
   dispatch({
     type: 'ADD_TOAST',
     toast: {
-      ...props,
+      ...safeProps,
       id,
       open: true,
       onOpenChange: (open) => {

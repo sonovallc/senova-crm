@@ -50,6 +50,9 @@ def send_email_task(
     reply_to: Optional[str] = None,
     tags: Optional[List[str]] = None,
     user_id: Optional[str] = None,
+    mailgun_api_key: Optional[str] = None,
+    mailgun_domain: Optional[str] = None,
+    mailgun_region: Optional[str] = "us",
 ) -> Dict:
     """
     Send email via Mailgun (async task)
@@ -64,6 +67,10 @@ def send_email_task(
         from_name: Sender name
         reply_to: Reply-to address
         tags: Tracking tags
+        user_id: Legacy user-level settings lookup
+        mailgun_api_key: Object-level Mailgun API key (decrypted)
+        mailgun_domain: Object-level Mailgun domain
+        mailgun_region: Mailgun region (us or eu)
 
     Returns:
         Dict with result status
@@ -74,8 +81,17 @@ def send_email_task(
         # Get Mailgun service (either per-user or default)
         mailgun = get_mailgun_service()
 
-        # If user_id provided, use per-user Mailgun settings
-        if user_id:
+        # Priority 1: Use Object-level Mailgun settings if provided
+        if mailgun_api_key and mailgun_domain:
+            base_url = "https://api.mailgun.net" if mailgun_region == "us" else "https://api.eu.mailgun.net"
+            mailgun.api_key = mailgun_api_key
+            mailgun.domain = mailgun_domain
+            mailgun.base_url = f"{base_url}/v3/{mailgun_domain}"
+            mailgun.auth = ("api", mailgun_api_key)
+            logger.info(f"Using Object-level Mailgun config (domain: {mailgun_domain}, region: {mailgun_region})")
+
+        # Priority 2: Legacy user-level Mailgun settings
+        elif user_id:
             from app.models.mailgun_settings import MailgunSettings
             from app.utils.encryption import decrypt_api_key
 

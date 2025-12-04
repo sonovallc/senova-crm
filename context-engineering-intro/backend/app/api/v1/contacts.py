@@ -164,17 +164,30 @@ async def search_contacts(
     if not request.include_deleted:
         filters.append(Contact.is_deleted.is_(False))
 
-    # RBAC: Filter contacts based on user role
+    # RBAC: Filter contacts based on user role with strict multi-tenant segregation
     user_role_str = current_user.role.value if hasattr(current_user.role, 'value') else str(current_user.role)
 
-    if user_role_str == 'user':
-        # Regular users can only see unassigned contacts or their own assigned contacts
-        filters.append(
-            or_(
-                Contact.assigned_to_id.is_(None),
-                Contact.assigned_to_id == current_user.id
+    # Owner role sees ALL contacts (no filter applied)
+    if user_role_str != 'owner':
+        if user_role_str == 'user':
+            # User role: can ONLY see contacts assigned to them
+            filters.append(Contact.assigned_to_id == current_user.id)
+        elif user_role_str == 'admin':
+            # Admin role: can ONLY see contacts in objects they have access to
+            from app.models.object import ObjectContact, ObjectUser
+
+            # Subquery to get contact IDs from objects the admin has access to
+            admin_contacts_subquery = (
+                select(ObjectContact.contact_id)
+                .join(ObjectUser, ObjectContact.object_id == ObjectUser.object_id)
+                .where(ObjectUser.user_id == current_user.id)
             )
-        )
+
+            # Filter contacts to only those in the admin's objects
+            filters.append(Contact.id.in_(admin_contacts_subquery))
+        else:
+            # Unknown role: no contacts visible
+            filters.append(False)
 
     # Build filter conditions
     filter_conditions = []
@@ -544,19 +557,31 @@ async def list_contacts(
     if not include_deleted:
         filters.append(Contact.is_deleted.is_(False))
 
-    # RBAC: Filter contacts based on user role
+    # RBAC: Filter contacts based on user role with strict multi-tenant segregation
     # Convert enum to string value for safe comparison
     user_role_str = current_user.role.value if hasattr(current_user.role, 'value') else str(current_user.role)
 
-    if user_role_str == 'user':
-        # Regular users can only see unassigned contacts or their own assigned contacts
-        filters.append(
-            or_(
-                Contact.assigned_to_id.is_(None),
-                Contact.assigned_to_id == current_user.id
+    # Owner role sees ALL contacts (no filter applied)
+    if user_role_str != 'owner':
+        if user_role_str == 'user':
+            # User role: can ONLY see contacts assigned to them
+            filters.append(Contact.assigned_to_id == current_user.id)
+        elif user_role_str == 'admin':
+            # Admin role: can ONLY see contacts in objects they have access to
+            from app.models.object import ObjectContact, ObjectUser
+
+            # Subquery to get contact IDs from objects the admin has access to
+            admin_contacts_subquery = (
+                select(ObjectContact.contact_id)
+                .join(ObjectUser, ObjectContact.object_id == ObjectUser.object_id)
+                .where(ObjectUser.user_id == current_user.id)
             )
-        )
-    # Owner and admin roles see ALL contacts (no filter applied)
+
+            # Filter contacts to only those in the admin's objects
+            filters.append(Contact.id.in_(admin_contacts_subquery))
+        else:
+            # Unknown role: no contacts visible
+            filters.append(False)
 
     if status_filter:
         filters.append(Contact.status == status_filter)
@@ -675,6 +700,81 @@ async def get_contact_fields(
             })
 
     return {'fields': visible_fields}
+
+
+class ContactObjectInfo(BaseModel):
+    """Object info for contact detail page"""
+    id: UUID
+    name: str
+    type: str
+    role: Optional[str] = None
+    department: Optional[str] = None
+    assigned_at: Optional[datetime] = None
+
+
+class ContactObjectsResponse(BaseModel):
+    """Response for contact objects endpoint"""
+    items: List[ContactObjectInfo]
+    total: int
+
+
+@router.get("/{contact_id}/objects", response_model=ContactObjectsResponse)
+async def get_contact_objects(
+    contact_id: UUID,
+    db: DatabaseSession,
+    current_user: CurrentUser,
+):
+    """
+    Get all objects that a contact is assigned to.
+
+    Returns a list of objects with the contact's role and department in each.
+
+    RBAC Rules:
+    - Owner/Admin: Can view objects for any contact
+    - User: Can only view objects they have access to
+
+    Requires authentication
+    """
+    from app.models.object import Object, ObjectContact
+
+    # First check that the contact exists and user has permission to view it
+    contact = await db.get(Contact, contact_id)
+    if not contact:
+        raise NotFoundError(f"Contact {contact_id} not found")
+
+    if not await can_view_contact(current_user, contact, db):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="You don't have permission to view this contact"
+        )
+
+    # Query ObjectContact joined with Object to get all objects for this contact
+    query = (
+        select(ObjectContact, Object)
+        .join(Object, ObjectContact.object_id == Object.id)
+        .where(ObjectContact.contact_id == contact_id)
+        .where(Object.deleted == False)
+    )
+
+    result = await db.execute(query)
+    rows = result.all()
+
+    # Build response
+    items = []
+    for object_contact, obj in rows:
+        items.append(ContactObjectInfo(
+            id=obj.id,
+            name=obj.name,
+            type=obj.type,
+            role=object_contact.role,
+            department=object_contact.department,
+            assigned_at=object_contact.assigned_at
+        ))
+
+    return ContactObjectsResponse(
+        items=items,
+        total=len(items)
+    )
 
 
 @router.get("/{contact_id}")

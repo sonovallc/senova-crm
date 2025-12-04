@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
 import { useToast } from '@/hooks/use-toast'
-import { Eye, EyeOff, Save, Users, Shield, Tag } from 'lucide-react'
+import { Eye, EyeOff, Save, Users, Shield, Tag, Mail } from 'lucide-react'
 import { MailgunSettings } from '@/components/settings/mailgun-settings'
 
 export default function SettingsPage() {
@@ -79,6 +79,29 @@ export default function SettingsPage() {
                 <Button onClick={() => router.push('/dashboard/settings/fields')}>
                   <Shield className="mr-2 h-4 w-4" />
                   Manage Fields
+                </Button>
+              </div>
+            </CardHeader>
+          </Card>
+        )}
+
+        {/* Email Profiles Card - Owner Only */}
+        {user?.role === "owner" && (
+          <Card className="mb-6">
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <div>
+                  <CardTitle className="flex items-center gap-2">
+                    <Mail className="h-5 w-5" />
+                    Email Sending Profiles
+                  </CardTitle>
+                  <CardDescription>
+                    Manage email identities and assign them to users
+                  </CardDescription>
+                </div>
+                <Button onClick={() => router.push('/dashboard/settings/email-profiles')}>
+                  <Mail className="mr-2 h-4 w-4" />
+                  Manage Profiles
                 </Button>
               </div>
             </CardHeader>

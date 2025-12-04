@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
+import '@/styles/enhanced-editor.css'
 import { Providers } from './providers'
 
 const playfair = Playfair_Display({

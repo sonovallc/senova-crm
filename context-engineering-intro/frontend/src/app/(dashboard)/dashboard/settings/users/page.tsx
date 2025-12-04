@@ -5,9 +5,11 @@ import { useAuth } from "@/contexts/auth-context"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { UserPlus, CheckCircle, XCircle, Shield, KeyRound, Trash2 } from "lucide-react"
+import { UserPlus, CheckCircle, XCircle, Shield, KeyRound, Trash2, ChevronDown, ChevronUp, Package, Unlink } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { PasswordResetDialog } from "@/components/password-reset-dialog"
+import { objectsApi, type UserObject } from "@/lib/api/objects"
+import { useToast } from "@/hooks/use-toast"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -33,6 +35,7 @@ interface User {
 export default function UsersPage() {
   const { user } = useAuth()
   const router = useRouter()
+  const { toast } = useToast()
   const [users, setUsers] = useState<User[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
@@ -41,6 +44,11 @@ export default function UsersPage() {
   const [selectedUser, setSelectedUser] = useState<User | null>(null)
   const [userToDelete, setUserToDelete] = useState<User | null>(null)
   const abortControllerRef = useRef<AbortController | null>(null)
+
+  // State for expanded users and their objects
+  const [expandedUsers, setExpandedUsers] = useState<Set<string>>(new Set())
+  const [userObjects, setUserObjects] = useState<Record<string, UserObject[]>>({})
+  const [loadingObjects, setLoadingObjects] = useState<Record<string, boolean>>({})
 
   // Check if user has permission (owner or admin only)
   useEffect(() => {
@@ -226,6 +234,81 @@ export default function UsersPage() {
     }
   }
 
+  const toggleUserExpanded = async (userId: string) => {
+    const newExpanded = new Set(expandedUsers)
+
+    if (newExpanded.has(userId)) {
+      // Collapse
+      newExpanded.delete(userId)
+      setExpandedUsers(newExpanded)
+    } else {
+      // Expand and fetch objects if not already loaded
+      newExpanded.add(userId)
+      setExpandedUsers(newExpanded)
+
+      if (!userObjects[userId]) {
+        await fetchUserObjects(userId)
+      }
+    }
+  }
+
+  const fetchUserObjects = async (userId: string) => {
+    setLoadingObjects(prev => ({ ...prev, [userId]: true }))
+
+    try {
+      const objects = await objectsApi.getUserObjects(userId)
+      setUserObjects(prev => ({ ...prev, [userId]: objects }))
+    } catch (err) {
+      console.error(`Failed to fetch objects for user ${userId}:`, err)
+      setUserObjects(prev => ({ ...prev, [userId]: [] }))
+    } finally {
+      setLoadingObjects(prev => ({ ...prev, [userId]: false }))
+    }
+  }
+
+  const unassignObject = async (objectId: string, userId: string, objectName: string, userEmail: string) => {
+    try {
+      const token = sessionStorage.getItem("access_token")
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/v1/objects/${objectId}/users/${userId}`,
+        {
+          method: "DELETE",
+          credentials: 'include',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}))
+        const errorMessage = errorData.detail || "Failed to unassign object"
+        toast({
+          title: "Error",
+          description: errorMessage,
+          variant: "destructive",
+        })
+        return
+      }
+
+      // Success - show toast and refresh
+      toast({
+        title: "Success",
+        description: `${userEmail} has been unassigned from ${objectName}`,
+      })
+
+      // Refresh the user's objects
+      await fetchUserObjects(userId)
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : "Failed to unassign object"
+      toast({
+        title: "Error",
+        description: errorMessage,
+        variant: "destructive",
+      })
+    }
+  }
+
   const getRoleBadge = (role: string) => {
     const variants = {
       owner: "default",
@@ -255,10 +338,13 @@ export default function UsersPage() {
           <h1 className="text-3xl font-bold">User Management</h1>
           <p className="text-muted-foreground">Manage user accounts and permissions</p>
         </div>
-        <Button onClick={() => router.push("/dashboard/settings/users/new")}>
-          <UserPlus className="mr-2 h-4 w-4" />
-          Create User
-        </Button>
+        {/* Only owner can create new users */}
+        {user?.role === "owner" && (
+          <Button onClick={() => router.push("/dashboard/settings/users/new")}>
+            <UserPlus className="mr-2 h-4 w-4" />
+            Create User
+          </Button>
+        )}
       </div>
 
       {error && (
@@ -339,18 +425,37 @@ export default function UsersPage() {
                     </Button>
                   )}
 
-                  {/* Delete button - Owner can delete any user except themselves and other owners, Admin can delete regular users */}
-                  {u.id !== user?.id && u.role !== "owner" && (
-                    (user?.role === "owner" || (user?.role === "admin" && u.role === "user")) && (
-                      <Button
-                        size="sm"
-                        variant="destructive"
-                        onClick={() => openDeleteDialog(u)}
-                      >
-                        <Trash2 className="mr-2 h-4 w-4" />
-                        Delete
-                      </Button>
-                    )
+                  {/* View Objects button - Only for owner viewing other users */}
+                  {user?.role === "owner" && u.id !== user?.id && (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={() => toggleUserExpanded(u.id)}
+                    >
+                      {expandedUsers.has(u.id) ? (
+                        <>
+                          <ChevronUp className="mr-2 h-4 w-4" />
+                          Hide Objects
+                        </>
+                      ) : (
+                        <>
+                          <ChevronDown className="mr-2 h-4 w-4" />
+                          View Objects
+                        </>
+                      )}
+                    </Button>
+                  )}
+
+                  {/* Delete button - Only OWNER can delete users (admin can only deactivate/pause) */}
+                  {user?.role === "owner" && u.id !== user?.id && u.role !== "owner" && (
+                    <Button
+                      size="sm"
+                      variant="destructive"
+                      onClick={() => openDeleteDialog(u)}
+                    >
+                      <Trash2 className="mr-2 h-4 w-4" />
+                      Delete
+                    </Button>
                   )}
 
                   {user?.role === "owner" && u.id !== user?.id && (
@@ -387,6 +492,66 @@ export default function UsersPage() {
                 </div>
               </div>
             </CardHeader>
+
+            {/* Expanded Objects Section */}
+            {expandedUsers.has(u.id) && user?.role === "owner" && (
+              <CardContent>
+                <div className="border-t pt-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Package className="h-4 w-4 text-muted-foreground" />
+                    <span className="text-sm font-medium">Assigned Objects</span>
+                  </div>
+
+                  {loadingObjects[u.id] ? (
+                    <p className="text-sm text-muted-foreground">Loading objects...</p>
+                  ) : userObjects[u.id] && userObjects[u.id].length > 0 ? (
+                    <div className="space-y-2">
+                      {userObjects[u.id].map(obj => (
+                        <div
+                          key={obj.id}
+                          className="flex items-center justify-between p-3 bg-muted/30 rounded-lg"
+                        >
+                          <div className="space-y-1">
+                            <div className="flex items-center gap-2">
+                              <span className="font-medium text-sm">{obj.name}</span>
+                              <Badge variant="outline" className="text-xs">
+                                {obj.type}
+                              </Badge>
+                              {obj.role_name && (
+                                <Badge variant="secondary" className="text-xs">
+                                  {obj.role_name}
+                                </Badge>
+                              )}
+                            </div>
+                            <div className="text-xs text-muted-foreground">
+                              Permissions: {Object.entries(obj.permissions)
+                                .filter(([_, value]) => value === true)
+                                .map(([key]) => key.replace('can_', '').replace(/_/g, ' '))
+                                .join(', ') || 'View only'}
+                            </div>
+                          </div>
+                          <Button
+                            size="sm"
+                            variant="ghost"
+                            className="text-destructive hover:text-destructive"
+                            onClick={() => {
+                              if (confirm(`Are you sure you want to unassign ${u.email} from ${obj.name}?`)) {
+                                unassignObject(obj.id, u.id, obj.name, u.email)
+                              }
+                            }}
+                          >
+                            <Unlink className="h-4 w-4" />
+                            <span className="ml-2">Unassign</span>
+                          </Button>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-muted-foreground">No objects assigned</p>
+                  )}
+                </div>
+              </CardContent>
+            )}
           </Card>
         ))}
       </div>
@@ -395,10 +560,13 @@ export default function UsersPage() {
         <Card>
           <CardContent className="flex flex-col items-center justify-center h-48">
             <p className="text-muted-foreground mb-4">No users found</p>
-            <Button onClick={() => router.push("/dashboard/settings/users/new")}>
-              <UserPlus className="mr-2 h-4 w-4" />
-              Create First User
-            </Button>
+            {/* Only owner can create new users */}
+            {user?.role === "owner" && (
+              <Button onClick={() => router.push("/dashboard/settings/users/new")}>
+                <UserPlus className="mr-2 h-4 w-4" />
+                Create First User
+              </Button>
+            )}
           </CardContent>
         </Card>
       )}

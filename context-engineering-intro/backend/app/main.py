@@ -16,7 +16,7 @@ from pathlib import Path
 from app.config.settings import settings
 from app.config.database import init_db
 from app.core.middleware import RateLimitMiddleware, LoggingMiddleware, add_security_headers
-from app.api.v1 import auth, communications, webhooks, payments, ai, contacts, users, field_visibility, contacts_import, tags, activities, feature_flags, mailgun, inbox, email_templates, email_campaigns, autoresponders, suppressions, dashboard, objects
+from app.api.v1 import auth, communications, webhooks, payments, ai, contacts, users, field_visibility, contacts_import, tags, activities, feature_flags, mailgun, inbox, email_templates, email_campaigns, autoresponders, suppressions, dashboard, objects, email_profiles, object_mailgun_settings
 
 # Configure logging
 logging.basicConfig(
@@ -201,6 +201,8 @@ app.include_router(autoresponders.router, prefix="/api/v1")
 app.include_router(suppressions.router, prefix="/api/v1")
 app.include_router(dashboard.router, prefix="/api/v1")
 app.include_router(objects.router, prefix="/api/v1")
+app.include_router(object_mailgun_settings.router)  # Has its own prefix
+app.include_router(email_profiles.router, prefix="/api/v1")
 
 
 # Mount static files for uploaded content (development only)

@@ -66,8 +66,13 @@ export const authService = {
   },
 
   async logout(): Promise<void> {
+    const refreshToken = sessionStorage.getItem('refresh_token')
     try {
-      await api.post('/api/v1/auth/logout')
+      if (refreshToken) {
+        await api.post('/api/v1/auth/logout', { refresh_token: refreshToken })
+      }
+    } catch {
+      // Ignore logout API errors - we'll clear tokens regardless
     } finally {
       sessionStorage.removeItem('access_token')
       sessionStorage.removeItem('refresh_token')

@@ -14,14 +14,16 @@ from uuid import UUID
 from datetime import datetime
 from fastapi import APIRouter, Depends, HTTPException, status, Query
 from sqlalchemy import select, func, or_
+from sqlalchemy.orm import selectinload
 from sqlalchemy.ext.asyncio import AsyncSession
 from pydantic import BaseModel, EmailStr
 
 from app.config.database import get_db
 from app.api.dependencies import get_current_user, CurrentUser, DatabaseSession
 from app.models.user import User, UserRole
+from app.models.object import ObjectUser, Object
 from app.core.exceptions import NotFoundError, ValidationError
-from app.utils.permissions import can_manage_users, filter_user_list_by_role
+from app.utils.permissions import can_manage_users, filter_user_list_by_role, get_users_with_shared_objects
 from app.utils.password import is_password_valid, get_password_validation_errors
 from app.core.security import get_password_hash
 
@@ -85,6 +87,20 @@ class DeleteUserRequest(BaseModel):
     user_id: UUID
 
 
+class UserObjectResponse(BaseModel):
+    """User's object assignment with permissions"""
+    id: UUID
+    name: str
+    type: str
+    company_info: dict
+    permissions: dict
+    role_name: Optional[str]
+    assigned_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
 # Endpoints
 @router.get("/", response_model=UserListResponse)
 async def list_users(
@@ -100,14 +116,17 @@ async def list_users(
     List all users with pagination and filtering.
 
     RBAC Rules:
-    - Owner/Admin: Can view all users
+    - Owner: Can view all users
+    - Admin: Can ONLY view users who share object assignments with them
     - User: Can only view themselves
 
     Requires authentication
     """
-    # Check permissions
-    if not await can_manage_users(current_user):
-        # Regular users can only see themselves
+    # Get role as string for comparison
+    user_role = current_user.role.value if hasattr(current_user.role, 'value') else str(current_user.role)
+
+    # Regular users can only see themselves
+    if user_role == 'user':
         return UserListResponse(
             items=[UserResponse.model_validate(current_user)],
             total=1,
@@ -121,6 +140,22 @@ async def list_users(
 
     # Apply filters
     filters = []
+
+    # For ADMIN: Filter to only users who share object assignments
+    if user_role == 'admin':
+        # Get users who share objects with this admin
+        shared_user_ids = await get_users_with_shared_objects(current_user, db)
+        if shared_user_ids:
+            filters.append(User.id.in_(shared_user_ids))
+        else:
+            # Admin has no shared objects, only show themselves
+            return UserListResponse(
+                items=[UserResponse.model_validate(current_user)],
+                total=1,
+                page=1,
+                page_size=1,
+                pages=1,
+            )
 
     if role_filter:
         filters.append(User.role == role_filter)
@@ -137,15 +172,16 @@ async def list_users(
     # Order by newest first
     query = query.order_by(User.created_at.desc())
 
-    # Get total count
-    count_result = await db.execute(
-        select(func.count()).select_from(User).where(*filters if filters else [])
-    )
+    # Get total count with same filters
+    count_query = select(func.count()).select_from(User)
+    if filters:
+        count_query = count_query.where(*filters)
+    count_result = await db.execute(count_query)
     total = count_result.scalar()
 
     # Calculate pagination
     skip = (page - 1) * page_size
-    pages = (total + page_size - 1) // page_size
+    pages = (total + page_size - 1) // page_size if total > 0 else 1
 
     # Apply pagination
     query = query.offset(skip).limit(page_size)
@@ -173,7 +209,8 @@ async def get_user(
     Get single user by ID.
 
     RBAC Rules:
-    - Owner/Admin: Can view any user
+    - Owner: Can view any user
+    - Admin: Can ONLY view users who share object assignments with them
     - User: Can only view themselves
 
     Requires authentication
@@ -183,14 +220,98 @@ async def get_user(
     if not user:
         raise NotFoundError(f"User {user_id} not found")
 
-    # Check permissions
-    if not await can_manage_users(current_user) and user.id != current_user.id:
+    # Get role as string for comparison
+    current_role = current_user.role.value if hasattr(current_user.role, 'value') else str(current_user.role)
+
+    # Users can only view themselves
+    if current_role == 'user' and user.id != current_user.id:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="You don't have permission to view this user"
         )
 
+    # Owners can view anyone
+    if current_role == 'owner':
+        return UserResponse.model_validate(user)
+
+    # Admins can only view users who share object assignments
+    if current_role == 'admin':
+        if user.id == current_user.id:
+            # Admin can always view themselves
+            return UserResponse.model_validate(user)
+
+        # Check if the target user shares any objects with the admin
+        shared_user_ids = await get_users_with_shared_objects(current_user, db)
+        if user.id not in shared_user_ids:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="You don't have permission to view this user. You can only view users who share object assignments with you."
+            )
+
     return UserResponse.model_validate(user)
+
+
+@router.get("/{user_id}/objects", response_model=List[UserObjectResponse])
+async def get_user_objects(
+    user_id: UUID,
+    db: DatabaseSession,
+    current_user: CurrentUser,
+):
+    """
+    Get all objects assigned to a user.
+
+    RBAC Rules:
+    - Owner: Can view any user's objects
+    - Admin: Can view objects for users who share object assignments with them
+    - User: Can only view their own objects
+
+    Returns list of objects with permissions and role information.
+    """
+    # Get role as string for comparison
+    current_role = current_user.role.value if hasattr(current_user.role, 'value') else str(current_user.role)
+
+    # Users can only view their own objects
+    if current_role == 'user' and user_id != current_user.id:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="You don't have permission to view this user's objects"
+        )
+
+    # Admins can only view objects for users who share object assignments
+    if current_role == 'admin':
+        if user_id != current_user.id:
+            shared_user_ids = await get_users_with_shared_objects(current_user, db)
+            if user_id not in shared_user_ids:
+                raise HTTPException(
+                    status_code=status.HTTP_403_FORBIDDEN,
+                    detail="You can only view objects for users who share object assignments with you"
+                )
+
+    # Query user's objects with the object details loaded
+    query = select(ObjectUser).where(
+        ObjectUser.user_id == user_id
+    ).options(
+        selectinload(ObjectUser.object)
+    )
+
+    result = await db.execute(query)
+    object_users = result.scalars().all()
+
+    # Transform to response format
+    response = []
+    for ou in object_users:
+        if ou.object and not ou.object.deleted:  # Skip deleted objects
+            response.append(UserObjectResponse(
+                id=ou.object.id,
+                name=ou.object.name,
+                type=ou.object.type,
+                company_info=ou.object.company_info or {},
+                permissions=ou.permissions or {},
+                role_name=ou.role_name,
+                assigned_at=ou.assigned_at
+            ))
+
+    return response
 
 
 @router.post("/approve", response_model=UserResponse)
@@ -246,16 +367,20 @@ async def deactivate_user(
     current_user: CurrentUser,
 ):
     """
-    Deactivate a user account.
+    Deactivate (pause) a user account.
 
     RBAC Rules:
-    - Owner/Admin: Can deactivate users
+    - Owner: Can deactivate any user (except themselves and other owners)
+    - Admin: Can deactivate users who share object assignments with them (except owners)
     - User: Cannot deactivate users
 
     Requires authentication
     """
-    # Check permissions
-    if not await can_manage_users(current_user):
+    # Get role as string for comparison
+    current_role = current_user.role.value if hasattr(current_user.role, 'value') else str(current_user.role)
+
+    # Check permissions - must be owner or admin
+    if current_role not in ('owner', 'admin'):
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="You don't have permission to deactivate users"
@@ -271,8 +396,18 @@ async def deactivate_user(
         raise ValidationError("You cannot deactivate yourself")
 
     # Cannot deactivate owner accounts
-    if user.role == 'owner':
+    target_role = user.role.value if hasattr(user.role, 'value') else str(user.role)
+    if target_role == 'owner':
         raise ValidationError("Owner accounts cannot be deactivated")
+
+    # Admin can only deactivate users who share object assignments
+    if current_role == 'admin':
+        shared_user_ids = await get_users_with_shared_objects(current_user, db)
+        if user.id not in shared_user_ids:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="You can only deactivate users who share object assignments with you"
+            )
 
     # Deactivate user
     user.is_active = False
@@ -295,13 +430,17 @@ async def reactivate_user(
     Reactivate a deactivated user account.
 
     RBAC Rules:
-    - Owner/Admin: Can reactivate users
+    - Owner: Can reactivate any user (except owners)
+    - Admin: Can reactivate users who share object assignments with them (only regular users)
     - User: Cannot reactivate users
 
     Requires authentication
     """
-    # Check permissions
-    if not await can_manage_users(current_user):
+    # Get role as string for comparison
+    current_role = current_user.role.value if hasattr(current_user.role, 'value') else str(current_user.role)
+
+    # Check permissions - must be owner or admin
+    if current_role not in ('owner', 'admin'):
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="You don't have permission to reactivate users"
@@ -313,12 +452,21 @@ async def reactivate_user(
         raise NotFoundError(f"User {data.user_id} not found")
 
     # Cannot reactivate owner accounts
-    if user.role == 'owner':
+    target_role = user.role.value if hasattr(user.role, 'value') else str(user.role)
+    if target_role == 'owner':
         raise ValidationError("Owner accounts cannot be reactivated")
 
-    # Admin can only reactivate regular users
-    if current_user.role == 'admin' and user.role != 'user':
-        raise ValidationError("Admins can only reactivate regular users")
+    # Admin can only reactivate regular users who share object assignments
+    if current_role == 'admin':
+        if target_role != 'user':
+            raise ValidationError("Admins can only reactivate regular users")
+
+        shared_user_ids = await get_users_with_shared_objects(current_user, db)
+        if user.id not in shared_user_ids:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="You can only reactivate users who share object assignments with you"
+            )
 
     # Reactivate user
     user.is_active = True
@@ -392,10 +540,20 @@ async def reset_user_password(
 
     Requires authentication
     """
-    user = await db.get(User, data.user_id)
+    import logging
+    logger = logging.getLogger(__name__)
+
+    logger.info(f"[PASSWORD RESET] Starting password reset for user_id: {data.user_id}")
+
+    # Use select query to get user (ensures proper session tracking)
+    result = await db.execute(select(User).where(User.id == data.user_id))
+    user = result.scalar_one_or_none()
 
     if not user:
         raise NotFoundError(f"User {data.user_id} not found")
+
+    logger.info(f"[PASSWORD RESET] Found user: {user.email}")
+    logger.info(f"[PASSWORD RESET] Old hash prefix: {user.hashed_password[:50]}...")
 
     # Check permissions
     # Users can reset their own password, or owner/admin can reset any password
@@ -413,10 +571,29 @@ async def reset_user_password(
         validation_errors = get_password_validation_errors(data.new_password)
         raise ValidationError(f"Password does not meet requirements: {', '.join(validation_errors)}")
 
-    # Hash and update password
-    user.hashed_password = get_password_hash(data.new_password)
+    # Hash the new password
+    new_hashed_password = get_password_hash(data.new_password)
+    logger.info(f"[PASSWORD RESET] New hash prefix: {new_hashed_password[:50]}...")
+
+    # Use explicit update to ensure the change is persisted
+    from sqlalchemy import update
+    update_result = await db.execute(
+        update(User)
+        .where(User.id == data.user_id)
+        .values(hashed_password=new_hashed_password)
+    )
+    logger.info(f"[PASSWORD RESET] Update rowcount: {update_result.rowcount}")
 
     await db.commit()
+    logger.info(f"[PASSWORD RESET] Commit completed")
+
+    # Verify the update worked by re-fetching
+    verify_result = await db.execute(select(User).where(User.id == data.user_id))
+    verified_user = verify_result.scalar_one_or_none()
+    logger.info(f"[PASSWORD RESET] Verified hash prefix: {verified_user.hashed_password[:50]}...")
+    logger.info(f"[PASSWORD RESET] Hashes match: {verified_user.hashed_password == new_hashed_password}")
+
+    # Refresh the user object to get updated data
     await db.refresh(user)
 
     return UserResponse.model_validate(user)
@@ -432,19 +609,19 @@ async def delete_user(
     Delete a user account permanently.
 
     RBAC Rules:
-    - Owner: Can delete any user except themselves
-    - Admin: Can delete regular users only
+    - Owner: Can delete any user except themselves and other owners
+    - Admin: CANNOT delete users (use deactivate instead)
     - User: Cannot delete users
 
     Requires authentication
 
     Note: This is a hard delete. The user and all associated data will be permanently removed.
     """
-    # Check permissions
-    if not await can_manage_users(current_user):
+    # Only OWNER can delete users (admin cannot delete, only deactivate/pause)
+    if current_user.role != 'owner':
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail="You don't have permission to delete users"
+            detail="Only owner can delete users. Admins can deactivate users instead."
         )
 
     user = await db.get(User, data.user_id)
@@ -459,10 +636,6 @@ async def delete_user(
     # Cannot delete owner accounts
     if user.role == 'owner':
         raise ValidationError("Owner accounts cannot be deleted")
-
-    # Admin can only delete regular users
-    if current_user.role == 'admin' and user.role != 'user':
-        raise ValidationError("Admins can only delete regular users")
 
     # Delete the user (hard delete)
     # SQLAlchemy will handle cascading deletes based on relationship configurations

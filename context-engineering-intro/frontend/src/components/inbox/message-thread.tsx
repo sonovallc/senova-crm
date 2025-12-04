@@ -1,12 +1,22 @@
 'use client'
 
+import '@/styles/email-body.css'
 import { Communication, CommunicationDirection, CommunicationType } from '@/types'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Badge } from '@/components/ui/badge'
 import { formatDateTime, getInitials } from '@/lib/utils'
 import { cn } from '@/lib/utils'
-import { CheckCheck, Clock, Mail, Paperclip } from 'lucide-react'
+import {
+  CheckCheck,
+  Clock,
+  Mail,
+  Paperclip,
+  AlertCircle,
+  MessageSquare,
+  Phone,
+  Smartphone
+} from 'lucide-react'
 
 interface MessageThreadProps {
   messages: Communication[]
@@ -14,40 +24,125 @@ interface MessageThreadProps {
 }
 
 export function MessageThread({ messages, contactName }: MessageThreadProps) {
+  // Helper function to get channel badge for all types
+  // Using case-insensitive comparison since backend returns lowercase
+  const getChannelBadge = (type: CommunicationType) => {
+    const typeUpper = type?.toString().toUpperCase()
+    switch (typeUpper) {
+      case CommunicationType.EMAIL:
+        return (
+          <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+            <Mail className="h-3 w-3 mr-1" />
+            EMAIL
+          </Badge>
+        )
+      case CommunicationType.SMS:
+        return (
+          <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+            <Smartphone className="h-3 w-3 mr-1" />
+            SMS
+          </Badge>
+        )
+      case CommunicationType.MMS:
+        return (
+          <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200">
+            <Smartphone className="h-3 w-3 mr-1" />
+            MMS
+          </Badge>
+        )
+      case CommunicationType.WEB_CHAT:
+        return (
+          <Badge variant="outline" className="bg-orange-50 text-orange-700 border-orange-200">
+            <MessageSquare className="h-3 w-3 mr-1" />
+            CHAT
+          </Badge>
+        )
+      case CommunicationType.PHONE:
+        return (
+          <Badge variant="outline" className="bg-gray-50 text-gray-700 border-gray-200">
+            <Phone className="h-3 w-3 mr-1" />
+            CALL
+          </Badge>
+        )
+      default:
+        return null
+    }
+  }
+
+  // Helper to get sender name for outbound messages
+  const getSenderName = (message: Communication) => {
+    if (message.user) {
+      const fullName = `${message.user.first_name || ''} ${message.user.last_name || ''}`.trim()
+      return fullName || message.user.email
+    }
+    return 'You'
+  }
+
+  // Helper to get avatar initials
+  const getAvatarInitials = (message: Communication, isOutbound: boolean) => {
+    if (isOutbound) {
+      if (message.user?.first_name || message.user?.last_name) {
+        return getInitials(`${message.user.first_name || ''} ${message.user.last_name || ''}`.trim())
+      }
+      return getInitials('You')
+    }
+    return getInitials(contactName)
+  }
+
   return (
-    <ScrollArea className="flex-1 p-4" data-testid="inbox-message-detail">
+    <ScrollArea className="h-full p-4" data-testid="inbox-message-detail">
       <div className="space-y-4">
         {messages.map((message) => {
-          const isOutbound = message.direction === CommunicationDirection.OUTBOUND
+          // Case-insensitive comparison for direction (API may return lowercase "outbound" or uppercase "OUTBOUND")
+          const isOutbound = message.direction?.toString().toUpperCase() === CommunicationDirection.OUTBOUND
 
           return (
             <div
               key={message.id}
               className={cn('flex gap-3', isOutbound ? 'flex-row-reverse' : 'flex-row')}
             >
-              <Avatar className="h-8 w-8">
-                <AvatarFallback>{getInitials(isOutbound ? 'You' : contactName)}</AvatarFallback>
-              </Avatar>
+              <div className="flex flex-col items-center gap-1">
+                <Avatar className={cn(
+                  "h-10 w-10",
+                  isOutbound ? "ring-2 ring-blue-600" : "ring-2 ring-slate-300"
+                )}>
+                  <AvatarFallback className={cn(
+                    "font-semibold",
+                    isOutbound ? "bg-blue-600 text-white" : "bg-slate-200 text-slate-700"
+                  )}>
+                    {getAvatarInitials(message, isOutbound)}
+                  </AvatarFallback>
+                </Avatar>
+                {/* Enhanced sender name and role below avatar */}
+                <div className="flex flex-col items-center gap-1">
+                  <span className={cn(
+                    "text-xs font-semibold",
+                    isOutbound ? "text-blue-700" : "text-slate-700"
+                  )}>
+                    {isOutbound ? getSenderName(message) : `${contactName} (Contact)`}
+                  </span>
+                  {isOutbound && message.user?.role && (
+                    <Badge variant="default" className="text-xs px-2 py-0 h-5 bg-blue-600">
+                      {message.user.role.charAt(0).toUpperCase() + message.user.role.slice(1)}
+                    </Badge>
+                  )}
+                </div>
+              </div>
 
               <div className={cn('flex max-w-[70%] flex-col gap-1', isOutbound ? 'items-end' : 'items-start')}>
-                {/* Type badge */}
-                {message.type === CommunicationType.EMAIL && (
-                  <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
-                    <Mail className="h-3 w-3 mr-1" />
-                    EMAIL
-                  </Badge>
-                )}
+                {/* Channel badge for all types */}
+                {getChannelBadge(message.type)}
 
                 <div
                   className={cn(
-                    'rounded-lg px-4 py-2',
+                    'rounded-lg px-4 py-2 shadow-sm',
                     isOutbound
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-slate-100 text-foreground'
+                      ? 'bg-blue-600 text-white ml-auto'
+                      : 'bg-slate-100 text-slate-900 mr-auto border border-slate-200'
                   )}
                 >
-                  {/* Email-specific rendering */}
-                  {message.type === CommunicationType.EMAIL ? (
+                  {/* Email-specific rendering - case-insensitive comparison since backend returns lowercase */}
+                  {message.type?.toString().toUpperCase() === CommunicationType.EMAIL ? (
                     <div className="email-message">
                       {/* Subject line */}
                       {message.subject && (
@@ -70,8 +165,16 @@ export function MessageThread({ messages, contactName }: MessageThreadProps) {
 
                       {/* HTML body (sanitized server-side with bleach) */}
                       <div
-                        className="email-body prose prose-sm max-w-none max-h-96 overflow-y-auto"
-                        dangerouslySetInnerHTML={{ __html: message.body }}
+                        className="email-body-content prose prose-sm max-w-none max-h-96 overflow-y-auto"
+                        style={{
+                          // Inline styles to ensure HTML rendering works
+                          lineHeight: '1.6',
+                          fontSize: '14px',
+                          wordBreak: 'break-word'
+                        }}
+                        dangerouslySetInnerHTML={{
+                          __html: message.body
+                        }}
                       />
 
                       {/* Attachments */}
@@ -121,7 +224,7 @@ export function MessageThread({ messages, contactName }: MessageThreadProps) {
 
                 <div className="flex items-center gap-1 text-xs text-muted-foreground">
                   {/* Attachment indicator */}
-                  {message.media_urls && message.media_urls.length > 0 && message.type !== CommunicationType.EMAIL && (
+                  {message.media_urls && message.media_urls.length > 0 && message.type?.toString().toUpperCase() !== CommunicationType.EMAIL && (
                     <div className="flex items-center gap-1 mr-2">
                       <Paperclip className="h-3 w-3" />
                       {message.media_urls.length}
@@ -133,6 +236,15 @@ export function MessageThread({ messages, contactName }: MessageThreadProps) {
                       {message.status === 'DELIVERED' && <CheckCheck className="h-3 w-3 text-green-600" />}
                       {message.status === 'SENT' && <CheckCheck className="h-3 w-3" />}
                       {message.status === 'PENDING' && <Clock className="h-3 w-3" />}
+                      {message.status === 'FAILED' && (
+                        <div className="flex items-center gap-1 text-red-600">
+                          <AlertCircle className="h-3 w-3" />
+                          <span className="text-xs">Failed</span>
+                          {message.error_message && (
+                            <span className="text-xs ml-1">- {message.error_message}</span>
+                          )}
+                        </div>
+                      )}
                     </>
                   )}
                 </div>

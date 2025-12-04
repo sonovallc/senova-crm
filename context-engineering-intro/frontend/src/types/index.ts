@@ -135,6 +135,8 @@ export interface Communication {
   updated_at?: string
   sent_at?: string | null
   media_urls?: string[]
+  user?: UserRef | null  // Sender details for outbound messages
+  error_message?: string | null  // For failed message details
 }
 
 export interface InboxThread {

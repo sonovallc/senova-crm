@@ -53,13 +53,19 @@ class UserResponse(UserBase):
     full_name: Optional[str] = None
     department: Optional[str] = None
     avatar_url: Optional[str] = None
-    permissions: List[str] = []
+    permissions: Optional[List[str]] = None
     is_active: bool
     is_verified: bool
     last_login_at: Optional[datetime] = None
     created_at: datetime
 
     model_config = {"from_attributes": True}
+
+    @field_validator('permissions', mode='before')
+    @classmethod
+    def validate_permissions(cls, v):
+        """Convert None to empty list for permissions"""
+        return v if v is not None else []
 
 
 class Token(BaseModel):

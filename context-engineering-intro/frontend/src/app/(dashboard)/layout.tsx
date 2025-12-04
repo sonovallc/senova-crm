@@ -21,7 +21,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <div className="flex h-screen overflow-hidden bg-senova-bg-secondary">
         <TopBar onMenuClick={toggleSidebar} />
         <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
-        <main className="flex-1 overflow-y-auto pt-16 bg-senova-bg-tertiary">{children}</main>
+        <main className="flex-1 overflow-y-auto pt-16 bg-senova-bg-tertiary lg:ml-0">{children}</main>
       </div>
     </ProtectedRoute>
   )

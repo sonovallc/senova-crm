@@ -23,6 +23,7 @@ from app.api.dependencies import get_current_user, CurrentUser, DatabaseSession
 from app.models.communication import Communication, CommunicationType, CommunicationDirection, CommunicationStatus
 from app.models.contact import Contact
 from app.models.user import User
+from app.models.object import ObjectContact, ObjectUser
 from app.schemas.communication import (
     CommunicationCreate,
     CommunicationResponse,
@@ -30,10 +31,13 @@ from app.schemas.communication import (
 )
 from app.tasks.email_tasks import send_email_task
 from app.tasks.sms_tasks import send_sms_task, send_mms_task
+from app.services.mailgun_service import MailgunService
+from app.config.settings import get_settings
 from app.services.websocket_service import get_connection_manager
 from app.services.local_storage_service import upload_files
 from app.core.exceptions import NotFoundError, ValidationError
 from app.core.security import create_widget_token, decode_token
+from app.utils.permissions import get_accessible_contact_ids
 from pydantic import BaseModel, EmailStr, Field
 
 router = APIRouter(prefix="/communications", tags=["Communications"])
@@ -54,8 +58,16 @@ async def get_unified_inbox(
     """
     Get unified inbox (all communication channels)
 
-    Returns paginated list of communications with filtering options
+    Returns paginated list of communications with filtering options.
+
+    Visibility rules:
+    - Owner: Can see all message threads
+    - Admin: Can only see threads for contacts assigned to objects they have access to
+    - User: Can only see threads for contacts assigned to them
     """
+    # Get accessible contact IDs based on user role
+    accessible_contact_ids = await get_accessible_contact_ids(current_user, db)
+
     # Build query
     query = select(Communication).options(
         selectinload(Communication.contact),
@@ -64,6 +76,20 @@ async def get_unified_inbox(
 
     # Apply filters
     filters = []
+
+    # Apply contact visibility filter based on user role
+    # accessible_contact_ids is None for Owner (sees all), otherwise it's a set of contact IDs
+    if accessible_contact_ids is not None:
+        if len(accessible_contact_ids) == 0:
+            # User has no accessible contacts - return empty result
+            return CommunicationList(
+                items=[],
+                total=0,
+                page=1,
+                page_size=limit,
+                pages=0,
+            )
+        filters.append(Communication.contact_id.in_(accessible_contact_ids))
 
     if contact_id:
         filters.append(Communication.contact_id == contact_id)
@@ -120,6 +146,11 @@ async def get_inbox_threads(
 
     Returns contacts with their latest message
 
+    Visibility rules:
+    - Owner: Can see all message threads
+    - Admin: Can only see threads for contacts assigned to objects they have access to
+    - User: Can only see threads for contacts assigned to them
+
     Sort options:
     - recent_activity: Most recent message (any direction) - default
     - oldest_activity: Oldest message first
@@ -133,14 +164,35 @@ async def get_inbox_threads(
     - Pass status='ARCHIVED' to show only archived threads
     - Pass status='all' to show all threads regardless of status
     """
+    # Get accessible contact IDs based on user role
+    accessible_contact_ids = await get_accessible_contact_ids(current_user, db)
+
+    # If user has no accessible contacts, return empty list
+    if accessible_contact_ids is not None and len(accessible_contact_ids) == 0:
+        return []
+
     # Build WHERE clause based on status filter for the LATEST message
-    where_clause = ""
+    where_clauses = []
     if status and status.upper() == "ARCHIVED":
-        where_clause = "WHERE status = 'ARCHIVED'"
+        where_clauses.append("status = 'ARCHIVED'")
     elif not status or status.lower() != "all":
-        # Default behavior: exclude archived threads
-        where_clause = "WHERE status != 'ARCHIVED'"
-    # If status == 'all', no WHERE clause (show everything)
+        # Default behavior: exclude archived threads (but include NULL status)
+        # Note: In SQL, NULL != 'ARCHIVED' evaluates to NULL, so we must explicitly handle NULL
+        where_clauses.append("(status != 'ARCHIVED' OR status IS NULL)")
+    # If status == 'all', no status WHERE clause (show everything)
+
+    # Build contact visibility filter
+    # accessible_contact_ids is None for Owner (sees all), otherwise filter by contact IDs
+    contact_filter = ""
+    if accessible_contact_ids is not None:
+        # Convert UUIDs to strings for SQL
+        contact_id_list = ",".join([f"'{str(cid)}'" for cid in accessible_contact_ids])
+        contact_filter = f"WHERE contact_id IN ({contact_id_list})"
+
+    # Combine WHERE clauses for the outer query
+    outer_where = ""
+    if where_clauses:
+        outer_where = "WHERE " + " AND ".join(where_clauses)
 
     # Get latest communication per contact using CTE
     # This ensures we FIRST get the latest message per contact,
@@ -160,10 +212,11 @@ async def get_inbox_threads(
                 created_at,
                 sent_at
             FROM communications
+            {contact_filter}
             ORDER BY contact_id, created_at DESC
         )
         SELECT * FROM latest_messages
-        {where_clause}
+        {outer_where}
     """)
 
     result = await db.execute(query)
@@ -174,6 +227,101 @@ async def get_inbox_threads(
     for thread in threads:
         contact = await db.get(Contact, thread.contact_id)
         if contact:
+            # Build comprehensive phones list from ALL available fields
+            phones_list = []
+            seen_phones = set()
+
+            def add_phone(number, phone_type="mobile"):
+                if number and number not in seen_phones:
+                    seen_phones.add(number)
+                    phones_list.append({"type": phone_type, "number": number})
+
+            # Primary phone
+            if contact.phone:
+                add_phone(contact.phone, "primary")
+
+            # JSONB phones array
+            if contact.phones:
+                for p in contact.phones:
+                    if isinstance(p, dict):
+                        add_phone(p.get("number"), p.get("type", "mobile"))
+                    elif isinstance(p, str):
+                        add_phone(p, "mobile")
+
+            # Individual phone columns (mobile_phone, mobile_phone_2, ..., mobile_phone_30)
+            for i in range(1, 31):
+                suffix = "" if i == 1 else f"_{i}"
+                for prefix in ["mobile_phone", "personal_phone", "direct_number"]:
+                    col_name = f"{prefix}{suffix}" if i > 1 else prefix
+                    phone_val = getattr(contact, col_name, None)
+                    if phone_val:
+                        add_phone(phone_val, prefix.replace("_", " "))
+
+            # Build comprehensive emails list from ALL available fields
+            emails_list = []
+            seen_emails = set()
+
+            def add_email(email_addr):
+                if email_addr and "@" in str(email_addr) and email_addr not in seen_emails:
+                    seen_emails.add(email_addr)
+                    emails_list.append(email_addr)
+
+            # Primary email
+            if contact.email:
+                add_email(contact.email)
+
+            # Base email fields
+            if hasattr(contact, 'business_email') and contact.business_email:
+                add_email(contact.business_email)
+            if hasattr(contact, 'personal_email') and contact.personal_email:
+                add_email(contact.personal_email)
+            if hasattr(contact, 'personal_verified_email') and contact.personal_verified_email:
+                add_email(contact.personal_verified_email)
+            if hasattr(contact, 'business_verified_email') and contact.business_verified_email:
+                add_email(contact.business_verified_email)
+
+            # Text fields containing multiple emails (comma or newline separated)
+            for text_field in ['personal_emails', 'personal_verified_emails', 'business_verified_emails']:
+                text_val = getattr(contact, text_field, None)
+                if text_val:
+                    # Split by common delimiters
+                    for delimiter in [',', '\n', ';', '|']:
+                        if delimiter in text_val:
+                            for email in text_val.split(delimiter):
+                                add_email(email.strip())
+                            break
+                    else:
+                        # No delimiter found, try as single email
+                        add_email(text_val.strip())
+
+            # Individual email columns: personal_email_1 through personal_email_30
+            for i in range(1, 31):
+                col_name = f"personal_email_{i}"
+                email_val = getattr(contact, col_name, None)
+                if email_val:
+                    add_email(email_val)
+
+            # Individual email columns: business_email_2 through business_email_30 (note: starts at 2, not 1)
+            for i in range(2, 31):
+                col_name = f"business_email_{i}"
+                email_val = getattr(contact, col_name, None)
+                if email_val:
+                    add_email(email_val)
+
+            # Individual email columns: personal_verified_email_2 through personal_verified_email_30
+            for i in range(2, 31):
+                col_name = f"personal_verified_email_{i}"
+                email_val = getattr(contact, col_name, None)
+                if email_val:
+                    add_email(email_val)
+
+            # Individual email columns: business_verified_email_2 through business_verified_email_30
+            for i in range(2, 31):
+                col_name = f"business_verified_email_{i}"
+                email_val = getattr(contact, col_name, None)
+                if email_val:
+                    add_email(email_val)
+
             thread_list.append({
                 "contact": {
                     "id": str(contact.id),
@@ -183,6 +331,11 @@ async def get_inbox_threads(
                     "last_name": contact.last_name,
                     "company": contact.company,
                     "created_at": contact.created_at.isoformat() if hasattr(contact, 'created_at') else None,
+                    # Include comprehensive phones/emails for compose recipient selection
+                    "phones": phones_list,
+                    "emails": emails_list,
+                    "overflow_data": contact.overflow_data if hasattr(contact, 'overflow_data') else None,
+                    "custom_fields": contact.custom_fields if hasattr(contact, 'custom_fields') else None,
                 },
                 "latest_message": {
                     "id": str(thread.id),
@@ -300,20 +453,82 @@ async def send_communication(
 
     # Queue for delivery based on type
     if data.type == CommunicationType.EMAIL:
-        # Get user's Mailgun settings for email reply
-        from app.models.mailgun_settings import MailgunSettings
+        from app.models.email_sending_profile import EmailSendingProfile, UserEmailProfileAssignment
+        from app.models.object_mailgun_settings import ObjectMailgunSettings
         from app.utils.encryption import decrypt_api_key
 
-        mg_result = await db.execute(
-            select(MailgunSettings).where(
-                MailgunSettings.user_id == current_user.id,
-                MailgunSettings.is_active == True
-            )
-        )
-        mailgun_settings = mg_result.scalar_one_or_none()
+        # Get the email profile if provided
+        from_email = None
+        from_name = None
+        mailgun_api_key = None
+        mailgun_domain = None
+        mailgun_region = "us"
 
-        if not mailgun_settings:
-            raise ValidationError("Mailgun not configured. Please configure in Settings.")
+        if data.profile_id:
+            # Use the specified profile
+            profile_result = await db.execute(
+                select(EmailSendingProfile).where(
+                    EmailSendingProfile.id == data.profile_id,
+                    EmailSendingProfile.is_active == True
+                )
+            )
+            profile = profile_result.scalar_one_or_none()
+
+            if not profile:
+                raise ValidationError("Email profile not found or inactive")
+
+            # Check if user is assigned to this profile
+            assignment_result = await db.execute(
+                select(UserEmailProfileAssignment).where(
+                    UserEmailProfileAssignment.user_id == current_user.id,
+                    UserEmailProfileAssignment.profile_id == data.profile_id
+                )
+            )
+            if not assignment_result.scalar_one_or_none():
+                raise ValidationError("You are not assigned to this email profile")
+
+            # Get the object's Mailgun settings
+            if profile.object_id:
+                mg_result = await db.execute(
+                    select(ObjectMailgunSettings).where(
+                        ObjectMailgunSettings.object_id == profile.object_id,
+                        ObjectMailgunSettings.is_active == True
+                    )
+                )
+                object_mailgun = mg_result.scalar_one_or_none()
+
+                if object_mailgun:
+                    from_email = f"{profile.local_part}@{object_mailgun.sending_domain}"
+                    mailgun_api_key = decrypt_api_key(object_mailgun.api_key)
+                    mailgun_domain = object_mailgun.receiving_domain
+                    mailgun_region = object_mailgun.region
+                else:
+                    raise ValidationError("Email profile's object does not have Mailgun configured")
+            else:
+                # Legacy profile without object
+                from_email = profile.email_address
+
+            from_name = profile.display_name
+        else:
+            # Fallback to user's personal Mailgun settings (legacy)
+            from app.models.mailgun_settings import MailgunSettings
+            mg_result = await db.execute(
+                select(MailgunSettings).where(
+                    MailgunSettings.user_id == current_user.id,
+                    MailgunSettings.is_active == True
+                )
+            )
+            user_mailgun = mg_result.scalar_one_or_none()
+
+            if user_mailgun:
+                from_email = user_mailgun.from_email
+                from_name = user_mailgun.from_name
+                mailgun_api_key = decrypt_api_key(user_mailgun.api_key)
+                mailgun_domain = user_mailgun.domain
+                mailgun_region = user_mailgun.region
+
+        if not from_email:
+            raise ValidationError("No email profile selected and no personal Mailgun settings configured")
 
         # Determine recipient email (priority: contact.email > personal_email > business_email)
         to_email = contact.email or contact.personal_email or contact.business_email
@@ -321,21 +536,67 @@ async def send_communication(
             raise ValidationError("Contact has no email address")
 
         # Update communication with from/to addresses
-        communication.from_address = mailgun_settings.from_email
+        communication.from_address = from_email
         communication.to_address = to_email
         await db.commit()
 
-        # Queue email with user's Mailgun settings
-        send_email_task.delay(
-            communication_id=str(communication.id),
-            to_email=to_email,
-            subject=data.subject,
-            html_body=data.body,
-            from_email=mailgun_settings.from_email,
-            from_name=mailgun_settings.from_name,
-            tags=["crm_reply", f"contact_{contact.id}", f"user_{current_user.id}"],
-            user_id=str(current_user.id),  # Pass user_id for per-user Mailgun config
-        )
+        # Send email synchronously (no Celery/Redis required)
+        # This approach works in development without running a Celery worker
+        settings = get_settings()
+
+        try:
+            # Create MailgunService with object-level credentials
+            mailgun = MailgunService()
+
+            # Override with object-specific Mailgun credentials if available
+            if mailgun_api_key and mailgun_domain:
+                region = (mailgun_region or "us").lower()
+                base_url = "https://api.mailgun.net" if region == "us" else "https://api.eu.mailgun.net"
+                mailgun.api_key = mailgun_api_key
+                mailgun.domain = mailgun_domain
+                mailgun.base_url = f"{base_url}/v3/{mailgun_domain}"
+                mailgun.auth = ("api", mailgun_api_key)
+                logger.info(f"[EMAIL] Using Object-level Mailgun (domain: {mailgun_domain}, region: {region})")
+
+            # Send email directly via Mailgun API
+            result = await mailgun.send_email(
+                to_email=to_email,
+                subject=data.subject,
+                html_body=data.body,
+                from_email=from_email,
+                from_name=from_name,
+                tags=["crm_reply", f"contact_{contact.id}", f"user_{current_user.id}"],
+            )
+
+            # Update communication as SENT
+            communication.status = CommunicationStatus.SENT
+            communication.sent_at = datetime.now(timezone.utc)
+            communication.external_id = result.get("message_id")
+            communication.provider_metadata = {
+                "provider": "mailgun",
+                "message_id": result.get("message_id"),
+                "sent_at": datetime.now(timezone.utc).isoformat(),
+            }
+            await db.commit()
+            await db.refresh(communication)
+
+            logger.info(f"[EMAIL] Sent successfully: {result.get('message_id')} to {to_email}")
+
+        except Exception as e:
+            # Update communication as FAILED
+            logger.error(f"[EMAIL] Failed to send: {str(e)}")
+            communication.status = CommunicationStatus.FAILED
+            communication.failed_at = datetime.now(timezone.utc)
+            communication.provider_metadata = {
+                "provider": "mailgun",
+                "error": str(e),
+                "failed_at": datetime.now(timezone.utc).isoformat(),
+            }
+            await db.commit()
+            await db.refresh(communication)
+
+            # Don't raise - return the communication with FAILED status
+            # This allows the frontend to show the error appropriately
 
     elif data.type == CommunicationType.SMS:
         send_sms_task.delay(
@@ -514,6 +775,7 @@ async def get_contact_communications(
     # Get communications
     query = (
         select(Communication)
+        .options(selectinload(Communication.user))
         .where(Communication.contact_id == contact_id)
         .order_by(Communication.created_at.asc())
         .offset(skip)

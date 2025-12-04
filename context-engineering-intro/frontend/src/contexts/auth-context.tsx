@@ -53,7 +53,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const logout = async () => {
-    await authService.logout();
+    try {
+      await authService.logout();
+    } catch {
+      // Ignore errors - we'll clear state and redirect regardless
+    }
     setUser(null);
     router.push('/login');
   };

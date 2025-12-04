@@ -7,17 +7,22 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Send, Paperclip, X, Image as ImageIcon, FileText } from 'lucide-react'
+import { Send, Paperclip, X, Image as ImageIcon, FileText, Maximize2 } from 'lucide-react'
 import { RichTextEditor } from './rich-text-editor'
 import { emailTemplatesApi } from '@/lib/queries/email-templates'
 import { EmailTemplate, Paginated } from '@/types'
 import { cn } from '@/lib/utils'
 
 interface MessageComposerProps {
-  onSend: (data: { message: string; subject?: string; files?: File[]; channel?: string }) => void
+  onSend: (data: { message: string; subject?: string; files?: File[]; channel?: string; recipient?: string }) => void
   disabled?: boolean
-  contactChannels?: { email?: string; phone?: string; hasWebChat?: boolean }
+  contactChannels?: {
+    emails?: string[];
+    phones?: string[];
+    hasWebChat?: boolean;
+  }
   threadType?: string // Type of the current thread (email, sms, web_chat)
+  onExpandCompose?: () => void // Callback to open full compose modal
 }
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024 // 10MB
@@ -34,11 +39,12 @@ const ALLOWED_FILE_TYPES = [
   'text/plain'
 ]
 
-export function MessageComposer({ onSend, disabled, contactChannels, threadType }: MessageComposerProps) {
+export function MessageComposer({ onSend, disabled, contactChannels, threadType, onExpandCompose }: MessageComposerProps) {
   const [message, setMessage] = useState('')
   const [subject, setSubject] = useState('')
   const [selectedFiles, setSelectedFiles] = useState<File[]>([])
   const [selectedChannel, setSelectedChannel] = useState<string>((threadType || 'web_chat').toLowerCase())
+  const [selectedRecipient, setSelectedRecipient] = useState<string>('')
   const [selectedTemplateId, setSelectedTemplateId] = useState<string>('')
   const fileInputRef = useRef<HTMLInputElement>(null)
 
@@ -121,7 +127,8 @@ export function MessageComposer({ onSend, disabled, contactChannels, threadType 
         message,
         subject: isEmailThread ? subject : undefined,
         files: selectedFiles.length > 0 ? selectedFiles : undefined,
-        channel: selectedChannel
+        channel: selectedChannel,
+        recipient: selectedRecipient || undefined
       })
       setMessage('')
       setSubject('')
@@ -137,17 +144,94 @@ export function MessageComposer({ onSend, disabled, contactChannels, threadType 
   if (contactChannels?.hasWebChat !== false) {
     availableChannels.push({ value: 'web_chat', label: 'Web Chat' })
   }
-  if (contactChannels?.email) {
-    availableChannels.push({ value: 'email', label: `Email (${contactChannels.email})` })
+  if (contactChannels?.emails && contactChannels.emails.length > 0) {
+    availableChannels.push({ value: 'email', label: 'Email' })
   }
-  if (contactChannels?.phone) {
-    availableChannels.push({ value: 'sms', label: `SMS (${contactChannels.phone})` })
+  if (contactChannels?.phones && contactChannels.phones.length > 0) {
+    availableChannels.push({ value: 'sms', label: 'SMS' })
   }
 
   const showChannelSelector = availableChannels.length > 1
 
+  // Get available recipients based on channel
+  const getAvailableRecipients = () => {
+    if (selectedChannel === 'email' && contactChannels?.emails) {
+      return contactChannels.emails
+    }
+    if (selectedChannel === 'sms' && contactChannels?.phones) {
+      return contactChannels.phones
+    }
+    return []
+  }
+
+  const availableRecipients = getAvailableRecipients()
+  // Always show recipient selector if there are any recipients (so user can always see/change)
+  const showRecipientSelector = availableRecipients.length >= 1
+
+  // Set default recipient when channel changes
+  useEffect(() => {
+    let recipients: string[] = []
+    if (selectedChannel === 'email' && contactChannels?.emails) {
+      recipients = contactChannels.emails
+    } else if (selectedChannel === 'sms' && contactChannels?.phones) {
+      recipients = contactChannels.phones
+    }
+    if (recipients.length > 0 && !selectedRecipient) {
+      setSelectedRecipient(recipients[0])
+    }
+  }, [selectedChannel, contactChannels])
+
   return (
-    <form onSubmit={handleSubmit} className="border-t p-4 space-y-3">
+    <form onSubmit={handleSubmit} className="border-t p-3 space-y-2">
+      {/* Prominent expand button at the top */}
+      {onExpandCompose && (
+        <Button
+          type="button"
+          variant="secondary"
+          size="default"
+          onClick={onExpandCompose}
+          className="w-full mb-2 bg-blue-50 hover:bg-blue-100 text-blue-700 font-medium"
+        >
+          <Maximize2 className="h-4 w-4 mr-2" />
+          Open Full Compose Editor
+        </Button>
+      )}
+
+      {/* Header row with channel selector and recipient selector */}
+      <div className="flex items-center justify-end gap-2 min-h-[32px]">
+        {/* Channel Selector (if multiple channels available) */}
+        {showChannelSelector && (
+          <Select value={selectedChannel} onValueChange={setSelectedChannel} disabled={disabled}>
+            <SelectTrigger className="w-[120px] h-8">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {availableChannels.map((channel) => (
+                <SelectItem key={channel.value} value={channel.value}>
+                  {channel.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        )}
+
+        {/* Recipient Selector (if multiple recipients available) */}
+        {showRecipientSelector && (
+          <Select value={selectedRecipient} onValueChange={setSelectedRecipient} disabled={disabled}>
+            <SelectTrigger className="w-[200px] h-8">
+              <SelectValue placeholder="Select recipient" />
+            </SelectTrigger>
+            <SelectContent>
+              {availableRecipients.map((recipient) => (
+                <SelectItem key={recipient} value={recipient}>
+                  {recipient}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        )}
+      </div>
+
       {/* Template Selector (only for email threads) */}
       {isEmailThread && (
         <div className="space-y-1">
@@ -212,19 +296,22 @@ export function MessageComposer({ onSend, disabled, contactChannels, threadType 
 
       {/* Message Input - Rich Text Editor for Email, Plain Textarea for SMS/Chat */}
       {isEmailThread ? (
-        <RichTextEditor
-          value={message}
-          onChange={setMessage}
-          placeholder="Type your email message..."
-          className="w-full"
-        />
+        <div className="max-h-[120px] overflow-y-auto">
+          <RichTextEditor
+            value={message}
+            onChange={setMessage}
+            placeholder="Type your email message..."
+            className="w-full min-h-[60px] max-h-[120px]"
+          />
+        </div>
       ) : (
         <Textarea
           placeholder="Type a message..."
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           disabled={disabled}
-          className="w-full min-h-[100px] resize-none"
+          className="w-full min-h-[60px] max-h-[120px] resize-none"
+          style={{ scrollbarWidth: 'thin' }}
         />
       )}
 
@@ -256,22 +343,6 @@ export function MessageComposer({ onSend, disabled, contactChannels, threadType 
         >
           <Paperclip className="h-4 w-4" />
         </Button>
-
-        {/* Channel Selector (if multiple channels available) */}
-        {showChannelSelector && (
-          <Select value={selectedChannel} onValueChange={setSelectedChannel} disabled={disabled}>
-            <SelectTrigger className="w-[140px]">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              {availableChannels.map((channel) => (
-                <SelectItem key={channel.value} value={channel.value}>
-                  {channel.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        )}
 
         <div className="flex-1" />
 

@@ -1,0 +1,91 @@
+/* Email body content styling */
+
+.email-body-content {
+  /* Base text styling */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: inherit;
+  word-break: break-word;
+}
+
+/* Paragraph styling */
+.email-body-content p {
+  margin: 0 0 1em 0;
+}
+
+.email-body-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Link styling */
+.email-body-content a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.email-body-content a:hover {
+  color: #1d4ed8;
+}
+
+/* List styling */
+.email-body-content ul,
+.email-body-content ol {
+  margin: 0 0 1em 0;
+  padding-left: 2em;
+}
+
+.email-body-content li {
+  margin-bottom: 0.5em;
+}
+
+/* Div and span inherit */
+.email-body-content div,
+.email-body-content span {
+  color: inherit;
+}
+
+/* Strong/bold text */
+.email-body-content strong,
+.email-body-content b {
+  font-weight: 600;
+}
+
+/* Emphasis/italic text */
+.email-body-content em,
+.email-body-content i {
+  font-style: italic;
+}
+
+/* Line breaks */
+.email-body-content br {
+  display: block;
+  content: "";
+  margin-top: 0.5em;
+}
+
+/* Blockquote for quoted replies */
+.email-body-content blockquote {
+  margin: 1em 0;
+  padding-left: 1em;
+  border-left: 3px solid #e5e7eb;
+  color: #6b7280;
+}
+
+/* For outbound messages (white text on blue background) */
+.bg-blue-600 .email-body-content {
+  color: white;
+}
+
+.bg-blue-600 .email-body-content a {
+  color: #bfdbfe;
+}
+
+.bg-blue-600 .email-body-content a:hover {
+  color: white;
+}
+
+.bg-blue-600 .email-body-content blockquote {
+  border-left-color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.8);
+}

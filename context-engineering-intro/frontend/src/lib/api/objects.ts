@@ -13,6 +13,17 @@ import type {
   BulkContactAssignmentFilters
 } from '@/types/objects'
 
+// Interface for user's object assignments
+export interface UserObject {
+  id: string
+  name: string
+  type: string
+  company_info: Record<string, any>
+  permissions: Record<string, boolean>
+  role_name: string | null
+  assigned_at: string
+}
+
 export const objectsApi = {
   // Objects CRUD
   list: (params?: { page?: number; page_size?: number; search?: string; type?: string }) => {
@@ -87,7 +98,7 @@ export const objectsApi = {
     api.post(`/api/v1/objects/${id}/contacts`, { contact_ids: contactIds }).then(res => res.data),
 
   bulkAssignContacts: (id: string, filters: BulkContactAssignmentFilters) =>
-    api.post(`/api/v1/objects/${id}/contacts/bulk`, filters).then(res => res.data),
+    api.post(`/api/v1/objects/${id}/contacts/bulk`, { filters }).then(res => res.data),
 
   updateContactAssignment: (id: string, contactId: string, data: { role?: string; department?: string }) =>
     api.put(`/api/v1/objects/${id}/contacts/${contactId}`, data).then(res => res.data),
@@ -120,4 +131,8 @@ export const objectsApi = {
 
   deleteWebsite: (id: string, websiteId: string) =>
     api.delete(`/api/v1/objects/${id}/websites/${websiteId}`).then(res => res.data),
+
+  // User's objects management
+  getUserObjects: (userId: string) =>
+    api.get<UserObject[]>(`/api/v1/users/${userId}/objects`).then(res => res.data),
 }

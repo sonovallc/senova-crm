@@ -36,9 +36,22 @@ export function formatErrorMessage(error: any): string {
       return detail
     }
 
-    // Handle error object with message
-    if (detail && typeof detail === 'object' && 'msg' in detail) {
-      return detail.msg
+    // Handle single validation error object (FastAPI format: {type, loc, msg, input})
+    if (detail && typeof detail === 'object') {
+      // Check if it's a single validation error with msg property
+      if ('msg' in detail && typeof detail.msg === 'string') {
+        // If it has loc property, format it nicely
+        if ('loc' in detail && Array.isArray(detail.loc)) {
+          const field = formatFieldPath(detail.loc)
+          return `${field}: ${detail.msg}`
+        }
+        return detail.msg
+      }
+
+      // Handle error object with message property
+      if ('message' in detail && typeof detail.message === 'string') {
+        return detail.message
+      }
     }
   }
 

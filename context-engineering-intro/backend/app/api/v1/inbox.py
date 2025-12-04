@@ -12,14 +12,14 @@ from typing import List, Optional
 from uuid import UUID
 from datetime import datetime, timezone
 from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File, Form
-from sqlalchemy import select, and_
+from sqlalchemy import select, and_, text
 from sqlalchemy.ext.asyncio import AsyncSession
 import httpx
 import json
 import logging
 
 from app.api.dependencies import get_current_user, CurrentUser, DatabaseSession
-from app.models.email_sending_profile import EmailSendingProfile, UserEmailProfileAssignment
+# from app.models.email_sending_profile import EmailSendingProfile, UserEmailProfileAssignment
 from app.models.communication import Communication, CommunicationType, CommunicationDirection, CommunicationStatus
 from app.models.contact import Contact
 from app.config.settings import get_settings
@@ -190,14 +190,12 @@ async def send_composed_email(
             detail="Invalid profile ID format"
         )
 
-    # Verify user has access to this profile
-    assignment_query = select(UserEmailProfileAssignment).where(
-        and_(
-            UserEmailProfileAssignment.user_id == current_user.id,
-            UserEmailProfileAssignment.profile_id == profile_uuid
-        )
-    )
-    assignment_result = await db.execute(assignment_query)
+    # Verify user has access to this profile using raw SQL (model doesn't exist)
+    assignment_query = text("""
+        SELECT 1 FROM user_email_profile_assignments
+        WHERE user_id = :user_id AND profile_id = :profile_id
+    """)
+    assignment_result = await db.execute(assignment_query, {"user_id": current_user.id, "profile_id": profile_uuid})
     assignment = assignment_result.scalar_one_or_none()
 
     if not assignment:
@@ -206,13 +204,31 @@ async def send_composed_email(
             detail="You do not have access to this email sending profile"
         )
 
-    # Get the profile
-    profile = await db.get(EmailSendingProfile, profile_uuid)
-    if not profile or not profile.is_active:
+    # Get the profile using raw SQL
+    profile_query = text("""
+        SELECT id, email_address, display_name, reply_to_address, is_active
+        FROM email_sending_profiles
+        WHERE id = :profile_id
+    """)
+    profile_result = await db.execute(profile_query, {"profile_id": profile_uuid})
+    profile_row = profile_result.fetchone()
+
+    if not profile_row or not profile_row.is_active:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Selected email sending profile is not available"
         )
+
+    # Create a simple object to hold profile data (since we don't have the ORM model)
+    class ProfileData:
+        def __init__(self, row):
+            self.id = row.id
+            self.email_address = row.email_address
+            self.display_name = row.display_name
+            self.reply_to_address = row.reply_to_address
+            self.is_active = row.is_active
+
+    profile = ProfileData(profile_row)
 
     # Parse email addresses (comma-separated)
     def parse_emails(email_string: Optional[str]) -> List[str]:

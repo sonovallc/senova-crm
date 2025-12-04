@@ -9,8 +9,9 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { ObjectContactsTab } from '@/components/objects/object-contacts-tab'
 import { ObjectUsersTab } from '@/components/objects/object-users-tab'
+import { ObjectMailgunTab } from '@/components/objects/object-mailgun-tab'
 // ObjectWebsitesTab import removed - feature not currently active
-import { ArrowLeft, Building2, Edit, Settings, Users, UserCheck, Calendar, User } from 'lucide-react'
+import { ArrowLeft, Building2, Edit, Settings, Users, UserCheck, Calendar, User, Mail } from 'lucide-react'
 import { useAuth } from '@/contexts/auth-context'
 import { Badge } from '@/components/ui/badge'
 import { format } from 'date-fns'
@@ -123,6 +124,12 @@ export default function ObjectDetailPage() {
             <UserCheck className="mr-2 h-4 w-4" />
             Users
           </TabsTrigger>
+          {canManageUsers && (
+            <TabsTrigger value="mailgun" className="data-[state=active]:bg-white">
+              <Mail className="mr-2 h-4 w-4" />
+              Email Settings
+            </TabsTrigger>
+          )}
           {/* Websites functionality commented out for future use */}
           {/* <TabsTrigger value="websites" className="data-[state=active]:bg-white">
             <Globe className="mr-2 h-4 w-4" />
@@ -263,6 +270,17 @@ export default function ObjectDetailPage() {
             canManage={canManageUsers}
           />
         </TabsContent>
+
+        {/* Mailgun Settings Tab */}
+        {canManageUsers && (
+          <TabsContent value="mailgun">
+            <ObjectMailgunTab
+              objectId={object.id}
+              objectName={object.name}
+              canManage={canManageUsers}
+            />
+          </TabsContent>
+        )}
 
         {/* Websites Tab - commented out for future use */}
         {/* <TabsContent value="websites">

@@ -7,8 +7,8 @@ Handles:
 - User management permissions
 """
 
-from typing import List, Dict, Any, Set
-from sqlalchemy import select
+from typing import List, Dict, Any, Set, Optional
+from sqlalchemy import select, and_, or_
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.user import User, UserRole
@@ -83,7 +83,8 @@ def filter_contact_fields(contacts: List[Contact], visible_fields: Set[str]) -> 
         "custom_fields", "tags", "enrichment_data", "last_enriched_at",
         "notes", "is_active", "created_at", "updated_at",
         "street_address", "city", "state", "zip_code", "country",
-        "phones", "addresses", "websites"
+        "phones", "addresses", "websites",
+        "object_ids", "primary_object_id"  # Added for object-based permissions
     ]
 
     for contact in contacts:
@@ -132,14 +133,76 @@ def filter_contact_fields(contacts: List[Contact], visible_fields: Set[str]) -> 
     return filtered_contacts
 
 
+async def get_accessible_contact_ids(user: User, db: AsyncSession) -> Optional[Set[int]]:
+    """
+    Get set of contact IDs that the user can access based on their role.
+
+    Returns:
+        - None for Owner (can see all contacts, no filter needed)
+        - Set of contact IDs for Admin (from objects they have access to)
+        - Set of contact IDs for User (where assigned_to_id matches)
+    """
+    # Convert role to string for comparison
+    user_role = user.role.value if hasattr(user.role, 'value') else str(user.role)
+
+    # Owner: Return None (no filter needed, sees all)
+    if user_role == 'owner':
+        return None
+
+    # User: Return contacts where assigned_to_id = user.id
+    if user_role == 'user':
+        result = await db.execute(
+            select(Contact.id).where(
+                and_(
+                    Contact.assigned_to_id == user.id,
+                    Contact.deleted_at.is_(None)
+                )
+            )
+        )
+        return set(row[0] for row in result.all())
+
+    # Admin: Return contacts assigned to them OR contacts from objects they have access to
+    if user_role == 'admin':
+        from app.models.object import ObjectContact, ObjectUser
+
+        contact_ids = set()
+
+        # 1. Get contacts directly assigned to the admin
+        direct_result = await db.execute(
+            select(Contact.id).where(
+                and_(
+                    Contact.assigned_to_id == user.id,
+                    Contact.deleted_at.is_(None)
+                )
+            )
+        )
+        contact_ids.update(row[0] for row in direct_result.all())
+
+        # 2. Get contact IDs from objects the admin has access to
+        object_query = (
+            select(ObjectContact.contact_id.distinct())
+            .join(ObjectUser, ObjectContact.object_id == ObjectUser.object_id)
+            .where(ObjectUser.user_id == user.id)
+        )
+
+        object_result = await db.execute(object_query)
+        contact_ids.update(row[0] for row in object_result.all())
+
+        # Return combined set (may be empty if admin has no direct assignments or objects)
+        return contact_ids
+
+    # Default: return empty set
+    return set()
+
+
 async def can_view_contact(current_user: User, contact: Contact, db: AsyncSession) -> bool:
     """
-    Check if user can view a specific contact.
+    Check if user can view a specific contact based on object permissions.
 
     Permissions:
     - Owner: Can view all contacts
-    - Admin: Can view all contacts
-    - User: Can only view unassigned contacts or contacts assigned to them
+    - Admin: Can ONLY view contacts that are attached to objects assigned to them via object_users table
+    - User: Can ONLY view contacts where assigned_to_id = current_user.id
 
     Args:
         current_user: Current authenticated user
@@ -149,13 +212,45 @@ async def can_view_contact(current_user: User, contact: Contact, db: AsyncSessio
     Returns:
         bool: True if user can view the contact
     """
-    # Owner and Admin can see all contacts
-    if current_user.role in ('owner', 'admin'):
+    # Convert role to string for comparison
+    user_role = current_user.role.value if hasattr(current_user.role, 'value') else str(current_user.role)
+
+    # Owner can see all contacts
+    if user_role == 'owner':
         return True
 
-    # Regular users can only see unassigned contacts or their own assigned contacts
-    if current_user.role == 'user':
-        return contact.assigned_to_id is None or contact.assigned_to_id == current_user.id
+    # User role: can only see contacts assigned to them
+    if user_role == 'user':
+        return contact.assigned_to_id == current_user.id
+
+    # Admin role: can see contacts assigned to them OR contacts in objects they have access to
+    if user_role == 'admin':
+        from app.models.object import ObjectContact, ObjectUser
+
+        # 1. Check if contact is directly assigned to the admin
+        if contact.assigned_to_id == current_user.id:
+            return True
+
+        # 2. Check if contact is in any of the admin's objects via object_contacts table
+        user_objects_result = await db.execute(
+            select(ObjectUser.object_id).where(ObjectUser.user_id == current_user.id)
+        )
+        visible_object_ids = set(row[0] for row in user_objects_result.all())
+
+        # If admin has no objects assigned, they cannot see this contact via objects
+        if not visible_object_ids:
+            return False
+
+        contact_in_objects = await db.execute(
+            select(ObjectContact.id).where(
+                and_(
+                    ObjectContact.contact_id == contact.id,
+                    ObjectContact.object_id.in_(visible_object_ids)
+                )
+            ).limit(1)
+        )
+
+        return contact_in_objects.scalar_one_or_none() is not None
 
     return False
 
@@ -235,3 +330,43 @@ def filter_user_list_by_role(current_user: User, users: List[User]) -> List[User
         return [u for u in users if u.id == current_user.id]
 
     return []
+
+
+async def get_users_with_shared_objects(admin_user: User, db: AsyncSession) -> Set:
+    """
+    Get set of user IDs that share at least one object assignment with the admin user.
+
+    This is used for object-based visibility where admins can only view users
+    who are assigned to the same objects they are assigned to.
+
+    Args:
+        admin_user: The admin user to check shared objects for
+        db: Database session
+
+    Returns:
+        Set of user IDs that share objects with the admin
+    """
+    from app.models.object import ObjectUser
+
+    # First, get all object IDs the admin has access to
+    admin_objects_result = await db.execute(
+        select(ObjectUser.object_id).where(ObjectUser.user_id == admin_user.id)
+    )
+    admin_object_ids = set(row[0] for row in admin_objects_result.all())
+
+    if not admin_object_ids:
+        # Admin has no object assignments, can only see themselves
+        return {admin_user.id}
+
+    # Get all users who have access to any of those objects
+    shared_users_result = await db.execute(
+        select(ObjectUser.user_id.distinct()).where(
+            ObjectUser.object_id.in_(admin_object_ids)
+        )
+    )
+    shared_user_ids = set(row[0] for row in shared_users_result.all())
+
+    # Always include the admin themselves
+    shared_user_ids.add(admin_user.id)
+
+    return shared_user_ids

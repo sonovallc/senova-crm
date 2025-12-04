@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { objectsApi } from '@/lib/api/objects'
+import { contactsApi, ContactObjectInfo } from '@/lib/queries/contacts'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -23,53 +24,23 @@ interface ContactObjectsSectionProps {
   canManage?: boolean
 }
 
-interface ObjectWithContact {
-  id: string
-  name: string
-  type: string
-  hasContact?: boolean
-}
-
 export function ContactObjectsSection({ contactId, canManage = false }: ContactObjectsSectionProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const { toast } = useToast()
   const queryClient = useQueryClient()
 
-  // Fetch all objects
-  const { data: allObjectsData, isLoading: loadingObjects } = useQuery({
-    queryKey: ['objects', 'all'],
-    queryFn: () => objectsApi.list({ page: 1, page_size: 100 }),
+  // Fetch objects for this contact directly (efficient single API call)
+  const { data: contactObjectsData, isLoading: loadingContactObjects } = useQuery({
+    queryKey: ['contact', contactId, 'objects'],
+    queryFn: () => contactsApi.getContactObjects(contactId),
   })
 
-  // For each object, we need to check if this contact is assigned
-  // Since we don't have a direct API to get objects for a contact,
-  // we'll fetch contact lists for each object to determine assignment
-  const { data: objectsWithContact, isLoading: loadingAssignments } = useQuery({
-    queryKey: ['contact', contactId, 'objects'],
-    queryFn: async () => {
-      if (!allObjectsData?.items) return []
-
-      // Fetch contact assignments for each object in parallel
-      const assignmentChecks = await Promise.all(
-        allObjectsData.items.map(async (obj) => {
-          try {
-            const contacts = await objectsApi.listContacts(obj.id, {
-              page: 1,
-              page_size: 100
-            })
-            const hasContact = contacts.items.some(oc => oc.contact_id === contactId)
-            return { ...obj, hasContact }
-          } catch (error) {
-            // If error fetching contacts for an object, assume not assigned
-            return { ...obj, hasContact: false }
-          }
-        })
-      )
-
-      return assignmentChecks.filter(obj => obj.hasContact)
-    },
-    enabled: !!allObjectsData?.items,
+  // Fetch all objects (for the add dialog)
+  const { data: allObjectsData, isLoading: loadingAllObjects } = useQuery({
+    queryKey: ['objects', 'all'],
+    queryFn: () => objectsApi.list({ page: 1, page_size: 100 }),
+    enabled: isDialogOpen, // Only fetch when dialog is open
   })
 
   // Mutation to assign contact to an object
@@ -114,14 +85,17 @@ export function ContactObjectsSection({ contactId, canManage = false }: ContactO
     },
   })
 
+  // Get list of objects this contact belongs to
+  const contactObjects = contactObjectsData?.items || []
+
   // Filter objects for assignment dialog (exclude already assigned)
   const availableObjects = allObjectsData?.items?.filter(obj => {
-    const isAssigned = objectsWithContact?.some(oc => oc.id === obj.id)
+    const isAssigned = contactObjects.some(co => co.id === obj.id)
     const matchesSearch = obj.name.toLowerCase().includes(searchQuery.toLowerCase())
     return !isAssigned && matchesSearch
   }) || []
 
-  const isLoading = loadingObjects || loadingAssignments
+  const isLoading = loadingContactObjects
 
   return (
     <Card>
@@ -162,7 +136,7 @@ export function ContactObjectsSection({ contactId, canManage = false }: ContactO
                     />
                   </div>
                   <div className="max-h-60 overflow-y-auto space-y-2 border rounded-lg p-2">
-                    {loadingObjects ? (
+                    {loadingAllObjects ? (
                       <div className="flex items-center justify-center py-4">
                         <Loader2 className="h-6 w-6 animate-spin text-senova-primary" />
                       </div>
@@ -202,7 +176,7 @@ export function ContactObjectsSection({ contactId, canManage = false }: ContactO
           <div className="flex items-center justify-center py-6">
             <Loader2 className="h-6 w-6 animate-spin text-senova-primary" />
           </div>
-        ) : !objectsWithContact || objectsWithContact.length === 0 ? (
+        ) : contactObjects.length === 0 ? (
           <div className="text-center py-6">
             <Building2 className="h-10 w-10 text-senova-gray-400 mx-auto mb-3" />
             <p className="text-sm text-senova-gray-500">
@@ -216,7 +190,7 @@ export function ContactObjectsSection({ contactId, canManage = false }: ContactO
           </div>
         ) : (
           <div className="space-y-3">
-            {objectsWithContact.map((obj) => (
+            {contactObjects.map((obj) => (
               <div
                 key={obj.id}
                 className="flex items-center justify-between p-4 bg-senova-gray-50 rounded-lg"

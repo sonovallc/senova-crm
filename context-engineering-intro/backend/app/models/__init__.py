@@ -19,6 +19,8 @@ from .autoresponder import Autoresponder, AutoresponderSequence, AutoresponderEx
 from .email_suppression import EmailSuppression, SuppressionType
 from .unsubscribe_token import UnsubscribeToken
 from .object import Object, ObjectContact, ObjectUser, ObjectWebsite
+from .object_mailgun_settings import ObjectMailgunSettings
+from .email_sending_profile import EmailSendingProfile, UserEmailProfileAssignment
 
 __all__ = [
     "User",
@@ -64,4 +66,7 @@ __all__ = [
     "ObjectContact",
     "ObjectUser",
     "ObjectWebsite",
+    "ObjectMailgunSettings",
+    "EmailSendingProfile",
+    "UserEmailProfileAssignment",
 ]

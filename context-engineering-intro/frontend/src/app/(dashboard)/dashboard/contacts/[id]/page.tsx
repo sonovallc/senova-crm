@@ -138,13 +138,39 @@ export default function ContactDetailPage({ params }: { params: Promise<{ id: st
 
   const primaryEmail = getPrimaryEmail(contact)
 
+  // Helper to parse TEXT fields that contain multiple comma/newline separated emails
+  const parseTextEmailField = (fieldName: string, label: string) => {
+    const textValue = (contact as any)[fieldName]
+    if (!textValue) return []
+
+    // Split by common delimiters
+    const emails: { label: string; value: string; isBase: boolean }[] = []
+    const rawEmails = textValue.split(/[,;\n|]+/).map((e: string) => e.trim()).filter((e: string) => e && e.includes('@'))
+
+    rawEmails.forEach((email: string, index: number) => {
+      emails.push({
+        label: index === 0 ? label : `${label} ${index + 1}`,
+        value: email,
+        isBase: index === 0,
+      })
+    })
+
+    return emails
+  }
+
   // Collect all emails - base fields always shown, overflow only if populated
+  // Also include TEXT fields (plural) which store comma-separated emails
   const emails = [
     { label: 'Email', value: primaryEmail, isBase: true },
+    // Individual column fields (singular with numbers)
     ...generateEmailFields('personal_email', 'Personal Email', 30, true),
     ...generateEmailFields('business_email', 'Business Email', 30, true),
     ...generateEmailFields('personal_verified_email', 'Personal Verified Email', 30, true),
     ...generateEmailFields('business_verified_email', 'Business Verified Email', 30, true),
+    // TEXT fields (plural) - these store comma-separated emails
+    ...parseTextEmailField('personal_emails', 'Personal Emails'),
+    ...parseTextEmailField('personal_verified_emails', 'Personal Verified Emails'),
+    ...parseTextEmailField('business_verified_emails', 'Business Verified Emails'),
   ]
 
   // Integer fields to highlight - ALWAYS show all fields even if null

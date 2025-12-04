@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { communicationsApi } from '@/lib/queries/communications'
@@ -9,6 +9,7 @@ import { ConversationList } from '@/components/inbox/conversation-list'
 import { MessageThread } from '@/components/inbox/message-thread'
 import { MessageComposer } from '@/components/inbox/message-composer'
 import { EmailComposer } from '@/components/inbox/email-composer'
+import { ComposeModal } from '@/components/inbox/compose-modal'
 import { Card } from '@/components/ui/card'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
@@ -19,7 +20,7 @@ import { useWebSocket } from '@/hooks/use-websocket'
 import { authService } from '@/lib/auth'
 import { formatErrorMessage } from '@/lib/error-handler'
 import { getPrimaryEmail } from '@/lib/utils'
-import { Loader2, User as UserIcon, ArrowUpDown, Plus, PenSquare, Archive, ArchiveRestore, Forward } from 'lucide-react'
+import { Loader2, User as UserIcon, ArrowUpDown, Plus, PenSquare, Archive, ArchiveRestore, Forward, ChevronLeft } from 'lucide-react'
 import {
   Select,
   SelectContent,
@@ -27,6 +28,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels'
 
 const WS_URL = process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:8000'
 
@@ -48,6 +50,9 @@ export default function InboxPage() {
   const [sortBy, setSortBy] = useState('recent_activity')
   const [activeTab, setActiveTab] = useState('all')
   const [composeDialogOpen, setComposeDialogOpen] = useState(false)
+  const [expandedReplyOpen, setExpandedReplyOpen] = useState(false)
+  const [composeModalOpen, setComposeModalOpen] = useState(false)
+  const [showMessageDetail, setShowMessageDetail] = useState(false)
   const { toast } = useToast()
   const queryClient = useQueryClient()
   const searchParams = useSearchParams()
@@ -133,6 +138,7 @@ export default function InboxPage() {
       })
       // Clear selected conversation if it was archived
       setSelectedConversation(null)
+      setShowMessageDetail(false) // Reset mobile view
     },
     onError: (error: ApiError) => {
       toast({
@@ -156,6 +162,7 @@ export default function InboxPage() {
       // BUG-1 FIX: Clear selected conversation and switch to All tab after unarchiving
       // This ensures the unarchived contact immediately disappears from Archived tab
       setSelectedConversation(null)
+      setShowMessageDetail(false) // Reset mobile view
       setActiveTab('all')
     },
     onError: (error: ApiError) => {
@@ -236,9 +243,10 @@ export default function InboxPage() {
     subject: string
     message: string
     files?: File[]
+    profileId?: string
   }) => {
     try {
-      // Send email via API with CC/BCC support
+      // Send email via API with CC/BCC support and profile
       await communicationsApi.sendEmail({
         to: data.to,
         cc: data.cc.length > 0 ? data.cc : undefined,
@@ -246,6 +254,7 @@ export default function InboxPage() {
         subject: data.subject,
         body_html: data.message,
         attachments: data.files,
+        profile_id: data.profileId,
       })
 
       toast({
@@ -258,6 +267,56 @@ export default function InboxPage() {
     } catch (error) {
       toast({
         title: 'Failed to send email',
+        description: formatErrorMessage(error as ApiError) || 'An error occurred',
+        variant: 'destructive',
+      })
+    }
+  }
+
+  // Handle sending message from compose modal
+  const handleComposeModalSend = async (data: {
+    channel: string
+    to: string
+    cc?: string[]
+    bcc?: string[]
+    subject?: string
+    body: string
+    attachments?: File[]
+    profileId?: string
+  }) => {
+    try {
+      if (data.channel === 'email') {
+        // Send email via API with CC/BCC support and profile
+        await communicationsApi.sendEmail({
+          to: [data.to],
+          cc: data.cc,
+          bcc: data.bcc,
+          subject: data.subject || '',
+          body_html: data.body,
+          attachments: data.attachments,
+          profile_id: data.profileId,
+        })
+
+        toast({
+          title: 'Email sent',
+          description: `Email sent to ${data.to}`,
+        })
+      } else if (data.channel === 'sms') {
+        // Send SMS - need to find or create contact first
+        // For now, show an error that SMS without contact is not supported
+        toast({
+          title: 'SMS not supported',
+          description: 'SMS can only be sent from an existing contact conversation',
+          variant: 'destructive',
+        })
+        return
+      }
+
+      setComposeModalOpen(false)
+      queryClient.invalidateQueries({ queryKey: ['inbox-threads'] })
+    } catch (error) {
+      toast({
+        title: 'Failed to send message',
         description: formatErrorMessage(error as ApiError) || 'An error occurred',
         variant: 'destructive',
       })
@@ -317,6 +376,7 @@ export default function InboxPage() {
           sent_at: thread.latest_message.sent_at,
         }
         setSelectedConversation(conversation)
+        setShowMessageDetail(true) // Show message detail on mobile when auto-selected
 
         // Mark as read if it's an inbound message and not already read
         if (thread.latest_message.direction === CommunicationDirection.INBOUND && thread.latest_message.status !== CommunicationStatus.READ) {
@@ -327,21 +387,134 @@ export default function InboxPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [contactParam, inboxData])
 
+  // Computed contact data for compose components (shared between MessageComposer and ComposeModal)
+  const contactData = useMemo(() => {
+    if (!selectedConversation) {
+      return { contactEmails: [], contactPhones: [], defaultChannel: 'email' as const }
+    }
+
+    // Find the matching InboxThread to get full contact data
+    const matchingThread = inboxData.find(t => t.contact.id === selectedConversation.contact_id)
+    const contact = matchingThread?.contact
+
+    // Extract ALL emails from contact - prefer pre-computed emails array from backend
+    const contactEmails: string[] = []
+    // Use pre-computed emails array from backend if available (comprehensive extraction)
+    if ((contact as { emails?: string[] })?.emails && Array.isArray((contact as { emails?: string[] }).emails)) {
+      (contact as { emails: string[] }).emails.forEach((email: string) => {
+        if (email && !contactEmails.includes(email)) {
+          contactEmails.push(email)
+        }
+      })
+    }
+    // Fallback: extract from individual fields if no pre-computed list
+    if (contactEmails.length === 0) {
+      // Primary email
+      if (contact?.email) contactEmails.push(contact.email)
+      // Check overflow_data for email overflow fields
+      if (contact?.overflow_data) {
+        Object.entries(contact.overflow_data).forEach(([key, values]) => {
+          if (key.toLowerCase().includes('email') && Array.isArray(values)) {
+            values.forEach(val => {
+              if (val && typeof val === 'string' && val.includes('@') && !contactEmails.includes(val)) {
+                contactEmails.push(val)
+              }
+            })
+          }
+        })
+      }
+      // Check custom_fields for email fields
+      if (contact?.custom_fields) {
+        Object.entries(contact.custom_fields).forEach(([key, value]) => {
+          if (key.toLowerCase().includes('email') && typeof value === 'string' && value.includes('@') && !contactEmails.includes(value)) {
+            contactEmails.push(value)
+          }
+        })
+      }
+    }
+
+    // Extract ALL phones from contact - prefer pre-computed phones array from backend
+    const contactPhones: string[] = []
+    // Use pre-computed phones array from backend if available (comprehensive extraction)
+    if (contact?.phones && Array.isArray(contact.phones)) {
+      contact.phones.forEach((p: { number?: string; type?: string } | string) => {
+        const phoneNum = typeof p === 'string' ? p : p.number
+        if (phoneNum && !contactPhones.includes(phoneNum)) {
+          contactPhones.push(phoneNum)
+        }
+      })
+    }
+    // Fallback: extract from individual fields if no pre-computed list
+    if (contactPhones.length === 0) {
+      // Primary phone
+      if (contact?.phone) contactPhones.push(contact.phone)
+      // Check overflow_data for phone overflow fields
+      if (contact?.overflow_data) {
+        Object.entries(contact.overflow_data).forEach(([key, values]) => {
+          if (key.toLowerCase().includes('phone') && Array.isArray(values)) {
+            values.forEach(val => {
+              if (val && typeof val === 'string' && !contactPhones.includes(val)) {
+                contactPhones.push(val)
+              }
+            })
+          }
+        })
+      }
+      // Check custom_fields for phone fields
+      if (contact?.custom_fields) {
+        Object.entries(contact.custom_fields).forEach(([key, value]) => {
+          if (key.toLowerCase().includes('phone') && typeof value === 'string' && !contactPhones.includes(value)) {
+            contactPhones.push(value)
+          }
+        })
+      }
+    }
+
+    // Determine default channel from last inbound message in history
+    let defaultChannel: 'email' | 'sms' | 'web_chat' = 'email'
+    const lastInbound = messageHistory?.items?.find(m =>
+      m.direction?.toString().toUpperCase() === 'INBOUND'
+    )
+    if (lastInbound) {
+      const inboundType = lastInbound.type?.toString().toLowerCase()
+      if (inboundType === 'sms' || inboundType === 'mms') {
+        defaultChannel = 'sms'
+      } else if (inboundType === 'web_chat') {
+        defaultChannel = 'web_chat'
+      } else {
+        defaultChannel = 'email'
+      }
+    } else {
+      // Fall back to current thread type
+      const threadType = selectedConversation.type?.toString().toLowerCase()
+      if (threadType === 'sms' || threadType === 'mms') {
+        defaultChannel = 'sms'
+      } else if (threadType === 'web_chat') {
+        defaultChannel = 'web_chat'
+      } else {
+        defaultChannel = 'email'
+      }
+    }
+
+    return { contactEmails, contactPhones, defaultChannel }
+  }, [selectedConversation, inboxData, messageHistory])
+
   return (
     <div className="flex h-screen flex-col">
       {/* Header */}
       <div className="border-b p-4">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>
-            <h1 className="text-2xl font-bold">Inbox</h1>
-            <p className="text-sm text-muted-foreground">Unified multi-channel communications</p>
+            <h1 className="text-xl sm:text-2xl font-bold">Inbox</h1>
+            <p className="text-xs sm:text-sm text-muted-foreground">Unified multi-channel communications</p>
           </div>
           <div className="flex items-center gap-2">
             <Dialog open={composeDialogOpen} onOpenChange={setComposeDialogOpen}>
               <DialogTrigger asChild>
-                <Button>
-                  <PenSquare className="mr-2 h-4 w-4" />
-                  Compose Email
+                <Button size="sm" className="sm:size-default">
+                  <PenSquare className="mr-1 sm:mr-2 h-4 w-4" />
+                  <span className="hidden sm:inline">Compose Email</span>
+                  <span className="sm:hidden">Compose</span>
                 </Button>
               </DialogTrigger>
               <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
@@ -354,6 +527,31 @@ export default function InboxPage() {
                 />
               </DialogContent>
             </Dialog>
+
+            {/* Expanded Reply Dialog */}
+            {selectedConversation && (
+              <Dialog open={expandedReplyOpen} onOpenChange={setExpandedReplyOpen}>
+                <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle>Reply to {selectedConversation.contact_name || 'Contact'}</DialogTitle>
+                  </DialogHeader>
+                  <EmailComposer
+                    onSend={async (data) => {
+                      await handleSendMessage({
+                        message: data.message,
+                        subject: data.subject,
+                        files: data.files,
+                        channel: selectedConversation.type.toLowerCase()
+                      })
+                      setExpandedReplyOpen(false)
+                    }}
+                    disabled={sendMessageMutation.isPending}
+                    defaultSubject={selectedConversation.subject ? `Re: ${selectedConversation.subject}` : ''}
+                  />
+                </DialogContent>
+              </Dialog>
+            )}
+
             <Badge variant={isConnected ? 'default' : 'secondary'}>
               {isConnected ? 'Connected' : 'Disconnected'}
             </Badge>
@@ -361,11 +559,16 @@ export default function InboxPage() {
         </div>
       </div>
 
-      {/* Main content */}
-      <div className="flex flex-1 overflow-hidden">
-        {/* Conversation list */}
-        <div className="w-96 border-r">
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="h-full">
+      {/* Main content with resizable panels */}
+      <PanelGroup direction="horizontal" className="flex-1 overflow-hidden">
+        {/* Conversation list panel */}
+        <Panel
+          defaultSize={35}
+          minSize={20}
+          maxSize={50}
+          className={`${selectedConversation && showMessageDetail ? 'hidden md:block' : 'block'}`}
+        >
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="h-full border-r">
             <div className="border-b px-4 py-2 space-y-2">
               <div className="flex items-center gap-2">
                 <ArrowUpDown className="h-4 w-4 text-muted-foreground" />
@@ -410,6 +613,7 @@ export default function InboxPage() {
                   selectedId={selectedConversation?.id}
                   onSelect={(conversation) => {
                     setSelectedConversation(conversation)
+                    setShowMessageDetail(true) // Show message detail on mobile
                     // Mark as read if it's an inbound message and not already read
                     if (conversation.direction === CommunicationDirection.INBOUND && conversation.status !== CommunicationStatus.READ) {
                       markAsReadMutation.mutate(conversation.id)
@@ -431,6 +635,7 @@ export default function InboxPage() {
                 selectedId={selectedConversation?.id}
                 onSelect={(conversation) => {
                   setSelectedConversation(conversation)
+                  setShowMessageDetail(true) // Show message detail on mobile
                   // Mark as read when selected
                   if (conversation.status !== 'READ') {
                     markAsReadMutation.mutate(conversation.id)
@@ -449,6 +654,7 @@ export default function InboxPage() {
                 selectedId={selectedConversation?.id}
                 onSelect={(conversation) => {
                   setSelectedConversation(conversation)
+                  setShowMessageDetail(true) // Show message detail on mobile
                   // Already read - no need to mark again
                 }}
                 onArchive={(id) => archiveMutation.mutate(id)}
@@ -461,33 +667,55 @@ export default function InboxPage() {
                 selectedId={selectedConversation?.id}
                 onSelect={(conversation) => {
                   setSelectedConversation(conversation)
+                  setShowMessageDetail(true) // Show message detail on mobile
                   // Don't mark archived messages as read
                 }}
                 onUnarchive={(id) => unarchiveMutation.mutate(id)}
               />
             </TabsContent>
           </Tabs>
-        </div>
+        </Panel>
 
-        {/* Message thread */}
-        <div className="flex flex-1 flex-col">
+        {/* Resizable divider - only visible on desktop when a conversation is selected */}
+        {selectedConversation && (
+          <>
+            <PanelResizeHandle className="w-2 bg-slate-300 hover:bg-blue-400 transition-colors cursor-col-resize active:bg-blue-500" />
+
+            {/* Message thread panel */}
+            <Panel defaultSize={65} minSize={40}>
+              <div className={`${!selectedConversation || !showMessageDetail ? 'hidden md:flex' : 'flex'} h-full flex-col min-w-0`}>
           {selectedConversation ? (
-            <>
+            <div className="flex flex-col h-full">
               {/* Thread header */}
-              <div className="border-b p-4">
+              <div className="border-b p-4 flex-shrink-0">
                 <div className="flex items-center justify-between">
-                  <div>
-                    <h2 className="font-semibold">{selectedConversation.contact_name || selectedConversation.contact_id}</h2>
-                    <p className="text-sm text-muted-foreground">
-                      {selectedConversation.type.toUpperCase()}
-                      {selectedConversation.status === 'ARCHIVED' && (
-                        <Badge variant="secondary" className="ml-2">
-                          Archived
-                        </Badge>
-                      )}
-                    </p>
-                  </div>
                   <div className="flex items-center gap-2">
+                    {/* Back button for mobile */}
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => {
+                        setShowMessageDetail(false)
+                        setSelectedConversation(null)
+                      }}
+                      className="md:hidden"
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                      Back
+                    </Button>
+                    <div>
+                        <h2 className="font-semibold">{selectedConversation.contact_name || selectedConversation.contact_id}</h2>
+                      <p className="text-sm text-muted-foreground">
+                        {selectedConversation.type.toUpperCase()}
+                        {selectedConversation.status === 'ARCHIVED' && (
+                          <Badge variant="secondary" className="ml-2">
+                            Archived
+                          </Badge>
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2">
                     <Button
                       variant="outline"
                       size="sm"
@@ -496,9 +724,11 @@ export default function InboxPage() {
                         setComposeDialogOpen(true)
                       }}
                       data-testid="inbox-forward-button"
+                      className="text-xs sm:text-sm"
                     >
-                      <Forward className="mr-2 h-4 w-4" />
-                      Forward
+                      <Forward className="mr-1 sm:mr-2 h-4 w-4" />
+                      <span className="hidden sm:inline">Forward</span>
+                      <span className="sm:hidden">Fwd</span>
                     </Button>
                     {selectedConversation.status === 'ARCHIVED' ? (
                       <Button
@@ -506,9 +736,11 @@ export default function InboxPage() {
                         size="sm"
                         onClick={() => unarchiveMutation.mutate(selectedConversation.id)}
                         disabled={unarchiveMutation.isPending}
+                        className="text-xs sm:text-sm"
                       >
-                        <ArchiveRestore className="mr-2 h-4 w-4" />
-                        Unarchive
+                        <ArchiveRestore className="mr-1 sm:mr-2 h-4 w-4" />
+                        <span className="hidden sm:inline">Unarchive</span>
+                        <span className="sm:hidden">Unarch</span>
                       </Button>
                     ) : (
                       <Button
@@ -516,48 +748,106 @@ export default function InboxPage() {
                         size="sm"
                         onClick={() => archiveMutation.mutate(selectedConversation.id)}
                         disabled={archiveMutation.isPending}
+                        className="text-xs sm:text-sm"
                       >
-                        <Archive className="mr-2 h-4 w-4" />
-                        Archive
+                        <Archive className="mr-1 sm:mr-2 h-4 w-4" />
+                        <span className="hidden sm:inline">Archive</span>
+                        <span className="sm:hidden">Arch</span>
                       </Button>
                     )}
                     <Button
                       variant="outline"
                       size="sm"
                       onClick={() => router.push(`/dashboard/contacts/${selectedConversation.contact_id}`)}
+                      className="text-xs sm:text-sm"
                     >
-                      <UserIcon className="mr-2 h-4 w-4" />
-                      View Contact
+                      <UserIcon className="mr-1 sm:mr-2 h-4 w-4" />
+                      <span className="hidden sm:inline">View Contact</span>
+                      <span className="sm:hidden">Contact</span>
                     </Button>
                   </div>
                 </div>
               </div>
 
-              {/* Messages */}
-              <MessageThread
-                messages={messageHistory?.items || []}
-                contactName={selectedConversation.contact_name || selectedConversation.contact_id}
-              />
+              {/* Messages - takes up most space with flex-1 and min-height */}
+              <div className="flex-1 min-h-0 overflow-hidden">
+                <MessageThread
+                  messages={messageHistory?.items || []}
+                  contactName={selectedConversation.contact_name || selectedConversation.contact_id}
+                />
+              </div>
 
-              {/* Composer */}
-              <MessageComposer
-                onSend={handleSendMessage}
-                disabled={sendMessageMutation.isPending}
-                threadType={selectedConversation.type}
-                contactChannels={{
-                  hasWebChat: true,
-                  // TODO: Fetch actual contact details to populate email and phone
-                  // This will enable the channel selector when contact has multiple methods
-                }}
-              />
-            </>
+              {/* Composer - compact at bottom with flex-shrink-0 and max height */}
+              <div className="flex-shrink-0 max-h-[200px] overflow-y-auto border-t">
+                <MessageComposer
+                  onSend={handleSendMessage}
+                  disabled={sendMessageMutation.isPending}
+                  threadType={selectedConversation.type}
+                  contactChannels={{
+                    hasWebChat: true,
+                    emails: contactData.contactEmails,
+                    phones: contactData.contactPhones
+                  }}
+                  onExpandCompose={() => setComposeModalOpen(true)}
+                />
+              </div>
+            </div>
           ) : (
             <div className="flex h-full items-center justify-center text-muted-foreground">
               <p>Select a conversation to start messaging</p>
             </div>
           )}
-        </div>
-      </div>
+              </div>
+            </Panel>
+          </>
+        )}
+
+        {/* Show placeholder when no conversation selected on desktop */}
+        {!selectedConversation && (
+          <Panel defaultSize={65} minSize={40}>
+            <div className="flex h-full items-center justify-center text-muted-foreground">
+              <p>Select a conversation to start messaging</p>
+            </div>
+          </Panel>
+        )}
+      </PanelGroup>
+
+      {/* Compose Modal for expanded message composition */}
+      {selectedConversation && (() => {
+        // Check if contact has initiated web chat (for showing web_chat option)
+        const hasWebChatHistory = messageHistory?.items?.some(m =>
+          m.type?.toString().toLowerCase() === 'web_chat'
+        )
+
+        return (
+          <ComposeModal
+            open={composeModalOpen}
+            onOpenChange={setComposeModalOpen}
+            contact={{
+              id: selectedConversation.contact_id,
+              name: selectedConversation.contact_name || 'Contact',
+              emails: contactData.contactEmails,
+              phones: contactData.contactPhones,
+              hasWebChat: hasWebChatHistory
+            }}
+            defaultChannel={contactData.defaultChannel}
+            defaultSubject={selectedConversation.subject ? `Re: ${selectedConversation.subject}` : ''}
+            onSend={async (data) => {
+              // If replying to a contact, we need to use the contact's ID
+              if (selectedConversation) {
+                await handleSendMessage({
+                  message: data.body,
+                  subject: data.subject,
+                  files: data.attachments,
+                  channel: data.channel
+                })
+              } else {
+                await handleComposeModalSend(data)
+              }
+            }}
+          />
+        )
+      })()}
     </div>
   )
 }

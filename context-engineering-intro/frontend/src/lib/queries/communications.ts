@@ -70,6 +70,7 @@ export const communicationsApi = {
     subject: string
     body_html: string
     attachments?: File[]
+    profile_id?: string
   }): Promise<Communication> => {
     const formData = new FormData()
 
@@ -83,6 +84,11 @@ export const communicationsApi = {
     }
     formData.append('subject', data.subject)
     formData.append('body_html', data.body_html)
+
+    // Add profile_id for email sending profile
+    if (data.profile_id) {
+      formData.append('profile_id', data.profile_id)
+    }
 
     // Add attachments if present
     if (data.attachments && data.attachments.length > 0) {

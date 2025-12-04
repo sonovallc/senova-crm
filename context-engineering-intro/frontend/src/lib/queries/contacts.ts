@@ -7,6 +7,20 @@ export interface BulkDeleteContactsResponse {
   errors?: Array<{ contact_id: string; reason: string }>
 }
 
+export interface ContactObjectInfo {
+  id: string
+  name: string
+  type: string
+  role?: string
+  department?: string
+  assigned_at?: string
+}
+
+export interface ContactObjectsResponse {
+  items: ContactObjectInfo[]
+  total: number
+}
+
 export const contactsApi = {
   getContacts: async (params?: {
     page?: number
@@ -76,5 +90,10 @@ export const contactsApi = {
     const response = await api.get('/api/v1/contacts/fields')
     // Backend returns {fields: [...]} not [...] directly
     return response.data.fields || []
+  },
+
+  getContactObjects: async (contactId: string): Promise<ContactObjectsResponse> => {
+    const response = await api.get(`/api/v1/contacts/${contactId}/objects`)
+    return response.data
   },
 }

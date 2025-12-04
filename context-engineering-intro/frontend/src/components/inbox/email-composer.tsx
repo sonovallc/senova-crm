@@ -20,6 +20,7 @@ import { EmailPreviewDialog } from './email-preview-dialog'
 import { useAuth } from '@/contexts/auth-context'
 import { contactsApi } from '@/lib/queries/contacts'
 import { emailTemplatesApi } from '@/lib/queries/email-templates'
+import { emailProfilesApi, type AssignedProfile } from '@/lib/api/email-profiles'
 import { Contact, EmailTemplate, Paginated } from '@/types'
 import { cn } from '@/lib/utils'
 
@@ -31,6 +32,7 @@ interface EmailComposerProps {
     subject: string
     message: string
     files?: File[]
+    profileId?: string
   }) => void
   disabled?: boolean
   defaultTo?: string[] // Pre-populate To field (e.g., for replies)
@@ -65,8 +67,37 @@ export function EmailComposer({ onSend, disabled, defaultTo = [], defaultSubject
   const [loadingPreview, setLoadingPreview] = useState(false)
   const [selectedTemplateId, setSelectedTemplateId] = useState<string>('')
 
+  // Email profile state
+  const [selectedProfileId, setSelectedProfileId] = useState<string>('')
+  const [assignedProfiles, setAssignedProfiles] = useState<AssignedProfile[]>([])
+  const [profilesLoading, setProfilesLoading] = useState(true)
+
   // Get current user for preview
   const { user } = useAuth()
+
+  // Fetch user's assigned email profiles
+  useEffect(() => {
+    const fetchProfiles = async () => {
+      setProfilesLoading(true)
+      try {
+        const profiles = await emailProfilesApi.getMyProfiles()
+        setAssignedProfiles(profiles)
+        // Auto-select default profile if available
+        const defaultProfile = profiles.find(p => p.is_default)
+        if (defaultProfile) {
+          setSelectedProfileId(defaultProfile.id)
+        } else if (profiles.length > 0) {
+          setSelectedProfileId(profiles[0].id)
+        }
+      } catch (error) {
+        console.error('Failed to fetch email profiles:', error)
+        setAssignedProfiles([])
+      } finally {
+        setProfilesLoading(false)
+      }
+    }
+    fetchProfiles()
+  }, [])
 
   // Input refs for file upload
   const fileInputRef = useRef<HTMLInputElement>(null)
@@ -178,6 +209,11 @@ export function EmailComposer({ onSend, disabled, defaultTo = [], defaultSubject
     e.preventDefault()
 
     // Validation
+    if (assignedProfiles.length > 0 && !selectedProfileId) {
+      alert('Please select a sending profile')
+      return
+    }
+
     if (to.length === 0) {
       alert('Please add at least one recipient in the "To" field')
       return
@@ -199,7 +235,8 @@ export function EmailComposer({ onSend, disabled, defaultTo = [], defaultSubject
       bcc,
       subject,
       message,
-      files: selectedFiles.length > 0 ? selectedFiles : undefined
+      files: selectedFiles.length > 0 ? selectedFiles : undefined,
+      profileId: selectedProfileId || undefined
     })
 
     // Reset form
@@ -215,6 +252,33 @@ export function EmailComposer({ onSend, disabled, defaultTo = [], defaultSubject
 
   return (
     <form onSubmit={handleSubmit} className="border rounded-lg p-4 space-y-3 bg-white">
+      {/* From Profile Selector */}
+      <div className="space-y-1">
+        <Label htmlFor="from-profile" className="text-xs text-muted-foreground">
+          From
+        </Label>
+        {profilesLoading ? (
+          <div className="text-sm text-muted-foreground py-2">Loading profiles...</div>
+        ) : assignedProfiles.length === 0 ? (
+          <div className="text-sm text-destructive py-2">
+            No sending profiles available. Contact your administrator.
+          </div>
+        ) : (
+          <Select value={selectedProfileId} onValueChange={setSelectedProfileId}>
+            <SelectTrigger id="from-profile" disabled={disabled}>
+              <SelectValue placeholder="Select sending profile" />
+            </SelectTrigger>
+            <SelectContent>
+              {assignedProfiles.map((profile) => (
+                <SelectItem key={profile.id} value={profile.id}>
+                  {profile.display_name} &lt;{profile.email_address}&gt;
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        )}
+      </div>
+
       {/* To Field with Contact Selector */}
       <div className="space-y-2">
         <div className="flex items-center justify-between">
