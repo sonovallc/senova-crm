@@ -33,6 +33,8 @@ class CommunicationStatus(str, enum.Enum):
     FAILED = "FAILED"
     READ = "READ"
     ARCHIVED = "ARCHIVED"
+    RECEIVED = "RECEIVED"  # For inbound emails
+    COMPLAINED = "COMPLAINED"  # For spam complaints
 
 
 class Communication(Base):
@@ -80,6 +82,8 @@ class Communication(Base):
     delivered_at = Column(DateTime(timezone=True))
     read_at = Column(DateTime(timezone=True))
     failed_at = Column(DateTime(timezone=True))
+    received_at = Column(DateTime(timezone=True))  # For inbound emails
+    opened_at = Column(DateTime(timezone=True))  # For email tracking
     error_message = Column(Text)
 
     # Provider-specific metadata (for debugging, billing, analytics)

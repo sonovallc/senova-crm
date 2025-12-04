@@ -2,24 +2,32 @@
 Inbox API endpoints for email management
 
 Features:
-- Send composed emails via Mailgun
+- Send composed emails via Mailgun using Email Sending Profiles
 - Support for CC, BCC, attachments
-- User-specific Mailgun configuration
+- Organization-wide Mailgun configuration with owner-managed profiles
+- Email tracking via communications table
 """
 
 from typing import List, Optional
+from uuid import UUID
+from datetime import datetime, timezone
 from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File, Form
-from sqlalchemy import select
+from sqlalchemy import select, and_
 from sqlalchemy.ext.asyncio import AsyncSession
 import httpx
 import json
+import logging
 
 from app.api.dependencies import get_current_user, CurrentUser, DatabaseSession
-from app.models.mailgun_settings import MailgunSettings
-from app.utils.encryption import decrypt_api_key
+from app.models.email_sending_profile import EmailSendingProfile, UserEmailProfileAssignment
+from app.models.communication import Communication, CommunicationType, CommunicationDirection, CommunicationStatus
+from app.models.contact import Contact
+from app.config.settings import get_settings
 from app.core.exceptions import NotFoundError, ValidationError, IntegrationError
 
 router = APIRouter(prefix="/inbox", tags=["Inbox"])
+logger = logging.getLogger(__name__)
+settings = get_settings()
 
 
 async def send_email_via_mailgun(
@@ -33,6 +41,7 @@ async def send_email_via_mailgun(
     bcc: Optional[List[str]] = None,
     from_email: Optional[str] = None,
     from_name: Optional[str] = None,
+    reply_to: Optional[str] = None,
     attachments: Optional[List[UploadFile]] = None,
 ) -> dict:
     """
@@ -49,6 +58,7 @@ async def send_email_via_mailgun(
         bcc: Optional list of BCC recipients
         from_email: Sender email address
         from_name: Sender display name
+        reply_to: Reply-To address (for routing replies to Mailgun)
         attachments: Optional list of file uploads
 
     Returns:
@@ -83,6 +93,10 @@ async def send_email_via_mailgun(
     # Add BCC recipients
     if bcc and len(bcc) > 0:
         data["bcc"] = bcc
+
+    # Add Reply-To header (routes replies to Mailgun receiving domain)
+    if reply_to:
+        data["h:Reply-To"] = reply_to
 
     # Prepare files for upload
     files_data = []
@@ -140,37 +154,64 @@ async def send_composed_email(
     body_html: str = Form(..., description="HTML email body"),
     cc: Optional[str] = Form(None, description="Comma-separated list of CC emails"),
     bcc: Optional[str] = Form(None, description="Comma-separated list of BCC emails"),
+    profile_id: Optional[str] = Form(None, description="Email sending profile UUID"),
     attachments: Optional[List[UploadFile]] = File(None, description="File attachments"),
 ):
     """
-    Send a composed email via Mailgun.
+    Send a composed email via Mailgun using Email Sending Profiles.
 
-    - Requires user to have Mailgun settings configured and verified
+    - Uses organization's global Mailgun configuration
+    - Requires user to have access to selected email sending profile
     - Supports TO, CC, BCC recipients
     - Supports file attachments
-    - Validates all email addresses
-    - Returns success/error response
+    - Stores sent email in communications table for tracking
 
     Requires authentication
     """
-    # Get user's Mailgun settings
-    query = select(MailgunSettings).where(
-        MailgunSettings.user_id == current_user.id,
-        MailgunSettings.is_active == True
-    )
-    result = await db.execute(query)
-    settings = result.scalar_one_or_none()
-
-    if not settings:
+    # Validate global Mailgun configuration
+    if not settings.mailgun_api_key or not settings.mailgun_domain:
         raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Mailgun not configured. Please configure and verify your Mailgun settings first."
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Mailgun not configured. Please contact your administrator."
         )
 
-    if not settings.verified_at:
+    # Get and validate email sending profile
+    if not profile_id:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Mailgun settings not verified. Please test your connection first."
+            detail="Email sending profile is required. Please select a profile."
+        )
+
+    try:
+        profile_uuid = UUID(profile_id)
+    except ValueError:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Invalid profile ID format"
+        )
+
+    # Verify user has access to this profile
+    assignment_query = select(UserEmailProfileAssignment).where(
+        and_(
+            UserEmailProfileAssignment.user_id == current_user.id,
+            UserEmailProfileAssignment.profile_id == profile_uuid
+        )
+    )
+    assignment_result = await db.execute(assignment_query)
+    assignment = assignment_result.scalar_one_or_none()
+
+    if not assignment:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="You do not have access to this email sending profile"
+        )
+
+    # Get the profile
+    profile = await db.get(EmailSendingProfile, profile_uuid)
+    if not profile or not profile.is_active:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Selected email sending profile is not available"
         )
 
     # Parse email addresses (comma-separated)
@@ -220,35 +261,90 @@ async def send_composed_email(
             if file_size > max_size:
                 raise ValidationError(f"Attachment {attachment.filename} exceeds 10MB limit")
 
-    # Decrypt API key
-    try:
-        decrypted_api_key = decrypt_api_key(settings.api_key)
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to decrypt Mailgun API key: {str(e)}"
-        )
+    # Find or create contact by email for tracking
+    contact_id = None
+    primary_recipient = to_list[0] if to_list else None
+    if primary_recipient:
+        # Try to find existing contact
+        contact_query = select(Contact).where(Contact.email == primary_recipient)
+        contact_result = await db.execute(contact_query)
+        contact = contact_result.scalar_one_or_none()
 
-    # Send email via Mailgun
+        if contact:
+            contact_id = contact.id
+        else:
+            # Create new contact for tracking (like inbound email handling)
+            logger.info(f"Creating new contact for recipient: {primary_recipient}")
+            new_contact = Contact(
+                email=primary_recipient,
+                first_name=primary_recipient.split('@')[0],  # Use email prefix as name
+                last_name='',
+                source='EMAIL',
+                status='LEAD'
+            )
+            db.add(new_contact)
+            await db.flush()  # Get the ID without committing
+            contact_id = new_contact.id
+
+    # Send email via Mailgun using global config + profile settings
     try:
+        logger.info(f"Sending email via profile {profile.email_address} to {to_list}")
+
+        # Use profile's reply_to_address for Reply-To header
+        # This routes replies to @mg.senovallc.com where Mailgun can receive them
+        reply_to = profile.reply_to_address if profile.reply_to_address else profile.email_address
+
         result = await send_email_via_mailgun(
-            domain=settings.domain,
-            api_key=decrypted_api_key,
-            region=settings.region,
+            domain=settings.mailgun_domain,
+            api_key=settings.mailgun_api_key,
+            region="us",  # Use US region (or make configurable)
             to=to_list,
             subject=subject,
             body_html=body_html,
             cc=cc_list if cc_list else None,
             bcc=bcc_list if bcc_list else None,
-            from_email=settings.from_email,
-            from_name=settings.from_name,
+            from_email=profile.email_address,
+            from_name=profile.display_name,
+            reply_to=reply_to,
             attachments=attachments,
         )
+
+        message_id = result.get("message_id")
+
+        # Store in communications table for tracking
+        communication = Communication(
+            type=CommunicationType.EMAIL,
+            direction=CommunicationDirection.OUTBOUND,
+            contact_id=contact_id,
+            user_id=current_user.id,
+            subject=subject,
+            body=body_html,
+            from_address=profile.email_address,
+            to_address=", ".join(to_list),
+            status=CommunicationStatus.SENT,
+            sent_at=datetime.now(timezone.utc),
+            external_id=message_id,
+            provider_metadata={
+                "provider": "mailgun",
+                "message_id": message_id,
+                "profile_id": str(profile.id),
+                "profile_email": profile.email_address,
+                "cc": cc_list,
+                "bcc": bcc_list,
+                "sent_at": datetime.now(timezone.utc).isoformat(),
+            }
+        )
+        db.add(communication)
+        await db.commit()
+        await db.refresh(communication)
+
+        logger.info(f"Email sent successfully: {message_id} to {to_list}, communication_id: {communication.id}")
 
         return {
             "success": True,
             "message": "Email sent successfully",
-            "message_id": result.get("message_id"),
+            "message_id": message_id,
+            "communication_id": str(communication.id),
             "recipients": {
                 "to": to_list,
                 "cc": cc_list,
@@ -257,11 +353,13 @@ async def send_composed_email(
         }
 
     except IntegrationError as e:
+        logger.error(f"Mailgun integration error: {str(e)}")
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail=str(e)
         )
     except Exception as e:
+        logger.error(f"Failed to send email: {str(e)}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to send email: {str(e)}"

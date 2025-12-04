@@ -9,81 +9,32 @@ Features:
 """
 
 from typing import Dict, Any, Optional
+from uuid import UUID
 from fastapi import APIRouter, Request, HTTPException, status, Depends
-from sqlalchemy import select, or_
+from fastapi.responses import JSONResponse
+from sqlalchemy import select, or_, and_
 from sqlalchemy.ext.asyncio import AsyncSession
 from datetime import datetime, timezone
 import json
 import hmac
 import hashlib
-import bleach
+import logging
 
 from app.config.database import get_db
+from app.config.settings import get_settings
 from app.models.communication import Communication, CommunicationType, CommunicationDirection, CommunicationStatus
-from app.models.contact import Contact
+from app.models.contact import Contact, ContactSource
 from app.models.payment import Payment, PaymentStatus
 from app.services.stripe_service import StripeService
 from app.core.exceptions import NotFoundError, PaymentError
+from app.utils.webhook_security import verify_mailgun_signature, is_timestamp_valid, sanitize_html
 
 router = APIRouter(prefix="/webhooks", tags=["Webhooks"])
+logger = logging.getLogger(__name__)
+settings = get_settings()
 
 
 # ==================== HELPER FUNCTIONS ====================
-
-
-def _verify_mailgun_signature(timestamp: str, token: str, signature: str) -> bool:
-    """
-    Verify Mailgun webhook signature to prevent spoofing
-
-    Args:
-        timestamp: Unix timestamp from webhook
-        token: Random token from webhook
-        signature: HMAC signature from webhook
-
-    Returns:
-        bool: True if signature is valid
-    """
-    from app.config.settings import get_settings
-    settings = get_settings()
-
-    # Mailgun sends webhook signing key (different from API key)
-    signing_key = settings.mailgun_webhook_signing_key
-    if not signing_key:
-        # If not configured, skip verification (log warning)
-        print("WARNING: Mailgun webhook signing key not configured - skipping signature verification")
-        return True
-
-    message = f"{timestamp}{token}".encode('utf-8')
-    hmac_digest = hmac.new(
-        key=signing_key.encode('utf-8'),
-        msg=message,
-        digestmod=hashlib.sha256
-    ).hexdigest()
-    return hmac.compare_digest(hmac_digest, signature)
-
-
-def _sanitize_html_email(html: str) -> str:
-    """
-    Remove dangerous HTML/JS while preserving safe formatting
-
-    Args:
-        html: Raw HTML email content
-
-    Returns:
-        str: Sanitized HTML safe for display
-    """
-    ALLOWED_TAGS = [
-        'p', 'br', 'strong', 'em', 'u', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-        'ul', 'ol', 'li', 'a', 'img', 'blockquote', 'code', 'pre',
-        'table', 'thead', 'tbody', 'tr', 'th', 'td', 'span', 'div'
-    ]
-
-    ALLOWED_ATTRIBUTES = {
-        'a': ['href', 'title'],
-        'img': ['src', 'alt', 'title'],
-    }
-
-    return bleach.clean(html, tags=ALLOWED_TAGS, attributes=ALLOWED_ATTRIBUTES, strip=True)
 
 
 async def _find_contact_by_email(sender_email: str, db: AsyncSession) -> Optional[Contact]:
@@ -361,258 +312,307 @@ async def bandwidth_voice_webhook(
         return {"status": "error", "message": str(e)}
 
 
-@router.post("/mailgun")
-async def mailgun_webhook(
-    request: Request,
-    db: AsyncSession = Depends(get_db),
-):
+@router.post("/mailgun/events", status_code=status.HTTP_200_OK)
+async def handle_mailgun_delivery_events(request: Request, db: AsyncSession = Depends(get_db)):
     """
-    Mailgun webhook handler
+    Handle delivery status events from Mailgun
 
-    Handles:
-    - Email delivery status
-    - Email opens
-    - Email clicks
-    - Email bounces
-    - Email complaints
+    Events: delivered, opened, clicked, failed, bounced, complained, unsubscribed
+
+    Mailgun sends JSON with:
+    - signature: {timestamp, token, signature}
+    - event-data: {event, message: {headers: {message-id}}, ...}
     """
     try:
-        # Mailgun sends form data
-        form_data = await request.form()
+        # Parse JSON body
+        payload = await request.json()
 
-        event_type = form_data.get("event")
-        message_id = form_data.get("Message-Id", "").strip("<>")
-        recipient = form_data.get("recipient")
-        timestamp = form_data.get("timestamp")
+        # Extract signature
+        sig_data = payload.get("signature", {})
+        timestamp = str(sig_data.get("timestamp", ""))
+        token = sig_data.get("token", "")
+        signature = sig_data.get("signature", "")
 
-        # Find communication by external_id
+        # Extract event data
+        event_data = payload.get("event-data", {})
+        event_type = event_data.get("event", "unknown")
+
+        # Log attempt
+        logger.info(f"Delivery event webhook: type={event_type}")
+
+        # SECURITY: Verify signature
+        if settings.mailgun_webhook_signing_key:
+            if not verify_mailgun_signature(
+                settings.mailgun_webhook_signing_key,
+                timestamp,
+                token,
+                signature
+            ):
+                logger.warning(f"Invalid webhook signature for event {event_type}")
+                raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Invalid signature")
+
+            if not is_timestamp_valid(timestamp):
+                logger.warning(f"Webhook timestamp too old for event {event_type}")
+                raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Request expired")
+        else:
+            logger.warning("MAILGUN_WEBHOOK_SIGNING_KEY not configured - skipping signature verification")
+
+        # Extract message ID to find original communication
+        message_headers = event_data.get("message", {}).get("headers", {})
+        message_id = message_headers.get("message-id", "")
+
+        if not message_id:
+            logger.warning(f"No message-id in event {event_type}")
+            return {"status": "ok", "processed": False}
+
+        # Find original communication
         result = await db.execute(
-            select(Communication).where(Communication.external_id.contains(message_id))
+            select(Communication).where(Communication.external_id == message_id)
         )
         communication = result.scalar_one_or_none()
 
-        if communication:
-            # Update status based on event type
-            if event_type == "delivered":
-                communication.status = CommunicationStatus.DELIVERED
-                communication.delivered_at = datetime.fromtimestamp(int(timestamp))
+        if not communication:
+            logger.warning(f"Communication not found for message_id: {message_id}")
+            return {"status": "ok", "processed": False}
 
-            elif event_type == "opened":
-                communication.status = CommunicationStatus.READ
-                communication.read_at = datetime.fromtimestamp(int(timestamp))
+        # Process event based on type
+        now = datetime.now(timezone.utc)
 
-            elif event_type == "clicked":
-                # User clicked link in email
-                communication.provider_metadata = {
-                    **communication.provider_metadata,
-                    "clicked": True,
-                    "clicked_at": datetime.fromtimestamp(int(timestamp)).isoformat(),
-                    "clicked_url": form_data.get("url"),
-                }
+        if event_type == "delivered":
+            communication.status = CommunicationStatus.DELIVERED
+            communication.delivered_at = now
+            logger.info(f"Email delivered: {communication.id}")
 
-            elif event_type in ["failed", "bounced"]:
-                communication.status = CommunicationStatus.FAILED
-                communication.failed_at = datetime.fromtimestamp(int(timestamp))
-                communication.provider_metadata = {
-                    **communication.provider_metadata,
-                    "bounce_reason": form_data.get("reason"),
-                    "bounce_code": form_data.get("code"),
-                }
+        elif event_type == "opened":
+            communication.opened_at = now
+            # Update metadata
+            open_count = communication.provider_metadata.get("open_count", 0) + 1
+            communication.provider_metadata = {
+                **communication.provider_metadata,
+                "open_count": open_count,
+                "last_opened_at": now.isoformat()
+            }
+            logger.info(f"Email opened: {communication.id}, count={open_count}")
 
-                # Add permanent bounces to suppression list
-                severity = form_data.get("severity", "")
-                if severity == "permanent" or event_type == "bounced":
-                    from app.services.suppression_sync import add_to_suppression
-                    from app.models.email_suppression import SuppressionType
-                    bounce_reason = form_data.get("reason", "Permanent bounce")
-                    await add_to_suppression(
-                        email=recipient,
-                        suppression_type=SuppressionType.BOUNCE,
-                        reason=bounce_reason,
-                        db=db
-                    )
+        elif event_type == "clicked":
+            click_url = event_data.get("url", "")
+            click_count = communication.provider_metadata.get("click_count", 0) + 1
+            communication.provider_metadata = {
+                **communication.provider_metadata,
+                "click_count": click_count,
+                "last_clicked_at": now.isoformat(),
+                "last_clicked_url": click_url
+            }
+            logger.info(f"Email clicked: {communication.id}, url={click_url}")
 
-            elif event_type == "complained":
-                # Spam complaint
-                communication.provider_metadata = {
-                    **communication.provider_metadata,
-                    "spam_complaint": True,
-                    "complained_at": datetime.fromtimestamp(int(timestamp)).isoformat(),
-                }
+        elif event_type in ["failed", "bounced"]:
+            communication.status = CommunicationStatus.FAILED
+            error_message = event_data.get("delivery-status", {}).get("message", "Delivery failed")
+            communication.provider_metadata = {
+                **communication.provider_metadata,
+                "error": error_message,
+                "failed_at": now.isoformat()
+            }
+            logger.warning(f"Email failed: {communication.id}, error={error_message}")
 
-                # Add to suppression list
-                from app.services.suppression_sync import add_to_suppression
-                from app.models.email_suppression import SuppressionType
-                await add_to_suppression(
-                    email=recipient,
-                    suppression_type=SuppressionType.COMPLAINT,
-                    reason="Spam complaint via webhook",
-                    db=db
-                )
+        elif event_type == "complained":
+            communication.status = CommunicationStatus.COMPLAINED
+            communication.provider_metadata = {
+                **communication.provider_metadata,
+                "complained_at": now.isoformat()
+            }
+            # Flag contact for suppression
+            if communication.contact_id:
+                await flag_contact_suppressed(db, communication.contact_id, "complained")
+            logger.warning(f"Email complained: {communication.id}")
 
-            elif event_type == "unsubscribed":
-                # User unsubscribed
-                # Add to suppression list
-                from app.services.suppression_sync import add_to_suppression
-                from app.models.email_suppression import SuppressionType
-                await add_to_suppression(
-                    email=recipient,
-                    suppression_type=SuppressionType.UNSUBSCRIBE,
-                    reason="Unsubscribed via webhook",
-                    db=db
-                )
+        elif event_type == "unsubscribed":
+            communication.provider_metadata = {
+                **communication.provider_metadata,
+                "unsubscribed_at": now.isoformat()
+            }
+            # Flag contact as unsubscribed
+            if communication.contact_id:
+                await flag_contact_unsubscribed(db, communication.contact_id)
+            logger.info(f"Email unsubscribed: {communication.id}")
 
-                # Also mark contact as unsubscribed if found
-                result = await db.execute(
-                    select(Contact).where(Contact.email == recipient)
-                )
-                contact = result.scalar_one_or_none()
-                if contact:
-                    contact.unsubscribed = True
-                    contact.unsubscribed_at = datetime.fromtimestamp(int(timestamp))
+        await db.commit()
 
-            await db.commit()
+        return {"status": "ok", "event": event_type, "processed": True}
 
-        return {"status": "received"}
-
+    except HTTPException:
+        raise
     except Exception as e:
-        print(f"Mailgun webhook error: {str(e)}")
-        return {"status": "error", "message": str(e)}
+        logger.error(f"Delivery event webhook error: {str(e)}")
+        return JSONResponse(
+            status_code=status.HTTP_200_OK,
+            content={"status": "error", "message": "Processing failed"}
+        )
 
 
-@router.post("/mailgun/inbound")
-async def mailgun_inbound_webhook(
-    request: Request,
-    db: AsyncSession = Depends(get_db),
-):
+@router.post("/mailgun/inbound", status_code=status.HTTP_200_OK)
+async def handle_mailgun_inbound_email(request: Request, db: AsyncSession = Depends(get_db)):
     """
-    Mailgun inbound email webhook handler
+    Handle inbound emails from Mailgun
 
-    Receives inbound emails sent to your domain
-
-    Features:
-    - Multi-field contact matching (verified emails prioritized)
-    - Attachment handling with local storage
-    - HTML sanitization for XSS prevention
-    - Webhook signature verification
-    - WebSocket notifications
-    - SHA256 hash matching support
+    Mailgun sends POST with form data containing:
+    - sender: From email address
+    - recipient: To email address
+    - subject: Email subject
+    - body-plain: Plain text body
+    - body-html: HTML body
+    - Message-Id: Unique message identifier
+    - In-Reply-To: Original message ID (if reply)
+    - timestamp, token, signature: For verification
     """
     try:
+        # Parse form data
         form_data = await request.form()
 
-        # ===== SECURITY: Verify webhook signature =====
+        # Extract signature fields
         timestamp = form_data.get("timestamp", "")
         token = form_data.get("token", "")
         signature = form_data.get("signature", "")
 
-        if not _verify_mailgun_signature(timestamp, token, signature):
-            raise HTTPException(status_code=401, detail="Invalid webhook signature")
+        # Log attempt (without sensitive data)
+        sender = form_data.get("sender", "unknown")
+        recipient = form_data.get("recipient", "unknown")
+        logger.info(f"Inbound webhook: from={sender}, to={recipient}")
 
-        # ===== Extract email data =====
-        from_email = form_data.get("from", "")
-        to_email = form_data.get("to", "")
+        # SECURITY: Verify signature
+        if settings.mailgun_webhook_signing_key:
+            if not verify_mailgun_signature(
+                settings.mailgun_webhook_signing_key,
+                timestamp,
+                token,
+                signature
+            ):
+                logger.warning(f"Invalid webhook signature from {sender}")
+                raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Invalid signature")
+
+            # SECURITY: Validate timestamp (prevent replay attacks)
+            if not is_timestamp_valid(timestamp):
+                logger.warning(f"Webhook timestamp too old from {sender}")
+                raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Request expired")
+        else:
+            logger.warning("MAILGUN_WEBHOOK_SIGNING_KEY not configured - skipping signature verification")
+
+        # Extract email data
         subject = form_data.get("subject", "")
         body_plain = form_data.get("body-plain", "")
         body_html = form_data.get("body-html", "")
-        message_id = form_data.get("Message-Id", "").strip("<>")
+        message_id = form_data.get("Message-Id", "")
+        in_reply_to = form_data.get("In-Reply-To", "")
 
-        # Extract sender email from "Name <email@domain.com>" format
-        import re
+        # SECURITY: Sanitize HTML body
+        sanitized_html = sanitize_html(body_html) if body_html else body_plain
 
-        email_match = re.search(r"<(.+?)>", from_email)
-        sender_email = email_match.group(1) if email_match else from_email
-        sender_email = sender_email.lower().strip()
+        # Find or create contact
+        contact = await find_or_create_contact(db, sender)
 
-        # ===== SECURITY: Sanitize HTML email =====
-        sanitized_body = _sanitize_html_email(body_html) if body_html else body_plain
+        # Check for reply threading
+        original_communication_id = None
+        if in_reply_to:
+            original_communication_id = await find_original_communication(db, in_reply_to)
 
-        # ===== Multi-field contact matching with priority =====
-        contact = await _find_contact_by_email(sender_email, db)
-
-        if not contact:
-            # Create new lead if not found
-            contact = Contact(
-                email=sender_email,
-                first_name="Unknown",
-                last_name="",
-                status="LEAD",
-                source="EMAIL",
-            )
-            db.add(contact)
-            await db.commit()
-            await db.refresh(contact)
-
-        # ===== Handle email attachments =====
-        attachments = []
-        attachment_count = int(form_data.get("attachment-count", 0))
-
-        for i in range(1, attachment_count + 1):
-            attachment = form_data.get(f"attachment-{i}")
-            if attachment and hasattr(attachment, 'file'):
-                try:
-                    # Upload using existing local storage service
-                    from app.services.local_storage_service import upload_file
-                    file_url = await upload_file(attachment, f"email-attachments/{contact.id}")
-                    attachments.append(file_url)
-                except Exception as e:
-                    print(f"Failed to upload attachment {i}: {str(e)}")
-
-        # ===== Create communication record =====
+        # Store in communications table
         communication = Communication(
             type=CommunicationType.EMAIL,
             direction=CommunicationDirection.INBOUND,
             contact_id=contact.id,
-            from_address=sender_email,
-            to_address=to_email,
             subject=subject,
-            body=sanitized_body,
-            media_urls=attachments,
-            status=CommunicationStatus.DELIVERED,
+            body=sanitized_html,
+            from_address=sender,
+            to_address=recipient,
+            status=CommunicationStatus.RECEIVED,
             external_id=message_id,
-            delivered_at=datetime.now(timezone.utc),
+            received_at=datetime.now(timezone.utc),
             provider_metadata={
                 "provider": "mailgun",
                 "message_id": message_id,
-                "event_type": "inbound",
-                "attachment_count": len(attachments),
-            },
+                "in_reply_to": in_reply_to,
+                "original_communication_id": str(original_communication_id) if original_communication_id else None,
+            }
         )
 
         db.add(communication)
         await db.commit()
-        await db.refresh(communication)
 
-        # ===== WebSocket notification to CRM users =====
-        try:
-            from app.services.websocket_service import connection_manager
-            await connection_manager.broadcast_to_staff({
-                "type": "new_email",
-                "contact_id": str(contact.id),
-                "contact_name": f"{contact.first_name} {contact.last_name}",
-                "communication_id": str(communication.id),
-                "subject": subject,
-                "sender_email": sender_email,
-                "has_attachments": len(attachments) > 0,
-                "timestamp": datetime.now(timezone.utc).isoformat(),
-            })
-        except Exception as e:
-            # Don't fail webhook if WebSocket notification fails
-            print(f"WebSocket notification failed: {str(e)}")
+        logger.info(f"Inbound email stored: id={communication.id}, contact={contact.id}")
 
-        # TODO: Trigger AI auto-response via Closebot if configured
-
-        return {"status": "received"}
+        return {"status": "ok", "communication_id": str(communication.id)}
 
     except HTTPException:
-        # Re-raise HTTP exceptions (like signature verification failure)
         raise
     except Exception as e:
-        # Log error but still return 200 to prevent Mailgun retries
-        print(f"Mailgun inbound webhook error: {str(e)}")
-        import traceback
-        traceback.print_exc()
-        return {"status": "error", "message": str(e)}
+        logger.error(f"Inbound webhook error: {str(e)}")
+        # Return 200 to prevent Mailgun retries for processing errors
+        return JSONResponse(
+            status_code=status.HTTP_200_OK,
+            content={"status": "error", "message": "Processing failed"}
+        )
+
+
+# =============================================================================
+# HELPER FUNCTIONS FOR MAILGUN WEBHOOKS
+# =============================================================================
+
+async def find_or_create_contact(db: AsyncSession, email: str) -> Contact:
+    """Find existing contact by email or create new one"""
+    # Clean email (handle "Name <email@example.com>" format)
+    if "<" in email and ">" in email:
+        email = email.split("<")[1].split(">")[0]
+    email = email.strip().lower()
+
+    result = await db.execute(
+        select(Contact).where(Contact.email == email)
+    )
+    contact = result.scalar_one_or_none()
+
+    if not contact:
+        # Create new contact
+        name_part = email.split("@")[0]
+        contact = Contact(
+            email=email,
+            first_name=name_part.capitalize(),
+            last_name="",
+            source=ContactSource.EMAIL,
+            status="LEAD"
+        )
+        db.add(contact)
+        await db.flush()
+        logger.info(f"Created new contact from inbound email: {email}")
+
+    return contact
+
+
+async def find_original_communication(db: AsyncSession, in_reply_to: str) -> Optional[UUID]:
+    """Find original communication ID from In-Reply-To header"""
+    # Clean the message ID
+    in_reply_to = in_reply_to.strip().strip("<>")
+
+    result = await db.execute(
+        select(Communication.id).where(Communication.external_id.contains(in_reply_to))
+    )
+    original = result.scalar_one_or_none()
+    return original
+
+
+async def flag_contact_suppressed(db: AsyncSession, contact_id: UUID, reason: str):
+    """Flag contact for email suppression"""
+    contact = await db.get(Contact, contact_id)
+    if contact:
+        # Add to suppression list (store in metadata or separate table)
+        logger.info(f"Contact {contact_id} suppressed: {reason}")
+        # Note: You may want a separate email_suppressions table for this
+
+
+async def flag_contact_unsubscribed(db: AsyncSession, contact_id: UUID):
+    """Flag contact as unsubscribed from emails"""
+    contact = await db.get(Contact, contact_id)
+    if contact:
+        logger.info(f"Contact {contact_id} unsubscribed")
+        # Note: You may want to add an email_unsubscribed field to Contact
 
 
 # ==================== PAYMENT WEBHOOKS ====================
