@@ -2,7 +2,7 @@ services:
   # PostgreSQL Database
   postgres:
     image: postgres:15-alpine
-    container_name: eve_crm_postgres
+    container_name: senova_crm_postgres
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-evecrm}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-evecrm_dev_password}
@@ -17,12 +17,12 @@ services:
       timeout: 5s
       retries: 5
     networks:
-      - eve_network
+      - senova_network
 
   # Redis for Celery
   redis:
     image: redis:7-alpine
-    container_name: eve_crm_redis
+    container_name: senova_crm_redis
     command: redis-server --appendonly yes
     ports:
       - "6379:6379"
@@ -34,14 +34,14 @@ services:
       timeout: 5s
       retries: 5
     networks:
-      - eve_network
+      - senova_network
 
   # FastAPI Backend
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: eve_crm_backend
+    container_name: senova_crm_backend
     depends_on:
       postgres:
         condition: service_healthy
@@ -66,14 +66,14 @@ services:
       retries: 3
       start_period: 40s
     networks:
-      - eve_network
+      - senova_network
 
   # Next.js Frontend
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: eve_crm_frontend
+    container_name: senova_crm_frontend
     depends_on:
       - backend
     environment:
@@ -88,14 +88,14 @@ services:
       - /app/.next
     command: npm run dev
     networks:
-      - eve_network
+      - senova_network
 
   # Celery Worker
   celery_worker:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: eve_crm_celery_worker
+    container_name: senova_crm_celery_worker
     depends_on:
       postgres:
         condition: service_healthy
@@ -116,14 +116,14 @@ services:
       retries: 3
       start_period: 40s
     networks:
-      - eve_network
+      - senova_network
 
   # Celery Beat (Scheduler)
   celery_beat:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: eve_crm_celery_beat
+    container_name: senova_crm_celery_beat
     depends_on:
       postgres:
         condition: service_healthy
@@ -144,12 +144,12 @@ services:
       retries: 3
       start_period: 40s
     networks:
-      - eve_network
+      - senova_network
 
   # Nginx Reverse Proxy (Production-like setup)
   nginx:
     image: nginx:alpine
-    container_name: eve_crm_nginx
+    container_name: senova_crm_nginx
     depends_on:
       - backend
     ports:
@@ -159,7 +159,7 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/ssl:/etc/nginx/ssl:ro
     networks:
-      - eve_network
+      - senova_network
 
 volumes:
   postgres_data:
@@ -168,5 +168,5 @@ volumes:
     driver: local
 
 networks:
-  eve_network:
+  senova_network:
     driver: bridge
