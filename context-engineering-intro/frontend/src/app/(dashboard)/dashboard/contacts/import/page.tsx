@@ -52,7 +52,10 @@ export default function ImportPage() {
 
   const handleDownloadSample = async () => {
     try {
-      const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+      const API_URL = process.env.NEXT_PUBLIC_API_URL ||
+        (process.env.NODE_ENV === 'production'
+          ? 'https://crm.senovallc.com/api'
+          : 'http://localhost:8000')
       const response = await fetch(`${API_URL}/api/v1/contacts/import/sample`)
       const blob = await response.blob()
       const url = window.URL.createObjectURL(blob)

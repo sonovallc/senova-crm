@@ -59,7 +59,10 @@ export default function ImportPreview({
         description: `Importing ${validCount} contacts. Large imports may take 10-15 minutes. Please do not close this page.`,
       })
 
-      const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+      const API_URL = process.env.NEXT_PUBLIC_API_URL ||
+        (process.env.NODE_ENV === 'production'
+          ? 'https://crm.senovallc.com/api'
+          : 'http://localhost:8000')
 
       // CRITICAL FIX: Add tag_ids to the request payload
       // The backend endpoint expects tag_ids in the request

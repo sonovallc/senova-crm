@@ -39,7 +39,10 @@ export default function ColumnMapper({
     const fetchFields = async () => {
       try {
         const token = sessionStorage.getItem('access_token')
-        const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+        const API_URL = process.env.NEXT_PUBLIC_API_URL ||
+        (process.env.NODE_ENV === 'production'
+          ? 'https://crm.senovallc.com/api'
+          : 'http://localhost:8000')
         const response = await fetch(`${API_URL}/api/v1/contacts/import/fields`, {
           credentials: 'include',
           headers: {

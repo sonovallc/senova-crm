@@ -128,7 +128,10 @@ export default function ImportDuplicatesStep({
       setError(null)
       try {
         const token = sessionStorage.getItem("access_token")
-        const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+        const API_URL = process.env.NEXT_PUBLIC_API_URL ||
+        (process.env.NODE_ENV === 'production'
+          ? 'https://crm.senovallc.com/api'
+          : 'http://localhost:8000')
         const response = await fetch(`${API_URL}/api/v1/contacts/import/validate-duplicates`, {
           method: "POST",
           credentials: 'include',
@@ -226,7 +229,10 @@ export default function ImportDuplicatesStep({
 
     try {
       const token = sessionStorage.getItem("access_token")
-      const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+      const API_URL = process.env.NEXT_PUBLIC_API_URL ||
+        (process.env.NODE_ENV === 'production'
+          ? 'https://crm.senovallc.com/api'
+          : 'http://localhost:8000')
 
       const duplicateRows = [
         ...(validationData.duplicate_rows || []),

@@ -30,7 +30,10 @@ import {
 } from '@/components/ui/select'
 import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels'
 
-const WS_URL = process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:8000'
+const WS_URL = process.env.NEXT_PUBLIC_WS_URL ||
+  (process.env.NODE_ENV === 'production'
+    ? 'wss://crm.senovallc.com/api'
+    : 'ws://localhost:8000')
 
 type InboxSocketMessage = {
   type?: string

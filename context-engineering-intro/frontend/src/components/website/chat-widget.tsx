@@ -111,7 +111,10 @@ export function ChatWidget() {
       }
 
       // Production: Try to connect WebSocket with existing token to validate
-      const WS_URL = process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:8000'
+      const WS_URL = process.env.NEXT_PUBLIC_WS_URL ||
+        (process.env.NODE_ENV === 'production'
+          ? 'wss://crm.senovallc.com/api'
+          : 'ws://localhost:8000')
       const ws = new WebSocket(`${WS_URL}/api/v1/communications/ws/${existingToken}`)
 
       // Add timeout for connection
@@ -163,7 +166,10 @@ export function ChatWidget() {
 
   const loadExistingMessages = async (contactIdToLoad: string) => {
     try {
-      const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+      const API_URL = process.env.NEXT_PUBLIC_API_URL ||
+        (process.env.NODE_ENV === 'production'
+          ? 'https://crm.senovallc.com/api'
+          : 'http://localhost:8000')
       const response = await fetch(`${API_URL}/api/v1/communications/widget/messages/${contactIdToLoad}`)
 
       if (response.ok) {
@@ -229,7 +235,10 @@ export function ChatWidget() {
 
     const connectWebSocket = () => {
       try {
-        const WS_URL = process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:8000'
+        const WS_URL = process.env.NEXT_PUBLIC_WS_URL ||
+        (process.env.NODE_ENV === 'production'
+          ? 'wss://crm.senovallc.com/api'
+          : 'ws://localhost:8000')
         ws = new WebSocket(`${WS_URL}/api/v1/communications/ws/${token}`)
 
         // Add timeout for connection
