@@ -38,7 +38,7 @@ export const objectsApi = {
       ...(params?.type && { type: params.type })
     };
 
-    return api.get<any>('/v1/objects', { params: backendParams }).then(res => {
+    return api.get<any>('/v1/objects/', { params: backendParams }).then(res => {
       const data = res.data;
       // Transform backend response to match Paginated<T> type
       // Backend returns: { objects: [...], total: 10, skip: 0, limit: 20 }
@@ -59,7 +59,7 @@ export const objectsApi = {
     api.get<CRMObject>(`/v1/objects/${id}`).then(res => res.data),
 
   create: (data: CreateObjectRequest) =>
-    api.post<CRMObject>('/v1/objects', data).then(res => res.data),
+    api.post<CRMObject>('/v1/objects/', data).then(res => res.data),
 
   update: (id: string, data: UpdateObjectRequest) =>
     api.put<CRMObject>(`/v1/objects/${id}`, data).then(res => res.data),
