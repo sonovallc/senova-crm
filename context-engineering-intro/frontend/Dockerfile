@@ -44,12 +44,15 @@ ENV PORT=3004
 RUN addgroup -g 1001 nodejs && \
     adduser -S nextjs -u 1001
 
+# Copy package files
+COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
+COPY --from=builder --chown=nextjs:nodejs /app/package-lock.json* ./
+
 # Copy production dependencies from deps stage
 COPY --from=deps --chown=nextjs:nodejs /app/node_modules ./node_modules
 
 # Copy built application from builder stage
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 
 # Switch to non-root user
@@ -62,5 +65,5 @@ EXPOSE 3004
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD node -e "require('http').get('http://localhost:3004', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})" || exit 1
 
-# Start the production server using Next.js standalone server
-CMD ["node", "server.js"]
+# Start the production server using Next.js start command
+CMD ["npm", "start"]
