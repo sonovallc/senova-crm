@@ -1,61 +1,41 @@
-# Frontend Dockerfile for Next.js Production
+# Base image with dependencies
+FROM node:20-alpine AS deps
+WORKDIR /app
+COPY package.json package-lock.json* ./
+RUN npm ci
 
 # Builder stage
 FROM node:20-alpine AS builder
-
 WORKDIR /app
-
-# Copy package files
-COPY package.json package-lock.json* ./
-
-# Install all dependencies (including dev dependencies for build)
-RUN npm ci
-
-# Copy application source
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Set production environment for build
+# Set environment to production for build
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
 # Build the Next.js application
 RUN npm run build
 
-# Production runner stage
+# Production runner stage - Next.js standalone
 FROM node:20-alpine AS runner
-
 WORKDIR /app
 
-# Set production environment
 ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3004
+ENV NEXT_TELEMETRY_DISABLED=1
 
-# Create non-root user for security
-RUN addgroup -g 1001 nodejs && \
-    adduser -S nextjs -u 1001
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
 
-# Copy package files
-COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
-COPY --from=builder --chown=nextjs:nodejs /app/package-lock.json* ./
-
-# Copy all dependencies (including devDependencies for next.config.ts)
-COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
-
-# Copy built application from builder stage
-COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
+# Copy standalone output from builder
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/next.config.ts ./next.config.ts
 
-# Switch to non-root user
 USER nextjs
 
-# Expose port 3004
 EXPOSE 3004
 
-# Health check for container orchestration
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD node -e "require('http').get('http://localhost:3004', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})" || exit 1
-
-# Start the production server using Next.js start command
-CMD ["npm", "start"]
+# Use Node.js to run the standalone server
+CMD ["node", "server.js"]
