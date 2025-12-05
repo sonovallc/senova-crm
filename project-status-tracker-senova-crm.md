@@ -8,6 +8,7 @@
 ---
 
 ## CHANGE LOG
+- 2025-12-05 01:25 EST: BASE COMPOSE VOLUME FIX - Removed frontend volumes from base docker-compose.yml. The `volumes: []` override in production.yml didn't work - Docker still mounted volumes. Removed volumes from base file since they're only needed for dev hot-reload.
 - 2025-12-05 01:15 EST: FRONTEND VOLUME FIX - Removed volume mounts in docker-compose.production.yml. Frontend container was failing because local ./frontend mount overwrote Docker image files. Added volumes: [] override to use built-in image files. (commit b3b0316)
 - 2025-12-05 00:45 EST: FRONTEND DOCKERFILE FIX - Updated Dockerfile to properly handle Next.js standalone build. Changed COPY ownership sequence, moved chown to RUN command after all files copied. Should fix "Cannot find module '/app/server.js'" error.
 - 2025-12-04 16:50 EST: Fixed init_production_db.py - Replaced passlib import with app's existing get_password_hash utility

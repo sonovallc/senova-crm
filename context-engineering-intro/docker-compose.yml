@@ -82,10 +82,8 @@ services:
       - PORT=3004
     ports:
       - "3004:3004"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-      - /app/.next
+    # Volumes removed - only needed for development hot-reload
+    # Production uses the built image without volume mounts
     command: npm run dev
     networks:
       - senova_network
