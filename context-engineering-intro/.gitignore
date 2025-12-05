@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+
+# Build
+.next/
+build/
+dist/
+
+# SECURITY: Environment files - NEVER COMMIT
+.env
+.env.local
+.env.*.local
+**/.env
+
+# SECURITY: Scripts that may contain API keys
+backend/setup_*.py
+backend/create_*.py
+backend/ensure_*.py
+backend/fix_*.py
+backend/seed_*.py
+backend/update_*.py
+backend/set_*.py
+backend/check_*.py
+backend/*.sql
+backend/*_test*.py
+
+# SECURITY: Files with sensitive keywords
+*secret*
+*apikey*
+*api_key*
+*password*
+*credential*
+
+# Testing/Development
+testing/
+screenshots/
+test-results/
+*.log
