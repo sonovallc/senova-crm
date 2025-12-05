@@ -51,7 +51,7 @@ export function UserPermissionModal({
   const { data: users, isLoading: loadingUsers } = useQuery({
     queryKey: ['users'],
     queryFn: async () => {
-      const res = await api.get('/v1/users')
+      const res = await api.get('/v1/users/')
       // Backend returns { items: [...], total, page, page_size, pages }
       return res.data?.items || res.data || []
     },
