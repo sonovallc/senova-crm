@@ -401,7 +401,7 @@ export default function InboxPage() {
     const contactEmails: string[] = []
     // Use pre-computed emails array from backend if available (comprehensive extraction)
     if ((contact as { emails?: string[] })?.emails && Array.isArray((contact as { emails?: string[] }).emails)) {
-      (contact as { emails: string[] }).emails.forEach((email: string) => {
+      (contact as { emails?: string[] }).emails?.forEach((email: string) => {
         if (email && !contactEmails.includes(email)) {
           contactEmails.push(email)
         }
