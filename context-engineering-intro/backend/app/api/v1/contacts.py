@@ -718,7 +718,7 @@ class ContactObjectsResponse(BaseModel):
     total: int
 
 
-@router.get("/{contact_id}/objects", response_model=ContactObjectsResponse)
+@router.get("/{contact_id}/objects/", response_model=ContactObjectsResponse)
 async def get_contact_objects(
     contact_id: UUID,
     db: DatabaseSession,
@@ -777,7 +777,7 @@ async def get_contact_objects(
     )
 
 
-@router.get("/{contact_id}")
+@router.get("/{contact_id}/")
 async def get_contact(
     contact_id: UUID,
     db: DatabaseSession,
@@ -816,7 +816,7 @@ async def get_contact(
     return filtered_contacts[0] if filtered_contacts else {}
 
 
-@router.put("/{contact_id}")
+@router.put("/{contact_id}/")
 async def update_contact(
     contact_id: UUID,
     data: ContactUpdate,
@@ -963,7 +963,7 @@ async def update_contact(
     return filtered_contacts[0] if filtered_contacts else {}
 
 
-@router.delete("/{contact_id}", status_code=status.HTTP_204_NO_CONTENT)
+@router.delete("/{contact_id}/", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_contact(
     contact_id: UUID,
     db: DatabaseSession,
@@ -1009,7 +1009,7 @@ async def delete_contact(
     return None
 
 
-@router.post("/{contact_id}/restore", response_model=ContactResponse)
+@router.post("/{contact_id}/restore/", response_model=ContactResponse)
 async def restore_contact(
     contact_id: UUID,
     db: DatabaseSession,
@@ -1074,7 +1074,7 @@ async def restore_contact(
     return ContactResponse.model_validate(contact)
 
 
-@router.delete("/{contact_id}/permanent", status_code=status.HTTP_204_NO_CONTENT)
+@router.delete("/{contact_id}/permanent/", status_code=status.HTTP_204_NO_CONTENT)
 async def permanent_delete_contact(
     contact_id: UUID,
     db: DatabaseSession,
@@ -1219,7 +1219,7 @@ class ContactAssignment(BaseModel):
     assigned_to_id: Optional[UUID] = None
 
 
-@router.post("/{contact_id}/assign", status_code=status.HTTP_200_OK)
+@router.post("/{contact_id}/assign/", status_code=status.HTTP_200_OK)
 async def assign_contact(
     contact_id: UUID,
     assignment: ContactAssignment,
