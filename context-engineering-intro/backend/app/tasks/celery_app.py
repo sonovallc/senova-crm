@@ -9,6 +9,7 @@ CRITICAL NOTES:
 """
 
 from celery import Celery
+from celery.schedules import crontab
 from kombu import Queue
 
 from app.config.settings import get_settings
@@ -82,12 +83,12 @@ celery_app.conf.beat_schedule = {
     # Check date-based triggers daily at midnight
     "check-date-triggers": {
         "task": "autoresponder.check_date_triggers",
-        "schedule": "crontab(hour=0, minute=0)",  # Midnight UTC
+        "schedule": crontab(hour=0, minute=0),  # Midnight UTC
     },
     # Cleanup old executions weekly
     "cleanup-old-executions": {
         "task": "autoresponder.cleanup_old_executions",
-        "schedule": "crontab(day_of_week=0, hour=2, minute=0)",  # Sunday 2am UTC
+        "schedule": crontab(day_of_week=0, hour=2, minute=0),  # Sunday 2am UTC
         "kwargs": {"days": 90},
     },
 }
