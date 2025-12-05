@@ -15,7 +15,7 @@ sys.path.insert(0, str(backend_dir))
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import select
-from passlib.context import CryptContext
+from app.api.v1.auth import get_password_hash
 
 # Import the Base and all models to ensure they're registered
 from app.config.database import Base
@@ -33,8 +33,6 @@ from app.models import (
     UnsubscribeToken, Object, ObjectContact, ObjectUser, ObjectWebsite,
     ObjectMailgunSettings, EmailSendingProfile, UserEmailProfileAssignment
 )
-
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 # Production database URL - using container name for postgres host
 DATABASE_URL = "postgresql+asyncpg://senova_crm_user:senova_dev_password@postgres:5432/senova_crm"
@@ -76,7 +74,7 @@ async def init_db():
 
                 # Update password if user exists
                 print("\n4. Updating password for existing user...")
-                existing_user.hashed_password = pwd_context.hash("D3n1w3n1!")
+                existing_user.hashed_password = get_password_hash("D3n1w3n1!")
                 existing_user.role = UserRole.OWNER
                 existing_user.is_active = True
                 await session.commit()
@@ -86,7 +84,7 @@ async def init_db():
                 print("   User not found, creating new admin user...")
 
                 # Hash the password
-                hashed_password = pwd_context.hash("D3n1w3n1!")
+                hashed_password = get_password_hash("D3n1w3n1!")
 
                 # Create owner user
                 admin_user = User(
