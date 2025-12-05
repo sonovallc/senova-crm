@@ -1,13 +1,16 @@
 # PROJECT STATUS TRACKER: SENOVA CRM
 
 **Created:** 2025-11-27
-**Last Updated:** 2025-12-04 23:30 EST
+**Last Updated:** 2025-12-05 00:45 EST
 **Context Window:** 3
-**Status:** ✅ DATABASE NAMING FIXED - All Eve references in docker-compose.yml updated to Senova
+**Status:** IN PROGRESS - Fixing frontend Dockerfile standalone build configuration
 
 ---
 
 ## CHANGE LOG
+- 2025-12-05 00:45 EST: FRONTEND DOCKERFILE FIX - Updated Dockerfile to properly handle Next.js standalone build. Changed COPY ownership sequence, moved chown to RUN command after all files copied. Should fix "Cannot find module '/app/server.js'" error.
+- 2025-12-04 16:50 EST: Fixed init_production_db.py - Replaced passlib import with app's existing get_password_hash utility
+- 2025-12-04 16:45 EST: Created production database initialization script (init_production_db.py) to bypass problematic migrations and create admin user directly
 - 2025-12-04 23:30 EST: CRITICAL DATABASE FIX - Fixed database naming inconsistency in docker-compose.yml. Changed POSTGRES_USER from 'evecrm' to 'senova_crm_user', POSTGRES_DB from 'eve_crm' to 'senova_crm', and password from 'evecrm_dev_password' to 'senova_dev_password'. All 6 DATABASE_URL references updated.
 - 2025-12-05 00:20 EST: API ENDPOINT FIX DEPLOYED - Fixed double /api prefix issue. Changed all '/api/v1' to '/v1' in frontend code. Login endpoint now working correctly (returns 401 for invalid credentials, not 404).
 - 2025-12-05 00:10 EST: CRITICAL BUG FOUND - Frontend calling /api/api/v1/auth/login (double /api). Root cause: NEXT_PUBLIC_API_URL includes /api but auth.ts also adds /api in endpoint path.
@@ -94,10 +97,10 @@
 ---
 
 ## CURRENT STATE SNAPSHOT
-**Current Phase:** ✅ PRODUCTION CONFIG BUGS FIXED
-**Active Task:** Completed - All localhost fallbacks removed
-**Last Updated:** 2025-12-04 23:20 EST
-**Last Verified:** 2025-12-04 23:20 EST (Both fixes verified)
+**Current Phase:** Production Database Initialization
+**Active Task:** Created init_production_db.py script
+**Last Updated:** 2025-12-04 16:45 EST
+**Last Verified:** Script created and made executable
 
 ### Public Website Status: 40.9% PASS (9/22 pages working)
 ### CRM Dashboard Status: 0% PASS (Cannot access - login page broken)

@@ -28,14 +28,18 @@ ENV NEXT_TELEMETRY_DISABLED=1
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# Copy standalone output from builder
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-COPY --from=builder --chown=nextjs:nodejs /app/public ./public
+# Copy the standalone output and static assets
+# Standalone build includes node_modules and all required files
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/public ./public
+
+# Change ownership after all files are copied
+RUN chown -R nextjs:nodejs /app
 
 USER nextjs
 
 EXPOSE 3004
 
-# Use Node.js to run the standalone server
+# The standalone build creates server.js at the root
 CMD ["node", "server.js"]
