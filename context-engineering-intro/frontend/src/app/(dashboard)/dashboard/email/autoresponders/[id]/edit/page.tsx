@@ -157,7 +157,7 @@ export default function EditAutoresponderPage() {
   const { data: templatesData, isLoading: isLoadingTemplates } = useQuery({
     queryKey: ['email-templates'],
     queryFn: async () => {
-      const response = await api.get('/api/v1/email-templates')
+      const response = await api.get('/v1/email-templates')
       // Backend returns EmailTemplateList with {items: [...], total, skip, limit}
       return response.data.items
     },
@@ -167,7 +167,7 @@ export default function EditAutoresponderPage() {
   const { data: tagsData, isLoading: isLoadingTags } = useQuery({
     queryKey: ['tags'],
     queryFn: async () => {
-      const response = await api.get('/api/v1/tags')
+      const response = await api.get('/v1/tags')
       // Backend returns direct array, not { tags: [...] }
       return response.data
     },

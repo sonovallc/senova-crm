@@ -32,7 +32,7 @@ export interface DeletedContactsQuery {
 
 export const deletedContactsApi = {
   listDeletedContacts: async (params?: DeletedContactsQuery): Promise<DeletedContactsList> => {
-    const response = await api.get('/api/v1/contacts/deleted', {
+    const response = await api.get('/v1/contacts/deleted', {
       params: {
         page: params?.page ?? 1,
         page_size: clampPageSize(params?.page_size),

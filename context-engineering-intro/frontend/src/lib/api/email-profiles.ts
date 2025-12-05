@@ -175,7 +175,7 @@ export const emailProfilesApi = {
   },
 
   create: async (data: CreateProfileData): Promise<EmailProfile> => {
-    const response = await api.post('/api/v1/email-profiles', data)
+    const response = await api.post('/v1/email-profiles', data)
     return response.data
   },
 
@@ -207,7 +207,7 @@ export const emailProfilesApi = {
 
   // User endpoint - get current user's assigned profiles
   getMyProfiles: async (): Promise<AssignedProfile[]> => {
-    const response = await api.get('/api/v1/email-profiles/my-profiles')
+    const response = await api.get('/v1/email-profiles/my-profiles')
     // Defensive: ensure we always return an array
     return Array.isArray(response.data) ? response.data : []
   },

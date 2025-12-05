@@ -74,7 +74,7 @@ export default function EditCampaignPage() {
   const { data: templatesData } = useQuery<{ items: EmailTemplate[]; total: number }>({
     queryKey: ['email-templates'],
     queryFn: async () => {
-      const response = await api.get('/api/v1/email-templates')
+      const response = await api.get('/v1/email-templates')
       return response.data
     },
   })

@@ -56,7 +56,7 @@ export default function CreateCampaignPage() {
   const { data: templatesData } = useQuery<{ items: EmailTemplate[]; total: number }>({
     queryKey: ['email-templates'],
     queryFn: async () => {
-      const response = await api.get('/api/v1/email-templates')
+      const response = await api.get('/v1/email-templates')
       return response.data
     },
   })
@@ -66,7 +66,7 @@ export default function CreateCampaignPage() {
   const { data: contactsData, isLoading: isLoadingContacts } = useQuery<{ total_count: number; preview: ContactPreview[] }>({
     queryKey: ['filter-contacts', statusFilter, tagsFilter],
     queryFn: async () => {
-      const response = await api.post('/api/v1/campaigns/filter-contacts', {
+      const response = await api.post('/v1/campaigns/filter-contacts', {
         status: statusFilter && statusFilter !== 'all' ? statusFilter : undefined,
         tags: tagsFilter.length > 0 ? tagsFilter : undefined,
         has_email: true,
@@ -80,7 +80,7 @@ export default function CreateCampaignPage() {
   // Create campaign mutation
   const createCampaignMutation = useMutation({
     mutationFn: async (campaignData: any) => {
-      const response = await api.post('/api/v1/campaigns', campaignData)
+      const response = await api.post('/v1/campaigns', campaignData)
       return response.data
     },
     onSuccess: (data) => {

@@ -65,38 +65,38 @@ export interface MailgunTestResponse {
 // API functions
 export const mailgunApi = {
   getSettings: async (): Promise<MailgunSettings> => {
-    const response = await api.get('/api/v1/mailgun/settings')
+    const response = await api.get('/v1/mailgun/settings')
     return response.data
   },
 
   createSettings: async (data: MailgunSettingsCreate): Promise<MailgunSettings> => {
-    const response = await api.post('/api/v1/mailgun/settings', data)
+    const response = await api.post('/v1/mailgun/settings', data)
     return response.data
   },
 
   updateSettings: async (data: MailgunSettingsUpdate): Promise<MailgunSettings> => {
-    const response = await api.patch('/api/v1/mailgun/settings', data)
+    const response = await api.patch('/v1/mailgun/settings', data)
     return response.data
   },
 
   deleteSettings: async (): Promise<void> => {
-    await api.delete('/api/v1/mailgun/settings')
+    await api.delete('/v1/mailgun/settings')
   },
 
   testConnection: async (): Promise<MailgunTestResponse> => {
-    const response = await api.post('/api/v1/mailgun/test-connection', {
+    const response = await api.post('/v1/mailgun/test-connection', {
       send_test_email: false,
     })
     return response.data
   },
 
   getVerifiedAddresses: async (): Promise<VerifiedEmailAddress[]> => {
-    const response = await api.get('/api/v1/mailgun/verified-addresses')
+    const response = await api.get('/v1/mailgun/verified-addresses')
     return response.data
   },
 
   addVerifiedAddress: async (data: VerifiedEmailCreate): Promise<VerifiedEmailAddress> => {
-    const response = await api.post('/api/v1/mailgun/verified-addresses', data)
+    const response = await api.post('/v1/mailgun/verified-addresses', data)
     return response.data
   },
 

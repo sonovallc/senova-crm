@@ -27,11 +27,11 @@ export interface FeatureFlagUpdateInput {
 
 export const featureFlagsApi = {
   listFlags: async (params?: ListParams): Promise<FeatureFlagListResponse> => {
-    const response = await api.get('/api/v1/feature-flags/', { params })
+    const response = await api.get('/v1/feature-flags/', { params })
     return response.data
   },
   createFlag: async (data: FeatureFlagCreateInput): Promise<FeatureFlag> => {
-    const response = await api.post('/api/v1/feature-flags/', data)
+    const response = await api.post('/v1/feature-flags/', data)
     return response.data
   },
   updateFlag: async (id: string, data: FeatureFlagUpdateInput): Promise<FeatureFlag> => {

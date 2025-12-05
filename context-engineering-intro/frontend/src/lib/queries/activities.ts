@@ -69,7 +69,7 @@ export const activitiesApi = {
   },
 
   listActivities: async (params?: ActivityQueryParams): Promise<ActivityList> => {
-    const response = await api.get('/api/v1/activities', {
+    const response = await api.get('/v1/activities', {
       params: buildParams({
         page: params?.page ?? 1,
         page_size: params?.page_size ?? 50,
@@ -85,7 +85,7 @@ export const activitiesApi = {
   },
 
   exportActivitiesCsv: async (params?: ActivityQueryParams): Promise<Blob> => {
-    const response = await api.get('/api/v1/activities/export', {
+    const response = await api.get('/v1/activities/export', {
       params: buildParams(params),
       responseType: 'blob',
     })

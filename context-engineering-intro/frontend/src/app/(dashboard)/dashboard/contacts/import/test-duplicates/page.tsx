@@ -93,7 +93,7 @@ export default function TestDuplicatesPage() {
       const formData = new FormData()
       formData.append("file", file)
 
-      const response = await api.post("/api/v1/contacts/import/upload", formData, {
+      const response = await api.post("/v1/contacts/import/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" }
       })
 
@@ -122,7 +122,7 @@ export default function TestDuplicatesPage() {
     setDetectError(null)
 
     try {
-      const response = await api.post("/api/v1/contacts/import/validate-duplicates", {
+      const response = await api.post("/v1/contacts/import/validate-duplicates", {
         file_id: uploadedFileId,
         field_mapping: fieldMapping
       })
@@ -199,13 +199,13 @@ export default function TestDuplicatesPage() {
       console.log('Submitting decisions:', decisionsList)
 
       // Save decisions first
-      await api.post('/api/v1/contacts/import/duplicate-decisions', {
+      await api.post('/v1/contacts/import/duplicate-decisions', {
         validation_id: duplicateResult.validation_id,
         decisions: decisionsList
       })
 
       // Execute import with decisions
-      const response = await api.post('/api/v1/contacts/import/import-with-decisions', {
+      const response = await api.post('/v1/contacts/import/import-with-decisions', {
         validation_id: duplicateResult.validation_id,
         file_id: duplicateResult.file_id,
         field_mapping: mapping

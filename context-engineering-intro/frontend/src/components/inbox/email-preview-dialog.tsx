@@ -73,7 +73,7 @@ export function EmailPreviewDialog({
   const fetchContacts = async () => {
     setLoadingContacts(true)
     try {
-      const response = await api.get('/api/v1/contacts', {
+      const response = await api.get('/v1/contacts', {
         params: { limit: 100, offset: 0 }
       })
       const contactsData = response.data?.contacts || response.data?.items || []

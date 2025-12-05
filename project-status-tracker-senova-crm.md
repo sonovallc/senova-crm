@@ -8,6 +8,8 @@
 ---
 
 ## CHANGE LOG
+- 2025-12-05 00:10 EST: CRITICAL BUG FOUND - Frontend calling /api/api/v1/auth/login (double /api). Root cause: NEXT_PUBLIC_API_URL includes /api but auth.ts also adds /api in endpoint path.
+- 2025-12-04 23:20 EST: PRODUCTION CONFIG BUGS FIXED - Removed all hardcoded localhost fallbacks. Frontend now correctly uses production API URLs. Homepage redirect fixed.
 - 2025-12-04 23:55 EST: PRODUCTION MODE FIXED - Frontend now running in production mode (next-server) instead of dev mode. Removed Next.js "N" indicator. Fixed docker-compose.production.yml to use correct Dockerfile.
 - 2025-12-04 22:45 EST: FRONTEND FIXED - Successfully configured Next.js standalone mode. Frontend container healthy and responding on port 3004. Production build successful.
 - 2025-12-04 22:05 EST: PRODUCTION DEPLOYMENT - Successfully renamed all containers to senova_crm_*. Frontend has build issues (missing required-server-files.json). Backend API healthy. Celery beat has config error.
@@ -90,10 +92,10 @@
 ---
 
 ## CURRENT STATE SNAPSHOT
-**Current Phase:** 🔧 FIXING PRODUCTION CONFIG BUGS
-**Active Task:** Removing hardcoded localhost fallbacks from frontend
-**Last Updated:** 2025-12-04 09:15 EST
-**Last Verified:** 2025-12-04 09:15 EST
+**Current Phase:** ✅ PRODUCTION CONFIG BUGS FIXED
+**Active Task:** Completed - All localhost fallbacks removed
+**Last Updated:** 2025-12-04 23:20 EST
+**Last Verified:** 2025-12-04 23:20 EST (Both fixes verified)
 
 ### Public Website Status: 40.9% PASS (9/22 pages working)
 ### CRM Dashboard Status: 0% PASS (Cannot access - login page broken)

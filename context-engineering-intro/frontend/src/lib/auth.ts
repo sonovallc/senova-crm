@@ -24,7 +24,7 @@ export interface AuthTokens {
 
 export const authService = {
   async login(credentials: LoginCredentials): Promise<{ user: User; tokens: AuthTokens }> {
-    const response = await api.post('/api/v1/auth/login', credentials)
+    const response = await api.post('/v1/auth/login', credentials)
     const { access_token, refresh_token } = response.data
 
     // Store tokens in sessionStorage (tab-specific, prevents multi-tab conflicts)
@@ -45,7 +45,7 @@ export const authService = {
   },
 
   async register(data: RegisterData): Promise<{ user: User; tokens: AuthTokens }> {
-    const response = await api.post('/api/v1/auth/register', data)
+    const response = await api.post('/v1/auth/register', data)
     const { access_token, refresh_token } = response.data
 
     // Store tokens in sessionStorage (tab-specific, prevents multi-tab conflicts)
@@ -69,7 +69,7 @@ export const authService = {
     const refreshToken = sessionStorage.getItem('refresh_token')
     try {
       if (refreshToken) {
-        await api.post('/api/v1/auth/logout', { refresh_token: refreshToken })
+        await api.post('/v1/auth/logout', { refresh_token: refreshToken })
       }
     } catch {
       // Ignore logout API errors - we'll clear tokens regardless
@@ -80,7 +80,7 @@ export const authService = {
   },
 
   async getMe(): Promise<User> {
-    const response = await api.get('/api/v1/auth/me')
+    const response = await api.get('/v1/auth/me')
     return response.data
   },
 
@@ -90,7 +90,7 @@ export const authService = {
       throw new Error('No refresh token available')
     }
 
-    const response = await api.post('/api/v1/auth/refresh', {
+    const response = await api.post('/v1/auth/refresh', {
       refresh_token: refreshToken,
     })
 

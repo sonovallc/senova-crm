@@ -93,7 +93,7 @@ export function ContactSection() {
     setIsSubmitting(true)
     try {
       // Create contact in CRM
-      await api.post('/api/v1/contacts/', {
+      await api.post('/v1/contacts/', {
         first_name: data.first_name,
         last_name: data.last_name,
         email: data.email || undefined,

@@ -15,13 +15,13 @@ export interface TagUpdate {
 export const tagsApi = {
   // Get all tags
   getTags: async (): Promise<Tag[]> => {
-    const response = await api.get('/api/v1/tags/')
+    const response = await api.get('/v1/tags/')
     return response.data
   },
 
   // Create a new tag (admin/owner only)
   createTag: async (data: TagCreate): Promise<Tag> => {
-    const response = await api.post('/api/v1/tags/', data)
+    const response = await api.post('/v1/tags/', data)
     return response.data
   },
 

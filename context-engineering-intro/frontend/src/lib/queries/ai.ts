@@ -9,22 +9,22 @@ export const aiApi = {
     max_length?: number
     include_conversation_history?: boolean
   }): Promise<AIResponse> => {
-    const response = await api.post('/api/v1/ai/generate-response', data)
+    const response = await api.post('/v1/ai/generate-response', data)
     return response.data
   },
 
   analyzeSentiment: async (message: string): Promise<SentimentAnalysis> => {
-    const response = await api.post('/api/v1/ai/analyze-sentiment', { message })
+    const response = await api.post('/v1/ai/analyze-sentiment', { message })
     return response.data
   },
 
   classifyIntent: async (message: string): Promise<any> => {
-    const response = await api.post('/api/v1/ai/classify-intent', { message })
+    const response = await api.post('/v1/ai/classify-intent', { message })
     return response.data
   },
 
   enrichContact: async (contactId: string, forceRefresh = false): Promise<any> => {
-    const response = await api.post('/api/v1/ai/enrich-contact', {
+    const response = await api.post('/v1/ai/enrich-contact', {
       contact_id: contactId,
       force_refresh: forceRefresh,
     })

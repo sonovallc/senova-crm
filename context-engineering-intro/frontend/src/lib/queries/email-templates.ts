@@ -10,7 +10,7 @@ export const emailTemplatesApi = {
     search?: string
     created_by?: string
   }): Promise<Paginated<EmailTemplate>> => {
-    const response = await api.get('/api/v1/email-templates', { params })
+    const response = await api.get('/v1/email-templates', { params })
     return response.data
   },
 
@@ -25,7 +25,7 @@ export const emailTemplatesApi = {
     subject: string
     body_html: string
   }): Promise<EmailTemplate> => {
-    const response = await api.post('/api/v1/email-templates', data)
+    const response = await api.post('/v1/email-templates', data)
     return response.data
   },
 
@@ -66,7 +66,7 @@ export const emailTemplatesApi = {
     count: number
     templates: Array<{ id: string; name: string; category: string }>
   }> => {
-    const response = await api.post('/api/v1/email-templates/seed-starter-templates')
+    const response = await api.post('/v1/email-templates/seed-starter-templates')
     return response.data
   },
 }

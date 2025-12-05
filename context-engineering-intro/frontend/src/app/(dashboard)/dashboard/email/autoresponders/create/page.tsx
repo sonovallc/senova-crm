@@ -82,7 +82,7 @@ export default function CreateAutoresponderPage() {
   const { data: templatesData, isLoading: isLoadingTemplates } = useQuery({
     queryKey: ['email-templates'],
     queryFn: async () => {
-      const response = await api.get('/api/v1/email-templates')
+      const response = await api.get('/v1/email-templates')
       // Backend returns EmailTemplateList with {items: [...], total, skip, limit}
       return response.data.items
     },
@@ -92,7 +92,7 @@ export default function CreateAutoresponderPage() {
   const { data: tagsData, isLoading: isLoadingTags } = useQuery({
     queryKey: ['tags'],
     queryFn: async () => {
-      const response = await api.get('/api/v1/tags')
+      const response = await api.get('/v1/tags')
       // Backend returns direct array, not { tags: [...] }
       return response.data
     },
@@ -104,7 +104,7 @@ export default function CreateAutoresponderPage() {
   const createAutoresponderMutation = useMutation({
     mutationFn: async (payload: { autoresponderData: any; sequenceSteps: SequenceStep[] }) => {
       // Step 1: Create the autoresponder (WITHOUT sequence_steps in payload)
-      const response = await api.post('/api/v1/autoresponders', payload.autoresponderData)
+      const response = await api.post('/v1/autoresponders', payload.autoresponderData)
       const autoresponder = response.data
 
       // Step 2: If sequence enabled, create each sequence step separately

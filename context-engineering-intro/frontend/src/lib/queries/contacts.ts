@@ -34,7 +34,7 @@ export const contactsApi = {
       ...params,
       tags: params?.tags && params.tags.length > 0 ? params.tags.join(',') : undefined
     }
-    const response = await api.get('/api/v1/contacts/', { params: apiParams })
+    const response = await api.get('/v1/contacts/', { params: apiParams })
     return response.data
   },
 
@@ -53,12 +53,12 @@ export const contactsApi = {
     page: number
     page_size: number
   }): Promise<Paginated<Contact>> => {
-    const response = await api.post('/api/v1/contacts/search', filterRequest)
+    const response = await api.post('/v1/contacts/search', filterRequest)
     return response.data
   },
 
   createContact: async (data: Partial<Contact>): Promise<Contact> => {
-    const response = await api.post('/api/v1/contacts/', data)
+    const response = await api.post('/v1/contacts/', data)
     return response.data
   },
 
@@ -72,7 +72,7 @@ export const contactsApi = {
   },
 
   bulkDeleteContacts: async (contactIds: string[]): Promise<BulkDeleteContactsResponse> => {
-    const response = await api.post('/api/v1/contacts/bulk-delete', {
+    const response = await api.post('/v1/contacts/bulk-delete', {
       contact_ids: contactIds
     })
     return response.data
@@ -87,7 +87,7 @@ export const contactsApi = {
   },
 
   getContactFields: async (): Promise<ContactFieldDefinition[]> => {
-    const response = await api.get('/api/v1/contacts/fields')
+    const response = await api.get('/v1/contacts/fields')
     // Backend returns {fields: [...]} not [...] directly
     return response.data.fields || []
   },

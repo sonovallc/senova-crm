@@ -9,7 +9,7 @@ export const paymentsApi = {
     status?: string
     contact_id?: string
   }): Promise<Paginated<Payment>> => {
-    const response = await api.get('/api/v1/payments', { params })
+    const response = await api.get('/v1/payments', { params })
     return response.data
   },
 
@@ -25,7 +25,7 @@ export const paymentsApi = {
     gateway?: PaymentGateway
     description?: string
   }): Promise<Payment> => {
-    const response = await api.post('/api/v1/payments/process', data)
+    const response = await api.post('/v1/payments/process', data)
     return response.data
   },
 
@@ -35,7 +35,7 @@ export const paymentsApi = {
   },
 
   getPaymentStats: async (): Promise<any> => {
-    const response = await api.get('/api/v1/payments/stats/summary')
+    const response = await api.get('/v1/payments/stats/summary')
     return response.data
   },
 }

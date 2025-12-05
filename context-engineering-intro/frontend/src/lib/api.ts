@@ -46,9 +46,9 @@ api.interceptors.response.use(
     const originalRequest = error.config
 
     // Skip token refresh for auth endpoints (login, register, refresh)
-    const isAuthEndpoint = originalRequest?.url?.includes('/api/v1/auth/login') ||
-                          originalRequest?.url?.includes('/api/v1/auth/register') ||
-                          originalRequest?.url?.includes('/api/v1/auth/refresh')
+    const isAuthEndpoint = originalRequest?.url?.includes('/v1/auth/login') ||
+                          originalRequest?.url?.includes('/v1/auth/register') ||
+                          originalRequest?.url?.includes('/v1/auth/refresh')
 
     // If 401 and not already retried and not an auth endpoint, try to refresh token
     if (error.response?.status === 401 && !originalRequest._retry && !isAuthEndpoint) {
@@ -60,7 +60,7 @@ api.interceptors.response.use(
           throw new Error('No refresh token')
         }
 
-        const response = await axios.post(`${API_URL}/api/v1/auth/refresh`, {
+        const response = await axios.post(`${API_URL}/v1/auth/refresh`, {
           refresh_token: refreshToken,
         })
 

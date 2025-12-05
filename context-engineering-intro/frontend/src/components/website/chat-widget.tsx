@@ -355,7 +355,7 @@ export function ChatWidget() {
     })
 
     try {
-      const response = await api.post('/api/v1/communications/upload', formData, {
+      const response = await api.post('/v1/communications/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -405,7 +405,7 @@ export function ChatWidget() {
       }
 
       // Send message to backend
-      await api.post('/api/v1/communications/webchat', {
+      await api.post('/v1/communications/webchat', {
         type: 'web_chat',
         contact_id: contactId,
         body: inputValue || '(Image attachment)',

@@ -10,7 +10,7 @@ export const communicationsApi = {
     status?: string
     search?: string
   }): Promise<Paginated<Communication>> => {
-    const response = await api.get('/api/v1/communications/inbox', { params })
+    const response = await api.get('/v1/communications/inbox', { params })
     return response.data
   },
 
@@ -32,7 +32,7 @@ export const communicationsApi = {
     subject?: string
     media_urls?: string[]
   }): Promise<Communication> => {
-    const response = await api.post('/api/v1/communications/send', {
+    const response = await api.post('/v1/communications/send', {
       ...data,
       type: data.type || 'web_chat', // Default to web_chat for real-time delivery
     })
@@ -45,7 +45,7 @@ export const communicationsApi = {
       formData.append('files', file)
     })
 
-    const response = await api.post('/api/v1/communications/upload', formData, {
+    const response = await api.post('/v1/communications/upload', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -59,7 +59,7 @@ export const communicationsApi = {
     sort_by?: string
     status?: string
   }): Promise<InboxThread[]> => {
-    const response = await api.get('/api/v1/communications/inbox/threads', { params })
+    const response = await api.get('/v1/communications/inbox/threads', { params })
     return response.data
   },
 
@@ -97,7 +97,7 @@ export const communicationsApi = {
       })
     }
 
-    const response = await api.post('/api/v1/inbox/send-email', formData, {
+    const response = await api.post('/v1/inbox/send-email', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
