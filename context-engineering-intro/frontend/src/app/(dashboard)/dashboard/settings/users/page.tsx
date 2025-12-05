@@ -76,7 +76,7 @@ export default function UsersPage() {
 
     try {
       const token = sessionStorage.getItem("access_token")
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v1/users/`, {
         credentials: 'include',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -104,7 +104,7 @@ export default function UsersPage() {
   const approveUser = async (userId: string) => {
     try {
       const token = sessionStorage.getItem("access_token")
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/approve`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v1/users/approve`, {
         method: "POST",
         credentials: 'include',
         headers: {
@@ -127,7 +127,7 @@ export default function UsersPage() {
   const deactivateUser = async (userId: string) => {
     try {
       const token = sessionStorage.getItem("access_token")
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/deactivate`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v1/users/deactivate`, {
         method: "POST",
         credentials: 'include',
         headers: {
@@ -150,7 +150,7 @@ export default function UsersPage() {
   const reactivateUser = async (userId: string) => {
     try {
       const token = sessionStorage.getItem("access_token")
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/reactivate`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v1/users/reactivate`, {
         method: "POST",
         credentials: 'include',
         headers: {
@@ -173,7 +173,7 @@ export default function UsersPage() {
   const changeRole = async (userId: string, newRole: "owner" | "admin" | "user") => {
     try {
       const token = sessionStorage.getItem("access_token")
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/change-role`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v1/users/change-role`, {
         method: "POST",
         credentials: 'include',
         headers: {
@@ -209,7 +209,7 @@ export default function UsersPage() {
 
     try {
       const token = sessionStorage.getItem("access_token")
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/delete`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v1/users/delete`, {
         method: "DELETE",
         credentials: 'include',
         headers: {
@@ -270,7 +270,7 @@ export default function UsersPage() {
     try {
       const token = sessionStorage.getItem("access_token")
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/v1/objects/${objectId}/users/${userId}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/v1/objects/${objectId}/users/${userId}`,
         {
           method: "DELETE",
           credentials: 'include',
