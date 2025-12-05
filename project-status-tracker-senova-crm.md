@@ -8,6 +8,7 @@
 ---
 
 ## CHANGE LOG
+- 2025-12-05 02:05 EST: BUILD-TIME ENV VARS FIX - Fixed critical issue where Next.js NEXT_PUBLIC_ variables weren't being set at build time. Added ARG directives in Dockerfile and build args in docker-compose.production.yml. Frontend was connecting to localhost instead of production API. (commit 985e85a)
 - 2025-12-05 01:25 EST: BASE COMPOSE VOLUME FIX - Removed frontend volumes from base docker-compose.yml. The `volumes: []` override in production.yml didn't work - Docker still mounted volumes. Removed volumes from base file since they're only needed for dev hot-reload.
 - 2025-12-05 01:15 EST: FRONTEND VOLUME FIX - Removed volume mounts in docker-compose.production.yml. Frontend container was failing because local ./frontend mount overwrote Docker image files. Added volumes: [] override to use built-in image files. (commit b3b0316)
 - 2025-12-05 00:45 EST: FRONTEND DOCKERFILE FIX - Updated Dockerfile to properly handle Next.js standalone build. Changed COPY ownership sequence, moved chown to RUN command after all files copied. Should fix "Cannot find module '/app/server.js'" error.
@@ -100,9 +101,9 @@
 
 ## CURRENT STATE SNAPSHOT
 **Current Phase:** Production Frontend Fix - Build-time Environment Variables
-**Active Task:** IN PROGRESS - Fixing Next.js NEXT_PUBLIC_ variables not being set at build time
-**Last Updated:** 2025-12-05 02:00 EST
-**Current Focus:** Modifying Dockerfile and docker-compose to pass API URLs at build time
+**Active Task:** ✅ COMPLETE - Fixed Next.js NEXT_PUBLIC_ variables build-time issue
+**Last Updated:** 2025-12-05 02:05 EST
+**Last Verified:** Committed and pushed to main (commit 985e85a)
 
 ### Public Website Status: 40.9% PASS (9/22 pages working)
 ### CRM Dashboard Status: 0% PASS (Cannot access - login page broken)
@@ -296,6 +297,7 @@
 ## VERIFICATION LOG
 | Date | Task | Method | Result | Evidence |
 |------|------|--------|--------|----------|
+| 2025-12-05 02:05 | Build-time env vars fix | Coder agent | Complete | Dockerfile + docker-compose.production.yml |
 | 2025-11-27 | Design system creation | Coder agent | Complete | design-system-senova.md |
 | 2025-11-27 | Service research | service-schema-creator | Complete | audiencelab-service-research.json |
 | 2025-11-27 | Business profile | Manual creation | Complete | business-profile-senova.json |
