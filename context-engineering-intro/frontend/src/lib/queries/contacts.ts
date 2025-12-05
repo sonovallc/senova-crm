@@ -39,7 +39,7 @@ export const contactsApi = {
   },
 
   getContact: async (id: string): Promise<Contact> => {
-    const response = await api.get(`/api/v1/contacts/${id}`)
+    const response = await api.get(`/api/v1/contacts/${id}/`)
     return response.data
   },
 
@@ -63,12 +63,12 @@ export const contactsApi = {
   },
 
   updateContact: async (id: string, data: Partial<Contact>): Promise<Contact> => {
-    const response = await api.put(`/api/v1/contacts/${id}`, data)
+    const response = await api.put(`/api/v1/contacts/${id}/`, data)
     return response.data
   },
 
   deleteContact: async (id: string): Promise<void> => {
-    await api.delete(`/api/v1/contacts/${id}`)
+    await api.delete(`/api/v1/contacts/${id}/`)
   },
 
   bulkDeleteContacts: async (contactIds: string[]): Promise<BulkDeleteContactsResponse> => {
@@ -93,7 +93,7 @@ export const contactsApi = {
   },
 
   getContactObjects: async (contactId: string): Promise<ContactObjectsResponse> => {
-    const response = await api.get(`/api/v1/contacts/${contactId}/objects`)
+    const response = await api.get(`/api/v1/contacts/${contactId}/objects/`)
     return response.data
   },
 }
