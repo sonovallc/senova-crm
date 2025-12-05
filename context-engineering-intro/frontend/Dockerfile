@@ -1,13 +1,4 @@
 # Frontend Dockerfile for Next.js Production
-FROM node:20-alpine AS deps
-
-WORKDIR /app
-
-# Copy package files
-COPY package.json package-lock.json* ./
-
-# Install production dependencies only
-RUN npm ci --only=production
 
 # Builder stage
 FROM node:20-alpine AS builder
@@ -48,12 +39,13 @@ RUN addgroup -g 1001 nodejs && \
 COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
 COPY --from=builder --chown=nextjs:nodejs /app/package-lock.json* ./
 
-# Copy production dependencies from deps stage
-COPY --from=deps --chown=nextjs:nodejs /app/node_modules ./node_modules
+# Copy all dependencies (including devDependencies for next.config.ts)
+COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
 
 # Copy built application from builder stage
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/next.config.ts ./next.config.ts
 
 # Switch to non-root user
 USER nextjs
