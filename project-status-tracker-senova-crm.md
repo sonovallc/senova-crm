@@ -1,13 +1,14 @@
 # PROJECT STATUS TRACKER: SENOVA CRM
 
 **Created:** 2025-11-27
-**Last Updated:** 2025-12-04 18:15 EST
+**Last Updated:** 2025-12-04 19:30 EST
 **Context Window:** 3
-**Status:** 🔧 FIXING PRODUCTION BUILD - TypeScript type error fixed
+**Status:** 🔧 FIXING DOCKER POSTGRES - init.sql mount removed
 
 ---
 
 ## CHANGE LOG
+- 2025-12-04 19:30 EST: Fixed docker-compose.yml postgres init.sql mount error - removed problematic volume mount
 - 2025-12-04 18:15 EST: Fixed TypeScript type error in inbox page - proper optional chaining for emails property
 - 2025-12-04 18:00 EST: Fixed package-lock.json sync issue - regenerated to match package.json dependencies
 - 2025-12-04 17:45 EST: Fixed frontend Dockerfile for production - enabled standalone mode, proper multi-stage build
