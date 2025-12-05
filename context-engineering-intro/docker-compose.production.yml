@@ -4,6 +4,11 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+      # CRITICAL: Pass build args for Next.js NEXT_PUBLIC_ variables
+      # These are baked into the JavaScript bundle at build time
+      args:
+        NEXT_PUBLIC_API_URL: https://crm.senovallc.com/api
+        NEXT_PUBLIC_WS_URL: wss://crm.senovallc.com/api
     environment:
       - NEXT_PUBLIC_API_URL=https://crm.senovallc.com/api
       - NEXT_PUBLIC_WS_URL=wss://crm.senovallc.com/api
