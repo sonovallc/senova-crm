@@ -11,7 +11,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 # Use postgres hostname for Docker environment
-os.environ['DATABASE_URL'] = 'postgresql+asyncpg://evecrm:evecrm_dev_password@postgres:5432/eve_crm'
+os.environ['DATABASE_URL'] = 'postgresql+asyncpg://senova_crm_user:senova_dev_password@postgres:5432/senova_crm'
 
 import asyncio
 from sqlalchemy import select, update

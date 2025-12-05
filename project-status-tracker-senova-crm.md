@@ -1,13 +1,15 @@
 # PROJECT STATUS TRACKER: SENOVA CRM
 
 **Created:** 2025-11-27
-**Last Updated:** 2025-12-04 22:05 EST
+**Last Updated:** 2025-12-04 23:30 EST
 **Context Window:** 3
-**Status:** ✅ FRONTEND OPERATIONAL - Next.js standalone mode working, frontend responding on port 3004
+**Status:** ✅ DATABASE NAMING FIXED - All Eve references in docker-compose.yml updated to Senova
 
 ---
 
 ## CHANGE LOG
+- 2025-12-04 23:30 EST: CRITICAL DATABASE FIX - Fixed database naming inconsistency in docker-compose.yml. Changed POSTGRES_USER from 'evecrm' to 'senova_crm_user', POSTGRES_DB from 'eve_crm' to 'senova_crm', and password from 'evecrm_dev_password' to 'senova_dev_password'. All 6 DATABASE_URL references updated.
+- 2025-12-05 00:20 EST: API ENDPOINT FIX DEPLOYED - Fixed double /api prefix issue. Changed all '/api/v1' to '/v1' in frontend code. Login endpoint now working correctly (returns 401 for invalid credentials, not 404).
 - 2025-12-05 00:10 EST: CRITICAL BUG FOUND - Frontend calling /api/api/v1/auth/login (double /api). Root cause: NEXT_PUBLIC_API_URL includes /api but auth.ts also adds /api in endpoint path.
 - 2025-12-04 23:20 EST: PRODUCTION CONFIG BUGS FIXED - Removed all hardcoded localhost fallbacks. Frontend now correctly uses production API URLs. Homepage redirect fixed.
 - 2025-12-04 23:55 EST: PRODUCTION MODE FIXED - Frontend now running in production mode (next-server) instead of dev mode. Removed Next.js "N" indicator. Fixed docker-compose.production.yml to use correct Dockerfile.

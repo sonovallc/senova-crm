@@ -30,7 +30,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # Database connection for local Docker PostgreSQL
-DATABASE_URL = "postgresql+asyncpg://evecrm:evecrm_dev_password@localhost:5432/eve_crm"
+DATABASE_URL = "postgresql+asyncpg://senova_crm_user:senova_dev_password@localhost:5432/senova_crm"
 
 # Create async engine and session
 engine = create_async_engine(DATABASE_URL, echo=False)

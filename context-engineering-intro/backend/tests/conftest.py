@@ -18,7 +18,7 @@ from app.models.contact import Contact, ContactStatus, ContactSource
 from app.core.security import get_password_hash
 
 # Test database URL (use in-memory or separate test database)
-TEST_DATABASE_URL = "postgresql+asyncpg://evecrm:evecrm_dev_password@postgres:5432/eve_crm_test"
+TEST_DATABASE_URL = "postgresql+asyncpg://senova_crm_user:senova_dev_password@postgres:5432/senova_crm_test"
 
 
 # Create test engine

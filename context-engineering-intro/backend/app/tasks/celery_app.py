@@ -17,7 +17,7 @@ settings = get_settings()
 
 # Create Celery app
 celery_app = Celery(
-    "eve_crm",
+    "senova_crm",
     broker=settings.redis_url,
     backend=settings.redis_url,
     include=[

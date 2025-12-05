@@ -64,7 +64,7 @@ If setting up a completely new database, you can use the SQL in `init_with_seed.
 
 2. Then run the seed SQL (uncomment the seed section in the file)
    ```bash
-   psql -U evecrm -d eve_crm -f init_with_seed.sql
+   psql -U senova_crm_user -d senova_crm -f init_with_seed.sql
    ```
 
 ## Verification
@@ -122,7 +122,7 @@ Check if there are duplicate emails or conflicting data. The script handles exis
 ### Error: "Cannot connect to database"
 Ensure:
 - PostgreSQL is running
-- Database `eve_crm` exists
+- Database `senova_crm` exists
 - `.env` file has correct database credentials
 - You're running from the `backend` directory
 

@@ -85,7 +85,7 @@ cp .env.example .env
 
 ```bash
 # Create database
-createdb eve_crm
+createdb senova_crm
 
 # Run migrations
 alembic upgrade head

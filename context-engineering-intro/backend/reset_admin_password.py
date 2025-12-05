@@ -9,7 +9,7 @@ from app.core.security import get_password_hash
 from app.models.user import User
 
 # Database URL
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://evecrm:evecrm_dev_password@localhost:5432/eve_crm")
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://senova_crm_user:senova_dev_password@localhost:5432/senova_crm")
 # Convert asyncpg to psycopg2
 DATABASE_URL = DATABASE_URL.replace("postgresql+asyncpg://", "postgresql://")
 
