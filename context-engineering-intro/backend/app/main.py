@@ -59,6 +59,7 @@ app = FastAPI(
     docs_url="/docs" if settings.is_development else None,  # Disable docs in production
     redoc_url="/redoc" if settings.is_development else None,
     lifespan=lifespan,
+    redirect_slashes=False,  # Disable automatic trailing slash redirects (307) that break POST requests
 )
 
 
