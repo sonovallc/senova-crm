@@ -6,6 +6,7 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import { contactsApi } from '@/lib/queries/contacts'
 import { communicationsApi } from '@/lib/queries/communications'
 import { emailTemplatesApi } from '@/lib/queries/email-templates'
+import { emailProfilesApi, AssignedProfile } from '@/lib/api/email-profiles'
 import { Contact, EmailTemplate } from '@/types'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -24,7 +25,8 @@ import {
   ArrowLeft,
   Loader2,
   ChevronDown,
-  FileCode
+  FileCode,
+  Mail
 } from 'lucide-react'
 import {
   Command,
@@ -99,6 +101,26 @@ export default function ComposeEmailPage() {
   const [selectedTemplateId, setSelectedTemplateId] = useState<string>('')
   const [showCreateContactDialog, setShowCreateContactDialog] = useState(false)
   const [manualRecipient, setManualRecipient] = useState<string>('')
+  const [selectedProfileId, setSelectedProfileId] = useState<string>('')
+  const [profileSearchOpen, setProfileSearchOpen] = useState(false)
+
+  // Fetch user's assigned email profiles
+  const { data: emailProfiles, isLoading: loadingProfiles } = useQuery({
+    queryKey: ['my-email-profiles'],
+    queryFn: () => emailProfilesApi.getMyProfiles(),
+  })
+
+  // Auto-select default profile or first available profile
+  useEffect(() => {
+    if (emailProfiles && emailProfiles.length > 0 && !selectedProfileId) {
+      const defaultProfile = emailProfiles.find(p => p.is_default)
+      if (defaultProfile) {
+        setSelectedProfileId(defaultProfile.id)
+      } else {
+        setSelectedProfileId(emailProfiles[0].id)
+      }
+    }
+  }, [emailProfiles, selectedProfileId])
 
   // Fetch contacts for dropdown
   const { data: contactsData, isLoading: loadingContacts } = useQuery({
@@ -135,14 +157,15 @@ export default function ComposeEmailPage() {
       })
       setSelectedContact(newContact)
       setShowCreateContactDialog(false)
-      // Now send the email with the newly created contact
+      // Now send the email with the selected profile
       sendEmailMutation.mutate({
-        contact_id: newContact.id,
+        to: toRecipients,
         subject,
-        body: message,
+        body_html: message,
         cc: cc.length > 0 ? cc : undefined,
         bcc: bcc.length > 0 ? bcc : undefined,
         attachments: selectedFiles.length > 0 ? selectedFiles : undefined,
+        profile_id: selectedProfileId || undefined,
       })
     },
     onError: (error: ApiError) => {
@@ -155,21 +178,25 @@ export default function ComposeEmailPage() {
     },
   })
 
-  // Send email mutation
+  // Send email mutation - use sendEmail API with profile_id
   const sendEmailMutation = useMutation({
     mutationFn: async (data: {
-      contact_id: string
+      to: string[]
       subject: string
-      body: string
+      body_html: string
       cc?: string[]
       bcc?: string[]
       attachments?: File[]
+      profile_id?: string
     }) => {
-      return communicationsApi.sendMessage({
-        contact_id: data.contact_id,
+      return communicationsApi.sendEmail({
+        to: data.to,
         subject: data.subject,
-        body: data.body,
-        type: 'email',
+        body_html: data.body_html,
+        cc: data.cc,
+        bcc: data.bcc,
+        attachments: data.attachments,
+        profile_id: data.profile_id,
       })
     },
     onSuccess: () => {
@@ -190,6 +217,7 @@ export default function ComposeEmailPage() {
       setShowBcc(false)
       setSelectedTemplateId('')
       setManualRecipient('')
+      // Note: Don't reset selectedProfileId - keep the user's preference
       // Redirect to inbox
       router.push('/dashboard/inbox')
     },
@@ -336,7 +364,17 @@ export default function ComposeEmailPage() {
       return
     }
 
-    // BUG #7 FIX: Check if sending to a non-database email (manual recipient)
+    // Validate email profile is selected
+    if (!selectedProfileId) {
+      toast({
+        title: 'No email profile',
+        description: 'Please select an email profile to send from',
+        variant: 'destructive',
+      })
+      return
+    }
+
+    // Check if sending to a non-database email (manual recipient)
     // If selectedContact is null but we have recipients, show create contact dialog
     if (!selectedContact && toRecipients.length > 0) {
       setManualRecipient(toRecipients[0])
@@ -344,14 +382,15 @@ export default function ComposeEmailPage() {
       return
     }
 
-    // Send email with existing contact
+    // Send email with selected profile
     sendEmailMutation.mutate({
-      contact_id: selectedContact!.id,
+      to: toRecipients,
       subject,
-      body: message,
+      body_html: message,
       cc: cc.length > 0 ? cc : undefined,
       bcc: bcc.length > 0 ? bcc : undefined,
       attachments: selectedFiles.length > 0 ? selectedFiles : undefined,
+      profile_id: selectedProfileId,
     })
   }
 
@@ -558,6 +597,83 @@ export default function ComposeEmailPage() {
             <p className="text-xs text-muted-foreground">
               Select a pre-built template to auto-fill the subject and message. Variables will be replaced with contact data.
             </p>
+          </div>
+
+          {/* From Profile Selector */}
+          <div className="space-y-2">
+            <Label>From</Label>
+            <Popover open={profileSearchOpen} onOpenChange={setProfileSearchOpen}>
+              <PopoverTrigger asChild>
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="w-full justify-between"
+                  disabled={loadingProfiles}
+                >
+                  <span className="flex items-center">
+                    <Mail className="mr-2 h-4 w-4" />
+                    {loadingProfiles ? (
+                      'Loading profiles...'
+                    ) : selectedProfileId && emailProfiles ? (
+                      (() => {
+                        const profile = emailProfiles.find(p => p.id === selectedProfileId)
+                        return profile ? `${profile.display_name} <${profile.email_address}>` : 'Select sending profile...'
+                      })()
+                    ) : emailProfiles && emailProfiles.length === 0 ? (
+                      'No email profiles available'
+                    ) : (
+                      'Select sending profile...'
+                    )}
+                  </span>
+                  <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-[500px] p-0" align="start">
+                <Command>
+                  <CommandInput placeholder="Search profiles..." />
+                  <CommandEmpty>
+                    {loadingProfiles ? (
+                      <div className="flex items-center justify-center p-4">
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      </div>
+                    ) : (
+                      'No email profiles found. Contact your administrator to assign email profiles.'
+                    )}
+                  </CommandEmpty>
+                  <CommandGroup className="max-h-[300px] overflow-auto">
+                    {emailProfiles?.map((profile) => (
+                      <CommandItem
+                        key={profile.id}
+                        value={`${profile.display_name} ${profile.email_address}`}
+                        onSelect={() => {
+                          setSelectedProfileId(profile.id)
+                          setProfileSearchOpen(false)
+                        }}
+                      >
+                        <div className="flex flex-col w-full">
+                          <div className="flex items-center justify-between">
+                            <span className="font-medium">{profile.display_name}</span>
+                            {profile.is_default && (
+                              <Badge variant="secondary" className="ml-2 text-xs">
+                                Default
+                              </Badge>
+                            )}
+                          </div>
+                          <span className="text-xs text-muted-foreground">
+                            {profile.email_address}
+                          </span>
+                        </div>
+                      </CommandItem>
+                    ))}
+                  </CommandGroup>
+                </Command>
+              </PopoverContent>
+            </Popover>
+            {(!emailProfiles || emailProfiles.length === 0) && !loadingProfiles && (
+              <p className="text-xs text-destructive">
+                No email profiles assigned. Please contact your administrator to set up email sending.
+              </p>
+            )}
           </div>
 
           {/* To Field - Contact Selector + Manual Email Entry */}
