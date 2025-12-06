@@ -193,7 +193,7 @@ export default function InboxPage() {
 
   // WebSocket connection for real-time updates
   const { isConnected } = useWebSocket({
-    url: currentUser ? `${WS_URL}/api/v1/communications/ws/crm/${sessionStorage.getItem('access_token')}` : null,
+    url: currentUser ? `${WS_URL}/v1/communications/ws/crm/${sessionStorage.getItem('access_token')}` : null,
     onMessage: handleWebSocketMessage,
   })
 

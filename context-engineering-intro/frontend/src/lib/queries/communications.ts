@@ -15,12 +15,12 @@ export const communicationsApi = {
   },
 
   getCommunication: async (id: string): Promise<Communication> => {
-    const response = await api.get(`/api/v1/communications/${id}`)
+    const response = await api.get(`/v1/communications/${id}`)
     return response.data
   },
 
   getContactHistory: async (contactId: string): Promise<Paginated<Communication>> => {
-    const response = await api.get(`/api/v1/communications/contact/${contactId}`)
+    const response = await api.get(`/v1/communications/contact/${contactId}`)
     return response.data
   },
 
@@ -106,17 +106,17 @@ export const communicationsApi = {
   },
 
   markAsRead: async (communicationId: string): Promise<Communication> => {
-    const response = await api.patch(`/api/v1/communications/${communicationId}/read`)
+    const response = await api.patch(`/v1/communications/${communicationId}/read`)
     return response.data
   },
 
   archive: async (communicationId: string): Promise<Communication> => {
-    const response = await api.patch(`/api/v1/communications/${communicationId}/archive`)
+    const response = await api.patch(`/v1/communications/${communicationId}/archive`)
     return response.data
   },
 
   unarchive: async (communicationId: string): Promise<Communication> => {
-    const response = await api.patch(`/api/v1/communications/${communicationId}/unarchive`)
+    const response = await api.patch(`/v1/communications/${communicationId}/unarchive`)
     return response.data
   },
 }
