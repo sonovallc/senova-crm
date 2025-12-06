@@ -105,14 +105,14 @@ export interface UpdateMailgunSettingsData {
 export const objectMailgunApi = {
   // List all Mailgun configurations for an object (multi-domain support)
   list: async (objectId: string): Promise<ObjectMailgunSettings[]> => {
-    const response = await api.get(`/v1/objects/${objectId}/mailgun/`)
+    const response = await api.get(`/v1/objects/${objectId}/mailgun`)
     return Array.isArray(response.data) ? response.data : []
   },
 
   // Get specific Mailgun settings
   get: async (objectId: string, settingsId: string): Promise<ObjectMailgunSettings | null> => {
     try {
-      const response = await api.get(`/v1/objects/${objectId}/mailgun/${settingsId}/`)
+      const response = await api.get(`/v1/objects/${objectId}/mailgun/${settingsId}`)
       return response.data
     } catch (error: any) {
       if (error.response?.status === 404) {
@@ -125,7 +125,7 @@ export const objectMailgunApi = {
   // Get default Mailgun settings for backward compatibility
   getDefault: async (objectId: string): Promise<ObjectMailgunSettings | null> => {
     try {
-      const response = await api.get(`/v1/objects/${objectId}/mailgun/default/`)
+      const response = await api.get(`/v1/objects/${objectId}/mailgun/default`)
       return response.data
     } catch (error: any) {
       if (error.response?.status === 404) {
@@ -137,30 +137,30 @@ export const objectMailgunApi = {
 
   // Create new Mailgun configuration
   create: async (objectId: string, data: CreateMailgunSettingsData): Promise<ObjectMailgunSettings> => {
-    const response = await api.post(`/v1/objects/${objectId}/mailgun/`, data)
+    const response = await api.post(`/v1/objects/${objectId}/mailgun`, data)
     return response.data
   },
 
   // Update specific Mailgun configuration
   update: async (objectId: string, settingsId: string, data: UpdateMailgunSettingsData): Promise<ObjectMailgunSettings> => {
-    const response = await api.put(`/v1/objects/${objectId}/mailgun/${settingsId}/`, data)
+    const response = await api.put(`/v1/objects/${objectId}/mailgun/${settingsId}`, data)
     return response.data
   },
 
   // Delete specific Mailgun configuration
   delete: async (objectId: string, settingsId: string): Promise<void> => {
-    await api.delete(`/v1/objects/${objectId}/mailgun/${settingsId}/`)
+    await api.delete(`/v1/objects/${objectId}/mailgun/${settingsId}`)
   },
 
   // Verify specific Mailgun configuration
   verify: async (objectId: string, settingsId: string): Promise<{ success: boolean; message: string; verified_at?: string }> => {
-    const response = await api.post(`/v1/objects/${objectId}/mailgun/${settingsId}/verify/`)
+    const response = await api.post(`/v1/objects/${objectId}/mailgun/${settingsId}/verify`)
     return response.data
   },
 
   // Set specific Mailgun configuration as default
   setDefault: async (objectId: string, settingsId: string): Promise<ObjectMailgunSettings> => {
-    const response = await api.put(`/v1/objects/${objectId}/mailgun/${settingsId}/set-default/`)
+    const response = await api.put(`/v1/objects/${objectId}/mailgun/${settingsId}/set-default`)
     return response.data
   },
 }
