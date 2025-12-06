@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, useMemo } from 'react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { communicationsApi } from '@/lib/queries/communications'
+import { emailProfilesApi } from '@/lib/api/email-profiles'
 import { Communication, InboxThread, Paginated, User, CommunicationDirection, CommunicationStatus } from '@/types'
 import { ConversationList } from '@/components/inbox/conversation-list'
 import { MessageThread } from '@/components/inbox/message-thread'
@@ -56,6 +57,7 @@ export default function InboxPage() {
   const [expandedReplyOpen, setExpandedReplyOpen] = useState(false)
   const [composeModalOpen, setComposeModalOpen] = useState(false)
   const [showMessageDetail, setShowMessageDetail] = useState(false)
+  const [selectedProfileId, setSelectedProfileId] = useState<string>('')
   const { toast } = useToast()
   const queryClient = useQueryClient()
   const searchParams = useSearchParams()
@@ -118,6 +120,24 @@ export default function InboxPage() {
       })
     },
   })
+
+  // Fetch user's assigned email profiles
+  const { data: emailProfiles } = useQuery({
+    queryKey: ['my-email-profiles'],
+    queryFn: () => emailProfilesApi.getMyProfiles(),
+  })
+
+  // Auto-select default profile
+  useEffect(() => {
+    if (emailProfiles && emailProfiles.length > 0 && !selectedProfileId) {
+      const defaultProfile = emailProfiles.find(p => p.is_default)
+      if (defaultProfile) {
+        setSelectedProfileId(defaultProfile.id)
+      } else {
+        setSelectedProfileId(emailProfiles[0].id)
+      }
+    }
+  }, [emailProfiles, selectedProfileId])
 
   // Mark as read mutation
   const markAsReadMutation = useMutation({
@@ -200,7 +220,50 @@ export default function InboxPage() {
   const handleSendMessage = async (data: { message: string; subject?: string; files?: File[]; channel?: string }) => {
     if (!selectedConversation) return
 
-    // Upload files if present
+    // Use thread type if no channel specified
+    const messageType = data.channel || selectedConversation.type
+
+    // For email threads, use the sendEmail endpoint with profile_id
+    if (messageType.toLowerCase() === 'email') {
+      try {
+        // Find the matching InboxThread to get contact email
+        const matchingThread = inboxData.find(t => t.contact.id === selectedConversation.contact_id)
+        const contactEmail = matchingThread?.contact?.email || ''
+
+        if (!contactEmail) {
+          toast({
+            title: 'Error',
+            description: 'Contact email not found',
+            variant: 'destructive',
+          })
+          return
+        }
+
+        await communicationsApi.sendEmail({
+          to: [contactEmail],
+          subject: data.subject || selectedConversation.subject || 'No Subject',
+          body_html: data.message,
+          attachments: data.files,
+          profile_id: selectedProfileId, // Pass the profile_id!
+        })
+
+        queryClient.invalidateQueries({ queryKey: ['inbox-threads'] })
+        queryClient.invalidateQueries({ queryKey: ['contact-messages'] })
+        toast({
+          title: 'Success',
+          description: 'Email sent successfully',
+        })
+      } catch (error) {
+        toast({
+          title: 'Error',
+          description: 'Failed to send email',
+          variant: 'destructive',
+        })
+      }
+      return
+    }
+
+    // For non-email messages (SMS, Web Chat), upload files first
     let mediaUrls: string[] | undefined = undefined
 
     if (data.files && data.files.length > 0) {
@@ -222,18 +285,14 @@ export default function InboxPage() {
           description: 'Could not upload files. Sending text only.',
           variant: 'destructive',
         })
-        // Continue sending message without files
       }
     }
-
-    // Use thread type if no channel specified
-    const messageType = data.channel || selectedConversation.type
 
     sendMessageMutation.mutate({
       contact_id: selectedConversation.contact_id,
       body: data.message,
-      subject: data.subject, // Include subject for emails
-      type: messageType, // Use email for email threads, sms for SMS threads, etc.
+      subject: data.subject,
+      type: messageType,
       media_urls: mediaUrls,
     })
   }
