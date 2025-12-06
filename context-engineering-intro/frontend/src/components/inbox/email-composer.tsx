@@ -39,7 +39,7 @@ interface EmailComposerProps {
   defaultSubject?: string // Pre-populate subject (e.g., for Re: replies)
 }
 
-const MAX_FILE_SIZE = 10 * 1024 * 1024 // 10MB
+const MAX_FILE_SIZE = 25 * 1024 * 1024 // 25MB
 const ALLOWED_FILE_TYPES = [
   'image/jpeg',
   'image/jpg',
@@ -123,7 +123,7 @@ export function EmailComposer({ onSend, disabled, defaultTo = [], defaultSubject
       }
 
       if (file.size > MAX_FILE_SIZE) {
-        errors.push(`${file.name}: File too large. Maximum size is 10MB.`)
+        errors.push(`${file.name}: File too large. Maximum size is 25MB.`)
         return
       }
 
@@ -455,7 +455,7 @@ export function EmailComposer({ onSend, disabled, defaultTo = [], defaultSubject
           variant="outline"
           onClick={() => fileInputRef.current?.click()}
           disabled={disabled}
-          title="Attach files (images, PDFs, documents - Max 10MB)"
+          title="Attach files (images, PDFs, documents - Max 25MB)"
         >
           <Paperclip className="h-4 w-4" />
         </Button>

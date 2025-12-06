@@ -50,7 +50,7 @@ import {
 } from '@/components/ui/dialog'
 import { cn } from '@/lib/utils'
 
-const MAX_FILE_SIZE = 10 * 1024 * 1024 // 10MB
+const MAX_FILE_SIZE = 25 * 1024 * 1024 // 25MB
 const ALLOWED_FILE_TYPES = [
   'image/jpeg',
   'image/jpg',
@@ -307,7 +307,7 @@ export default function ComposeEmailPage() {
       }
 
       if (file.size > MAX_FILE_SIZE) {
-        errors.push(`${file.name}: File too large (max 10MB)`)
+        errors.push(`${file.name}: File too large (max 25MB)`)
         return
       }
 

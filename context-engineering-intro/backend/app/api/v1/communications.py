@@ -1173,22 +1173,22 @@ async def upload_communication_files(
     Public endpoint - accessible from website chat widget
     Returns array of secure URLs that can be used in media_urls
 
-    Maximum file size: 10MB per file
+    Maximum file size: 25MB per file
     Supported formats: images (jpg, png, gif, webp), PDF, documents
     """
     # Validate file count
     if len(files) > 10:
         raise ValidationError("Maximum 10 files allowed per upload")
 
-    # Validate file sizes (10MB max)
-    max_size = 10 * 1024 * 1024  # 10MB in bytes
+    # Validate file sizes (25MB max)
+    max_size = 25 * 1024 * 1024  # 25MB in bytes
     for file in files:
         file.file.seek(0, 2)  # Seek to end
         file_size = file.file.tell()  # Get position (file size)
         file.file.seek(0)  # Reset to beginning
 
         if file_size > max_size:
-            raise ValidationError(f"File {file.filename} exceeds 10MB limit")
+            raise ValidationError(f"File {file.filename} exceeds 25MB limit")
 
     # Upload files to local storage (dev) or cloud storage (prod)
     try:

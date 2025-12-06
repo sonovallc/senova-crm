@@ -173,77 +173,94 @@ async def send_composed_email(
     # The settings are fetched from the email profile's associated Mailgun configuration
 
     # Get and validate email sending profile
-    if not profile_id:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Email sending profile is required. Please select a profile."
-        )
+    # Initialize variables for Mailgun config
+    from_email = None
+    from_name = None
+    mailgun_api_key = None
+    mailgun_domain = None
+    mailgun_region = None
 
-    try:
-        profile_uuid = UUID(profile_id)
-    except ValueError:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Invalid profile ID format"
-        )
+    if profile_id:
+        # Profile ID provided - use it
+        try:
+            profile_uuid = UUID(profile_id)
+        except ValueError:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Invalid profile ID format"
+            )
 
-    # Verify user has access to this profile using raw SQL (model doesn't exist)
-    assignment_query = text("""
-        SELECT 1 FROM user_email_profile_assignments
-        WHERE user_id = :user_id AND profile_id = :profile_id
-    """)
-    assignment_result = await db.execute(assignment_query, {"user_id": current_user.id, "profile_id": profile_uuid})
-    assignment = assignment_result.scalar_one_or_none()
+        # Verify user has access to this profile using raw SQL (model doesn't exist)
+        assignment_query = text("""
+            SELECT 1 FROM user_email_profile_assignments
+            WHERE user_id = :user_id AND profile_id = :profile_id
+        """)
+        assignment_result = await db.execute(assignment_query, {"user_id": current_user.id, "profile_id": profile_uuid})
+        assignment = assignment_result.scalar_one_or_none()
 
-    if not assignment:
-        raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
-            detail="You do not have access to this email sending profile"
-        )
+        if not assignment:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="You do not have access to this email sending profile"
+            )
 
-    # Get the profile and its Mailgun settings using raw SQL
-    profile_query = text("""
-        SELECT
-            esp.id,
-            esp.email_address,
-            esp.display_name,
-            esp.reply_to_address,
-            esp.is_active,
-            esp.mailgun_settings_id,
-            oms.api_key as mailgun_api_key,
-            oms.sending_domain as mailgun_domain,
-            oms.region as mailgun_region
-        FROM email_sending_profiles esp
-        LEFT JOIN object_mailgun_settings oms ON esp.mailgun_settings_id = oms.id
-        WHERE esp.id = :profile_id
-    """)
-    profile_result = await db.execute(profile_query, {"profile_id": profile_uuid})
-    profile_row = profile_result.fetchone()
+        # Get the profile and its Mailgun settings using raw SQL
+        profile_query = text("""
+            SELECT
+                esp.id,
+                esp.email_address,
+                esp.display_name,
+                esp.reply_to_address,
+                esp.is_active,
+                esp.mailgun_settings_id,
+                oms.api_key as mailgun_api_key,
+                oms.sending_domain as mailgun_domain,
+                oms.region as mailgun_region
+            FROM email_sending_profiles esp
+            LEFT JOIN object_mailgun_settings oms ON esp.mailgun_settings_id = oms.id
+            WHERE esp.id = :profile_id
+        """)
+        profile_result = await db.execute(profile_query, {"profile_id": profile_uuid})
+        profile_row = profile_result.fetchone()
 
-    if not profile_row or not profile_row.is_active:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Selected email sending profile is not available"
-        )
+        if not profile_row or not profile_row.is_active:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Selected email sending profile is not available"
+            )
 
-    # Create a simple object to hold profile data (since we don't have the ORM model)
-    class ProfileData:
-        def __init__(self, row):
-            self.id = row.id
-            self.email_address = row.email_address
-            self.display_name = row.display_name
-            self.reply_to_address = row.reply_to_address
-            self.is_active = row.is_active
-            self.mailgun_settings_id = row.mailgun_settings_id
-            # Decrypt the API key since it's stored encrypted in the database
-            self.mailgun_api_key = decrypt_api_key(row.mailgun_api_key) if row.mailgun_api_key else None
-            self.mailgun_domain = row.mailgun_domain
-            self.mailgun_region = row.mailgun_region
+        # Extract profile data
+        from_email = profile_row.email_address
+        from_name = profile_row.display_name
+        # Decrypt the API key since it's stored encrypted in the database
+        mailgun_api_key = decrypt_api_key(profile_row.mailgun_api_key) if profile_row.mailgun_api_key else None
+        mailgun_domain = profile_row.mailgun_domain
+        mailgun_region = profile_row.mailgun_region
+    else:
+        # No profile ID - fallback to user's personal Mailgun settings (legacy)
+        personal_mg_query = text("""
+            SELECT
+                from_email,
+                from_name,
+                api_key,
+                domain,
+                region
+            FROM mailgun_settings
+            WHERE user_id = :user_id AND is_active = true
+            LIMIT 1
+        """)
+        personal_mg_result = await db.execute(personal_mg_query, {"user_id": current_user.id})
+        personal_mg_row = personal_mg_result.fetchone()
 
-    profile = ProfileData(profile_row)
+        if personal_mg_row:
+            from_email = personal_mg_row.from_email
+            from_name = personal_mg_row.from_name
+            mailgun_api_key = decrypt_api_key(personal_mg_row.api_key) if personal_mg_row.api_key else None
+            mailgun_domain = personal_mg_row.domain
+            mailgun_region = personal_mg_row.region
 
-    # Validate that Mailgun settings are configured for this profile
-    if not profile.mailgun_api_key or not profile.mailgun_domain:
+    # Validate that we have the required Mailgun settings
+    if not mailgun_api_key or not mailgun_domain or not from_email:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="No email profile selected and no personal Mailgun settings configured"
@@ -282,19 +299,19 @@ async def send_composed_email(
         if not is_valid_email(email):
             raise ValidationError(f"Invalid email address: {email}")
 
-    # Validate attachments (max 10MB each, max 10 files)
+    # Validate attachments (max 25MB each, max 10 files)
     if attachments:
         if len(attachments) > 10:
             raise ValidationError("Maximum 10 attachments allowed")
 
-        max_size = 10 * 1024 * 1024  # 10MB
+        max_size = 25 * 1024 * 1024  # 25MB
         for attachment in attachments:
             await attachment.seek(0, 2)  # Seek to end
             file_size = attachment.tell()
             await attachment.seek(0)  # Reset to beginning
 
             if file_size > max_size:
-                raise ValidationError(f"Attachment {attachment.filename} exceeds 10MB limit")
+                raise ValidationError(f"Attachment {attachment.filename} exceeds 25MB limit")
 
     # Find or create contact by email for tracking
     contact_id = None
@@ -323,23 +340,23 @@ async def send_composed_email(
 
     # Send email via Mailgun using global config + profile settings
     try:
-        logger.info(f"Sending email via profile {profile.email_address} to {to_list}")
+        logger.info(f"Sending email via profile {from_email} to {to_list}")
 
-        # Use profile's reply_to_address for Reply-To header
+        # Use from_email for Reply-To header (simplified)
         # This routes replies to @mg.senovallc.com where Mailgun can receive them
-        reply_to = profile.reply_to_address if profile.reply_to_address else profile.email_address
+        reply_to = from_email
 
         result = await send_email_via_mailgun(
-            domain=profile.mailgun_domain,
-            api_key=profile.mailgun_api_key,
-            region=profile.mailgun_region.lower() if profile.mailgun_region else "us",
+            domain=mailgun_domain,
+            api_key=mailgun_api_key,
+            region=mailgun_region.lower() if mailgun_region else "us",
             to=to_list,
             subject=subject,
             body_html=body_html,
             cc=cc_list if cc_list else None,
             bcc=bcc_list if bcc_list else None,
-            from_email=profile.email_address,
-            from_name=profile.display_name,
+            from_email=from_email,
+            from_name=from_name,
             reply_to=reply_to,
             attachments=attachments,
         )
@@ -354,7 +371,7 @@ async def send_composed_email(
             user_id=current_user.id,
             subject=subject,
             body=body_html,
-            from_address=profile.email_address,
+            from_address=from_email,
             to_address=", ".join(to_list),
             status=CommunicationStatus.SENT,
             sent_at=datetime.now(timezone.utc),
@@ -362,8 +379,8 @@ async def send_composed_email(
             provider_metadata={
                 "provider": "mailgun",
                 "message_id": message_id,
-                "profile_id": str(profile.id),
-                "profile_email": profile.email_address,
+                "profile_id": str(profile_uuid) if profile_id else None,
+                "profile_email": from_email,
                 "cc": cc_list,
                 "bcc": bcc_list,
                 "sent_at": datetime.now(timezone.utc).isoformat(),
