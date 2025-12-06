@@ -169,13 +169,13 @@ export const emailProfilesApi = {
   // Owner-only endpoints
   list: async (isActive?: boolean): Promise<EmailProfile[]> => {
     const params = isActive !== undefined ? `?is_active=${isActive}` : ''
-    const response = await api.get(`/v1/email-profiles${params}`)
+    const response = await api.get(`/v1/email-profiles/${params}`)
     // Defensive: ensure we always return an array
     return Array.isArray(response.data) ? response.data : []
   },
 
   create: async (data: CreateProfileData): Promise<EmailProfile> => {
-    const response = await api.post('/v1/email-profiles', data)
+    const response = await api.post('/v1/email-profiles/', data)
     return response.data
   },
 
