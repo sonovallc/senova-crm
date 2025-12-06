@@ -168,12 +168,8 @@ async def send_composed_email(
 
     Requires authentication
     """
-    # Validate global Mailgun configuration
-    if not settings.mailgun_api_key or not settings.mailgun_domain:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Mailgun not configured. Please contact your administrator."
-        )
+    # Note: We now use per-object Mailgun settings instead of global settings
+    # The settings are fetched from the email profile's associated Mailgun configuration
 
     # Get and validate email sending profile
     if not profile_id:
@@ -204,11 +200,21 @@ async def send_composed_email(
             detail="You do not have access to this email sending profile"
         )
 
-    # Get the profile using raw SQL
+    # Get the profile and its Mailgun settings using raw SQL
     profile_query = text("""
-        SELECT id, email_address, display_name, reply_to_address, is_active
-        FROM email_sending_profiles
-        WHERE id = :profile_id
+        SELECT
+            esp.id,
+            esp.email_address,
+            esp.display_name,
+            esp.reply_to_address,
+            esp.is_active,
+            esp.mailgun_settings_id,
+            oms.api_key as mailgun_api_key,
+            oms.sending_domain as mailgun_domain,
+            oms.region as mailgun_region
+        FROM email_sending_profiles esp
+        LEFT JOIN object_mailgun_settings oms ON esp.mailgun_settings_id = oms.id
+        WHERE esp.id = :profile_id
     """)
     profile_result = await db.execute(profile_query, {"profile_id": profile_uuid})
     profile_row = profile_result.fetchone()
@@ -227,8 +233,19 @@ async def send_composed_email(
             self.display_name = row.display_name
             self.reply_to_address = row.reply_to_address
             self.is_active = row.is_active
+            self.mailgun_settings_id = row.mailgun_settings_id
+            self.mailgun_api_key = row.mailgun_api_key
+            self.mailgun_domain = row.mailgun_domain
+            self.mailgun_region = row.mailgun_region
 
     profile = ProfileData(profile_row)
+
+    # Validate that Mailgun settings are configured for this profile
+    if not profile.mailgun_api_key or not profile.mailgun_domain:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="No email profile selected and no personal Mailgun settings configured"
+        )
 
     # Parse email addresses (comma-separated)
     def parse_emails(email_string: Optional[str]) -> List[str]:
@@ -311,9 +328,9 @@ async def send_composed_email(
         reply_to = profile.reply_to_address if profile.reply_to_address else profile.email_address
 
         result = await send_email_via_mailgun(
-            domain=settings.mailgun_domain,
-            api_key=settings.mailgun_api_key,
-            region="us",  # Use US region (or make configurable)
+            domain=profile.mailgun_domain,
+            api_key=profile.mailgun_api_key,
+            region=profile.mailgun_region.lower() if profile.mailgun_region else "us",
             to=to_list,
             subject=subject,
             body_html=body_html,
