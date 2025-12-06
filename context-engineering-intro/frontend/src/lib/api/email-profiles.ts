@@ -169,7 +169,7 @@ export const emailProfilesApi = {
   // Owner-only endpoints
   list: async (isActive?: boolean): Promise<EmailProfile[]> => {
     const params = isActive !== undefined ? `?is_active=${isActive}` : ''
-    const response = await api.get(`/api/v1/email-profiles${params}`)
+    const response = await api.get(`/v1/email-profiles${params}`)
     // Defensive: ensure we always return an array
     return Array.isArray(response.data) ? response.data : []
   },
@@ -180,29 +180,29 @@ export const emailProfilesApi = {
   },
 
   get: async (profileId: string): Promise<ProfileWithAssignments> => {
-    const response = await api.get(`/api/v1/email-profiles/${profileId}`)
+    const response = await api.get(`/v1/email-profiles/${profileId}`)
     return response.data
   },
 
   update: async (profileId: string, data: UpdateProfileData): Promise<EmailProfile> => {
-    const response = await api.put(`/api/v1/email-profiles/${profileId}`, data)
+    const response = await api.put(`/v1/email-profiles/${profileId}`, data)
     return response.data
   },
 
   delete: async (profileId: string): Promise<void> => {
-    await api.delete(`/api/v1/email-profiles/${profileId}`)
+    await api.delete(`/v1/email-profiles/${profileId}`)
   },
 
   assignUsers: async (profileId: string, assignments: UserAssignment[]): Promise<void> => {
-    await api.post(`/api/v1/email-profiles/${profileId}/assignments`, assignments)
+    await api.post(`/v1/email-profiles/${profileId}/assignments`, assignments)
   },
 
   removeAssignment: async (profileId: string, userId: string): Promise<void> => {
-    await api.delete(`/api/v1/email-profiles/${profileId}/assignments/${userId}`)
+    await api.delete(`/v1/email-profiles/${profileId}/assignments/${userId}`)
   },
 
   setDefault: async (profileId: string, userId: string): Promise<void> => {
-    await api.put(`/api/v1/email-profiles/${profileId}/assignments/${userId}/default`, {})
+    await api.put(`/v1/email-profiles/${profileId}/assignments/${userId}/default`, {})
   },
 
   // User endpoint - get current user's assigned profiles
