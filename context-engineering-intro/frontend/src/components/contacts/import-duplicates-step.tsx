@@ -132,7 +132,7 @@ export default function ImportDuplicatesStep({
         (process.env.NODE_ENV === 'production'
           ? 'https://crm.senovallc.com/api'
           : 'http://localhost:8000')
-        const response = await fetch(`${API_URL}/api/v1/contacts/import/validate-duplicates`, {
+        const response = await fetch(`${API_URL}/v1/contacts/import/validate-duplicates`, {
           method: "POST",
           credentials: 'include',
           headers: {
@@ -239,7 +239,7 @@ export default function ImportDuplicatesStep({
         ...(validationData.conflict_rows || []),
       ]
 
-      const response = await fetch(`${API_URL}/api/v1/contacts/import/bulk-duplicate-action`, {
+      const response = await fetch(`${API_URL}/v1/contacts/import/bulk-duplicate-action`, {
         method: "POST",
         credentials: 'include',
         headers: {

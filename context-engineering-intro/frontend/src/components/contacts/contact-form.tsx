@@ -279,7 +279,7 @@ export function ContactForm({ contact, onSubmit, onCancel, isLoading }: ContactF
 
   const fetchContactFields = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/contacts/fields`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v1/contacts/fields`, {
         credentials: 'include',
         headers: {
           'Authorization': `Bearer ${sessionStorage.getItem('access_token')}`
@@ -294,7 +294,7 @@ export function ContactForm({ contact, onSubmit, onCancel, isLoading }: ContactF
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v1/users`, {
         credentials: 'include',
         headers: {
           'Authorization': `Bearer ${sessionStorage.getItem('access_token')}`

@@ -74,7 +74,7 @@ export default function BulkUpload({ onUploadSuccess }: BulkUploadProps) {
         (process.env.NODE_ENV === 'production'
           ? 'https://crm.senovallc.com/api'
           : 'http://localhost:8000')
-      const response = await fetch(`${API_URL}/api/v1/contacts/import/upload`, {
+      const response = await fetch(`${API_URL}/v1/contacts/import/upload`, {
         method: 'POST',
         credentials: 'include',
         headers: {

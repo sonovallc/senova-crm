@@ -56,7 +56,7 @@ export default function ImportPage() {
         (process.env.NODE_ENV === 'production'
           ? 'https://crm.senovallc.com/api'
           : 'http://localhost:8000')
-      const response = await fetch(`${API_URL}/api/v1/contacts/import/sample`)
+      const response = await fetch(`${API_URL}/v1/contacts/import/sample`)
       const blob = await response.blob()
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement('a')

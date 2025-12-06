@@ -49,7 +49,7 @@ export default function FieldVisibilityPage() {
 
   const fetchFields = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/field-visibility`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v1/field-visibility`, {
         credentials: 'include',
         headers: { 'Authorization': `Bearer ${sessionStorage.getItem('access_token')}` }
       })
@@ -73,7 +73,7 @@ export default function FieldVisibilityPage() {
   const handleSave = async () => {
     setSaving(true)
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/field-visibility/bulk-update`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v1/field-visibility/bulk-update`, {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -98,7 +98,7 @@ export default function FieldVisibilityPage() {
 
   const handleCreateField = async (data: FieldCreate) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/field-visibility`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v1/field-visibility`, {
         method: 'POST',
         credentials: 'include',
         headers: {

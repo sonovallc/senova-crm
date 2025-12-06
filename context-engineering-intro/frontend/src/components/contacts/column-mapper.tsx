@@ -43,7 +43,7 @@ export default function ColumnMapper({
         (process.env.NODE_ENV === 'production'
           ? 'https://crm.senovallc.com/api'
           : 'http://localhost:8000')
-        const response = await fetch(`${API_URL}/api/v1/contacts/import/fields`, {
+        const response = await fetch(`${API_URL}/v1/contacts/import/fields`, {
           credentials: 'include',
           headers: {
             'Authorization': `Bearer ${token}`,

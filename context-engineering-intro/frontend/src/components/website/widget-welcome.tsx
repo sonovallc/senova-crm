@@ -27,7 +27,7 @@ export function WidgetWelcome({
         (process.env.NODE_ENV === 'production'
           ? 'https://crm.senovallc.com/api'
           : 'http://localhost:8000')
-      const response = await fetch(`${API_URL}/api/v1/communications/widget/auth`, {
+      const response = await fetch(`${API_URL}/v1/communications/widget/auth`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, phone: phone || null }),

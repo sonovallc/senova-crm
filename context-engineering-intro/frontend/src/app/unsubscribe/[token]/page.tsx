@@ -21,7 +21,7 @@ export default function UnsubscribePage() {
           (process.env.NODE_ENV === 'production'
             ? 'https://crm.senovallc.com/api'
             : 'http://localhost:8000')
-        const response = await fetch(`${API_URL}/api/v1/campaigns/unsubscribe`, {
+        const response = await fetch(`${API_URL}/v1/campaigns/unsubscribe`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ token }),

@@ -170,7 +170,7 @@ export function ChatWidget() {
         (process.env.NODE_ENV === 'production'
           ? 'https://crm.senovallc.com/api'
           : 'http://localhost:8000')
-      const response = await fetch(`${API_URL}/api/v1/communications/widget/messages/${contactIdToLoad}`)
+      const response = await fetch(`${API_URL}/v1/communications/widget/messages/${contactIdToLoad}`)
 
       if (response.ok) {
         const data = await response.json()

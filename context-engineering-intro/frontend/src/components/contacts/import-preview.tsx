@@ -66,7 +66,7 @@ export default function ImportPreview({
 
       // CRITICAL FIX: Add tag_ids to the request payload
       // The backend endpoint expects tag_ids in the request
-      const response = await fetch(`${API_URL}/api/v1/contacts/import/execute`, {
+      const response = await fetch(`${API_URL}/v1/contacts/import/execute`, {
         method: "POST",
         credentials: 'include',
         headers: {

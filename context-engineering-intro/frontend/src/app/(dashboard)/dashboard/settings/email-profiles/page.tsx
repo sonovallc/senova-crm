@@ -146,7 +146,7 @@ export default function EmailProfilesPage() {
     queryKey: ['users'],
     queryFn: async () => {
       const token = sessionStorage.getItem("access_token")
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v1/users/`, {
         credentials: 'include',
         headers: {
           Authorization: `Bearer ${token}`,
