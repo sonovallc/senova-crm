@@ -24,6 +24,7 @@ from app.models.communication import Communication, CommunicationType, Communica
 from app.models.contact import Contact
 from app.config.settings import get_settings
 from app.core.exceptions import NotFoundError, ValidationError, IntegrationError
+from app.utils.encryption import decrypt_api_key
 
 router = APIRouter(prefix="/inbox", tags=["Inbox"])
 logger = logging.getLogger(__name__)
@@ -234,7 +235,8 @@ async def send_composed_email(
             self.reply_to_address = row.reply_to_address
             self.is_active = row.is_active
             self.mailgun_settings_id = row.mailgun_settings_id
-            self.mailgun_api_key = row.mailgun_api_key
+            # Decrypt the API key since it's stored encrypted in the database
+            self.mailgun_api_key = decrypt_api_key(row.mailgun_api_key) if row.mailgun_api_key else None
             self.mailgun_domain = row.mailgun_domain
             self.mailgun_region = row.mailgun_region
 
