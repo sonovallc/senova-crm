@@ -1,0 +1,102 @@
+{
+  "timestamp": "2025-12-06T23:55:19.141Z",
+  "phase2": {
+    "loginSuccessful": true,
+    "inboxLoaded": true,
+    "profileFetchDetected": true,
+    "profileFetchUrl": "https://crm.senovallc.com/api/v1/email-profiles/my-profiles",
+    "networkRequests": [
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/login",
+        "method": "POST",
+        "timestamp": "2025-12-06T23:55:22.285Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/me",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:55:22.569Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/dashboard/stats",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:55:22.982Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/activities?page=1&page_size=10",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:55:22.983Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/me",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:55:23.257Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/me",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:55:23.493Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/communications/inbox/threads?sort_by=recent_activity",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:55:23.494Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/email-profiles/my-profiles",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:55:23.494Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/email-profiles/my-profiles",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:55:26.715Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/email-templates",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:55:26.715Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/contacts/?search=john.test%40example.com&page_size=50",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:55:28.958Z"
+      }
+    ]
+  },
+  "phase3": {
+    "composeButtonClicked": true,
+    "composeModalOpened": true,
+    "fromFieldVisible": true,
+    "fromFieldValue": "Senova CRM Admin <admin@mg.senovallc.com>",
+    "toFieldFilled": true,
+    "subjectFilled": true,
+    "messageFilled": true
+  },
+  "phase4": {
+    "sendRequestCaptured": false,
+    "requestUrl": null,
+    "requestMethod": null,
+    "profileIdInPayload": false,
+    "profileIdValue": null,
+    "responseStatus": null,
+    "responseBody": null,
+    "errorToastDetected": false,
+    "requestDetails": {},
+    "responseDetails": {}
+  },
+  "screenshots": [
+    "02-login-page.png",
+    "03-inbox-loaded.png",
+    "05-compose-modal.png",
+    "08-ready-to-send.png",
+    "10-send-clicked.png",
+    "12-final.png"
+  ],
+  "errors": [],
+  "summary": {
+    "phase2_success": true,
+    "phase3_success": true,
+    "phase4_success": false,
+    "overall_pass": false
+  }
+}

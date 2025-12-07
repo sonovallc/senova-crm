@@ -53,9 +53,9 @@ async def upload_file(
         # Reset file pointer
         await file.seek(0)
 
-        # Return URL (assuming static files are served at /static/)
-        relative_path = f"static/uploads/{subfolder}/{unique_filename}"
-        return f"{settings.backend_url}/{relative_path}"
+        # Return relative URL path (nginx proxies /static to backend)
+        # This works in both development and production environments
+        return f"/static/uploads/{subfolder}/{unique_filename}"
 
     except Exception as e:
         raise Exception(f"Failed to save file locally: {str(e)}")

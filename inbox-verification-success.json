@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-12-06T23:59:39.228Z",
+  "login": false,
+  "compose": false,
+  "filled": false,
+  "sendCaptured": false,
+  "profileIdFound": false,
+  "profileIdValue": null,
+  "status": null,
+  "error": "page.waitForURL: Timeout 10000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation to \"**/dashboard**\" until \"load\"\n============================================================",
+  "allRequests": [
+    {
+      "url": "https://crm.senovallc.com/api/v1/auth/login",
+      "method": "POST"
+    },
+    {
+      "url": "https://crm.senovallc.com/api/v1/auth/me",
+      "method": "GET"
+    }
+  ]
+}

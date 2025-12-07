@@ -1,0 +1,108 @@
+{
+  "timestamp": "2025-12-06T23:52:45.074Z",
+  "phase2": {
+    "loginSuccessful": true,
+    "inboxLoaded": true,
+    "profileFetchDetected": true,
+    "profileFetchUrl": "https://crm.senovallc.com/api/v1/email-profiles/my-profiles",
+    "networkRequests": [
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/login",
+        "method": "POST",
+        "timestamp": "2025-12-06T23:52:48.476Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/me",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:52:48.796Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/dashboard/stats",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:52:49.199Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/activities?page=1&page_size=10",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:52:49.199Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/me",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:52:49.449Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/me",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:52:49.632Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/communications/inbox/threads?sort_by=recent_activity",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:52:49.632Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/email-profiles/my-profiles",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:52:49.632Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/email-profiles/my-profiles",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:52:52.994Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/email-templates",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:52:52.994Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/contacts/?search=john.test%40example.com&page_size=50",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:52:55.256Z"
+      }
+    ]
+  },
+  "phase3": {
+    "composeButtonClicked": true,
+    "composeModalOpened": true,
+    "fromFieldVisible": true,
+    "fromFieldValue": "Senova CRM Admin <admin@mg.senovallc.com>",
+    "toFieldFilled": true,
+    "subjectFilled": true,
+    "messageFilled": true
+  },
+  "phase4": {
+    "sendRequestCaptured": false,
+    "requestUrl": null,
+    "requestMethod": null,
+    "profileIdInPayload": false,
+    "profileIdValue": null,
+    "responseStatus": null,
+    "responseBody": null,
+    "errorToastDetected": false,
+    "successIndication": false,
+    "requestDetails": {},
+    "responseDetails": {}
+  },
+  "screenshots": [
+    "02-login-page.png",
+    "02b-login-filled.png",
+    "03-inbox-loaded.png",
+    "05-compose-modal-opened.png",
+    "06-to-field-filled.png",
+    "07-subject-filled.png",
+    "08-message-filled.png",
+    "09-before-send.png",
+    "error-screenshot.png"
+  ],
+  "errors": [
+    "Test exception: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    57 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+  ],
+  "summary": {
+    "phase2_success": true,
+    "phase3_success": true,
+    "phase4_success": false,
+    "overall_pass": false
+  }
+}

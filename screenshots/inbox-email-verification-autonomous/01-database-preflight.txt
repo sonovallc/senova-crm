@@ -1,0 +1,15 @@
+               user_id                |              profile_id              | is_default |     email_address      
+--------------------------------------+--------------------------------------+------------+------------------------
+ e93d5052-2bea-489d-8210-7ebe425214de | 7998048b-679c-470a-9292-e2e7721bd403 | t          | admin@mg.senovallc.com
+(1 row)
+
+ mailgun_settings_count 
+------------------------
+                      0
+(1 row)
+
+                  id                  | first_name | last_name |         email         
+--------------------------------------+------------+-----------+-----------------------
+ e32345d9-09ab-444c-8b0e-16e5726b23c8 | John       | Test      | john.test@example.com
+(1 row)
+

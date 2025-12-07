@@ -1,0 +1,106 @@
+{
+  "timestamp": "2025-12-06T23:50:26.994Z",
+  "phase2": {
+    "loginSuccessful": true,
+    "inboxLoaded": true,
+    "profileFetchDetected": true,
+    "profileFetchUrl": "https://crm.senovallc.com/api/v1/email-profiles/my-profiles",
+    "networkRequests": [
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/login",
+        "method": "POST",
+        "timestamp": "2025-12-06T23:50:30.568Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/me",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:50:30.890Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/dashboard/stats",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:50:31.270Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/activities?page=1&page_size=10",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:50:31.271Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/me",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:50:32.221Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/me",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:50:32.409Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/communications/inbox/threads?sort_by=recent_activity",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:50:32.409Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/email-profiles/my-profiles",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:50:32.409Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/email-profiles/my-profiles",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:50:36.656Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/email-templates",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:50:36.656Z"
+      }
+    ]
+  },
+  "phase3": {
+    "composeButtonClicked": true,
+    "composeModalOpened": true,
+    "toFieldFilled": false,
+    "subjectFilled": true,
+    "messageFilled": false,
+    "fromFieldStatus": "not_visible (using default profile)"
+  },
+  "phase4": {
+    "sendRequestCaptured": false,
+    "requestUrl": null,
+    "requestMethod": null,
+    "profileIdInPayload": false,
+    "profileIdValue": null,
+    "responseStatus": null,
+    "responseBody": null,
+    "errorToastDetected": false,
+    "successIndication": false,
+    "requestDetails": {},
+    "responseDetails": {}
+  },
+  "screenshots": [
+    "02-login-page.png",
+    "02b-login-filled.png",
+    "02c-after-login.png",
+    "03-inbox-loaded.png",
+    "04-network-profile-fetch.png",
+    "05-compose-modal-opened.png",
+    "06-to-field-filled.png",
+    "07-subject-filled.png",
+    "08-message-filled.png",
+    "09-before-send.png",
+    "error-screenshot.png"
+  ],
+  "errors": [
+    "To field not found",
+    "Message field not found",
+    "Test exception: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    57 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+  ],
+  "summary": {
+    "phase2_success": true,
+    "phase3_success": false,
+    "phase4_success": false,
+    "overall_pass": false
+  }
+}

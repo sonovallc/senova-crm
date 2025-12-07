@@ -1,0 +1,89 @@
+{
+  "timestamp": "2025-12-06T23:48:37.754Z",
+  "phase2": {
+    "loginSuccessful": true,
+    "inboxLoaded": true,
+    "profileFetchDetected": true,
+    "profileFetchUrl": "https://crm.senovallc.com/api/v1/email-profiles/my-profiles",
+    "networkRequests": [
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/login",
+        "method": "POST",
+        "timestamp": "2025-12-06T23:48:41.377Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/me",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:48:42.280Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/dashboard/stats",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:48:42.737Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/activities?page=1&page_size=10",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:48:42.737Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/me",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:48:43.597Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/me",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:48:43.756Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/communications/inbox/threads?sort_by=recent_activity",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:48:43.756Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/email-profiles/my-profiles",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:48:43.756Z"
+      }
+    ]
+  },
+  "phase3": {
+    "conversationSelected": true,
+    "composeAreaVisible": false,
+    "messageTyped": false,
+    "fromFieldStatus": "not_checked"
+  },
+  "phase4": {
+    "sendRequestCaptured": false,
+    "requestUrl": null,
+    "requestMethod": null,
+    "profileIdInPayload": false,
+    "profileIdValue": null,
+    "responseStatus": null,
+    "responseBody": null,
+    "errorToastDetected": false,
+    "messageSentUIUpdated": false,
+    "requestDetails": {},
+    "responseDetails": {}
+  },
+  "screenshots": [
+    "02-login-page.png",
+    "02b-login-filled.png",
+    "02c-after-login.png",
+    "03-inbox-loaded.png",
+    "04-network-profile-fetch.png",
+    "05-conversation-selected.png",
+    "06-compose-area-not-found.png"
+  ],
+  "errors": [
+    "Compose field not found",
+    "Phase 4 skipped - no compose field"
+  ],
+  "summary": {
+    "phase2_success": true,
+    "phase3_success": false,
+    "phase4_success": false,
+    "overall_pass": false
+  }
+}

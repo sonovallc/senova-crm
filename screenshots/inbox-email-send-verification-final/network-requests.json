@@ -1,0 +1,33 @@
+[
+  {
+    "timestamp": "2025-12-07T00:18:29.832Z",
+    "url": "https://crm.senovallc.com/api/v1/email-profiles/my-profiles",
+    "method": "GET",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqd29vZGNhcGl0YWxAZ21haWwuY29tIiwiZXhwIjoxNzY1MTUzMTA2LCJ0eXBlIjoiYWNjZXNzIn0.R4G6YIDwg7D287SG7fxOrtxFJqzvTvlBk_xGEmldckE",
+      "referer": "https://crm.senovallc.com/dashboard/inbox",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "payload": null
+  },
+  {
+    "timestamp": "2025-12-07T00:18:48.586Z",
+    "url": "https://crm.senovallc.com/api/v1/inbox/send-email",
+    "method": "POST",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqd29vZGNhcGl0YWxAZ21haWwuY29tIiwiZXhwIjoxNzY1MTUzMTA2LCJ0eXBlIjoiYWNjZXNzIn0.R4G6YIDwg7D287SG7fxOrtxFJqzvTvlBk_xGEmldckE",
+      "referer": "https://crm.senovallc.com/dashboard/inbox",
+      "sec-ch-ua": "\"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "content-type": "multipart/form-data; boundary=----WebKitFormBoundary5wGVBpNfXiHkjbaM"
+    },
+    "payload": "------WebKitFormBoundary5wGVBpNfXiHkjbaM\r\nContent-Disposition: form-data; name=\"to\"\r\n\r\njwoodcapital@gmail.com\r\n------WebKitFormBoundary5wGVBpNfXiHkjbaM\r\nContent-Disposition: form-data; name=\"subject\"\r\n\r\ntest 4\r\n------WebKitFormBoundary5wGVBpNfXiHkjbaM\r\nContent-Disposition: form-data; name=\"body_html\"\r\n\r\n<p>Autonomous verification test - checking profile_id parameter - 2025-12-07T00:18:45.840Z</p>\r\n------WebKitFormBoundary5wGVBpNfXiHkjbaM\r\nContent-Disposition: form-data; name=\"profile_id\"\r\n\r\n7998048b-679c-470a-9292-e2e7721bd403\r\n------WebKitFormBoundary5wGVBpNfXiHkjbaM--\r\n"
+  }
+]

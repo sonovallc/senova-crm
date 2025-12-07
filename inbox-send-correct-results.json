@@ -1,0 +1,108 @@
+{
+  "timestamp": "2025-12-06T23:57:30.936Z",
+  "phase2": {
+    "loginSuccessful": true,
+    "inboxLoaded": true,
+    "profileFetchDetected": true,
+    "profileFetchUrl": "https://crm.senovallc.com/api/v1/email-profiles/my-profiles",
+    "networkRequests": [
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/login",
+        "method": "POST",
+        "timestamp": "2025-12-06T23:57:34.086Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/me",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:57:34.357Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/dashboard/stats",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:57:34.762Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/activities?page=1&page_size=10",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:57:34.762Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/me",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:57:35.012Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/auth/me",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:57:35.211Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/communications/inbox/threads?sort_by=recent_activity",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:57:35.211Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/email-profiles/my-profiles",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:57:35.211Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/email-profiles/my-profiles",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:57:38.587Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/email-templates",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:57:38.588Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/contacts/?search=john.test%40example.com&page_size=50",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:57:40.816Z"
+      },
+      {
+        "url": "https://crm.senovallc.com/api/v1/contacts/?search=Autonomous+Test+-+Profile+ID+Verification&page_size=50",
+        "method": "GET",
+        "timestamp": "2025-12-06T23:57:41.891Z"
+      }
+    ]
+  },
+  "phase3": {
+    "composeButtonClicked": true,
+    "composeModalOpened": true,
+    "fromFieldVisible": true,
+    "fromFieldValue": "Senova CRM Admin <admin@mg.senovallc.com>",
+    "toFieldFilled": true,
+    "subjectFilled": true,
+    "messageFilled": true
+  },
+  "phase4": {
+    "sendRequestCaptured": false,
+    "requestUrl": null,
+    "requestMethod": null,
+    "profileIdInPayload": false,
+    "profileIdValue": null,
+    "responseStatus": null,
+    "responseBody": null,
+    "errorToastDetected": false,
+    "requestDetails": {},
+    "responseDetails": {}
+  },
+  "screenshots": [
+    "02-login.png",
+    "03-inbox.png",
+    "05-modal.png",
+    "07-subject.png",
+    "08-ready.png",
+    "10-sent.png",
+    "12-final.png"
+  ],
+  "errors": [],
+  "summary": {
+    "phase2_success": true,
+    "phase3_success": true,
+    "phase4_success": false,
+    "overall_pass": false
+  }
+}
