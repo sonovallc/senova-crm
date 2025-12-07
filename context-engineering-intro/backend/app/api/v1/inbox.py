@@ -306,8 +306,9 @@ async def send_composed_email(
 
         max_size = 25 * 1024 * 1024  # 25MB
         for attachment in attachments:
-            await attachment.seek(0, 2)  # Seek to end
-            file_size = attachment.tell()
+            # Read file to get size (UploadFile.seek() doesn't support whence parameter)
+            content = await attachment.read()
+            file_size = len(content)
             await attachment.seek(0)  # Reset to beginning
 
             if file_size > max_size:
