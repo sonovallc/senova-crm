@@ -5,10 +5,13 @@ Implements: register, login, refresh token, logout, get current user
 Following research/fastapi/04-jwt-authentication.md patterns
 """
 
-from fastapi import APIRouter, HTTPException, status, Depends
+from fastapi import APIRouter, HTTPException, status, Depends, Request
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from datetime import datetime, timezone, timedelta
+
+from slowapi import Limiter
+from slowapi.util import get_remote_address
 
 from app.schemas.user import UserCreate, UserLogin, UserResponse, TokenResponse, Token
 from app.models.user import User, UserRole
@@ -22,11 +25,16 @@ from app.core.security import (
 )
 from app.api.dependencies import get_db, get_current_active_user, get_current_user_optional, CurrentUser
 
+# Rate limiter for auth endpoints - shared with main app
+limiter = Limiter(key_func=get_remote_address)
+
 router = APIRouter(prefix="/auth", tags=["Authentication"])
 
 
 @router.post("/register", response_model=TokenResponse, status_code=status.HTTP_201_CREATED)
+@limiter.limit("3/minute")
 async def register(
+    request: Request,
     user_data: UserCreate,
     db: AsyncSession = Depends(get_db),
     current_user: User | None = Depends(get_current_user_optional)
@@ -113,7 +121,9 @@ async def register(
 
 
 @router.post("/login", response_model=TokenResponse)
+@limiter.limit("5/minute")
 async def login(
+    request: Request,
     credentials: UserLogin,
     db: AsyncSession = Depends(get_db)
 ):

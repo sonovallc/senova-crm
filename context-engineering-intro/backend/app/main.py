@@ -18,6 +18,11 @@ from app.config.database import init_db
 from app.core.middleware import RateLimitMiddleware, LoggingMiddleware, add_security_headers
 from app.api.v1 import auth, communications, webhooks, payments, ai, contacts, users, field_visibility, contacts_import, tags, activities, feature_flags, mailgun, inbox, email_templates, email_campaigns, autoresponders, suppressions, dashboard, objects, email_profiles, object_mailgun_settings
 
+# Rate limiting for auth endpoints
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO if settings.is_development else logging.WARNING,
@@ -61,6 +66,11 @@ app = FastAPI(
     lifespan=lifespan,
     redirect_slashes=False,  # Disable automatic trailing slash redirects (307) that break POST requests
 )
+
+# Configure rate limiting for auth endpoints
+limiter = Limiter(key_func=get_remote_address)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 
 # Large Upload Middleware - Allow 100MB file uploads
