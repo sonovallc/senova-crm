@@ -26,6 +26,7 @@ from app.models.communication import Communication, CommunicationType, Communica
 from app.models.contact import Contact, ContactSource
 from app.models.payment import Payment, PaymentStatus
 from app.services.stripe_service import StripeService
+from app.services.local_storage_service import upload_file
 from app.core.exceptions import NotFoundError, PaymentError
 from app.utils.webhook_security import verify_mailgun_signature, is_timestamp_valid, sanitize_html
 
@@ -515,6 +516,24 @@ async def handle_mailgun_inbound_email(request: Request, db: AsyncSession = Depe
         if in_reply_to:
             original_communication_id = await find_original_communication(db, in_reply_to)
 
+        # Process attachments from Mailgun
+        # Mailgun sends attachments as "attachment-1", "attachment-2", etc.
+        attachment_urls = []
+        attachment_count = int(form_data.get("attachment-count", "0"))
+
+        for i in range(1, attachment_count + 1):
+            attachment_key = f"attachment-{i}"
+            attachment_file = form_data.get(attachment_key)
+
+            if attachment_file:
+                try:
+                    # Save attachment using local storage service
+                    file_url = await upload_file(attachment_file, subfolder="email-attachments")
+                    attachment_urls.append(file_url)
+                    logger.info(f"Saved inbound email attachment: {attachment_file.filename} -> {file_url}")
+                except Exception as e:
+                    logger.error(f"Failed to save attachment {attachment_file.filename}: {str(e)}")
+
         # Store in communications table
         communication = Communication(
             type=CommunicationType.EMAIL,
@@ -524,6 +543,7 @@ async def handle_mailgun_inbound_email(request: Request, db: AsyncSession = Depe
             body=sanitized_html,
             from_address=sender,
             to_address=recipient,
+            media_urls=attachment_urls,  # Add attachment URLs
             status=CommunicationStatus.RECEIVED,
             external_id=message_id,
             received_at=datetime.now(timezone.utc),
@@ -532,6 +552,7 @@ async def handle_mailgun_inbound_email(request: Request, db: AsyncSession = Depe
                 "message_id": message_id,
                 "in_reply_to": in_reply_to,
                 "original_communication_id": str(original_communication_id) if original_communication_id else None,
+                "attachment_count": len(attachment_urls),
             }
         )
 
