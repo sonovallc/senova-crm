@@ -1,3 +1,15 @@
+"""
+Contact Deduplication Service
+
+Provides utilities for normalizing and comparing contact identifiers (email, phone)
+to detect duplicates during import and manual entry.
+
+IMPORTANT: Empty value handling (December 2024 fix)
+- Empty fields should NEVER match other empty fields
+- Common placeholder values ("N/A", "null", "-", etc.) are treated as empty
+- This prevents false positive duplicates when multiple rows have empty phone/email fields
+"""
+
 import re
 from typing import List, Dict, Tuple, Optional, Iterable, Any
 from uuid import UUID
@@ -10,11 +22,77 @@ from app.models.contact import Contact
 
 MULTI_VALUE_SPLIT_REGEX = re.compile(r"[;,]")
 
+# Common placeholder values that should be treated as "empty" for duplicate detection
+# These values should NEVER be indexed or compared as they represent "no data"
+EMPTY_PLACEHOLDER_VALUES = frozenset([
+    '', 'null', 'none', 'n/a', 'na', '-', '--', '---',
+    'undefined', 'unknown', 'empty', 'blank', 'nil',
+    '.', '..', '...', '0', '00', '000',
+    'test', 'testing', 'xxx', 'yyy', 'zzz',
+    'no email', 'no phone', 'no number', 'no data',
+    'not available', 'not provided', 'not applicable',
+])
+
+
+def is_empty_value(value: Optional[str]) -> bool:
+    """
+    Check if a value should be considered 'empty' for duplicate detection.
+
+    CRITICAL: Empty values should NEVER be compared or indexed for duplicates.
+    Two rows with empty phone fields are NOT duplicates - they just both lack phone data.
+
+    Returns True for:
+    - None
+    - Empty string ''
+    - Whitespace-only strings '   '
+    - Common placeholder values: 'null', 'N/A', '-', 'none', 'undefined', etc.
+
+    Args:
+        value: The value to check
+
+    Returns:
+        bool: True if the value should be treated as empty/missing
+    """
+    if value is None:
+        return True
+
+    if not isinstance(value, str):
+        value = str(value)
+
+    # Strip whitespace and convert to lowercase for comparison
+    normalized = value.strip().lower()
+
+    # Empty after stripping whitespace
+    if not normalized:
+        return True
+
+    # Check against known placeholder values
+    if normalized in EMPTY_PLACEHOLDER_VALUES:
+        return True
+
+    return False
+
 
 def normalize_email(value: Optional[str]) -> Optional[str]:
-    if not value:
+    """
+    Normalize email to lowercase.
+
+    Returns None for:
+    - Empty/null values
+    - Placeholder values (N/A, null, -, etc.)
+    - Values that don't look like valid emails (no @ symbol)
+    """
+    # CRITICAL: Check for empty/placeholder values first
+    if is_empty_value(value):
         return None
+
     email = value.strip().lower()
+
+    # Additional check: must contain @ to be a valid email
+    # This prevents placeholder values like "test" from being indexed
+    if '@' not in email:
+        return None
+
     return email or None
 
 
@@ -25,8 +103,14 @@ def normalize_phone(value: Optional[str]) -> Optional[str]:
     - US: 10 digits (adds +1), 11 digits starting with 1
     - International: 7-15 digits
     - Various separators (dashes, spaces, parentheses, dots)
+
+    Returns None for:
+    - Empty/null values
+    - Placeholder values (N/A, null, -, etc.)
+    - Values with insufficient digits (< 7)
     """
-    if not value:
+    # CRITICAL: Check for empty/placeholder values first
+    if is_empty_value(value):
         return None
 
     phone = str(value).strip()
@@ -55,12 +139,21 @@ def normalize_phone(value: Optional[str]) -> Optional[str]:
 
 
 def explode_emails(value: Optional[str]) -> List[str]:
-    if not value:
+    """
+    Parse comma/semicolon-separated emails into individual normalized items.
+
+    Returns empty list for empty/placeholder values.
+    """
+    # CRITICAL: Check for empty/placeholder values first
+    if is_empty_value(value):
         return []
 
     chunks = MULTI_VALUE_SPLIT_REGEX.split(str(value))
     normalized = []
     for chunk in chunks:
+        # Skip empty/placeholder chunks
+        if is_empty_value(chunk):
+            continue
         email = normalize_email(chunk)
         if email:
             normalized.append(email)
@@ -68,12 +161,21 @@ def explode_emails(value: Optional[str]) -> List[str]:
 
 
 def explode_phones(value: Optional[str]) -> List[str]:
-    if not value:
+    """
+    Parse comma/semicolon-separated phones into individual normalized items.
+
+    Returns empty list for empty/placeholder values.
+    """
+    # CRITICAL: Check for empty/placeholder values first
+    if is_empty_value(value):
         return []
 
     chunks = MULTI_VALUE_SPLIT_REGEX.split(str(value))
     normalized = []
     for chunk in chunks:
+        # Skip empty/placeholder chunks
+        if is_empty_value(chunk):
+            continue
         phone = normalize_phone(chunk)
         if phone:
             normalized.append(phone)

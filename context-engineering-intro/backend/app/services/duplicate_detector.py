@@ -3,6 +3,11 @@ Internal Duplicate Detection Service - Stage 1 Only
 
 Detects duplicates WITHIN uploaded CSV (same column matching only).
 Does NOT check against existing database contacts yet.
+
+IMPORTANT: Empty value handling (December 2024 fix)
+- Empty fields should NEVER match other empty fields
+- Common placeholder values ("N/A", "null", "-", etc.) are treated as empty
+- This prevents false positive duplicates when multiple rows have empty phone/email fields
 """
 
 import re
@@ -27,10 +32,68 @@ DUPLICATE_CHECK_FIELDS = [
     "BUSINESS_VERIFIED_EMAILS",
 ]
 
+# Common placeholder values that should be treated as "empty" for duplicate detection
+# These values should NEVER be indexed or compared as they represent "no data"
+EMPTY_PLACEHOLDER_VALUES = frozenset([
+    '', 'null', 'none', 'n/a', 'na', '-', '--', '---',
+    'undefined', 'unknown', 'empty', 'blank', 'nil',
+    '.', '..', '...', '0', '00', '000',
+    'test', 'testing', 'xxx', 'yyy', 'zzz',
+    'no email', 'no phone', 'no number', 'no data',
+    'not available', 'not provided', 'not applicable',
+])
+
+
+def is_empty_value(value: Optional[str]) -> bool:
+    """
+    Check if a value should be considered 'empty' for duplicate detection.
+
+    CRITICAL: Empty values should NEVER be compared or indexed for duplicates.
+    Two rows with empty phone fields are NOT duplicates - they just both lack phone data.
+
+    Returns True for:
+    - None
+    - Empty string ''
+    - Whitespace-only strings '   '
+    - Common placeholder values: 'null', 'N/A', '-', 'none', 'undefined', etc.
+
+    Args:
+        value: The value to check
+
+    Returns:
+        bool: True if the value should be treated as empty/missing
+    """
+    if value is None:
+        return True
+
+    if not isinstance(value, str):
+        value = str(value)
+
+    # Strip whitespace and convert to lowercase for comparison
+    normalized = value.strip().lower()
+
+    # Empty after stripping whitespace
+    if not normalized:
+        return True
+
+    # Check against known placeholder values
+    if normalized in EMPTY_PLACEHOLDER_VALUES:
+        return True
+
+    return False
+
 
 def normalize_phone(value: Optional[str]) -> Optional[str]:
-    """Normalize phone number to +1XXXXXXXXXX format"""
-    if not value:
+    """
+    Normalize phone number to +1XXXXXXXXXX format.
+
+    Returns None for:
+    - Empty/null values
+    - Placeholder values (N/A, null, -, etc.)
+    - Values with insufficient digits (< 10)
+    """
+    # CRITICAL: Check for empty/placeholder values first
+    if is_empty_value(value):
         return None
 
     phone = str(value).strip()
@@ -50,10 +113,25 @@ def normalize_phone(value: Optional[str]) -> Optional[str]:
 
 
 def normalize_email(value: Optional[str]) -> Optional[str]:
-    """Normalize email to lowercase"""
-    if not value:
+    """
+    Normalize email to lowercase.
+
+    Returns None for:
+    - Empty/null values
+    - Placeholder values (N/A, null, -, etc.)
+    - Values that don't look like valid emails (no @ symbol)
+    """
+    # CRITICAL: Check for empty/placeholder values first
+    if is_empty_value(value):
         return None
+
     email = value.strip().lower()
+
+    # Additional check: must contain @ to be a valid email
+    # This prevents placeholder values like "test" from being indexed
+    if '@' not in email:
+        return None
+
     return email or None
 
 
@@ -66,8 +144,11 @@ def explode_field(field_name: str, value: Optional[str]) -> List[str]:
     - PERSONAL_EMAILS: "email1@test.com, email2@test.com"
 
     Returns list of normalized values (empty values filtered out).
+
+    IMPORTANT: Empty/placeholder values are filtered out to prevent false duplicate matches.
     """
-    if not value:
+    # CRITICAL: Check for empty/placeholder values first
+    if is_empty_value(value):
         return []
 
     chunks = MULTI_VALUE_SPLIT_REGEX.split(str(value))
@@ -79,7 +160,9 @@ def explode_field(field_name: str, value: Optional[str]) -> List[str]:
 
     for chunk in chunks:
         chunk = chunk.strip()
-        if not chunk:
+
+        # Skip empty chunks and placeholder values
+        if is_empty_value(chunk):
             continue
 
         if is_phone_field:
@@ -91,8 +174,8 @@ def explode_field(field_name: str, value: Optional[str]) -> List[str]:
             if norm:
                 normalized.append(norm)
         else:
-            # For other fields, just use trimmed value
-            if chunk:
+            # For other fields, just use trimmed value (if not empty/placeholder)
+            if not is_empty_value(chunk):
                 normalized.append(chunk)
 
     return normalized
@@ -101,6 +184,9 @@ def explode_field(field_name: str, value: Optional[str]) -> List[str]:
 def detect_internal_duplicates(rows: List[Dict], field_mapping: Dict[str, str]) -> Dict:
     """
     Detect internal duplicates within CSV rows (Stage 1 only).
+
+    IMPORTANT: Empty/placeholder values are NOT indexed for duplicate detection.
+    Two rows with empty phone fields are NOT duplicates - they just both lack phone data.
 
     Args:
         rows: List of parsed CSV rows
@@ -129,6 +215,9 @@ def detect_internal_duplicates(rows: List[Dict], field_mapping: Dict[str, str]) 
     # Track values across rows: {field: {value: [row_indices]}}
     value_tracker: Dict[str, Dict[str, List[int]]] = defaultdict(lambda: defaultdict(list))
 
+    # Track skipped empty values for logging
+    empty_values_skipped = 0
+
     # Process each row
     for row_idx, row in enumerate(rows):
         for field in DUPLICATE_CHECK_FIELDS:
@@ -139,16 +228,26 @@ def detect_internal_duplicates(rows: List[Dict], field_mapping: Dict[str, str]) 
 
             # Get raw value
             raw_value = row[csv_column]
-            if not raw_value:
+
+            # CRITICAL FIX: Skip empty/placeholder values to prevent false duplicate matches
+            # Empty fields should NEVER be indexed as duplicates
+            if is_empty_value(raw_value):
+                empty_values_skipped += 1
                 continue
 
-            # Explode multi-value fields
+            # Explode multi-value fields (also filters out empty values internally)
             values = explode_field(field, raw_value)
 
-            # Track each value
+            # Track each value - double-check for empty values
             for value in values:
-                if value:  # Only track non-empty values
+                # CRITICAL: Final safety check - never index empty/placeholder values
+                if value and not is_empty_value(value):
                     value_tracker[field][value].append(row_idx)
+                else:
+                    empty_values_skipped += 1
+
+    if empty_values_skipped > 0:
+        logger.info(f"[DUPLICATE DETECTION] Skipped {empty_values_skipped} empty/placeholder values (prevents false positives)")
 
     # Find duplicate groups (values that appear in 2+ rows)
     duplicate_groups = []
@@ -205,6 +304,9 @@ async def detect_external_duplicates(
     For each duplicate field (phone/email), checks if any CSV value matches
     existing contacts in the database.
 
+    IMPORTANT: Empty/placeholder values are NOT indexed for duplicate detection.
+    Two rows with empty phone fields are NOT duplicates - they just both lack phone data.
+
     Args:
         rows: List of parsed CSV rows
         field_mapping: Mapping of CSV columns to contact fields
@@ -246,6 +348,9 @@ async def detect_external_duplicates(
     external_groups = []
     group_id = 0
 
+    # Track skipped empty values for logging
+    empty_values_skipped = 0
+
     logger.info(f"[EXTERNAL DETECTION] Starting external duplicate detection for {len(rows)} rows")
 
     for db_field in DUPLICATE_FIELDS_DB:
@@ -263,18 +368,24 @@ async def detect_external_duplicates(
                 continue
 
             raw_value = row[csv_column]
-            if not raw_value:
+
+            # CRITICAL FIX: Skip empty/placeholder values to prevent false duplicate matches
+            if is_empty_value(raw_value):
+                empty_values_skipped += 1
                 continue
 
-            # Explode multi-value fields
+            # Explode multi-value fields (also filters out empty values internally)
             values = explode_field(db_field.upper(), raw_value)
 
             for value in values:
-                if value:
+                # CRITICAL: Final safety check - never index empty/placeholder values
+                if value and not is_empty_value(value):
                     csv_values.add(value)
                     if value not in csv_row_map:
                         csv_row_map[value] = []
                     csv_row_map[value].append(idx)
+                else:
+                    empty_values_skipped += 1
 
         if not csv_values:
             continue
@@ -290,6 +401,13 @@ async def detect_external_duplicates(
         for batch_start in range(0, len(csv_values_list), BATCH_SIZE):
             batch_end = min(batch_start + BATCH_SIZE, len(csv_values_list))
             batch_values = csv_values_list[batch_start:batch_end]
+
+            # CRITICAL FIX: Filter out any empty values before building ILIKE queries
+            # An empty string in ILIKE '%' pattern would match ALL non-NULL values!
+            batch_values = [v for v in batch_values if v and not is_empty_value(v)]
+
+            if not batch_values:
+                continue
 
             logger.info(f"[EXTERNAL DETECTION] Processing batch {batch_start//BATCH_SIZE + 1}: {len(batch_values)} values")
 
@@ -355,6 +473,9 @@ async def detect_external_duplicates(
                     })
                     group_id += 1
                     logger.info(f"[EXTERNAL DETECTION] Match found: {db_field}={value} in row(s) {csv_row_map[value]} and contact {contact.id}")
+
+    if empty_values_skipped > 0:
+        logger.info(f"[EXTERNAL DETECTION] Skipped {empty_values_skipped} empty/placeholder values (prevents false positives)")
 
     logger.info(f"[EXTERNAL DETECTION] Found {len(external_groups)} external duplicate groups")
 
