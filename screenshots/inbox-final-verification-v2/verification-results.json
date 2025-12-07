@@ -1,0 +1,15 @@
+{
+  "screenshots": [
+    "screenshots\\inbox-final-verification-v2\\01-login-page.png",
+    "screenshots\\inbox-final-verification-v2\\02-login-filled.png",
+    "screenshots\\inbox-final-verification-v2\\03-after-login.png",
+    "screenshots\\inbox-final-verification-v2\\04-inbox-page.png"
+  ],
+  "loginSuccess": false,
+  "inboxLoaded": false,
+  "attachmentsVisible": false,
+  "errors": [
+    "Login failed with status 404"
+  ],
+  "networkErrors": []
+}

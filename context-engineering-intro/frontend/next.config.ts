@@ -6,12 +6,15 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   compress: true,
 
-  // API configuration
+  // API configuration - rewrite /v1/* to backend API
+  // NEXT_PUBLIC_API_URL should be https://crm.senovallc.com/api (includes /api)
   async rewrites() {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
     return [
       {
-        source: '/api/:path*',
-        destination: process.env.NEXT_PUBLIC_API_URL + '/api/:path*',
+        // Frontend calls /v1/* which gets rewritten to backend
+        source: '/v1/:path*',
+        destination: `${apiUrl}/v1/:path*`,
       },
     ]
   },

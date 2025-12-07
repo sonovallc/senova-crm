@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-12-07T01:42:55.888Z",
+  "screenshots": [
+    "01-login-page.png",
+    "02-after-login.png",
+    "03-inbox-page.png"
+  ],
+  "steps": [
+    {
+      "step": "Login",
+      "status": "FAIL",
+      "details": "Login failed - Unknown error"
+    },
+    {
+      "step": "Navigate to inbox",
+      "status": "FAIL",
+      "details": "Failed to reach inbox - at https://crm.senovallc.com/login"
+    },
+    {
+      "step": "Site availability",
+      "status": "PASS",
+      "details": "Site is up and responding (no 502 error)"
+    }
+  ],
+  "errors": [],
+  "success": false
+}

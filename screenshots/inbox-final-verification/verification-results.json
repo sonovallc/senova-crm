@@ -1,0 +1,14 @@
+{
+  "screenshots": [
+    "screenshots\\inbox-final-verification\\01-login-page.png",
+    "screenshots\\inbox-final-verification\\02-after-login.png",
+    "screenshots\\inbox-final-verification\\03-inbox-page.png",
+    "screenshots\\inbox-final-verification\\04-conversation-with-attachment.png",
+    "screenshots\\inbox-final-verification\\05-attachment-section.png",
+    "screenshots\\inbox-final-verification\\06-attachment-link-check.png"
+  ],
+  "loginSuccess": false,
+  "inboxLoaded": false,
+  "attachmentsVisible": false,
+  "errors": []
+}
