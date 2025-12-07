@@ -73,18 +73,17 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_API_URL=https://crm.senovallc.com
+        - NEXT_PUBLIC_WS_URL=wss://crm.senovallc.com
     container_name: senova_crm_frontend
     depends_on:
       - backend
     environment:
-      - NEXT_PUBLIC_API_URL=http://localhost:8000
-      - NEXT_PUBLIC_WS_URL=ws://localhost:8000
       - PORT=3004
     ports:
       - "3004:3004"
-    # Volumes removed - only needed for development hot-reload
-    # Production uses the built image without volume mounts
-    command: npm run dev
+    # Uses standalone production build from Dockerfile (node server.js)
     networks:
       - senova_network
 
