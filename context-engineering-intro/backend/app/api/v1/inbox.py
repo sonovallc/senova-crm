@@ -319,9 +319,10 @@ async def send_composed_email(
     primary_recipient = to_list[0] if to_list else None
     if primary_recipient:
         # Try to find existing contact
-        contact_query = select(Contact).where(Contact.email == primary_recipient)
+        # Use .first() instead of .one_or_none() to handle duplicate contacts gracefully
+        contact_query = select(Contact).where(Contact.email == primary_recipient).order_by(Contact.created_at.desc())
         contact_result = await db.execute(contact_query)
-        contact = contact_result.scalar_one_or_none()
+        contact = contact_result.scalars().first()
 
         if contact:
             contact_id = contact.id
