@@ -29,7 +29,9 @@ interface DuplicateRow {
   incoming_data: Record<string, any>
   field_diffs?: FieldDiff[]
   candidates?: Array<Record<string, any>>
-  duplicate_type?: "internal" | "external"  // internal = CSV duplicate, external = Database match
+  duplicate_type?: "internal" | "external" | "intra_file"  // internal/intra_file = CSV duplicate, external = Database match
+  duplicate_reason?: string  // For intra-file duplicates: explains which field caused the duplicate
+  first_occurrence_row_id?: number  // For intra-file duplicates: the first row with the same identifier
 }
 
 interface ValidationSummary {
@@ -510,6 +512,8 @@ function DuplicateCard({
   handleRowAction: (rowId: number, action: "skip" | "update" | "keep_first") => void
 }) {
   const currentAction = decisions[row.row_id]?.action
+  // Check for both "internal" and "intra_file" as indicators of CSV duplicates
+  const isInternalDuplicate = row.duplicate_type === "internal" || row.duplicate_type === "intra_file"
 
   return (
     <div
@@ -519,13 +523,20 @@ function DuplicateCard({
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
         <div className="flex items-center gap-2">
           <h3 className="text-lg font-semibold">Duplicate Row #{row.row_id}</h3>
-          <Badge variant={row.duplicate_type === "internal" ? "secondary" : "default"}>
-            {row.duplicate_type === "internal" ? "CSV Duplicate" : "Database Match"}
+          <Badge variant={isInternalDuplicate ? "secondary" : "default"}>
+            {isInternalDuplicate ? "CSV Duplicate" : "Database Match"}
           </Badge>
         </div>
-        <p className="text-sm text-muted-foreground">
-          Matched contact: {row.existing_contact?.first_name || "Existing"} {row.existing_contact?.last_name || ""} ({formatIdentifier(row.existing_contact?.email, 'email')})
-        </p>
+        {isInternalDuplicate && !row.existing_contact ? (
+          <p className="text-sm text-muted-foreground">
+            Duplicate of Row #{row.first_occurrence_row_id || "earlier row"} within CSV file
+            {row.duplicate_reason && <span className="block text-xs mt-1">({row.duplicate_reason})</span>}
+          </p>
+        ) : (
+          <p className="text-sm text-muted-foreground">
+            Matched contact: {row.existing_contact?.first_name || "Unknown"} {row.existing_contact?.last_name || ""} ({formatIdentifier(row.existing_contact?.email, 'email')})
+          </p>
+        )}
       </div>
 
       {/* Per-row action buttons */}
