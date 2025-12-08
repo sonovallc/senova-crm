@@ -599,10 +599,11 @@ async def find_or_create_contact(db: AsyncSession, email: str) -> Contact:
         email = email.split("<")[1].split(">")[0]
     email = email.strip().lower()
 
+    # Use .first() instead of .one_or_none() to handle duplicate contacts gracefully
     result = await db.execute(
-        select(Contact).where(Contact.email == email)
+        select(Contact).where(Contact.email == email).order_by(Contact.created_at.desc())
     )
-    contact = result.scalar_one_or_none()
+    contact = result.scalars().first()
 
     if not contact:
         # Create new contact
