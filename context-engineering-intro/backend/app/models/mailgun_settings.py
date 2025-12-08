@@ -44,7 +44,12 @@ class MailgunSettings(Base):
 
     # Relationships
     user = relationship("User", backref="mailgun_settings")
-    verified_addresses = relationship("VerifiedEmailAddress", back_populates="mailgun_settings", cascade="all, delete-orphan")
+    verified_addresses = relationship(
+        "VerifiedEmailAddress",
+        back_populates="mailgun_settings",
+        cascade="all, delete-orphan",
+        lazy="selectin"  # Eager load to avoid async context errors
+    )
 
     # Indexes
     __table_args__ = (
