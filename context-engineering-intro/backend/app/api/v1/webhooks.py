@@ -480,15 +480,29 @@ async def handle_mailgun_inbound_email(request: Request, db: AsyncSession = Depe
         recipient = form_data.get("recipient", "unknown")
         logger.info(f"Inbound webhook: from={sender}, to={recipient}")
 
+        # DEBUG: Log signature details for troubleshooting
+        logger.info(f"Webhook signature debug: timestamp={timestamp}, token_len={len(token) if token else 0}, sig_len={len(signature) if signature else 0}")
+
         # SECURITY: Verify signature
         if settings.mailgun_webhook_signing_key:
+            # DEBUG: Log expected signature calculation
+            import hmac as hmac_debug
+            import hashlib as hashlib_debug
+            if timestamp and token:
+                expected = hmac_debug.new(
+                    key=settings.mailgun_webhook_signing_key.encode(),
+                    msg=(str(timestamp) + str(token)).encode(),
+                    digestmod=hashlib_debug.sha256
+                ).hexdigest()
+                logger.info(f"Signature verification: expected={expected[:20]}..., received={signature[:20] if signature else 'None'}...")
+
             if not verify_mailgun_signature(
                 settings.mailgun_webhook_signing_key,
                 timestamp,
                 token,
                 signature
             ):
-                logger.warning(f"Invalid webhook signature from {sender}")
+                logger.warning(f"Invalid webhook signature from {sender}. timestamp={timestamp}, token={token[:10] if token else 'None'}...")
                 raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Invalid signature")
 
             # SECURITY: Validate timestamp (prevent replay attacks)
@@ -634,6 +648,207 @@ async def flag_contact_unsubscribed(db: AsyncSession, contact_id: UUID):
     if contact:
         logger.info(f"Contact {contact_id} unsubscribed")
         # Note: You may want to add an email_unsubscribed field to Contact
+
+
+# ==================== TELNYX WEBHOOKS ====================
+
+
+@router.post("/telnyx/messaging")
+async def telnyx_messaging_webhook(
+    request: Request,
+    db: AsyncSession = Depends(get_db),
+):
+    """
+    Telnyx messaging webhook handler
+
+    Handles:
+    - Inbound SMS/MMS (message.received)
+    - Delivery status updates (message.finalized)
+
+    CRITICAL: Must return HTTP 2xx to acknowledge receipt
+    """
+    try:
+        # Parse webhook payload
+        payload = await request.json()
+
+        # Telnyx sends data in "data" envelope
+        data = payload.get("data", {})
+        event_type = data.get("event_type", "")
+        event_payload = data.get("payload", {})
+
+        logger.info(f"Telnyx webhook: type={event_type}")
+
+        if event_type == "message.received":
+            # Inbound SMS/MMS
+            await _handle_telnyx_inbound_message(event_payload, db)
+
+        elif event_type == "message.finalized":
+            # Delivery status update (sent, delivered, failed)
+            await _handle_telnyx_delivery_status(event_payload, db)
+
+        elif event_type == "message.sent":
+            # Message accepted for delivery
+            await _handle_telnyx_message_sent(event_payload, db)
+
+        return {"status": "received"}
+
+    except Exception as e:
+        logger.error(f"Telnyx webhook error: {str(e)}")
+        # Still return 200 to prevent retries
+        return {"status": "error", "message": str(e)}
+
+
+async def _handle_telnyx_inbound_message(payload: Dict, db: AsyncSession):
+    """
+    Handle inbound SMS/MMS from Telnyx
+
+    Args:
+        payload: Webhook payload
+        db: Database session
+    """
+    from_number = payload.get("from", {}).get("phone_number")
+    to_number = payload.get("to", [{}])[0].get("phone_number") if payload.get("to") else None
+    text = payload.get("text", "")
+    media_urls = [m.get("url") for m in payload.get("media", []) if m.get("url")]
+    message_id = payload.get("id")
+    received_at = payload.get("received_at")
+
+    if not from_number:
+        logger.warning("Telnyx inbound message missing from_number")
+        return
+
+    # Find or create contact by phone number
+    # Check multiple phone fields
+    result = await db.execute(
+        select(Contact).where(
+            or_(
+                Contact.phone == from_number,
+                Contact.mobile_phone == from_number,
+            )
+        )
+    )
+    contact = result.scalar_one_or_none()
+
+    if not contact:
+        # Create new lead
+        contact = Contact(
+            phone=from_number,
+            first_name="Unknown",
+            last_name="",
+            status="LEAD",
+            source="SMS",
+        )
+        db.add(contact)
+        await db.commit()
+        await db.refresh(contact)
+        logger.info(f"Created new contact from Telnyx SMS: {from_number}")
+
+    # Determine type (SMS or MMS)
+    comm_type = CommunicationType.MMS if media_urls else CommunicationType.SMS
+
+    # Parse received_at timestamp
+    received_datetime = datetime.now(timezone.utc)
+    if received_at:
+        try:
+            received_datetime = datetime.fromisoformat(received_at.replace("Z", "+00:00"))
+        except (ValueError, AttributeError):
+            pass
+
+    # Create communication record
+    communication = Communication(
+        type=comm_type,
+        direction=CommunicationDirection.INBOUND,
+        contact_id=contact.id,
+        from_address=from_number,
+        to_address=to_number,
+        body=text,
+        media_urls=media_urls,
+        status=CommunicationStatus.RECEIVED,
+        external_id=message_id,
+        received_at=received_datetime,
+        provider_metadata={
+            "provider": "telnyx",
+            "message_id": message_id,
+            "event_type": "message.received",
+            "media_count": len(media_urls),
+        },
+    )
+
+    db.add(communication)
+    await db.commit()
+
+    logger.info(f"Telnyx inbound message stored: id={communication.id}, contact={contact.id}")
+
+
+async def _handle_telnyx_delivery_status(payload: Dict, db: AsyncSession):
+    """
+    Handle Telnyx delivery status update
+
+    Args:
+        payload: Webhook payload
+        db: Database session
+    """
+    message_id = payload.get("id")
+    to_status = payload.get("to", [{}])[0].get("status") if payload.get("to") else None
+
+    if not message_id:
+        return
+
+    # Find communication by external_id
+    result = await db.execute(
+        select(Communication).where(Communication.external_id == message_id)
+    )
+    communication = result.scalar_one_or_none()
+
+    if not communication:
+        logger.debug(f"Communication not found for Telnyx message: {message_id}")
+        return
+
+    now = datetime.now(timezone.utc)
+
+    # Map Telnyx status to our status
+    if to_status == "delivered":
+        communication.status = CommunicationStatus.DELIVERED
+        communication.delivered_at = now
+    elif to_status == "sent":
+        communication.status = CommunicationStatus.SENT
+        communication.sent_at = now
+    elif to_status in ["sending_failed", "delivery_failed", "undelivered"]:
+        communication.status = CommunicationStatus.FAILED
+
+    # Update metadata
+    communication.provider_metadata = {
+        **communication.provider_metadata,
+        "to_status": to_status,
+        "finalized_at": now.isoformat(),
+    }
+
+    await db.commit()
+    logger.info(f"Telnyx delivery status updated: {communication.id} -> {to_status}")
+
+
+async def _handle_telnyx_message_sent(payload: Dict, db: AsyncSession):
+    """
+    Handle Telnyx message sent confirmation
+
+    Args:
+        payload: Webhook payload
+        db: Database session
+    """
+    message_id = payload.get("id")
+
+    if not message_id:
+        return
+
+    result = await db.execute(
+        select(Communication).where(Communication.external_id == message_id)
+    )
+    communication = result.scalar_one_or_none()
+
+    if communication and communication.status == CommunicationStatus.PENDING:
+        communication.status = CommunicationStatus.SENT
+        communication.sent_at = datetime.now(timezone.utc)
+        await db.commit()
 
 
 # ==================== PAYMENT WEBHOOKS ====================
