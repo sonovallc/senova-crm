@@ -31,13 +31,6 @@ depends_on = None
 
 # Master owner credentials
 MASTER_OWNER_EMAIL = "jwoodcapital@gmail.com"
-MASTER_OWNER_PASSWORD = os.getenv("MASTER_OWNER_PASSWORD")
-if not MASTER_OWNER_PASSWORD:
-    raise ValueError(
-        "MASTER_OWNER_PASSWORD environment variable must be set. "
-        "This is required to create the initial admin user. "
-        "Generate a strong password with: openssl rand -base64 24"
-    )
 MASTER_OWNER_ID = str(uuid.uuid4())
 
 # Senova object ID
@@ -46,6 +39,15 @@ SENOVA_OBJECT_ID = str(uuid.uuid4())
 
 def upgrade():
     """Create initial seed data"""
+
+    # Get password from environment variable (checked at runtime, not import time)
+    master_owner_password = os.getenv("MASTER_OWNER_PASSWORD")
+    if not master_owner_password:
+        raise ValueError(
+            "MASTER_OWNER_PASSWORD environment variable must be set. "
+            "This is required to create the initial admin user. "
+            "Generate a strong password with: openssl rand -base64 24"
+        )
 
     conn = op.get_bind()
 
@@ -61,7 +63,7 @@ def upgrade():
     else:
         # Create master owner
         owner_id = MASTER_OWNER_ID
-        hashed_password = get_password_hash(MASTER_OWNER_PASSWORD)
+        hashed_password = get_password_hash(master_owner_password)
 
         conn.execute(
             text("""

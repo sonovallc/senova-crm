@@ -55,6 +55,7 @@ class ContactCreate(ContactBase):
     # Override source to accept flexible string values from frontend
     source: str = "website"  # Will be mapped to enum in endpoint handler
     assigned_to_id: Optional[uuid.UUID] = None
+    object_id: Optional[uuid.UUID] = None  # For assigning contact to an object from public forms
     custom_fields: Dict[str, Any] = {}
     tags: List[str] = []
     street_address: Optional[str] = None

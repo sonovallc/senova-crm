@@ -22,6 +22,9 @@ from app.config.database import get_db
 from app.api.dependencies import get_current_user, CurrentUser, DatabaseSession
 from app.models.contact import Contact, ContactStatus, ContactSource
 from app.models.user import UserRole
+from app.models.tag import Tag
+from app.models.contact_tag import ContactTag
+from app.models.object import Object, ObjectContact
 from app.schemas.contact import (
     ContactCreate,
     ContactUpdate,
@@ -992,6 +995,71 @@ async def create_contact(
 
         await db.commit()
         await db.refresh(contact)
+
+        # Process tags - create Tag records if needed and ContactTag associations
+        if data.tags:
+            for tag_name in data.tags:
+                # Find or create tag
+                tag_result = await db.execute(
+                    select(Tag).where(Tag.name == tag_name.strip())
+                )
+                tag = tag_result.scalar_one_or_none()
+
+                if not tag:
+                    # Create new tag (created_by is nullable per migration 20251212_1706)
+                    tag = Tag(name=tag_name.strip(), created_by=None)
+                    db.add(tag)
+                    await db.flush()  # Get tag.id
+
+                # Check if ContactTag association already exists
+                existing_contact_tag = await db.execute(
+                    select(ContactTag).where(
+                        and_(
+                            ContactTag.contact_id == contact.id,
+                            ContactTag.tag_id == tag.id
+                        )
+                    )
+                )
+                if not existing_contact_tag.scalar_one_or_none():
+                    # Create ContactTag association only if it doesn't exist
+                    contact_tag = ContactTag(
+                        contact_id=contact.id,
+                        tag_id=tag.id,
+                        added_by=None  # Nullable for public forms
+                    )
+                    db.add(contact_tag)
+
+            await db.commit()
+            await db.refresh(contact)
+
+        # Assign contact to object if object_id provided
+        if data.object_id:
+            # Check if object exists
+            object_result = await db.execute(
+                select(Object).where(Object.id == data.object_id)
+            )
+            obj = object_result.scalar_one_or_none()
+
+            if obj:
+                # Check if ObjectContact association already exists
+                existing_object_contact = await db.execute(
+                    select(ObjectContact).where(
+                        and_(
+                            ObjectContact.object_id == data.object_id,
+                            ObjectContact.contact_id == contact.id
+                        )
+                    )
+                )
+                if not existing_object_contact.scalar_one_or_none():
+                    # Create ObjectContact association only if it doesn't exist
+                    object_contact = ObjectContact(
+                        object_id=data.object_id,
+                        contact_id=contact.id
+                    )
+                    db.add(object_contact)
+                    await db.commit()
+                    await db.refresh(contact)
+
         return contact
 
     if matches:
@@ -1014,6 +1082,51 @@ async def create_contact(
     try:
         await db.commit()
         await db.refresh(new_contact)
+
+        # Process tags - create Tag records if needed and ContactTag associations
+        if data.tags:
+            for tag_name in data.tags:
+                # Find or create tag
+                tag_result = await db.execute(
+                    select(Tag).where(Tag.name == tag_name.strip())
+                )
+                tag = tag_result.scalar_one_or_none()
+
+                if not tag:
+                    # Create new tag (created_by is nullable per migration 20251212_1706)
+                    tag = Tag(name=tag_name.strip(), created_by=None)
+                    db.add(tag)
+                    await db.flush()  # Get tag.id
+
+                # Create ContactTag association (added_by is nullable per migration 20251210_0300)
+                contact_tag = ContactTag(
+                    contact_id=new_contact.id,
+                    tag_id=tag.id,
+                    added_by=None  # Nullable for public forms
+                )
+                db.add(contact_tag)
+
+            await db.commit()
+            await db.refresh(new_contact)
+
+        # Assign contact to object if object_id provided
+        if data.object_id:
+            # Check if object exists
+            object_result = await db.execute(
+                select(Object).where(Object.id == data.object_id)
+            )
+            obj = object_result.scalar_one_or_none()
+
+            if obj:
+                # Create ObjectContact association
+                object_contact = ObjectContact(
+                    object_id=data.object_id,
+                    contact_id=new_contact.id
+                )
+                db.add(object_contact)
+                await db.commit()
+                await db.refresh(new_contact)
+
         await ActivityLogger.log_contact_created(
             db,
             contact=new_contact,
