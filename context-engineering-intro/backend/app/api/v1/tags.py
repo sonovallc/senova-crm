@@ -46,7 +46,7 @@ class TagResponse(BaseModel):
     id: UUID
     name: str
     color: str
-    created_by: UUID
+    created_by: Optional[UUID] = None  # Nullable for tags created from public forms
     created_at: datetime
     updated_at: datetime
     contact_count: Optional[int] = 0
