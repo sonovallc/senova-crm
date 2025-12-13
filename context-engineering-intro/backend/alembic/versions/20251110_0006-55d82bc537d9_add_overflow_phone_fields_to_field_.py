@@ -7,6 +7,7 @@ Create Date: 2025-11-10 00:06:52.518959
 """
 from alembic import op
 import sqlalchemy as sa
+from sqlalchemy import text
 
 
 # revision identifiers, used by Alembic.
@@ -85,38 +86,59 @@ def upgrade() -> None:
             'field_type': 'string'
         })
 
-    # Insert all overflow fields into field_visibility table
+    # Insert all overflow fields into field_visibility table using parameterized queries
     for field in overflow_fields:
-        op.execute(f"""
-            INSERT INTO field_visibility
-            (field_name, field_label, field_category, visible_to_admin, visible_to_user, is_sensitive, field_type)
-            VALUES (
-                '{field['field_name']}',
-                '{field['field_label']}',
-                '{field['field_category']}',
-                {field['visible_to_admin']},
-                {field['visible_to_user']},
-                {field['is_sensitive']},
-                '{field['field_type']}'
-            )
-            ON CONFLICT (field_name) DO NOTHING;
-        """)
+        op.execute(
+            text("""
+                INSERT INTO field_visibility
+                (field_name, field_label, field_category, visible_to_admin, visible_to_user, is_sensitive, field_type)
+                VALUES (
+                    :field_name,
+                    :field_label,
+                    :field_category,
+                    :visible_to_admin,
+                    :visible_to_user,
+                    :is_sensitive,
+                    :field_type
+                )
+                ON CONFLICT (field_name) DO NOTHING;
+            """),
+            field
+        )
 
 
 def downgrade() -> None:
     """Remove overflow phone fields from field_visibility table"""
 
-    # Delete mobile_phone overflow fields
+    # Delete mobile_phone overflow fields using parameterized queries
     for i in range(2, 6):
-        op.execute(f"DELETE FROM field_visibility WHERE field_name = 'mobile_phone_{i}';")
-        op.execute(f"DELETE FROM field_visibility WHERE field_name = 'mobile_phone_{i}_dnc';")
+        op.execute(
+            text("DELETE FROM field_visibility WHERE field_name = :field_name;"),
+            {'field_name': f'mobile_phone_{i}'}
+        )
+        op.execute(
+            text("DELETE FROM field_visibility WHERE field_name = :field_name;"),
+            {'field_name': f'mobile_phone_{i}_dnc'}
+        )
 
-    # Delete personal_phone overflow fields
+    # Delete personal_phone overflow fields using parameterized queries
     for i in range(2, 6):
-        op.execute(f"DELETE FROM field_visibility WHERE field_name = 'personal_phone_{i}';")
-        op.execute(f"DELETE FROM field_visibility WHERE field_name = 'personal_phone_{i}_dnc';")
+        op.execute(
+            text("DELETE FROM field_visibility WHERE field_name = :field_name;"),
+            {'field_name': f'personal_phone_{i}'}
+        )
+        op.execute(
+            text("DELETE FROM field_visibility WHERE field_name = :field_name;"),
+            {'field_name': f'personal_phone_{i}_dnc'}
+        )
 
-    # Delete direct_number overflow fields
+    # Delete direct_number overflow fields using parameterized queries
     for i in range(2, 6):
-        op.execute(f"DELETE FROM field_visibility WHERE field_name = 'direct_number_{i}';")
-        op.execute(f"DELETE FROM field_visibility WHERE field_name = 'direct_number_{i}_dnc';")
+        op.execute(
+            text("DELETE FROM field_visibility WHERE field_name = :field_name;"),
+            {'field_name': f'direct_number_{i}'}
+        )
+        op.execute(
+            text("DELETE FROM field_visibility WHERE field_name = :field_name;"),
+            {'field_name': f'direct_number_{i}_dnc'}
+        )

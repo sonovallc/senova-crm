@@ -89,13 +89,24 @@ class LargeUploadMiddleware(BaseHTTPMiddleware):
 app.add_middleware(LargeUploadMiddleware)
 
 
-# CORS Middleware
+# CORS Middleware with hardened configuration
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origins,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    # Security: Explicitly list allowed HTTP methods instead of wildcard
+    allow_methods=["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    # Security: Explicitly list allowed headers instead of wildcard
+    allow_headers=[
+        "Content-Type",
+        "Authorization",
+        "Accept",
+        "Origin",
+        "X-Requested-With",
+        "User-Agent",
+        "Cache-Control",
+        "X-CSRF-Token"
+    ],
 )
 
 

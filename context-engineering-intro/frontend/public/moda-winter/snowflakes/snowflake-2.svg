@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="currentColor">
+  <!-- Angular geometric paper cutout style -->
+  <g transform="translate(100,100)">
+    <!-- Define one arm -->
+    <defs>
+      <g id="arm">
+        <!-- Main line -->
+        <rect x="-2" y="-75" width="4" height="75"/>
+        <!-- V-shaped branches -->
+        <path d="M 0,-60 L -15,-45 L -10,-40 L 0,-50 L 10,-40 L 15,-45 Z"/>
+        <path d="M 0,-35 L -12,-23 L -8,-19 L 0,-27 L 8,-19 L 12,-23 Z"/>
+        <!-- Small triangular cuts -->
+        <path d="M -6,-70 L 0,-65 L 6,-70 Z"/>
+      </g>
+    </defs>
+
+    <!-- Create 6 arms -->
+    <use href="#arm" transform="rotate(0)"/>
+    <use href="#arm" transform="rotate(60)"/>
+    <use href="#arm" transform="rotate(120)"/>
+    <use href="#arm" transform="rotate(180)"/>
+    <use href="#arm" transform="rotate(240)"/>
+    <use href="#arm" transform="rotate(300)"/>
+
+    <!-- Center star -->
+    <path d="M 0,-12 L 4,-4 L 12,-3 L 6,3 L 8,11 L 0,7 L -8,11 L -6,3 L -12,-3 L -4,-4 Z"/>
+  </g>
+</svg>

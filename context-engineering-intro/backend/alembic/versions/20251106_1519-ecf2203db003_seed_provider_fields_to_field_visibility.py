@@ -7,6 +7,7 @@ Create Date: 2025-11-06 15:19:31.083269
 """
 from alembic import op
 import sqlalchemy as sa
+from sqlalchemy import text
 
 
 # revision identifiers, used by Alembic.
@@ -144,7 +145,11 @@ def downgrade() -> None:
         'skiptrace_ip', 'skiptrace_b2b_address', 'skiptrace_b2b_phone'
     ]
 
-    op.execute(f"""
-        DELETE FROM field_visibility
-        WHERE field_name IN ({','.join([f"'{field}'" for field in provider_fields])})
-    """)
+    # Use parameterized query with text() to prevent SQL injection
+    field_placeholders = ', '.join([f':field{i}' for i in range(len(provider_fields))])
+    params = {f'field{i}': field for i, field in enumerate(provider_fields)}
+
+    op.execute(
+        text(f"DELETE FROM field_visibility WHERE field_name IN ({field_placeholders})"),
+        params
+    )

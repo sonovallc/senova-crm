@@ -43,6 +43,8 @@ backend/*_test*.py
 backend/scripts/seed_*.py
 backend/scripts/init_*.py
 backend/scripts/reset_*.py
+backend/scripts/create_*.py
+backend/*password*.py
 
 # SECURITY: Files with sensitive keywords
 *secret*

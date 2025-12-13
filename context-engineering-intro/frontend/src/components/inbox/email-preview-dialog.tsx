@@ -20,6 +20,7 @@ import {
 import { Label } from '@/components/ui/label'
 import { Mail, User as UserIcon } from 'lucide-react'
 import api from '@/lib/api'
+import { sanitizeEmailHtml } from '@/lib/sanitize' // XSS Protection
 
 interface EmailPreviewDialogProps {
   open: boolean
@@ -202,9 +203,16 @@ export function EmailPreviewDialog({
             <div className="text-xs font-medium text-muted-foreground uppercase mb-3">
               Message Body
             </div>
+            {/*
+              Security Note: All dangerouslySetInnerHTML instances throughout the application
+              should be updated to use sanitizeHtml() or sanitizeEmailHtml() for XSS protection.
+              This is an example of proper sanitization implementation.
+            */}
             <div
               className="prose prose-sm max-w-none"
-              dangerouslySetInnerHTML={{ __html: previewBody || '<p class="text-muted-foreground">(No message)</p>' }}
+              dangerouslySetInnerHTML={{
+                __html: sanitizeEmailHtml(previewBody || '<p class="text-muted-foreground">(No message)</p>')
+              }}
             />
           </div>
 
