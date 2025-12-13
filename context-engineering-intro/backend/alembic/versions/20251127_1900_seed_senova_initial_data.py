@@ -15,6 +15,7 @@ import sqlalchemy as sa
 from sqlalchemy import text
 from datetime import datetime, timezone
 import uuid
+import os
 
 # Import password hashing function
 import sys
@@ -30,7 +31,13 @@ depends_on = None
 
 # Master owner credentials
 MASTER_OWNER_EMAIL = "jwoodcapital@gmail.com"
-MASTER_OWNER_PASSWORD = "D3n1w3n1!"
+MASTER_OWNER_PASSWORD = os.getenv("MASTER_OWNER_PASSWORD")
+if not MASTER_OWNER_PASSWORD:
+    raise ValueError(
+        "MASTER_OWNER_PASSWORD environment variable must be set. "
+        "This is required to create the initial admin user. "
+        "Generate a strong password with: openssl rand -base64 24"
+    )
 MASTER_OWNER_ID = str(uuid.uuid4())
 
 # Senova object ID

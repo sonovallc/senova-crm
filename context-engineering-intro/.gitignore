@@ -13,18 +13,36 @@ dist/
 .env.local
 .env.*.local
 **/.env
+backend/.env
+backend/.env.local
+frontend/.env.local
+# Note: frontend/.env.production is OK to commit (only contains NEXT_PUBLIC_ vars)
 
-# SECURITY: Scripts that may contain API keys
+# SECURITY: SSL/TLS Certificates and Private Keys - NEVER COMMIT
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+nginx/ssl/*.pem
+nginx/ssl/*.key
+
+# SECURITY: Scripts that may contain API keys or passwords
 backend/setup_*.py
 backend/create_*.py
 backend/ensure_*.py
 backend/fix_*.py
 backend/seed_*.py
+backend/init_*.py
+backend/reset_*.py
 backend/update_*.py
 backend/set_*.py
 backend/check_*.py
 backend/*.sql
 backend/*_test*.py
+backend/scripts/seed_*.py
+backend/scripts/init_*.py
+backend/scripts/reset_*.py
 
 # SECURITY: Files with sensitive keywords
 *secret*
@@ -32,6 +50,11 @@ backend/*_test*.py
 *api_key*
 *password*
 *credential*
+
+# SECURITY: Documentation that may contain passwords or sensitive data
+backend/SEED_DATA_README.md
+backend/*SEED_DATA*.md
+backend/*PASSWORD*.md
 
 # Testing/Development
 testing/
